@@ -73,6 +73,99 @@ theorem singleton_insensitive {ι α κ : Type*}
   intro a b h
   rw [starRelated_singleton_eq h]
 
+
+/-- Replace every unmarked letter from `L` by a fixed bridge letter. -/
+noncomputable def normalize {ι α : Type*}
+    (L : α → Prop) (F : ι → Prop) (z : α) (a : ι → α) : ι → α := by
+  classical
+  exact fun i => if F i then a i else if L (a i) then z else a i
+
+/-- Normalization is an allowed `L`-move when the bridge letter lies in `L`. -/
+theorem starRelated_normalize {ι α : Type*}
+    {L : α → Prop} {F : ι → Prop} {z : α} {a : ι → α}
+    (hz : L z) :
+    StarRelated L F a (normalize L F z a) := by
+  apply starRelated_iff.mpr
+  constructor
+  · intro i hi
+    simp [normalize, hi]
+  · intro i hne
+    have hFi : ¬ F i := by
+      intro hi
+      apply hne
+      simp [normalize, hi]
+    by_cases hLi : L (a i)
+    · refine ⟨hLi, ?_⟩
+      simpa [normalize, hFi, hLi] using hz
+    · exfalso
+      apply hne
+      simp [normalize, hFi, hLi]
+
+/-- Two successive normalizations send every unmarked union-letter to the bridge. -/
+theorem normalize_twice_of_mem_union {ι α : Type*}
+    {L₁ L₂ : α → Prop} {F : ι → Prop} {z : α} {a : ι → α} {i : ι}
+    (hz₂ : L₂ z) (hFi : ¬ F i) (hi : L₁ (a i) ∨ L₂ (a i)) :
+    normalize L₂ F z (normalize L₁ F z a) i = z := by
+  classical
+  rcases hi with h₁ | h₂
+  · simp [normalize, hFi, h₁, hz₂]
+  · by_cases h₁ : L₁ (a i)
+    · simp [normalize, hFi, h₁, hz₂]
+    · simp [normalize, hFi, h₁, h₂]
+
+/--
+Union-related substitutions have the same two-stage normal form whenever the
+second normalization uses a bridge letter in `L₂`.
+-/
+theorem normalize_twice_eq {ι α : Type*}
+    {L₁ L₂ : α → Prop} {F : ι → Prop} {z : α} {a b : ι → α}
+    (hz₂ : L₂ z)
+    (hab : StarRelated (fun x => L₁ x ∨ L₂ x) F a b) :
+    normalize L₂ F z (normalize L₁ F z a) =
+      normalize L₂ F z (normalize L₁ F z b) := by
+  funext i
+  by_cases hFi : F i
+  · have hi := (starRelated_iff.mp hab).1 i hFi
+    simp [normalize, hFi, hi]
+  · by_cases hi : a i = b i
+    · simp [hi]
+    · have hu := (starRelated_iff.mp hab).2 i hi
+      calc
+        normalize L₂ F z (normalize L₁ F z a) i = z :=
+          normalize_twice_of_mem_union hz₂ hFi hu.1
+        _ = normalize L₂ F z (normalize L₁ F z b) i :=
+          (normalize_twice_of_mem_union hz₂ hFi hu.2).symm
+
+/--
+Corrected form of Remark 3(ii): if the two letter sets overlap, separate
+starred insensitivity for them implies starred insensitivity for their union.
+-/
+theorem starInsensitive_union_of_overlap {ι α κ : Type*}
+    {c : (ι → α) → κ} {L₁ L₂ : α → Prop} {F : ι → Prop}
+    (h₁ : StarInsensitive c L₁ F)
+    (h₂ : StarInsensitive c L₂ F)
+    (hoverlap : ∃ z, L₁ z ∧ L₂ z) :
+    StarInsensitive c (fun x => L₁ x ∨ L₂ x) F := by
+  rcases hoverlap with ⟨z, hz₁, hz₂⟩
+  intro a b hab
+  have ha₁ : c a = c (normalize L₁ F z a) :=
+    h₁ (starRelated_normalize hz₁)
+  have ha₂ :
+      c (normalize L₁ F z a) =
+        c (normalize L₂ F z (normalize L₁ F z a)) :=
+    h₂ (starRelated_normalize hz₂)
+  have hb₁ : c b = c (normalize L₁ F z b) :=
+    h₁ (starRelated_normalize hz₁)
+  have hb₂ :
+      c (normalize L₁ F z b) =
+        c (normalize L₂ F z (normalize L₁ F z b)) :=
+    h₂ (starRelated_normalize hz₂)
+  have hnormal := normalize_twice_eq hz₂ hab
+  calc
+    c a = c (normalize L₂ F z (normalize L₁ F z a)) := ha₁.trans ha₂
+    _ = c (normalize L₂ F z (normalize L₁ F z b)) := by rw [hnormal]
+    _ = c b := (hb₁.trans hb₂).symm
+
 def noMarked (_ : Unit) : Prop := False
 
 def boolColor (a : Unit → Bool) : Bool :=
