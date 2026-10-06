@@ -242,8 +242,13 @@ $L_j=\{a_j,a_{j+1}\}$.
 
 \paragraph{Lean.} \ok
 The abstract bridge is
-\lean{DualTree.Insensitivity.constantOn_union_of_overlap}.
-The next step is to instantiate it for starred insensitivity itself.
+\lean{DualTree.Insensitivity.constantOn_union_of_overlap}.  Definition 30's
+actual substitution relation is now formalized in
+\lean{DualTree.StarInsensitivity.StarRelated}.  The unrestricted printed claim
+has the kernel-checked counterexample
+\lean{DualTree.StarInsensitivity.disjoint_union_failure}, while the repaired
+overlap statement used by the proof is
+\lean{DualTree.StarInsensitivity.starInsensitive_union_of_overlap}.
 
 \subsection{Lemma 31}
 Checking the rendered PDF removes two OCR false alarms: the lemma assumes
