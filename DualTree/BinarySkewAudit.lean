@@ -38,7 +38,7 @@ def rootedB (S : List BNode) : Bool :=
 def condIIB (S : List BNode) : Bool :=
   S.all (fun s =>
     S.all (fun t =>
-      if heightAt S s = heightAt S t &&
+      if heightAt S s = heightAt S t ∧
           OrderAudit.boolLexLEB s t = true
       then decide (s.length ≤ t.length)
       else true))
