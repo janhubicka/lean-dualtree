@@ -14,3 +14,4 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.StarInsensitivity.starRelated_iff
 #print axioms DualTree.StarInsensitivity.singleton_insensitive
 #print axioms DualTree.StarInsensitivity.disjoint_union_failure
+#print axioms DualTree.StarInsensitivity.starInsensitive_union_of_overlap
