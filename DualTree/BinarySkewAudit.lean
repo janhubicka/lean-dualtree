@@ -109,10 +109,10 @@ def remark2Witness : List BNode :=
 
 theorem remark2_witness_is_semicomplete_printed :
     semiCompleteB paperAuxB remark2Witness = true := by
-  native_decide
+  decide
 
 theorem remark2_interior_not_skew_printed :
     skewB paperAuxB (interior remark2Witness) = false := by
-  native_decide
+  decide
 
 end DualTree.BinarySkewAudit
