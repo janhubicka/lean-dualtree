@@ -128,7 +128,8 @@ theorem normalize_twice_eq {ι α : Type*}
   · have hi := (starRelated_iff.mp hab).1 i hFi
     simp [normalize, hFi, hi]
   · by_cases hi : a i = b i
-    · simp [hi]
+    · classical
+      simp [normalize, hFi, hi]
     · have hu := (starRelated_iff.mp hab).2 i hi
       calc
         normalize L₂ F z (normalize L₁ F z a) i = z :=
