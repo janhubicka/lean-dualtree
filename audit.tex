@@ -1,0 +1,283 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,xcolor,enumitem}
+\newcommand{\ok}{\textcolor{green!40!black}{\textbf{VERIFIED}}}
+\newcommand{\bad}{\textcolor{red!70!black}{\textbf{COUNTEREXAMPLE}}}
+\newcommand{\gap}{\textcolor{orange!80!black}{\textbf{PROOF GAP}}}
+\newcommand{\fix}{\textcolor{blue!70!black}{\textbf{LOCAL REPAIR}}}
+\newcommand{\todo}{\textcolor{gray!70!black}{\textbf{PENDING}}}
+\newcommand{\lean}[1]{\texttt{#1}}
+\title{Validation ledger for Todorcevic--Tyros, A Dual Ramsey Theorem for Trees}
+\author{lean-dualtree}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Policy}
+This ledger tracks arXiv:2207.14599v1 statement by statement.  We distinguish
+false printed statements, type/domain errors, local repairs, missing arguments,
+and statements actually validated in Lean.  A corrected statement is never
+silently substituted for the printed one: the repair is recorded here first.
+
+\section{Audit summary}
+\begin{center}
+\begin{tabular}{p{.22\linewidth}p{.18\linewidth}p{.52\linewidth}}
+\toprule
+Location & Status & Finding \\ \midrule
+\S3.1 auxiliary order & \bad &
+Reverse lexicographic tie-breaking is incompatible with the claimed canonical
+order-preserving isomorphism.  A three-node binary witness is formalized. \\
+Remark 2 & \bad &
+With the printed order, the interior of a semi-complete skew tree need not be
+skew.  Finite tests support forward lexicographic tie-breaking. \\
+Remark 1 & \bad &
+There is an off-by-one domain error, and the later extension assertion has a
+separate finite counterexample even after the forward-lex repair. \\
+Theorem 3, $\ell=1$ & \bad &
+Evaluated spans collapse for a one-letter alphabet, so span inclusion no
+longer expresses syntactic refinement. \\
+Corollary 22 & \bad &
+The displayed numerical threshold fails in the smallest starred example. \\
+Theorem 25 comparison & \bad &
+The displayed reverse inequality from TGR to PTGR fails in a binary example. \\
+Remark 3(ii) & \bad/\fix &
+Union-insensitivity fails for disjoint sets, but is valid for overlapping
+sets; the application uses overlapping consecutive pairs. \\
+Lemma 16 / Claim 17 & \gap &
+The recursive block budget and dimension indices do not match Corollary 9. \\
+Theorem 13 gluing & \fix/\gap &
+Several complements and tail domains are mistyped; the induction architecture
+still looks plausible. \\
+Lemma 27 & \gap &
+Main bottleneck: projection domains, auxiliary-variable coding, extension of
+the coloring, and preservation of variable fibres all need repair. \\
+Lemma 28 & \gap &
+Depends on Lemma 27 and suppresses signature transport during iteration. \\
+Theorem 25 induction & \todo &
+The pullback coloring must be proved simple before the induction hypothesis is
+applied.  Finite tests are positive. \\
+Theorem 29 & \todo &
+The product theorem is stated without a separate proof. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Detailed issues}
+
+\subsection{The auxiliary node order}
+The paper orders shorter nodes first and uses reverse lexicographic order on
+ties.  For
+\[
+S=\{\varnothing,0,10\},
+\]
+the canonical tree/lexicographic map from $2^{<2}$ sends
+$0\mapsto0$ and $1\mapsto10$.  In the source the printed tie-break has
+$1\preccurlyeq0$, while in the target the length clause gives
+$0\prec10$.  Thus the canonical map cannot preserve the printed order.
+
+\paragraph{Lean.} \ok
+\lean{DualTree.OrderAudit.canonical_order_counterexample}.
+The local forward-lex repair is checked by
+\lean{DualTree.OrderAudit.forward_order_repairs_counterexample}.
+
+\paragraph{Proposed repair.}
+Use forward lexicographic order among nodes of equal length.  Exhaustive checks
+found zero failures for the canonical-order and interior tests in the tested
+binary and ternary ranges.  This does not by itself repair Remark 1.
+
+\subsection{Remark 2}
+With the printed order,
+\[
+S=\{\varnothing,0,1,10,11\}
+\]
+gives a semi-complete example whose interior
+$\{\varnothing,1\}$ violates the one-successor direction convention.
+The statement should be reproved after the order convention is corrected.
+
+\subsection{Remark 1}
+Two independent problems were found.
+\begin{enumerate}[label=(\alph*)]
+\item The condition $m\le n-|s|$ permits concatenations reaching level $n$,
+outside $b^{<n}$.  The evident safe bound is $m\le n-|s|-1$, modulo the
+authors' intended indexing convention.
+\item The claimed extension of every skew $T'\subseteq T$ to a complete skew
+subtree of the spliced tree has a finite counterexample even with forward lex.
+This needs a new statement, not just an index correction.
+\end{enumerate}
+
+\subsection{Span inclusion and Theorem 3 for one-letter alphabets}
+The paper defines refinement using
+\[
+[g]_{\Lambda}\subseteq[f]_{\Lambda}.
+\]
+If $|\Lambda|=1$, every variable word evaluates to the same constant word.
+For $b=2$, $n=2$, $k=m=1$, coloring by whether the unique variable root is
+$\varnothing$ gives two colors, while every one-variable word is a refinement
+of every candidate in the printed sense.  Hence Theorem 3 is false literally
+for $\ell=1$.
+
+\paragraph{Possible repairs.}
+Either require $\ell\ge2$, or define refinement syntactically by uniform
+substitution.  The latter is preferable.  For $|\Lambda|\ge2$, exhaustive
+small examples support the missing lemma that span inclusion forces exactly
+such a uniform substitution.  Formalizing this lemma is an early priority.
+
+\subsection{Corollary 22}
+Take
+\[
+d_0=d_1=0,\quad d_2=1,\quad b=\ell=r=2,\quad k=n=1,
+\]
+and color $(w,\varnothing)$ by $w(\varnothing)$.  The marked point is forced
+to be the root, so the coloring is smooth with $\Gamma_1=D_2$.  The displayed
+threshold permits height one, but the unique one-dimensional starred subspace
+contains both colors.  Thus the numerical statement is false as printed.
+
+There is also a boundary-definition issue: the corollary permits $d_2=0$ but
+uses $\operatorname{CT}(1,k,b,d_2,r)$, while Theorem 10 defines CT only for
+positive vector dimension.
+
+Finite search at the next binary height found no analogous obstruction, so a
+small dimensional margin may repair the argument.
+
+\subsection{The comparison after Theorem 25}
+The displayed estimate
+\[
+\operatorname{PTGR}(l,m,b,r)
+\le \operatorname{TGR}(k_l+1,m,b,\ell,r)
+\]
+fails already for $b=\ell=r=2$, $l=1$, $m=2$.  The right side is $2$, while a
+simple coloring at ambient height two defeats the sole height-two candidate.
+The qualitative reduction may survive with different parameters.
+
+The notation $\operatorname{PTGR}(l,m,b,r)$ also suppresses the fixed alphabet
+size $\ell$, although Lemmas 27 and 28 carry $\ell$ explicitly.  We should use
+$\operatorname{PTGR}(l,m,b,\ell,r)$ in the formal development.
+
+\subsection{Definition 24}
+$I_S$ was defined for complete skew trees, but Definition 24 applies it to a
+semi-complete tree.  The intended canonical transport should be defined
+explicitly rather than overloaded.
+
+\subsection{Lemma 16 and Claim 17}
+Corollary 9 returns a block length.  The recursion
+\[
+q_p=Q(\ell,d_2^p,d_2q_{p+1},r)
+\]
+is then used as though it already contains room for $q_{p+1}$ blocks.
+A safe recursion is of the form
+\[
+q_p=q_{p+1}Q(\ell,d_2^p,d_2q_{p+1},r).
+\]
+Claim 17 also shifts the $M_p$ dimensions by one.  We will first formalize the
+qualitative simultaneous refinement and only then restore quantitative bounds.
+
+\subsection{Theorem 13 gluing}
+The double induction itself appears well founded, but the final gluing contains
+concrete source defects:
+\begin{itemize}
+\item the definition of $B$ uses the wrong primed set in its cardinality
+condition;
+\item $\overline Y_i$ is written as a complement in $[b^k]$ although
+$Y_i\subseteq[b^M]$;
+\item the tail formulas quantify over $b^{n-M}$ where the word domain is
+$b^{<n-M}$.
+\end{itemize}
+These are candidates for local source repairs, but the complete gluing should
+be Lean-checked before being marked harmless.
+
+\subsection{Lemma 27}
+This is the present structural bottleneck.
+\begin{enumerate}[label=(\alph*)]
+\item With $n'=n-m'$, the map
+$P_i(z)=I_T(I_T^{-1}(t_i)^\frown z)$ can leave the domain of $I_T$ for
+frontier nodes at the larger intrinsic height.  A common safe tail loses one
+level, or the cones need different tail heights.
+\item The requested surjection from $\{0,\ldots,m'\}$ to all interior
+variables can be cardinally impossible and can assign incomparable variables
+to a cone.  Only ancestor variables visible from the given frontier cone can
+be legitimate targets.
+\item The enlarged alphabet
+$\Lambda'=\Lambda\sqcup\{0,\ldots,m'\}$ is introduced but is not consistently
+used in the mixed-product domain.
+\item The induced coloring is defined on the starred part, while Corollary 22
+takes a coloring of the full mixed-product space.  A compatible extension is
+not supplied.
+\item The reconstruction tests the occurrence position $P_i(z)$ rather than
+the root $P_i(y)$ of the variable $v_y$, so different occurrences of one
+variable fibre can be frozen differently.
+\end{enumerate}
+Therefore the final inclusion of every continuation of the fixed signature in
+the monochromatic image is not established.  We should reconstruct the local
+coding lemma rather than formalize these lines verbatim.
+
+\subsection{Lemma 28 and Theorem 25}
+Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
+model signature in $b^{<m}$ and the corresponding signature observable in the
+current variable word.
+
+In Theorem 25, after pulling the signature-coloring back along $Q$, the proof
+invokes the induction hypothesis without showing that the new coloring is
+simple.  Tree-only finite tests are positive: the modeled $Q$ is onto in the
+tested $l=1,2$ cases and tested simple colorings remain simple.  This should be
+isolated as a lemma.
+
+\subsection{Appendix Remark 3(ii)}
+The unrestricted union assertion is false for disjoint $L_1,L_2$.  It becomes
+true when $L_1\cap L_2\ne\varnothing$: use a bridge letter in the intersection
+and transitivity.  This is sufficient for the actual application
+$L_j=\{a_j,a_{j+1}\}$.
+
+\paragraph{Lean.} \ok
+The abstract bridge is
+\lean{DualTree.Insensitivity.constantOn_union_of_overlap}.
+The next step is to instantiate it for starred insensitivity itself.
+
+\subsection{Lemma 31}
+Checking the rendered PDF removes two OCR false alarms: the lemma assumes
+$k\ge2$, and the proof later says to assume $k\ge3$.  Two genuine index shifts
+remain:
+\begin{itemize}
+\item at stage $i$ the new variable is in slot $i-1$, not $i$;
+\item the displayed cardinality of $J$ has $m-i-1$, while substitution into
+$d_{i-1}-p_i$ gives the term with $m-i$.
+\end{itemize}
+These currently look local.
+
+\subsection{Theorem 29}
+The product theorem is only asserted to follow by modifying the preceding
+argument.  It remains unverified.
+
+\section{Computational evidence retained}
+Before Lean formalization, exhaustive finite programs established or tested:
+\begin{itemize}
+\item failures of the printed auxiliary order and Remark 2, with zero failures
+of the corresponding local tests after the forward-lex change;
+\item a separate forward-lex counterexample to Remark 1's extension claim;
+\item collapse of refinement for $|\Lambda|=1$ and no nonsyntactic inclusion
+in the tested two-letter instances;
+\item the height-one Corollary 22 counterexample;
+\item the small counterexample to the displayed PTGR/TGR inequality;
+\item 1244 finite overlap tests supporting the repaired Remark 3(ii);
+\item onto behavior of the Theorem 25 signature map and simplicity preservation
+in the tested tree-only cases.
+\end{itemize}
+
+\section{Formalization order}
+\begin{enumerate}
+\item finite homogeneous trees, prefix and the two candidate auxiliary orders;
+\item skew, complete skew and semi-complete trees, followed by Remarks 1--2;
+\item variable words, evaluation, syntactic substitution and span inclusion;
+\item the $|\Lambda|\ge2$ substitution/refinement lemma and the unary
+counterexample;
+\item starred insensitivity and the Appendix argument;
+\item mixed products and Theorem 13;
+\item signatures and a repaired Lemma 27;
+\item Lemma 28 and Theorem 25;
+\item Theorem 3 and finally the product theorem.
+\end{enumerate}
+
+Qualitative statements take priority over the large recursive bounds until the
+underlying constructions are type-correct.
+
+\end{document}
