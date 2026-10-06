@@ -95,6 +95,13 @@ gives a semi-complete example whose interior
 $\{\varnothing,1\}$ violates the one-successor direction convention.
 The statement should be reproved after the order convention is corrected.
 
+\paragraph{Lean status.}
+The concrete witness is certified by the executable Section 3 checker:
+\lean{DualTree.BinarySkewAudit.remark2_witness_is_semicomplete_printed} and
+\lean{DualTree.BinarySkewAudit.remark2_interior_not_skew_printed}.  Equivalence
+of this executable checker with the final propositional skew-tree definition
+is still \todo.
+
 \subsection{Remark 1}
 Two independent problems were found.
 \begin{enumerate}[label=(\alph*)]
@@ -122,6 +129,11 @@ Either require $\ell\ge2$, or define refinement syntactically by uniform
 substitution.  The latter is preferable.  For $|\Lambda|\ge2$, exhaustive
 small examples support the missing lemma that span inclusion forces exactly
 such a uniform substitution.  Formalizing this lemma is an early priority.
+
+\paragraph{Lean status.}
+\ok The singleton-alphabet collapse of evaluated spans is formalized as
+\lean{DualTree.SpanAudit.singleton_span_subset}.  The exact tree-variable-word
+counterexample and the $|\Lambda|\ge2$ substitution lemma remain \todo.
 
 \subsection{Corollary 22}
 Take
