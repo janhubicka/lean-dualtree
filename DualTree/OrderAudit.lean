@@ -30,15 +30,27 @@ def boolLexLEB : List Bool → List Bool → Bool
 def boolLexLE (s t : List Bool) : Prop :=
   boolLexLEB s t = true
 
+instance boolLexLE_decidable (s t : List Bool) : Decidable (boolLexLE s t) := by
+  unfold boolLexLE
+  infer_instance
+
 /-- The auxiliary order as printed in the paper: length first, reverse lex on ties. -/
 def paperAux (s t : List Bool) : Prop :=
   s.length < t.length ∨
     (s.length = t.length ∧ boolLexLE t s)
 
+instance paperAux_decidable (s t : List Bool) : Decidable (paperAux s t) := by
+  unfold paperAux
+  infer_instance
+
 /-- Candidate repaired convention: length first, forward lex on ties. -/
 def forwardAux (s t : List Bool) : Prop :=
   s.length < t.length ∨
     (s.length = t.length ∧ boolLexLE s t)
+
+instance forwardAux_decidable (s t : List Bool) : Decidable (forwardAux s t) := by
+  unfold forwardAux
+  infer_instance
 
 theorem source_reverse_comparison :
     paperAux [true] [false] := by
