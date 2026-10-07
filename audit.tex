@@ -275,7 +275,25 @@ evaluated with alphabet letters as printed.
 This appears to be a notational substitution error rather than a defect in the
 Hales--Jewett reduction: after the correction, $w_T^i$ records branch
 directions while $w_\Lambda^i$ records letters, exactly as required by the
-operator $Q$.  A source-faithful Lean formalization of Proposition~15 remains
+operator $Q$.
+
+\paragraph{Lean progress.}
+The supporting root-trace lemma
+\lean{DualTree.MixedProduct.prefix_values_eq_of_root_values_eq}
+shows that for two evaluations of the same tree-variable word, agreement at
+the variable roots along a chosen leaf implies agreement along the entire
+predecessor chain.  The theorem
+\lean{DualTree.MixedProduct.sameUpTrace_iff_supportTraceRecord_eq_of_mem_span}
+transfers this statement to the mixed-product span, retaining the chosen
+$D_1$ leaves.  Finally,
+\lean{DualTree.MixedProduct.upCanonical_iff_same_supportTraceRecord}
+formalizes factorization of a Lemma~14-canonical coloring through these
+variable-root records.
+
+This is the algebraic interface underlying Proposition~15's $Q$.
+The identification of the root records with a word of length $M$ over the
+alphabet $(\Lambda\times\{0,\ldots,b-1\})^{D_1}$, surjectivity of $Q$,
+and the Hales--Jewett construction of the refined skew subtrees remain
 \todo.
 
 \subsection{Lemma 16 and Claim 17}

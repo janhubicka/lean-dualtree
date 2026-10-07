@@ -94,3 +94,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedProduct.sameUpTrace_iff_record_eq
 #print axioms DualTree.MixedProduct.upCanonical_iff_same_record
 #print axioms DualTree.MixedProduct.color_eq_of_upCanonical_of_same_record
+
+#print axioms DualTree.MixedProduct.prefix_values_eq_of_root_values_eq
+#print axioms DualTree.MixedProduct.sameUpTrace_iff_supportTraceRecord_eq_of_mem_span
+#print axioms DualTree.MixedProduct.upCanonical_iff_same_supportTraceRecord
