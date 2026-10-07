@@ -23,3 +23,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.SpanAudit.span_subset_iff_substitution
 #print axioms DualTree.SkewTree.singleton_skewB
 #print axioms DualTree.SkewTree.singleton_complete_oneB
+
+#print axioms DualTree.StarInsensitivity.related_iff_printed
+#print axioms DualTree.StarInsensitivity.related_normalize
+#print axioms DualTree.StarInsensitivity.normalize_two_eq_of_related_union
+#print axioms DualTree.StarInsensitivity.insensitive_union_of_overlap
