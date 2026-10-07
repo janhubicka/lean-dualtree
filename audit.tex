@@ -95,12 +95,13 @@ gives a semi-complete example whose interior
 $\{\varnothing,1\}$ violates the one-successor direction convention.
 The statement should be reproved after the order convention is corrected.
 
-\paragraph{Lean status.}
-The concrete witness is certified by the executable Section 3 checker:
-\lean{DualTree.BinarySkewAudit.remark2_witness_is_semicomplete_printed} and
-\lean{DualTree.BinarySkewAudit.remark2_interior_not_skew_printed}.  Equivalence
-of this executable checker with the final propositional skew-tree definition
-is still \todo.
+\paragraph{Lean status.} \ok
+The concrete witness is now certified directly in the generic Section~3
+definitions used by the development:
+\lean{DualTree.GenericSkewAudit.remark2_semicomplete_printed} and
+\lean{DualTree.GenericSkewAudit.remark2_interior_not_skew_printed}.
+The older binary executable checker is retained only as an independent finite
+cross-check; no checker-equivalence assumption is needed.
 
 \subsection{Remark 1}
 Two independent problems were found.
@@ -113,14 +114,17 @@ subtree of the spliced tree has a finite counterexample even with forward lex.
 This needs a new statement, not just an index correction.
 \end{enumerate}
 
-\paragraph{Lean status.}
-\ok The substantive forward-lex failure is now certified in
-\lean{DualTree.Remark1Audit.no_forward_complete_extension}.  The chosen
+\paragraph{Lean status.} \ok
+The substantive forward-lex failure is now certified directly in the generic
+skew-tree definitions by
+\lean{DualTree.GenericSkewAudit.no_forward_complete_extension}.  The ambient
 spliced tree and the prescribed intersection tree are separately certified
-skew by \lean{DualTree.Remark1Audit.forwardS_is_skew} and
-\lean{DualTree.Remark1Audit.forwardTprime_is_skew}.  The remaining task for
-this item is not verification of the printed statement---it is false---but
-identifying the intended replacement needed downstream.
+skew by \lean{DualTree.GenericSkewAudit.forwardS_is_skew} and
+\lean{DualTree.GenericSkewAudit.forwardTprime_is_skew}.  The earlier
+\lean{DualTree.Remark1Audit} Boolean audit remains as an independent
+cross-check.  The remaining task is therefore not verification of the printed
+statement---it is false---but identifying the replacement actually needed
+downstream.
 
 \subsection{Span inclusion and Theorem 3 for one-letter alphabets}
 The paper defines refinement using
