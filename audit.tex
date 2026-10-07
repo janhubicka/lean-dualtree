@@ -483,11 +483,25 @@ by their underlying roots; its preservation under syntactic refinement
 is proved by
 \lean{DualTree.StarredSignature.prefixWord_eq_of_syntactic_refinement}.
 
+\paragraph{Conditional removal of the boundary hypothesis.} \todo
+The lemma \lean{DualTree.StarredSignature.leaf_not_before_of_fullBefore}
+proves that, when the branching number is positive and all nodes
+preceding a cut branch fully, no leaf can precede that cut.
+Using the interior of the starred object,
+\lean{DualTree.StarredSignature.exceptionalLeaves_not_before_of_fullBefore}
+therefore proves that every exceptional leaf in Definition~26 lies outside
+$D$, \emph{provided} the cut satisfies the exact
+$\operatorname{fullBeforeB}$ clause of Section~3.
+The constructor
+\lean{DualTree.StarredSignature.signatureTree_of_fullBefore}
+then eliminates the per-leaf existence hypotheses while retaining an
+explicit full-branching hypothesis at the cut.
+
 This does \emph{not} yet certify the complete signature map on all of
-$W^*_{v,l}$: in particular, the necessary existence of each exceptional
-boundary minimum under the paper's semi-complete/skew hypotheses, the
-correctness of the resulting signature tree, and the comparison of
-observable signatures under refinement remain \todo.
+$W^*_{v,l}$: we still need to derive the full-branching property for
+$s^*=\max_{\preccurlyeq}\operatorname{Int}(S)$ from the
+semi-complete/skew axioms, verify the resulting signature tree, and
+prove invariance of all observable signatures under refinement.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
