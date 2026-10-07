@@ -113,6 +113,15 @@ subtree of the spliced tree has a finite counterexample even with forward lex.
 This needs a new statement, not just an index correction.
 \end{enumerate}
 
+\paragraph{Lean status.}
+\ok The substantive forward-lex failure is now certified in
+\lean{DualTree.Remark1Audit.no_forward_complete_extension}.  The chosen
+spliced tree and the prescribed intersection tree are separately certified
+skew by \lean{DualTree.Remark1Audit.forwardS_is_skew} and
+\lean{DualTree.Remark1Audit.forwardTprime_is_skew}.  The remaining task for
+this item is not verification of the printed statement---it is false---but
+identifying the intended replacement needed downstream.
+
 \subsection{Span inclusion and Theorem 3 for one-letter alphabets}
 The paper defines refinement using
 \[
@@ -124,16 +133,20 @@ $\varnothing$ gives two colors, while every one-variable word is a refinement
 of every candidate in the printed sense.  Hence Theorem 3 is false literally
 for $\ell=1$.
 
-\paragraph{Possible repairs.}
-Either require $\ell\ge2$, or define refinement syntactically by uniform
-substitution.  The latter is preferable.  For $|\Lambda|\ge2$, exhaustive
-small examples support the missing lemma that span inclusion forces exactly
-such a uniform substitution.  Formalizing this lemma is an early priority.
+\paragraph{Repair and Lean status.}
+\ok The algebraic issue is now completely separated from the tree geometry.
+The singleton-alphabet collapse is formalized as
+\lean{DualTree.SpanAudit.singleton_span_subset}.  Conversely, if the alphabet
+contains two distinct letters and every source variable occurs, then
+\lean{DualTree.SpanAudit.span_subset_iff_substitution} proves that evaluated
+span inclusion is equivalent to uniform syntactic substitution.  The proof is
+factored through preservation of source constants and uniformity on each
+source variable fibre.
 
-\paragraph{Lean status.}
-\ok The singleton-alphabet collapse of evaluated spans is formalized as
-\lean{DualTree.SpanAudit.singleton_span_subset}.  The exact tree-variable-word
-counterexample and the $|\Lambda|\ge2$ substitution lemma remain \todo.
+Thus later uses of span inclusion are justified once the paper is restricted
+to $|\Lambda|\ge2$ (or, preferably, once refinement is defined syntactically).
+The remaining tree-specific task is to combine this algebraic lemma with the
+variable-support/root conditions.
 
 \subsection{Corollary 22}
 Take
