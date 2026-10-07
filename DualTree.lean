@@ -14,3 +14,4 @@ import DualTree.Corollary22Audit
 import DualTree.KVariableWord
 import DualTree.VectorSkew
 import DualTree.MixedProduct
+import DualTree.MixedGood
