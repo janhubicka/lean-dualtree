@@ -56,3 +56,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.KVariableWord.refines_trans
 #print axioms DualTree.KVariableWord.refines_iff_syntactic
 #print axioms DualTree.KVariableWord.support_subset_of_refines
+
+#print axioms DualTree.KVariableWord.substitute_compose
+#print axioms DualTree.KVariableWord.syntacticRefines_refl
+#print axioms DualTree.KVariableWord.syntacticRefines_trans
+#print axioms DualTree.KVariableWord.syntacticRefines_refines
+#print axioms DualTree.KVariableWord.support_subset_of_syntacticRefines
