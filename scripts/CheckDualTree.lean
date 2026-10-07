@@ -33,3 +33,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.StarInsensitivity.singleton_insensitive
 #print axioms DualTree.StarInsensitivity.disjoint_union_failure
 #print axioms DualTree.StarInsensitivity.starInsensitive_union_of_overlap
+
+#print axioms DualTree.Corollary22Audit.color_is_smooth
+#print axioms DualTree.Corollary22Audit.no_monochromatic_complete_candidate
+#print axioms DualTree.Corollary22Audit.canonical_complete_one
+#print axioms DualTree.Corollary22Audit.canonical_good_for_every_coloring
