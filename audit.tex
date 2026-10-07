@@ -497,11 +497,25 @@ The constructor
 then eliminates the per-leaf existence hypotheses while retaining an
 explicit full-branching hypothesis at the cut.
 
-This does \emph{not} yet certify the complete signature map on all of
-$W^*_{v,l}$: we still need to derive the full-branching property for
-$s^*=\max_{\preccurlyeq}\operatorname{Int}(S)$ from the
-semi-complete/skew axioms, verify the resulting signature tree, and
-prove invariance of all observable signatures under refinement.
+\paragraph{Last-interior witness.} \todo
+The theorem
+\lean{DualTree.StarredSignature.fullBefore_at_maxInterior}
+uses clause~(iv) of the skew-tree definition: its distinguished branching
+node has at least one successor while all later nodes are leaves.
+Consequently any maximal interior vertex coincides with this branching
+witness and satisfies the full-before clause.  The corollary
+\lean{DualTree.StarredSignature.exceptionalLeaves_not_before_of_maxInterior}
+establishes the missing existence condition for every exceptional leaf.
+The constructor
+\lean{DualTree.StarredSignature.signatureTree_at_maxInterior}
+therefore no longer requires a separate full-branching or per-leaf
+hypothesis once the maximal interior cut is provided.
+
+The complete signature map is still \todo: we need to formalize the
+existence/canonical choice of the maximal interior vertex for every
+nonempty starred object, verify the structural properties of the
+resulting signature tree, and prove invariance of all observable
+signatures under refinement and the signature-cone coding of Lemma~27.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
