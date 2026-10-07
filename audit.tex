@@ -164,7 +164,11 @@ syntactically instead would remove this degeneracy without excluding unary
 alphabets.
 
 \subsection{Corollary 22}
-The rendered PDF is important here: the source says
+The rendered PDF is essential here because the text extractor repeatedly drops
+equality bars.  Definition~12 defines
+\operatorname{MTHJ} as the least positive $n_0$ for which the mixed-product
+conclusion holds for every $n\ge n_0$, Theorem~10 likewise uses
+$n\ge n_0$ in the definition of \operatorname{CT}, and Corollary~22 assumes
 \[
 d_0+d_1+d_2\ge1
 \qquad\text{and}\qquad
@@ -172,20 +176,22 @@ n\ge
 \operatorname{MTHJ}\bigl(d_0,d_1,d_2,b,\ell,
 \operatorname{CT}(1,k,b,d_2,r),r\bigr).
 \]
-This is stronger by one boundary value than what the definition of MTHJ
-supplies: MTHJ is introduced as the least positive threshold $n_0$ for which
-the mixed-product conclusion is guaranteed for every $n>n_0$.  Thus the
-displayed $n\ge\operatorname{MTHJ}$ cannot be obtained directly from
-Theorem~13; the natural correction is
-$n>\operatorname{MTHJ}(\cdots)$.
+Thus the height-one obstruction below is not an artefact of a strict/non-strict
+threshold mismatch; it is a genuine counterexample to the displayed
+Corollary~22.
 
-The boundary value is genuinely bad in the smallest case.  Take
+Take
 \[
 d_0=d_1=0,\quad d_2=1,\quad b=\ell=r=2,\quad k=n=1,
 \]
 and color $(w,\varnothing)$ by $w(\varnothing)$.  The marked point is forced
 to be the root, so the coloring is smooth with $\Gamma_1=D_2$.  Every genuine
-one-dimensional candidate has both colors in its starred span.
+one-dimensional candidate has both colors in its starred span.  At the same
+time the canonical height-one subspace is $c$-good for every coloring, so the
+relevant mixed-product threshold is $1$; and
+$\operatorname{CT}(1,1,2,1,r)=1$ is immediate because the ambient vector tree
+at height one has only the root singleton.  Hence the hypotheses of the
+printed corollary really do include this bad case.
 
 \paragraph{Lean status.} \ok
 The height-one mechanism is source-facing:
@@ -196,15 +202,28 @@ that no complete one-variable candidate has monochromatic starred span.
 Moreover,
 \lean{DualTree.Corollary22Audit.canonical_good_for_every_coloring}
 proves that at ambient height one the canonical one-dimensional subspace is
-$c$-good for every coloring, the local fact behind the relevant
-$\operatorname{MTHJ}=1$ boundary.  The numerical CT wrapper
-$\operatorname{CT}(1,1,2,1,r)=1$ is mathematically immediate but has not yet
-been packaged as a general CT-number definition in Lean.
+$c$-good for every coloring, the local fact behind
+$\operatorname{MTHJ}(0,0,1,2,2,1,r)=1$.  The equally trivial CT identity has
+not yet been wrapped in the general vector-CT API in Lean.
+
+\paragraph{Likely repair.}
+The obstruction identifies the missing resource in the usual proof:
+$c$-goodness at one marked root can still leave dependence on the letter at
+that root.  With two distinct variable roots one can keep the underlying word
+fixed while moving the marked point, and combine smoothness with $c$-goodness
+to eliminate this last dependence.  A natural corrected intermediate
+dimension is therefore
+\[
+H=\max\{2,\operatorname{CT}(1,k,b,d_2,r)\},
+\]
+followed by
+$\operatorname{MTHJ}(d_0,d_1,d_2,b,\ell,H,r)$.
+This is consistent with the exhaustive binary height-two checks from the
+pre-Lean audit.  The general corrected proof remains \todo.
 
 There is a second formal boundary issue: Corollary~22 permits $d_2=0$ but
-writes $\operatorname{CT}(1,k,b,d_2,r)$, while Theorem~10 introduces CT only
-for positive vector dimension.  The case $d_2=0$ should be split off (it is
-already covered by the non-pointed mixed-product theorem) or CT should be
+writes $\operatorname{CT}(1,k,b,d_2,r)$, while Theorem~10 assumes positive
+vector dimension $d$.  The case $d_2=0$ should be split off or CT should be
 extended by convention.
 
 \subsection{The comparison after Theorem 25}
