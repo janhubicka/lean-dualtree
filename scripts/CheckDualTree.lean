@@ -65,3 +65,6 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.VectorSkew.binaryHeightOneVector_complete
 #print axioms DualTree.VectorSkew.binaryHeightOneVectorReversed_not_complete
+
+#print axioms DualTree.GluingAudit.short_tail_stays_in_hom_tree
+#print axioms DualTree.GluingAudit.exact_tail_leaves_hom_tree
