@@ -164,21 +164,48 @@ syntactically instead would remove this degeneracy without excluding unary
 alphabets.
 
 \subsection{Corollary 22}
-Take
+The rendered PDF is important here: the source says
+\[
+d_0+d_1+d_2\ge1
+\qquad\text{and}\qquad
+n\ge
+\operatorname{MTHJ}\bigl(d_0,d_1,d_2,b,\ell,
+\operatorname{CT}(1,k,b,d_2,r),r\bigr).
+\]
+This is stronger by one boundary value than what the definition of MTHJ
+supplies: MTHJ is introduced as the least positive threshold $n_0$ for which
+the mixed-product conclusion is guaranteed for every $n>n_0$.  Thus the
+displayed $n\ge\operatorname{MTHJ}$ cannot be obtained directly from
+Theorem~13; the natural correction is
+$n>\operatorname{MTHJ}(\cdots)$.
+
+The boundary value is genuinely bad in the smallest case.  Take
 \[
 d_0=d_1=0,\quad d_2=1,\quad b=\ell=r=2,\quad k=n=1,
 \]
 and color $(w,\varnothing)$ by $w(\varnothing)$.  The marked point is forced
-to be the root, so the coloring is smooth with $\Gamma_1=D_2$.  The displayed
-threshold permits height one, but the unique one-dimensional starred subspace
-contains both colors.  Thus the numerical statement is false as printed.
+to be the root, so the coloring is smooth with $\Gamma_1=D_2$.  Every genuine
+one-dimensional candidate has both colors in its starred span.
 
-There is also a boundary-definition issue: the corollary permits $d_2=0$ but
-uses $\operatorname{CT}(1,k,b,d_2,r)$, while Theorem 10 defines CT only for
-positive vector dimension.
+\paragraph{Lean status.} \ok
+The height-one mechanism is source-facing:
+\lean{DualTree.Corollary22Audit.color_is_smooth} proves the specialized
+Definition~21 smoothness condition, and
+\lean{DualTree.Corollary22Audit.no_monochromatic_complete_candidate} proves
+that no complete one-variable candidate has monochromatic starred span.
+Moreover,
+\lean{DualTree.Corollary22Audit.canonical_good_for_every_coloring}
+proves that at ambient height one the canonical one-dimensional subspace is
+$c$-good for every coloring, the local fact behind the relevant
+$\operatorname{MTHJ}=1$ boundary.  The numerical CT wrapper
+$\operatorname{CT}(1,1,2,1,r)=1$ is mathematically immediate but has not yet
+been packaged as a general CT-number definition in Lean.
 
-Finite search at the next binary height found no analogous obstruction, so a
-small dimensional margin may repair the argument.
+There is a second formal boundary issue: Corollary~22 permits $d_2=0$ but
+writes $\operatorname{CT}(1,k,b,d_2,r)$, while Theorem~10 introduces CT only
+for positive vector dimension.  The case $d_2=0$ should be split off (it is
+already covered by the non-pointed mixed-product theorem) or CT should be
+extended by convention.
 
 \subsection{The comparison after Theorem 25}
 The displayed estimate
