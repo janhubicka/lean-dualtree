@@ -24,3 +24,4 @@ import DualTree.SupportTrace
 import DualTree.Lemma27Audit
 import DualTree.RootFreezing
 import DualTree.PartialColoring
+import DualTree.SmoothRelation
