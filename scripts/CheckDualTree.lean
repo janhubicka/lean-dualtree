@@ -119,3 +119,13 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27Repair.visibleAncestors_length_le_height
 #print axioms DualTree.Lemma27Repair.auxiliary_symbols_cover_indices
 #print axioms DualTree.Lemma27Repair.visibleAncestors_auxiliary_coverage
+
+#print axioms DualTree.CutPreservation.prefix_eq_of_length_eq
+#print axioms DualTree.CutPreservation.lengthTie_of_prefix
+#print axioms DualTree.CutPreservation.paperAux_of_prefix
+#print axioms DualTree.CutPreservation.forwardAux_of_prefix
+#print axioms DualTree.CutPreservation.underlyingSymbol_eq_of_syntactic_cut
+#print axioms DualTree.CutPreservation.paperCut_preserved_of_syntactic_refinement
+#print axioms DualTree.CutPreservation.forwardCut_preserved_of_syntactic_refinement
+#print axioms DualTree.CutPreservation.paperCut_preserved_of_span_refinement
+#print axioms DualTree.CutPreservation.forwardCut_preserved_of_span_refinement

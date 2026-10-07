@@ -397,6 +397,34 @@ $((f_i)_{i\in[d]},(X_i)_{i\in D_1})$ is $(k+1)$-dimensional and $c$-good.
 That final verification should be carried out after the corrected mixed-product
 and Lemma~16 interfaces are formalized in Lean.
 
+\subsection{Definition 26: preservation up to the distinguished node}
+Immediately after Definition~26, the paper observes that a refinement
+$f'$ retaining every root of $f$ at or before the distinguished node $t_0$
+leaves the word unchanged at every ambient position at or before $t_0$
+in the auxiliary order.  This depends on a small but important order fact:
+if $r\sqsubseteq s\preccurlyeq t_0$, then $r\preccurlyeq t_0$.
+
+\paragraph{Lean validation.} \todo
+\lean{DualTree.CutPreservation.paperAux_of_prefix} and
+\lean{DualTree.CutPreservation.forwardAux_of_prefix} establish this monotonicity
+for both the printed reverse-lex convention and the proposed forward-lex
+repair.  The lemma
+\lean{DualTree.CutPreservation.underlyingSymbol_eq_of_syntactic_cut}
+then shows that, under syntactic refinement, retaining the roots up to $t_0$
+preserves every constant or variable symbol at all ambient positions up to
+$t_0$.  To compare variable symbols belonging to different support-dependent
+types, the formal statement forgets the subtype membership proof and compares
+their underlying root nodes.
+
+For an alphabet with at least two letters,
+\lean{DualTree.CutPreservation.paperCut_preserved_of_span_refinement}
+and its forward-lex analogue recover the same conclusion from the paper's
+evaluated-span inclusion.  For a singleton alphabet this inference is invalid,
+as the earlier counterexample to Theorem~3 demonstrates.  The stronger
+assertion following Definition~26---that the entire set of signatures observable
+at $t_0$ is unchanged---still requires a formal signature-transport argument
+and is \todo.
+
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 \begin{enumerate}[label=(\alph*)]
