@@ -45,3 +45,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UnaryMainAudit.leftWord_complete
 #print axioms DualTree.UnaryMainAudit.no_homogeneous_one
 #print axioms DualTree.UnaryMainAudit.no_unary_eventual_bound
+
+#print axioms DualTree.VectorSkew.binaryHeightOneVector_complete
+#print axioms DualTree.VectorSkew.binaryHeightOneVectorReversed_not_complete
