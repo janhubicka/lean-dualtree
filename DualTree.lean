@@ -9,3 +9,4 @@ import DualTree.SkewTree
 import DualTree.VariableWord
 import DualTree.StarInsensitivity
 import DualTree.Theorem3Audit
+import DualTree.Corollary22Audit
