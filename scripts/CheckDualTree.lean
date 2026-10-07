@@ -45,3 +45,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UnaryMainAudit.leftWord_complete
 #print axioms DualTree.UnaryMainAudit.no_homogeneous_one
 #print axioms DualTree.UnaryMainAudit.no_unary_eventual_bound
+
+#print axioms DualTree.VariableWord.supportNodes_nodup
+#print axioms DualTree.KVariableWord.refines_refl
+#print axioms DualTree.KVariableWord.refines_trans
+#print axioms DualTree.KVariableWord.refines_iff_syntactic
+#print axioms DualTree.KVariableWord.support_subset_of_refines
