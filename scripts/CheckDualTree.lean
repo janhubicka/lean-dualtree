@@ -39,3 +39,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Theorem3Audit.supports_differ
 #print axioms DualTree.Theorem3Audit.unary_spans_equal
 #print axioms DualTree.Theorem3Audit.two_colors_below_every_candidate
+
+#print axioms DualTree.VariableWord.supportNodes_nodup
+#print axioms DualTree.KVariableWord.refines_refl
+#print axioms DualTree.KVariableWord.refines_trans
+#print axioms DualTree.KVariableWord.refines_iff_syntactic
+#print axioms DualTree.KVariableWord.support_subset_of_refines
