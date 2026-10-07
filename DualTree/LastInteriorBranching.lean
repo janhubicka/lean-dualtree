@@ -117,6 +117,24 @@ theorem fullBefore_at_maxInterior
     cases hcutLeaf
 
 /--
+Every exceptional leaf of a starred tree lies outside the strict
+initial segment preceding the maximal interior node.
+-/
+theorem exceptionalLeaves_not_before_of_maxInterior
+    {b n l : Nat} {α : Type*}
+    (hb : 0 < b)
+    (O : StarredWord b n l α (SkewTree.paperAuxB (b := b)))
+    (cut : Node b)
+    (hcut : cut ∈ SkewTree.interior O.tree)
+    (hmax : ∀ t, t ∈ SkewTree.interior O.tree →
+      SkewTree.paperAuxB t cut = true)
+    (t : Node b)
+    (ht : t ∈ exceptionalLeaves O cut) :
+    ¬ SignatureBoundary.BeforeCut cut t :=
+  exceptionalLeaves_not_before_of_fullBefore hb O cut hcut
+    (fullBefore_at_maxInterior O cut hcut hmax) t ht
+
+/--
 For an actual maximal interior cut of a starred tree, the signature
 boundary tree is now defined without an extra full-before assumption.
 -/
