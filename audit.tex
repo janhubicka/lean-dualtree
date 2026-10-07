@@ -425,6 +425,35 @@ assertion following Definition~26---that the entire set of signatures observable
 at $t_0$ is unchanged---still requires a formal signature-transport argument
 and is \todo.
 
+\subsection{Definition 26: the signature path boundary}
+The signature $(S',g')$ of Definition~26 includes, for certain leaves $t$,
+the least ambient prefix of $t$ outside
+\[
+D=\{s\in b^{<n}:s\preccurlyeq s^*,\ s\ne s^*\},
+\qquad s^*=\max_{\preccurlyeq}\operatorname{Int}(S).
+\]
+This is an operation on the \emph{ambient} predecessor path, which can
+contain nodes not in the skew support tree.
+
+\paragraph{Lean validation.} \todo
+\lean{DualTree.SignatureBoundary.Boundary} encodes the first prefix
+outside $D$, and
+\lean{DualTree.SignatureBoundary.existsUnique_boundary_on_path}
+proves that this prefix exists uniquely whenever the leaf $t$ itself
+lies outside $D$.  The choice
+\lean{DualTree.SignatureBoundary.firstBoundary} therefore has an
+explicit existence argument, and its specification is checked separately.
+This builds on the verified finite frontier decomposition, but does not
+silently interpret a potentially undefined minimum.
+
+The remaining geometric obligation is to prove that every leaf selected
+in the printed definition---a leaf outside $\operatorname{Int}(S)$ that is
+not a descendant of $s^*$---is indeed outside $D$ under the
+semi-complete/skew hypotheses.  We must then establish that the resulting
+signature boundary nodes interact with the cone frontier of Lemma~27
+as claimed.  The entire signature and its transport have not yet been
+validated.
+
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
