@@ -39,3 +39,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Theorem3Audit.supports_differ
 #print axioms DualTree.Theorem3Audit.unary_spans_equal
 #print axioms DualTree.Theorem3Audit.two_colors_below_every_candidate
+
+#print axioms DualTree.Corollary22Audit.color_is_smooth
+#print axioms DualTree.Corollary22Audit.no_monochromatic_complete_candidate
+#print axioms DualTree.Corollary22Audit.canonical_complete_one
+#print axioms DualTree.Corollary22Audit.canonical_good_for_every_coloring
