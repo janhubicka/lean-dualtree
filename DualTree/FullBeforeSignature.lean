@@ -46,14 +46,16 @@ theorem filter_conj_eq_nil {β : Type*}
     (xs : List β) (p q : β → Bool)
     (hp : xs.filter p = []) :
     xs.filter (fun x => p x && q x) = [] := by
-  have hfilter :
-      xs.filter (fun x => p x && q x) =
-        (xs.filter p).filter q := by
-    induction xs with
+  have hfilter : ∀ ys : List β,
+      ys.filter (fun x => p x && q x) =
+        (ys.filter p).filter q := by
+    intro ys
+    induction ys with
     | nil => rfl
-    | cons x xs ih =>
-        cases hx : p x <;> simp [List.filter_cons, hx, ih]
-  rw [hfilter, hp]
+    | cons x ys ih =>
+        cases hx : p x <;> cases hq : q x <;>
+          simp [List.filter_cons, hx, hq, ih]
+  rw [hfilter xs, hp]
   rfl
 
 /--
@@ -78,7 +80,7 @@ theorem leaf_not_before_of_fullBefore
       (SkewTree.allFin b).all
         (fun j => SkewTree.uniqueBranchB S leaf j) = true := by
     have hh := (List.all_eq_true.mp hfull) leaf hmem
-    simpa [SkewTree.fullBeforeB, htest] using hh
+    simpa [htest] using hh
   have hbranch : SkewTree.uniqueBranchB S leaf i = true :=
     (List.all_eq_true.mp hentry) i hi
   have hcount : (SkewTree.branchWitnesses S leaf i).length = 1 := by
