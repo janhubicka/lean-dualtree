@@ -427,6 +427,23 @@ and is \todo.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
+
+\paragraph{Minimal frontier geometry.} \todo
+Let $T=\operatorname{ws}(f)$ and cut at $t_0$ in the auxiliary order.
+The first geometric step in the proof takes the prefix-minimal elements
+of $T\setminus\{t\in T:t\preccurlyeq t_0\}$.  The formal theorem
+\lean{DualTree.CutFrontier.paperCut_exists_unique_frontier}
+proves, in fact for any finite node set $T$, that every node of this
+complement lies above exactly one such minimal point.  The lemma
+\lean{DualTree.CutFrontier.frontier_antichain} makes the pairwise
+incomparability of these frontier roots explicit.  The same assertions
+hold under the forward-lex repair.
+
+This does \emph{not} establish the next claim in the printed proof:
+every node of its auxiliary set $R$ lies below exactly one of these
+frontier points.  Nodes of $R$ need not themselves belong to $T$, so
+that additional signature-specific geometry remains \todo.
+
 \begin{enumerate}[label=(\alph*)]
 \item With $n'=n-m'$, the map
 $P_i(z)=I_T(I_T^{-1}(t_i)^\frown z)$ can leave the domain of $I_T$ for
