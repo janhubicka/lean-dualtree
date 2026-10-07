@@ -286,6 +286,19 @@ Proposition~15 refines it to dimension $M_{p+1}$.  At $p=m$ this gives the
 one-dimensional space asserted in Claim~17.  This simultaneously removes the
 undefined $M_0$ appearing in the printed proof.
 
+There is one further type error in the final reconstruction.  The paper sets
+\[
+X_i=I_{S_i}^{-1}(X'_{\iota^{-1}(i)}).
+\]
+But $X'_j\subseteq b^M$ is a last-level set, whereas
+$I_{S_i}:b^{<M}\to S_i$ has no value on level $M$.  The construction already
+introduced the $(M+1)$-complete extension
+$S_i^*=S_i\cup X_i^*$ and used its canonical map earlier in the definition
+of $c'_p$.  The final line should therefore read
+\[
+X_i=I_{S_i^*}(X'_{\iota^{-1}(i)}).
+\]
+
 These repairs are bookkeeping changes to the iteration rather than a change
 of its qualitative strategy.  The corrected qualitative simultaneous-
 refinement lemma remains \todo in Lean; numerical bounds should be restored
