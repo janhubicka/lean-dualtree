@@ -249,14 +249,18 @@ isolated as a lemma.
 
 \subsection{Appendix Remark 3(ii)}
 The unrestricted union assertion is false for disjoint $L_1,L_2$.  It becomes
-true when $L_1\cap L_2\ne\varnothing$: use a bridge letter in the intersection
-and transitivity.  This is sufficient for the actual application
-$L_j=\{a_j,a_{j+1}\}$.
+true when $L_1\cap L_2\ne\varnothing$, which is sufficient for the actual
+application $L_j=\{a_j,a_{j+1}\}$.
 
-\paragraph{Lean.} \ok
-The abstract bridge is
-\lean{DualTree.Insensitivity.constantOn_union_of_overlap}.
-The next step is to instantiate it for starred insensitivity itself.
+\paragraph{Lean status.} \ok
+The repair is now proved for the exact assignment relation underlying
+Definition 30, not only for an abstract constancy relation.
+\lean{DualTree.StarInsensitivity.related_iff_printed} identifies the compact
+formal relation with the three printed clauses, and
+\lean{DualTree.StarInsensitivity.insensitive_union_of_overlap} proves the
+overlap-union statement by normalizing through a common bridge letter.
+The proof uses two normalization steps on each side, so it also makes explicit
+the transitivity that is suppressed in Remark 3(ii).
 
 \subsection{Lemma 31}
 Checking the rendered PDF removes two OCR false alarms: the lemma assumes
