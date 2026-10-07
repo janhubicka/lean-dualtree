@@ -86,10 +86,9 @@ Normalize all unmarked coordinates whose values lie in L to a chosen bridge
 letter z.
 -/
 noncomputable def normalize {ι α : Type*}
-    (z : α) (L : Set α) (F : Set ι) (a : ι → α) : ι → α :=
-  fun i =>
-    letI : Decidable (i ∈ F) := Classical.propComplete _
-    letI : Decidable (a i ∈ L) := Classical.propComplete _
+    (z : α) (L : Set α) (F : Set ι) (a : ι → α) : ι → α := by
+  classical
+  exact fun i =>
     if i ∈ F then a i
     else if a i ∈ L then z
     else a i
