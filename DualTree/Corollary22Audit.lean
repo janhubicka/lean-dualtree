@@ -30,10 +30,12 @@ theorem node_eq_root (t : BoundedNode 2 1) : t = root := by
   rcases t with ⟨s, hs⟩
   apply Subtype.ext
   dsimp [root]
-  have hlen : s.length = 0 := by
-    simp [InHomTree] at hs
-    omega
-  exact List.length_eq_zero.mp hlen
+  cases s with
+  | nil => rfl
+  | cons a s =>
+      have hfalse : False := by
+        simpa [InHomTree] using hs
+      exact hfalse.elim
 
 abbrev Pointed := TreeWord 2 1 Bool × BoundedNode 2 1
 
@@ -77,18 +79,22 @@ def truePoint : Pointed :=
   (trueWord, root)
 
 theorem root_mem_support_of_nonempty
-    (f : VariableWord 2 1 Bool) (h : f.support.Nonempty) :
+    (f : VariableWord 2 1 Bool) (h : f.support ≠ []) :
     root ∈ f.support := by
-  rcases h with ⟨t, ht⟩
-  have htr : t = root := node_eq_root t
-  simpa [htr] using ht
+  cases hs : f.support with
+  | nil =>
+      exact (h hs).elim
+  | cons t ts =>
+      have ht : t ∈ f.support := by simp [hs]
+      have htr : t = root := node_eq_root t
+      simpa [htr] using ht
 
 theorem falseWord_mem_span
     (f : VariableWord 2 1 Bool) (hroot : root ∈ f.support) :
     falseWord ∈ f.span := by
   let v : f.Vars := ⟨root, hroot⟩
   have hv : f.word root = Sum.inr v := f.atRoot v
-  change ∃ σ : f.Vars, SpanAudit.eval f.word σ = falseWord
+  change ∃ σ : f.Vars → Bool, SpanAudit.eval f.word σ = falseWord
   refine ⟨fun _ => false, ?_⟩
   funext i
   rw [node_eq_root i]
@@ -99,26 +105,26 @@ theorem trueWord_mem_span
     trueWord ∈ f.span := by
   let v : f.Vars := ⟨root, hroot⟩
   have hv : f.word root = Sum.inr v := f.atRoot v
-  change ∃ σ : f.Vars, SpanAudit.eval f.word σ = trueWord
+  change ∃ σ : f.Vars → Bool, SpanAudit.eval f.word σ = trueWord
   refine ⟨fun _ => true, ?_⟩
   funext i
   rw [node_eq_root i]
   simp [SpanAudit.eval, SpanAudit.evalSymbol, trueWord, hv]
 
 theorem falsePoint_mem_starred
-    (f : VariableWord 2 1 Bool) (h : f.support.Nonempty) :
+    (f : VariableWord 2 1 Bool) (h : f.support ≠ []) :
     falsePoint ∈ StarredSpan f := by
   have hroot := root_mem_support_of_nonempty f h
   exact ⟨falseWord_mem_span f hroot, hroot⟩
 
 theorem truePoint_mem_starred
-    (f : VariableWord 2 1 Bool) (h : f.support.Nonempty) :
+    (f : VariableWord 2 1 Bool) (h : f.support ≠ []) :
     truePoint ∈ StarredSpan f := by
   have hroot := root_mem_support_of_nonempty f h
   exact ⟨trueWord_mem_span f hroot, hroot⟩
 
 theorem starred_span_not_monochromatic_of_nonempty
-    (f : VariableWord 2 1 Bool) (h : f.support.Nonempty) :
+    (f : VariableWord 2 1 Bool) (h : f.support ≠ []) :
     ¬ Monochromatic color (StarredSpan f) := by
   intro hm
   have hc := hm
@@ -130,12 +136,12 @@ theorem support_nonempty_of_complete_one
     (f : VariableWord 2 1 Bool)
     (hcomplete :
       SkewTree.completeB SkewTree.paperAuxB 1 (supportNodes f) = true) :
-    f.support.Nonempty := by
-  cases hs : f.support with
-  | nil =>
-      simp [supportNodes, hs, SkewTree.completeB, SkewTree.skewB] at hcomplete
-  | cons t ts =>
-      exact ⟨t, by simp [hs]⟩
+    f.support ≠ [] := by
+  intro hs
+  have hnodes : supportNodes f = [] := by
+    simp [supportNodes, hs]
+  rw [hnodes] at hcomplete
+  simp [SkewTree.completeB, SkewTree.skewB, SkewTree.rootedB] at hcomplete
 
 /-- The conclusion demanded by Corollary 22 fails at height one. -/
 theorem no_monochromatic_complete_candidate
