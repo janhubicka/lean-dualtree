@@ -520,6 +520,24 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Conditional signature-frontier correspondence.} \todo
+The lemma
+\lean{DualTree.SignatureFrontier.boundary_prefix_frontier_of_shared_descendant}
+shows that if a signature boundary $s$ is the first point outside the cut,
+and an outside support node $t$ extends $s$, then $s$ precedes the
+frontier root of $t$; otherwise that root would contradict the minimality
+of the boundary.  The theorem
+\lean{DualTree.SignatureFrontier.boundary_prefix_unique_frontier_of_support_extension}
+gives the unique such frontier root \emph{on the path to a fixed support
+descendant}.
+
+These conditional statements do not yet imply the stronger assertion in
+the printed Lemma~27 that every $s\in R$ lies below exactly one frontier
+node $t_i$.  This requires proving the existence of suitable outside
+support descendants for all signature boundaries and identifying their
+frontier roots independently of the descendant chosen.  The missing
+hypotheses are kept explicit.
+
 \paragraph{Minimal frontier geometry.} \todo
 Let $T=\operatorname{ws}(f)$ and cut at $t_0$ in the auxiliary order.
 The first geometric step in the proof takes the prefix-minimal elements
