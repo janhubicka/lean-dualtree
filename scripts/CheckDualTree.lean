@@ -69,3 +69,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedProduct.VariableWord.word_mem_of_mem_span
 #print axioms DualTree.MixedProduct.VariableWord.upPoint_mem_of_mem_span
 #print axioms DualTree.MixedProduct.VariableWord.bulletPoint_mem_support_of_mem_span
+
+#print axioms DualTree.MixedProduct.good_iff_same_bulletRecord
+#print axioms DualTree.MixedProduct.color_eq_of_good_of_same_record
