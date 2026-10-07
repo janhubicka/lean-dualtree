@@ -65,3 +65,7 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.VectorSkew.binaryHeightOneVector_complete
 #print axioms DualTree.VectorSkew.binaryHeightOneVectorReversed_not_complete
+
+#print axioms DualTree.MixedProduct.VariableWord.word_mem_of_mem_span
+#print axioms DualTree.MixedProduct.VariableWord.upPoint_mem_of_mem_span
+#print axioms DualTree.MixedProduct.VariableWord.bulletPoint_mem_support_of_mem_span
