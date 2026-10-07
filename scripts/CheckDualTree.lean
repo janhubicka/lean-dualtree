@@ -110,3 +110,8 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.PartialColoring.exists_equivalence_respecting_extension
 #print axioms DualTree.PartialColoring.partial_coloring_compatible_of_extension
+
+#print axioms DualTree.MixedProduct.smoothRelated_refl
+#print axioms DualTree.MixedProduct.smoothRelated_symm
+#print axioms DualTree.MixedProduct.smoothRelated_trans
+#print axioms DualTree.MixedProduct.exists_smooth_extension
