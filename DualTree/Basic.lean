@@ -43,4 +43,17 @@ theorem prefix_length_le {b : Nat} {s t : Node b}
   rcases h with ⟨u, rfl⟩
   simp
 
+
+theorem isPrefix_antisymm {b : Nat} {s t : Node b}
+    (hst : IsPrefix s t) (hts : IsPrefix t s) : s = t := by
+  rcases hst with ⟨u, rfl⟩
+  have hlen := prefix_length_le hts
+  have hu : u.length = 0 := by
+    simp only [List.length_append] at hlen
+    omega
+  cases u with
+  | nil => simp
+  | cons a u =>
+      simp at hu
+
 end DualTree

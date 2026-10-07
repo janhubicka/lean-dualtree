@@ -23,3 +23,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.SpanAudit.span_subset_iff_substitution
 #print axioms DualTree.SkewTree.singleton_skewB
 #print axioms DualTree.SkewTree.singleton_complete_oneB
+
+#print axioms DualTree.isPrefix_antisymm
+#print axioms DualTree.VariableWord.every_var_occurs
+#print axioms DualTree.VariableWord.span_subset_iff_substitution
+#print axioms DualTree.VariableWord.support_subset_of_span_subset
