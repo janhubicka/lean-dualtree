@@ -50,3 +50,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Corollary22Audit.no_monochromatic_complete_candidate
 #print axioms DualTree.Corollary22Audit.canonical_complete_one
 #print axioms DualTree.Corollary22Audit.canonical_good_for_every_coloring
+
+#print axioms DualTree.Corollary22Repair.constant_of_good_rootSmooth_twoRoots
+#print axioms DualTree.Corollary22Repair.singletonColor_good
+#print axioms DualTree.Corollary22Repair.singletonColor_not_constant
