@@ -152,3 +152,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.StarredSignature.exceptionalLeaves_spec
 #print axioms DualTree.StarredSignature.interior_mem_signatureTree
 #print axioms DualTree.StarredSignature.prefixWord_eq_of_syntactic_refinement
+
+#print axioms DualTree.StarredSignature.allFin_length
+#print axioms DualTree.StarredSignature.allFin_nonempty
+#print axioms DualTree.StarredSignature.filter_conj_eq_nil
+#print axioms DualTree.StarredSignature.leaf_not_before_of_fullBefore
+#print axioms DualTree.StarredSignature.immediateSuccs_nil_of_not_interior
+#print axioms DualTree.StarredSignature.exceptionalLeaves_not_before_of_fullBefore
+#print axioms DualTree.StarredSignature.interior_mem_signatureTree_of_fullBefore
