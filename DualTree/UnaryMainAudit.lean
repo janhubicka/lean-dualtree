@@ -140,10 +140,10 @@ merely a counterexample at one small height.
 -/
 theorem no_unary_eventual_bound :
     ¬ ∃ n0 : Nat,
-      ∀ n : Nat, 2 ≤ n → n0 < n →
+      ∀ n : Nat, ∀ hn : 2 ≤ n, n0 < n →
         ∃ f : VariableWord 2 n PUnit,
           CompleteSupport forwardAuxB 1 f ∧
-          HomogeneousOne n (by omega) f := by
+          HomogeneousOne n hn f := by
   rintro ⟨n0, h⟩
   let n := n0 + 2
   have hn : 2 ≤ n := by
