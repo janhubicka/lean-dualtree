@@ -436,6 +436,17 @@ depth $2$ in a height-$3$ tree, and
 tail shortening. The finite cardinal obstruction to an unrestricted onto map
 is \lean{DualTree.Lemma27Audit.two_symbols_cannot_cover_three_variables};
 the precise realizable ancestor target still needs formal identification.
+The constructive alternative is made explicit in
+\lean{DualTree.Lemma27Repair.visibleAncestors_length_le_height}:
+for a frontier node $t_i$, any chosen list of visible ancestor variables
+is a subset of $\operatorname{Pred}_T(t_i)$ and has cardinality at most the
+intrinsic height $h_T(t_i)$.  If this height is at most $m'+1$ and the
+visible set is nonempty,
+\lean{DualTree.Lemma27Repair.visibleAncestors_auxiliary_coverage}
+produces a surjection from the $m'+1$ auxiliary symbol indices onto its
+enumerated positions.  This repairs the cardinality issue conditionally;
+the actual matching of auxiliary symbols to the legal variables in every
+cone still requires verification.
 Finally, \lean{DualTree.Lemma27Audit.occurrence_based_freezing_not_substitution}
 exhibits a repeated-variable fibre whose occurrences are split by a
 position-based freezing rule; no uniform substitution can produce it.
