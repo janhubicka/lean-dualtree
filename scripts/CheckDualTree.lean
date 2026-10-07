@@ -73,6 +73,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedProduct.good_iff_same_bulletRecord
 #print axioms DualTree.MixedProduct.color_eq_of_good_of_same_record
 
+#print axioms DualTree.GluingAudit.short_tail_stays_in_hom_tree
+#print axioms DualTree.GluingAudit.exact_tail_leaves_hom_tree
+
 #print axioms DualTree.MixedProduct.VariableWord.refines_refl
 #print axioms DualTree.MixedProduct.VariableWord.refines_trans
 #print axioms DualTree.MixedProduct.VariableWord.refines_of_syntactic_components
