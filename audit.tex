@@ -142,9 +142,13 @@ witnesses are \lean{DualTree.Theorem3Audit.rootWord} and
 1-complete skew trees, their supports differ, and
 \lean{DualTree.Theorem3Audit.unary_spans_equal} proves their evaluated spans
 are identical.  Finally,
-\lean{DualTree.Theorem3Audit.two_colors_below_every_candidate} certifies that
-both colors occur below every candidate under the literal span-inclusion
-refinement relation.
+\lean{DualTree.Theorem3Audit.two_colors_below_every_candidate} certifies the
+finite witness, while
+\lean{DualTree.UnaryMainAudit.no_unary_eventual_bound} strengthens this to
+the actual threshold-level failure: for every binary ambient height $n\ge2$,
+a fixed two-coloring has two differently colored $1$-complete refinements
+below every candidate.  Hence no eventual Ramsey threshold exists for the
+literal $\ell=1$, $k=m=1$ statement.
 
 Conversely, if the alphabet contains two distinct letters and every source
 variable occurs, then
