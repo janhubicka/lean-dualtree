@@ -129,3 +129,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.CutPreservation.forwardCut_preserved_of_syntactic_refinement
 #print axioms DualTree.CutPreservation.paperCut_preserved_of_span_refinement
 #print axioms DualTree.CutPreservation.forwardCut_preserved_of_span_refinement
+
+#print axioms DualTree.CutFrontier.take_length_of_prefix
+#print axioms DualTree.CutFrontier.prefix_of_prefix_length_le
+#print axioms DualTree.CutFrontier.frontier_antichain
+#print axioms DualTree.CutFrontier.exists_frontier_above
+#print axioms DualTree.CutFrontier.frontier_unique_above
+#print axioms DualTree.CutFrontier.exists_unique_frontier_above
+#print axioms DualTree.CutFrontier.paperCut_exists_unique_frontier
+#print axioms DualTree.CutFrontier.forwardCut_exists_unique_frontier
