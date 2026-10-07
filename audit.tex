@@ -113,6 +113,15 @@ subtree of the spliced tree has a finite counterexample even with forward lex.
 This needs a new statement, not just an index correction.
 \end{enumerate}
 
+\paragraph{Lean status.}
+\ok The substantive forward-lex failure is now certified in
+\lean{DualTree.Remark1Audit.no_forward_complete_extension}.  The chosen
+spliced tree and the prescribed intersection tree are separately certified
+skew by \lean{DualTree.Remark1Audit.forwardS_is_skew} and
+\lean{DualTree.Remark1Audit.forwardTprime_is_skew}.  The remaining task for
+this item is not verification of the printed statement---it is false---but
+identifying the intended replacement needed downstream.
+
 \subsection{Span inclusion and Theorem 3 for one-letter alphabets}
 The paper defines refinement using
 \[
