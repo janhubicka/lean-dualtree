@@ -15,6 +15,7 @@ import DualTree.KVariableWord
 import DualTree.VectorSkew
 import DualTree.MixedProduct
 import DualTree.MixedGood
+import DualTree.GluingAudit
 import DualTree.MixedRefinement
 import DualTree.GoodNoBullet
 import DualTree.Lemma14Invariant
