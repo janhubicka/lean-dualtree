@@ -246,31 +246,105 @@ semi-complete tree.  The intended canonical transport should be defined
 explicitly rather than overloaded.
 
 \subsection{Lemma 16 and Claim 17}
-Corollary 9 returns a block length.  The recursion
+The rendered source confirms that Corollary~9 is available at
+$N\ge mq$.  The problem in Lemma~16 is therefore not strictness of that
+inequality but the interpretation of the recursively defined $q_p$ as a total
+block length.
+
+For Claim~18, a type-correct cumulative recursion is obtained by adjoining
+$q_{m+1}=1$ and setting, for $p=m,\ldots,1$,
 \[
-q_p=Q(\ell,d_2^p,d_2q_{p+1},r)
+q_p
+  =q_{p+1}
+    Q\bigl(\ell,d_2^p,d_2q_{p+1},r\bigr).
 \]
-is then used as though it already contains room for $q_{p+1}$ blocks.
-A safe recursion is of the form
+Then the stage-$p$ ambient length $d_2q_p$ is exactly
 \[
-q_p=q_{p+1}Q(\ell,d_2^p,d_2q_{p+1},r).
+(d_2q_{p+1})
+Q\bigl(\ell,d_2^p,d_2q_{p+1},r\bigr),
 \]
-Claim 17 also shifts the $M_p$ dimensions by one.  We will first formalize the
-qualitative simultaneous refinement and only then restore quantitative bounds.
+which is the amount required by Corollary~9 to produce
+$d_2q_{p+1}$ blocks.  The displayed recursion in the paper omits the factor
+$q_{p+1}$.  The same cumulative factor must be inserted in the starred
+majorant recursion defining $q_p^*$.
+
+Claim~17 has the analogous one-step indexing shift.  The clean formulation is
+to adjoin
+\[
+M_{m+1}=1
+\]
+and, for $p=m,\ldots,1$, define $M_p$ by the paper's displayed MTHJ expression
+with target dimension $M_{p+1}$.  Start with the identity subspace of
+dimension $M_1$.  After processing coloring $c'_p$, the selected subspace
+should have dimension
+\[
+M_{p+1},
+\]
+not $M_p$.  Thus immediately before stage $p$ the current subspace is
+isomorphic to the corresponding mixed-product space of dimension $M_p$, and
+Proposition~15 refines it to dimension $M_{p+1}$.  At $p=m$ this gives the
+one-dimensional space asserted in Claim~17.  This simultaneously removes the
+undefined $M_0$ appearing in the printed proof.
+
+These repairs are bookkeeping changes to the iteration rather than a change
+of its qualitative strategy.  The corrected qualitative simultaneous-
+refinement lemma remains \todo in Lean; numerical bounds should be restored
+only after that proof is formalized.
 
 \subsection{Theorem 13 gluing}
-The double induction itself appears well founded, but the final gluing contains
-concrete source defects:
-\begin{itemize}
-\item the definition of $B$ uses the wrong primed set in its cardinality
-condition;
-\item $\overline Y_i$ is written as a complement in $[b^k]$ although
-$Y_i\subseteq[b^M]$;
-\item the tail formulas quantify over $b^{n-M}$ where the word domain is
-$b^{<n-M}$.
-\end{itemize}
-These are candidates for local source repairs, but the complete gluing should
-be Lean-checked before being marked harmless.
+The double-induction architecture still appears coherent, but the rendered
+pages 21--24 confirm four literal source errors in the decomposition/gluing
+formulas.
+
+\begin{enumerate}[label=(\alph*)]
+\item In the definition
+\[
+\mathcal B
+ = \{D'_2\subseteq \bigcup_{i\in D_2}J_i:
+       |D'_1\cap J_i|\le1\text{ for all }i\in D_2\},
+\]
+the cardinality condition must contain $D'_2$, not $D'_1$.  As printed it
+mentions a set which is not a parameter of the comprehension.  The intended
+condition is
+\[
+|D'_2\cap J_i|\le1\qquad(i\in D_2).
+\]
+
+\item After Lemma~16 supplies
+$(f'_z)_{z\in[d']}$ and
+$(X'_z)_{z\in[d']\setminus D_2^*}$, one subsequent occurrence is printed as
+$(f'_z)_{z\in[d]}$.  The ambient mixed-product partition is on $[d']$, so this
+index must be $[d']$.
+
+\item On page~24 the numbers $y^i_j$ are chosen in $[b^M]$ and
+\[
+Y_i=\{y^i_j:j\in[b^k]\}\subseteq[b^M].
+\]
+Hence the printed
+\[
+\overline Y_i=[b^k]\setminus Y_i
+\]
+is ill-typed; it must be
+\[
+\overline Y_i=[b^M]\setminus Y_i.
+\]
+
+\item In clauses (ii)--(iv) defining $f_i$, the source quantifies
+$t\in b^{,n-M}$.  Since $s_y\in b^M$, concatenating such a $t$ has length
+exactly $n$ and therefore lies outside the word domain $b^{<n}$.  The intended
+tail domain is
+\[
+t\in b^{<n-M}.
+\]
+With this correction, $|s_y^rown t|<n$ and the gluing covers exactly the
+nodes above level $M$.
+\end{enumerate}
+
+These corrections are local typing/indexing repairs.  They do not by
+themselves certify the final implication that the glued
+$((f_i)_{i\in[d]},(X_i)_{i\in D_1})$ is $(k+1)$-dimensional and $c$-good.
+That final verification should be carried out after the corrected mixed-product
+and Lemma~16 interfaces are formalized in Lean.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
@@ -326,15 +400,47 @@ Its proof normalizes both assignments through a common bridge letter in
 $L_1\cap L_2$, making the suppressed transitivity explicit.
 
 \subsection{Lemma 31}
-Checking the rendered PDF removes two OCR false alarms: the lemma assumes
-$k\ge2$, and the proof later says to assume $k\ge3$.  Two genuine index shifts
-remain:
-\begin{itemize}
-\item at stage $i$ the new variable is in slot $i-1$, not $i$;
-\item the displayed cardinality of $J$ has $m-i-1$, while substitution into
-$d_{i-1}-p_i$ gives the term with $m-i$.
-\end{itemize}
-These currently look local.
+The rendered PDF removes two OCR false alarms: Lemma~31 assumes $k\ge2$, and
+the proof of Theorem~8 later assumes $k\ge3$.  Two genuine one-step index
+errors remain in Lemma~31 itself.
+
+First, at construction stage $i\in\{1,\ldots,m\}$ the new wildcard occupies
+the coordinate interval $[q_{i-1},q_i)$ inserted after the first $i-1$
+variables.  It is therefore the wildcard of $v_{i-1}$, not $v_i$.  The error
+is forced already at the final stage: since
+\[
+d_m=m+n_0-q_m=m,
+\]
+the word $w_m$ has precisely the variables
+$v_0,\ldots,v_{m-1}$, so a wildcard $v_m$ cannot occur.
+
+Second, with
+\[
+d_{i-1}=(i-1)+n_0-q_{i-1}
+\qquad\text{and}\qquad
+p_i=q_i-q_{i-1},
+\]
+the set
+\[
+J=\{0,\ldots,d_{i-1}-1\}
+   \setminus [i-1,i-1+p_i)
+\]
+has cardinality
+\[
+\begin{aligned}
+|J|
+ &=d_{i-1}-p_i \\
+ &=(i-1)+n_0-q_i \\
+ &=(i-1)+f_1(k,\kappa,m-i,m,r),
+\end{aligned}
+\]
+using equation~(8).  Thus the printed $m-i-1$ must be $m-i$.  With this
+correction the exponent in (10) matches equation~(9), so the pigeonhole bound
+has the intended value $p_i$.
+
+Both corrections are local to the indexing of the Shelah-style construction;
+nothing else in the mechanism needs to change at this point.  A source-faithful
+Lean formalization of Lemma~31 remains \todo.
 
 \subsection{Theorem 29}
 The product theorem is only asserted to follow by modifying the preceding
