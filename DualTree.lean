@@ -6,3 +6,4 @@ import DualTree.Insensitivity
 import DualTree.SpanAudit
 import DualTree.Remark1Audit
 import DualTree.SkewTree
+import DualTree.StarInsensitivity
