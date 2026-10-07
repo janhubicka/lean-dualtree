@@ -28,3 +28,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.VariableWord.every_var_occurs
 #print axioms DualTree.VariableWord.span_subset_iff_substitution
 #print axioms DualTree.VariableWord.support_subset_of_span_subset
+
+#print axioms DualTree.StarInsensitivity.starRelated_iff
+#print axioms DualTree.StarInsensitivity.singleton_insensitive
+#print axioms DualTree.StarInsensitivity.disjoint_union_failure
+#print axioms DualTree.StarInsensitivity.starInsensitive_union_of_overlap
