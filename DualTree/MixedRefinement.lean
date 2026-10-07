@@ -77,7 +77,7 @@ theorem refines_of_syntactic_components
     exact KVariableWord.syntacticRefines_refines
       (g.vector.components i) (f.vector.components i) (hword i) hwi
   · intro i
-    exact hleaf i (hx.2.1 i)
+    exact hleaf i (x.upPoint i) (hx.2.1 i)
   · intro i
     exact KVariableWord.support_subset_of_syntacticRefines
       (g.vector.components i.1) (f.vector.components i.1)
