@@ -28,3 +28,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.VariableWord.every_var_occurs
 #print axioms DualTree.VariableWord.span_subset_iff_substitution
 #print axioms DualTree.VariableWord.support_subset_of_span_subset
+
+#print axioms DualTree.Theorem3Audit.root_support_complete
+#print axioms DualTree.Theorem3Audit.left_support_complete
+#print axioms DualTree.Theorem3Audit.supports_differ
+#print axioms DualTree.Theorem3Audit.unary_spans_equal
+#print axioms DualTree.Theorem3Audit.two_colors_below_every_candidate
