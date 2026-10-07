@@ -24,16 +24,16 @@ def frontier : Node 2 := [(0 : Fin 2), (0 : Fin 2)]
 def tail : Node 2 := [(0 : Fin 2)]
 
 theorem frontier_in_tree : InHomTree 3 frontier := by
-  decide
+  simp [InHomTree, frontier]
 
 /-- The chosen tail lies in b^{<n-m'} with m'=1, n=3. -/
 theorem tail_in_printed_domain : InHomTree 2 tail := by
-  decide
+  simp [InHomTree, tail]
 
 /-- The concatenation required by the printed P_i is not in b^{<n}. -/
 theorem printed_projection_address_overflows :
     ¬ InHomTree 3 (frontier ++ tail) := by
-  decide
+  simp [InHomTree, frontier, tail]
 
 /-- One uniformly safe replacement is to reduce the tail height by one. -/
 theorem safe_cone_tail
