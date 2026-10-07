@@ -441,9 +441,22 @@ exhibits a repeated-variable fibre whose occurrences are split by a
 position-based freezing rule; no uniform substitution can produce it.
 
 These are checks of the \emph{construction}, not counterexamples to the
-intended statement of Lemma~27. The final inclusion of every continuation
-of the fixed signature in the monochromatic image remains unproved.
-The local coding lemma should be reconstructed with typed domains.
+intended statement of Lemma~27.
+
+\paragraph{Partial repair in Lean.}
+\lean{DualTree.Lemma27Repair.restrictSupport} takes a tree-variable word
+and a duplicate-free subset of its variable roots and freezes all occurrences
+of the discarded roots uniformly.  The theorems
+\lean{DualTree.Lemma27Repair.restrictSupport_span_subset} and
+\lean{DualTree.Lemma27Repair.restrictSupport_support} show that this is a
+legal tree-variable word with exactly the selected roots and with its evaluated
+span contained in the old one, for every alphabet.  This repairs the algebra
+of occurrence-based freezing, but it does not yet verify the geometric
+completeness of the selected skew support or the signature-transport map.
+
+The final inclusion of every continuation of the fixed signature in the
+monochromatic image remains unproved.  The local coding lemma must still be
+reconstructed with typed domains.
 
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
