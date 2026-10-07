@@ -50,3 +50,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Corollary22Audit.no_monochromatic_complete_candidate
 #print axioms DualTree.Corollary22Audit.canonical_complete_one
 #print axioms DualTree.Corollary22Audit.canonical_good_for_every_coloring
+
+#print axioms DualTree.VariableWord.supportNodes_nodup
+#print axioms DualTree.KVariableWord.refines_refl
+#print axioms DualTree.KVariableWord.refines_trans
+#print axioms DualTree.KVariableWord.refines_iff_syntactic
+#print axioms DualTree.KVariableWord.support_subset_of_refines
