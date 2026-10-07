@@ -454,6 +454,41 @@ signature boundary nodes interact with the cone frontier of Lemma~27
 as claimed.  The entire signature and its transport have not yet been
 validated.
 
+\subsection{Definitions 23 and 26: starred objects and signature skeleton}
+The class $W^*_{v,l}$ of Definition~23 consists of semi-complete skew
+trees $S$ together with a tree-variable word $g$ whose variable roots
+are the interior vertices of $S$ (and form a skew support when $l>0$).
+The interior has precisely $l$ vertices.
+
+\paragraph{Lean validation.} \todo
+\lean{DualTree.StarredSignature.StarredWord} records these requirements
+using the original finite-tree and variable-word types.  The theorems
+\lean{DualTree.StarredSignature.variable_root_in_interior} and
+\lean{DualTree.StarredSignature.variable_at_interior} check both
+directions of the support/interior identification.
+
+The conditional constructor
+\lean{DualTree.StarredSignature.signatureTree} reproduces the tree
+component of Definition~26: the interior vertices plus, for each
+exceptional leaf, the first point on its ambient predecessor path
+outside $D$.  It requires an explicit proof of existence of that
+point for every leaf; this proof is not built into the definition.
+The theorem
+\lean{DualTree.StarredSignature.interior_mem_signatureTree}
+checks that no interior vertex is lost.
+
+Finally, \lean{DualTree.StarredSignature.prefixWord} represents the
+restriction $g\upharpoonright D$, with variable symbols identified
+by their underlying roots; its preservation under syntactic refinement
+is proved by
+\lean{DualTree.StarredSignature.prefixWord_eq_of_syntactic_refinement}.
+
+This does \emph{not} yet certify the complete signature map on all of
+$W^*_{v,l}$: in particular, the necessary existence of each exceptional
+boundary minimum under the paper's semi-complete/skew hypotheses, the
+correctness of the resulting signature tree, and the comparison of
+observable signatures under refinement remain \todo.
+
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
