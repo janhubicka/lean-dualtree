@@ -15,3 +15,4 @@ import DualTree.KVariableWord
 import DualTree.VectorSkew
 import DualTree.MixedProduct
 import DualTree.MixedGood
+import DualTree.GluingAudit
