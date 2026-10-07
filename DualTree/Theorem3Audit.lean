@@ -22,10 +22,10 @@ namespace DualTree.Theorem3Audit
 open VariableWord
 
 def root : BoundedNode 2 2 :=
-  ⟨[], by decide⟩
+  ⟨[], by simp [InHomTree]⟩
 
 def left : BoundedNode 2 2 :=
-  ⟨[(0 : Fin 2)], by decide⟩
+  ⟨[(0 : Fin 2)], by simp [InHomTree]⟩
 
 def rootVar : {t // t ∈ [root]} :=
   ⟨root, by simp⟩
@@ -47,10 +47,10 @@ def rootWord : VariableWord 2 2 PUnit where
     rfl
   below := by
     intro v i h
-    have hv : rootVar = v := Sum.inr.inj h
-    subst v
-    refine ⟨i.1, ?_⟩
-    simp [root]
+    have hv : v.1 = root := by simpa using v.2
+    rw [hv]
+    change IsPrefix ([] : Node 2) i.1
+    exact ⟨i.1, by simp⟩
 
 def leftWord : VariableWord 2 2 PUnit where
   support := [left]
@@ -69,6 +69,8 @@ def leftWord : VariableWord 2 2 PUnit where
     intro v i h
     by_cases hi : i = left
     · subst i
+      have hv : v.1 = left := by simpa using v.2
+      rw [hv]
       exact isPrefix_refl _
     · simp [hi] at h
 
