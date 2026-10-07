@@ -20,3 +20,4 @@ import DualTree.MixedRefinement
 import DualTree.GoodNoBullet
 import DualTree.Lemma14Invariant
 import DualTree.Lemma14Record
+import DualTree.SupportTrace
