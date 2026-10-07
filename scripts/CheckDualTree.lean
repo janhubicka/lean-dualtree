@@ -98,3 +98,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedProduct.prefix_values_eq_of_root_values_eq
 #print axioms DualTree.MixedProduct.sameUpTrace_iff_supportTraceRecord_eq_of_mem_span
 #print axioms DualTree.MixedProduct.upCanonical_iff_same_supportTraceRecord
+
+#print axioms DualTree.Lemma27Audit.printed_projection_address_overflows
+#print axioms DualTree.Lemma27Audit.safe_cone_tail
+#print axioms DualTree.Lemma27Audit.two_symbols_cannot_cover_three_variables
+#print axioms DualTree.Lemma27Audit.occurrence_based_freezing_not_substitution
