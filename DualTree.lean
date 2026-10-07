@@ -8,3 +8,4 @@ import DualTree.Remark1Audit
 import DualTree.SkewTree
 import DualTree.VariableWord
 import DualTree.StarInsensitivity
+import DualTree.KVariableWord
