@@ -245,6 +245,39 @@ $I_S$ was defined for complete skew trees, but Definition 24 applies it to a
 semi-complete tree.  The intended canonical transport should be defined
 explicitly rather than overloaded.
 
+\subsection{Proposition 15: direction alphabet in the Hales--Jewett lift}
+The rendered page~16 contains a genuine type error in the construction after
+the Hales--Jewett application.  For each $i\in D_1$, the paper defines
+$w_T^i(v_0,\ldots,v_{k-1})$ to be a $k$-dimensional variable word over the
+direction alphabet
+\[
+\{0,\ldots,b-1\}.
+\]
+However, the subsequent definition of $S_i$ evaluates $w_T^i$ at
+$a_0,\ldots,a_{k-1}\in\Lambda$, and the displayed description of $A_i$ repeats
+the same substitution.  These expressions are not typed unless
+$\Lambda=\{0,\ldots,b-1\}$.
+
+The repair is local: in both displays the parameters used to evaluate
+$w_T^i$ must range over the direction alphabet.  For example,
+\[
+S_i=
+\bigl\{
+ I_{T_i}\bigl(w_T^i(j_0,\ldots,j_{k-1})\upharpoonright \ell_p^w\bigr)
+ :
+ j_0,\ldots,j_{k-1}\in\{0,\ldots,b-1\},\ p<k
+\bigr\}
+\]
+together with the corresponding terminal-level points, and the analogous
+formula for $A_i$.  The $\Lambda$-valued word $w_\Lambda^i$ continues to be
+evaluated with alphabet letters as printed.
+
+This appears to be a notational substitution error rather than a defect in the
+Hales--Jewett reduction: after the correction, $w_T^i$ records branch
+directions while $w_\Lambda^i$ records letters, exactly as required by the
+operator $Q$.  A source-faithful Lean formalization of Proposition~15 remains
+\todo.
+
 \subsection{Lemma 16 and Claim 17}
 The rendered source confirms that Corollary~9 is available at
 $N\ge mq$.  The problem in Lemma~16 is therefore not strictness of that
