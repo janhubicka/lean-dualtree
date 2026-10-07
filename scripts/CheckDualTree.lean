@@ -45,3 +45,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UnaryMainAudit.leftWord_complete
 #print axioms DualTree.UnaryMainAudit.no_homogeneous_one
 #print axioms DualTree.UnaryMainAudit.no_unary_eventual_bound
+
+#print axioms DualTree.GenericSkewAudit.remark2_semicomplete_printed
+#print axioms DualTree.GenericSkewAudit.remark2_interior_not_skew_printed
+#print axioms DualTree.GenericSkewAudit.forwardS_is_skew
+#print axioms DualTree.GenericSkewAudit.forwardTprime_is_skew
+#print axioms DualTree.GenericSkewAudit.no_forward_complete_extension
