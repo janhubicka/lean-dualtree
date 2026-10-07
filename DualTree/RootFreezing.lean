@@ -75,7 +75,7 @@ noncomputable def restrictSupport
         by_cases hm : old.1 ∈ S
         · have heq : old.1 = v.1 := by
             have hsum :
-                Sum.inr (⟨old.1, hm⟩ : {t // t ∈ S}) = Sum.inr v := by
+                (Sum.inr ⟨old.1, hm⟩ : Sum α {t // t ∈ S}) = Sum.inr v := by
               simpa [restrictSupportWord, SpanAudit.substitute,
                 rootMask, hfi, hm] using hi
             exact congrArg Subtype.val (Sum.inr.inj hsum)
