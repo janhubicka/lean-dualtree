@@ -138,3 +138,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.CutFrontier.exists_unique_frontier_above
 #print axioms DualTree.CutFrontier.paperCut_exists_unique_frontier
 #print axioms DualTree.CutFrontier.forwardCut_exists_unique_frontier
+
+#print axioms DualTree.SignatureBoundary.beforeCut_of_proper_prefix
+#print axioms DualTree.SignatureBoundary.boundary_at_cut
+#print axioms DualTree.SignatureBoundary.prefix_mem_ambientPath
+#print axioms DualTree.SignatureBoundary.mem_ambientPath_prefix
+#print axioms DualTree.SignatureBoundary.boundary_iff_frontier
+#print axioms DualTree.SignatureBoundary.existsUnique_boundary_on_path
+#print axioms DualTree.SignatureBoundary.firstBoundary_spec
