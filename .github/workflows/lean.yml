@@ -43,6 +43,9 @@ jobs:
       - name: Build
         run: lake build
 
+      - name: Check TeX ledger encoding
+        run: python3 scripts/check-audit-tex.py
+
       - name: Audit source-facing validation facts
         run: |
           mkdir -p proof-audit
