@@ -115,3 +115,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedProduct.smoothRelated_symm
 #print axioms DualTree.MixedProduct.smoothRelated_trans
 #print axioms DualTree.MixedProduct.exists_smooth_extension
+
+#print axioms DualTree.Lemma27Repair.visibleAncestors_length_le_height
+#print axioms DualTree.Lemma27Repair.auxiliary_symbols_cover_indices
+#print axioms DualTree.Lemma27Repair.visibleAncestors_auxiliary_coverage
