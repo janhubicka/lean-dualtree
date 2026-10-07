@@ -134,19 +134,30 @@ of every candidate in the printed sense.  Hence Theorem 3 is false literally
 for $\ell=1$.
 
 \paragraph{Repair and Lean status.}
-\ok The algebraic issue is now completely separated from the tree geometry.
-The singleton-alphabet collapse is formalized as
-\lean{DualTree.SpanAudit.singleton_span_subset}.  Conversely, if the alphabet
-contains two distinct letters and every source variable occurs, then
-\lean{DualTree.SpanAudit.span_subset_iff_substitution} proves that evaluated
-span inclusion is equivalent to uniform syntactic substitution.  The proof is
-factored through preservation of source constants and uniformity on each
-source variable fibre.
+\ok The algebraic and tree-specific issues are now separated and both are
+formalized.  The singleton-alphabet collapse is
+\lean{DualTree.SpanAudit.singleton_span_subset}.  The concrete binary-tree
+witnesses are \lean{DualTree.Theorem3Audit.rootWord} and
+\lean{DualTree.Theorem3Audit.leftWord}; their singleton supports are
+1-complete skew trees, their supports differ, and
+\lean{DualTree.Theorem3Audit.unary_spans_equal} proves their evaluated spans
+are identical.  Finally,
+\lean{DualTree.Theorem3Audit.two_colors_below_every_candidate} certifies that
+both colors occur below every candidate under the literal span-inclusion
+refinement relation.
 
-Thus later uses of span inclusion are justified once the paper is restricted
-to $|\Lambda|\ge2$ (or, preferably, once refinement is defined syntactically).
-The remaining tree-specific task is to combine this algebraic lemma with the
-variable-support/root conditions.
+Conversely, if the alphabet contains two distinct letters and every source
+variable occurs, then
+\lean{DualTree.SpanAudit.span_subset_iff_substitution} proves that evaluated
+span inclusion is equivalent to uniform syntactic substitution.  For the
+tree-variable-word structure,
+\lean{DualTree.VariableWord.support_subset_of_span_subset} further proves
+that this refinement preserves variable roots/support.
+
+Thus the span-based formulation is sound for $|\Lambda|\ge2$.  For
+$|\Lambda|=1$ the literal Theorem~3 is false; defining refinement
+syntactically instead would remove this degeneracy without excluding unary
+alphabets.
 
 \subsection{Corollary 22}
 Take
