@@ -80,7 +80,7 @@ theorem leaf_not_before_of_fullBefore
       (SkewTree.allFin b).all
         (fun j => SkewTree.uniqueBranchB S leaf j) = true := by
     have hh := (List.all_eq_true.mp hfull) leaf hmem
-    simpa [htest] using hh
+    simpa [hbefore, hneq] using hh
   have hbranch : SkewTree.uniqueBranchB S leaf i = true :=
     (List.all_eq_true.mp hentry) i hi
   have hcount : (SkewTree.branchWitnesses S leaf i).length = 1 := by
