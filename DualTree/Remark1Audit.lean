@@ -73,9 +73,10 @@ theorem forwardTprime_is_skew :
   decide
 
 /-- The second assertion of Remark 1 fails even after the forward-lex repair. -/
-set_option maxHeartbeats 0 in
 theorem no_forward_complete_extension :
     hasCompleteExtensionB forwardAuxB 3 forwardS forwardT forwardTprime = false := by
+  set_option maxHeartbeats 0 in
+  set_option maxRecDepth 100000 in
   decide
 
 end DualTree.Remark1Audit
