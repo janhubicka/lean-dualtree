@@ -5,3 +5,4 @@ import DualTree.BinarySkewAudit
 import DualTree.Insensitivity
 import DualTree.SpanAudit
 import DualTree.Remark1Audit
+import DualTree.StarInsensitivity
