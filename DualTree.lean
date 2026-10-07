@@ -11,3 +11,4 @@ import DualTree.StarInsensitivity
 import DualTree.Theorem3Audit
 import DualTree.UnaryMainAudit
 import DualTree.Corollary22Audit
+import DualTree.KVariableWord
