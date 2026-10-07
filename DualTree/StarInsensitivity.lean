@@ -92,6 +92,27 @@ noncomputable def normalize {ι α : Type*}
     else if a i ∈ L then z
     else a i
 
+theorem normalize_of_marked {ι α : Type*}
+    {z : α} {L : Set α} {F : Set ι} {a : ι → α} {i : ι}
+    (hi : i ∈ F) :
+    normalize z L F a i = a i := by
+  classical
+  simp [normalize, hi]
+
+theorem normalize_of_unmarked_mem {ι α : Type*}
+    {z : α} {L : Set α} {F : Set ι} {a : ι → α} {i : ι}
+    (hi : i ∉ F) (ha : a i ∈ L) :
+    normalize z L F a i = z := by
+  classical
+  simp [normalize, hi, ha]
+
+theorem normalize_of_unmarked_not_mem {ι α : Type*}
+    {z : α} {L : Set α} {F : Set ι} {a : ι → α} {i : ι}
+    (hi : i ∉ F) (ha : a i ∉ L) :
+    normalize z L F a i = a i := by
+  classical
+  simp [normalize, hi, ha]
+
 theorem related_normalize {ι α : Type*}
     {z : α} {L : Set α} {F : Set ι} {a : ι → α}
     (hz : z ∈ L) :
@@ -99,14 +120,15 @@ theorem related_normalize {ι α : Type*}
   classical
   constructor
   · intro i hi
-    simp [normalize, hi]
+    exact normalize_of_marked hi |>.symm
   · intro i hne
     by_cases hi : i ∈ F
-    · simp [normalize, hi] at hne
+    · exact (hne (normalize_of_marked hi).symm).elim
     · by_cases ha : a i ∈ L
       · refine ⟨ha, ?_⟩
-        simpa [normalize, hi, ha] using hz
-      · simp [normalize, hi, ha] at hne
+        rw [normalize_of_unmarked_mem hi ha]
+        exact hz
+      · exact (hne (normalize_of_unmarked_not_mem hi ha).symm).elim
 
 theorem normalize_two_of_mem_union {ι α : Type*}
     {z : α} {L₁ L₂ : Set α} {F : Set ι} {a : ι → α} {i : ι}
@@ -115,10 +137,46 @@ theorem normalize_two_of_mem_union {ι α : Type*}
     normalize z L₂ F (normalize z L₁ F a) i = z := by
   classical
   rcases ha with ha₁ | ha₂
-  · simp [normalize, hi, ha₁, hz₂]
+  · have hfirst : normalize z L₁ F a i = z :=
+      normalize_of_unmarked_mem hi ha₁
+    have hmem : normalize z L₁ F a i ∈ L₂ := by
+      rw [hfirst]
+      exact hz₂
+    exact normalize_of_unmarked_mem hi hmem
   · by_cases ha₁ : a i ∈ L₁
-    · simp [normalize, hi, ha₁, hz₂]
-    · simp [normalize, hi, ha₁, ha₂]
+    · have hfirst : normalize z L₁ F a i = z :=
+        normalize_of_unmarked_mem hi ha₁
+      have hmem : normalize z L₁ F a i ∈ L₂ := by
+        rw [hfirst]
+        exact hz₂
+      exact normalize_of_unmarked_mem hi hmem
+    · have hfirst : normalize z L₁ F a i = a i :=
+        normalize_of_unmarked_not_mem hi ha₁
+      have hmem : normalize z L₁ F a i ∈ L₂ := by
+        rw [hfirst]
+        exact ha₂
+      exact normalize_of_unmarked_mem hi hmem
+
+theorem normalize_two_of_not_mem_union {ι α : Type*}
+    {z : α} {L₁ L₂ : Set α} {F : Set ι} {a : ι → α} {i : ι}
+    (hi : i ∉ F) (ha : a i ∉ L₁ ∪ L₂) :
+    normalize z L₂ F (normalize z L₁ F a) i = a i := by
+  classical
+  have ha₁ : a i ∉ L₁ := by
+    intro h
+    exact ha (Or.inl h)
+  have ha₂ : a i ∉ L₂ := by
+    intro h
+    exact ha (Or.inr h)
+  have hfirst : normalize z L₁ F a i = a i :=
+    normalize_of_unmarked_not_mem hi ha₁
+  have hnot : normalize z L₁ F a i ∉ L₂ := by
+    rw [hfirst]
+    exact ha₂
+  calc
+    normalize z L₂ F (normalize z L₁ F a) i =
+        normalize z L₁ F a i := normalize_of_unmarked_not_mem hi hnot
+    _ = a i := hfirst
 
 /--
 Two successive normalizations, first through L1 and then through L2, depend
@@ -134,8 +192,14 @@ theorem normalize_two_eq_of_related_union {ι α : Type*}
   classical
   funext i
   by_cases hi : i ∈ F
-  · have heq := hab.1 i hi
-    simp [normalize, hi, heq]
+  · calc
+      normalize z L₂ F (normalize z L₁ F a) i =
+          normalize z L₁ F a i := normalize_of_marked hi
+      _ = a i := normalize_of_marked hi
+      _ = b i := hab.1 i hi
+      _ = normalize z L₁ F b i := (normalize_of_marked hi).symm
+      _ = normalize z L₂ F (normalize z L₁ F b) i :=
+          (normalize_of_marked hi).symm
   · by_cases ha : a i ∈ L₁ ∪ L₂
     · have hb : b i ∈ L₁ ∪ L₂ := by
         by_contra hnb
@@ -144,12 +208,22 @@ theorem normalize_two_eq_of_related_union {ι α : Type*}
           apply hnb
           simpa [heq] using ha
         exact hnb (hab.2 i hne).2
-      rw [normalize_two_of_mem_union hz₂ hi ha,
-        normalize_two_of_mem_union hz₂ hi hb]
+      calc
+        normalize z L₂ F (normalize z L₁ F a) i = z :=
+          normalize_two_of_mem_union hz₂ hi ha
+        _ = normalize z L₂ F (normalize z L₁ F b) i :=
+          (normalize_two_of_mem_union hz₂ hi hb).symm
     · have heq : a i = b i := by
         by_contra hne
         exact ha (hab.2 i hne).1
-      simp [heq]
+      have hb : b i ∉ L₁ ∪ L₂ := by
+        simpa [heq] using ha
+      calc
+        normalize z L₂ F (normalize z L₁ F a) i = a i :=
+          normalize_two_of_not_mem_union hi ha
+        _ = b i := heq
+        _ = normalize z L₂ F (normalize z L₁ F b) i :=
+          (normalize_two_of_not_mem_union hi hb).symm
 
 /--
 Corrected Remark 3(ii): overlapping insensitive sets may be united.
