@@ -17,3 +17,4 @@ import DualTree.MixedProduct
 import DualTree.MixedGood
 import DualTree.GluingAudit
 import DualTree.MixedRefinement
+import DualTree.GoodNoBullet
