@@ -326,15 +326,47 @@ Its proof normalizes both assignments through a common bridge letter in
 $L_1\cap L_2$, making the suppressed transitivity explicit.
 
 \subsection{Lemma 31}
-Checking the rendered PDF removes two OCR false alarms: the lemma assumes
-$k\ge2$, and the proof later says to assume $k\ge3$.  Two genuine index shifts
-remain:
-\begin{itemize}
-\item at stage $i$ the new variable is in slot $i-1$, not $i$;
-\item the displayed cardinality of $J$ has $m-i-1$, while substitution into
-$d_{i-1}-p_i$ gives the term with $m-i$.
-\end{itemize}
-These currently look local.
+The rendered PDF removes two OCR false alarms: Lemma~31 assumes $k\ge2$, and
+the proof of Theorem~8 later assumes $k\ge3$.  Two genuine one-step index
+errors remain in Lemma~31 itself.
+
+First, at construction stage $i\in\{1,\ldots,m\}$ the new wildcard occupies
+the coordinate interval $[q_{i-1},q_i)$ inserted after the first $i-1$
+variables.  It is therefore the wildcard of $v_{i-1}$, not $v_i$.  The error
+is forced already at the final stage: since
+\[
+d_m=m+n_0-q_m=m,
+\]
+the word $w_m$ has precisely the variables
+$v_0,\ldots,v_{m-1}$, so a wildcard $v_m$ cannot occur.
+
+Second, with
+\[
+d_{i-1}=(i-1)+n_0-q_{i-1}
+\qquad\text{and}\qquad
+p_i=q_i-q_{i-1},
+\]
+the set
+\[
+J=\{0,\ldots,d_{i-1}-1\}
+   \setminus [i-1,i-1+p_i)
+\]
+has cardinality
+\[
+\begin{aligned}
+|J|
+ &=d_{i-1}-p_i \\
+ &=(i-1)+n_0-q_i \\
+ &=(i-1)+f_1(k,\kappa,m-i,m,r),
+\end{aligned}
+\]
+using equation~(8).  Thus the printed $m-i-1$ must be $m-i$.  With this
+correction the exponent in (10) matches equation~(9), so the pigeonhole bound
+has the intended value $p_i$.
+
+Both corrections are local to the indexing of the Shelah-style construction;
+nothing else in the mechanism needs to change at this point.  A source-faithful
+Lean formalization of Lemma~31 remains \todo.
 
 \subsection{Theorem 29}
 The product theorem is only asserted to follow by modifying the preceding
