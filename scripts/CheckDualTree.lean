@@ -11,3 +11,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.SpanAudit.singleton_span_subset
 #print axioms DualTree.BinarySkewAudit.remark2_witness_is_semicomplete_printed
 #print axioms DualTree.BinarySkewAudit.remark2_interior_not_skew_printed
+#print axioms DualTree.Remark1Audit.forwardS_is_skew
+#print axioms DualTree.Remark1Audit.forwardTprime_is_skew
+#print axioms DualTree.Remark1Audit.no_forward_complete_extension
