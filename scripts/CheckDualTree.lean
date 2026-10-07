@@ -82,3 +82,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedProduct.noBulletIndex_elim
 #print axioms DualTree.MixedProduct.good_iff_constant_on_span_of_noBullet
 #print axioms DualTree.MixedProduct.good_of_constant_on_span_of_noBullet
+
+#print axioms DualTree.MixedProduct.sameUpTrace_refl
+#print axioms DualTree.MixedProduct.upCanonical_of_refines
+#print axioms DualTree.MixedProduct.upCanonical_of_good_of_noBullet
+#print axioms DualTree.MixedProduct.upCanonical_of_constant_on_span
