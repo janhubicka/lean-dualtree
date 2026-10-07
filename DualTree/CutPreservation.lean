@@ -137,7 +137,8 @@ theorem paperCut_preserved_of_syntactic_refinement
     (hs : PaperAux s.1 cut.1) :
     underlyingSymbol g s = underlyingSymbol f s :=
   underlyingSymbol_eq_of_syntactic_cut
-    PaperAux (fun _ _ _ hp h => paperAux_of_prefix hp h)
+    PaperAux (fun {r s t} hp h =>
+      paperAux_of_prefix (r := r) (s := s) (t := t) hp h)
     f g ρ hword cut hkeep s hs
 
 /-- The same assertion for the repaired forward-lex auxiliary order. -/
@@ -153,7 +154,8 @@ theorem forwardCut_preserved_of_syntactic_refinement
     (hs : ForwardAux s.1 cut.1) :
     underlyingSymbol g s = underlyingSymbol f s :=
   underlyingSymbol_eq_of_syntactic_cut
-    ForwardAux (fun _ _ _ hp h => forwardAux_of_prefix hp h)
+    ForwardAux (fun {r s t} hp h =>
+      forwardAux_of_prefix (r := r) (s := s) (t := t) hp h)
     f g ρ hword cut hkeep s hs
 
 /--
