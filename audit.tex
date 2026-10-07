@@ -155,8 +155,24 @@ d_0=d_1=0,\quad d_2=1,\quad b=\ell=r=2,\quad k=n=1,
 \]
 and color $(w,\varnothing)$ by $w(\varnothing)$.  The marked point is forced
 to be the root, so the coloring is smooth with $\Gamma_1=D_2$.  The displayed
-threshold permits height one, but the unique one-dimensional starred subspace
-contains both colors.  Thus the numerical statement is false as printed.
+threshold permits height one, but every genuine one-dimensional candidate has
+both colors in its starred span.  Thus the numerical statement is false as
+printed.
+
+\paragraph{Lean status.}
+The height-one mechanism is now source-facing.  The uniqueness of the marked
+node is \lean{DualTree.Corollary22Audit.node_eq_root};
+\lean{DualTree.Corollary22Audit.color_is_smooth} proves the specialized
+Definition~21 smoothness condition; and
+\lean{DualTree.Corollary22Audit.no_monochromatic_complete_candidate} proves
+that no complete one-variable candidate has monochromatic starred span.
+Moreover,
+\lean{DualTree.Corollary22Audit.canonical_good_for_every_coloring}
+proves that at ambient height one the canonical one-dimensional subspace is
+$c$-good for every coloring, i.e. the local fact yielding the relevant
+MTHJ value $1$.  The equally trivial numerical identity
+$\operatorname{CT}(1,1,2,1,r)=1$ has not yet been wrapped in a general CT
+definition in Lean.
 
 There is also a boundary-definition issue: the corollary permits $d_2=0$ but
 uses $\operatorname{CT}(1,k,b,d_2,r)$, while Theorem 10 defines CT only for
