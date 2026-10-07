@@ -206,6 +206,21 @@ $c$-good for every coloring, the local fact behind
 $\operatorname{MTHJ}(0,0,1,2,2,1,r)=1$.  The equally trivial CT identity has
 not yet been wrapped in the general vector-CT API in Lean.
 
+\paragraph{Likely repair.}
+The obstruction identifies the missing resource in the usual proof:
+$c$-goodness at one marked root can still leave dependence on the letter at
+that root.  With two distinct variable roots one can keep the underlying word
+fixed while moving the marked point, and combine smoothness with $c$-goodness
+to eliminate this last dependence.  A natural corrected intermediate
+dimension is therefore
+\[
+H=\max\{2,\operatorname{CT}(1,k,b,d_2,r)\},
+\]
+followed by
+$\operatorname{MTHJ}(d_0,d_1,d_2,b,\ell,H,r)$.
+This is consistent with the exhaustive binary height-two checks from the
+pre-Lean audit.  The general corrected proof remains \todo.
+
 There is a second formal boundary issue: Corollary~22 permits $d_2=0$ but
 writes $\operatorname{CT}(1,k,b,d_2,r)$, while Theorem~10 assumes positive
 vector dimension $d$.  The case $d_2=0$ should be split off or CT should be
