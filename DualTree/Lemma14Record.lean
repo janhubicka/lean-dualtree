@@ -19,7 +19,7 @@ namespace DualTree.MixedProduct
 For every D1/up coordinate, record the selected leaf and the word restricted
 to nodes lying on its predecessor chain. Values off the chain are hidden.
 -/
-def upTraceRecord
+noncomputable def upTraceRecord
     {b n d : Nat} {α : Type*}
     {kind : Fin d → CoordKind}
     (x : Element b n d α kind) :
@@ -37,6 +37,7 @@ theorem sameUpTrace_iff_record_eq
     {kind : Fin d → CoordKind}
     (x y : Element b n d α kind) :
     SameUpTrace x y ↔ upTraceRecord x = upTraceRecord y := by
+  classical
   constructor
   · rintro ⟨hpoint, hword⟩
     funext i
@@ -45,8 +46,10 @@ theorem sameUpTrace_iff_record_eq
     · funext t
       have hp : x.upPoint i = y.upPoint i := hpoint i
       by_cases hpre : IsPrefix t.1 (x.upPoint i).1
-      · have hw := hword i t hpre
-        simp [upTraceRecord, hp, hpre, hw]
+      · have hpre' : IsPrefix t.1 (y.upPoint i).1 := by
+          simpa [hp] using hpre
+        have hw := hword i t hpre
+        simp [upTraceRecord, hpre, hpre', hw]
       · have hpre' : ¬ IsPrefix t.1 (y.upPoint i).1 := by
           simpa [hp] using hpre
         simp [upTraceRecord, hpre, hpre']
@@ -59,9 +62,13 @@ theorem sameUpTrace_iff_record_eq
         congrArg Prod.fst (congrFun hrec i)
       have hpre' : IsPrefix t.1 (y.upPoint i).1 := by
         simpa [hp] using hpre
-      have hv :=
+      have hv :
+          (upTraceRecord x i).2 t = (upTraceRecord y i).2 t :=
         congrArg (fun r => (r i).2 t) hrec
-      simpa [upTraceRecord, hpre, hpre'] using hv
+      have hv' :
+          some (x.words i.1 t) = some (y.words i.1 t) := by
+        simpa [upTraceRecord, hpre, hpre'] using hv
+      exact Option.some.inj hv'
 
 /--
 Equivalent factorization form of the Lemma 14 invariant: on the generated
