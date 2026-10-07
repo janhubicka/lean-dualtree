@@ -103,3 +103,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27Audit.safe_cone_tail
 #print axioms DualTree.Lemma27Audit.two_symbols_cannot_cover_three_variables
 #print axioms DualTree.Lemma27Audit.occurrence_based_freezing_not_substitution
+
+#print axioms DualTree.PartialColoring.exists_equivalence_respecting_extension
+#print axioms DualTree.PartialColoring.partial_coloring_compatible_of_extension
