@@ -14,3 +14,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Remark1Audit.forwardS_is_skew
 #print axioms DualTree.Remark1Audit.forwardTprime_is_skew
 #print axioms DualTree.Remark1Audit.no_forward_complete_extension
+
+#print axioms DualTree.StarInsensitivity.related_iff_printed
+#print axioms DualTree.StarInsensitivity.related_normalize
+#print axioms DualTree.StarInsensitivity.normalize_two_eq_of_related_union
+#print axioms DualTree.StarInsensitivity.insensitive_union_of_overlap
