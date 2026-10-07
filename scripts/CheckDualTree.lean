@@ -146,3 +146,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.SignatureBoundary.boundary_iff_frontier
 #print axioms DualTree.SignatureBoundary.existsUnique_boundary_on_path
 #print axioms DualTree.SignatureBoundary.firstBoundary_spec
+
+#print axioms DualTree.StarredSignature.variable_root_in_interior
+#print axioms DualTree.StarredSignature.variable_at_interior
+#print axioms DualTree.StarredSignature.exceptionalLeaves_spec
+#print axioms DualTree.StarredSignature.interior_mem_signatureTree
+#print axioms DualTree.StarredSignature.prefixWord_eq_of_syntactic_refinement

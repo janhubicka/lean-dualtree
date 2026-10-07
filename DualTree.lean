@@ -29,3 +29,4 @@ import DualTree.VisibleAncestors
 import DualTree.CutPreservation
 import DualTree.CutFrontier
 import DualTree.SignatureBoundary
+import DualTree.StarredSignature
