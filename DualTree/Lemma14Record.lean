@@ -24,8 +24,9 @@ noncomputable def upTraceRecord
     {kind : Fin d → CoordKind}
     (x : Element b n d α kind) :
     UpIndex kind →
-      (LeafNode b n × (BoundedNode b n → Option α)) :=
-  fun i =>
+      (LeafNode b n × (BoundedNode b n → Option α)) := by
+  classical
+  exact fun i =>
     (x.upPoint i,
       fun t =>
         if IsPrefix t.1 (x.upPoint i).1
@@ -62,13 +63,21 @@ theorem sameUpTrace_iff_record_eq
         congrArg Prod.fst (congrFun hrec i)
       have hpre' : IsPrefix t.1 (y.upPoint i).1 := by
         simpa [hp] using hpre
+      have hi : upTraceRecord x i = upTraceRecord y i :=
+        congrFun hrec i
+      have hfun :
+          (upTraceRecord x i).2 = (upTraceRecord y i).2 :=
+        congrArg Prod.snd hi
       have hv :
           (upTraceRecord x i).2 t = (upTraceRecord y i).2 t :=
-        congrArg (fun r => (r i).2 t) hrec
-      have hv' :
-          some (x.words i.1 t) = some (y.words i.1 t) := by
-        simpa [upTraceRecord, hpre, hpre'] using hv
-      exact Option.some.inj hv'
+        congrFun hfun t
+      change
+        (if IsPrefix t.1 (x.upPoint i).1
+          then some (x.words i.1 t) else none) =
+        (if IsPrefix t.1 (y.upPoint i).1
+          then some (y.words i.1 t) else none) at hv
+      rw [if_pos hpre, if_pos hpre'] at hv
+      exact Option.some.inj hv
 
 /--
 Equivalent factorization form of the Lemma 14 invariant: on the generated
