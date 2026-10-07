@@ -21,3 +21,5 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.SpanAudit.constant_preserved_of_span_subset
 #print axioms DualTree.SpanAudit.fibre_uniform_of_span_subset
 #print axioms DualTree.SpanAudit.span_subset_iff_substitution
+#print axioms DualTree.SkewTree.singleton_skewB
+#print axioms DualTree.SkewTree.singleton_complete_oneB
