@@ -90,3 +90,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedProduct.upCanonical_of_refines
 #print axioms DualTree.MixedProduct.upCanonical_of_good_of_noBullet
 #print axioms DualTree.MixedProduct.upCanonical_of_constant_on_span
+
+#print axioms DualTree.MixedProduct.sameUpTrace_iff_record_eq
+#print axioms DualTree.MixedProduct.upCanonical_iff_same_record
+#print axioms DualTree.MixedProduct.color_eq_of_upCanonical_of_same_record
