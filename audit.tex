@@ -417,10 +417,33 @@ not supplied.
 \item The reconstruction tests the occurrence position $P_i(z)$ rather than
 the root $P_i(y)$ of the variable $v_y$, so different occurrences of one
 variable fibre can be frozen differently.
+\item The default clause~(vi) tests $f'(s)=v_{P_i(z)}$ while defining $f'$.
+This is circular and appears to mean $f(s)=v_{P_i(z)}$; the default must be
+formulated using only previously fixed data.
+\item The formula $R_i(w_i(z))$ is not well typed as written: $R_i$ accepts
+auxiliary alphabet symbols $\{0,\ldots,m'\}$, whereas the condition
+$w_i(z)\notin\Lambda$ also includes genuine variable symbols $v_y$.
+A corrected construction needs separate cases for original letters,
+auxiliary letters (decoded by $R_i$), and variables (whose roots are
+transported into the corresponding cone).
 \end{enumerate}
-Therefore the final inclusion of every continuation of the fixed signature in
-the monochromatic image is not established.  We should reconstruct the local
-coding lemma rather than formalize these lines verbatim.
+
+\paragraph{Lean checks.}
+\lean{DualTree.Lemma27Audit.printed_projection_address_overflows}
+certifies the smallest address overflow with a frontier node of intrinsic
+depth $2$ in a height-$3$ tree, and
+\lean{DualTree.Lemma27Audit.safe_cone_tail} proves a sufficient one-level
+tail shortening. The finite cardinal obstruction to an unrestricted onto map
+is \lean{DualTree.Lemma27Audit.two_symbols_cannot_cover_three_variables};
+the precise realizable ancestor target still needs formal identification.
+Finally, \lean{DualTree.Lemma27Audit.occurrence_based_freezing_not_substitution}
+exhibits a repeated-variable fibre whose occurrences are split by a
+position-based freezing rule; no uniform substitution can produce it.
+
+These are checks of the \emph{construction}, not counterexamples to the
+intended statement of Lemma~27. The final inclusion of every continuation
+of the fixed signature in the monochromatic image remains unproved.
+The local coding lemma should be reconstructed with typed domains.
 
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
