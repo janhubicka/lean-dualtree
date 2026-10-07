@@ -27,3 +27,4 @@ import DualTree.PartialColoring
 import DualTree.SmoothRelation
 import DualTree.VisibleAncestors
 import DualTree.CutPreservation
+import DualTree.CutFrontier
