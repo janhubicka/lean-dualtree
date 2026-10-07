@@ -160,3 +160,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.StarredSignature.immediateSuccs_nil_of_not_interior
 #print axioms DualTree.StarredSignature.exceptionalLeaves_not_before_of_fullBefore
 #print axioms DualTree.StarredSignature.interior_mem_signatureTree_of_fullBefore
+
+#print axioms DualTree.StarredSignature.singleton_interior_nil
+#print axioms DualTree.StarredSignature.fullBefore_at_maxInterior
+#print axioms DualTree.StarredSignature.exceptionalLeaves_not_before_of_maxInterior
+#print axioms DualTree.StarredSignature.interior_mem_signatureTree_at_maxInterior
