@@ -28,3 +28,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.VariableWord.every_var_occurs
 #print axioms DualTree.VariableWord.span_subset_iff_substitution
 #print axioms DualTree.VariableWord.support_subset_of_span_subset
+
+#print axioms DualTree.UnaryMainAudit.unary_refines_all
+#print axioms DualTree.UnaryMainAudit.rootWord_complete
+#print axioms DualTree.UnaryMainAudit.leftWord_complete
+#print axioms DualTree.UnaryMainAudit.no_homogeneous_one
+#print axioms DualTree.UnaryMainAudit.no_unary_eventual_bound
