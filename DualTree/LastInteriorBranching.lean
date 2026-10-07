@@ -66,11 +66,14 @@ theorem fullBefore_at_maxInterior
             simp at hcut
         | cons x xs =>
             simp [hS] at hlen
-  have hskew : SkewTree.skewB aux O.tree = true :=
-    (Bool.and_eq_true.mp O.semi_complete).1
+  have hskew : SkewTree.skewB aux O.tree = true := by
+    have h := O.semi_complete
+    simp only [SkewTree.semiCompleteB, Bool.and_eq_true] at h
+    exact h.1
   have hIV : SkewTree.condIVB aux O.tree = true := by
-    have hparts := (Bool.and_eq_true.mp hskew).2
-    rcases Bool.or_eq_true.mp hparts with hsingle | hrest
+    have hparts := hskew
+    simp only [SkewTree.skewB, Bool.and_eq_true] at hparts
+    rcases Bool.or_eq_true.mp hparts.2 with hsingle | hrest
     · have hlen : O.tree.length = 1 := by
         simpa using hsingle
       exact (hnonSingleton hlen).elim
@@ -93,8 +96,9 @@ theorem fullBefore_at_maxInterior
     simp only [Bool.and_eq_true] at h
     exact h.2
   have hchildren : (SkewTree.immediateSuccs O.tree w).length = i.val + 1 := by
-    have h := (Bool.and_eq_true.mp hpartial).1
-    simpa [SkewTree.partialAtB] using h
+    have h := hpartial
+    simp only [SkewTree.partialAtB, Bool.and_eq_true] at h
+    simpa using h.1
   have hwNonempty :
       (SkewTree.immediateSuccs O.tree w).isEmpty = false := by
     cases hS : SkewTree.immediateSuccs O.tree w with
@@ -112,7 +116,7 @@ theorem fullBefore_at_maxInterior
     have hcutLeaf :
         (SkewTree.immediateSuccs O.tree cut).isEmpty = true := by
       have hh := (List.all_eq_true.mp hempty) cut hcutS
-      simpa [SkewTree.emptyAfterB, htest] using hh
+      simpa [hwBefore, heq] using hh
     rw [hcutNotLeaf] at hcutLeaf
     cases hcutLeaf
 
