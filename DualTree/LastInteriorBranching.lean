@@ -73,12 +73,10 @@ theorem fullBefore_at_maxInterior
   have hIV : SkewTree.condIVB aux O.tree = true := by
     have hparts := hskew
     simp only [SkewTree.skewB, Bool.and_eq_true] at hparts
-    rcases Bool.or_eq_true.mp hparts.2 with hsingle | hrest
-    · have hlen : O.tree.length = 1 := by
-        simpa using hsingle
-      exact (hnonSingleton hlen).elim
-    · have h := hrest
-      simp only [Bool.and_eq_true] at h
+    by_cases hsingle : O.tree.length = 1
+    · exact (hnonSingleton hsingle).elim
+    · have h := hparts.2
+      simp [hsingle, Bool.and_eq_true] at h
       exact h.2
   unfold SkewTree.condIVB at hIV
   rcases List.any_eq_true.mp hIV with ⟨w, hwS, hwAny⟩
@@ -116,7 +114,8 @@ theorem fullBefore_at_maxInterior
     have hcutLeaf :
         (SkewTree.immediateSuccs O.tree cut).isEmpty = true := by
       have hh := (List.all_eq_true.mp hempty) cut hcutS
-      simpa [hwBefore, heq] using hh
+      have hcutneq : cut ≠ w := Ne.symm heq
+      simpa [hwBefore, heq, hcutneq] using hh
     rw [hcutNotLeaf] at hcutLeaf
     cases hcutLeaf
 
