@@ -134,19 +134,26 @@ of every candidate in the printed sense.  Hence Theorem 3 is false literally
 for $\ell=1$.
 
 \paragraph{Repair and Lean status.}
-\ok The algebraic issue is now completely separated from the tree geometry.
-The singleton-alphabet collapse is formalized as
-\lean{DualTree.SpanAudit.singleton_span_subset}.  Conversely, if the alphabet
-contains two distinct letters and every source variable occurs, then
+\ok The algebraic and tree-geometric issues are now both formalized.
+The singleton-alphabet collapse is
+\lean{DualTree.SpanAudit.singleton_span_subset}.  If the alphabet contains
+two distinct letters and every source variable occurs,
 \lean{DualTree.SpanAudit.span_subset_iff_substitution} proves that evaluated
-span inclusion is equivalent to uniform syntactic substitution.  The proof is
-factored through preservation of source constants and uniformity on each
-source variable fibre.
+span inclusion is equivalent to uniform syntactic substitution.  For the
+paper's rooted tree-variable words,
+\lean{DualTree.VariableWord.support_subset_of_span_subset} then proves that
+every variable root of a refinement is already a source variable root.
 
 Thus later uses of span inclusion are justified once the paper is restricted
 to $|\Lambda|\ge2$ (or, preferably, once refinement is defined syntactically).
-The remaining tree-specific task is to combine this algebraic lemma with the
-variable-support/root conditions.
+
+For the excluded unary case the failure is now certified in the same
+tree-variable language, not only at one small height:
+\lean{DualTree.UnaryMainAudit.no_unary_eventual_bound} proves that for every
+binary ambient height $n\ge2$, a fixed two-coloring has two differently
+colored $1$-complete refinements below every candidate.  Consequently no
+eventual threshold can satisfy the literal $\ell=1$, $k=m=1$ instance of
+Theorem~3.
 
 \subsection{Corollary 22}
 Take
