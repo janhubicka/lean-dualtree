@@ -107,3 +107,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27Repair.restrictSupportWord_substitution
 #print axioms DualTree.Lemma27Repair.restrictSupport_span_subset
 #print axioms DualTree.Lemma27Repair.restrictSupport_support
+
+#print axioms DualTree.PartialColoring.exists_equivalence_respecting_extension
+#print axioms DualTree.PartialColoring.partial_coloring_compatible_of_extension

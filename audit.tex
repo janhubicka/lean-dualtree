@@ -454,6 +454,19 @@ span contained in the old one, for every alphabet.  This repairs the algebra
 of occurrence-based freezing, but it does not yet verify the geometric
 completeness of the selected skew support or the signature-transport map.
 
+\paragraph{Partial smooth-coloring extension.}
+The general classwise extension principle is isolated in
+\lean{DualTree.PartialColoring.exists_equivalence_respecting_extension},
+with necessity proved by
+\lean{DualTree.PartialColoring.partial_coloring_compatible_of_extension}.
+Thus a partial coloring on the starred domain extends to a total coloring
+constant on smoothness equivalence classes exactly when it is already
+constant on each class it meets.  This isolates, but does \emph{not} establish,
+the missing proof obligation that the particular induced coloring in
+Lemma~27 satisfies the required classwise compatibility.  The smoothness
+equivalence relation itself must also be defined from the paper's
+coordinatewise clauses.
+
 The final inclusion of every continuation of the fixed signature in the
 monochromatic image remains unproved.  The local coding lemma must still be
 reconstructed with typed domains.
