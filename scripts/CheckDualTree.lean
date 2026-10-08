@@ -284,3 +284,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.FrontierHeightBound.frontier_height_le_complete
 #print axioms DualTree.FrontierHeightBound.frontier_height_le_m_succ
 #print axioms DualTree.FrontierHeightBound.decodeAtFrontier_onto_visible
+
+#print axioms DualTree.ConeWordLift.liftWord_original
+#print axioms DualTree.ConeWordLift.liftWord_auxiliary
+#print axioms DualTree.ConeWordLift.liftWord_variable
+#print axioms DualTree.ConeWordLift.liftWord_variable_fibre
+#print axioms DualTree.ConeWordLift.eval_liftWord
+#print axioms DualTree.ConeWordLift.liftAtCone_aux_prefix
+#print axioms DualTree.ConeWordLift.liftAtCone_variable
