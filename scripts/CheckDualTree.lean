@@ -168,3 +168,8 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.SignatureFrontier.boundary_prefix_frontier_of_shared_descendant
 #print axioms DualTree.SignatureFrontier.boundary_prefix_unique_frontier_of_support_extension
+
+#print axioms DualTree.ConeFrontier.beforeCut_of_prefix
+#print axioms DualTree.ConeFrontier.outside_of_prefix
+#print axioms DualTree.ConeFrontier.unique_frontier_in_outside_cone
+#print axioms DualTree.ConeFrontier.unique_frontier_of_signature_boundary
