@@ -520,6 +520,29 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Uniqueness from the support meet property.} \todo
+There is a further simplification of the uniqueness part of the
+signature/frontier correspondence.  Say that a finite support $T$ is
+\emph{cone-meet-closed} if any two support nodes extending an ambient
+node $s$ have a common support predecessor extending $s$.
+The theorem
+\lean{DualTree.ConeFrontier.unique_frontier_in_outside_cone}
+shows that two distinct minimal outside-support roots cannot both extend
+the same node outside the cut: their common support predecessor would
+contradict the minimality of the roots.
+The stronger
+\lean{DualTree.ConeFrontier.unique_frontier_of_signature_boundary}
+combines this with the previously verified boundary/frontier path lemma,
+and proves that a signature boundary lies below exactly one outside
+frontier \emph{provided} it has some support descendant and $T$ is
+cone-meet-closed.
+
+This reduces the printed assertion to two independently checkable
+requirements: complete skew supports must satisfy the cone-meet property,
+and the particular nodes $s\in R$ must have support descendants.
+Neither requirement is inferred merely from the existence of an ambient
+path boundary.  Both remain \todo.
+
 \paragraph{Conditional signature-frontier correspondence.} \todo
 The lemma
 \lean{DualTree.SignatureFrontier.boundary_prefix_frontier_of_shared_descendant}
