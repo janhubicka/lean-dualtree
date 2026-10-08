@@ -558,6 +558,25 @@ and the particular nodes $s\in R$ must have support descendants.
 Neither requirement is inferred merely from the existence of an ambient
 path boundary.  Both remain \todo.
 
+\paragraph{Existence of support descendants for boundary markers.} \todo
+The paper's set $R$ includes boundary markers from exceptional leaves
+of the starred tree and the immediate ambient successors $t_0^\frown j$
+of the distinguished node.
+\lean{DualTree.SignatureMarker.boundaryMarker_has_support_descendant}
+proves that every exceptional-leaf marker has a support descendant whenever
+the original starred tree $S$ is contained in $T=\operatorname{ws}(f)$:
+the leaf used to define its boundary is itself such a descendant.
+The theorem
+\lean{DualTree.SignatureMarker.coneMarker_has_support_descendant}
+extends this to the immediate-successor markers, assuming $T$ has a
+support descendant in every direction from $t_0$.
+
+The latter is precisely the directional branching property expected
+of the complete skew support at the interior node $t_0$; deriving it from
+the existing \lean{DualTree.SkewTree.completeB} axioms remains \todo.
+The marker list is also not yet proved to coincide without repetitions
+with the literal set $R$ from Lemma~27.
+
 \paragraph{Conditional signature-frontier correspondence.} \todo
 The lemma
 \lean{DualTree.SignatureFrontier.boundary_prefix_frontier_of_shared_descendant}
