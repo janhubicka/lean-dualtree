@@ -211,3 +211,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MeetClosedFromBranching.exists_longer_common_support_prefix
 #print axioms DualTree.MeetClosedFromBranching.commonPrefix_mem_of_support_root
 #print axioms DualTree.MeetClosedFromBranching.meetClosed_of_rooted_uniqueDirections
+
+#print axioms DualTree.CompleteSkewMeet.full_directions_at_complete_witness
+#print axioms DualTree.CompleteSkewMeet.branchWitnesses_nil_of_immediateSuccs_nil
+#print axioms DualTree.CompleteSkewMeet.condIVB_of_skew_nonSingleton
+#print axioms DualTree.CompleteSkewMeet.rootedB_of_skew_nonSingleton
+#print axioms DualTree.CompleteSkewMeet.atMostOneDirection_of_complete_total
+#print axioms DualTree.CompleteSkewMeet.meetClosed_of_complete_total

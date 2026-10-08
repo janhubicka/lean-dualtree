@@ -520,6 +520,20 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Complete-skew directional uniqueness.} \todo
+The new theorem
+\lean{DualTree.CompleteSkewMeet.atMostOneDirection_of_complete_total}
+derives directional uniqueness directly from the executable
+\lean{SkewTree.completeB} axioms, assuming only comparability of distinct
+support nodes in the chosen auxiliary order.  It uses the full-before and
+empty-after parts of clause~(iv), and proves that the partial-branching
+parameter at the final witness exhausts all $b$ directions in a complete
+support.  Combined with finite ascent,
+\lean{DualTree.CompleteSkewMeet.meetClosed_of_complete_total}
+establishes ambient meet closure of every nonsingleton complete skew support
+under this order comparability hypothesis.  Instantiating comparability
+for the paper's printed and forward-lex auxiliary orders remains \todo.
+
 \paragraph{Meet closure from directional uniqueness.} \todo
 The finite-ascent theorem
 \lean{DualTree.MeetClosedFromBranching.meetClosed_of_rooted_uniqueDirections}
