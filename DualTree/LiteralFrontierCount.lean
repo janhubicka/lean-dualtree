@@ -29,14 +29,14 @@ theorem mem_frontiers_iff {b : Nat}
     f ∈ frontiers T cut ↔
       CutFrontier.Frontier T (fun u => PaperAux u cut) f := by
   classical
-  simp [frontiers, CutFrontier.Frontier]
+  simp [frontiers, CutFrontier.Frontier, decide_eq_true_eq]
 
 /-- The frontier list has no duplicate entries. -/
 theorem frontiers_nodup {b : Nat}
     (T : List (Node b)) (cut : Node b) :
     (frontiers T cut).Nodup := by
   classical
-  simp [frontiers]
+  exact List.nodup_eraseDups _
 
 /-- The printed signature set R is also represented without duplicates. -/
 theorem literalR_nodup
@@ -48,7 +48,7 @@ theorem literalR_nodup
       ¬ SignatureBoundary.BeforeCut cut t) :
     (LiteralSignatureR.literalR O cut hout).Nodup := by
   classical
-  simp [LiteralSignatureR.literalR]
+  exact List.nodup_eraseDups _
 
 /--
 The number of literal signature markers is bounded by the number of
