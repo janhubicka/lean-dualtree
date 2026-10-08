@@ -239,3 +239,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InclusiveSignatureMarkers.coneMarker_paperCutBoundary
 #print axioms DualTree.InclusiveSignatureMarkers.boundaryMarker_unique_frontier
 #print axioms DualTree.InclusiveSignatureMarkers.coneMarker_unique_frontier_of_height_lt
+
+#print axioms DualTree.CompleteInteriorBranching.nonleaf_of_height_lt
+#print axioms DualTree.CompleteInteriorBranching.fullDirections_of_complete_nonleaf_total
+#print axioms DualTree.CompleteInteriorBranching.fullDirections_of_height_lt_paper
+#print axioms DualTree.CompleteInteriorBranching.coneMarker_descendant_of_height_lt
+#print axioms DualTree.CompleteInteriorBranching.coneMarker_unique_frontier_of_complete_height

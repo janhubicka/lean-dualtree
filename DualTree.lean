@@ -44,3 +44,4 @@ import DualTree.CompleteSkewMeet
 import DualTree.SkewMeetInstantiation
 import DualTree.InclusiveFrontier
 import DualTree.InclusiveSignatureMarkers
+import DualTree.CompleteInteriorBranching
