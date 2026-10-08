@@ -293,3 +293,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27Repair.reconstructComplete_syntacticRefines
 #print axioms DualTree.Lemma27Repair.reconstructComplete_refines
 #print axioms DualTree.Lemma27Repair.reconstructComplete_prefixWord_eq
+
+#print axioms DualTree.ConeTailDomains.variable_cone_tail_safe
+#print axioms DualTree.ConeTailDomains.common_cone_tail_safe
+#print axioms DualTree.ConeTailDomains.variable_frontier_tail_safe

@@ -1033,6 +1033,28 @@ preserved exactly.  This closes the algebraic \emph{interface} for
 the final $f'$ in Lemma~27, but not the construction of the
 particular selected complete support or the cone-wise substitution.
 
+\paragraph{Safe domains for the cone projections.} \todo
+The printed common tail height $n'=n-m'$ in the definition
+of $P_i$ is not always in the domain of the canonical map:
+frontiers may have intrinsic height $m'+1$.  This obstruction
+was certified earlier in
+\lean{DualTree.Lemma27Audit.printed_projection_address_overflows}.
+Using the proved frontier-height bound,
+\lean{DualTree.ConeTailDomains.common_cone_tail_safe}
+verifies that the uniformly shortened tail height
+$n-(m'+1)$ is safe after every canonical frontier address,
+provided that address has length $h_T(t_i)$.
+Alternatively,
+\lean{DualTree.ConeTailDomains.variable_frontier_tail_safe}
+verifies the larger \emph{individual} tail height
+$n-h_T(t_i)$ for each cone.
+
+These statements certify the needed domain inequalities; they do
+not define the canonical map $I_T$ or show that the shorter common
+mixed-product height retains the dimension required by the
+later construction of $T'$.  Those aspects of the proposed repair
+remain \todo.
+
 \paragraph{Partial repair in Lean.}
 \lean{DualTree.Lemma27Repair.restrictSupport} takes a tree-variable word
 and a duplicate-free subset of its variable roots and freezes all occurrences
