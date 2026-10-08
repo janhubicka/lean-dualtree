@@ -24,7 +24,7 @@ theorem isPrefixOf_true_of_prefix {b : Nat}
   induction s with
   | nil => simp
   | cons a as ih =>
-      simpa [List.isPrefixOf_cons_cons] using ih
+      simp [List.isPrefixOf_cons_cons, ih]
 
 /-- The executable proper-prefix predicate has the intended meaning. -/
 theorem strictPrefixB_iff {b : Nat} (s t : Node b) :
@@ -50,15 +50,14 @@ theorem immediateSuccB_iff {b : Nat}
   · intro h
     simp only [SkewTree.immediateSuccB, Bool.and_eq_true] at h
     rcases h with ⟨⟨ht, hp⟩, hnone⟩
-    refine ⟨of_decide_true ht, (strictPrefixB_iff s t).1 hp, ?_⟩
+    refine ⟨(by simpa using ht), (strictPrefixB_iff s t).1 hp, ?_⟩
     intro u hu ⟨hsu, hut⟩
     have hhit : T.any (fun v =>
         SkewTree.strictPrefixB s v &&
           SkewTree.strictPrefixB v t) = true :=
-      List.any_eq_true.mpr
-        ⟨u, hu, (Bool.and_eq_true).2
-          ⟨(strictPrefixB_iff s u).2 hsu,
-            (strictPrefixB_iff u t).2 hut⟩⟩
+      List.any_eq_true.mpr ⟨u, hu, by
+        simp [(strictPrefixB_iff s u).2 hsu,
+          (strictPrefixB_iff u t).2 hut]⟩
     simp [hhit] at hnone
   · rintro ⟨ht, hp, hno⟩
     have hnone : T.any (fun v =>
@@ -70,7 +69,8 @@ theorem immediateSuccB_iff {b : Nat}
       | false => rfl
       | true =>
           rcases List.any_eq_true.mp htest with ⟨u, hu, htestu⟩
-          rcases Bool.and_eq_true.mp htestu with ⟨hsu, hut⟩
+          simp only [Bool.and_eq_true] at htestu
+          rcases htestu with ⟨hsu, hut⟩
           exact (hno u hu
             ⟨(strictPrefixB_iff s u).1 hsu,
              (strictPrefixB_iff u t).1 hut⟩).elim
@@ -89,16 +89,16 @@ theorem mem_branchWitnesses_iff {b : Nat}
       (fun v => SkewTree.immediateSuccB T s v &&
         (s ++ [i]).isPrefixOf v) at ht
     rcases List.mem_filter.mp ht with ⟨_ht, htest⟩
-    rcases Bool.and_eq_true.mp htest with ⟨hs, hp⟩
+    simp only [Bool.and_eq_true] at htest
+    rcases htest with ⟨hs, hp⟩
     exact ⟨hs, DirectionalSupport.prefix_of_isPrefixOf_true hp⟩
   · rintro ⟨hs, hp⟩
     change t ∈ T.filter
       (fun v => SkewTree.immediateSuccB T s v &&
         (s ++ [i]).isPrefixOf v)
     have ht : t ∈ T := ((immediateSuccB_iff T s t).1 hs).1
-    exact List.mem_filter.mpr
-      ⟨ht, (Bool.and_eq_true).2
-        ⟨hs, isPrefixOf_true_of_prefix hp⟩⟩
+    exact List.mem_filter.mpr ⟨ht, by
+      simp [hs, isPrefixOf_true_of_prefix hp]⟩
 
 /--
 Every proper extension of a node by a member of the support passes
