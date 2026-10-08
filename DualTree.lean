@@ -57,3 +57,4 @@ import DualTree.FrontierHeightBound
 import DualTree.RootAlignedSubstitution
 import DualTree.CompleteRootReconstruction
 import DualTree.ConeWordLift
+import DualTree.ConeProjectionAlgebra

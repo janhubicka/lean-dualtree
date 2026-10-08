@@ -1063,6 +1063,29 @@ requires no independent height assumption.
 The assembly of these local words into the global map $Q$ and
 the proof of its smooth-coloring compatibility remain \todo.
 
+\paragraph{Algebra of the canonical cone projections.} \todo
+The printed map $P_i(z)=I_T(I_T^{-1}(t_i)^\frown z)$
+must preserve initial segments, send the empty tail to $t_i$,
+and have all images in the cone above $t_i$.
+The module \lean{DualTree.ConeProjectionAlgebra} verifies these
+facts abstractly for any prefix-preserving map $I$ and a
+source address $s$ satisfying $I(s)=t_i$.
+In particular,
+\lean{DualTree.ConeProjectionAlgebra.projection_prefix}
+proves prefix preservation,
+\lean{DualTree.ConeProjectionAlgebra.projection_rooted_at_frontier}
+proves the cone condition, and
+\lean{DualTree.ConeProjectionAlgebra.projection_leftInverse_root}
+certifies the empty-tail identity for a left inverse.
+This supplies the geometric hypotheses required by
+\lean{DualTree.ConeRootAlignment.lifted_variable_root_prefix}
+once an actual canonical skew-support embedding is available.
+
+The construction and verification of $I_T$ for arbitrary complete
+skew supports remain \todo.  In particular these abstract lemmas
+must not be treated as proof that the printed $P_i$ is defined
+on its full stated domain.
+
 \paragraph{Partial repair in Lean.}
 \lean{DualTree.Lemma27Repair.restrictSupport} takes a tree-variable word
 and a duplicate-free subset of its variable roots and freezes all occurrences
