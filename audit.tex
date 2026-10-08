@@ -761,6 +761,15 @@ in the tested two-letter instances;
 \item 1244 finite overlap tests supporting the repaired Remark 3(ii);
 \item onto behavior of the Theorem 25 signature map and simplicity preservation
 in the tested tree-only cases.
+\item The executable regression \texttt{scripts/check-skew-meet.py}
+exhaustively enumerates all skew subsets (under both the printed
+reverse-lex order and the candidate forward-lex order) in the binary
+height-$3$ and height-$4$ trees and the ternary height-$2$ tree.
+It found, respectively, $25$, $201$, and $7$ skew trees in each order
+convention, and all were closed under ambient meets; of these,
+$17$, $114$, and $5$ were complete.  These tests corroborate the
+proposed meet-closure lemma for complete skew supports but are
+\emph{not} a formal proof for arbitrary height or branching number.
 \end{itemize}
 
 \section{Formalization order}
