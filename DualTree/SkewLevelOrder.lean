@@ -69,4 +69,39 @@ theorem forwardAux_of_height_lt
     hskew hnonsingleton hs ht hheight
   simp [SkewTree.forwardAuxB, ForwardAux, hlen]
 
+/--
+At a cut of smaller intrinsic height than a fully branching witness,
+all signature cone markers have support descendants.  The order and
+inequality side conditions of the earlier transport theorem follow
+from skewness and strict intrinsic-height separation.
+-/
+theorem coneMarker_has_descendant_of_height_lt
+    {b n l : Nat} {α : Type*}
+    (O : StarredSignature.StarredWord b n l α
+      (SkewTree.paperAuxB (b := b)))
+    (cut : Node b)
+    (hout : ∀ t, t ∈ StarredSignature.exceptionalLeaves O cut →
+      ¬ SignatureBoundary.BeforeCut cut t)
+    (T : List (Node b))
+    (hST : ∀ t, t ∈ O.tree → t ∈ T)
+    (hskew : SkewTree.skewB SkewTree.paperAuxB T = true)
+    (hnonsingleton : T.length ≠ 1)
+    (hcut : cut ∈ T)
+    (witness : Node b)
+    (hwitness : witness ∈ T)
+    (hheight : SkewTree.heightAt T cut < SkewTree.heightAt T witness)
+    (hfull : SkewTree.fullBeforeB SkewTree.paperAuxB T witness = true)
+    {s : Node b}
+    (hs : s ∈ SignatureMarker.coneMarkers O cut hout) :
+    ∃ t, t ∈ T ∧ IsPrefix s t := by
+  have hbefore : SkewTree.paperAuxB cut witness = true :=
+    paperAux_of_height_lt T hskew hnonsingleton
+      hcut hwitness hheight
+  have hne : cut ≠ witness := by
+    intro heq
+    subst witness
+    omega
+  exact DirectionalSupport.coneMarker_has_descendant_of_fullBefore
+    O cut hout T hST hcut witness hfull hbefore hne hs
+
 end DualTree.SkewLevelOrder

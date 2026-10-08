@@ -198,3 +198,4 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.SkewLevelOrder.length_lt_of_height_lt
 #print axioms DualTree.SkewLevelOrder.paperAux_of_height_lt
 #print axioms DualTree.SkewLevelOrder.forwardAux_of_height_lt
+#print axioms DualTree.SkewLevelOrder.coneMarker_has_descendant_of_height_lt
