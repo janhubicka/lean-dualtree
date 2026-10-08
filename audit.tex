@@ -520,6 +520,30 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Persistence of signature interiors at the maximal cut.} \ok
+The condition \lean{DualTree.LiteralSignatureR.InteriorPersists}
+has now been derived directly from Definition~26 at a maximal interior
+cut.  The theorem
+\lean{DualTree.SignatureInteriorPersistence.interiorPersists_of_maxInterior}
+takes an old interior node $s\ne t_0$ and an immediate successor $u$
+in the starred tree.  If $u$ remains interior, it is retained in the
+signature tree.  Otherwise $u$ must be an exceptional leaf, because
+a leaf below $t_0$ could not be an immediate successor of an earlier
+interior node.  Its first signature boundary is then a strict
+descendant of $s$ in $S'$, proving that $s$ remains interior.
+The fully source-facing version
+\lean{DualTree.SignatureInteriorPersistence.interiorPersists_at_maxInterior}
+uses the previously verified maximal-interior leaf-boundary lemma,
+without introducing an extra existence assumption.
+
+Consequently
+\lean{DualTree.SignatureInteriorPersistence.literalR_unique_frontier_of_maxInterior}
+establishes existence and uniqueness of the inclusive-cut support frontier
+for \emph{every node in the paper's literal $R$}, under the remaining
+complete-support inclusion and intrinsic-height hypotheses.
+The variable coding, smooth-coloring verification, and final
+Hales--Jewett lift in Lemma~27 are still \todo.
+
 \paragraph{Literal marker set $R$ and uniqueness in each cone.} \todo
 Page~28 of the source defines
 \[
@@ -537,7 +561,8 @@ The conditional lemma
 shows that all literal $R$ markers are candidates, provided every old
 interior node other than $t_0$ remains interior to $S'$.
 This persistence property is made explicit as
-\lean{DualTree.LiteralSignatureR.InteriorPersists} and remains \todo.
+\lean{DualTree.LiteralSignatureR.InteriorPersists} and is now proved
+at maximal interior cuts, as recorded above.
 It is unnecessary to establish equality of the two marker lists.
 
 The theorems

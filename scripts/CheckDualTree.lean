@@ -252,3 +252,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.LiteralSignatureR.literalR_subset_coneMarkers
 #print axioms DualTree.LiteralSignatureR.literalR_unique_marker_in_cone
 #print axioms DualTree.LiteralSignatureR.literalR_unique_inclusive_frontier
+
+#print axioms DualTree.SignatureInteriorPersistence.interior_of_strict_descendant
+#print axioms DualTree.SignatureInteriorPersistence.interiorPersists_of_maxInterior
+#print axioms DualTree.SignatureInteriorPersistence.interiorPersists_at_maxInterior
+#print axioms DualTree.SignatureInteriorPersistence.literalR_unique_frontier_of_maxInterior

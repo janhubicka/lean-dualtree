@@ -47,3 +47,4 @@ import DualTree.InclusiveSignatureMarkers
 import DualTree.CompleteInteriorBranching
 import DualTree.MarkerAntichain
 import DualTree.LiteralSignatureR
+import DualTree.SignatureInteriorPersistence
