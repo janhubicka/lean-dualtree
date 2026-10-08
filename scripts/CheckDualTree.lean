@@ -184,3 +184,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.SignatureMarker.boundaryMarker_has_leaf
 #print axioms DualTree.SignatureMarker.boundaryMarker_has_support_descendant
 #print axioms DualTree.SignatureMarker.coneMarker_has_support_descendant
+
+#print axioms DualTree.DirectionalSupport.mem_allFin
+#print axioms DualTree.DirectionalSupport.prefix_of_isPrefixOf_true
+#print axioms DualTree.DirectionalSupport.descendant_of_uniqueBranch
+#print axioms DualTree.DirectionalSupport.directional_descendants_of_fullBefore
+#print axioms DualTree.DirectionalSupport.coneMarker_has_descendant_of_fullBefore
