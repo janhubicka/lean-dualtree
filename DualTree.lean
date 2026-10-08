@@ -55,3 +55,4 @@ import DualTree.SupportHeightRanks
 import DualTree.RankCardinality
 import DualTree.FrontierHeightBound
 import DualTree.ConeWordLift
+import DualTree.ConeRootAlignment

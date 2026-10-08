@@ -292,3 +292,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ConeWordLift.eval_liftWord
 #print axioms DualTree.ConeWordLift.liftAtCone_aux_prefix
 #print axioms DualTree.ConeWordLift.liftAtCone_variable
+
+#print axioms DualTree.ConeRootAlignment.lifted_variable_root_prefix
+#print axioms DualTree.ConeRootAlignment.root_alignment_of_code

@@ -992,6 +992,24 @@ necessary rank bound for every such predecessor from the inclusive
 cut and skew level separation is proved in
 \lean{DualTree.FrontierHeightBound.frontier_height_le_cut_succ}.
 
+\paragraph{Alignment of decoded cone variables with their old roots.} \todo
+In addition to well-typed symbol decoding, the reconstructed word
+requires that any new variable emitted at an old root be rooted at
+one of its ambient prefixes.  The theorem
+\lean{DualTree.ConeRootAlignment.lifted_variable_root_prefix}
+proves this for the cone-word lift: auxiliary labels can decode
+only to ancestor roots of the frontier, whereas true cone variables
+use the below-root property of their local tree-variable word
+and prefix preservation of the cone map $P_i$.
+The stronger statement
+\lean{DualTree.ConeRootAlignment.root_alignment_of_code}
+transports the result to a substitution on the old source variable
+roots, provided the local addresses represent those roots correctly.
+This supplies the alignment condition required by the
+root-aligned reconstruction interface.  It remains to construct
+the source-specific prefix-preserving $P_i$ maps, prove the
+appropriate address identities, and verify selected-root membership.
+
 \paragraph{Typed decoding of the three kinds of cone symbols.} \todo
 The source's formula for $g_w$ tests whether a symbol is outside
 $\Lambda$ before applying $R_i$.  This conflates auxiliary letters
