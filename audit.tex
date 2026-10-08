@@ -1013,6 +1013,26 @@ Constructing the particular substitution from the cone words $f_i$
 and verifying its alignment and selected complete support remain
 \todo.
 
+\paragraph{Complete-support reconstruction from a root substitution.} \todo
+The source-facing constructor
+\lean{DualTree.Lemma27Repair.reconstructComplete} packages a
+uniform root-aligned substitution as a genuine $k$-variable word
+provided the chosen roots form a $k$-complete skew support.
+\lean{DualTree.Lemma27Repair.reconstructComplete_supportNodes}
+verifies that the selected roots are exactly its support, and
+\lean{DualTree.Lemma27Repair.reconstructComplete_syntacticRefines}
+shows that it is a syntactic refinement of the original word,
+including for unary alphabets.  Thus
+\lean{DualTree.Lemma27Repair.reconstructComplete_refines}
+gives the required inclusion of evaluated spans.
+Furthermore, if all original roots at or before the auxiliary cut
+are selected, then
+\lean{DualTree.Lemma27Repair.reconstructComplete_prefixWord_eq}
+proves that the word component of Definition~26's signature is
+preserved exactly.  This closes the algebraic \emph{interface} for
+the final $f'$ in Lemma~27, but not the construction of the
+particular selected complete support or the cone-wise substitution.
+
 \paragraph{Partial repair in Lean.}
 \lean{DualTree.Lemma27Repair.restrictSupport} takes a tree-variable word
 and a duplicate-free subset of its variable roots and freezes all occurrences
