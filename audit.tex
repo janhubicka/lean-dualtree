@@ -531,6 +531,15 @@ The theorem
 \lean{DualTree.MeetGeometry.coneMeetClosed_of_meetClosed} proves that
 ordinary meet-closure of $T$ implies the cone-meet condition used
 to derive a unique outside frontier root in each signature cone.
+The converse
+\lean{DualTree.MeetGeometry.meetClosed_of_coneMeetClosed}
+proves that the cone-meet condition is actually equivalent to ambient
+meet closure, not a weaker substitute.  The equivalence is
+\lean{DualTree.MeetGeometry.coneMeetClosed_iff_meetClosed}.
+The source-facing consequence
+\lean{DualTree.MeetGeometry.unique_frontier_of_boundary_of_meetClosed}
+packages Lemma~27 frontier uniqueness directly under meet closure.
+
 This reduces the remaining structural part to proving that a complete
 skew support is closed under ambient meets.  No such consequence is
 being assumed without proof.
@@ -557,6 +566,57 @@ requirements: complete skew supports must satisfy the cone-meet property,
 and the particular nodes $s\in R$ must have support descendants.
 Neither requirement is inferred merely from the existence of an ambient
 path boundary.  Both remain \todo.
+
+\paragraph{Existence of support descendants for boundary markers.} \todo
+The paper's set $R$ includes boundary markers from exceptional leaves
+of the starred tree and the immediate ambient successors $t_0^\frown j$
+of the distinguished node.
+\lean{DualTree.SignatureMarker.boundaryMarker_has_support_descendant}
+proves that every exceptional-leaf marker has a support descendant whenever
+the original starred tree $S$ is contained in $T=\operatorname{ws}(f)$:
+the leaf used to define its boundary is itself such a descendant.
+The theorem
+\lean{DualTree.SignatureMarker.coneMarker_has_support_descendant}
+extends this to the immediate-successor markers, assuming $T$ has a
+support descendant in every direction from $t_0$.
+
+The theorem
+\lean{DualTree.DirectionalSupport.directional_descendants_of_fullBefore}
+derives that directional branching condition whenever $t_0$ precedes
+a later support node satisfying the \lean{SkewTree.fullBeforeB}
+clause of the skew-tree definition.  It checks every branch
+direction and extracts an actual support descendant from the
+corresponding immediate-successor witness.
+Consequently
+\lean{DualTree.DirectionalSupport.coneMarker_has_descendant_of_fullBefore}
+eliminates the abstract branch-existence hypothesis from the combined
+signature-marker lemma under this precise geometric condition.
+
+The intrinsic-level-to-order part of the remaining argument is now
+formalized:
+\lean{DualTree.SkewLevelOrder.length_lt_of_height_lt}
+proves that two nodes of a nonsingleton skew support at different
+intrinsic heights have strictly ordered ambient lengths, and
+\lean{DualTree.SkewLevelOrder.paperAux_of_height_lt}
+gives their order under the printed auxiliary convention.  The
+forward-lex analogue is also proved.
+
+The theorem
+\lean{DualTree.SkewLevelOrder.coneMarker_has_descendant_of_height_lt}
+now combines intrinsic-height ordering with the full-before property:
+whenever the chosen cut has smaller intrinsic height than a later
+fully branching witness, every associated signature cone marker has a
+support descendant.  No separate auxiliary-order or distinctness
+hypothesis is required in this version.  This is still conditional
+on identifying the correct witness in the complete skew support.
+
+For the parameters $m'<m-1$ of Lemma~27, it remains to identify the
+final branching witness $w$ of the complete skew support and show
+$h_T(t_0)<h_T(w)$.  This requires checking that $w$ is at
+intrinsic height $n-2$ when $T$ is $n$-complete.  That numerical
+height-of-witness statement is still \todo.
+The marker list is also not yet proved to coincide without
+repetitions with the literal set $R$ from Lemma~27.
 
 \paragraph{Conditional signature-frontier correspondence.} \todo
 The lemma

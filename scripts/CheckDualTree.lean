@@ -180,3 +180,22 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MeetGeometry.commonPrefix_append_left
 #print axioms DualTree.MeetGeometry.prefix_commonPrefix
 #print axioms DualTree.MeetGeometry.coneMeetClosed_of_meetClosed
+#print axioms DualTree.MeetGeometry.meetClosed_of_coneMeetClosed
+#print axioms DualTree.MeetGeometry.coneMeetClosed_iff_meetClosed
+#print axioms DualTree.MeetGeometry.unique_frontier_of_boundary_of_meetClosed
+
+#print axioms DualTree.SignatureMarker.boundaryMarker_has_leaf
+#print axioms DualTree.SignatureMarker.boundaryMarker_has_support_descendant
+#print axioms DualTree.SignatureMarker.coneMarker_has_support_descendant
+
+#print axioms DualTree.DirectionalSupport.mem_allFin
+#print axioms DualTree.DirectionalSupport.prefix_of_isPrefixOf_true
+#print axioms DualTree.DirectionalSupport.descendant_of_uniqueBranch
+#print axioms DualTree.DirectionalSupport.directional_descendants_of_fullBefore
+#print axioms DualTree.DirectionalSupport.coneMarker_has_descendant_of_fullBefore
+
+#print axioms DualTree.SkewLevelOrder.condIIIB_of_skew
+#print axioms DualTree.SkewLevelOrder.length_lt_of_height_lt
+#print axioms DualTree.SkewLevelOrder.paperAux_of_height_lt
+#print axioms DualTree.SkewLevelOrder.forwardAux_of_height_lt
+#print axioms DualTree.SkewLevelOrder.coneMarker_has_descendant_of_height_lt

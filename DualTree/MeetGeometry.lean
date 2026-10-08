@@ -97,4 +97,38 @@ theorem coneMeetClosed_of_meetClosed {b : Nat}
   · exact commonPrefix_prefix_left x y
   · exact commonPrefix_prefix_right x y
 
+/-- The cone-meet condition is strong enough to recover the actual ambient meet. -/
+theorem meetClosed_of_coneMeetClosed {b : Nat}
+    (T : List (Node b)) (hT : ConeFrontier.ConeMeetClosed T) :
+    MeetClosed T := by
+  intro x y hx hy
+  obtain ⟨z, hz, hsz, hzx, hzy⟩ :=
+    hT (commonPrefix x y) x y hx hy
+      (commonPrefix_prefix_left x y)
+      (commonPrefix_prefix_right x y)
+  have hzs : IsPrefix z (commonPrefix x y) :=
+    prefix_commonPrefix hzx hzy
+  have heq : commonPrefix x y = z :=
+    isPrefix_antisymm hsz hzs
+  rw [heq]
+  exact hz
+
+/-- Cone-meet closure and closure under ambient longest common prefixes agree. -/
+theorem coneMeetClosed_iff_meetClosed {b : Nat}
+    (T : List (Node b)) :
+    ConeFrontier.ConeMeetClosed T ↔ MeetClosed T :=
+  ⟨meetClosed_of_coneMeetClosed T, coneMeetClosed_of_meetClosed T⟩
+
+/-- The Lemma 27 frontier uniqueness statement with ambient meet closure. -/
+theorem unique_frontier_of_boundary_of_meetClosed {b : Nat}
+    (T : List (Node b)) (cut leaf s : Node b)
+    (hT : MeetClosed T)
+    (hb : SignatureBoundary.Boundary cut leaf s)
+    (hdesc : ∃ t : Node b, t ∈ T ∧ IsPrefix s t) :
+    ∃! f : Node b,
+      CutFrontier.Frontier T (SignatureBoundary.BeforeCut cut) f ∧
+      IsPrefix s f :=
+  ConeFrontier.unique_frontier_of_signature_boundary T cut leaf s
+    (coneMeetClosed_of_meetClosed T hT) hb hdesc
+
 end DualTree.MeetGeometry
