@@ -520,6 +520,37 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Literal marker set $R$ and uniqueness in each cone.} \todo
+Page~28 of the source defines
+\[
+R=\bigl(S'\setminus(\operatorname{Int}(S')\cup\{t_0\})\bigr)
+  \cup\operatorname{ImSucc}(t_0).
+\]
+This is \emph{not definitionally} the earlier list of exceptional-leaf
+boundaries plus the immediate children of $t_0$.
+\lean{DualTree.LiteralSignatureR.literalR} records the literal formula,
+while \lean{DualTree.LiteralSignatureR.mem_signatureTree_iff}
+unpacks the signature skeleton as old interior points plus leaf boundaries.
+
+The conditional lemma
+\lean{DualTree.LiteralSignatureR.literalR_subset_coneMarkers}
+shows that all literal $R$ markers are candidates, provided every old
+interior node other than $t_0$ remains interior to $S'$.
+This persistence property is made explicit as
+\lean{DualTree.LiteralSignatureR.InteriorPersists} and remains \todo.
+It is unnecessary to establish equality of the two marker lists.
+
+The theorems
+\lean{DualTree.MarkerAntichain.eq_of_prefix_boundaries} and
+\lean{DualTree.MarkerAntichain.unique_candidate_marker_in_cone}
+show that first-exit nodes from the inclusive cut form a prefix
+antichain; hence \emph{at most one} candidate marker can lie below
+any given frontier node.  The same uniqueness and support-frontier
+existence for the \emph{literal} $R$ are reduced to interior persistence
+by \lean{DualTree.LiteralSignatureR.literalR_unique_marker_in_cone}
+and \lean{DualTree.LiteralSignatureR.literalR_unique_inclusive_frontier}.
+The remainder of Lemma~27 is not validated by these reductions.
+
 \paragraph{Full branching below the last intrinsic level.} \ok
 The earlier signature-marker argument required locating a later
 full-branching witness $w$ and proving $h_T(t_0)<h_T(w)$.  That
