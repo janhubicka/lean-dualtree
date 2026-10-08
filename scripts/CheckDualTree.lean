@@ -190,3 +190,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.DirectionalSupport.descendant_of_uniqueBranch
 #print axioms DualTree.DirectionalSupport.directional_descendants_of_fullBefore
 #print axioms DualTree.DirectionalSupport.coneMarker_has_descendant_of_fullBefore
+
+#print axioms DualTree.SkewLevelOrder.condIIIB_of_skew
+#print axioms DualTree.SkewLevelOrder.length_lt_of_height_lt
+#print axioms DualTree.SkewLevelOrder.paperAux_of_height_lt
+#print axioms DualTree.SkewLevelOrder.forwardAux_of_height_lt
