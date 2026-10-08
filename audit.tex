@@ -895,6 +895,29 @@ position-based freezing rule; no uniform substitution can produce it.
 These are checks of the \emph{construction}, not counterexamples to the
 intended statement of Lemma~27.
 
+\paragraph{Cone-local decoder for auxiliary letters.} \todo
+The unrestricted map $R_i:\{0,\ldots,m'\}\to
+\{v_t:t\in\operatorname{Int}(S_w)\}$ cannot be used in the
+printed construction: its codomain can be too large and contain
+incomparable variables.  The repaired decoder instead targets
+\emph{only} the interior roots properly preceding the frontier $t_i$.
+\lean{DualTree.ConeLocalDecoder.visibleAncestor_spec}
+certifies both the membership and proper-prefix requirements for
+those roots.  The noncomputable
+\lean{DualTree.ConeLocalDecoder.decode} is a total map from the
+$m'+1$ auxiliary labels to either a fixed fallback letter or a
+\emph{visible ancestor index}.  If the target list is nonempty and
+$h_T(t_i)\le m'+1$, then
+\lean{DualTree.ConeLocalDecoder.decode_onto_visible}
+proves that every such index occurs; if it is empty,
+\lean{DualTree.ConeLocalDecoder.decode_empty} verifies that all
+auxiliary labels decode to the fallback letter.  Finally,
+\lean{DualTree.ConeLocalDecoder.decodeRoot_prefix} shows that
+any emitted variable root is a strict prefix of the frontier.
+The bound $h_T(t_i)\le m'+1$ is presently still a hypothesis:
+deriving it from the complete-skew cut/frontier geometry remains
+\todo, as does integration with the full coloring $Q$.
+
 \paragraph{Partial repair in Lean.}
 \lean{DualTree.Lemma27Repair.restrictSupport} takes a tree-variable word
 and a duplicate-free subset of its variable roots and freezes all occurrences
