@@ -520,6 +520,16 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Meet closure from directional uniqueness.} \todo
+The finite-ascent theorem
+\lean{DualTree.MeetClosedFromBranching.meetClosed_of_rooted_uniqueDirections}
+derives ambient meet closure of any rooted finite support from uniqueness
+of the immediate support successor in each ambient direction.
+The supporting lemmas show that whenever a support node properly prefixes
+the ambient meet of two points, a longer common support prefix exists.
+The necessary directional uniqueness must still be derived from the
+complete-skew condition~(iv); it is not introduced as an axiom.
+
 \paragraph{Immediate support successors and direction uniqueness.} \todo
 The support path construction
 \lean{DualTree.SkewBranchGeometry.exists_first_immediate_on_path}
