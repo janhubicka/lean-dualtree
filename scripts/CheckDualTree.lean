@@ -264,4 +264,18 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.LiteralFrontierCleanup.child_bounded_of_support_descendant
 #print axioms DualTree.LiteralFrontierCleanup.all_children_bounded_of_early_level
 
+#print axioms DualTree.LiteralFrontierIndex.frontierFor_spec
+#print axioms DualTree.LiteralFrontierIndex.frontierFor_eq_of_frontier
+#print axioms DualTree.LiteralFrontierIndex.frontierFor_injective
+
+#print axioms DualTree.ConeLocalDecoder.visibleAncestor_spec
+#print axioms DualTree.ConeLocalDecoder.visibleAncestor_get_prefix
+#print axioms DualTree.ConeLocalDecoder.indexMap_surjective
+#print axioms DualTree.ConeLocalDecoder.decode_empty
+#print axioms DualTree.ConeLocalDecoder.decode_onto_visible
+#print axioms DualTree.ConeLocalDecoder.decodeRoot_prefix
+
+#print axioms DualTree.SupportHeightRanks.heightAt_lt_of_strictPrefix
+#print axioms DualTree.SupportHeightRanks.heightAt_injective_on_common_path
+
 #print axioms DualTree.RankCardinality.nodup_length_le_of_rank_bound
