@@ -82,10 +82,10 @@ theorem frontierFor_eq_of_frontier
     (hf : CutFrontier.Frontier T (fun u => PaperAux u cut) f)
     (hsf : IsPrefix s.1 f) :
     frontierFor O cut hcut hmax hout T hcomplete hST hcutT hlevel s = f := by
-  exact (Classical.choose_spec
+  exact ((Classical.choose_spec
     (LiteralFrontierCleanup.literalR_unique_frontier
       O cut hcut hmax hout T hcomplete hST hcutT hlevel s.2)).2
-        f ⟨hf, hsf⟩
+        f ⟨hf, hsf⟩).symm
 
 /-- Distinct literal R markers have distinct assigned frontier nodes. -/
 theorem frontierFor_injective
