@@ -895,6 +895,19 @@ position-based freezing rule; no uniform substitution can produce it.
 These are checks of the \emph{construction}, not counterexamples to the
 intended statement of Lemma~27.
 
+\paragraph{Strict intrinsic ranks along support branches.} \todo
+The eventual decoder-height bound requires the intrinsic heights of
+successive support predecessors to be strictly increasing.
+\lean{DualTree.SupportHeightRanks.heightAt_lt_of_strictPrefix}
+proves this without skewness or completeness assumptions, by
+comparing the proper-prefix filters.  The theorem
+\lean{DualTree.SupportHeightRanks.heightAt_injective_on_common_path}
+shows that two support nodes on one ambient branch with the same
+intrinsic height must coincide.  This is the rank input for proving
+that any minimal support point beyond a cut of intrinsic height $m'$
+has height at most $m'+1$.  That final cardinality argument is still
+\todo; the frontier-height bound has not yet been used without proof.
+
 \paragraph{Partial repair in Lean.}
 \lean{DualTree.Lemma27Repair.restrictSupport} takes a tree-variable word
 and a duplicate-free subset of its variable roots and freezes all occurrences
