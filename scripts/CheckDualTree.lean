@@ -257,3 +257,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.SignatureInteriorPersistence.interiorPersists_of_maxInterior
 #print axioms DualTree.SignatureInteriorPersistence.interiorPersists_at_maxInterior
 #print axioms DualTree.SignatureInteriorPersistence.literalR_unique_frontier_of_maxInterior
+
+#print axioms DualTree.LiteralFrontierCleanup.nonsingleton_of_early_level
+#print axioms DualTree.LiteralFrontierCleanup.coneMarker_unique_frontier
+#print axioms DualTree.LiteralFrontierCleanup.literalR_unique_frontier
+#print axioms DualTree.LiteralFrontierCleanup.child_bounded_of_support_descendant
+#print axioms DualTree.LiteralFrontierCleanup.all_children_bounded_of_early_level

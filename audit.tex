@@ -520,6 +520,26 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Early cuts, singleton supports and ambient bounds.} \ok
+The hypotheses of the literal marker/frontier correspondence can be
+simplified further.  If $h_T(t_0)+1<k$ in a $k$-complete support,
+the cut cannot lie in a singleton support:
+\lean{DualTree.LiteralFrontierCleanup.nonsingleton_of_early_level}.
+Consequently
+\lean{DualTree.LiteralFrontierCleanup.literalR_unique_frontier}
+needs no separate nonsingleton assumption.
+
+There is also a minor ambient-domain obligation in the printed definition
+of $R$: $\operatorname{ImSucc}_{b^{<N}}(t_0)$ refers only to children inside
+the ambient tree, whereas the intermediate Lean candidate list uses
+all $b$ directions.  The theorem
+\lean{DualTree.LiteralFrontierCleanup.all_children_bounded_of_early_level}
+proves that all children $t_0^\frown i$ do lie in $b^{<N}$
+whenever $T\subseteq b^{<N}$ and $t_0$ is below the final intrinsic
+level.  It extracts for each direction a bounded support descendant.
+Hence this part of the candidate-list construction does not introduce
+extraneous ambient nodes.
+
 \paragraph{Persistence of signature interiors at the maximal cut.} \ok
 The condition \lean{DualTree.LiteralSignatureR.InteriorPersists}
 has now been derived directly from Definition~26 at a maximal interior
