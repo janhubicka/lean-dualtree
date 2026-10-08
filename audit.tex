@@ -520,6 +520,41 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{The source's inclusive cut and marker/frontier correspondence.} \ok
+The prefix-minimal frontier points $t_i$ in the paper are taken beyond
+the \emph{inclusive} initial segment $\{t\in T:t\preccurlyeq t_0\}$,
+not beyond the strict cut used for the signature boundary in
+Definition~26.  Those two frontiers are distinct notions.  In
+particular, simply transferring the earlier strict-cut uniqueness
+statement to Lemma~27 would not be justified.
+
+The source-matching boundary predicate is
+\lean{DualTree.InclusiveFrontier.PaperCutBoundary}.
+\lean{DualTree.InclusiveFrontier.unique_frontier_of_boundary}
+shows that such a boundary has a unique support frontier beyond the
+inclusive cut whenever it has a support descendant and the support
+is ambient meet-closed.  For complete skew supports, the meet-closure
+assumption is discharged by
+\lean{DualTree.InclusiveFrontier.unique_frontier_complete_paper}.
+
+Both kinds of candidate nodes in $R$ are proven to be these inclusive-cut
+boundaries:
+\lean{DualTree.InclusiveSignatureMarkers.child_paperCutBoundary}
+for the immediate successors of $t_0$, and
+\lean{DualTree.InclusiveSignatureMarkers.boundaryMarker_paperCutBoundary}
+for exceptional signature-leaf boundaries.  Consequently,
+\lean{DualTree.InclusiveSignatureMarkers.boundaryMarker_unique_frontier}
+gives unconditional existence and uniqueness for exceptional-leaf markers
+under the natural support inclusion $S\subseteq T$.
+The theorem
+\lean{DualTree.InclusiveSignatureMarkers.coneMarker_unique_frontier_of_height_lt}
+handles \emph{all} candidate markers, including immediate children,
+provided the cut has smaller intrinsic height than a later full-branching
+witness.  The witness-height formula and the identification of this list
+with the paper's literal set $R$ remain \todo, as does the variable coding.
+
+
+
 \paragraph{Unconditional meet closure for complete skew supports.} \ok
 \lean{DualTree.finLexLE_total} proves totality of finite lexicographic
 comparison.  Its specializations
