@@ -38,7 +38,7 @@ theorem commonPrefix_prefix_left {b : Nat}
           · subst c
             rcases ih cs with ⟨u, hu⟩
             refine ⟨u, ?_⟩
-            exact congrArg (List.cons a) hu
+            simpa [commonPrefix] using congrArg (List.cons a) hu
           · exact ⟨a :: as, by simp [commonPrefix, h]⟩
 
 /-- Symmetry of the longest common prefix. -/
