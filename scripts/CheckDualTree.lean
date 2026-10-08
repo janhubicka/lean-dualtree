@@ -218,3 +218,15 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.CompleteSkewMeet.rootedB_of_skew_nonSingleton
 #print axioms DualTree.CompleteSkewMeet.atMostOneDirection_of_complete_total
 #print axioms DualTree.CompleteSkewMeet.meetClosed_of_complete_total
+
+#print axioms DualTree.finLexLE_total
+#print axioms DualTree.SkewMeetInstantiation.paperAux_total
+#print axioms DualTree.SkewMeetInstantiation.forwardAux_total
+#print axioms DualTree.SkewMeetInstantiation.paperAuxB_total
+#print axioms DualTree.SkewMeetInstantiation.forwardAuxB_total
+#print axioms DualTree.SkewMeetInstantiation.meetClosed_singleton
+#print axioms DualTree.SkewMeetInstantiation.meetClosed_length_one
+#print axioms DualTree.SkewMeetInstantiation.meetClosed_complete_paper
+#print axioms DualTree.SkewMeetInstantiation.meetClosed_complete_forward
+#print axioms DualTree.SkewMeetInstantiation.unique_frontier_complete_paper
+#print axioms DualTree.SkewMeetInstantiation.unique_frontier_complete_forward

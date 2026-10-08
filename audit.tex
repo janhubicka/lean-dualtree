@@ -520,6 +520,25 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Unconditional meet closure for complete skew supports.} \ok
+\lean{DualTree.finLexLE_total} proves totality of finite lexicographic
+comparison.  Its specializations
+\lean{DualTree.SkewMeetInstantiation.paperAuxB_total} and
+\lean{DualTree.SkewMeetInstantiation.forwardAuxB_total}
+discharge the sole auxiliary-order assumption of the complete-skew
+branching theorem.  The resulting theorems
+\lean{DualTree.SkewMeetInstantiation.meetClosed_complete_paper} and
+\lean{DualTree.SkewMeetInstantiation.meetClosed_complete_forward}
+establish ambient meet closure for \emph{all} complete skew supports,
+including singleton supports, in both order conventions.
+\lean{DualTree.SkewMeetInstantiation.unique_frontier_complete_paper}
+and its forward-lex counterpart eliminate the cone-meet hypothesis in
+the corresponding conditional signature-boundary frontier lemma.
+These facts do not repair the separate canonical-order-preservation
+counterexample, nor do they prove the entirety of Lemma~27:
+coverage of the paper's exact marker set $R$, the necessary support
+descendants, and the actual variable coding remain to be verified.
+
 \paragraph{Complete-skew directional uniqueness.} \todo
 The new theorem
 \lean{DualTree.CompleteSkewMeet.atMostOneDirection_of_complete_total}
@@ -531,8 +550,8 @@ parameter at the final witness exhausts all $b$ directions in a complete
 support.  Combined with finite ascent,
 \lean{DualTree.CompleteSkewMeet.meetClosed_of_complete_total}
 establishes ambient meet closure of every nonsingleton complete skew support
-under this order comparability hypothesis.  Instantiating comparability
-for the paper's printed and forward-lex auxiliary orders remains \todo.
+under this order comparability hypothesis.  Both order conventions now
+satisfy the requisite comparability, by the unconditional theorems below.
 
 \paragraph{Meet closure from directional uniqueness.} \todo
 The finite-ascent theorem
@@ -541,8 +560,8 @@ derives ambient meet closure of any rooted finite support from uniqueness
 of the immediate support successor in each ambient direction.
 The supporting lemmas show that whenever a support node properly prefixes
 the ambient meet of two points, a longer common support prefix exists.
-The necessary directional uniqueness must still be derived from the
-complete-skew condition~(iv); it is not introduced as an axiom.
+This directional uniqueness is now derived from complete-skew
+condition~(iv), without introducing it as an axiom.
 
 \paragraph{Immediate support successors and direction uniqueness.} \todo
 The support path construction
@@ -554,9 +573,8 @@ directional witness are compared with their propositional meanings.
 The fact
 \lean{DualTree.SkewBranchGeometry.eq_of_mem_uniqueBranch}
 extracts uniqueness of two successors from the corresponding
-\lean{SkewTree.uniqueBranchB} hypothesis.  The key next task is to
-deduce \emph{uniform} direction uniqueness from clause~(iv) of the
-skew-tree definition and use finite ascent to establish ambient meet closure.
+\lean{SkewTree.uniqueBranchB} hypothesis.  These facts are now used in
+the complete-skew meet-closure proof above.
 
 
 
