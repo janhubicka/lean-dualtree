@@ -520,6 +520,22 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Counting the $D_2$ frontier coordinates.} \todo
+The lemma
+\lean{DualTree.LiteralFrontierCount.literalR_length_le_frontiers}
+uses the verified injection from the paper's literal $R$ into the
+distinct minimal support frontiers to establish $|R|\le d$,
+where $d$ is the number of those frontiers.
+The theorem
+\lean{DualTree.LiteralFrontierCount.frontier_partition_count}
+therefore justifies the numerical definitions
+$d_2=|R|$ and $d_0=d-d_2$, with $d_0+d_2=d$.
+The frontier list is made duplicate-free and its membership
+is characterized exactly by the inclusive-cut frontier predicate.
+This does not yet establish the separate estimate
+$d\le b^{m'+1}$ needed for the displayed recursive bound, nor
+does it construct the eventual mixed-product coding $Q$.
+
 \paragraph{Injection of the literal markers into frontier coordinates.} \todo
 The opening observation of Lemma~27 requires not only that every
 $s\in R$ belongs to a unique frontier cone, but that no frontier cone

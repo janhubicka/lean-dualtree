@@ -288,3 +288,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27Repair.substituteRoots_span_subset
 #print axioms DualTree.Lemma27Repair.substituteRoots_support
 #print axioms DualTree.Lemma27Repair.substituteRoots_fibre_uniform
+
+#print axioms DualTree.LiteralFrontierCount.mem_frontiers_iff
+#print axioms DualTree.LiteralFrontierCount.frontiers_nodup
+#print axioms DualTree.LiteralFrontierCount.literalR_nodup
+#print axioms DualTree.LiteralFrontierCount.literalR_length_le_frontiers
+#print axioms DualTree.LiteralFrontierCount.frontier_partition_count
