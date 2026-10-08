@@ -230,3 +230,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.SkewMeetInstantiation.meetClosed_complete_forward
 #print axioms DualTree.SkewMeetInstantiation.unique_frontier_complete_paper
 #print axioms DualTree.SkewMeetInstantiation.unique_frontier_complete_forward
+
+#print axioms DualTree.InclusiveFrontier.outside_of_prefix
+#print axioms DualTree.InclusiveFrontier.unique_frontier_of_boundary
+#print axioms DualTree.InclusiveFrontier.unique_frontier_complete_paper
+#print axioms DualTree.InclusiveSignatureMarkers.child_paperCutBoundary
+#print axioms DualTree.InclusiveSignatureMarkers.boundaryMarker_paperCutBoundary
+#print axioms DualTree.InclusiveSignatureMarkers.coneMarker_paperCutBoundary
+#print axioms DualTree.InclusiveSignatureMarkers.boundaryMarker_unique_frontier
+#print axioms DualTree.InclusiveSignatureMarkers.coneMarker_unique_frontier_of_height_lt
