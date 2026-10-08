@@ -274,3 +274,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ConeLocalDecoder.decode_empty
 #print axioms DualTree.ConeLocalDecoder.decode_onto_visible
 #print axioms DualTree.ConeLocalDecoder.decodeRoot_prefix
+
+#print axioms DualTree.SupportHeightRanks.heightAt_lt_of_strictPrefix
+#print axioms DualTree.SupportHeightRanks.heightAt_injective_on_common_path
