@@ -165,3 +165,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.StarredSignature.fullBefore_at_maxInterior
 #print axioms DualTree.StarredSignature.exceptionalLeaves_not_before_of_maxInterior
 #print axioms DualTree.StarredSignature.interior_mem_signatureTree_at_maxInterior
+
+#print axioms DualTree.SignatureFrontier.boundary_prefix_frontier_of_shared_descendant
+#print axioms DualTree.SignatureFrontier.boundary_prefix_unique_frontier_of_support_extension
