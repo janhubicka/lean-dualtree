@@ -951,6 +951,16 @@ The bound $h_T(t_i)\le m'+1$ is presently still a hypothesis:
 deriving it from the complete-skew cut/frontier geometry remains
 \todo, as does integration with the full coloring $Q$.
 
+\paragraph{Bounded intrinsic-rank counting.} \todo
+The elementary counting principle
+\lean{DualTree.RankCardinality.nodup_length_le_of_rank_bound}
+states that a duplicate-free finite list carrying distinct ranks
+in $\{0,\ldots,m\}$ has length at most $m+1$.  In Lemma~27 this is
+intended for the list of proper support predecessors of a frontier
+node, with the intrinsic height as its rank.  Establishing the
+necessary rank bound for every such predecessor from the inclusive
+cut and skew level separation remains \todo.
+
 \paragraph{Partial repair in Lean.}
 \lean{DualTree.Lemma27Repair.restrictSupport} takes a tree-variable word
 and a duplicate-free subset of its variable roots and freezes all occurrences

@@ -277,3 +277,5 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.SupportHeightRanks.heightAt_lt_of_strictPrefix
 #print axioms DualTree.SupportHeightRanks.heightAt_injective_on_common_path
+
+#print axioms DualTree.RankCardinality.nodup_length_le_of_rank_bound

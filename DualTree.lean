@@ -52,3 +52,4 @@ import DualTree.LiteralFrontierCleanup
 import DualTree.LiteralFrontierIndex
 import DualTree.ConeLocalDecoder
 import DualTree.SupportHeightRanks
+import DualTree.RankCardinality
