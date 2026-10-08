@@ -1033,6 +1033,36 @@ preserved exactly.  This closes the algebraic \emph{interface} for
 the final $f'$ in Lemma~27, but not the construction of the
 particular selected complete support or the cone-wise substitution.
 
+\paragraph{Typed decoding of the three kinds of cone symbols.} \todo
+The source's formula for $g_w$ tests whether a symbol is outside
+$\Lambda$ before applying $R_i$.  This conflates auxiliary letters
+with genuine variables. In the repaired encoding these are three
+distinct constructors: original alphabet letters, elements of the
+disjoint auxiliary alphabet, and variables of the cone word.
+The maps \lean{DualTree.ConeWordLift.liftSymbol} and
+\lean{DualTree.ConeWordLift.liftWord}
+give a total decoding by exhaustive cases.
+The corresponding constructor lemmas verify their behavior;
+\lean{DualTree.ConeWordLift.liftWord_variable_fibre} shows that
+repeated occurrences of a cone variable receive identical symbols.
+The evaluation identity
+\lean{DualTree.ConeWordLift.eval_liftWord} makes the enlarged
+alphabet and transport maps explicit.
+
+At a frontier, auxiliary letters are decoded using the visible
+ancestor list, independently of transported genuine cone variables.
+The theorem
+\lean{DualTree.ConeWordLift.liftAtCone_aux_prefix}
+proves that a decoded auxiliary variable is a proper prefix of
+the frontier, while
+\lean{DualTree.ConeWordLift.liftAtCone_variable}
+preserves the specified root of each genuine cone variable.
+By the established frontier-height bound,
+\lean{DualTree.ConeWordLift.liftAtFrontier}
+requires no independent height assumption.
+The assembly of these local words into the global map $Q$ and
+the proof of its smooth-coloring compatibility remain \todo.
+
 \paragraph{Partial repair in Lean.}
 \lean{DualTree.Lemma27Repair.restrictSupport} takes a tree-variable word
 and a duplicate-free subset of its variable roots and freezes all occurrences
