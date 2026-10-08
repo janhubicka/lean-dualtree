@@ -1,4 +1,5 @@
 import DualTree.LiteralSignatureR
+import DualTree.LastInteriorBranching
 
 /-!
 # Persistence of old interior nodes under the signature construction
