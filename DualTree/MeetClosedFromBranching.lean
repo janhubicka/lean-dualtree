@@ -17,7 +17,7 @@ namespace DualTree.MeetClosedFromBranching
 
 /-- At every support node, each ambient direction selects at most one immediate successor. -/
 def AtMostOneDirection {b : Nat} (T : List (Node b)) : Prop :=
-  ∀ (s : Node b) (i : Fin b) (x y : Node b),
+  ∀ (s : Node b), s ∈ T → ∀ (i : Fin b) (x y : Node b),
     x ∈ SkewTree.branchWitnesses T s i →
     y ∈ SkewTree.branchWitnesses T s i → x = y
 
@@ -39,7 +39,7 @@ theorem exists_longer_common_support_prefix {b : Nat}
     (T : List (Node b)) (hunique : AtMostOneDirection T)
     (x y z : Node b)
     (hx : x ∈ T) (hy : y ∈ T)
-    (_hz : z ∈ T)
+    (hz : z ∈ T)
     (hzm : IsStrictPrefix z (MeetGeometry.commonPrefix x y)) :
     ∃ u, u ∈ T ∧ IsStrictPrefix z u ∧
       IsPrefix u (MeetGeometry.commonPrefix x y) := by
@@ -97,7 +97,7 @@ theorem exists_longer_common_support_prefix {b : Nat}
       have hvMem : v ∈ SkewTree.branchWitnesses T z i :=
         (SkewBranchGeometry.mem_branchWitnesses_iff T z v i).2
           ⟨hvB, hdirV⟩
-      have huv : u = v := hunique z i u v huMem hvMem
+      have huv : u = v := hunique z hz i u v huMem hvMem
       have huy : IsPrefix u y := by simpa [huv] using hvy
       exact ⟨u, huT, hzu,
         MeetGeometry.prefix_commonPrefix hux huy⟩
