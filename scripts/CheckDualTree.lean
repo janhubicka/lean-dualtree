@@ -173,3 +173,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ConeFrontier.outside_of_prefix
 #print axioms DualTree.ConeFrontier.unique_frontier_in_outside_cone
 #print axioms DualTree.ConeFrontier.unique_frontier_of_signature_boundary
+
+#print axioms DualTree.MeetGeometry.commonPrefix_prefix_left
+#print axioms DualTree.MeetGeometry.commonPrefix_comm
+#print axioms DualTree.MeetGeometry.commonPrefix_prefix_right
+#print axioms DualTree.MeetGeometry.commonPrefix_append_left
+#print axioms DualTree.MeetGeometry.prefix_commonPrefix
+#print axioms DualTree.MeetGeometry.coneMeetClosed_of_meetClosed
