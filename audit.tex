@@ -571,11 +571,24 @@ The theorem
 extends this to the immediate-successor markers, assuming $T$ has a
 support descendant in every direction from $t_0$.
 
-The latter is precisely the directional branching property expected
-of the complete skew support at the interior node $t_0$; deriving it from
-the existing \lean{DualTree.SkewTree.completeB} axioms remains \todo.
-The marker list is also not yet proved to coincide without repetitions
-with the literal set $R$ from Lemma~27.
+The theorem
+\lean{DualTree.DirectionalSupport.directional_descendants_of_fullBefore}
+derives that directional branching condition whenever $t_0$ precedes
+a later support node satisfying the \lean{SkewTree.fullBeforeB}
+clause of the skew-tree definition.  It checks every branch
+direction and extracts an actual support descendant from the
+corresponding immediate-successor witness.
+Consequently
+\lean{DualTree.DirectionalSupport.coneMarker_has_descendant_of_fullBefore}
+eliminates the abstract branch-existence hypothesis from the combined
+signature-marker lemma under this precise geometric condition.
+
+What remains is to show, for the parameters $m'<m-1$ of Lemma~27,
+that the distinguished support node $t_0$ really precedes the final
+branching witness in a complete skew support; this should follow
+from intrinsic-level separation but is not yet certified in Lean.
+The marker list is also not yet proved to coincide without
+repetitions with the literal set $R$ from Lemma~27.
 
 \paragraph{Conditional signature-frontier correspondence.} \todo
 The lemma
