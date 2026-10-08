@@ -925,8 +925,8 @@ comparing the proper-prefix filters.  The theorem
 shows that two support nodes on one ambient branch with the same
 intrinsic height must coincide.  This is the rank input for proving
 that any minimal support point beyond a cut of intrinsic height $m'$
-has height at most $m'+1$.  That final cardinality argument is still
-\todo; the frontier-height bound has not yet been used without proof.
+has height at most $m'+1$.  This cardinality argument is now completed
+by \lean{DualTree.FrontierHeightBound.frontier_height_le_cut_succ}.
 
 \paragraph{Cone-local decoder for auxiliary letters.} \todo
 The unrestricted map $R_i:\{0,\ldots,m'\}\to
@@ -947,9 +947,39 @@ proves that every such index occurs; if it is empty,
 auxiliary labels decode to the fallback letter.  Finally,
 \lean{DualTree.ConeLocalDecoder.decodeRoot_prefix} shows that
 any emitted variable root is a strict prefix of the frontier.
-The bound $h_T(t_i)\le m'+1$ is presently still a hypothesis:
-deriving it from the complete-skew cut/frontier geometry remains
-\todo, as does integration with the full coloring $Q$.
+The bound $h_T(t_i)\le m'+1$ is now supplied by
+\lean{DualTree.FrontierHeightBound.frontier_height_le_m_succ};
+integration with the full coloring $Q$ remains \todo.
+
+\paragraph{Intrinsic height of minimal outside-cut frontiers.} \ok
+The source-facing theorem
+\lean{DualTree.FrontierHeightBound.frontier_height_le_cut_succ}
+proves that every minimal support point $t_i$ beyond the inclusive
+auxiliary cut at $t_0$ satisfies
+\[
+h_T(t_i)\le h_T(t_0)+1.
+\]
+Indeed every proper support predecessor $r$ of $t_i$ lies at or before
+$t_0$; clause~(iii) of skewness implies
+$h_T(r)\le h_T(t_0)$, while distinct predecessors have distinct
+intrinsic heights.  The cardinality lemma then bounds the total number
+of predecessors.  This does not require choosing a canonical
+enumeration of the frontier.
+
+For a complete skew support,
+\lean{DualTree.FrontierHeightBound.frontier_height_le_complete}
+removes the separate nonsingleton assumption.  In particular, if
+$h_T(t_0)=m'$, then the required $h_T(t_i)\le m'+1$ follows from
+\lean{DualTree.FrontierHeightBound.frontier_height_le_m_succ}.
+The constructor
+\lean{DualTree.FrontierHeightBound.decodeAtFrontier}
+can therefore use exactly $m'+1$ auxiliary symbols, with no additional
+frontier-height assumption.  Its
+\lean{DualTree.FrontierHeightBound.decodeAtFrontier_onto_visible}
+surjectivity conclusion now follows unconditionally from the
+complete-skew frontier geometry when the target list is nonempty.
+The actual reconstruction of the $Q$-coloring and of the final
+complete support remains \todo.
 
 \paragraph{Bounded intrinsic-rank counting.} \todo
 The elementary counting principle
@@ -959,7 +989,8 @@ in $\{0,\ldots,m\}$ has length at most $m+1$.  In Lemma~27 this is
 intended for the list of proper support predecessors of a frontier
 node, with the intrinsic height as its rank.  Establishing the
 necessary rank bound for every such predecessor from the inclusive
-cut and skew level separation remains \todo.
+cut and skew level separation is proved in
+\lean{DualTree.FrontierHeightBound.frontier_height_le_cut_succ}.
 
 \paragraph{Partial repair in Lean.}
 \lean{DualTree.Lemma27Repair.restrictSupport} takes a tree-variable word
