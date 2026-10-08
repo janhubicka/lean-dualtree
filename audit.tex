@@ -520,6 +520,26 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Injection of the literal markers into frontier coordinates.} \todo
+The opening observation of Lemma~27 requires not only that every
+$s\in R$ belongs to a unique frontier cone, but that no frontier cone
+contains more than one such marker.  The chosen frontier is now a
+source-facing map
+\lean{DualTree.LiteralFrontierIndex.frontierFor}
+on the subtype of nodes in the \emph{literal} $R$.
+The theorems
+\lean{DualTree.LiteralFrontierIndex.frontierFor_spec} and
+\lean{DualTree.LiteralFrontierIndex.frontierFor_eq_of_frontier}
+identify it with the unique minimal support node beyond the
+inclusive auxiliary cut.  Moreover,
+\lean{DualTree.LiteralFrontierIndex.frontierFor_injective}
+proves this map injective under the same maximal-interior, support
+inclusion, and early-level hypotheses.  This is the geometric
+basis for choosing the $D_2$-coordinates in the mixed product
+without conflating distinct signature markers.  The explicit
+numbering of those coordinates and the repaired coding $Q$
+are still \todo.
+
 \paragraph{Early cuts, singleton supports and ambient bounds.} \ok
 The hypotheses of the literal marker/frontier correspondence can be
 simplified further.  If $h_T(t_0)+1<k$ in a $k$-complete support,
