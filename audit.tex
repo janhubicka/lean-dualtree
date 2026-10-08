@@ -520,6 +520,21 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Ambient meets and cone uniqueness.} \todo
+\lean{DualTree.MeetGeometry.commonPrefix} is the actual longest common
+initial segment of two ambient nodes.  The source-facing lemmas
+\lean{DualTree.MeetGeometry.commonPrefix_prefix_left},
+\lean{DualTree.MeetGeometry.commonPrefix_prefix_right}, and
+\lean{DualTree.MeetGeometry.prefix_commonPrefix} establish its defining
+universal property.
+The theorem
+\lean{DualTree.MeetGeometry.coneMeetClosed_of_meetClosed} proves that
+ordinary meet-closure of $T$ implies the cone-meet condition used
+to derive a unique outside frontier root in each signature cone.
+This reduces the remaining structural part to proving that a complete
+skew support is closed under ambient meets.  No such consequence is
+being assumed without proof.
+
 \paragraph{Uniqueness from the support meet property.} \todo
 There is a further simplification of the uniqueness part of the
 signature/frontier correspondence.  Say that a finite support $T$ is
