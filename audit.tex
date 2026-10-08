@@ -520,6 +520,25 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Full branching below the last intrinsic level.} \ok
+The earlier signature-marker argument required locating a later
+full-branching witness $w$ and proving $h_T(t_0)<h_T(w)$.  That
+numerical witness-height detour is no longer needed.
+\lean{DualTree.CompleteInteriorBranching.nonleaf_of_height_lt}
+proves directly that a node $s$ with $h_T(s)+1<k$ in a $k$-complete
+skew tree is not a leaf.  Clause~(iv) and completeness then force
+one support successor in each direction:
+\lean{DualTree.CompleteInteriorBranching.fullDirections_of_height_lt_paper}.
+The theorem
+\lean{DualTree.CompleteInteriorBranching.coneMarker_descendant_of_height_lt}
+establishes support descendants for every candidate cone marker, and
+\lean{DualTree.CompleteInteriorBranching.coneMarker_unique_frontier_of_complete_height}
+gives the unique inclusive-cut frontier directly, assuming only the
+natural inclusion $S\subseteq T$, membership $t_0\in T$, nonsingleton
+support, and $h_T(t_0)+1<k$.
+The identification of candidate markers with the paper's exact $R$,
+and the variable-word coding in Lemma~27, remain \todo.
+
 \paragraph{The source's inclusive cut and marker/frontier correspondence.} \ok
 The prefix-minimal frontier points $t_i$ in the paper are taken beyond
 the \emph{inclusive} initial segment $\{t\in T:t\preccurlyeq t_0\}$,
