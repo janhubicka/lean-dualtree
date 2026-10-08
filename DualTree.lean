@@ -33,3 +33,4 @@ import DualTree.StarredSignature
 import DualTree.FullBeforeSignature
 import DualTree.LastInteriorBranching
 import DualTree.SignatureFrontier
+import DualTree.ConeFrontier
