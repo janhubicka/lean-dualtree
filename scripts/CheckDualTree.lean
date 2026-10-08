@@ -263,3 +263,5 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.LiteralFrontierCleanup.literalR_unique_frontier
 #print axioms DualTree.LiteralFrontierCleanup.child_bounded_of_support_descendant
 #print axioms DualTree.LiteralFrontierCleanup.all_children_bounded_of_early_level
+
+#print axioms DualTree.RankCardinality.nodup_length_le_of_rank_bound
