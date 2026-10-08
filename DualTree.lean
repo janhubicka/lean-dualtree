@@ -54,4 +54,6 @@ import DualTree.ConeLocalDecoder
 import DualTree.SupportHeightRanks
 import DualTree.RankCardinality
 import DualTree.FrontierHeightBound
+import DualTree.RootAlignedSubstitution
+import DualTree.CompleteRootReconstruction
 import DualTree.ConeWordLift
