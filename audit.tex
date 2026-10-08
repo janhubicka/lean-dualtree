@@ -520,6 +520,26 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Injection of the literal markers into frontier coordinates.} \todo
+The opening observation of Lemma~27 requires not only that every
+$s\in R$ belongs to a unique frontier cone, but that no frontier cone
+contains more than one such marker.  The chosen frontier is now a
+source-facing map
+\lean{DualTree.LiteralFrontierIndex.frontierFor}
+on the subtype of nodes in the \emph{literal} $R$.
+The theorems
+\lean{DualTree.LiteralFrontierIndex.frontierFor_spec} and
+\lean{DualTree.LiteralFrontierIndex.frontierFor_eq_of_frontier}
+identify it with the unique minimal support node beyond the
+inclusive auxiliary cut.  Moreover,
+\lean{DualTree.LiteralFrontierIndex.frontierFor_injective}
+proves this map injective under the same maximal-interior, support
+inclusion, and early-level hypotheses.  This is the geometric
+basis for choosing the $D_2$-coordinates in the mixed product
+without conflating distinct signature markers.  The explicit
+numbering of those coordinates and the repaired coding $Q$
+are still \todo.
+
 \paragraph{Early cuts, singleton supports and ambient bounds.} \ok
 The hypotheses of the literal marker/frontier correspondence can be
 simplified further.  If $h_T(t_0)+1<k$ in a $k$-complete support,
@@ -907,6 +927,29 @@ intrinsic height must coincide.  This is the rank input for proving
 that any minimal support point beyond a cut of intrinsic height $m'$
 has height at most $m'+1$.  That final cardinality argument is still
 \todo; the frontier-height bound has not yet been used without proof.
+
+\paragraph{Cone-local decoder for auxiliary letters.} \todo
+The unrestricted map $R_i:\{0,\ldots,m'\}\to
+\{v_t:t\in\operatorname{Int}(S_w)\}$ cannot be used in the
+printed construction: its codomain can be too large and contain
+incomparable variables.  The repaired decoder instead targets
+\emph{only} the interior roots properly preceding the frontier $t_i$.
+\lean{DualTree.ConeLocalDecoder.visibleAncestor_spec}
+certifies both the membership and proper-prefix requirements for
+those roots.  The noncomputable
+\lean{DualTree.ConeLocalDecoder.decode} is a total map from the
+$m'+1$ auxiliary labels to either a fixed fallback letter or a
+\emph{visible ancestor index}.  If the target list is nonempty and
+$h_T(t_i)\le m'+1$, then
+\lean{DualTree.ConeLocalDecoder.decode_onto_visible}
+proves that every such index occurs; if it is empty,
+\lean{DualTree.ConeLocalDecoder.decode_empty} verifies that all
+auxiliary labels decode to the fallback letter.  Finally,
+\lean{DualTree.ConeLocalDecoder.decodeRoot_prefix} shows that
+any emitted variable root is a strict prefix of the frontier.
+The bound $h_T(t_i)\le m'+1$ is presently still a hypothesis:
+deriving it from the complete-skew cut/frontier geometry remains
+\todo, as does integration with the full coloring $Q$.
 
 \paragraph{Partial repair in Lean.}
 \lean{DualTree.Lemma27Repair.restrictSupport} takes a tree-variable word
