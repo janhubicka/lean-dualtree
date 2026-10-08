@@ -35,3 +35,4 @@ import DualTree.LastInteriorBranching
 import DualTree.SignatureFrontier
 import DualTree.ConeFrontier
 import DualTree.MeetGeometry
+import DualTree.SignatureMarker
