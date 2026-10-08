@@ -76,7 +76,7 @@ theorem unique_frontier_of_boundary {b : Nat}
   have hmgEq : m = g := by
     by_contra hne
     exact hmOutside (hg.1.2.2 m hmT ⟨hmg, hne⟩)
-  exact hmfEq.symm.trans hmgEq
+  exact hmgEq.symm.trans hmfEq
 
 /-- The exact inclusive-cut frontier theorem for complete skew supports. -/
 theorem unique_frontier_complete_paper {b k : Nat}
