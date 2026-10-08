@@ -992,6 +992,27 @@ necessary rank bound for every such predecessor from the inclusive
 cut and skew level separation is proved in
 \lean{DualTree.FrontierHeightBound.frontier_height_le_cut_succ}.
 
+\paragraph{Uniform ancestor-root substitution.} \todo
+The root-masking construction only freezes discarded variables to
+letters; the reconstruction of $f'$ in Lemma~27 can also need to
+identify several old variable fibres with one surviving root.
+The more general constructor
+\lean{DualTree.Lemma27Repair.substituteRoots}
+does this by a single substitution on \emph{source variable roots}.
+It requires that selected roots stay fixed and that every surviving
+target variable be rooted at a prefix of the corresponding old root.
+These hypotheses suffice to produce a legal tree-variable word.
+\lean{DualTree.Lemma27Repair.substituteRoots_span_subset}
+proves syntactic refinement and evaluated span containment for
+every alphabet, and
+\lean{DualTree.Lemma27Repair.substituteRoots_support}
+proves exact preservation of the chosen support.  Different
+occurrences of one source variable are treated identically, so the
+printed occurrence-based freezing error cannot arise.
+Constructing the particular substitution from the cone words $f_i$
+and verifying its alignment and selected complete support remain
+\todo.
+
 \paragraph{Partial repair in Lean.}
 \lean{DualTree.Lemma27Repair.restrictSupport} takes a tree-variable word
 and a duplicate-free subset of its variable roots and freezes all occurrences
