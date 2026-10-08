@@ -64,4 +64,26 @@ theorem forwardAux_of_eq_length {b : Nat} {s t : Node b}
     ForwardAux s t :=
   Or.inr ⟨hlen, hlex⟩
 
+/-- Lexicographic comparison of finite nodes is total. -/
+theorem finLexLE_total {b : Nat} (s t : Node b) :
+    FinLexLE s t ∨ FinLexLE t s := by
+  induction s generalizing t with
+  | nil =>
+      exact Or.inl (by simp [FinLexLE, finLexLEB])
+  | cons a as ih =>
+      cases t with
+      | nil =>
+          exact Or.inr (by simp [FinLexLE, finLexLEB])
+      | cons c cs =>
+          by_cases h : a = c
+          · subst c
+            rcases ih cs with htail | htail
+            · exact Or.inl (by simpa [FinLexLE, finLexLEB] using htail)
+            · exact Or.inr (by simpa [FinLexLE, finLexLEB] using htail)
+          · rcases lt_trichotomy a c with hlt | heq | hgt
+            · exact Or.inl (by simp [FinLexLE, finLexLEB, h, hlt])
+            · exact (h heq).elim
+            · have hca : c ≠ a := Ne.symm h
+              exact Or.inr (by simp [FinLexLE, finLexLEB, hca, hgt])
+
 end DualTree

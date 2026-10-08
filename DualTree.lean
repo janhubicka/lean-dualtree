@@ -41,3 +41,4 @@ import DualTree.SkewLevelOrder
 import DualTree.SkewBranchGeometry
 import DualTree.MeetClosedFromBranching
 import DualTree.CompleteSkewMeet
+import DualTree.SkewMeetInstantiation
