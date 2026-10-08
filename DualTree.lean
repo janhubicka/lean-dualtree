@@ -36,3 +36,4 @@ import DualTree.SignatureFrontier
 import DualTree.ConeFrontier
 import DualTree.MeetGeometry
 import DualTree.SignatureMarker
+import DualTree.DirectionalSupport
