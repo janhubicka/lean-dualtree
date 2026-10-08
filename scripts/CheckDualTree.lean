@@ -199,3 +199,15 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.SkewLevelOrder.paperAux_of_height_lt
 #print axioms DualTree.SkewLevelOrder.forwardAux_of_height_lt
 #print axioms DualTree.SkewLevelOrder.coneMarker_has_descendant_of_height_lt
+
+#print axioms DualTree.SkewBranchGeometry.isPrefixOf_true_of_prefix
+#print axioms DualTree.SkewBranchGeometry.strictPrefixB_iff
+#print axioms DualTree.SkewBranchGeometry.immediateSuccB_iff
+#print axioms DualTree.SkewBranchGeometry.mem_branchWitnesses_iff
+#print axioms DualTree.SkewBranchGeometry.exists_first_immediate_on_path
+#print axioms DualTree.SkewBranchGeometry.eq_of_mem_uniqueBranch
+
+#print axioms DualTree.MeetClosedFromBranching.length_lt_of_strictPrefix
+#print axioms DualTree.MeetClosedFromBranching.exists_longer_common_support_prefix
+#print axioms DualTree.MeetClosedFromBranching.commonPrefix_mem_of_support_root
+#print axioms DualTree.MeetClosedFromBranching.meetClosed_of_rooted_uniqueDirections

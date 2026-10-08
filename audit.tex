@@ -520,6 +520,32 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Meet closure from directional uniqueness.} \todo
+The finite-ascent theorem
+\lean{DualTree.MeetClosedFromBranching.meetClosed_of_rooted_uniqueDirections}
+derives ambient meet closure of any rooted finite support from uniqueness
+of the immediate support successor in each ambient direction.
+The supporting lemmas show that whenever a support node properly prefixes
+the ambient meet of two points, a longer common support prefix exists.
+The necessary directional uniqueness must still be derived from the
+complete-skew condition~(iv); it is not introduced as an axiom.
+
+\paragraph{Immediate support successors and direction uniqueness.} \todo
+The support path construction
+\lean{DualTree.SkewBranchGeometry.exists_first_immediate_on_path}
+shows that every proper support descendant has an actual immediate
+support successor on its path, without assuming prefix-closure.
+The Boolean predicates for strict prefix, immediate successor, and
+directional witness are compared with their propositional meanings.
+The fact
+\lean{DualTree.SkewBranchGeometry.eq_of_mem_uniqueBranch}
+extracts uniqueness of two successors from the corresponding
+\lean{SkewTree.uniqueBranchB} hypothesis.  The key next task is to
+deduce \emph{uniform} direction uniqueness from clause~(iv) of the
+skew-tree definition and use finite ascent to establish ambient meet closure.
+
+
+
 \paragraph{Ambient meets and cone uniqueness.} \todo
 \lean{DualTree.MeetGeometry.commonPrefix} is the actual longest common
 initial segment of two ambient nodes.  The source-facing lemmas
