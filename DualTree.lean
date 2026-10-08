@@ -51,4 +51,7 @@ import DualTree.SignatureInteriorPersistence
 import DualTree.LiteralFrontierCleanup
 import DualTree.LiteralFrontierIndex
 import DualTree.ConeLocalDecoder
+import DualTree.SupportHeightRanks
+import DualTree.RankCardinality
+import DualTree.FrontierHeightBound
 import DualTree.RootAlignedSubstitution
