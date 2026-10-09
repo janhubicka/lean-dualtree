@@ -713,6 +713,25 @@ instantiate the intrinsic-height bound, select a padding direction
 (or treat the nullary case separately), and count the
 $b^{m'+1}$ full-level words.
 
+
+\paragraph{Specialization of padding to actual frontiers.} \todo
+The module \lean{DualTree.FrontierSourcePadding} connects the abstract
+padding argument with the actual minimal outside-cut frontiers of
+a complete skew support.  The result
+\lean{DualTree.FrontierSourcePadding.inverse_frontier_rank_bound}
+derives $|I_T^{-1}(f)|\le m'+1$ from the verified frontier-height
+bound.  The theorem
+\lean{DualTree.FrontierSourcePadding.inverse_frontier_antichain}
+transports the frontier antichain through the canonical isomorphism.
+Consequently all padded inverse addresses have length $m'+1$
+and are collision-free, by
+\lean{DualTree.FrontierSourcePadding.padded_frontier_length}
+and \lean{DualTree.FrontierSourcePadding.padded_frontier_injective}.
+The final numerical inequality $d\le b^{m'+1}$ still requires
+collecting these maps over the exact duplicate-free frontier list,
+showing $b>0$ (or handling $b=0$), and counting full-level words.
+No cardinality inequality is claimed merely from the padding lemmas.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,
