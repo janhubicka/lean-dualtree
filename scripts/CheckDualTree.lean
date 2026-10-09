@@ -373,3 +373,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.CompleteSupportSurjective.inverse_right
 #print axioms DualTree.CompleteSupportSurjective.inverse_left
 #print axioms DualTree.CompleteSupportSurjective.inverse_length
+
+#print axioms DualTree.CanonicalSupportPrefixIso.heightAt_le_of_prefix
+#print axioms DualTree.CanonicalSupportPrefixIso.canonicalEmbedding_prefix_reflect
+#print axioms DualTree.CanonicalSupportPrefixIso.canonicalEmbedding_prefix_iff
+#print axioms DualTree.CanonicalSupportPrefixIso.inverseAddress_prefix
