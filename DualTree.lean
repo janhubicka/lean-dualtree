@@ -63,3 +63,5 @@ import DualTree.ConeProjectionAlignment
 
 import DualTree.LiteralFrontierCount
 import DualTree.ConeTailDomains
+
+import DualTree.CanonicalSupportWalk
