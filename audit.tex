@@ -520,6 +520,29 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Meet-closure and directional uniqueness of the reconstructed $Q$ tree.} \todo
+The source literal skeleton was proved meet-closed, with each meet
+of distinct nodes lying in the retained original interior base.
+The actual reconstruction has a verified prefix-poset isomorphism
+which fixes that old base, and it preserves all first ambient
+branch directions out of the fixed base.
+The abstract direction-preserving meet-transport lemma now applies:
+\lean{DualTree.Lemma27QMeetClosed.sourceSignatureNodes_meetClosed}
+proves that the reconstructed $S_w$ is closed under \emph{actual
+ambient longest common prefixes}, not merely under an abstract
+inherited meet relation.
+Consequently
+\lean{DualTree.Lemma27QMeetClosed.sourceSignatureNodes_atMostOneDirection}
+rules out two different immediate $S_w$-successors in the same
+ambient direction.  Together with the earlier existence
+of a descendant in each direction, this leaves only the
+standard first-immediate-on-path argument to obtain exactly
+one immediate successor per direction at every old interior node.
+The other skewness clauses concerning ambient lengths and the
+printed auxiliary order remain separate; no semi-complete
+classification is declared verified at this stage.
+
+
 \paragraph{Ambient meet preservation under direction-preserving prefix replacement.} \todo
 A prefix-poset isomorphism does not by itself preserve longest common
 ambient prefixes: the target may introduce unrecorded common prefixes
