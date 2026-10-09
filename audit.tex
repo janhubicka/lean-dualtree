@@ -800,6 +800,22 @@ These results are a bridge from the verified $I_T$ to the
 root-aligned reconstruction, not a validation of overlong cone tails
 or a construction of the global smooth-colouring-compatible map $Q$.
 
+\paragraph{The induced $D_0/D_2$ partition of frontier coordinates.} \todo
+The indexing map from literal signature markers into frontier coordinates
+determines a concrete mixed-product coordinate kind:
+\lean{DualTree.LiteralMarkerProductKind.kind} assigns kind $D_2$
+(\texttt{bullet}) exactly to indices in the image of the injection,
+and kind $D_0$ (\texttt{plain}) elsewhere; no $D_1$
+(\texttt{up}) coordinates are introduced at this stage.
+The generic
+\lean{DualTree.MixedProduct.bulletKindOfRange_iff} proves the
+membership characterization, and
+\lean{DualTree.LiteralMarkerProductKind.literalMarker_bullet_bijective}
+checks that the literal markers biject with the resulting bullet indices.
+This finishes the proposed coordinate selection and its inverse
+on the marked coordinates. It does not yet define the elements of the
+mixed product, the induced colouring, or the coding map $Q$.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,
