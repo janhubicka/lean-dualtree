@@ -520,6 +520,28 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Occupied branching directions agree before and after $Q$ leaf replacement.} \todo
+To verify the semi-complete successor condition it is not enough
+to preserve the prefix order: one must compare the set of
+\emph{ambient successor directions} represented at each old
+interior node. The module
+\lean{DualTree.Lemma27QBranchOccupancy} defines the finite
+literal pre-replacement skeleton
+$\operatorname{Int}(S')\cup\{t_0\}\cup R$ and proves
+\lean{DualTree.Lemma27QBranchOccupancy.occupied_iff_under_Q}.
+For every retained old base vertex $u$ and direction $i\in b$,
+there is a vertex of $S_w$ inside the cone $u^\frown i$
+if and only if the literal pre-replacement skeleton contains
+such a vertex. The proof uses the exact bijection of literal
+markers with $D_2$ coordinates and the verified direction
+preservation for each replacement.
+Thus no branch direction is introduced or lost by $Q$.
+The remaining semi-completeness obligation is to show that
+the literal pre-replacement skeleton actually has all $b$
+successor directions at every original interior vertex,
+and to verify the skew ordering clauses separately.
+
+
 \paragraph{Preservation of the first branching direction below old interior nodes.} \todo
 The prefix geometry proved above can be strengthened to retain the
 *ambient direction* of the immediate branch from each old base
