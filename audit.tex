@@ -647,7 +647,7 @@ Both declarations passed CI and the transitive axiom audit
 and in particular do not bypass the known counterexample to
 preservation of the printed auxiliary order.
 
-\paragraph{Preparing the final branching-witness check for $Q$.} \todo
+\paragraph{Preparing the final branching-witness check for $Q$.} \ok
 The failure of canonical preservation of the printed auxiliary
 order does not mean that the order itself lacks antisymmetry.
 The new module \lean{DualTree.PaperAuxAntisymm} verifies
@@ -658,12 +658,34 @@ shows that, for $b>0$, the printed skew clause~(iv) follows
 from a retained last branching vertex with all $b$ directions,
 the full-before condition, and the empty-after condition.
 The chosen partial-branch index is the last element of $[b]$.
-These generic lemmas await stacked CI. Their application to
+All four generic declarations passed CI and the transitive axiom
+audit (PR~\#138; 478 audited endpoints). Their application to
 the actual reconstructed $S_w$ is a separate obligation:
 one must show that all nodes before the old maximal interior
 cut are interior and all nodes after that cut are leaves.
 Neither the skew height-order clauses (ii)--(iii) nor the
 global variable word is established by this conditional check.
+
+\paragraph{Skew clause~(iv) at the original maximal interior cut.} \todo
+The reconstructed Q support retains the maximal original interior
+node $t_0$. Every reconstructed node at or before this cut
+is in the original interior: an additional projected marker would
+contradict its verified outside-cut frontier property.
+Therefore all such nodes have one immediate support successor
+in each ambient direction.
+Conversely, any non-leaf after $t_0$ would belong to the original
+interior, contradicting maximality of $t_0$ by antisymmetry
+of the printed auxiliary order.
+The source-specific results
+\lean{DualTree.Lemma27QLastWitness.sourceQ_fullBeforeB},
+\lean{DualTree.Lemma27QLastWitness.sourceQ_emptyAfterB},
+and \lean{DualTree.Lemma27QLastWitness.sourceQ_condIVB}
+formalize exactly this argument. These are pending stacked CI.
+Once certified they close the final branching-witness clause
+(iv) of skewness for $S_w$ under $b>0$. The independent intrinsic
+height and ambient-length clauses (ii)--(iii) still require proof;
+neither follows merely from the checked prefix isomorphism or
+direction-preserving replacement.
 
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
