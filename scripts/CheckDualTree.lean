@@ -405,3 +405,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.LiteralMarkerCoordinates.frontierMember_injective
 #print axioms DualTree.LiteralMarkerCoordinates.coordinate_frontier
 #print axioms DualTree.LiteralMarkerCoordinates.coordinate_injective
+
+#print axioms DualTree.MixedProduct.bulletKindOfRange_iff
+#print axioms DualTree.MixedProduct.bulletKindOfRange_ne_up
+#print axioms DualTree.MixedProduct.bulletIndex_injective
+#print axioms DualTree.MixedProduct.bulletIndex_surjective
+#print axioms DualTree.MixedProduct.bulletIndex_bijective
+#print axioms DualTree.LiteralMarkerProductKind.literalMarker_bullet_bijective
