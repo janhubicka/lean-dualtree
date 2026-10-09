@@ -51,7 +51,7 @@ noncomputable def source :
     intro t ht
     have hcases : t = [] ∨ t = [0] ∨ t = [1] := by
       simpa [QLengthObstruction.originalS] using ht
-    rcases hcases with h | h | h <;> subst t <;> decide
+    rcases hcases with h | h | h <;> subst t <;> simp [InHomTree]
   semi_complete := QLengthObstruction.originalS_is_semiComplete
   word := rootVariable
   interior_card := by decide
