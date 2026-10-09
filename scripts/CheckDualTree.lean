@@ -580,3 +580,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.PaperAuxAntisymm.paperAux_antisymm
 #print axioms DualTree.PaperAuxAntisymm.paperAuxB_antisymm
 #print axioms DualTree.LastBranchWitness.condIVB_of_full_last_witness
+
+#print axioms DualTree.Lemma27QLastWitness.sourceQ_before_cut_interior
+#print axioms DualTree.Lemma27QLastWitness.sourceQ_fullBeforeB
+#print axioms DualTree.Lemma27QLastWitness.sourceQ_emptyAfterB
+#print axioms DualTree.Lemma27QLastWitness.sourceQ_condIVB
