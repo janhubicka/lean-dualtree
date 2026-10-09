@@ -879,6 +879,27 @@ starred-domain admissibility supported by the independent
 elementary argument, not yet by an end-to-end Lean theorem.
 No counterexample to the stated Ramsey conclusion is claimed.
 
+\paragraph{Noncomputable source marker index identities for $W^D_*$.} \todo
+Beyond the vector $1$-completeness check, the literal
+Q witness must use the actual coordinate map, not just a
+hand-selected tuple with a convenient coordinate order.
+The module
+\lean{DualTree.QLengthStarredCoordinateOrder}
+checks that the selected frontier coordinate of the
+right marker is $0$ and that of the left marker is $1$
+(in zero-based indexing). These identifications use
+the exact noncomputable marker-to-frontier choice,
+\lean{coordinate_frontier}, and the previously verified
+printed-order frontier enumeration $(1,0)$.
+The combined source-facing theorem
+\lean{actual_starred_input_certificate}
+asserts that the genuine mixed-product bullet tuple is
+in the required vector $1$-complete order. The three
+new declarations await CI and transitive axiom audit;
+the argument applies to the checked finite example,
+while the self-contained author note derives the
+arbitrary-height family independently.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}

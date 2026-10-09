@@ -655,3 +655,7 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.QLengthStarredDomain.actual_marked_singletons_eq
 #print axioms DualTree.QLengthStarredDomain.actual_marked_points_in_starred_domain
+
+#print axioms DualTree.QLengthStarredCoordinateOrder.right_index_is_zero
+#print axioms DualTree.QLengthStarredCoordinateOrder.left_index_is_one
+#print axioms DualTree.QLengthStarredCoordinateOrder.actual_starred_input_certificate
