@@ -114,8 +114,10 @@ theorem sourceQ_fullBeforeB
       (fun i => SkewTree.uniqueBranchB W.toList s i)
     else true) = true
   split_ifs with hcase
-  · have hbefore : SkewTree.paperAuxB s cut = true :=
-      (by simpa only [Bool.and_eq_true] using hcase).1
+  · have hbefore : SkewTree.paperAuxB s cut = true := by
+      have hh := hcase
+      simp only [Bool.and_eq_true] at hh
+      exact hh.1
     have hsInterior :=
       sourceQ_before_cut_interior
         hb O cut hcut hmax hout T hcomplete hST hcutT hlevel hm x
@@ -164,13 +166,14 @@ theorem sourceQ_emptyAfterB
     then (SkewTree.immediateSuccs W.toList s).isEmpty
     else true) = true
   split_ifs with hcase
-  · have hparts : SkewTree.paperAuxB cut s = true ∧
-        !(s == cut) = true := by
-      simpa only [Bool.and_eq_true] using hcase
+  · have hafter : SkewTree.paperAuxB cut s = true := by
+      have hh := hcase
+      simp only [Bool.and_eq_true] at hh
+      exact hh.1
     have hsne : s ≠ cut := by
       intro heq
       subst s
-      simp at hparts
+      simp at hcase
     by_cases hempty : (SkewTree.immediateSuccs W.toList s).isEmpty = true
     · exact hempty
     · have hsInterior : s ∈ SkewTree.interior W.toList := by
@@ -188,7 +191,7 @@ theorem sourceQ_emptyAfterB
           hsInterior
       have hbefore := hmax s hsOld
       have heq : cut = s :=
-        PaperAuxAntisymm.paperAuxB_antisymm hparts.1 hbefore
+        PaperAuxAntisymm.paperAuxB_antisymm hafter hbefore
       exact False.elim (hsne heq.symm)
   · rfl
 
