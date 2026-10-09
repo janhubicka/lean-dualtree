@@ -536,3 +536,14 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.SemiCompleteSkewMeet.fullDirections_of_semiComplete_nonleaf_total
 #print axioms DualTree.SemiCompleteSkewMeet.meetClosed_semiComplete_paper
 #print axioms DualTree.SemiCompleteSkewMeet.meetClosed_starred
+
+#print axioms DualTree.InteriorMarkerMeet.commonPrefix_self
+#print axioms DualTree.InteriorMarkerMeet.commonPrefix_eq_left_of_prefix
+#print axioms DualTree.InteriorMarkerMeet.prefix_comparable_of_common_extension
+#print axioms DualTree.InteriorMarkerMeet.commonPrefix_right_extension_of_not_prefix
+#print axioms DualTree.InteriorMarkerMeet.commonPrefix_extensions_of_incomparable
+#print axioms DualTree.InteriorMarkerMeet.commonPrefix_interior_of_distinct_support
+#print axioms DualTree.InteriorMarkerMeet.meet_base_marker_interior
+#print axioms DualTree.InteriorMarkerMeet.meet_markers_interior
+#print axioms DualTree.InteriorMarkerMeet.meet_distinct_interior_union_markers
+#print axioms DualTree.InteriorMarkerMeet.meetClosed_interior_union_markers
