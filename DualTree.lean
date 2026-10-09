@@ -97,3 +97,5 @@ import DualTree.BulletCoordinateRange
 import DualTree.MixedElementFromMarkers
 
 import DualTree.UniformConeDomains
+
+import DualTree.ConeLocalPatchSmoothness
