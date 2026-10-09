@@ -519,6 +519,36 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
+\paragraph{The literal signature skeleton is ambient meet-closed.} \todo
+The generic boundary-marker meet lemma is now instantiated with
+the \emph{literal} set $R$ of Lemma~27.  In the semi-complete
+source support $S$, every non-leaf—including the distinguished
+maximal interior cut $t_0$—has one support successor in each
+ambient direction.  Hence every marker of $R$, including each
+child $t_0^\frown i$, has an extension inside $S$:
+\lean{DualTree.Lemma27LiteralMeet.literalMarker_has_original_support_descendant}.
+The already checked inclusive-cut boundary properties give
+pairwise incomparability of markers and show that no marker
+is a prefix of an original interior node.
+It follows from the generic theorem that the ambient meet
+of any two distinct nodes of
+$\operatorname{Int}(S)\cup R$ belongs to $\operatorname{Int}(S)$,
+by
+\lean{DualTree.Lemma27LiteralMeet.distinct_literal_skeleton_meet_in_original_interior}.
+In particular,
+\lean{DualTree.Lemma27LiteralMeet.oldSkeleton_meetClosed}
+certifies meet-closure of
+$\operatorname{Int}(S')\cup\{t_0\}\cup R$.
+This proves the source-side meet-closure obligation directly from
+the starred semi-complete tree, with no new axioms.
+The remaining step is to show that the canonical projected
+replacement preserves the \emph{actual ambient meets}, not only
+the prefix-poset structure.  The verified first-direction
+preservation from each retained original interior node is
+expected to supply the missing geometric invariant.
+
+
+
 \paragraph{Generic meet-closure transfer through terminal markers.} \todo
 The module \lean{DualTree.InteriorMarkerMeet} proves a reusable
 finite-tree transport lemma.  Suppose $S$ is ambient meet-closed,
