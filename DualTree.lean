@@ -130,3 +130,5 @@ import DualTree.Lemma27QFullDirections
 
 import DualTree.Lemma27QPrefixSkeleton
 import DualTree.Lemma27QPrefixSurjectivity
+
+import DualTree.SemiCompleteSkewMeet
