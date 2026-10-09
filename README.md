@@ -6,8 +6,8 @@ Lean 4 verification and adversarial audit of Todorcevic--Tyros,
 The project is a **statement-by-statement formalization**, not yet a
 formal proof of the full dual-tree Ramsey theorem. The cumulative
 [TeX audit](audit.tex) records verified statements, imprecisions,
-counterexamples, and proposed repairs. `\\ok` records a discharged
-obligation; `\\todo` marks a remaining gap or proposed change.
+counterexamples, and proposed repairs. `\ok` records a discharged
+obligation; `\todo` marks a remaining gap or proposed change.
 
 ## Verified foundations
 
@@ -17,8 +17,11 @@ obligation; `\\todo` marks a remaining gap or proposed change.
   construction assertions, with explicitly scoped repair proposals.
 - Support meet closure, uniqueness of directional immediate successors,
   maximal-interior signature boundaries and minimal outside-cut frontiers.
-- Injectivity of the literal signature-marker-to-frontier map, giving
-  `|R| <= d` and the partition `d = d0 + d2`.
+- The exact Lemma 27 frontier inequality `|R| <= d <= b^(m'+1)`
+  (for positive branching and an early cut), via inverse-address
+  prefix-antichain padding and a finite-level word count.
+- An explicit collision-free `Fin d` coordinate map for literal
+  signature markers, and the associated `D0/D2` coordinate partition.
 - Cone-local auxiliary decoding, typed separation of original letters,
   auxiliary letters and genuine cone variables, root-aligned substitutions
   and corresponding span/refinement lemmas.
@@ -30,10 +33,12 @@ obligation; `\\todo` marks a remaining gap or proposed change.
   `|I_T^{-1}(t)| + |z| < k`. Their roots, prefixes, rank increments,
   and inverse concatenation coordinates are all verified.
 
-These are Lean theorems, not assumed lemmas. As of the latest merged
-code, CI audits **319 source-facing declarations** for transitive
-uses of unproved or nonstandard axioms. The complete theorem and the
-full construction of Lemma 27 are **not** marked verified.
+These are Lean theorems, not assumed lemmas. The main branch already
+audits **more than 340 source-facing declarations** for transitive
+uses of unproved or nonstandard axioms. The authoritative count is
+maintained in the CI workflow and increases with new checked results.
+The complete theorem and the full construction of Lemma 27 are
+**not** marked verified.
 
 ## Main remaining work
 
@@ -41,15 +46,14 @@ The leading obstacle is the printed Lemma 27 reconstruction and its
 mixed-product colouring. In particular:
 
 1. The source uses longer ambient cone tails than the intrinsic
-   canonical map permits. Their domain and the recursive mixed-product
-   dimension must be repaired together.
-2. The frontier bound `d <= b^(m'+1)` requires finishing the finite
-   antichain-counting argument; the general padding reduction is under
-   development.
-3. The global code `Q`, its well-typed cone-variable substitution,
-   and constancy of the induced colouring on smoothness classes still
-   need to be constructed and proved.
-4. Lemma 28, Theorem 25, the stated recursive bounds, and the final
+   canonical map permits. A shortened common local domain is verified;
+   a one-extra-complete-level alternative is being checked. Either
+   requires a corresponding proof of the recursive dimension bound.
+2. The coordinate words of the global code `Q`, their root-aligned
+   substitution into the original word, and constancy of the induced
+   colouring on smoothness classes still need to be constructed and proved.
+   Collision-free coordinate choice itself is verified.
+3. Lemma 28, Theorem 25, the stated recursive bounds, and the final
    dual-tree theorem still require their own Lean proofs.
 
 The source's **printed auxiliary linear order is not preserved** by
@@ -69,7 +73,8 @@ lake build
 python3 scripts/check-skew-meet.py
 python3 scripts/check-audit-tex.py
 lake env lean scripts/CheckDualTree.lean > dualtree-axioms.log 2>&1
-python3 scripts/check-axiom-log.py dualtree-axioms.log 319
+EXPECTED=$(grep -oE 'dualtree-axioms.log [0-9]+ \|\|' .github/workflows/lean.yml | awk '{print $2}')
+python3 scripts/check-axiom-log.py dualtree-axioms.log "$EXPECTED"
 ```
 
 The CI workflow in `.github/workflows/lean.yml` repeats these checks
@@ -84,5 +89,8 @@ construction is in `CompleteSupportRoot.lean`,
 `CanonicalSupportInjective.lean`, `SupportReachability.lean`,
 `CompleteSupportSurjective.lean`, `CanonicalSupportPrefixIso.lean`,
 and `CanonicalConeCoordinates.lean` under `DualTree/`.
+The counting/coordinate work is in `FrontierCardinality.lean`,
+`LiteralMarkerCoordinates.lean`, and `BulletCoordinateRange.lean`.
+The actual cone-word decoding bridge is in `CanonicalConeWordTransport.lean`.
 The TeX audit is intentionally cumulative: older partial TODOs should
 be read together with later validation entries.
