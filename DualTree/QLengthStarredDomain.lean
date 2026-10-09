@@ -39,10 +39,8 @@ theorem left_not_before_right :
 /-- The coordinate order prescribed by the paper is right,
 then left, and the corresponding local D₂ points are empty,
 then 0. Each singleton itself forms a 1-complete skew tree. -/
-def markedSingletonSupports : Fin 2 → List (Node 2)
-  | ⟨0, _⟩ => [[]]
-  | ⟨1, _⟩ => [[0]]
-  | _ => []
+def markedSingletonSupports (i : Fin 2) : List (Node 2) :=
+  if i.val = 0 then [[]] else [[0]]
 
 /-- This is the exact starred-domain vector 1-completeness check:
 the marked tuple (empty,0), in the order (right,left), is
@@ -54,10 +52,8 @@ theorem marked_points_vector_one_complete :
 
 /-- Reversing the coordinate order of these two marked points
 does *not* satisfy the starred-domain ordering axiom. -/
-def reversedMarkedSingletonSupports : Fin 2 → List (Node 2)
-  | ⟨0, _⟩ => [[0]]
-  | ⟨1, _⟩ => [[]]
-  | _ => []
+def reversedMarkedSingletonSupports (i : Fin 2) : List (Node 2) :=
+  if i.val = 0 then [[0]] else [[]]
 
 theorem reversed_points_not_vector_one_complete :
     VectorSkew.vectorCompleteB SkewTree.paperAuxB 1
@@ -86,14 +82,14 @@ theorem actual_frontier_order :
 /-- The marked singleton supports in the paper's actual
 ordered frontier coordinates, read from the typed mixed-product
 element, rather than merely specified by hand. -/
-noncomputable def actualMarkedSingletonSupports : Fin 2 → List (Node 2)
-  | ⟨0, _⟩ =>
-      [(QLengthTypedWitness.mixed.bulletPoint
-        (QLengthProjected.index QLengthTypedWitness.rightMarker)).1]
-  | ⟨1, _⟩ =>
-      [(QLengthTypedWitness.mixed.bulletPoint
-        (QLengthProjected.index QLengthTypedWitness.leftMarker)).1]
-  | _ => []
+noncomputable def actualMarkedSingletonSupports
+    (i : Fin 2) : List (Node 2) :=
+  if i.val = 0 then
+    [(QLengthTypedWitness.mixed.bulletPoint
+      (QLengthProjected.index QLengthTypedWitness.rightMarker)).1]
+  else
+    [(QLengthTypedWitness.mixed.bulletPoint
+      (QLengthProjected.index QLengthTypedWitness.leftMarker)).1]
 
 /-- The true marked points in the right/left paper order are
 exactly the length-ordered singleton supports (empty,0). -/
@@ -114,11 +110,11 @@ theorem actual_marked_singletons_eq :
       QLengthTypedWitness.leftMarker] using
       (congrArg Subtype.val QLengthTypedWitness.left_bullet_is_chosen)
   funext i
-  fin_cases i
-  · simpa [actualMarkedSingletonSupports, markedSingletonSupports]
-      using congrArg (fun v : Node 2 => [v]) hRight
-  · simpa [actualMarkedSingletonSupports, markedSingletonSupports]
-      using congrArg (fun v : Node 2 => [v]) hLeft
+  by_cases hi : i.val = 0
+  · simp [actualMarkedSingletonSupports, markedSingletonSupports,
+      hi, hRight]
+  · simp [actualMarkedSingletonSupports, markedSingletonSupports,
+      hi, hLeft]
 
 /-- The actual ordered D₂ marked-point tuple of the typed Q
 witness satisfies Definition 20's vector 1-completeness
