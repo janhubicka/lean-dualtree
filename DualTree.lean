@@ -125,3 +125,5 @@ import DualTree.Lemma27QLeafReplacement
 import DualTree.Lemma27QBranchDirections
 
 import DualTree.Lemma27QBranchOccupancy
+
+import DualTree.Lemma27QFullDirections
