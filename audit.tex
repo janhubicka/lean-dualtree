@@ -520,6 +520,27 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Recovering local addresses of support roots inside a cone.} \todo
+The previous canonical cone construction verifies the forward
+projection $P_i$ on a uniform shortened domain.  The local word
+substitution in Lemma~27 additionally needs a converse: given a
+support variable root $t$ extending a frontier $t_i$, identify
+the local address $z$ such that $P_i(z)=t$.
+The module \lean{DualTree.InverseConeTails} defines this address
+by removing $I_T^{-1}(t_i)$ from the beginning of $I_T^{-1}(t)$.
+Prefix reflection and the rank equation show that this is exact
+and belongs to the common local tree whenever
+$h_T(t)-h_T(t_i)<k-(m'+1)$.
+The central theorem
+\lean{DualTree.InverseConeTails.projectCommon_reaches_target}
+certifies $P_i(z)=t$, and
+\lean{DualTree.InverseConeTails.projectCommon_injective}
+proves uniqueness of such an address.
+This is the necessary interface for matching old variable roots to
+local cone words in the repaired $Q$ reconstruction, not yet the
+construction of the global variable-fibre substitution.
+
+
 \paragraph{Cone-local word changes and smooth colouring compatibility.} \todo
 The module \lean{DualTree.ConeLocalPatchSmoothness} explicitly modifies
 a mixed-product word only within the inclusive cone of its marked
