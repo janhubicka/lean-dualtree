@@ -340,3 +340,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.CompleteSupportRoot.canonicalWalk_prefix
 #print axioms DualTree.CompleteSupportRoot.canonicalWalk_mem_of_admissible
 #print axioms DualTree.CompleteSupportRoot.canonicalProjection_prefix
+
+#print axioms DualTree.ImmediateSupportHeight.mem_preds_iff
+#print axioms DualTree.ImmediateSupportHeight.mem_preds_immediate_iff
+#print axioms DualTree.ImmediateSupportHeight.heightAt_immediate
+#print axioms DualTree.ImmediateSupportHeight.heightAt_root_zero
+#print axioms DualTree.ImmediateSupportHeight.heightAt_next
