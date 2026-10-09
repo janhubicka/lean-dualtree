@@ -520,6 +520,31 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Ambient meet preservation under direction-preserving prefix replacement.} \todo
+A prefix-poset isomorphism does not by itself preserve longest common
+ambient prefixes: the target may introduce unrecorded common prefixes
+between successive vertices.  The module
+\lean{DualTree.MeetImageTransfer} identifies the exact extra invariant
+needed to rule this out.  Suppose a prefix-preserving and reflecting
+replacement fixes every vertex of an old meet base and also preserves,
+for each old meet vertex, the first ambient direction occupied by
+every source node.  If every meet of distinct source nodes is represented
+in that fixed base, then
+\lean{DualTree.MeetImageTransfer.meet_represented_of_prefix_and_directions}
+proves that every ambient meet of target nodes equals the image of
+the corresponding source meet.
+Consequently
+\lean{DualTree.MeetImageTransfer.meetClosed_of_prefix_and_directions}
+transports meet-closure to the complete reconstructed image.
+The proof is a one-level contradiction: any extra target meet length
+would produce an extra shared first direction in the source,
+contradicting maximality of its old meet.
+It remains to instantiate these hypotheses with the verified
+literal skeleton prefix isomorphism and the source-facing
+direction-preservation theorem, then deduce uniqueness of immediate
+successors in $S_w$.
+
+
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
 the \emph{literal} set $R$ of Lemma~27.  In the semi-complete
