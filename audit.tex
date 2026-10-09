@@ -520,6 +520,33 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Exactly one immediate successor in each reconstructed $Q$ direction.} \todo
+The source-specific meet-closure and full-direction-existence
+results now combine into a concrete \emph{unique immediate
+successor} statement.  The generic lemma
+\lean{DualTree.Lemma27QUniqueDirections.uniqueBranchB_of_descendant}
+uses a first-immediate successor on a support path,
+meet-closure to exclude a second successor in the same
+direction, and duplicate-freeness of the finite support
+to prove that the directional branch-witness list has
+length exactly one.
+Specialized to the reconstructed $S_w$,
+\lean{DualTree.Lemma27QUniqueDirections.sourceQ_uniqueBranchB}
+establishes
+\[
+  \forall s\in\operatorname{Int}(S_w)\ \forall i\in b,\quad
+  \operatorname{uniqueBranchB}(S_w,s,i)=\mathrm{true}
+\]
+using the earlier identity
+$\operatorname{Int}(S_w)=\operatorname{Int}(S)$.
+This is the precise direction-by-direction branching part of
+semi-completeness.  It remains to establish the equivalent
+total successor count $|\operatorname{Succ}_{S_w}(s)|=b$
+and the separate skew-order/ambient-length conditions;
+the original full Lemma~27 and its colouring map $Q$
+are still not declared completely validated.
+
+
 \paragraph{Meet-closure and directional uniqueness of the reconstructed $Q$ tree.} \todo
 The source literal skeleton was proved meet-closed, with each meet
 of distinct nodes lying in the retained original interior base.
