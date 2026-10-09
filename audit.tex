@@ -520,6 +520,30 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{All ambient successor directions are occupied in the reconstructed $Q$ tree.} \todo
+The earlier direction-preservation result reduced full branching at
+old interior nodes to the literal pre-replacement skeleton.  The new
+module \lean{DualTree.Lemma27QFullDirections} proves the needed
+existence.  For any original interior node $s\ne t_0$,
+the verified full-before clause supplies a descendant of $S$
+in each ambient direction.  Such a descendant is either an old
+interior node, lies below the retained $t_0$, or is an exceptional
+leaf whose first boundary marker lies in the same direction.
+The last assertion is formalized by
+\lean{DualTree.Lemma27QFullDirections.exceptional_leaf_marker_in_direction}.
+At $t_0$ the literal $R$ contains every immediate ambient child.
+Thus \lean{DualTree.Lemma27QFullDirections.oldSkeleton_all_directions}
+proves that all $b$ directions are occupied in the literal skeleton.
+Combined with the exact direction comparison,
+\lean{DualTree.Lemma27QFullDirections.sourceQ_all_directions}
+provides an actual $S_w$ descendant in each direction from every
+vertex of $\operatorname{Int}(S)$.
+This proves \emph{existence} in all $b$ directions. The remaining
+semi-completeness obligation is the uniqueness of an immediate
+$S_w$ successor within each such direction; the ambient
+skew ordering and rank clauses must still be checked.
+
+
 \paragraph{Occupied branching directions agree before and after $Q$ leaf replacement.} \todo
 To verify the semi-complete successor condition it is not enough
 to preserve the prefix order: one must compare the set of
