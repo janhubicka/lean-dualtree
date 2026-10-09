@@ -1086,6 +1086,27 @@ skew supports remain \todo.  In particular these abstract lemmas
 must not be treated as proof that the printed $P_i$ is defined
 on its full stated domain.
 
+\paragraph{Cone projection root alignment.} \todo
+The module \lean{DualTree.ConeRootAlignment} verifies the two
+well-typed root-prefix properties of the decoded cone words under
+explicit prefix preservation, cone containment, and source-address
+identity hypotheses.  In particular the occurrence of an auxiliary
+symbol cannot introduce a variable outside the visible ancestral
+cone, and genuine local variables inherit the below-root condition
+through the cone map.  The combined module
+\lean{DualTree.ConeProjectionAlignment} discharges both geometric
+hypotheses directly from the algebraic projection
+$P(z)=I(s^\frown z)$ and $I(s)=t_i$.
+The two endpoints
+\lean{DualTree.ConeProjectionAlignment.lifted_root_prefix} and
+\lean{DualTree.ConeProjectionAlignment.source_root_alignment}
+respectively certify the local and source-root versions.
+Still missing: construction of $I_T$ on a corrected finite domain,
+the identification of old variable-root addresses with their
+images under $P_i$, the selection of a complete root set, and the
+global coloring-compatible map $Q$.  No form of Lemma~27 is marked
+as completely verified.
+
 \paragraph{Partial repair in Lean.}
 \lean{DualTree.Lemma27Repair.restrictSupport} takes a tree-variable word
 and a duplicate-free subset of its variable roots and freezes all occurrences
