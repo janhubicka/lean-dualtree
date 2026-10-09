@@ -346,3 +346,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ImmediateSupportHeight.heightAt_immediate
 #print axioms DualTree.ImmediateSupportHeight.heightAt_root_zero
 #print axioms DualTree.ImmediateSupportHeight.heightAt_next
+
+#print axioms DualTree.CompleteSupportAddresses.support_nodup
+#print axioms DualTree.CompleteSupportAddresses.branch_of_height_lt
+#print axioms DualTree.CompleteSupportAddresses.admissible_and_height
+#print axioms DualTree.CompleteSupportAddresses.canonical_bounded_address
+#print axioms DualTree.CompleteSupportAddresses.canonicalEmbedding_height
+#print axioms DualTree.CompleteSupportAddresses.canonicalEmbedding_prefix
