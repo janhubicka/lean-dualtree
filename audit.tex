@@ -592,7 +592,7 @@ remaining skew/rooted/auxiliary-order and word-construction
 requirements are independent; do not infer them merely from
 these branch facts.
 
-\paragraph{Root and non-leaf branching of the reconstructed $Q$ support.} \todo
+\paragraph{Root and non-leaf branching of the reconstructed $Q$ support.} \ok
 The ambient meet-closure theorem also supplies rootedness with no
 extra order assumptions. Any finite nonempty meet-closed set has a
 member below all others in the ambient prefix order, by iterating
@@ -604,7 +604,8 @@ is retained in $S_w$. Moreover, for $b>0$ the previously proved
 identity $\operatorname{Int}(S_w)=\operatorname{Int}(S)$
 upgrades the full-direction theorem to every actual non-leaf:
 \lean{DualTree.Lemma27QRooted.sourceQ_full_immediate_at_nonleaf}.
-These four declarations await CI and the transitive axiom audit.
+All four declarations passed the clean Lean build and transitive
+audit (PR~\#135, 469 audited endpoints).
 The remaining numerical branch count follows by proving that the
 immediate successors are partitioned by their unique first
 directions; this finite cardinality step should be formalized rather
