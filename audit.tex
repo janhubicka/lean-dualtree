@@ -519,6 +519,34 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
+\paragraph{Exact size and support membership of the reconstructed $Q$ tree.} \todo
+The previous proof of the old signature interior now combines with
+the marked-frontier antichain argument without an assumed
+early-base hypothesis.
+\lean{DualTree.Lemma27QTreeCount.oldBase_mem_iff_original_interior}
+establishes equality of the *sets*
+$\operatorname{Int}(S')\cup\{t_0\}$ and $\operatorname{Int}(S)$.
+Consequently the old base has precisely $l$ nodes, as certified by
+\lean{DualTree.Lemma27QTreeCount.oldBase_card}.
+Theorem
+\lean{DualTree.Lemma27QTreeCount.sourceSignatureNodes_subset_support}
+proves that every vertex of the concrete $Q$ tree component lies in
+the original complete support $T$, and
+\lean{DualTree.Lemma27QTreeCount.sourceSignatureNodes_card}
+gives the exact cardinality
+\[
+ |S_w|=l+|D_2|.
+\]
+The proof uses the fact that the old base is at or before the cut
+and the new marked nodes lie strictly after it and in pairwise
+disjoint frontier cones.  These are source-specific, unconditional
+consequences of the existing complete-skew and maximal-cut
+hypotheses.  They do not yet prove the semi-complete property of
+$S_w$ or the exact set of its \emph{new} interior vertices, which
+remain the next structural obligations.
+
+
+
 \paragraph{Unique global cone-coordinate lookup for rootwise coding.} \todo
 The repaired clauses defining $Q$ and the final refinement $f'$
 refer to a pair $(i,z)$ with a source variable root

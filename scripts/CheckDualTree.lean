@@ -475,3 +475,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27ConeIndex.locateSlot_spec
 #print axioms DualTree.Lemma27ConeIndex.locateSlot_projectSlot
 #print axioms DualTree.Lemma27ConeIndex.locateSlot_none_iff
+
+#print axioms DualTree.Lemma27QTreeCount.oldBase_mem_iff_original_interior
+#print axioms DualTree.Lemma27QTreeCount.oldBase_finset_eq_original_interior
+#print axioms DualTree.Lemma27QTreeCount.oldBase_card
+#print axioms DualTree.Lemma27QTreeCount.oldBase_subset_support
+#print axioms DualTree.Lemma27QTreeCount.sourceSignatureNodes_subset_support
+#print axioms DualTree.Lemma27QTreeCount.sourceSignatureNodes_card
