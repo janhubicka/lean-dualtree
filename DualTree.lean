@@ -79,3 +79,5 @@ import DualTree.SupportReachability
 import DualTree.CompleteSupportSurjective
 
 import DualTree.CanonicalSupportPrefixIso
+
+import DualTree.CanonicalConeCoordinates
