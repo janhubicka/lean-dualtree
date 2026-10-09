@@ -613,6 +613,25 @@ than inferred from the Boolean predicates. Even after this, neither
 the printed auxiliary-order clauses nor the word-construction
 part of Lemma~27 follows from rooted meet-closed geometry.
 
+\paragraph{Exact numerical $0$-or-$b$ branching of the reconstructed $Q$ support.} \todo
+There is a missing combinatorial step between
+having one immediate successor in each direction and having exactly
+$b$ immediate successors. The new generic lemma
+\lean{DualTree.Lemma27QBranchCount.immediateSuccs_length_eq_of_full_directions}
+constructs an actual equivalence between the $b$ directions and
+the immediate-support-successor list (viewed as a finite set).
+The proof checks that every support successor occupies a direction,
+that the first direction of a fixed node is unique, and that
+the unique-branch predicates supply the inverse map.
+Using $\operatorname{Int}(S_w)=\operatorname{Int}(S)$ and the
+verified all-directions property at every $Q$ non-leaf yields
+\lean{DualTree.Lemma27QBranchCount.sourceQ_zero_or_b_immediate_successors}
+for all vertices of the reconstructed $S_w$, assuming $b>0$.
+This source-facing theorem is pending CI and a transitive Lean axiom audit.
+Even after it passes, the full semi-complete skew predicate
+needs independent proofs of the printed auxiliary-order and
+height/rank clauses; no such order facts are inferred here.
+
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
 the \emph{literal} set $R$ of Lemma~27.  In the semi-complete
