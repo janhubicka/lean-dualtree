@@ -462,3 +462,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27MarkedLeafGeometry.markedProjection_after_cut
 #print axioms DualTree.Lemma27MarkedLeafGeometry.markedProjection_prefix_implies_same_index
 #print axioms DualTree.Lemma27MarkedLeafGeometry.signatureNodes_card_of_base_early
+
+#print axioms DualTree.SignatureInteriorExact.boundaryMarker_not_below_cut
+#print axioms DualTree.SignatureInteriorExact.no_strict_signature_descendant_of_cut
+#print axioms DualTree.SignatureInteriorExact.maximal_cut_not_signature_interior
+#print axioms DualTree.SignatureInteriorExact.signature_interior_subset_original
+#print axioms DualTree.SignatureInteriorExact.signature_interior_iff_original_ne_cut
+#print axioms DualTree.SignatureInteriorExact.oldSignatureBase_before_cut

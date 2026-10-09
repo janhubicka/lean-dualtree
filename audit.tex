@@ -586,6 +586,82 @@ it remains to derive it from the actual signature geometry.
 These lemmas are groundwork for the semi-completeness and
 interior computation of $S_w$, not a replacement for either proof.
 
+\paragraph{Exact interior of the Definition 26 signature tree.} \todo
+The construction of the reconstructed tree $S_w$ uses
+$\operatorname{Int}(S')$ and retains $t_0$ separately.
+The new module \lean{DualTree.SignatureInteriorExact} proves the
+converse to the earlier interior-persistence lemma.
+Every exceptional-leaf boundary is incomparable with $t_0$ in
+the descendant direction and cannot have a successor in $S'$:
+such a successor would either be an earlier original interior
+node or another first outside-cut boundary, both impossible.
+Consequently the maximal original interior cut becomes a leaf
+of $S'$, and the source-facing identity
+\[
+\operatorname{Int}(S')
+ =\operatorname{Int}(S)\setminus\{t_0\}
+\]
+is established by
+\lean{DualTree.SignatureInteriorExact.signature_interior_iff_original_ne_cut}.
+The theorem
+\lean{DualTree.SignatureInteriorExact.oldSignatureBase_before_cut}
+then proves that every node of
+$\operatorname{Int}(S')\cup\{t_0\}$ is at or before the cut in
+the paper's auxiliary order.
+These facts discharge the previously isolated \emph{old-base
+containment} requirement for the marked-leaf cardinality calculation
+in $S_w$.  We must still prove the full semi-complete geometry and
+interior of the \emph{extended} tree $S_w$.
+
+
+\paragraph{Recovering local addresses of support roots inside a cone.} \todo
+The previous canonical cone construction verifies the forward
+projection $P_i$ on a uniform shortened domain.  The local word
+substitution in Lemma~27 additionally needs a converse: given a
+support variable root $t$ extending a frontier $t_i$, identify
+the local address $z$ such that $P_i(z)=t$.
+The module \lean{DualTree.InverseConeTails} defines this address
+by removing $I_T^{-1}(t_i)$ from the beginning of $I_T^{-1}(t)$.
+Prefix reflection and the rank equation show that this is exact
+and belongs to the common local tree whenever
+$h_T(t)-h_T(t_i)<k-(m'+1)$.
+The central theorem
+\lean{DualTree.InverseConeTails.projectCommon_reaches_target}
+certifies $P_i(z)=t$, and
+\lean{DualTree.InverseConeTails.projectCommon_injective}
+proves uniqueness of such an address.
+This is the necessary interface for matching old variable roots to
+local cone words in the repaired $Q$ reconstruction, not yet the
+construction of the global variable-fibre substitution.
+
+
+\paragraph{Cone-local word changes and smooth colouring compatibility.} \todo
+The module \lean{DualTree.ConeLocalPatchSmoothness} explicitly modifies
+a mixed-product word only within the inclusive cone of its marked
+$D_2$ point, leaving all plain-coordinate words and all letters
+outside marked cones fixed.
+\lean{DualTree.MixedProduct.patchedElement_smooth}
+proves that any two such elements with the same background words and
+marked points are related by the $\Gamma_2=D_2$ instance of
+Definition~21's smoothness comparison.  Consequently
+\lean{DualTree.MixedProduct.smoothColor_invariant_under_patches}
+shows that a colouring genuinely constant on these smoothness
+classes must ignore arbitrary changes inside these cones.
+
+The concrete kernel-checked theorem
+\lean{DualTree.BulletSmoothnessAudit.markedLetterColor_not_smooth}
+exhibits two smoothly related mixed-product elements with
+*different* letters at their common marked point.  Hence the natural
+colouring which simply remembers the marked letter is not automatically
+smooth.  This is a counterexample to an \emph{unqualified smoothness
+claim for arbitrary induced colourings}, not a counterexample to
+Lemma~27.  In particular, a proposed total extension of the colouring
+$c\circ Q$ must either demonstrate classwise compatibility on its
+starred domain or alter the coding so this obstruction is avoided.
+The requirement is not discharged merely by choosing the $D_2$
+coordinates or constructing a well-typed mixed element.
+
+
 \paragraph{The actual tree component $S_w$ of the map $Q$.} \todo
 Pages~28--29 of the source define the reconstructed tree as
 $S_w=\operatorname{Int}(S')\cup\{t_0\}

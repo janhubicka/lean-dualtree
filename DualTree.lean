@@ -105,3 +105,5 @@ import DualTree.InverseConeTails
 import DualTree.Lemma27SignatureTree
 
 import DualTree.Lemma27MarkedLeafGeometry
+
+import DualTree.SignatureInteriorExact
