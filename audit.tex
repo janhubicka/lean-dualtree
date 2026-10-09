@@ -673,6 +673,27 @@ This concerns the \emph{prefix tree} structure only; the separate
 printed auxiliary-order counterexample must not be silently
 discarded or reinterpreted as a verified order-preservation theorem.
 
+
+\paragraph{Concrete cone maps on the intrinsic safe domain.} \todo
+With the canonical prefix-tree isomorphism now explicit,
+\lean{DualTree.CanonicalConeCoordinates.SourceTail} defines the
+tail domain at a support frontier $t$ by
+$|I_T^{-1}(t)|+|z|<k$.  This yields the actual typed projection
+$P_t(z)=I_T(I_T^{-1}(t)^\frown z)$ in
+\lean{DualTree.CanonicalConeCoordinates.project}.
+The module verifies the root identity $P_t(\varnothing)=t$,
+prefix preservation, cone containment, the rank equation
+$h_T(P_t(z))=h_T(t)+|z|$, and exact inverse coordinates
+$I_T^{-1}(P_t(z))=I_T^{-1}(t)^\frown z$ on that domain.
+The last assertion is
+\lean{DualTree.CanonicalConeCoordinates.inverse_project_tail}.
+These results are stronger than the preceding abstract projection
+algebra, but \emph{only} for tails with intrinsic length budget
+$|I_T^{-1}(t)|+|z|<k$.  The original Lemma~27 uses an ambient
+parameter $N$ and longer projected cone words. Its full domains,
+the resulting mixed-product dimension, and the coding map $Q$
+remain to be repaired and validated separately.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,

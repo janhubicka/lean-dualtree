@@ -378,3 +378,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.CanonicalSupportPrefixIso.canonicalEmbedding_prefix_reflect
 #print axioms DualTree.CanonicalSupportPrefixIso.canonicalEmbedding_prefix_iff
 #print axioms DualTree.CanonicalSupportPrefixIso.inverseAddress_prefix
+
+#print axioms DualTree.CanonicalConeCoordinates.address_empty
+#print axioms DualTree.CanonicalConeCoordinates.project_empty
+#print axioms DualTree.CanonicalConeCoordinates.project_prefix
+#print axioms DualTree.CanonicalConeCoordinates.project_cone
+#print axioms DualTree.CanonicalConeCoordinates.project_height
+#print axioms DualTree.CanonicalConeCoordinates.inverse_project
+#print axioms DualTree.CanonicalConeCoordinates.inverse_project_tail
