@@ -519,6 +519,28 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
+\paragraph{Exact literal $R$ count of the $Q$ skeleton.} \todo
+The coordinate partition has already been defined by an injection
+from the literal signature markers $R$ into the frontier coordinates.
+The module \lean{DualTree.Lemma27QMarkerCount} uses the two
+finite equivalences
+$\operatorname{Fin}(|R|)\cong R\cong D_2$
+(the first from the duplicate-free literal marker list, the
+second from the constructed bullet-coordinate indexing).
+This gives the genuine equality $|D_2|=|R|$ in
+\lean{DualTree.Lemma27QMarkerCount.bullet_card_eq_literalR_length}.
+Combined with the exact no-collision result for $S_w$, the theorem
+\lean{DualTree.Lemma27QMarkerCount.sourceSignatureNodes_card_eq_l_add_literalR}
+proves
+\[
+   |S_w|=l+|R|.
+\]
+This checks the cardinality of the reconstructed *node set*;
+the intrinsic interior, semi-completeness of $S_w$, and the
+starred word $g_w$ still require separate validation.
+
+
+
 \paragraph{Exact size and support membership of the reconstructed $Q$ tree.} \todo
 The previous proof of the old signature interior now combines with
 the marked-frontier antichain argument without an assumed
