@@ -96,18 +96,20 @@ theorem originalNode_injective
       | inl v =>
           exact congrArg Sum.inl (Subtype.ext hab)
       | inr s =>
+          have hEq : u.1 = s.1 := hab
           have hOld : s.1 ∈
               Lemma27SignatureTree.oldSignatureBase O cut hout := by
-            simpa [originalNode, ← hab] using u.2
+            simpa [hEq] using u.2
           exact False.elim
             ((Lemma27QLeafReplacement.literalMarker_not_oldBase
               O cut hcut hmax hout s) hOld)
   | inr s =>
       cases b with
       | inl u =>
+          have hEq : s.1 = u.1 := hab
           have hOld : s.1 ∈
               Lemma27SignatureTree.oldSignatureBase O cut hout := by
-            simpa [originalNode, hab] using u.2
+            simpa [hEq] using u.2
           exact False.elim
             ((Lemma27QLeafReplacement.literalMarker_not_oldBase
               O cut hcut hmax hout s) hOld)
