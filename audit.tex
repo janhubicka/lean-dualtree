@@ -609,6 +609,30 @@ The remaining geometric step is surjectivity onto $T$,
 or equivalently an inverse address for each support node,
 followed by the source-specific cone-map identities.
 
+
+\paragraph{Reaching every support vertex by a source address.} \todo
+The finite ascent theorem
+\lean{DualTree.SupportReachability.walk_address_of_prefix}
+builds an admissible address for any pair of support nodes $s\sqsubseteq t$.
+At a strict step it selects the first immediate successor $u$ below
+$t$, identifies its direction, and recurses from $u$ to $t$.
+The distance $|t|-|s|$ strictly decreases, so the construction terminates.
+Uniqueness of the chosen direction follows from completeness and
+the skew branching clauses.  The lemma
+\lean{DualTree.SupportReachability.walk_height_of_admissible}
+proves that the length of an admissible address equals the increase
+of intrinsic rank.  Therefore
+\lean{DualTree.SupportReachability.support_has_address} gives every
+$t\in T$ an admissible source address of length $h_T(t)$
+whose image under the root-anchored walk is $t$.
+This is a surjectivity statement for the unrestricted admissible walk,
+but \emph{not yet} for its restriction to $b^{<k}$.
+The remaining rank bound $h_T(t)<k$ for all $t\in T$ follows
+mathematically by extending $t$ to a leaf of the finite support
+and using the leaf clause of completeness; that extension and bound
+still require Lean verification before an inverse to the
+finite canonical embedding may be claimed.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,

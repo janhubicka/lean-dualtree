@@ -356,3 +356,11 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.CanonicalSupportInjective.walk_injective_of_admissible
 #print axioms DualTree.CanonicalSupportInjective.canonicalEmbedding_injective
+
+#print axioms DualTree.SupportReachability.nonsingleton_of_distinct_members
+#print axioms DualTree.SupportReachability.first_direction_of_strictPrefix
+#print axioms DualTree.SupportReachability.unique_direction_of_immediate
+#print axioms DualTree.SupportReachability.next_eq_of_immediate
+#print axioms DualTree.SupportReachability.walk_address_of_prefix
+#print axioms DualTree.SupportReachability.walk_height_of_admissible
+#print axioms DualTree.SupportReachability.support_has_address
