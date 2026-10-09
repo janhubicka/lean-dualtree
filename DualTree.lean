@@ -58,3 +58,5 @@ import DualTree.RootAlignedSubstitution
 import DualTree.CompleteRootReconstruction
 import DualTree.ConeWordLift
 import DualTree.ConeProjectionAlgebra
+import DualTree.ConeRootAlignment
+import DualTree.ConeProjectionAlignment
