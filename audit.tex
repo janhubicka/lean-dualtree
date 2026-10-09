@@ -625,13 +625,35 @@ of intrinsic rank.  Therefore
 \lean{DualTree.SupportReachability.support_has_address} gives every
 $t\in T$ an admissible source address of length $h_T(t)$
 whose image under the root-anchored walk is $t$.
-This is a surjectivity statement for the unrestricted admissible walk,
-but \emph{not yet} for its restriction to $b^{<k}$.
-The remaining rank bound $h_T(t)<k$ for all $t\in T$ follows
-mathematically by extending $t$ to a leaf of the finite support
-and using the leaf clause of completeness; that extension and bound
-still require Lean verification before an inverse to the
-finite canonical embedding may be claimed.
+This is a surjectivity statement for the unrestricted admissible walk.
+The rank bound on every support vertex and the inverse construction
+are now addressed by \lean{DualTree.CompleteSupportSurjective}
+as detailed in the next paragraph.
+
+
+\paragraph{Surjectivity and the inverse canonical address map.} \todo
+The finite-support lemma
+\lean{DualTree.CompleteSupportSurjective.exists_terminal_above}
+extends every support vertex to a terminal support vertex, using
+strict growth of the intrinsic rank as a terminating induction
+measure.  The complete-support leaf condition then gives
+\lean{DualTree.CompleteSupportSurjective.heightAt_lt_k}:
+$h_T(t)<k$ for every $t\in T$.
+Combined with the admissible address construction, this proves
+that the concrete map from $b^{<k}$ onto $T$ is surjective,
+and hence bijective, by
+\lean{DualTree.CompleteSupportSurjective.canonicalEmbedding_surjective}
+and \lean{DualTree.CompleteSupportSurjective.canonicalEmbedding_bijective}.
+The inverse choice
+\lean{DualTree.CompleteSupportSurjective.inverseAddress}
+comes with both inverse identities, as well as
+\lean{DualTree.CompleteSupportSurjective.inverse_length},
+which establishes $|I_T^{-1}(t)|=h_T(t)$.
+These are the remaining underlying domain/coordinate facts for
+the canonical cones of Lemma~27.
+Still to verify: the source's exact auxiliary-order compatibility,
+the final global coding $Q$, the smooth-coloring argument and
+the complete-skew geometry of the selected refinement.
 
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}

@@ -364,3 +364,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.SupportReachability.walk_address_of_prefix
 #print axioms DualTree.SupportReachability.walk_height_of_admissible
 #print axioms DualTree.SupportReachability.support_has_address
+
+#print axioms DualTree.CompleteSupportSurjective.heightAt_le_length
+#print axioms DualTree.CompleteSupportSurjective.exists_terminal_above
+#print axioms DualTree.CompleteSupportSurjective.heightAt_lt_k
+#print axioms DualTree.CompleteSupportSurjective.canonicalEmbedding_surjective
+#print axioms DualTree.CompleteSupportSurjective.canonicalEmbedding_bijective
+#print axioms DualTree.CompleteSupportSurjective.inverse_right
+#print axioms DualTree.CompleteSupportSurjective.inverse_left
+#print axioms DualTree.CompleteSupportSurjective.inverse_length
