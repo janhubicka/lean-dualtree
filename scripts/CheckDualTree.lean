@@ -450,3 +450,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InverseConeTails.inverseAddress_injective
 #print axioms DualTree.InverseConeTails.projectCommon_reaches_target
 #print axioms DualTree.InverseConeTails.projectCommon_injective
+
+#print axioms DualTree.Lemma27SignatureTree.frontierAt_spec
+#print axioms DualTree.Lemma27SignatureTree.markedProjection_frontier_prefix
+#print axioms DualTree.Lemma27SignatureTree.markedProjection_injective
+#print axioms DualTree.Lemma27SignatureTree.signatureNodes_base
+#print axioms DualTree.Lemma27SignatureTree.signatureNodes_marked
+#print axioms DualTree.Lemma27SignatureTree.signatureNodes_eq_of_gamma2_smooth
+#print axioms DualTree.Lemma27SignatureTree.sourceSignatureNodes_eq_of_gamma2_smooth

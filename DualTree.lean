@@ -101,3 +101,5 @@ import DualTree.UniformConeDomains
 import DualTree.ConeLocalPatchSmoothness
 
 import DualTree.InverseConeTails
+
+import DualTree.Lemma27SignatureTree

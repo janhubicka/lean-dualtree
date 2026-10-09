@@ -568,6 +568,65 @@ The requirement is not discharged merely by choosing the $D_2$
 coordinates or constructing a well-typed mixed element.
 
 
+\paragraph{The actual tree component $S_w$ of the map $Q$.} \todo
+Pages~28--29 of the source define the reconstructed tree as
+$S_w=\operatorname{Int}(S')\cup\{t_0\}
+\cup\{P_i(s_i):i\in D_2\}$.
+The module \lean{DualTree.Lemma27SignatureTree} now formalizes
+this expression using the literal $R$-based coordinate partition,
+the actual enumerated support frontiers, and the certified shortened
+common cone domain.  The function
+\lean{DualTree.Lemma27SignatureTree.sourceSignatureNodes}
+is the resulting finite \emph{set of nodes}; it is not yet packaged
+as a complete starred tree-variable word.
+The theorem
+\lean{DualTree.Lemma27SignatureTree.markedProjection_injective}
+proves that different marked coordinates give different support nodes,
+because their minimal frontier cones are disjoint.
+The more specific
+\lean{DualTree.Lemma27SignatureTree.sourceSignatureNodes_eq_of_gamma2_smooth}
+checks that this entire reconstructed node set is unchanged under
+Definition~21 smoothness when $\Gamma_2=D_2$: in that case the
+bullet points $s_i$ are fixed, so their canonical projections are fixed.
+
+This is the tree-coordinate portion of the assertion that
+$c\circ Q$ is smooth, not its complete verification.
+The remaining obligations are to prove that $S_w$ has exactly the
+required semi-complete/skew geometry and interior, construct the
+source-compatible starred word $g_w$, and handle the smoothness
+cases in which $\Gamma_1$ is nonempty.  A proof of compatibility
+must eventually apply the actual simplicity hypotheses of
+Definition~24, rather than an unrestricted assertion that marked
+letters cannot vary.
+
+
+\paragraph{Cone-local word changes and smooth colouring compatibility.} \todo
+The module \lean{DualTree.ConeLocalPatchSmoothness} explicitly modifies
+a mixed-product word only within the inclusive cone of its marked
+$D_2$ point, leaving all plain-coordinate words and all letters
+outside marked cones fixed.
+\lean{DualTree.MixedProduct.patchedElement_smooth}
+proves that any two such elements with the same background words and
+marked points are related by the $\Gamma_2=D_2$ instance of
+Definition~21's smoothness comparison.  Consequently
+\lean{DualTree.MixedProduct.smoothColor_invariant_under_patches}
+shows that a colouring genuinely constant on these smoothness
+classes must ignore arbitrary changes inside these cones.
+
+The concrete kernel-checked theorem
+\lean{DualTree.BulletSmoothnessAudit.markedLetterColor_not_smooth}
+exhibits two smoothly related mixed-product elements with
+*different* letters at their common marked point.  Hence the natural
+colouring which simply remembers the marked letter is not automatically
+smooth.  This is a counterexample to an \emph{unqualified smoothness
+claim for arbitrary induced colourings}, not a counterexample to
+Lemma~27.  In particular, a proposed total extension of the colouring
+$c\circ Q$ must either demonstrate classwise compatibility on its
+starred domain or alter the coding so this obstruction is avoided.
+The requirement is not discharged merely by choosing the $D_2$
+coordinates or constructing a well-typed mixed element.
+
+
 \paragraph{Directional construction of the canonical support walk.} \todo
 \lean{DualTree.CanonicalSupportWalk.next} selects the immediate
 support successor in a given ambient direction whenever such a
