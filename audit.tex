@@ -545,7 +545,7 @@ successors in $S_w$.
 
 
 
-\paragraph{Concrete $Q$-support: ambient meet closure and successor uniqueness.} \todo
+\paragraph{Concrete $Q$-support: ambient meet closure and successor uniqueness.} \ok
 The generic meet-transport criterion above can now be instantiated
 with the actual labelled occurrences
 $\operatorname{Int}(S')\cup\{t_0\}\,\dot\cup\,R$
@@ -560,9 +560,9 @@ ambient meet closure of the reconstructed finite $Q$ node set, and
 \lean{DualTree.Lemma27QMeet.sourceQ_atMostOneDirection}
 shows that two distinct immediate successors of a $Q$ vertex
 cannot lie in the same ambient direction.
-The two new declarations are pending the clean-branch CI and
-transitive Lean axiom audit. Once these checks pass, the preceding
-meet-transfer TODO is discharged.
+Both declarations passed the clean Lean build and transitive axiom
+audit (PR~\#133, 463 audited endpoints). The preceding
+meet-transfer and directional-uniqueness subobligations are discharged.
 This remains strictly weaker than $S_w$ being semi-complete skew:
 one must still connect occupied cones to \emph{immediate} successors,
 verify rootedness and the printed auxiliary-order/skew clauses,
@@ -570,7 +570,7 @@ and construct the word component $g_w$. In particular, a
 prefix-poset isomorphism alone must not be used to assert
 preservation of the auxiliary order.
 
-\paragraph{From occupied cones to actual $Q$-successors.} \todo
+\paragraph{From occupied cones to actual $Q$-successors.} \ok
 Even after ambient meet-closure, existence of a point of $S_w$ in
 each ambient cone from an old interior node only gives a descendant,
 not literally an immediate support successor.  The finite first-step
@@ -582,7 +582,8 @@ and duplicate-freeness gives the exact Boolean
 previously established occupancy of every direction gives
 \lean{DualTree.Lemma27QImmediate.sourceQ_full_immediate_directions}
 for every old interior vertex of the \emph{actual} $Q$ support.
-These new facts await CI and the transitive axiom check.
+Both declarations passed the clean CI and transitive axiom check
+(PR~\#134, 465 audited endpoints).
 To finish the semi-complete branching property, use
 $\operatorname{Int}(S_w)=\operatorname{Int}(S)$ to split old interior
 vertices from terminal new markers, and then establish the exact
