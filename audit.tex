@@ -519,6 +519,24 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
+\paragraph{Preservation of the first branching direction below old interior nodes.} \todo
+The prefix geometry proved above can be strengthened to retain the
+*ambient direction* of the immediate branch from each old base
+vertex.  The theorem
+\lean{DualTree.Lemma27QBranchDirections.childCone_prefix_iff_of_strict_prefix}
+shows that prolonging a literal marker beyond itself does not
+change which of the $b$ successor cones of a proper predecessor
+contains that marker.  In the actual reconstructed $S_w$,
+\lean{DualTree.Lemma27QBranchDirections.oldBase_childCone_prefix_iff}
+checks this equivalence for every node of
+$\operatorname{Int}(S')\cup\{t_0\}$ and each literal $R$ marker.
+This is a necessary step towards the semi-complete branching
+axiom: the number of occupied directions can now be compared
+before and after replacement.  It still remains to show that
+all required directions are occupied, and to check the
+ambient-length and auxiliary-order clauses of skewness.
+
+
 \paragraph{Prefix geometry of replacing literal signature leaves.} \todo
 The construction of $S_w$ replaces each terminal marker $s\in R$
 with the projected node $P_{j(s)}(z_s)$, retaining the old base
