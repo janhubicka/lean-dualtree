@@ -60,3 +60,6 @@ import DualTree.ConeWordLift
 import DualTree.ConeProjectionAlgebra
 import DualTree.ConeRootAlignment
 import DualTree.ConeProjectionAlignment
+
+import DualTree.LiteralFrontierCount
+import DualTree.ConeTailDomains
