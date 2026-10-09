@@ -123,3 +123,5 @@ import DualTree.Lemma27QInterior
 import DualTree.Lemma27QLeafReplacement
 
 import DualTree.Lemma27QPrefixSkeleton
+
+import DualTree.Lemma27QPrefixSurjectivity
