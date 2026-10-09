@@ -109,3 +109,5 @@ import DualTree.Lemma27MarkedLeafGeometry
 import DualTree.SignatureInteriorExact
 
 import DualTree.Lemma27ConeIndex
+
+import DualTree.Lemma27QTreeCount
