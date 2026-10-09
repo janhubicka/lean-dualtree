@@ -458,3 +458,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27SignatureTree.signatureNodes_marked
 #print axioms DualTree.Lemma27SignatureTree.signatureNodes_eq_of_gamma2_smooth
 #print axioms DualTree.Lemma27SignatureTree.sourceSignatureNodes_eq_of_gamma2_smooth
+
+#print axioms DualTree.SignatureInteriorExact.boundaryMarker_not_below_cut
+#print axioms DualTree.SignatureInteriorExact.no_strict_signature_descendant_of_cut
+#print axioms DualTree.SignatureInteriorExact.maximal_cut_not_signature_interior
+#print axioms DualTree.SignatureInteriorExact.signature_interior_subset_original
+#print axioms DualTree.SignatureInteriorExact.signature_interior_iff_original_ne_cut
+#print axioms DualTree.SignatureInteriorExact.oldSignatureBase_before_cut
