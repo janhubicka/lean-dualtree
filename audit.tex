@@ -543,13 +543,34 @@ The resulting cone projections are prefix-preserving by
 \lean{DualTree.CanonicalSupportWalk.projection_walk_prefix}.
 
 This makes the address recursion explicit without assuming an
-abstract prefix-preserving $I_T$.  To obtain the exact map $I_T$
-used by the source it remains to select its canonical root, prove
-every address in $b^{<k}$ has a valid support path in a
-$k$-complete skew support, establish the intrinsic-height identity,
-and prove the inverse/coordinate identities on its image.
+abstract prefix-preserving $I_T$.  The canonical root is now selected
+from any complete skew support, as recorded next.  To identify the
+walk with the precise source map $I_T$ it remains to prove that
+every address in $b^{<k}$ has a valid support path, establish
+the intrinsic-height identity, and prove the inverse/coordinate
+identities on its image.
 The totalized fall-back at a missing branch is not asserted to
 be injective and cannot substitute for these steps.
+
+\paragraph{Selecting the root of a complete skew support.} \todo
+The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
+constructs a common support root from the complete-skew axioms,
+treating the source's singleton convention separately.
+The map \lean{DualTree.CompleteSupportRoot.rootOf} makes an explicit
+choice of this root; its support membership and prefix property
+are certified by \lean{DualTree.CompleteSupportRoot.rootOf_mem}
+and \lean{DualTree.CompleteSupportRoot.rootOf_prefix}.
+The resulting rooted map
+\lean{DualTree.CompleteSupportRoot.canonicalWalk}
+sends the empty address to that root, preserves initial segments,
+and sends every address with a valid support-successor trace
+into $T$.  The corresponding cone projections preserve prefixes,
+by \lean{DualTree.CompleteSupportRoot.canonicalProjection_prefix}.
+The remaining substantial tasks are to discharge trace admissibility
+for \emph{all} addresses in the full $b^{<k}$, prove the
+intrinsic-height equation $h_T(I_T(u))=|u|$, and verify
+injectivity, surjectivity onto $T$, and the inverse addresses used
+by Lemma~27.
 
 
 \paragraph{Counting literal frontier coordinates.} \todo
