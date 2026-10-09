@@ -600,3 +600,17 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.QLengthObstruction.extendedLeft_lastWitness_holds
 #print axioms DualTree.QLengthObstruction.extendedLeft_not_skew
 #print axioms DualTree.QLengthObstruction.extendedLeft_not_semiComplete
+
+#print axioms DualTree.QLengthTypedWitness.root_interior
+#print axioms DualTree.QLengthTypedWitness.root_maximal
+#print axioms DualTree.QLengthTypedWitness.source_subset_complete
+#print axioms DualTree.QLengthTypedWitness.cut_in_complete
+#print axioms DualTree.QLengthTypedWitness.cut_level_early
+#print axioms DualTree.QLengthTypedWitness.cut_height_zero
+#print axioms DualTree.QLengthTypedWitness.exceptional_outside
+#print axioms DualTree.QLengthTypedWitness.left_mem_R
+#print axioms DualTree.QLengthTypedWitness.right_mem_R
+#print axioms DualTree.QLengthTypedWitness.chosenPoint_left_length
+#print axioms DualTree.QLengthTypedWitness.chosenPoint_right_length
+#print axioms DualTree.QLengthTypedWitness.left_bullet_is_chosen
+#print axioms DualTree.QLengthTypedWitness.right_bullet_is_chosen
