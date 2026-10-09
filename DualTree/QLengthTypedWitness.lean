@@ -1,6 +1,7 @@
 import DualTree.QLengthObstruction
 import DualTree.Lemma27QMarkerCount
-import DualTree.MixedElementFromMarkers
+import DualTree.LocalMixedElementFromMarkers
+import DualTree.Lemma27QMarkerCoverage
 
 /-!
 # A literal starred source and independently chosen bullet depths
@@ -20,7 +21,7 @@ sourceSignatureNodes set violates a skew order clause.
 namespace DualTree.QLengthTypedWitness
 
 /-- The bounded root of the 3-level binary homogeneous tree. -/
-def rootBounded : BoundedNode 2 3 := ⟨[], by decide⟩
+def rootBounded : BoundedNode 2 3 := ⟨[], by simp [InHomTree]⟩
 
 /-- A variable word with exactly one variable, occurring
 at every node and rooted at the empty word. -/
@@ -142,7 +143,7 @@ noncomputable def chosenPoint
     (s : {s : Node 2 //
       s ∈ LiteralSignatureR.literalR source [] exceptional_outside}) :
     BoundedNode 2 (3 - (0 + 1)) :=
-  if s.1 = [0] then ⟨[0], by decide⟩ else ⟨[], by decide⟩
+  if s.1 = [0] then ⟨[0], by simp [InHomTree]⟩ else ⟨[], by simp [InHomTree]⟩
 
 theorem chosenPoint_left_length :
     (chosenPoint leftMarker).1.length = 1 := by
@@ -163,7 +164,7 @@ noncomputable def mixed :
         QLengthObstruction.completeT
         QLengthObstruction.completeT_is_complete
         source_subset_complete cut_in_complete cut_level_early) :=
-  LiteralMarkerMixedElement.assemble
+  LocalMixedElementFromMarkers.assemble
     source [] root_interior root_maximal exceptional_outside
     QLengthObstruction.completeT
     QLengthObstruction.completeT_is_complete
@@ -181,7 +182,7 @@ theorem left_bullet_is_chosen :
           QLengthObstruction.completeT_is_complete
           source_subset_complete cut_in_complete cut_level_early)
         leftMarker) = chosenPoint leftMarker := by
-  exact LiteralMarkerMixedElement.assemble_marker_point
+  exact LocalMixedElementFromMarkers.assemble_marker_point
     source [] root_interior root_maximal exceptional_outside
     QLengthObstruction.completeT
     QLengthObstruction.completeT_is_complete
@@ -197,7 +198,7 @@ theorem right_bullet_is_chosen :
           QLengthObstruction.completeT_is_complete
           source_subset_complete cut_in_complete cut_level_early)
         rightMarker) = chosenPoint rightMarker := by
-  exact LiteralMarkerMixedElement.assemble_marker_point
+  exact LocalMixedElementFromMarkers.assemble_marker_point
     source [] root_interior root_maximal exceptional_outside
     QLengthObstruction.completeT
     QLengthObstruction.completeT_is_complete
