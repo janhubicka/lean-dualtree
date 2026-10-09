@@ -49,10 +49,13 @@ The recursive block budget and dimension indices do not match Corollary 9. \\
 Theorem 13 gluing & \fix/\gap &
 Several complements and tail domains are mistyped; the induction architecture
 still looks plausible. \\
-Lemma 27 & \bad/\gap &
-The literal Q tree component fails skew clause (ii) on a kernel-checked
-typed binary small-height witness with independent D2 depths. Projection
-domains, word coding, colouring, and the large-parameter repair remain open. \\
+Lemma 27 & \gap &
+The full statement and the recursive construction remain unverified.
+The mixed-product colouring and final induction need repairs. \\
+Lemma 27, $Q$-tree step & \bad &
+A kernel-checked typed binary example shows that independent $D_2$
+point depths can violate the required skew clause~(ii). The
+large-parameter theorem itself is not refuted. \\
 Lemma 28 & \gap &
 Depends on Lemma 27 and suppresses signature transport during iteration. \\
 Theorem 25 induction & \todo &
@@ -822,45 +825,55 @@ audit (PR~\#145; 523 audited endpoints on the stacked branch). The remaining lex
 projected nodes and the consequent Boolean clause-(ii)
 failure will be a final, separate source-facing test.
 
-\paragraph{Actual literal $Q$ map: source-specific skew clause~(ii) test.} \bad
-A decisive Lean test is now staged in
-\lean{DualTree.QLengthActualSkewFailure}, building on the
-verified typed mixed-product source, the exact canonical
-projected ambient lengths, and the proof that both projected
-nodes have intrinsic height one \emph{inside} the new $S_w$.
-The remaining comparison follows directly from the literal
-frontier cones: the left projected marker extends $0$, the
-right extends $1$, and hence the left is lexicographically
-earlier than the right. Since the two ambient lengths are
-two and one, respectively, this would violate skew clause~(ii)
-on the exact tree component of the source's map $Q$.
-The new declarations attempt to certify the Boolean failure
-of $\operatorname{condIIB}(S_w)$, of skewness and of
-semi-completeness, and the impossibility of attaching any
-word component to make that tree a starred object.
-The seven new declarations passed the Lean build and transitive
-axiom audit on the stacked branch (PR~\#146, 535 audited endpoints),
-including
-\lean{DualTree.QLengthActualSkewFailure.sourceQ_condIIB_false}
-and
-\lean{DualTree.QLengthActualSkewFailure.no_starred_Q_output}.
-The witness certifies a failure of the unrestricted tree-component
-construction with independently chosen $D_2$ points on the verified
-common safe cone domain.  It does \emph{not} by itself refute the
-full Lemma~27 under its numerical lower bound on $n$, or the final
-dual-tree Ramsey theorem: the checked binary example uses complete
-height $3$ and does not yet build the full observable-signature
-parameter package from the printed statement.
-The original mixed-product definition explicitly permits arbitrary
-point coordinates in $b^{<n'}$, so any intended hidden
-equal-depth restriction on the $D_2$ coordinates must be stated,
-proved compatible with the Ramsey subspace, and propagated through
-the colouring pullback.  A promising repair to examine is to require
-all projected terminal points to lie on a common \emph{intrinsic level
-of the complete ambient support} $T$; merely giving all local tails
-the same length is insufficient when frontier roots have different
-intrinsic heights. This is a proposal for validation, not a repaired
-theorem.
+\paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
+The source-facing Lean counterexample
+\lean{DualTree.QLengthActualSkewFailure}
+uses an actual starred binary source, a $3$-complete skew ambient
+support, the literal marker-to-$D_2$ coordinate map, and the
+canonical projections on their certified intrinsic domains.
+The mixed-product element assigns the two marker points local
+tails of lengths one and zero.  The resulting projected nodes
+have ambient lengths two and one, respectively, but both have
+intrinsic height one \emph{inside the reconstructed} $S_w$.
+The left projected node extends $0$ and the right extends $1$,
+so the longer node is lexicographically earlier. Thus clause~(ii)
+of the printed skew definition fails:
+\[
+  \operatorname{condIIB}(S_w)=\mathrm{false},\qquad
+  \operatorname{semiCompleteB}(S_w)=\mathrm{false}.
+\]
+The checked theorem
+\lean{DualTree.QLengthActualSkewFailure.no_starred_Q_output}
+also shows that no choice of a word component can make this exact
+$S_w$ the support of a starred object.
+All seven source-specific declarations passed the Lean build and
+transitive axiom audit on the stacked branch (PR~\#146, whose
+clean integration was merged), bringing the cumulative audit to
+535 endpoints.
+
+This is a concrete obstruction to the claim in the proof on
+pp.~28--29 that the displayed $Q$ is automatically a
+well-defined map into starred objects for arbitrary independent
+$D_2$ point coordinates. It is \emph{not}, on its own, a
+counterexample to the conclusion of Lemma~27 subject to the
+printed large-parameter bound, nor to the dual-tree Ramsey
+theorem: the fully checked example has complete height $3$,
+and the complete observable-signature parameter package for
+the theorem statement has not yet been formalised in this example.
+
+\emph{Suggested local repair to investigate.}
+The mixed-product definition permits marked coordinates from
+$b^{<n'}$ without a common depth. It is therefore insufficient
+to rely solely on preservation of prefix order and branching
+directions under marker replacement. A candidate is to force
+all new projected terminal points to occupy a common intrinsic
+level in the ambient complete skew support $T$, with
+coordinate-dependent local tail depths when the frontier roots
+have unequal heights. The resulting restriction would have to
+be made compatible with Corollary~22, the colouring pullback,
+and the recursive dimension bound. Neither sufficiency nor
+Ramsey compatibility is claimed. An alternative correction
+may be needed if this fails.
 
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
