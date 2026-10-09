@@ -513,3 +513,5 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.Lemma27QBranchDirections.childCone_prefix_iff_of_strict_prefix
 #print axioms DualTree.Lemma27QBranchDirections.oldBase_childCone_prefix_iff
+
+#print axioms DualTree.Lemma27QBranchOccupancy.occupied_iff_under_Q
