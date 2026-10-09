@@ -519,3 +519,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27QFullDirections.exceptional_leaf_marker_in_direction
 #print axioms DualTree.Lemma27QFullDirections.oldSkeleton_all_directions
 #print axioms DualTree.Lemma27QFullDirections.sourceQ_all_directions
+
+#print axioms DualTree.MeetClosedDirectionConverse.atMostOneDirection_of_meetClosed
+#print axioms DualTree.MeetClosedDirectionConverse.meetClosed_iff_atMostOneDirection_of_rooted
