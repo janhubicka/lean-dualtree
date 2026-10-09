@@ -637,3 +637,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.QLengthNewIntrinsicHeight.nonroot_Q_height_one
 #print axioms DualTree.QLengthNewIntrinsicHeight.left_projection_Q_height_one
 #print axioms DualTree.QLengthNewIntrinsicHeight.right_projection_Q_height_one
+
+#print axioms DualTree.QLengthActualSkewFailure.left_marker_prefix
+#print axioms DualTree.QLengthActualSkewFailure.right_marker_prefix
+#print axioms DualTree.QLengthActualSkewFailure.projected_left_lex_right
+#print axioms DualTree.QLengthActualSkewFailure.sourceQ_condIIB_false
+#print axioms DualTree.QLengthActualSkewFailure.sourceQ_skewB_false
+#print axioms DualTree.QLengthActualSkewFailure.sourceQ_semiCompleteB_false
+#print axioms DualTree.QLengthActualSkewFailure.no_starred_Q_output
