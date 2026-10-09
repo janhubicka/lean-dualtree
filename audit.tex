@@ -757,6 +757,26 @@ gives $|R|\le d$, but neither numerical fact yet constructs the
 mixed-product colouring map $Q$, repairs the printed larger
 cone-tail domain, or proves the monochromatic reconstruction.
 
+
+\paragraph{Explicit coordinates for literal signature markers.} \todo
+The cardinal inequality $|R|\le d$ alone does not determine which
+of the $d$ mixed-product coordinates correspond to the elements of
+the paper's literal marker set $R$.  The module
+\lean{DualTree.LiteralMarkerCoordinates} fixes the numbering: a marker
+$s\in R$ is sent to the index in the duplicate-free frontier list
+of the unique minimal outside-cut support node extending $s$.
+The construction uses the canonical equivalence between positions of
+a duplicate-free list and its members.
+The theorem
+\lean{DualTree.LiteralMarkerCoordinates.coordinate_frontier}
+recovers the frontier from its assigned index, while
+\lean{DualTree.LiteralMarkerCoordinates.coordinate_injective}
+shows that distinct markers receive distinct coordinates.
+These facts establish the collision-free choice of the $D_2$
+coordinates required at the beginning of Lemma~27, but not the
+coordinatewise coding of the mixed-product word $Q$ or its smoothness
+compatibility.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,
