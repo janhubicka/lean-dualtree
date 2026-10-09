@@ -458,3 +458,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27SignatureTree.signatureNodes_marked
 #print axioms DualTree.Lemma27SignatureTree.signatureNodes_eq_of_gamma2_smooth
 #print axioms DualTree.Lemma27SignatureTree.sourceSignatureNodes_eq_of_gamma2_smooth
+
+#print axioms DualTree.Lemma27ConeIndex.projectSlot_cone
+#print axioms DualTree.Lemma27ConeIndex.projectSlot_injective
+#print axioms DualTree.Lemma27ConeIndex.locateSlot_spec
+#print axioms DualTree.Lemma27ConeIndex.locateSlot_projectSlot
+#print axioms DualTree.Lemma27ConeIndex.locateSlot_none_iff
