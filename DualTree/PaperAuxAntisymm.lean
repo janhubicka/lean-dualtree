@@ -41,11 +41,11 @@ theorem finLexLE_antisymm {b : Nat}
           · have hlt : a < c := by
               have htest : decide (a < c) = true := by
                 simpa [FinLexLE, finLexLEB, heq] using hst
-              exact of_decide_true htest
+              simpa using htest
             have hgt : c < a := by
               have htest : decide (c < a) = true := by
                 simpa [FinLexLE, finLexLEB, Ne.symm heq] using hts
-              exact of_decide_true htest
+              simpa using htest
             exact (lt_asymm hlt hgt).elim
 
 /-- Even though canonical tree maps need not preserve PaperAux,
