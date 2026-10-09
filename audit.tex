@@ -519,6 +519,34 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
+\paragraph{Unique global cone-coordinate lookup for rootwise coding.} \todo
+The repaired clauses defining $Q$ and the final refinement $f'$
+refer to a pair $(i,z)$ with a source variable root
+$t=P_i(z)$.  To ensure that the clauses really define
+functions, the coordinate/tail pair must not be ambiguous.
+The module \lean{DualTree.Lemma27ConeIndex} introduces the
+actual typed pair of a minimal-frontier coordinate and a
+bounded common local tail.
+\lean{DualTree.Lemma27ConeIndex.projectSlot_injective}
+proves that the map $(i,z)\mapsto P_i(z)$ is globally injective:
+different minimal frontiers have disjoint cones, and the
+individual canonical cone projections are injective.
+The partial inverse
+\lean{DualTree.Lemma27ConeIndex.locateSlot}
+returns the unique pair when a support node lies in the
+corrected cone image, and returns \texttt{none} otherwise.
+The theorems
+\lean{DualTree.Lemma27ConeIndex.locateSlot_spec},
+\lean{DualTree.Lemma27ConeIndex.locateSlot_projectSlot}, and
+\lean{DualTree.Lemma27ConeIndex.locateSlot_none_iff}
+verify these claims and the exact fallback criterion.
+This is the address-selection interface needed to define
+$g_w$ by a uniform substitution on the roots of the original
+word.  It still does not assemble that substitution, prove
+its admissibility, or establish the smoothness of $c\circ Q$.
+
+
+
 
 \paragraph{Recovering local addresses of support roots inside a cone.} \todo
 The previous canonical cone construction verifies the forward
