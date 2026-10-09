@@ -520,6 +520,37 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Counting literal frontier coordinates.} \todo
+The literal signature marker set $R$ injects into the distinct
+minimal support frontiers beyond the inclusive cut, by
+\lean{DualTree.LiteralFrontierIndex.frontierFor_injective}.
+The module \lean{DualTree.LiteralFrontierCount} constructs the
+duplicate-free frontier list and certifies its precise membership
+predicate.  The theorem
+\lean{DualTree.LiteralFrontierCount.literalR_length_le_frontiers}
+proves $|R|\le d$, and
+\lean{DualTree.LiteralFrontierCount.frontier_partition_count}
+justifies $d_2=|R|$, $d_0=d-d_2$ and $d_0+d_2=d$.
+This does not prove the separately required bound
+$d\le b^{m'+1}$, the actual coordinate enumeration, or the
+coloring map $Q$.
+
+\paragraph{Safe domains for the cone projections.} \todo
+The common tail height $n'=n-m'$ printed in Lemma~27
+does not always fit the canonical frontier address:
+a frontier may have intrinsic height $m'+1$.
+\lean{DualTree.ConeTailDomains.common_cone_tail_safe}
+checks the uniformly shortened tail height $n-(m'+1)$,
+provided that the canonical address of the frontier has
+length equal to its intrinsic height.
+\lean{DualTree.ConeTailDomains.variable_frontier_tail_safe}
+also checks the individual tail height $n-h_T(t_i)$
+in each cone.  These results establish domain inequalities,
+not the existence of $I_T$ or the numerical feasibility of
+the full mixed-product construction with the altered
+common tail height.
+
+
 \paragraph{Injection of the literal markers into frontier coordinates.} \todo
 The opening observation of Lemma~27 requires not only that every
 $s\in R$ belongs to a unique frontier cone, but that no frontier cone
