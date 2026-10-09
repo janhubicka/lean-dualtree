@@ -780,6 +780,26 @@ auditing. They are intended for the remaining literal $Q$
 projection test and constitute neither a new counterexample
 nor a substitute for checking the actual projected nodes.
 
+\paragraph{Canonical projected depths for the actual typed Q source.} \ok
+Building on the typed source and mixed-product element, the module
+\lean{DualTree.QLengthProjected} checks the *actual* canonical
+support projections rather than independent terminal replacements.
+In the full binary ambient support $T=2^{<3}$, intrinsic support
+height is equal to ambient word length.  Each literal child
+marker of the root cut is its own minimal outside-cut support
+frontier; this is derived from the frontier minimality theorem,
+not by evaluating a noncomputable choice. The established canonical
+projection-height formula then gives ambient depths two and one
+for the left and right new $D_2$ points, respectively:
+\lean{DualTree.QLengthProjected.left_projection_length_two}
+and \lean{DualTree.QLengthProjected.right_projection_length_one}.
+These source-facing declarations passed the Lean build and transitive
+axiom audit (PR~\#144; 516 checks on its stacked branch).
+They resolve the output *lengths* but still do not establish that
+the two projected points have the same intrinsic height inside
+$S_w$, nor the lexicographic comparison required to refute skew
+clause~(ii). The exact final Q-support test remains a separate TODO.
+
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
 the \emph{literal} set $R$ of Lemma~27.  In the semi-complete
