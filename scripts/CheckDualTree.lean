@@ -557,3 +557,6 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.MeetImageTransfer.meet_represented_of_prefix_and_directions
 #print axioms DualTree.MeetImageTransfer.meetClosed_of_prefix_and_directions
+
+#print axioms DualTree.Lemma27QMeetClosed.sourceSignatureNodes_meetClosed
+#print axioms DualTree.Lemma27QMeetClosed.sourceSignatureNodes_atMostOneDirection
