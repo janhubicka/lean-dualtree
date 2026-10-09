@@ -99,18 +99,26 @@ noncomputable def actualMarkedSingletonSupports : Fin 2 → List (Node 2)
 exactly the length-ordered singleton supports (empty,0). -/
 theorem actual_marked_singletons_eq :
     actualMarkedSingletonSupports = markedSingletonSupports := by
+  have hRight :
+      (QLengthTypedWitness.mixed.bulletPoint
+        (QLengthProjected.index QLengthTypedWitness.rightMarker)).1 =
+          ([] : Node 2) := by
+    simpa [QLengthProjected.index, QLengthTypedWitness.chosenPoint,
+      QLengthTypedWitness.rightMarker] using
+      (congrArg Subtype.val QLengthTypedWitness.right_bullet_is_chosen)
+  have hLeft :
+      (QLengthTypedWitness.mixed.bulletPoint
+        (QLengthProjected.index QLengthTypedWitness.leftMarker)).1 =
+          ([0] : Node 2) := by
+    simpa [QLengthProjected.index, QLengthTypedWitness.chosenPoint,
+      QLengthTypedWitness.leftMarker] using
+      (congrArg Subtype.val QLengthTypedWitness.left_bullet_is_chosen)
   funext i
   fin_cases i
-  · simp [actualMarkedSingletonSupports, markedSingletonSupports,
-      QLengthProjected.index,
-      QLengthTypedWitness.right_bullet_is_chosen,
-      QLengthTypedWitness.chosenPoint,
-      QLengthTypedWitness.rightMarker]
-  · simp [actualMarkedSingletonSupports, markedSingletonSupports,
-      QLengthProjected.index,
-      QLengthTypedWitness.left_bullet_is_chosen,
-      QLengthTypedWitness.chosenPoint,
-      QLengthTypedWitness.leftMarker]
+  · simpa [actualMarkedSingletonSupports, markedSingletonSupports]
+      using congrArg (fun v : Node 2 => [v]) hRight
+  · simpa [actualMarkedSingletonSupports, markedSingletonSupports]
+      using congrArg (fun v : Node 2 => [v]) hLeft
 
 /-- The actual ordered D₂ marked-point tuple of the typed Q
 witness satisfies Definition 20's vector 1-completeness
