@@ -552,6 +552,24 @@ identities on its image.
 The totalized fall-back at a missing branch is not asserted to
 be injective and cannot substitute for these steps.
 
+
+\paragraph{Exact intrinsic rank at an immediate support successor.} \todo
+The module \lean{DualTree.ImmediateSupportHeight} proves that the
+proper support predecessors of an immediate successor $t$ of $s$
+are exactly the proper predecessors of $s$ together with $s$.
+The finite cardinality argument gives
+$h_T(t)=h_T(s)+1$ (without any skewness assumption), by
+\lean{DualTree.ImmediateSupportHeight.heightAt_immediate}.
+The support-root equation $h_T(r)=0$ is also certified by
+\lean{DualTree.ImmediateSupportHeight.heightAt_root_zero}.
+Consequently
+\lean{DualTree.ImmediateSupportHeight.heightAt_next}
+supplies the rank increment for each admissible step in the
+constructive address walk.  The remaining task is induction over
+addresses to establish admissibility and rank equality on all
+$b^{<k}$ for every $k$-complete skew support, followed by the
+inverse and unique-address properties.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,
