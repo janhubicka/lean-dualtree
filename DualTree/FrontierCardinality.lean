@@ -135,8 +135,8 @@ theorem frontiers_length_le_pow {b k m : Nat}
     rw [hFilter] at hcount
     simpa using hcount
   have hA : F.length = A.card := by
-    exact List.toFinset_card_of_nodup
-      (LiteralFrontierCount.frontiers_nodup T cut)
+    exact (List.toFinset_card_of_nodup
+      (LiteralFrontierCount.frontiers_nodup T cut)).symm
   rw [hA]
   exact hAB.trans hB
 
