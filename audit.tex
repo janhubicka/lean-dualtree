@@ -545,7 +545,7 @@ successors in $S_w$.
 
 
 
-\paragraph{Concrete $Q$-support: ambient meet closure and successor uniqueness.} \todo
+\paragraph{Concrete $Q$-support: ambient meet closure and successor uniqueness.} \ok
 The generic meet-transport criterion above can now be instantiated
 with the actual labelled occurrences
 $\operatorname{Int}(S')\cup\{t_0\}\,\dot\cup\,R$
@@ -560,9 +560,9 @@ ambient meet closure of the reconstructed finite $Q$ node set, and
 \lean{DualTree.Lemma27QMeet.sourceQ_atMostOneDirection}
 shows that two distinct immediate successors of a $Q$ vertex
 cannot lie in the same ambient direction.
-The two new declarations are pending the clean-branch CI and
-transitive Lean axiom audit. Once these checks pass, the preceding
-meet-transfer TODO is discharged.
+Both declarations passed the clean Lean build and transitive axiom
+audit (PR~\#133, 463 audited endpoints). The preceding
+meet-transfer and directional-uniqueness subobligations are discharged.
 This remains strictly weaker than $S_w$ being semi-complete skew:
 one must still connect occupied cones to \emph{immediate} successors,
 verify rootedness and the printed auxiliary-order/skew clauses,
@@ -570,7 +570,7 @@ and construct the word component $g_w$. In particular, a
 prefix-poset isomorphism alone must not be used to assert
 preservation of the auxiliary order.
 
-\paragraph{From occupied cones to actual $Q$-successors.} \todo
+\paragraph{From occupied cones to actual $Q$-successors.} \ok
 Even after ambient meet-closure, existence of a point of $S_w$ in
 each ambient cone from an old interior node only gives a descendant,
 not literally an immediate support successor.  The finite first-step
@@ -582,7 +582,8 @@ and duplicate-freeness gives the exact Boolean
 previously established occupancy of every direction gives
 \lean{DualTree.Lemma27QImmediate.sourceQ_full_immediate_directions}
 for every old interior vertex of the \emph{actual} $Q$ support.
-These new facts await CI and the transitive axiom check.
+Both declarations passed the clean CI and transitive axiom check
+(PR~\#134, 465 audited endpoints).
 To finish the semi-complete branching property, use
 $\operatorname{Int}(S_w)=\operatorname{Int}(S)$ to split old interior
 vertices from terminal new markers, and then establish the exact
@@ -590,6 +591,26 @@ immediate-successor count $0$ or $b$ at every vertex.  The
 remaining skew/rooted/auxiliary-order and word-construction
 requirements are independent; do not infer them merely from
 these branch facts.
+
+\paragraph{Root and non-leaf branching of the reconstructed $Q$ support.} \todo
+The ambient meet-closure theorem also supplies rootedness with no
+extra order assumptions. Any finite nonempty meet-closed set has a
+member below all others in the ambient prefix order, by iterating
+pairwise meets. The general facts
+\lean{DualTree.Lemma27QRooted.common_support_root_of_meetClosed}
+and \lean{DualTree.Lemma27QRooted.rootedB_of_meetClosed_nonempty}
+yield \lean{DualTree.Lemma27QRooted.sourceQ_rooted}, since $t_0$
+is retained in $S_w$. Moreover, for $b>0$ the previously proved
+identity $\operatorname{Int}(S_w)=\operatorname{Int}(S)$
+upgrades the full-direction theorem to every actual non-leaf:
+\lean{DualTree.Lemma27QRooted.sourceQ_full_immediate_at_nonleaf}.
+These four declarations await CI and the transitive axiom audit.
+The remaining numerical branch count follows by proving that the
+immediate successors are partitioned by their unique first
+directions; this finite cardinality step should be formalized rather
+than inferred from the Boolean predicates. Even after this, neither
+the printed auxiliary-order clauses nor the word-construction
+part of Lemma~27 follows from rooted meet-closed geometry.
 
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
