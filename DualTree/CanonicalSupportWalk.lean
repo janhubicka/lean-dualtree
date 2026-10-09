@@ -42,7 +42,7 @@ theorem next_prefix {b : Nat} (T : List (Node b))
       have ht : t ∈ SkewTree.branchWitnesses T s i := by
         simp [hlist]
       have hdir : IsPrefix (s ++ [i]) t :=
-        (SkewBranchGeometry.mem_branchWitnesses_iff T s t i).1 ht |>.2
+        ((SkewBranchGeometry.mem_branchWitnesses_iff T s t i).1 ht).2
       have hs : IsPrefix s t :=
         isPrefix_trans ⟨[i], rfl⟩ hdir
       simpa [next, hlist] using hs
