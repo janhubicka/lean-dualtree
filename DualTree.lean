@@ -142,3 +142,5 @@ import DualTree.Lemma27LiteralMeet
 import DualTree.MeetImageTransfer
 
 import DualTree.Lemma27QMeetClosed
+
+import DualTree.Lemma27QUniqueDirections
