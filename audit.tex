@@ -764,6 +764,22 @@ intrinsic heights in $S_w$, and their simultaneous membership
 in the actual reconstructed support. No conclusion about the
 full paper is drawn before that final test.
 
+\paragraph{General rank/ambient-length obstruction certificates.} \todo
+The new module \lean{DualTree.SkewOrderObstruction} isolates exact
+finite certificates for failure of skew axioms (ii) and (iii),
+without needing to evaluate a noncomputably reconstructed support.
+To disprove clause (ii), it suffices to exhibit two support nodes
+$s,t$ of the same intrinsic height such that $s$ precedes $t$
+lexicographically but $|s|>|t|$. For clause (iii), a pair
+of strictly increasing intrinsic height but non-increasing
+ambient length suffices. The module also derives failure of
+skewness and semi-completeness from a witnessed clause-(ii)
+failure, for nonsingleton supports.
+These five generic declarations await CI and transitive axiom
+auditing. They are intended for the remaining literal $Q$
+projection test and constitute neither a new counterexample
+nor a substitute for checking the actual projected nodes.
+
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
 the \emph{literal} set $R$ of Lemma~27.  In the semi-complete

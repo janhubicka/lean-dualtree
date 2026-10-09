@@ -614,3 +614,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.QLengthTypedWitness.chosenPoint_right_length
 #print axioms DualTree.QLengthTypedWitness.left_bullet_is_chosen
 #print axioms DualTree.QLengthTypedWitness.right_bullet_is_chosen
+
+#print axioms DualTree.SkewOrderObstruction.condIIB_ne_true_of_rank_tie_length_reversal
+#print axioms DualTree.SkewOrderObstruction.condIIB_false_of_rank_tie_length_reversal
+#print axioms DualTree.SkewOrderObstruction.condIIIB_false_of_height_reversal
+#print axioms DualTree.SkewOrderObstruction.skewB_false_of_condIIB_false
+#print axioms DualTree.SkewOrderObstruction.semiCompleteB_false_of_condIIB_false
