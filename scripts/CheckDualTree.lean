@@ -547,3 +547,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InteriorMarkerMeet.meet_markers_interior
 #print axioms DualTree.InteriorMarkerMeet.meet_distinct_interior_union_markers
 #print axioms DualTree.InteriorMarkerMeet.meetClosed_interior_union_markers
+
+#print axioms DualTree.Lemma27LiteralMeet.fullDirections_at_maxInterior
+#print axioms DualTree.Lemma27LiteralMeet.literalMarker_has_original_support_descendant
+#print axioms DualTree.Lemma27LiteralMeet.literalR_antichain
+#print axioms DualTree.Lemma27LiteralMeet.literalR_not_prefix_interior
+#print axioms DualTree.Lemma27LiteralMeet.distinct_literal_skeleton_meet_in_original_interior
+#print axioms DualTree.Lemma27LiteralMeet.oldSkeleton_meetClosed
