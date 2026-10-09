@@ -737,6 +737,33 @@ of $D_2$ bullet points is incompatible with the printed skew
 axiom~(ii); a synchronized-depth restriction or a modification
 of the target support notion may be necessary.
 
+\paragraph{Typed Q-depth selection at the literal frontier coordinates.} \ok
+To distinguish the finite shape test from a counterexample to
+the actual Lemma~27 map, we have begun its exact source-facing
+instantiation in \lean{DualTree.QLengthTypedWitness}.
+Here $b=2$, the source starred tree is
+$\{\varnothing,0,1\}$, the enclosing support is the
+$3$-complete tree $2^{<3}$, and the maximal original
+interior cut is $\varnothing$.  The source word has one
+variable rooted at $\varnothing$, meeting the stated
+root/support conditions.  The distinguished markers $0,1$
+are assigned two different bounded tail points, of lengths
+one and zero respectively, using the \emph{actual} injective
+marker-to-frontier coordinate map and the assembled mixed-product
+element from \lean{DualTree.LiteralMarkerMixedElement}.
+The lemmas \lean{DualTree.QLengthTypedWitness.left_bullet_is_chosen}
+and \lean{DualTree.QLengthTypedWitness.right_bullet_is_chosen}
+assert the source's exact coordinate identities.
+These declarations passed the clean Lean build and transitive axiom audit
+(PR~\#142, 508 audited endpoints).
+This confirms only that independently unequal local tail lengths
+are well typed; to certify failure of skew clause~(ii) for the
+literal $Q$ construction, still prove the precise projected
+ambient node lengths, their first branching directions, their
+intrinsic heights in $S_w$, and their simultaneous membership
+in the actual reconstructed support. No conclusion about the
+full paper is drawn before that final test.
+
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
 the \emph{literal} set $R$ of Lemma~27.  In the semi-complete
