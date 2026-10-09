@@ -587,9 +587,27 @@ is now defined on all of $b^{<k}$ with values in $T$; its height
 identity and prefix preservation are separately audited by
 \lean{DualTree.CompleteSupportAddresses.canonicalEmbedding_height}
 and \lean{DualTree.CompleteSupportAddresses.canonicalEmbedding_prefix}.
-It remains to verify injectivity, surjectivity, uniqueness of
-source addresses, and the resulting exact projection identities.
+Injectivity of the map is now reduced to the pathwise
+uniqueness theorem, as recorded next.  Surjectivity,
+existence of an address for every support vertex, and the resulting
+exact projection identities remain open.
 
+
+
+\paragraph{Injectivity of the canonical support walk.} \todo
+For two admissible source addresses with equal images, the first
+directions (if any) must coincide: the images lie in their respective
+disjoint ambient successor cones.  Removing that common direction
+reduces to shorter admissible addresses.  This is formalized as
+\lean{DualTree.CanonicalSupportInjective.walk_injective_of_admissible};
+the empty/nonempty cases use the strictness of the first successor.
+Consequently the concrete map from $b^{<k}$ into $T$ is injective,
+as certified by
+\lean{DualTree.CanonicalSupportInjective.canonicalEmbedding_injective}
+using the previously validated full-admissibility theorem.
+The remaining geometric step is surjectivity onto $T$,
+or equivalently an inverse address for each support node,
+followed by the source-specific cone-map identities.
 
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
