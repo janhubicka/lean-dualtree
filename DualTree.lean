@@ -165,3 +165,5 @@ import DualTree.QLengthTypedWitness
 import DualTree.SkewOrderObstruction
 
 import DualTree.QLengthProjected
+
+import DualTree.QLengthNewIntrinsicHeight
