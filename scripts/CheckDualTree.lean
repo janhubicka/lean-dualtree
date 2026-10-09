@@ -392,3 +392,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.FrontierAntichainPadding.comparable_of_pad_eq
 #print axioms DualTree.FrontierAntichainPadding.eq_of_pad_eq_antichain
 #print axioms DualTree.FrontierAntichainPadding.pad_injective_on_antichain
+
+#print axioms DualTree.FrontierSourcePadding.inverse_frontier_rank_bound
+#print axioms DualTree.FrontierSourcePadding.inverse_frontier_antichain
+#print axioms DualTree.FrontierSourcePadding.padded_frontier_length
+#print axioms DualTree.FrontierSourcePadding.padded_frontier_injective
