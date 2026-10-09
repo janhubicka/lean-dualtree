@@ -67,3 +67,5 @@ import DualTree.ConeTailDomains
 import DualTree.CanonicalSupportWalk
 
 import DualTree.CompleteSupportRoot
+
+import DualTree.ImmediateSupportHeight
