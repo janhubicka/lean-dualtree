@@ -301,3 +301,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ConeWordLift.eval_liftWord
 #print axioms DualTree.ConeWordLift.liftAtCone_aux_prefix
 #print axioms DualTree.ConeWordLift.liftAtCone_variable
+
+#print axioms DualTree.ConeProjectionAlgebra.prefix_append_left
+#print axioms DualTree.ConeProjectionAlgebra.projection_prefix
+#print axioms DualTree.ConeProjectionAlgebra.projection_cone
+#print axioms DualTree.ConeProjectionAlgebra.projection_nil
+#print axioms DualTree.ConeProjectionAlgebra.projection_rooted_at_frontier
+#print axioms DualTree.ConeProjectionAlgebra.projection_leftInverse_root
