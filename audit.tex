@@ -800,6 +800,27 @@ the two projected points have the same intrinsic height inside
 $S_w$, nor the lexicographic comparison required to refute skew
 clause~(ii). The exact final Q-support test remains a separate TODO.
 
+\paragraph{Intrinsic heights of the actual new Q terminal markers.} \ok
+The ambient lengths of the two projected nodes are not their
+intrinsic heights in the reconstructed finite support.
+The module \lean{DualTree.QLengthNewIntrinsicHeight}
+formalizes the missing rank argument: in a duplicate-free
+support whose only interior node is the empty root, every
+nonroot support node has precisely that root as its unique
+strict support predecessor and therefore has intrinsic height
+one. The previously checked equality
+$\operatorname{Int}(S_w)=\operatorname{Int}(S)$ specializes to
+$\operatorname{Int}(S_w)=\{\varnothing\}$ in the binary typed
+test. Using literal marker membership in $S_w$, the theorems
+\lean{DualTree.QLengthNewIntrinsicHeight.left_projection_Q_height_one}
+and \lean{DualTree.QLengthNewIntrinsicHeight.right_projection_Q_height_one}
+show that both genuine projected markers have intrinsic
+height one, even though their ambient lengths are two and one.
+These seven declarations passed the Lean build and transitive axiom
+audit (PR~\#145; 523 audited endpoints on the stacked branch). The remaining lexicographic comparison of the
+projected nodes and the consequent Boolean clause-(ii)
+failure will be a final, separate source-facing test.
+
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
 the \emph{literal} set $R$ of Lemma~27.  In the semi-complete
