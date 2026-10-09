@@ -520,6 +520,28 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Every literal signature marker survives in the $Q$ tree.} \todo
+The marker sets relevant to the reconstruction are the *literal*
+$R$ from Lemma~27, not just the candidate cones.  The module
+\lean{DualTree.Lemma27QMarkerCoverage} proves that both kinds of
+markers used by the source are present:
+\lean{DualTree.Lemma27QMarkerCoverage.child_mem_literalR}
+handles every ambient immediate successor of $t_0$, while
+\lean{DualTree.Lemma27QMarkerCoverage.boundaryMarker_mem_literalR}
+handles each exceptional signature-leaf boundary at a maximal cut.
+For each $s\in R$, its designated $D_2$ coordinate projects
+a node extending $s$ by
+\lean{DualTree.Lemma27QMarkerCoverage.marker_prefix_projected_point}.
+More importantly,
+\lean{DualTree.Lemma27QMarkerCoverage.literalMarker_has_Q_descendant}
+places that projected descendant in the *actual reconstructed*
+node set $S_w$, not just the complete support $T$.
+These are the explicit marker-coverage facts required to show that
+each retained original interior vertex has a strict descendant in
+$S_w$.  That interior-persistence argument and subsequent
+semi-completeness verification remain separate obligations.
+
+
 \paragraph{New projected $Q$ markers are leaves.} \todo
 Every marked point $P_i(s_i)$ lies strictly after the auxiliary
 cut and belongs to a frontier cone disjoint from all other
