@@ -405,3 +405,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.LiteralMarkerCoordinates.frontierMember_injective
 #print axioms DualTree.LiteralMarkerCoordinates.coordinate_frontier
 #print axioms DualTree.LiteralMarkerCoordinates.coordinate_injective
+
+#print axioms DualTree.UniformConeDomains.commonTail_value
+#print axioms DualTree.UniformConeDomains.projectCommon_prefix
+#print axioms DualTree.UniformConeDomains.projectCommon_cone
+#print axioms DualTree.UniformConeDomains.projectCommon_height
+#print axioms DualTree.UniformConeDomains.projectCommon_inverse
