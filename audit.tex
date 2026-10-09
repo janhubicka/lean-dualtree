@@ -545,6 +545,31 @@ successors in $S_w$.
 
 
 
+\paragraph{Concrete $Q$-support: ambient meet closure and successor uniqueness.} \todo
+The generic meet-transport criterion above can now be instantiated
+with the actual labelled occurrences
+$\operatorname{Int}(S')\cup\{t_0\}\,\dot\cup\,R$
+of Lemma~27, without an additional faithfulness hypothesis.
+The source meet belongs to $\operatorname{Int}(S)$ for any pair of
+distinct occurrences; the labelled $Q$ map fixes this old base,
+preserves and reflects prefixes, and preserves the first ambient
+direction from every vertex of the old base. Finally every node of
+$S_w$ is represented by one of these occurrences. Thus
+\lean{DualTree.Lemma27QMeet.sourceQ_meetClosed} gives actual
+ambient meet closure of the reconstructed finite $Q$ node set, and
+\lean{DualTree.Lemma27QMeet.sourceQ_atMostOneDirection}
+shows that two distinct immediate successors of a $Q$ vertex
+cannot lie in the same ambient direction.
+The two new declarations are pending the clean-branch CI and
+transitive Lean axiom audit. Once these checks pass, the preceding
+meet-transfer TODO is discharged.
+This remains strictly weaker than $S_w$ being semi-complete skew:
+one must still connect occupied cones to \emph{immediate} successors,
+verify rootedness and the printed auxiliary-order/skew clauses,
+and construct the word component $g_w$. In particular, a
+prefix-poset isomorphism alone must not be used to assert
+preservation of the auxiliary order.
+
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
 the \emph{literal} set $R$ of Lemma~27.  In the semi-complete
