@@ -520,6 +520,25 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Typed prefix-order embedding of the entire literal signature skeleton.} \todo
+The preceding four-case prefix analysis is now packaged as an
+explicit map on the disjoint union of the retained old base and
+the terminal literal markers $R$.  The original-node label map is
+injective because the old base and $R$ are disjoint.
+The reconstructed map fixes the old base and sends each $s\in R$
+to its designated projected $D_2$ point.
+\lean{DualTree.Lemma27QPrefixSkeleton.newNode_prefix_iff_original}
+proves that the new labels preserve and reflect prefix ordering
+for every pair of occurrences, including both cross-cases.
+\lean{DualTree.Lemma27QPrefixSkeleton.newNode_injective}
+also proves injectivity of the map.
+This identifies the rooted \emph{prefix-posets} of the literal
+skeleton and its reconstructed image.  Preservation of the
+additional ambient-length and auxiliary-order conditions in
+the printed definition of skewness is not implied by this
+embedding and remains a separate verification obligation.
+
+
 \paragraph{Prefix geometry of replacing literal signature leaves.} \todo
 The construction of $S_w$ replaces each terminal marker $s\in R$
 with the projected node $P_{j(s)}(z_s)$, retaining the old base
