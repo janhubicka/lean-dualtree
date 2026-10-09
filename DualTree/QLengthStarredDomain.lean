@@ -89,10 +89,10 @@ element, rather than merely specified by hand. -/
 noncomputable def actualMarkedSingletonSupports : Fin 2 → List (Node 2)
   | ⟨0, _⟩ =>
       [(QLengthTypedWitness.mixed.bulletPoint
-        (QLengthProjected.index QLengthTypedWitness.rightMarker)).1.1]
+        (QLengthProjected.index QLengthTypedWitness.rightMarker)).1]
   | ⟨1, _⟩ =>
       [(QLengthTypedWitness.mixed.bulletPoint
-        (QLengthProjected.index QLengthTypedWitness.leftMarker)).1.1]
+        (QLengthProjected.index QLengthTypedWitness.leftMarker)).1]
   | _ => []
 
 /-- The true marked points in the right/left paper order are
