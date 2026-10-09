@@ -69,3 +69,5 @@ import DualTree.CanonicalSupportWalk
 import DualTree.CompleteSupportRoot
 
 import DualTree.ImmediateSupportHeight
+
+import DualTree.CompleteSupportAddresses
