@@ -1,40 +1,96 @@
 # lean-dualtree
 
-Lean 4 validation of Todorcevic--Tyros, *A Dual Ramsey Theorem for Trees* (arXiv:2207.14599v1).
+Lean 4 verification and adversarial audit of Todorcevic--Tyros,
+*A Dual Ramsey Theorem for Trees* (arXiv:2207.14599v1).
 
-The repository follows the paper statement-by-statement. `audit.tex` records
-imprecisions, counterexamples, proposed repairs, and the corresponding Lean
-validation status. Repairs are recorded before they are used in the formal
-development.
+The project is a **statement-by-statement formalization**, not yet a
+formal proof of the full dual-tree Ramsey theorem. The cumulative
+[TeX audit](audit.tex) records verified statements, imprecisions,
+counterexamples, and proposed repairs. `\ok` records a discharged
+obligation; `\todo` marks a remaining gap or proposed change.
 
-## Current formalization
+## Verified foundations
 
-The first layer contains:
+- Finite homogeneous trees, prefix order, the paper's executable
+  skew / semi-complete / complete skew definitions, and variable words.
+- Finite counterexamples to certain printed auxiliary-order and
+  construction assertions, with explicitly scoped repair proposals.
+- Support meet closure, uniqueness of directional immediate successors,
+  maximal-interior signature boundaries and minimal outside-cut frontiers.
+- The exact Lemma 27 frontier inequality `|R| <= d <= b^(m'+1)`
+  (for positive branching and an early cut), via inverse-address
+  prefix-antichain padding and a finite-level word count.
+- An explicit collision-free `Fin d` coordinate map for literal
+  signature markers, and the associated `D0/D2` coordinate partition.
+- Cone-local auxiliary decoding, typed separation of original letters,
+  auxiliary letters and genuine cone variables, root-aligned substitutions
+  and corresponding span/refinement lemmas.
+- The constructive canonical support map on a k-complete skew support:
+  exact support rank along immediate successors, admissibility of every
+  address in `b^{<k}`, an inverse address for every support vertex,
+  bijectivity, and equivalence of the two prefix orders.
+- Concrete canonical cone projections on **intrinsically safe tails**:
+  `|I_T^{-1}(t)| + |z| < k`. Their roots, prefixes, rank increments,
+  and inverse concatenation coordinates are all verified.
 
-- finite homogeneous-tree nodes and an explicit prefix relation;
-- a formal three-node counterexample to preservation of the paper's printed
-  auxiliary order;
-- the corresponding local forward-lex repair check;
-- an abstract overlap lemma isolating the transitivity needed to repair
-  Appendix Remark 3(ii).
+These are Lean theorems, not assumed lemmas. The main branch already
+audits **more than 340 source-facing declarations** for transitive
+uses of unproved or nonstandard axioms. The authoritative count is
+maintained in the CI workflow and increases with new checked results.
+The complete theorem and the full construction of Lemma 27 are
+**not** marked verified.
 
-Current audited endpoints include:
+## Main remaining work
 
-```lean
-DualTree.OrderAudit.canonical_order_counterexample
-DualTree.OrderAudit.forward_order_repairs_counterexample
-DualTree.Insensitivity.constantOn_union_of_overlap
+The leading obstacle is the printed Lemma 27 reconstruction and its
+mixed-product colouring. In particular:
+
+1. The source uses longer ambient cone tails than the intrinsic
+   canonical map permits. A shortened common local domain is verified;
+   a one-extra-complete-level alternative is being checked. Either
+   requires a corresponding proof of the recursive dimension bound.
+2. The coordinate words of the global code `Q`, their root-aligned
+   substitution into the original word, and constancy of the induced
+   colouring on smoothness classes still need to be constructed and proved.
+   Collision-free coordinate choice itself is verified.
+3. Lemma 28, Theorem 25, the stated recursive bounds, and the final
+   dual-tree theorem still require their own Lean proofs.
+
+The source's **printed auxiliary linear order is not preserved** by
+its claimed canonical embedding in general; this has a separate
+kernel-checked counterexample. The prefix-tree isomorphism proved here
+does not silently repair that auxiliary order.
+
+## Reproducing verification
+
+The Lean toolchain and Mathlib/dependency versions are pinned by
+`lean-toolchain` and `lakefile.toml`. In a configured Lean workspace:
+
+```sh
+lake update
+lake exe cache get
+lake build
+python3 scripts/check-skew-meet.py
+python3 scripts/check-audit-tex.py
+lake env lean scripts/CheckDualTree.lean > dualtree-axioms.log 2>&1
+EXPECTED=$(grep -oE 'dualtree-axioms.log [0-9]+ \|\|' .github/workflows/lean.yml | awk '{print $2}')
+python3 scripts/check-axiom-log.py dualtree-axioms.log "$EXPECTED"
 ```
 
-## Build and audit
+The CI workflow in `.github/workflows/lean.yml` repeats these checks
+and rejects `sorryAx` or unexpected proof axioms. The expected audit
+count changes whenever verified endpoints are added.
 
-The Lean version, dependency pins, cache setup, and axiom-audit pattern are
-copied from `janhubicka/lean-milliken`. CI runs `lake build` and rejects
-`sorryAx` or nonstandard axioms in the source-facing audit endpoints.
+## Navigation
 
-## Next steps
-
-The next layer will formalize the full skew / complete-skew / semi-complete
-definitions, prove the corrected forward-lex structural lemmas, and encode the
-finite counterexamples to Remarks 1--2 before moving to variable words and
-span/refinement.
+`DualTree.lean` imports the full development. The main current
+construction is in `CompleteSupportRoot.lean`,
+`ImmediateSupportHeight.lean`, `CompleteSupportAddresses.lean`,
+`CanonicalSupportInjective.lean`, `SupportReachability.lean`,
+`CompleteSupportSurjective.lean`, `CanonicalSupportPrefixIso.lean`,
+and `CanonicalConeCoordinates.lean` under `DualTree/`.
+The counting/coordinate work is in `FrontierCardinality.lean`,
+`LiteralMarkerCoordinates.lean`, and `BulletCoordinateRange.lean`.
+The actual cone-word decoding bridge is in `CanonicalConeWordTransport.lean`.
+The TeX audit is intentionally cumulative: older partial TODOs should
+be read together with later validation entries.
