@@ -308,3 +308,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ConeProjectionAlgebra.projection_nil
 #print axioms DualTree.ConeProjectionAlgebra.projection_rooted_at_frontier
 #print axioms DualTree.ConeProjectionAlgebra.projection_leftInverse_root
+
+#print axioms DualTree.ConeRootAlignment.lifted_variable_root_prefix
+#print axioms DualTree.ConeRootAlignment.root_alignment_of_code
+#print axioms DualTree.ConeProjectionAlignment.lifted_root_prefix
+#print axioms DualTree.ConeProjectionAlignment.source_root_alignment
