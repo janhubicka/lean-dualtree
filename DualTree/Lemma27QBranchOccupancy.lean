@@ -96,14 +96,17 @@ theorem occupied_iff_under_Q
       exact Finset.mem_union.mpr (Or.inl hOld)
     · obtain ⟨j, _, hj⟩ := Finset.mem_image.mp hProj
       obtain ⟨s, hjs⟩ := hsurj j
-      have hdirS :
-          IsPrefix (u ++ [i]) s.1 := by
+      have hdirP : IsPrefix (u ++ [i])
+          (Lemma27SignatureTree.markedProjection
+            T hcomplete cut hcutT hlevel hm x j).1 := by
+        rw [hj]
+        exact hdir
+      have hdirS : IsPrefix (u ++ [i]) s.1 := by
         apply (Lemma27QBranchDirections.oldBase_childCone_prefix_iff
           O cut hcut hmax hout T hcomplete hST hcutT hlevel
           hm x u hu s i).1
-        rw [← hjs]
-        rw [← hj]
-        exact hdir
+        rw [hjs]
+        exact hdirP
       refine ⟨s.1, ?_, hdirS⟩
       change s.1 ∈
         (Lemma27SignatureTree.oldSignatureBase O cut hout).toFinset ∪
