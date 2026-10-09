@@ -560,3 +560,7 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.Lemma27QMeetClosed.sourceSignatureNodes_meetClosed
 #print axioms DualTree.Lemma27QMeetClosed.sourceSignatureNodes_atMostOneDirection
+
+#print axioms DualTree.Lemma27QUniqueDirections.nodup_length_one_of_unique_member
+#print axioms DualTree.Lemma27QUniqueDirections.uniqueBranchB_of_descendant
+#print axioms DualTree.Lemma27QUniqueDirections.sourceQ_uniqueBranchB
