@@ -777,6 +777,29 @@ coordinates required at the beginning of Lemma~27, but not the
 coordinatewise coding of the mixed-product word $Q$ or its smoothness
 compatibility.
 
+\paragraph{Concrete canonical cones in the root-aligned word decoder.} \todo
+The module \lean{DualTree.CanonicalConeWordTransport} instantiates
+the previously abstract projection map in the cone-word lift with the
+verified canonical successor walk of a complete skew support.
+Its total extension
+\lean{DualTree.CanonicalConeWordTransport.totalProjection}
+sends the empty address to the actual frontier, preserves prefixes,
+and remains in the ambient prefix cone.  On intrinsically safe tails,
+\lean{DualTree.CanonicalConeWordTransport.totalProjection_eq_project}
+identifies it with the certified support-valued cone projection.
+The theorem
+\lean{DualTree.CanonicalConeWordTransport.lifted_root_prefix}
+now proves the needed prefix alignment of every variable decoded from
+the enlarged alphabet without separately postulating geometric
+hypotheses for the canonical map.  The corresponding substitution
+alignment appears in
+\lean{DualTree.CanonicalConeWordTransport.source_root_alignment},
+conditional only on the explicitly stated identification of local
+addresses with the old source variable roots and the actual cone code.
+These results are a bridge from the verified $I_T$ to the
+root-aligned reconstruction, not a validation of overlong cone tails
+or a construction of the global smooth-colouring-compatible map $Q$.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,
