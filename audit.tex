@@ -825,6 +825,35 @@ audit (PR~\#145; 523 audited endpoints on the stacked branch). The remaining lex
 projected nodes and the consequent Boolean clause-(ii)
 failure will be a final, separate source-facing test.
 
+\paragraph{Domain caveat: Definition~20's starred restriction.} \todo
+The author-facing audit must not conflate the whole mixed product
+$W^D$ with its starred subspace $W^D_*$.
+In Definition~20, the $D_2$-coordinate marked points, \emph{in
+the order of the frontier enumeration}, must form a vector
+$1$-complete skew subtree. For two singleton coordinate supports
+this requires their ambient lengths to be nondecreasing in
+coordinate order; it does not require equal lengths.
+The printed auxiliary order is length-first with \emph{reverse}
+lexicographic tie-break. Therefore for a root cut in a full binary
+support the paper's frontier enumeration is $(1,0)$.
+The candidate marker points are $(\varnothing,0)$, having
+lengths $(0,1)$, which meet the starred order restriction.
+However, the older source-facing Lean construction enumerated
+frontiers using the input list order, not independently by
+the paper's auxiliary order. The typed \lean{MixedProduct.Element}
+also represents $W^D$, and by itself does not certify the extra
+vector-complete predicate defining $W^D_*$.
+The new \lean{DualTree.QLengthStarredDomain} module
+uses a support list in the printed order and checks the
+vector $1$-completeness of the ordered marked tuple.
+The exact noncomputable frontier enumeration is also being
+checked. Until the stacked CI and the point-to-index
+identification are validated, the prior Lean obstruction
+should be read as verified for unrestricted $W^D$, with
+starred-domain admissibility supported by the independent
+elementary argument, not yet by an end-to-end Lean theorem.
+No counterexample to the stated Ramsey conclusion is claimed.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
