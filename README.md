@@ -3,6 +3,13 @@
 Lean 4 verification and adversarial audit of Todorcevic--Tyros,
 *A Dual Ramsey Theorem for Trees* (arXiv:2207.14599v1).
 
+The self-contained author-facing discussion of the Lemma 27 Q issue is
+[notes/lemma27_Q_counterexample.tex](notes/lemma27_Q_counterexample.tex).
+It treats the extra starred mixed-product condition of Definition 20,
+the reverse-lex frontier ordering, an arbitrary-height paper example,
+and the distinction between an invalid Q construction and the
+unrefuted Ramsey conclusion.
+
 The project is a **statement-by-statement formalization**, not yet a
 formal proof of the full dual-tree Ramsey theorem. The cumulative
 [TeX audit](audit.tex) records verified statements, imprecisions,

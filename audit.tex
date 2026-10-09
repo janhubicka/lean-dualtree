@@ -825,6 +825,60 @@ audit (PR~\#145; 523 audited endpoints on the stacked branch). The remaining lex
 projected nodes and the consequent Boolean clause-(ii)
 failure will be a final, separate source-facing test.
 
+\paragraph{Self-contained arbitrary-height author note.} \bad/\todo
+The three-page self-contained note
+\texttt{notes/lemma27\_Q\_counterexample.tex}
+spells out a source with $b=2$, $l=1$, $m'=0$, a complete
+ambient support $T=2^{<n}$ for arbitrary $n\ge3$, and a
+signature at the root $t_0=\varnothing$ which is observable
+by the variable word $f(u)=v_{u\upharpoonright\min\{|u|,n-1\}}$
+on $2^{<N}$, $N>n$. With the printed reverse-lex order the
+frontier sequence is $(t_1,t_2)=(1,0)$ and $D_2=\{1,2\}$.
+The marked points $(s_1,s_2)=(\varnothing,0)$ satisfy the
+\emph{starred} vector $1$-complete condition because their
+lengths are $(0,1)$ in the prescribed coordinate order.
+Both cone projections are safely defined and the displayed
+$Q$ formula yields $S_w=\{\varnothing,1,00\}$, violating
+skew clause~(ii).
+This elementary calculation establishes an obstruction to the
+claimed well-definedness of the $Q$ pullback at arbitrarily
+large heights; it is not, on its own, a refutation of the
+existence statement of Lemma~27.
+The full family for variable $n$ has not yet been formalised
+in Lean; the existing kernel-checked example has complete
+height $3$, and the starred-domain/order certificate is
+being completed separately. The note gives the elementary
+verification for every $n\ge3$ without relying on Lean.
+
+\paragraph{Domain caveat: Definition~20's starred restriction.} \todo
+The author-facing audit must not conflate the whole mixed product
+$W^D$ with its starred subspace $W^D_*$.
+In Definition~20, the $D_2$-coordinate marked points, \emph{in
+the order of the frontier enumeration}, must form a vector
+$1$-complete skew subtree. For two singleton coordinate supports
+this requires their ambient lengths to be nondecreasing in
+coordinate order; it does not require equal lengths.
+The printed auxiliary order is length-first with \emph{reverse}
+lexicographic tie-break. Therefore for a root cut in a full binary
+support the paper's frontier enumeration is $(1,0)$.
+The candidate marker points are $(\varnothing,0)$, having
+lengths $(0,1)$, which meet the starred order restriction.
+However, the older source-facing Lean construction enumerated
+frontiers using the input list order, not independently by
+the paper's auxiliary order. The typed \lean{MixedProduct.Element}
+also represents $W^D$, and by itself does not certify the extra
+vector-complete predicate defining $W^D_*$.
+The new \lean{DualTree.QLengthStarredDomain} module
+uses a support list in the printed order and checks the
+vector $1$-completeness of the ordered marked tuple.
+The exact noncomputable frontier enumeration is also being
+checked. Until the stacked CI and the point-to-index
+identification are validated, the prior Lean obstruction
+should be read as verified for unrestricted $W^D$, with
+starred-domain admissibility supported by the independent
+elementary argument, not yet by an end-to-end Lean theorem.
+No counterexample to the stated Ramsey conclusion is claimed.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}

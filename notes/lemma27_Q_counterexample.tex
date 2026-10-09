@@ -1,0 +1,209 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=29mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,enumitem,microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\newtheorem{proposition}{Proposition}
+\newcommand{\eps}{\varnothing}
+\newcommand{\lex}{\leq_{\mathrm{lex}}}
+\newcommand{\initial}{\sqsubseteq}
+\newcommand{\starred}{W^{\mathcal D}_*}
+\newcommand{\lv}{\operatorname{ht}}
+\newcommand{\Int}{\operatorname{Int}}
+\newcommand{\ms}{\operatorname{ws}}
+\newcommand{\sym}[1]{v_{#1}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\title{An ordered marked-point obstruction in the $Q$-construction\\[3pt]
+\large A note on the proof of Lemma~27 of Todorcevic--Tyros}
+\author{Verification note for the authors}
+\date{9 October 2026}
+\begin{document}
+\maketitle
+\vspace{-1.5em}
+
+\begin{abstract}
+We describe a concrete choice of a starred mixed-product point for which the
+formula defining the tree component $S_w$ of $Q(w)$, on page~28 of
+\emph{A Dual Ramsey Theorem for Trees} (arXiv:2207.14599v1),
+violates clause~(ii) of the definition of a skew subtree.
+The marked points satisfy the \emph{vector $1$-complete} condition of
+Definition~20 when their coordinates are indexed in the paper's
+length-first, reverse-lexicographic order. The example works at every
+complete-tree height $n\geq3$; hence merely increasing $n$ does not
+repair this particular well-definedness assertion. The argument concerns
+the displayed $Q$-construction, \emph{not} the conclusion of Lemma~27 or the
+main dual Ramsey theorem.
+\end{abstract}
+
+\section*{The two relevant conventions}
+Let $2^{<h}$ be the binary tree of sequences of length below $h$,
+with root $\eps$ and $s\mathbin{^\frown}t$ denoting concatenation.
+Write $\initial$ for the prefix relation. The paper's auxiliary order
+$\preceq$ (Section~3.1, p.~7) compares lengths first, then uses
+\emph{reverse} lexicographic order on equal-length sequences:
+\[
+  1\prec 0, \qquad |0|=|1|=1.
+\]
+For a subtree $A$, its intrinsic height at $u\in A$ is
+$\lv_A(u)=|\{v\in A:v\sqsubset u\}|$. Clause~(ii) of skewness says
+\begin{equation}\label{eq:skew}
+  \lv_A(u)=\lv_A(v),\quad u\lex v
+  \quad\Longrightarrow\quad |u|\leq |v|.
+\end{equation}
+
+Definition~20 (p.~24) imposes an additional restriction on the
+$D_2$-marked coordinates of $\starred(b,h,\Lambda)$:
+the ordered vector of marked points must belong to
+$\mathrm{CT}_1(\mathbf T^{|D_2|}_{b,h})$.
+For two coordinates, this amounts to each singleton point being
+$1$-complete, with the points' lengths \emph{nondecreasing in
+coordinate order}. In particular, equal lengths are \emph{not} required.
+This starred condition is essential to the example below.
+
+\section*{A source satisfying the signature hypotheses}
+Fix any $n\geq3$ and $N>n$, and let $\Lambda$ be any nonempty
+alphabet. Set $b=2$, $l=1$, $m'=0$, and choose any $m\geq2$.
+Let
+\[
+ T=2^{<n}\subseteq 2^{<N}, \qquad t_0=\eps.
+\]
+This $T$ is an $n$-complete skew tree, and its canonical isomorphism
+$I_T:2^{<n}\to T$ is the identity. Define a $T$-variable word $f$ on
+$2^{<N}$ by
+\[
+  f(u)=\sym{u\upharpoonright\min\{|u|,n-1\}}
+  \qquad (u\in 2^{<N}).
+\]
+Every variable $\sym t$ occurs at its own root $t\in T$ and only at
+extensions of $t$, so $\ms(f)=T$ and $f\in W_{v,n}(2,N,\Lambda)$.
+
+Now let
+\[
+  S=\{\eps,0,1\}, \qquad g(u)=\sym\eps
+  \quad(u\in 2^{<N}).
+\]
+The tree $S$ is semi-complete skew with $\Int(S)=\{\eps\}$;
+$g$ has that singleton as its variable support. Moreover,
+$[g]_\Lambda\subseteq[f]_\Lambda$: every constant evaluation of $g$
+is obtained from $f$ by assigning the same letter to all variables.
+Thus $(S,g)\in W^*_{v,1}(f)$ and its signature $\mathcal S$
+is observable by $f$ at $t_0=\eps$.
+
+For this cut, the strict auxiliary initial segment $D$ of
+Definition~26 is empty, and no leaf of $S$ lies outside the cone
+of $\eps$. Hence
+\[
+  S'=\Int(S)=\{\eps\},\qquad g'=g\upharpoonright D
+  \text{ is the empty function},\qquad
+  R=\{0,1\}.
+\]
+Here $R$ is exactly the set used on page~28 to select the $D_2$
+coordinates. The minimal points of
+$T\setminus\{t\in T:t\preceq t_0\}$ are $0$ and $1$.
+\emph{In the prescribed auxiliary order}, they are enumerated as
+\[
+ t_1=1,\qquad t_2=0,\qquad d=2,\quad D_2=\{1,2\},\quad D_0=D_1=\emptyset.
+\]
+
+\section*{An admissible starred mixed-product point}
+In the proof of Lemma~27, $n'=n-m'=n$. Pick any letter $a\in\Lambda$,
+and let $w_1,w_2$ be the constant words with value $a$. Choose the
+$D_2$ points
+\[
+                 s_1=\eps, \qquad s_2=0.
+\]
+Then
+\[
+      w=((w_1,w_2),\emptyset,(s_1,s_2))
+        \in \starred(2,n',\Lambda).
+\]
+Indeed, each $\{s_i\}$ is a singleton $1$-complete skew subtree,
+and $(\{s_1\},\{s_2\})$ is vector $1$-complete: its only nonvacuous
+cross-coordinate length requirement is
+$|s_1|=0\leq1=|s_2|$.
+The selected point tuple therefore satisfies \emph{Definition~20},
+not merely membership in the larger space $W^{\mathcal D}$.
+
+The cone maps of page~28 are $P_i(z)=I_T(I_T^{-1}(t_i)
+\mathbin{^\frown}z)$. In our full homogeneous support,
+$P_i(z)=t_i\mathbin{^\frown}z$ wherever defined. Both selected tails
+are safely in their domains, since $|t_i|+|s_i|<n$:
+\[
+\begin{array}{c|c|c|c|c}
+\text{coordinate }i&t_i&s_i&|s_i|&P_i(s_i)\\\hline
+1&1&\eps&0&1\\
+2&0&0&1&00
+\end{array}
+\]
+The displayed formula for the tree component of $Q(w)$ gives
+\begin{equation}\label{eq:tree}
+ S_w=\Int(S')\cup\{t_0\}\cup
+       \{P_i(s_i):i\in D_2\}
+     =\{\eps,1,00\}.
+\end{equation}
+
+\begin{proposition}
+The tree $S_w$ in \eqref{eq:tree} is not skew and therefore cannot be
+the tree component of any element of $W^*_{v,1}(2,N,\Lambda)$.
+\end{proposition}
+\begin{proof}
+The two nonroot nodes $00$ and $1$ both have the root $\eps$
+as their only strict predecessor in $S_w$. Thus
+$\lv_{S_w}(00)=\lv_{S_w}(1)=1$. In the usual lexicographic order,
+$00<_{\mathrm{lex}}1$, but $|00|=2>1=|1|$, contradicting
+\eqref{eq:skew}. No choice of the word component $g_w$ can alter
+this tree-level failure.
+\end{proof}
+
+All choices exist for every $n\geq3$ and $N>n$, independently of a
+numerical lower bound $n_0$. A constant colouring $c$ can be used,
+if desired, to satisfy the colouring hypothesis of Lemma~27.
+The issue is the assertion immediately after the definition of $Q$
+that it is well defined as a map into $[\mathcal S,f]$;
+consequently the subsequent pullback $c'(w)=c(Q(w))$ is not defined
+on this admissible input as written. The unrestricted formula
+for $P_i$ has a separate tail-domain issue near the top level;
+the selected $s_1,s_2$ here do \emph{not} use any problematic
+out-of-domain tail.
+
+\section*{Scope, verification, and possible repairs}
+The example is a counterexample to this particular \emph{proof step},
+not to the existence assertion in Lemma~27 or Theorem~25.
+It also does not establish that every alternative construction of $Q$
+necessarily fails. Two changes seem worth examining:
+\begin{enumerate}[leftmargin=1.8em,itemsep=2pt]
+ \item Revisit the reverse-lexicographic tie-break in $\preceq$
+ (and therefore the frontier indexing). Forward lexicographic
+ indexing aligns the vector $1$-complete length inequality with
+ the skew clause~(ii) in this minimal example. Such a change needs
+ an independent check throughout the paper; other audited uses of
+ the printed order are also delicate.
+ \item Alternatively, modify the allowed $D_2$ points or the map $Q$
+ so that the \emph{projected} terminal nodes obey the required
+ lexicographic length monotonicity. A sufficient geometric
+ candidate is to place all projected terminals at a common intrinsic
+ level of $T$ strictly above the old interior vertices: skewness of
+ $T$ then controls their ambient lengths. This restriction must be
+ reconciled with the starred mixed-product Ramsey step and its span.
+\end{enumerate}
+Neither option has yet been proved to repair the full argument.
+
+For computational cross-checking, see the Lean development:
+\begin{center}
+\url{https://github.com/janhubicka/lean-dualtree}
+\end{center}
+The module \texttt{QLengthActualSkewFailure} checks the unrestricted
+$Q$-tree obstruction.
+
+The module \texttt{QLengthStarredDomain} addresses the paper's
+additional coordinate-order restriction. The latter checks were
+being added when this note was prepared, so only declarations
+that pass the complete Lean audit should be called formally verified.
+The elementary starred-domain and arbitrary-height arguments above
+are self-contained and do not rely on Lean.
+
+\end{document}

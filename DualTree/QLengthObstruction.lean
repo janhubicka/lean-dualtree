@@ -24,7 +24,7 @@ namespace DualTree.QLengthObstruction
 
 /-- The 3-complete homogeneous binary skew support. -/
 def completeT : List (Node 2) :=
-  [[], [0], [1], [0, 0], [0, 1], [1, 0], [1, 1]]
+  [[], [1], [0], [1, 1], [1, 0], [0, 1], [0, 0]]
 
 /-- A 2-semi-complete starred source support with a single
 interior root and two literal terminal markers. -/
