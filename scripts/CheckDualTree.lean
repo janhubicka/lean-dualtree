@@ -313,3 +313,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ConeRootAlignment.root_alignment_of_code
 #print axioms DualTree.ConeProjectionAlignment.lifted_root_prefix
 #print axioms DualTree.ConeProjectionAlignment.source_root_alignment
+
+#print axioms DualTree.LiteralFrontierCount.mem_frontiers_iff
+#print axioms DualTree.LiteralFrontierCount.frontiers_nodup
+#print axioms DualTree.LiteralFrontierCount.literalR_nodup
+#print axioms DualTree.LiteralFrontierCount.literalR_length_le_frontiers
+#print axioms DualTree.LiteralFrontierCount.frontier_partition_count
+#print axioms DualTree.ConeTailDomains.variable_cone_tail_safe
+#print axioms DualTree.ConeTailDomains.common_cone_tail_safe
+#print axioms DualTree.ConeTailDomains.variable_frontier_tail_safe
