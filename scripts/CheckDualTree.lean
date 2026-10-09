@@ -515,3 +515,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27QBranchDirections.oldBase_childCone_prefix_iff
 
 #print axioms DualTree.Lemma27QBranchOccupancy.occupied_iff_under_Q
+
+#print axioms DualTree.Lemma27QFullDirections.exceptional_leaf_marker_in_direction
+#print axioms DualTree.Lemma27QFullDirections.oldSkeleton_all_directions
+#print axioms DualTree.Lemma27QFullDirections.sourceQ_all_directions
