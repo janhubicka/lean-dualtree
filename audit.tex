@@ -777,6 +777,30 @@ coordinates required at the beginning of Lemma~27, but not the
 coordinatewise coding of the mixed-product word $Q$ or its smoothness
 compatibility.
 
+
+\paragraph{Actual support-valued projections for one shortened common cone height.} \todo
+The repaired bound on the intrinsic height of every minimal outside-cut
+frontier now yields a single well-typed local address domain:
+$b^{<\,k-(m'+1)}$ when the ambient complete support has intrinsic
+height $k$ and the cut height is $m'$.
+The constructor \lean{DualTree.UniformConeDomains.commonTail}
+maps every such local address into the exact source-tail domain
+at any frontier without adding an independent length assumption.
+The resulting
+\lean{DualTree.UniformConeDomains.projectCommon} has values in $T$,
+preserves initial segments, stays within its frontier cone, advances
+the intrinsic height by the local address length, and has the exact
+inverse concatenation property. These assertions are checked by
+\lean{DualTree.UniformConeDomains.projectCommon_prefix},
+\lean{DualTree.UniformConeDomains.projectCommon_cone},
+\lean{DualTree.UniformConeDomains.projectCommon_height}, and
+\lean{DualTree.UniformConeDomains.projectCommon_inverse}.
+Thus the corrected common cone domain is now certified for the
+*actual* canonical support map. Whether shortening the local
+mixed-product dimension this way still leaves enough levels for
+the final Ramsey refinement is an independent, unresolved
+numerical problem in Lemma~27.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,
