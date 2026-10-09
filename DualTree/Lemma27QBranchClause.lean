@@ -116,6 +116,7 @@ theorem sourceQ_semiComplete_iff_skew
       W.toList.all
         (fun s => decide ((SkewTree.immediateSuccs W.toList s).length = 0 ∨
           (SkewTree.immediateSuccs W.toList s).length = b))) = true
-    exact Bool.and_eq_true.mpr ⟨hskew, hbranch⟩
+    simp only [Bool.and_eq_true]
+    exact ⟨hskew, hbranch⟩
 
 end DualTree.Lemma27QBranchClause
