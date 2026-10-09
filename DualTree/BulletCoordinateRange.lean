@@ -23,8 +23,9 @@ namespace DualTree.MixedProduct
 /-- Mark exactly the image of a map into Fin d as D₂/bullet coordinates. -/
 noncomputable def bulletKindOfRange
     {d : Nat} {M : Type*} (index : M → Fin d) :
-    Fin d → CoordKind :=
-  fun i => if ∃ m : M, index m = i then .bullet else .plain
+    Fin d → CoordKind := by
+  classical
+  exact fun i => if ∃ m : M, index m = i then .bullet else .plain
 
 /-- An index is marked precisely when it belongs to the selected range. -/
 theorem bulletKindOfRange_iff
