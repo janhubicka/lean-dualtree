@@ -491,3 +491,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27QTerminal.markedProjection_not_interior
 #print axioms DualTree.Lemma27QTerminal.signatureNodes_interior_subset_base
 #print axioms DualTree.Lemma27QTerminal.sourceSignatureNodes_interior_subset_original
+
+#print axioms DualTree.Lemma27QMarkerCoverage.child_mem_literalR
+#print axioms DualTree.Lemma27QMarkerCoverage.boundaryMarker_mem_literalR
+#print axioms DualTree.Lemma27QMarkerCoverage.marker_prefix_projected_point
+#print axioms DualTree.Lemma27QMarkerCoverage.literalMarker_has_Q_descendant
