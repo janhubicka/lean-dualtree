@@ -216,7 +216,7 @@ theorem signatureNodes_eq_of_gamma2_smooth {b k m : Nat}
       markedProjection T hcomplete cut hcut hlevel hm x i =
         markedProjection T hcomplete cut hcut hlevel hm y i := by
     intro i
-    rw [hpoints i]
+    simp only [markedProjection, hpoints i]
   have hfun :
       (fun i : MixedProduct.BulletIndex kind =>
         (markedProjection T hcomplete cut hcut hlevel hm x i).1) =
