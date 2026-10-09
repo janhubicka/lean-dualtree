@@ -520,6 +520,38 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{The actual tree component $S_w$ of the map $Q$.} \todo
+Pages~28--29 of the source define the reconstructed tree as
+$S_w=\operatorname{Int}(S')\cup\{t_0\}
+\cup\{P_i(s_i):i\in D_2\}$.
+The module \lean{DualTree.Lemma27SignatureTree} now formalizes
+this expression using the literal $R$-based coordinate partition,
+the actual enumerated support frontiers, and the certified shortened
+common cone domain.  The function
+\lean{DualTree.Lemma27SignatureTree.sourceSignatureNodes}
+is the resulting finite \emph{set of nodes}; it is not yet packaged
+as a complete starred tree-variable word.
+The theorem
+\lean{DualTree.Lemma27SignatureTree.markedProjection_injective}
+proves that different marked coordinates give different support nodes,
+because their minimal frontier cones are disjoint.
+The more specific
+\lean{DualTree.Lemma27SignatureTree.sourceSignatureNodes_eq_of_gamma2_smooth}
+checks that this entire reconstructed node set is unchanged under
+Definition~21 smoothness when $\Gamma_2=D_2$: in that case the
+bullet points $s_i$ are fixed, so their canonical projections are fixed.
+
+This is the tree-coordinate portion of the assertion that
+$c\circ Q$ is smooth, not its complete verification.
+The remaining obligations are to prove that $S_w$ has exactly the
+required semi-complete/skew geometry and interior, construct the
+source-compatible starred word $g_w$, and handle the smoothness
+cases in which $\Gamma_1$ is nonempty.  A proof of compatibility
+must eventually apply the actual simplicity hypotheses of
+Definition~24, rather than an unrestricted assertion that marked
+letters cannot vary.
+
+
 \paragraph{Cone-local word changes and smooth colouring compatibility.} \todo
 The module \lean{DualTree.ConeLocalPatchSmoothness} explicitly modifies
 a mixed-product word only within the inclusive cone of its marked
