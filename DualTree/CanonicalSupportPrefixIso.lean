@@ -34,7 +34,7 @@ theorem heightAt_le_of_prefix {b : Nat}
 /-- The canonical map on b^{<k} reflects ambient initial segments. -/
 theorem canonicalEmbedding_prefix_reflect {b k : Nat}
     (T : List (Node b))
-    (hcomplete : SkewTree.completeB SkewTree.paperAuxB k T)
+    (hcomplete : SkewTree.completeB SkewTree.paperAuxB k T = true)
     (u v : BoundedNode b k)
     (himage : IsPrefix
       (CompleteSupportAddresses.canonicalEmbedding T hcomplete u).1
