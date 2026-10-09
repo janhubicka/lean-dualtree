@@ -71,3 +71,5 @@ import DualTree.CompleteSupportRoot
 import DualTree.ImmediateSupportHeight
 
 import DualTree.CompleteSupportAddresses
+
+import DualTree.CanonicalSupportInjective
