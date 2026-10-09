@@ -527,3 +527,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27QPrefixSurjectivity.newNode_surjective_on_Q
 #print axioms DualTree.Lemma27QPrefixSurjectivity.originalNode_mem_skeleton
 #print axioms DualTree.Lemma27QPrefixSurjectivity.newNode_mem_Q
+
+#print axioms DualTree.MeetClosedDirectionConverse.atMostOneDirection_of_meetClosed
+#print axioms DualTree.MeetClosedDirectionConverse.meetClosed_iff_atMostOneDirection_of_rooted

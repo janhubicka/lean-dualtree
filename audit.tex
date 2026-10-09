@@ -519,6 +519,26 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
+\paragraph{Meet closure characterises unique successor directions in rooted supports.} \todo
+The remaining semi-complete branching check for $S_w$ can also be
+approached through ambient meets.  In a finite node set, two
+distinct immediate successors of a vertex in the same direction
+would have a common ambient meet strictly between the vertex
+and at least one successor.  Thus meet closure rules out such a
+pair, without a skewness assumption.
+The reusable theorem
+\lean{DualTree.MeetClosedDirectionConverse.atMostOneDirection_of_meetClosed}
+formalizes this argument, and
+\lean{DualTree.MeetClosedDirectionConverse.meetClosed_iff_atMostOneDirection_of_rooted}
+shows that for rooted finite supports meet closure is equivalent
+to having at most one immediate successor in each direction.
+Applied to the already checked full-direction existence,
+this would give exactly $b$ immediate successors.
+The remaining *source-specific* condition is to prove that
+the literal skeleton (equivalently its reconstructed $Q$ image
+with preserved prefix directions) is ambient meet-closed.
+
+
 \paragraph{Typed prefix-order embedding of the entire literal signature skeleton.} \todo
 The preceding four-case prefix analysis is now packaged as an
 explicit map on the disjoint union of the retained old base and
