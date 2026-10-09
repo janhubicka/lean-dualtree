@@ -138,3 +138,5 @@ import DualTree.SemiCompleteSkewMeet
 import DualTree.InteriorMarkerMeet
 
 import DualTree.Lemma27LiteralMeet
+
+import DualTree.MeetImageTransfer
