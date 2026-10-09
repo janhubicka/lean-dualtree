@@ -322,3 +322,13 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ConeTailDomains.variable_cone_tail_safe
 #print axioms DualTree.ConeTailDomains.common_cone_tail_safe
 #print axioms DualTree.ConeTailDomains.variable_frontier_tail_safe
+
+#print axioms DualTree.CanonicalSupportWalk.next_prefix
+#print axioms DualTree.CanonicalSupportWalk.next_unique
+#print axioms DualTree.CanonicalSupportWalk.next_mem
+#print axioms DualTree.CanonicalSupportWalk.walk_append
+#print axioms DualTree.CanonicalSupportWalk.walk_root_prefix
+#print axioms DualTree.CanonicalSupportWalk.walk_prefix
+#print axioms DualTree.CanonicalSupportWalk.walk_first_direction
+#print axioms DualTree.CanonicalSupportWalk.walk_mem_of_admissible
+#print axioms DualTree.CanonicalSupportWalk.projection_walk_prefix
