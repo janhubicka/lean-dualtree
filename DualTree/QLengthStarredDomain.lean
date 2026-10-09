@@ -83,4 +83,42 @@ theorem actual_frontier_order :
     CutFrontier.Frontier, PaperAux, FinLexLE, finLexLEB,
     IsStrictPrefix, IsPrefix]
 
+/-- The marked singleton supports in the paper's actual
+ordered frontier coordinates, read from the typed mixed-product
+element, rather than merely specified by hand. -/
+noncomputable def actualMarkedSingletonSupports : Fin 2 → List (Node 2)
+  | ⟨0, _⟩ =>
+      [(QLengthTypedWitness.mixed.bulletPoint
+        (QLengthProjected.index QLengthTypedWitness.rightMarker)).1.1]
+  | ⟨1, _⟩ =>
+      [(QLengthTypedWitness.mixed.bulletPoint
+        (QLengthProjected.index QLengthTypedWitness.leftMarker)).1.1]
+  | _ => []
+
+/-- The true marked points in the right/left paper order are
+exactly the length-ordered singleton supports (empty,0). -/
+theorem actual_marked_singletons_eq :
+    actualMarkedSingletonSupports = markedSingletonSupports := by
+  funext i
+  fin_cases i
+  · simp [actualMarkedSingletonSupports, markedSingletonSupports,
+      QLengthProjected.index,
+      QLengthTypedWitness.right_bullet_is_chosen,
+      QLengthTypedWitness.chosenPoint,
+      QLengthTypedWitness.rightMarker]
+  · simp [actualMarkedSingletonSupports, markedSingletonSupports,
+      QLengthProjected.index,
+      QLengthTypedWitness.left_bullet_is_chosen,
+      QLengthTypedWitness.chosenPoint,
+      QLengthTypedWitness.leftMarker]
+
+/-- The actual ordered D₂ marked-point tuple of the typed Q
+witness satisfies Definition 20's vector 1-completeness
+condition, not merely membership in the unrestricted product. -/
+theorem actual_marked_points_in_starred_domain :
+    VectorSkew.vectorCompleteB SkewTree.paperAuxB 1
+      actualMarkedSingletonSupports = true := by
+  rw [actual_marked_singletons_eq]
+  exact marked_points_vector_one_complete
+
 end DualTree.QLengthStarredDomain
