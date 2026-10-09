@@ -732,6 +732,31 @@ collecting these maps over the exact duplicate-free frontier list,
 showing $b>0$ (or handling $b=0$), and counting full-level words.
 No cardinality inequality is claimed merely from the padding lemmas.
 
+
+\paragraph{Numerical cardinality of the complete-skew frontier.} \todo
+The theorem \lean{DualTree.FrontierCardinality.frontiers_length_le_pow}
+now establishes the exact inequality
+\[
+  d=|\operatorname{Frontier}_T(t_0)|\le b^{m'+1}
+\]
+for the duplicate-free list of minimal support frontiers beyond
+the inclusive auxiliary cut, whenever $T$ is $k$-complete,
+$h_T(t_0)=m'$, $m'+1<k$, and $b>0$.
+Each frontier is encoded by its inverse canonical address,
+padded to length $m'+1$. The previous source-frontier antichain
+theorem proves the code injective, and the standard finite-list
+cardinality theorem bounds the set of full-level words.
+The auxiliary lemmas
+\lean{DualTree.FrontierCardinality.paddedSource_injective_frontiers}
+and \lean{DualTree.FrontierCardinality.paddedSource_frontier_length}
+certify the two source-facing ingredients separately.
+
+This discharges the numerical $d$-bound under the usual positive
+branching hypothesis. The literal $R$-marker injection additionally
+gives $|R|\le d$, but neither numerical fact yet constructs the
+mixed-product colouring map $Q$, repairs the printed larger
+cone-tail domain, or proves the monochromatic reconstruction.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,

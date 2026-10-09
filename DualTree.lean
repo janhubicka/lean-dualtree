@@ -85,3 +85,5 @@ import DualTree.CanonicalConeCoordinates
 import DualTree.FrontierAntichainPadding
 
 import DualTree.FrontierSourcePadding
+
+import DualTree.FrontierCardinality
