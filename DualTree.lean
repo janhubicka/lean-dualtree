@@ -117,3 +117,5 @@ import DualTree.Lemma27QMarkerCount
 import DualTree.Lemma27QTerminal
 
 import DualTree.Lemma27QMarkerCoverage
+
+import DualTree.Lemma27QInterior

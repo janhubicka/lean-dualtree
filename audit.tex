@@ -519,6 +519,32 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
+\paragraph{Equality of the reconstructed interior with the old interior.} \todo
+The separate marker-coverage and terminal-leaf results finally
+give both directions of the interior identity.  The module
+\lean{DualTree.Lemma27QInterior} shows that each old interior
+node $s\ne t_0$ retains a strict descendant in $S_w$: first
+use the corresponding immediate successor in $S'$, and if
+that successor is an exceptional boundary, use its projected
+$D_2$ descendant.  The distinguished cut $t_0$ similarly
+keeps a strict descendant through an immediate child marker
+when the branching number is positive.
+Thus, together with the previously proved upper inclusion,
+\lean{DualTree.Lemma27QInterior.source_interior_iff_original}
+establishes
+\[
+  \operatorname{Int}(S_w)=\operatorname{Int}(S)
+\]
+for the corrected common cone domain and $b>0$.
+The proof does not rely on an assumed count of the interiors.
+It uses the literal $R$ and the actual projective coordinate map,
+so all descendants genuinely belong to $S_w$.
+Still to verify: the full skew and semi-complete branching
+properties of $S_w$, the source-compatible word $g_w$, and the
+smooth colouring compatibility needed in Lemma~27.
+
+
+
 \paragraph{Every literal signature marker survives in the $Q$ tree.} \todo
 The marker sets relevant to the reconstruction are the *literal*
 $R$ from Lemma~27, not just the candidate cones.  The module
