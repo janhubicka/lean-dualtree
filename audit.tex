@@ -568,6 +568,24 @@ The requirement is not discharged merely by choosing the $D_2$
 coordinates or constructing a well-typed mixed element.
 
 
+\paragraph{New $Q$ marker nodes are separated outside the cut.} \todo
+The stronger geometric facts about the adjoined points $P_i(s_i)$
+are verified in \lean{DualTree.Lemma27MarkedLeafGeometry}.
+Each marked point lies \emph{after} the inclusive auxiliary cut,
+by \lean{DualTree.Lemma27MarkedLeafGeometry.markedProjection_after_cut}.
+Furthermore,
+\lean{DualTree.Lemma27MarkedLeafGeometry.markedProjection_prefix_implies_same_index}
+shows that two newly marked points cannot even be prefix-comparable
+unless their $D_2$ coordinate indices agree; the earlier injectivity
+statement follows as a special case.  Finally,
+\lean{DualTree.Lemma27MarkedLeafGeometry.signatureNodes_card_of_base_early}
+checks the expected node count
+$|S_w|=|\operatorname{base}|+|D_2|$ whenever the old base lies at or
+before the cut.  The hypothesis about the old base is explicit;
+it remains to derive it from the actual signature geometry.
+These lemmas are groundwork for the semi-completeness and
+interior computation of $S_w$, not a replacement for either proof.
+
 \paragraph{The actual tree component $S_w$ of the map $Q$.} \todo
 Pages~28--29 of the source define the reconstructed tree as
 $S_w=\operatorname{Int}(S')\cup\{t_0\}
