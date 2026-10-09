@@ -620,3 +620,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.SkewOrderObstruction.condIIIB_false_of_height_reversal
 #print axioms DualTree.SkewOrderObstruction.skewB_false_of_condIIB_false
 #print axioms DualTree.SkewOrderObstruction.semiCompleteB_false_of_condIIB_false
+
+#print axioms DualTree.QLengthProjected.full_support_rank_eq_length
+#print axioms DualTree.QLengthProjected.frontierFor_eq_marker
+#print axioms DualTree.QLengthProjected.left_frontier_eq
+#print axioms DualTree.QLengthProjected.right_frontier_eq
+#print axioms DualTree.QLengthProjected.indexed_frontier_eq
+#print axioms DualTree.QLengthProjected.projection_rank
+#print axioms DualTree.QLengthProjected.left_projection_length_two
+#print axioms DualTree.QLengthProjected.right_projection_length_one
