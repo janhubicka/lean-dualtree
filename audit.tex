@@ -694,6 +694,25 @@ parameter $N$ and longer projected cone words. Its full domains,
 the resulting mixed-product dimension, and the coding map $Q$
 remain to be repaired and validated separately.
 
+
+\paragraph{Padding an antichain of frontier addresses.} \todo
+A route to the still outstanding $d\le b^{m'+1}$ estimate is to
+transfer the antichain of minimal outside-cut frontiers to their
+canonical inverse addresses and then pad each address to level
+$m'+1$.  The module \lean{DualTree.FrontierAntichainPadding}
+verifies the coding principle: padding by a fixed direction gives
+a word at the requested length whenever the source length is
+bounded, and two original addresses with equal padded words
+must be prefix-comparable.  Consequently
+\lean{DualTree.FrontierAntichainPadding.pad_injective_on_antichain}
+gives an injection on any finite prefix antichain.  This uses
+no assumptions on the support beyond the antichain property.
+To finish the numerical estimate we still need to transport the
+actual inclusive-cut frontier list through the canonical inverse,
+instantiate the intrinsic-height bound, select a padding direction
+(or treat the nullary case separately), and count the
+$b^{m'+1}$ full-level words.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,

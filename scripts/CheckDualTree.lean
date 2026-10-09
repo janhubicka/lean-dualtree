@@ -386,3 +386,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.CanonicalConeCoordinates.project_height
 #print axioms DualTree.CanonicalConeCoordinates.inverse_project
 #print axioms DualTree.CanonicalConeCoordinates.inverse_project_tail
+
+#print axioms DualTree.FrontierAntichainPadding.prefix_pad
+#print axioms DualTree.FrontierAntichainPadding.pad_length
+#print axioms DualTree.FrontierAntichainPadding.comparable_of_pad_eq
+#print axioms DualTree.FrontierAntichainPadding.eq_of_pad_eq_antichain
+#print axioms DualTree.FrontierAntichainPadding.pad_injective_on_antichain
