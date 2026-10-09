@@ -519,6 +519,29 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
+
+\paragraph{Meet closure and direction uniqueness of semi-complete skew supports.} \todo
+The complete-support meet-closure theorem previously used in the
+canonical cone construction does not directly apply to the
+semi-complete source support $S$ of a starred word, since its leaves
+may have different intrinsic heights.
+The module \lean{DualTree.SemiCompleteSkewMeet} removes that
+restriction.  Semi-completeness forces the final skew branching
+witness to have all $b$ immediate successors; every other non-leaf
+occurs before that witness and has one successor in each direction.
+Thus
+\lean{DualTree.SemiCompleteSkewMeet.fullDirections_of_semiComplete_nonleaf_total}
+establishes existence and uniqueness of all directions at any non-leaf,
+while \lean{DualTree.SemiCompleteSkewMeet.meetClosed_starred}
+shows that the original starred support $S$ is closed under
+ambient longest-common-prefix meets.
+The precise next step is to transport this meet geometry from
+$S$ to the literal signature skeleton
+$\operatorname{Int}(S')\cup\{t_0\}\cup R$
+and then to its reconstructed image $S_w$.
+These two transport implications, and the separate skew-order
+conditions on $S_w$, remain to be checked.
+
 \paragraph{Typed prefix-order embedding of the entire literal signature skeleton.} \todo
 The preceding four-case prefix analysis is now packaged as an
 explicit map on the disjoint union of the retained old base and
