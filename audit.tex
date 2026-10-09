@@ -690,7 +690,7 @@ height and ambient-length clauses (ii)--(iii) still require proof;
 neither follows merely from the checked prefix isomorphism or
 direction-preserving replacement.
 
-\paragraph{Exact residual: skew clauses~(ii)--(iii) and no others.} \todo
+\paragraph{Exact residual: skew clauses~(ii)--(iii) and no others.} \ok
 For a nonsingleton duplicate-free rooted support already satisfying
 the final branching witness clause~(iv), the full skew predicate is
 equivalent to the conjunction of its two intrinsic-height versus
@@ -707,10 +707,35 @@ states that the \emph{entire} semi-complete-skew assertion for $S_w$
 is equivalent to exactly the Boolean conditions
 $\operatorname{condIIB}(S_w)$ and $\operatorname{condIIIB}(S_w)$,
 under $b>0$ and the current safe cone domain.
-This reduction awaits stacked CI; it is not a proof of either
+This reduction passed Lean CI and the transitive axiom audit
+(PR~\#140, 486 audited endpoints); it is not a proof of either
 of those remaining inequalities. Both need an independent check
 against the actual ambient lengths and intrinsic ranks, and
 may require revising the printed construction.
+
+\paragraph{Adversarial test of independent-depth terminal replacements.} \todo
+Before proving the two outstanding skew height/order clauses,
+one must check whether the product's independent bullet coordinates
+can force unequal ambient depths of newly projected terminal nodes.
+The binary candidate uses the 3-complete support
+$T=\{\varnothing,0,1,00,01,10,11\}$ and the semi-complete source
+$S=\{\varnothing,0,1\}$; after replacing $0$ by $00$ and leaving
+$1$ unchanged, the node set $\{\varnothing,00,1\}$ remains rooted,
+has two immediate branches at its root, and satisfies skew clauses
+(iii) and (iv), but fails clause (ii):
+the lexicographically earlier leaf $00$ has length two, whereas
+the lexicographically later leaf $1$ has length one, although
+both have intrinsic height one.
+\lean{DualTree.QLengthObstruction} checks these finite claims
+directly against the Boolean skew predicates, pending CI.
+This does \emph{not} yet certify a counterexample to the typed
+Lemma~27 $Q$ construction: one must instantiate its actual marked
+cone projections with mixed-product bullet coordinates of
+different local depths, and check the remaining hypotheses.
+If that instantiation succeeds, the arbitrary independent choice
+of $D_2$ bullet points is incompatible with the printed skew
+axiom~(ii); a synchronized-depth restriction or a modification
+of the target support notion may be necessary.
 
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with

@@ -590,3 +590,13 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27QOrderReduction.sourceQ_nonsingleton
 #print axioms DualTree.Lemma27QOrderReduction.sourceQ_skew_iff_order_conditions
 #print axioms DualTree.Lemma27QOrderReduction.sourceQ_semiComplete_iff_order_conditions
+
+#print axioms DualTree.QLengthObstruction.completeT_is_complete
+#print axioms DualTree.QLengthObstruction.originalS_is_semiComplete
+#print axioms DualTree.QLengthObstruction.extendedLeft_rooted
+#print axioms DualTree.QLengthObstruction.extendedLeft_exact_branching
+#print axioms DualTree.QLengthObstruction.extendedLeft_condIIB_fails
+#print axioms DualTree.QLengthObstruction.extendedLeft_condIIIB_holds
+#print axioms DualTree.QLengthObstruction.extendedLeft_lastWitness_holds
+#print axioms DualTree.QLengthObstruction.extendedLeft_not_skew
+#print axioms DualTree.QLengthObstruction.extendedLeft_not_semiComplete
