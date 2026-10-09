@@ -519,6 +519,29 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
+
+\paragraph{Prefix geometry of replacing literal signature leaves.} \todo
+The construction of $S_w$ replaces each terminal marker $s\in R$
+with the projected node $P_{j(s)}(z_s)$, retaining the old base
+$\operatorname{Int}(S')\cup\{t_0\}$.
+The module \lean{DualTree.Lemma27QLeafReplacement} verifies that
+this operation preserves the \emph{prefix relations} among these
+two kinds of nodes.  The literal markers lie outside the inclusive
+cut and are pairwise prefix-incomparable.
+The theorem
+\lean{DualTree.Lemma27QLeafReplacement.oldBase_prefix_projection_iff}
+shows that any old base vertex precedes a projected marker precisely
+when it preceded its original marker.
+The reverse prefix direction, from a projected marker to an old base
+vertex, is impossible; and
+\lean{DualTree.Lemma27QLeafReplacement.projectedMarkers_prefix_iff}
+checks the relation between pairs of projected markers.
+These facts prepare a finite prefix-order isomorphism between the
+old signature skeleton and its reconstructed image.
+They do \emph{not} establish the ambient-length or auxiliary-order
+conditions of the source's skew definition, nor the complete
+successor-direction condition required for semi-completeness.
+
 \paragraph{Equality of the reconstructed interior with the old interior.} \todo
 The separate marker-coverage and terminal-leaf results finally
 give both directions of the interior identity.  The module
