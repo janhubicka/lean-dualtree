@@ -510,3 +510,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27QLeafReplacement.oldBase_prefix_projection_iff
 #print axioms DualTree.Lemma27QLeafReplacement.projectedMarker_not_prefix_oldBase
 #print axioms DualTree.Lemma27QLeafReplacement.projectedMarkers_prefix_iff
+
+#print axioms DualTree.Lemma27QPrefixSkeleton.originalNode_injective
+#print axioms DualTree.Lemma27QPrefixSkeleton.newNode_prefix_iff_original
+#print axioms DualTree.Lemma27QPrefixSkeleton.newNode_injective
