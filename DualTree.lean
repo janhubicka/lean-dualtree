@@ -155,3 +155,5 @@ import DualTree.PaperAuxAntisymm
 import DualTree.LastBranchWitness
 
 import DualTree.Lemma27QLastWitness
+
+import DualTree.Lemma27QOrderReduction
