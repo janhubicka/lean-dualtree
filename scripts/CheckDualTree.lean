@@ -353,3 +353,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.CompleteSupportAddresses.canonical_bounded_address
 #print axioms DualTree.CompleteSupportAddresses.canonicalEmbedding_height
 #print axioms DualTree.CompleteSupportAddresses.canonicalEmbedding_prefix
+
+#print axioms DualTree.CanonicalSupportInjective.walk_injective_of_admissible
+#print axioms DualTree.CanonicalSupportInjective.canonicalEmbedding_injective
