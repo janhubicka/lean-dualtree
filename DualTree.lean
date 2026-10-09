@@ -87,3 +87,5 @@ import DualTree.FrontierAntichainPadding
 import DualTree.FrontierSourcePadding
 
 import DualTree.FrontierCardinality
+
+import DualTree.CanonicalConeWordTransport
