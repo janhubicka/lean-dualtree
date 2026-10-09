@@ -157,3 +157,5 @@ import DualTree.LastBranchWitness
 import DualTree.Lemma27QLastWitness
 
 import DualTree.Lemma27QOrderReduction
+
+import DualTree.QLengthObstruction
