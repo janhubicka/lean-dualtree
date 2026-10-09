@@ -45,8 +45,8 @@ theorem oldBase_mem_iff_original_interior
   simp only [List.mem_singleton]
   constructor
   · rintro (h | h)
-    · exact (SignatureInteriorExact.signature_interior_iff_original_ne_cut
-        O cut hcut hmax hout s).1 h |>.1
+    · exact ((SignatureInteriorExact.signature_interior_iff_original_ne_cut
+        O cut hcut hmax hout s).1 h).1
     · subst s
       exact hcut
   · intro hs
