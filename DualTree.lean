@@ -65,3 +65,5 @@ import DualTree.LiteralFrontierCount
 import DualTree.ConeTailDomains
 
 import DualTree.CanonicalSupportWalk
+
+import DualTree.CompleteSupportRoot
