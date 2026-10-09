@@ -146,3 +146,5 @@ import DualTree.Lemma27QMeet
 import DualTree.Lemma27QImmediate
 
 import DualTree.Lemma27QRooted
+
+import DualTree.Lemma27QBranchCount
