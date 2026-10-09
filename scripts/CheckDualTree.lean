@@ -530,3 +530,9 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.MeetClosedDirectionConverse.atMostOneDirection_of_meetClosed
 #print axioms DualTree.MeetClosedDirectionConverse.meetClosed_iff_atMostOneDirection_of_rooted
+
+#print axioms DualTree.SemiCompleteSkewMeet.full_directions_at_witness
+#print axioms DualTree.SemiCompleteSkewMeet.atMostOneDirection_of_semiComplete_total
+#print axioms DualTree.SemiCompleteSkewMeet.fullDirections_of_semiComplete_nonleaf_total
+#print axioms DualTree.SemiCompleteSkewMeet.meetClosed_semiComplete_paper
+#print axioms DualTree.SemiCompleteSkewMeet.meetClosed_starred
