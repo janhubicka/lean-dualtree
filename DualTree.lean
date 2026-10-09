@@ -119,3 +119,5 @@ import DualTree.Lemma27QTerminal
 import DualTree.Lemma27QMarkerCoverage
 
 import DualTree.Lemma27QInterior
+
+import DualTree.Lemma27QLeafReplacement
