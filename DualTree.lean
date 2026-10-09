@@ -150,3 +150,6 @@ import DualTree.Lemma27QRooted
 import DualTree.Lemma27QBranchCount
 
 import DualTree.Lemma27QBranchClause
+
+import DualTree.PaperAuxAntisymm
+import DualTree.LastBranchWitness

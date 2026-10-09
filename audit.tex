@@ -633,7 +633,7 @@ Even after it passes, the full semi-complete skew predicate
 needs independent proofs of the printed auxiliary-order and
 height/rank clauses; no such order facts are inferred here.
 
-\paragraph{Precise residual skewness for $Q$ semi-completeness.} \todo
+\paragraph{Precise residual skewness for $Q$ semi-completeness.} \ok
 Once the exact $0$-or-$b$ count is established, the additional
 Boolean branching conjunct in the definition of semi-complete is
 automatic. The source-facing
@@ -642,10 +642,28 @@ checks this conjunct on the actual reconstructed support, and
 \lean{DualTree.Lemma27QBranchClause.sourceQ_semiComplete_iff_skew}
 reduces its full semi-completeness, under $b>0$, \emph{exactly} to
 the printed skew predicate.
-These claims are conditional on the preceding counting proof and
-await stacked-branch CI. They do not establish skewness by definition,
+Both declarations passed CI and the transitive axiom audit
+(PR~\#137; 474 audited endpoints). They do not establish skewness by definition,
 and in particular do not bypass the known counterexample to
 preservation of the printed auxiliary order.
+
+\paragraph{Preparing the final branching-witness check for $Q$.} \todo
+The failure of canonical preservation of the printed auxiliary
+order does not mean that the order itself lacks antisymmetry.
+The new module \lean{DualTree.PaperAuxAntisymm} verifies
+antisymmetry of both the ambient lexicographic tie comparison
+and the printed length-first auxiliary order. The generic
+\lean{DualTree.LastBranchWitness.condIVB_of_full_last_witness}
+shows that, for $b>0$, the printed skew clause~(iv) follows
+from a retained last branching vertex with all $b$ directions,
+the full-before condition, and the empty-after condition.
+The chosen partial-branch index is the last element of $[b]$.
+These generic lemmas await stacked CI. Their application to
+the actual reconstructed $S_w$ is a separate obligation:
+one must show that all nodes before the old maximal interior
+cut are interior and all nodes after that cut are leaves.
+Neither the skew height-order clauses (ii)--(iii) nor the
+global variable word is established by this conditional check.
 
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
