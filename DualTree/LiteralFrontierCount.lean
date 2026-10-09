@@ -21,7 +21,7 @@ noncomputable def frontiers {b : Nat}
     (T : List (Node b)) (cut : Node b) : List (Node b) := by
   classical
   exact (T.filter (fun t =>
-    decide (CutFrontier.Frontier T (fun u => PaperAux u cut) t))).eraseDups
+    decide (CutFrontier.Frontier T (fun u => PaperAux u cut) t))).dedup
 
 /-- The chosen list contains exactly the inclusive-cut support frontiers. -/
 theorem mem_frontiers_iff {b : Nat}
@@ -29,14 +29,16 @@ theorem mem_frontiers_iff {b : Nat}
     f ∈ frontiers T cut ↔
       CutFrontier.Frontier T (fun u => PaperAux u cut) f := by
   classical
-  simp [frontiers, CutFrontier.Frontier, decide_eq_true_eq]
+  simp only [frontiers, List.mem_dedup, List.mem_filter, decide_eq_true_eq]
+  exact ⟨And.right, fun h => ⟨h.1, h⟩⟩
 
 /-- The frontier list has no duplicate entries. -/
 theorem frontiers_nodup {b : Nat}
     (T : List (Node b)) (cut : Node b) :
     (frontiers T cut).Nodup := by
   classical
-  exact List.nodup_eraseDups _
+  unfold frontiers
+  exact List.nodup_dedup _
 
 /-- The printed signature set R is also represented without duplicates. -/
 theorem literalR_nodup
@@ -48,7 +50,8 @@ theorem literalR_nodup
       ¬ SignatureBoundary.BeforeCut cut t) :
     (LiteralSignatureR.literalR O cut hout).Nodup := by
   classical
-  exact List.nodup_eraseDups _
+  unfold LiteralSignatureR.literalR
+  exact List.nodup_dedup _
 
 /--
 The number of literal signature markers is bounded by the number of
