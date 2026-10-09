@@ -503,3 +503,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27QInterior.nonlast_original_interior_persists
 #print axioms DualTree.Lemma27QInterior.cut_interior_of_positive_branching
 #print axioms DualTree.Lemma27QInterior.source_interior_iff_original
+
+#print axioms DualTree.Lemma27QLeafReplacement.literalMarker_after_cut
+#print axioms DualTree.Lemma27QLeafReplacement.literalMarker_not_oldBase
+#print axioms DualTree.Lemma27QLeafReplacement.literalMarkers_prefix_implies_eq
+#print axioms DualTree.Lemma27QLeafReplacement.oldBase_prefix_projection_iff
+#print axioms DualTree.Lemma27QLeafReplacement.projectedMarker_not_prefix_oldBase
+#print axioms DualTree.Lemma27QLeafReplacement.projectedMarkers_prefix_iff
