@@ -520,6 +520,34 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Exact interior of the Definition 26 signature tree.} \todo
+The construction of the reconstructed tree $S_w$ uses
+$\operatorname{Int}(S')$ and retains $t_0$ separately.
+The new module \lean{DualTree.SignatureInteriorExact} proves the
+converse to the earlier interior-persistence lemma.
+Every exceptional-leaf boundary is incomparable with $t_0$ in
+the descendant direction and cannot have a successor in $S'$:
+such a successor would either be an earlier original interior
+node or another first outside-cut boundary, both impossible.
+Consequently the maximal original interior cut becomes a leaf
+of $S'$, and the source-facing identity
+\[
+\operatorname{Int}(S')
+ =\operatorname{Int}(S)\setminus\{t_0\}
+\]
+is established by
+\lean{DualTree.SignatureInteriorExact.signature_interior_iff_original_ne_cut}.
+The theorem
+\lean{DualTree.SignatureInteriorExact.oldSignatureBase_before_cut}
+then proves that every node of
+$\operatorname{Int}(S')\cup\{t_0\}$ is at or before the cut in
+the paper's auxiliary order.
+These facts discharge the previously isolated \emph{old-base
+containment} requirement for the marked-leaf cardinality calculation
+in $S_w$.  We must still prove the full semi-complete geometry and
+interior of the \emph{extended} tree $S_w$.
+
+
 \paragraph{Recovering local addresses of support roots inside a cone.} \todo
 The previous canonical cone construction verifies the forward
 projection $P_i$ on a uniform shortened domain.  The local word
