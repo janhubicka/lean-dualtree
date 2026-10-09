@@ -91,3 +91,5 @@ import DualTree.FrontierCardinality
 import DualTree.LiteralMarkerCoordinates
 
 import DualTree.CanonicalConeWordTransport
+
+import DualTree.BulletCoordinateRange

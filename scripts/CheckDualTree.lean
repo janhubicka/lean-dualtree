@@ -412,3 +412,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.CanonicalConeWordTransport.totalProjection_eq_project
 #print axioms DualTree.CanonicalConeWordTransport.lifted_root_prefix
 #print axioms DualTree.CanonicalConeWordTransport.source_root_alignment
+
+#print axioms DualTree.MixedProduct.bulletKindOfRange_iff
+#print axioms DualTree.MixedProduct.bulletKindOfRange_ne_up
+#print axioms DualTree.MixedProduct.bulletIndex_injective
+#print axioms DualTree.MixedProduct.bulletIndex_surjective
+#print axioms DualTree.MixedProduct.bulletIndex_bijective
+#print axioms DualTree.LiteralMarkerProductKind.literalMarker_bullet_bijective
