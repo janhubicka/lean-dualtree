@@ -585,3 +585,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27QLastWitness.sourceQ_fullBeforeB
 #print axioms DualTree.Lemma27QLastWitness.sourceQ_emptyAfterB
 #print axioms DualTree.Lemma27QLastWitness.sourceQ_condIVB
+
+#print axioms DualTree.Lemma27QOrderReduction.skewB_iff_order_conditions
+#print axioms DualTree.Lemma27QOrderReduction.sourceQ_nonsingleton
+#print axioms DualTree.Lemma27QOrderReduction.sourceQ_skew_iff_order_conditions
+#print axioms DualTree.Lemma27QOrderReduction.sourceQ_semiComplete_iff_order_conditions

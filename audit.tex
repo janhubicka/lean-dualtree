@@ -497,7 +497,7 @@ The constructor
 then eliminates the per-leaf existence hypotheses while retaining an
 explicit full-branching hypothesis at the cut.
 
-\paragraph{Last-interior witness.} \todo
+\paragraph{Last-interior witness.} \ok
 The theorem
 \lean{DualTree.StarredSignature.fullBefore_at_maxInterior}
 uses clause~(iv) of the skew-tree definition: its distinguished branching
@@ -509,7 +509,9 @@ establishes the missing existence condition for every exceptional leaf.
 The constructor
 \lean{DualTree.StarredSignature.signatureTree_at_maxInterior}
 therefore no longer requires a separate full-branching or per-leaf
-hypothesis once the maximal interior cut is provided.
+hypothesis once the maximal interior cut is provided.  These results
+were already proved and transitive-axiom-checked in the Lean development.
+This verification concerns the boundary-existence obligation only.
 
 The complete signature map is still \todo: we need to formalize the
 existence/canonical choice of the maximal interior vertex for every
@@ -666,7 +668,7 @@ cut are interior and all nodes after that cut are leaves.
 Neither the skew height-order clauses (ii)--(iii) nor the
 global variable word is established by this conditional check.
 
-\paragraph{Skew clause~(iv) at the original maximal interior cut.} \todo
+\paragraph{Skew clause~(iv) at the original maximal interior cut.} \ok
 The reconstructed Q support retains the maximal original interior
 node $t_0$. Every reconstructed node at or before this cut
 is in the original interior: an additional projected marker would
@@ -680,12 +682,35 @@ The source-specific results
 \lean{DualTree.Lemma27QLastWitness.sourceQ_fullBeforeB},
 \lean{DualTree.Lemma27QLastWitness.sourceQ_emptyAfterB},
 and \lean{DualTree.Lemma27QLastWitness.sourceQ_condIVB}
-formalize exactly this argument. These are pending stacked CI.
+formalize exactly this argument. These four statements passed Lean CI
+and the transitive axiom audit (PR~\#139, 482 audited endpoints).
 Once certified they close the final branching-witness clause
 (iv) of skewness for $S_w$ under $b>0$. The independent intrinsic
 height and ambient-length clauses (ii)--(iii) still require proof;
 neither follows merely from the checked prefix isomorphism or
 direction-preserving replacement.
+
+\paragraph{Exact residual: skew clauses~(ii)--(iii) and no others.} \todo
+For a nonsingleton duplicate-free rooted support already satisfying
+the final branching witness clause~(iv), the full skew predicate is
+equivalent to the conjunction of its two intrinsic-height versus
+ambient-length comparison clauses.  The generic theorem
+\lean{DualTree.Lemma27QOrderReduction.skewB_iff_order_conditions}
+records this factorization.
+The actual Q node set is nonsingleton since the retained maximal
+interior vertex has an immediate successor in every direction.
+Combining the certified branching, rootedness, and clause~(iv)
+gives \lean{DualTree.Lemma27QOrderReduction.sourceQ_skew_iff_order_conditions}.
+Together with the previously proved exact $0$-or-$b$ successor count,
+\lean{DualTree.Lemma27QOrderReduction.sourceQ_semiComplete_iff_order_conditions}
+states that the \emph{entire} semi-complete-skew assertion for $S_w$
+is equivalent to exactly the Boolean conditions
+$\operatorname{condIIB}(S_w)$ and $\operatorname{condIIIB}(S_w)$,
+under $b>0$ and the current safe cone domain.
+This reduction awaits stacked CI; it is not a proof of either
+of those remaining inequalities. Both need an independent check
+against the actual ambient lengths and intrinsic ranks, and
+may require revising the printed construction.
 
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
