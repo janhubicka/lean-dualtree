@@ -411,3 +411,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UniformConeDomains.projectCommon_cone
 #print axioms DualTree.UniformConeDomains.projectCommon_height
 #print axioms DualTree.UniformConeDomains.projectCommon_inverse
+
+#print axioms DualTree.UniformConeDomains.extraLevelTail_value
+#print axioms DualTree.UniformConeDomains.projectExtraLevel_prefix
+#print axioms DualTree.UniformConeDomains.projectExtraLevel_inverse
