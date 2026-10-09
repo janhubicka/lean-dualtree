@@ -140,3 +140,5 @@ import DualTree.InteriorMarkerMeet
 import DualTree.Lemma27LiteralMeet
 
 import DualTree.MeetImageTransfer
+
+import DualTree.Lemma27QMeetClosed
