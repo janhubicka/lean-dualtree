@@ -32,9 +32,21 @@ obligation; `\todo` marks a remaining gap or proposed change.
 - Concrete canonical cone projections on **intrinsically safe tails**:
   `|I_T^{-1}(t)| + |z| < k`. Their roots, prefixes, rank increments,
   and inverse concatenation coordinates are all verified.
+- The actual Lemma 27 Q-support skeleton has its expected cardinality
+  and interior, is rooted and ambient meet-closed, has exactly 0 or b
+  immediate successors at each vertex, and satisfies skew clause (iv).
+  None of these facts alone establishes semi-complete skewness.
+- A **kernel-checked source-facing counterexample** to unrestricted Q
+  leaf replacement: independent D2 bullet depths in a typed binary
+  small-height example produce two new nodes at the same intrinsic
+  Q-height but with reversed lex/ambient-length order. Therefore
+  `condIIB(S_w) = false`, so the reconstructed tree is not
+  semi-complete skew (see `QLengthActualSkewFailure.lean`).
+  This is an obstruction to the displayed Q construction, not a proof
+  that the final large-parameter Ramsey theorem is false.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **more than 340 source-facing declarations** for transitive
+audits **535 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -42,19 +54,31 @@ The complete theorem and the full construction of Lemma 27 are
 
 ## Main remaining work
 
-The leading obstacle is the printed Lemma 27 reconstruction and its
-mixed-product colouring. In particular:
+The leading obstacle remains the printed Lemma 27 reconstruction and its
+mixed-product colouring. The geometric portion of its reconstructed tree
+is extensively verified, but a genuine **small-height failure of skew
+clause (ii)** has now been formalised for the actual Q map.
 
-1. The source uses longer ambient cone tails than the intrinsic
-   canonical map permits. A shortened common local domain is verified;
-   a one-extra-complete-level alternative is being checked. Either
-   requires a corresponding proof of the recursive dimension bound.
-2. The coordinate words of the global code `Q`, their root-aligned
-   substitution into the original word, and constancy of the induced
-   colouring on smoothness classes still need to be constructed and proved.
-   Collision-free coordinate choice itself is verified.
-3. Lemma 28, Theorem 25, the stated recursive bounds, and the final
-   dual-tree theorem still require their own Lean proofs.
+1. **Repair the Q tree component:** independently selected D2 bullet
+   points can produce leaves of equal intrinsic Q-height but incompatible
+   ambient lengths. Test a restriction aligning the projected terminal
+   points to a common intrinsic level in the enclosing complete support,
+   or another local correction; verify compatibility with the Ramsey
+   subspace and colouring pullback. No repair is yet certified.
+2. **Correct cone domains and bounds:** the source uses longer tails
+   than the canonical map permits for some frontier heights. The
+   shortened common domain and an extra-complete-level conversion
+   have been verified at the type/geometry level, not yet with
+   the numerical recursive bounds.
+3. **Construct the full Q word:** the coordinate words, root-aligned
+   substitution into the old word, smoothness/colouring compatibility,
+   and invariance of the required variable fibres remain to be proved.
+4. **Finish the Ramsey induction:** Lemma 28, Theorem 25, the recursive
+   inequalities, and the full dual-tree theorem still need proofs.
+
+The typed counterexample is for complete height three. It has not
+been extended to the full large-parameter hypothesis package of
+Lemma 27; the statement of the theorem itself is not marked false.
 
 The source's **printed auxiliary linear order is not preserved** by
 its claimed canonical embedding in general; this has a separate
