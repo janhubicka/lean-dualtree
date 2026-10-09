@@ -49,9 +49,10 @@ The recursive block budget and dimension indices do not match Corollary 9. \\
 Theorem 13 gluing & \fix/\gap &
 Several complements and tail domains are mistyped; the induction architecture
 still looks plausible. \\
-Lemma 27 & \gap &
-Main bottleneck: projection domains, auxiliary-variable coding, extension of
-the coloring, and preservation of variable fibres all need repair. \\
+Lemma 27 & \bad/\gap &
+The literal Q tree component fails skew clause (ii) on a kernel-checked
+typed binary small-height witness with independent D2 depths. Projection
+domains, word coding, colouring, and the large-parameter repair remain open. \\
 Lemma 28 & \gap &
 Depends on Lemma 27 and suppresses signature transport during iteration. \\
 Theorem 25 induction & \todo &
@@ -820,6 +821,46 @@ These seven declarations passed the Lean build and transitive axiom
 audit (PR~\#145; 523 audited endpoints on the stacked branch). The remaining lexicographic comparison of the
 projected nodes and the consequent Boolean clause-(ii)
 failure will be a final, separate source-facing test.
+
+\paragraph{Actual literal $Q$ map: source-specific skew clause~(ii) test.} \bad
+A decisive Lean test is now staged in
+\lean{DualTree.QLengthActualSkewFailure}, building on the
+verified typed mixed-product source, the exact canonical
+projected ambient lengths, and the proof that both projected
+nodes have intrinsic height one \emph{inside} the new $S_w$.
+The remaining comparison follows directly from the literal
+frontier cones: the left projected marker extends $0$, the
+right extends $1$, and hence the left is lexicographically
+earlier than the right. Since the two ambient lengths are
+two and one, respectively, this would violate skew clause~(ii)
+on the exact tree component of the source's map $Q$.
+The new declarations attempt to certify the Boolean failure
+of $\operatorname{condIIB}(S_w)$, of skewness and of
+semi-completeness, and the impossibility of attaching any
+word component to make that tree a starred object.
+The seven new declarations passed the Lean build and transitive
+axiom audit on the stacked branch (PR~\#146, 535 audited endpoints),
+including
+\lean{DualTree.QLengthActualSkewFailure.sourceQ_condIIB_false}
+and
+\lean{DualTree.QLengthActualSkewFailure.no_starred_Q_output}.
+The witness certifies a failure of the unrestricted tree-component
+construction with independently chosen $D_2$ points on the verified
+common safe cone domain.  It does \emph{not} by itself refute the
+full Lemma~27 under its numerical lower bound on $n$, or the final
+dual-tree Ramsey theorem: the checked binary example uses complete
+height $3$ and does not yet build the full observable-signature
+parameter package from the printed statement.
+The original mixed-product definition explicitly permits arbitrary
+point coordinates in $b^{<n'}$, so any intended hidden
+equal-depth restriction on the $D_2$ coordinates must be stated,
+proved compatible with the Ramsey subspace, and propagated through
+the colouring pullback.  A promising repair to examine is to require
+all projected terminal points to lie on a common \emph{intrinsic level
+of the complete ambient support} $T$; merely giving all local tails
+the same length is insufficient when frontier roots have different
+intrinsic heights. This is a proposal for validation, not a repaired
+theorem.
 
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
