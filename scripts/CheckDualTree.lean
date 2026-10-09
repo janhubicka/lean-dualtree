@@ -485,3 +485,9 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.Lemma27QMarkerCount.bullet_card_eq_literalR_length
 #print axioms DualTree.Lemma27QMarkerCount.sourceSignatureNodes_card_eq_l_add_literalR
+
+#print axioms DualTree.Lemma27QTerminal.not_interior_of_no_strict_descendant
+#print axioms DualTree.Lemma27QTerminal.markedProjection_no_strict_descendant
+#print axioms DualTree.Lemma27QTerminal.markedProjection_not_interior
+#print axioms DualTree.Lemma27QTerminal.signatureNodes_interior_subset_base
+#print axioms DualTree.Lemma27QTerminal.sourceSignatureNodes_interior_subset_original

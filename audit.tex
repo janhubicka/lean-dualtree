@@ -519,6 +519,31 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
+\paragraph{New projected $Q$ markers are leaves.} \todo
+Every marked point $P_i(s_i)$ lies strictly after the auxiliary
+cut and belongs to a frontier cone disjoint from all other
+marked cones.  The previously verified old signature base lies
+at or before the cut.  The module \lean{DualTree.Lemma27QTerminal}
+combines these facts to show that no node of
+$S_w$ is a proper extension of any marked point $P_i(s_i)$.
+The theorem
+\lean{DualTree.Lemma27QTerminal.markedProjection_not_interior}
+therefore certifies that all new marked points are actual leaves
+of the reconstructed finite node set.  Consequently
+\lean{DualTree.Lemma27QTerminal.sourceSignatureNodes_interior_subset_original}
+establishes
+\[
+  \operatorname{Int}(S_w)\subseteq\operatorname{Int}(S).
+\]
+The reverse inclusion is not inferred from cardinality alone:
+it requires proving that every original interior node keeps
+a strict descendant, using the complete set of literal
+signature markers and their corresponding projected cones.
+Thus equality of interiors and semi-completeness of $S_w$
+are still open proof obligations.
+
+
+
 \paragraph{Exact literal $R$ count of the $Q$ skeleton.} \todo
 The coordinate partition has already been defined by an injection
 from the literal signature markers $R$ into the frontier coordinates.
