@@ -613,7 +613,7 @@ than inferred from the Boolean predicates. Even after this, neither
 the printed auxiliary-order clauses nor the word-construction
 part of Lemma~27 follows from rooted meet-closed geometry.
 
-\paragraph{Exact numerical $0$-or-$b$ branching of the reconstructed $Q$ support.} \todo
+\paragraph{Exact numerical $0$-or-$b$ branching of the reconstructed $Q$ support.} \ok
 There is a missing combinatorial step between
 having one immediate successor in each direction and having exactly
 $b$ immediate successors. The new generic lemma
@@ -627,10 +627,25 @@ Using $\operatorname{Int}(S_w)=\operatorname{Int}(S)$ and the
 verified all-directions property at every $Q$ non-leaf yields
 \lean{DualTree.Lemma27QBranchCount.sourceQ_zero_or_b_immediate_successors}
 for all vertices of the reconstructed $S_w$, assuming $b>0$.
-This source-facing theorem is pending CI and a transitive Lean axiom audit.
+The source-facing counting theorem passed the full Lean build and transitive
+axiom audit (PR~\#136; 472 audited endpoints).
 Even after it passes, the full semi-complete skew predicate
 needs independent proofs of the printed auxiliary-order and
 height/rank clauses; no such order facts are inferred here.
+
+\paragraph{Precise residual skewness for $Q$ semi-completeness.} \todo
+Once the exact $0$-or-$b$ count is established, the additional
+Boolean branching conjunct in the definition of semi-complete is
+automatic. The source-facing
+\lean{DualTree.Lemma27QBranchClause.sourceQ_boolean_branch_clause}
+checks this conjunct on the actual reconstructed support, and
+\lean{DualTree.Lemma27QBranchClause.sourceQ_semiComplete_iff_skew}
+reduces its full semi-completeness, under $b>0$, \emph{exactly} to
+the printed skew predicate.
+These claims are conditional on the preceding counting proof and
+await stacked-branch CI. They do not establish skewness by definition,
+and in particular do not bypass the known counterexample to
+preservation of the printed auxiliary order.
 
 \paragraph{The literal signature skeleton is ambient meet-closed.} \todo
 The generic boundary-marker meet lemma is now instantiated with
