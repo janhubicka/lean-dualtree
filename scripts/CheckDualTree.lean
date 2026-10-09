@@ -554,3 +554,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27LiteralMeet.literalR_not_prefix_interior
 #print axioms DualTree.Lemma27LiteralMeet.distinct_literal_skeleton_meet_in_original_interior
 #print axioms DualTree.Lemma27LiteralMeet.oldSkeleton_meetClosed
+
+#print axioms DualTree.MeetImageTransfer.meet_represented_of_prefix_and_directions
+#print axioms DualTree.MeetImageTransfer.meetClosed_of_prefix_and_directions
