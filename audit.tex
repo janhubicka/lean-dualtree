@@ -655,6 +655,24 @@ Still to verify: the source's exact auxiliary-order compatibility,
 the final global coding $Q$, the smooth-coloring argument and
 the complete-skew geometry of the selected refinement.
 
+
+\paragraph{Prefix order isomorphism of the canonical map.} \todo
+The bijection $I_T:b^{<k}\to T$ preserves initial segments,
+but a separate reflection proof is needed to assert that it is
+an isomorphism of rooted trees.  The theorem
+\lean{DualTree.CanonicalSupportPrefixIso.canonicalEmbedding_prefix_reflect}
+takes a support prefix $I_T(u)\sqsubseteq I_T(v)$, chooses the
+prefix of $v$ at depth $|u|$, and compares the two support images
+using uniqueness of a support predecessor at a prescribed intrinsic
+height.  Injectivity then identifies that prefix with $u$.
+Thus \lean{DualTree.CanonicalSupportPrefixIso.canonicalEmbedding_prefix_iff}
+proves equivalence of both initial-segment relations, and
+\lean{DualTree.CanonicalSupportPrefixIso.inverseAddress_prefix}
+checks initial-segment preservation by the canonical inverse.
+This concerns the \emph{prefix tree} structure only; the separate
+printed auxiliary-order counterexample must not be silently
+discarded or reinterpreted as a verified order-preservation theorem.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,

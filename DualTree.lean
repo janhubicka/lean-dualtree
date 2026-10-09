@@ -77,3 +77,5 @@ import DualTree.CanonicalSupportInjective
 import DualTree.SupportReachability
 
 import DualTree.CompleteSupportSurjective
+
+import DualTree.CanonicalSupportPrefixIso
