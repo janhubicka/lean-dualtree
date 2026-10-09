@@ -565,10 +565,31 @@ The support-root equation $h_T(r)=0$ is also certified by
 Consequently
 \lean{DualTree.ImmediateSupportHeight.heightAt_next}
 supplies the rank increment for each admissible step in the
-constructive address walk.  The remaining task is induction over
-addresses to establish admissibility and rank equality on all
-$b^{<k}$ for every $k$-complete skew support, followed by the
-inverse and unique-address properties.
+constructive address walk.  The induction over bounded addresses
+is supplied by the module
+\lean{DualTree.CompleteSupportAddresses}, as detailed below.
+The inverse and unique-address properties remain open.
+
+\paragraph{All bounded addresses in a complete skew support.} \todo
+The theorem \lean{DualTree.CompleteSupportAddresses.admissible_and_height}
+proves by induction on a source address $u$ that, whenever
+$h_T(s)+|u|<k$, the support walk beginning at $s$ is admissible
+and its endpoint has intrinsic height $h_T(s)+|u|$.
+Its crucial induction steps are uniqueness of every branch below
+the final intrinsic level, and the exact rank increase at each
+immediate successor.  Specializing to the chosen common support root
+gives \lean{DualTree.CompleteSupportAddresses.canonical_bounded_address}:
+every $u\in b^{<k}$ has an admissible trace, belongs to the image of
+the concrete support walk, and satisfies
+$h_T(I_T(u))=|u|$.
+The bundled map \lean{DualTree.CompleteSupportAddresses.canonicalEmbedding}
+is now defined on all of $b^{<k}$ with values in $T$; its height
+identity and prefix preservation are separately audited by
+\lean{DualTree.CompleteSupportAddresses.canonicalEmbedding_height}
+and \lean{DualTree.CompleteSupportAddresses.canonicalEmbedding_prefix}.
+It remains to verify injectivity, surjectivity, uniqueness of
+source addresses, and the resulting exact projection identities.
+
 
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
