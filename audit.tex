@@ -519,6 +519,33 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 
 \subsection{Lemma 27}
 This is the present structural bottleneck.
+
+\paragraph{Generic meet-closure transfer through terminal markers.} \todo
+The module \lean{DualTree.InteriorMarkerMeet} proves a reusable
+finite-tree transport lemma.  Suppose $S$ is ambient meet-closed,
+$R$ is a prefix antichain of boundary markers, each $r\in R$ has
+an extension in $S$, and no marker is a prefix of an interior
+vertex of $S$.  Then
+\[
+     \operatorname{Int}(S)\cup R
+\]
+is also ambient meet-closed.
+In fact the meet of any two \emph{distinct} nodes of this union
+belongs to $\operatorname{Int}(S)$, by
+\lean{DualTree.InteriorMarkerMeet.meet_distinct_interior_union_markers}.
+The main theorem is
+\lean{DualTree.InteriorMarkerMeet.meetClosed_interior_union_markers}.
+The proof relies on the elementary but important fact that a
+longest common prefix is unaffected by extending an input
+beyond its first disagreement with the other input.
+Next this abstract statement must be instantiated with the literal
+$R$ of Lemma~27.  One must establish support extensions of all its
+markers inside the original semi-complete starred tree, and check
+the marker/base separation and antichain hypotheses from the
+maximal-interior construction.
+Even after that, meet-closure must be transported through the
+actual projected leaf replacement to $S_w$.
+
 \paragraph{Meet closure and direction uniqueness of semi-complete skew supports.} \todo
 The complete-support meet-closure theorem previously used in the
 canonical cone construction does not directly apply to the
