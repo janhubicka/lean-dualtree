@@ -520,6 +520,33 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Cone-local word changes and smooth colouring compatibility.} \todo
+The module \lean{DualTree.ConeLocalPatchSmoothness} explicitly modifies
+a mixed-product word only within the inclusive cone of its marked
+$D_2$ point, leaving all plain-coordinate words and all letters
+outside marked cones fixed.
+\lean{DualTree.MixedProduct.patchedElement_smooth}
+proves that any two such elements with the same background words and
+marked points are related by the $\Gamma_2=D_2$ instance of
+Definition~21's smoothness comparison.  Consequently
+\lean{DualTree.MixedProduct.smoothColor_invariant_under_patches}
+shows that a colouring genuinely constant on these smoothness
+classes must ignore arbitrary changes inside these cones.
+
+The concrete kernel-checked theorem
+\lean{DualTree.BulletSmoothnessAudit.markedLetterColor_not_smooth}
+exhibits two smoothly related mixed-product elements with
+*different* letters at their common marked point.  Hence the natural
+colouring which simply remembers the marked letter is not automatically
+smooth.  This is a counterexample to an \emph{unqualified smoothness
+claim for arbitrary induced colourings}, not a counterexample to
+Lemma~27.  In particular, a proposed total extension of the colouring
+$c\circ Q$ must either demonstrate classwise compatibility on its
+starred domain or alter the coding so this obstruction is avoided.
+The requirement is not discharged merely by choosing the $D_2$
+coordinates or constructing a well-typed mixed element.
+
+
 \paragraph{Directional construction of the canonical support walk.} \todo
 \lean{DualTree.CanonicalSupportWalk.next} selects the immediate
 support successor in a given ambient direction whenever such a

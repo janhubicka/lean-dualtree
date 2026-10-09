@@ -434,3 +434,13 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UniformConeDomains.extraLevelTail_value
 #print axioms DualTree.UniformConeDomains.projectExtraLevel_prefix
 #print axioms DualTree.UniformConeDomains.projectExtraLevel_inverse
+
+#print axioms DualTree.MixedProduct.conePatch_outside
+#print axioms DualTree.MixedProduct.conePatch_inside
+#print axioms DualTree.MixedProduct.patchedWords_plain
+#print axioms DualTree.MixedProduct.patchedWords_bullet_outside
+#print axioms DualTree.MixedProduct.patchedWords_bullet_inside
+#print axioms DualTree.MixedProduct.patchedElement_smooth
+#print axioms DualTree.MixedProduct.smoothColor_invariant_under_patches
+#print axioms DualTree.BulletSmoothnessAudit.related_despite_different_marked_letters
+#print axioms DualTree.BulletSmoothnessAudit.markedLetterColor_not_smooth
