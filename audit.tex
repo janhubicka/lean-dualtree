@@ -832,6 +832,47 @@ definition of the map $Q$, but the words themselves must still be
 constructed from the starred input and the compatibility of the
 induced colouring with smoothness must be established.
 
+\paragraph{Actual support-valued projections for one shortened common cone height.} \todo
+The repaired bound on the intrinsic height of every minimal outside-cut
+frontier now yields a single well-typed local address domain:
+$b^{<\,k-(m'+1)}$ when the ambient complete support has intrinsic
+height $k$ and the cut height is $m'$.
+The constructor \lean{DualTree.UniformConeDomains.commonTail}
+maps every such local address into the exact source-tail domain
+at any frontier without adding an independent length assumption.
+The resulting
+\lean{DualTree.UniformConeDomains.projectCommon} has values in $T$,
+preserves initial segments, stays within its frontier cone, advances
+the intrinsic height by the local address length, and has the exact
+inverse concatenation property. These assertions are checked by
+\lean{DualTree.UniformConeDomains.projectCommon_prefix},
+\lean{DualTree.UniformConeDomains.projectCommon_cone},
+\lean{DualTree.UniformConeDomains.projectCommon_height}, and
+\lean{DualTree.UniformConeDomains.projectCommon_inverse}.
+Thus the corrected common cone domain is now certified for the
+*actual* canonical support map. Whether shortening the local
+mixed-product dimension this way still leaves enough levels for
+the final Ramsey refinement is an independent, unresolved
+numerical problem in Lemma~27.
+
+
+\paragraph{Retaining the printed tail height with one more complete level.} \todo
+There is a second possible domain repair which avoids shortening the
+local Hales--Jewett words.  If the complete support has intrinsic
+height $n+1$ rather than $n$, then the frontier-height estimate
+$h_T(t_i)\le m'+1$ makes every original tail
+$z\in b^{<n-m'}$ fit inside the canonical source domain:
+$h_T(t_i)+|z|<n+1$.
+The constructor \lean{DualTree.UniformConeDomains.extraLevelTail}
+certifies this with the actual canonical inverse addresses, while
+\lean{DualTree.UniformConeDomains.projectExtraLevel_prefix} and
+\lean{DualTree.UniformConeDomains.projectExtraLevel_inverse}
+verify the corresponding projection's prefix and inverse-coordinate
+properties.  This is a precise alternative to the one-level
+shortening, but a complete Lemma~27 repair must still check how
+increasing the complete-support parameter affects the recursive
+height bound, the ambient word length, and the final refinement.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,
