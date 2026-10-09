@@ -401,3 +401,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.FrontierCardinality.paddedSource_injective_frontiers
 #print axioms DualTree.FrontierCardinality.paddedSource_frontier_length
 #print axioms DualTree.FrontierCardinality.frontiers_length_le_pow
+
+#print axioms DualTree.LiteralMarkerCoordinates.frontierMember_injective
+#print axioms DualTree.LiteralMarkerCoordinates.coordinate_frontier
+#print axioms DualTree.LiteralMarkerCoordinates.coordinate_injective
