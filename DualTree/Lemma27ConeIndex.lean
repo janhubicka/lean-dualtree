@@ -147,7 +147,6 @@ theorem locateSlot_spec {b k m : Nat}
   split_ifs at h with hw
   · cases h
     exact Classical.choose_spec hw
-  · cases h
 
 /-- Applying the partial selector to the image of a slot
 recovers that slot exactly, with no ambiguity. -/
