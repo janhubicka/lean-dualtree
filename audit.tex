@@ -520,6 +520,30 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Surjectivity of the typed literal-to-$Q$ prefix skeleton map.} \todo
+The prefix-order embedding above was initially expressed on the
+two-sorted type of old-base vertices and literal markers $R$.
+The module \lean{DualTree.Lemma27QPrefixSurjectivity} now verifies
+that no vertices are missed in either presentation:
+\lean{DualTree.Lemma27QPrefixSurjectivity.originalNode_surjective_on_skeleton}
+shows that the typed occurrences enumerate the entire literal
+pre-replacement finite skeleton, and
+\lean{DualTree.Lemma27QPrefixSurjectivity.newNode_surjective_on_Q}
+shows that their projected labels enumerate the entire actual
+reconstructed node set $S_w$.
+Conversely, the two
+\lean{DualTree.Lemma27QPrefixSurjectivity.originalNode_mem_skeleton}
+and \lean{DualTree.Lemma27QPrefixSurjectivity.newNode_mem_Q}
+lemmas verify that every typed occurrence belongs to its
+claimed node set.
+With the previously checked injectivity and prefix reflection,
+this gives a genuine bijective rooted \emph{prefix-poset} map
+between the literal skeleton and $S_w$.  Transporting the
+semi-complete successor count requires the source skeleton
+to be checked separately and remains unfinished, as do
+the ambient-length and auxiliary-order skew conditions.
+
+
 \paragraph{Typed prefix-order embedding of the entire literal signature skeleton.} \todo
 The preceding four-case prefix analysis is now packaged as an
 explicit map on the disjoint union of the retained old base and
