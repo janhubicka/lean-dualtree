@@ -816,6 +816,22 @@ This finishes the proposed coordinate selection and its inverse
 on the marked coordinates. It does not yet define the elements of the
 mixed product, the induced colouring, or the coding map $Q$.
 
+\paragraph{Assembling typed mixed-product elements from marker data.} \todo
+The chosen $D_2$ indices can be inverted without ambiguity, since
+the literal markers are bijective with the bullet-coordinate subtype.
+The module \lean{DualTree.MixedElementFromMarkers} uses this inversion
+to construct a mixed-product element from (i) a word in every frontier
+coordinate and (ii) a bounded marked point for each literal marker.
+The kind function introduces no $D_1$ coordinates at this stage.
+The theorem
+\lean{DualTree.LiteralMarkerMixedElement.assemble_marker_point}
+shows that the constructed element carries exactly the specified
+marker point at its designated $D_2$ coordinate.
+This removes the indexing and dependent-type obstacle in the
+definition of the map $Q$, but the words themselves must still be
+constructed from the starred input and the compatibility of the
+induced colouring with smoothness must be established.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,
