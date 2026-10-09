@@ -801,6 +801,24 @@ mixed-product dimension this way still leaves enough levels for
 the final Ramsey refinement is an independent, unresolved
 numerical problem in Lemma~27.
 
+
+\paragraph{Retaining the printed tail height with one more complete level.} \todo
+There is a second possible domain repair which avoids shortening the
+local Hales--Jewett words.  If the complete support has intrinsic
+height $n+1$ rather than $n$, then the frontier-height estimate
+$h_T(t_i)\le m'+1$ makes every original tail
+$z\in b^{<n-m'}$ fit inside the canonical source domain:
+$h_T(t_i)+|z|<n+1$.
+The constructor \lean{DualTree.UniformConeDomains.extraLevelTail}
+certifies this with the actual canonical inverse addresses, while
+\lean{DualTree.UniformConeDomains.projectExtraLevel_prefix} and
+\lean{DualTree.UniformConeDomains.projectExtraLevel_inverse}
+verify the corresponding projection's prefix and inverse-coordinate
+properties.  This is a precise alternative to the one-level
+shortening, but a complete Lemma~27 repair must still check how
+increasing the complete-support parameter affects the recursive
+height bound, the ambient word length, and the final refinement.
+
 \paragraph{Selecting the root of a complete skew support.} \todo
 The theorem \lean{DualTree.CompleteSupportRoot.exists_root}
 constructs a common support root from the complete-skew axioms,
