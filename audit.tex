@@ -520,6 +520,38 @@ signatures under refinement and the signature-cone coding of Lemma~27.
 \subsection{Lemma 27}
 This is the present structural bottleneck.
 
+\paragraph{Directional construction of the canonical support walk.} \todo
+\lean{DualTree.CanonicalSupportWalk.next} selects the immediate
+support successor in a given ambient direction whenever such a
+successor exists uniquely; the membership, immediate-successor,
+and direction assertions are verified by
+\lean{DualTree.CanonicalSupportWalk.next_unique} and
+\lean{DualTree.CanonicalSupportWalk.next_mem}.
+Iterating this transition defines a concrete total map from finite
+$b$-ary addresses to ambient nodes.  The associativity of traversal,
+root containment, and initial-segment preservation are proved by
+\lean{DualTree.CanonicalSupportWalk.walk_append},
+\lean{DualTree.CanonicalSupportWalk.walk_root_prefix}, and
+\lean{DualTree.CanonicalSupportWalk.walk_prefix}.
+The first source direction determines the ambient cone whenever
+its successor exists uniquely, by
+\lean{DualTree.CanonicalSupportWalk.walk_first_direction}.
+The image belongs to the support for any source path for which all
+intermediate directional successors are present, by
+\lean{DualTree.CanonicalSupportWalk.walk_mem_of_admissible}.
+The resulting cone projections are prefix-preserving by
+\lean{DualTree.CanonicalSupportWalk.projection_walk_prefix}.
+
+This makes the address recursion explicit without assuming an
+abstract prefix-preserving $I_T$.  To obtain the exact map $I_T$
+used by the source it remains to select its canonical root, prove
+every address in $b^{<k}$ has a valid support path in a
+$k$-complete skew support, establish the intrinsic-height identity,
+and prove the inverse/coordinate identities on its image.
+The totalized fall-back at a missing branch is not asserted to
+be injective and cannot substitute for these steps.
+
+
 \paragraph{Counting literal frontier coordinates.} \todo
 The literal signature marker set $R$ injects into the distinct
 minimal support frontiers beyond the inclusive cut, by
