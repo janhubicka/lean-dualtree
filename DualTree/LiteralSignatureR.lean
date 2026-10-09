@@ -41,7 +41,7 @@ noncomputable def literalR
     List (Node b) := by
   classical
   exact (signatureTerminalMarkers O cut hout ++
-    (SkewTree.allFin b).map (fun i => cut ++ [i])).eraseDups
+    (SkewTree.allFin b).map (fun i => cut ++ [i])).dedup
 
 /-- Every signature-tree node is an original interior point or a leaf boundary. -/
 theorem mem_signatureTree_iff
