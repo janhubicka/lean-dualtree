@@ -458,3 +458,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27SignatureTree.signatureNodes_marked
 #print axioms DualTree.Lemma27SignatureTree.signatureNodes_eq_of_gamma2_smooth
 #print axioms DualTree.Lemma27SignatureTree.sourceSignatureNodes_eq_of_gamma2_smooth
+
+#print axioms DualTree.Lemma27MarkedLeafGeometry.markedProjection_after_cut
+#print axioms DualTree.Lemma27MarkedLeafGeometry.markedProjection_prefix_implies_same_index
+#print axioms DualTree.Lemma27MarkedLeafGeometry.signatureNodes_card_of_base_early
