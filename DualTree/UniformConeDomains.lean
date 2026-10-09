@@ -141,4 +141,94 @@ theorem projectCommon_inverse {b k m : Nat}
     (CanonicalConeCoordinates.inverse_project_tail T hcomplete frontier
       (commonTail T hcomplete cut hcut hlevel hm frontier hf z))
 
+
+/--
+An alternative to shortening the common tail is to build a complete
+support with *one extra intrinsic level*. For an (n+1)-complete
+support, the original local tail height n-m is then safe at every
+frontier of a cut of height m.
+
+This proves the domain correction, not that the paper's recursive
+bounds permit the extra support level without modification.
+-/
+noncomputable def extraLevelTail {b n m : Nat}
+    (T : List (Node b))
+    (hcomplete : SkewTree.completeB SkewTree.paperAuxB (n + 1) T = true)
+    (cut : Node b) (hcut : cut ∈ T)
+    (hlevel : SkewTree.heightAt T cut + 1 < n + 1)
+    (hm : SkewTree.heightAt T cut = m)
+    (frontier : {t : Node b // t ∈ T})
+    (hf : CutFrontier.Frontier T (fun u => PaperAux u cut) frontier.1)
+    (z : BoundedNode b (n - m)) :
+    CanonicalConeCoordinates.SourceTail T hcomplete frontier := by
+  have hdim : n + 1 - (m + 1) = n - m := by omega
+  let z' : BoundedNode b ((n + 1) - (m + 1)) :=
+    ⟨z.1, by simpa only [hdim] using z.2⟩
+  exact commonTail T hcomplete cut hcut hlevel hm frontier hf z'
+
+/-- The extra-level conversion leaves the literal local address untouched. -/
+theorem extraLevelTail_value {b n m : Nat}
+    (T : List (Node b))
+    (hcomplete : SkewTree.completeB SkewTree.paperAuxB (n + 1) T = true)
+    (cut : Node b) (hcut : cut ∈ T)
+    (hlevel : SkewTree.heightAt T cut + 1 < n + 1)
+    (hm : SkewTree.heightAt T cut = m)
+    (frontier : {t : Node b // t ∈ T})
+    (hf : CutFrontier.Frontier T (fun u => PaperAux u cut) frontier.1)
+    (z : BoundedNode b (n - m)) :
+    (extraLevelTail T hcomplete cut hcut hlevel hm frontier hf z).1 = z.1 := by
+  rfl
+
+/-- Project a local address of the original printed height n-m
+using a complete support of intrinsic height n+1. -/
+noncomputable def projectExtraLevel {b n m : Nat}
+    (T : List (Node b))
+    (hcomplete : SkewTree.completeB SkewTree.paperAuxB (n + 1) T = true)
+    (cut : Node b) (hcut : cut ∈ T)
+    (hlevel : SkewTree.heightAt T cut + 1 < n + 1)
+    (hm : SkewTree.heightAt T cut = m)
+    (frontier : {t : Node b // t ∈ T})
+    (hf : CutFrontier.Frontier T (fun u => PaperAux u cut) frontier.1)
+    (z : BoundedNode b (n - m)) :
+    {t : Node b // t ∈ T} :=
+  CanonicalConeCoordinates.project T hcomplete frontier
+    (extraLevelTail T hcomplete cut hcut hlevel hm frontier hf z)
+
+/-- The one-extra-level construction preserves local prefixes. -/
+theorem projectExtraLevel_prefix {b n m : Nat}
+    (T : List (Node b))
+    (hcomplete : SkewTree.completeB SkewTree.paperAuxB (n + 1) T = true)
+    (cut : Node b) (hcut : cut ∈ T)
+    (hlevel : SkewTree.heightAt T cut + 1 < n + 1)
+    (hm : SkewTree.heightAt T cut = m)
+    (frontier : {t : Node b // t ∈ T})
+    (hf : CutFrontier.Frontier T (fun u => PaperAux u cut) frontier.1)
+    (x y : BoundedNode b (n - m))
+    (hxy : IsPrefix x.1 y.1) :
+    IsPrefix
+      (projectExtraLevel T hcomplete cut hcut hlevel hm frontier hf x).1
+      (projectExtraLevel T hcomplete cut hcut hlevel hm frontier hf y).1 :=
+  CanonicalConeCoordinates.project_prefix T hcomplete frontier
+    (extraLevelTail T hcomplete cut hcut hlevel hm frontier hf x)
+    (extraLevelTail T hcomplete cut hcut hlevel hm frontier hf y) hxy
+
+/-- The one-extra-level inverse address is still the exact
+concatenation of the frontier address with the original tail. -/
+theorem projectExtraLevel_inverse {b n m : Nat}
+    (T : List (Node b))
+    (hcomplete : SkewTree.completeB SkewTree.paperAuxB (n + 1) T = true)
+    (cut : Node b) (hcut : cut ∈ T)
+    (hlevel : SkewTree.heightAt T cut + 1 < n + 1)
+    (hm : SkewTree.heightAt T cut = m)
+    (frontier : {t : Node b // t ∈ T})
+    (hf : CutFrontier.Frontier T (fun u => PaperAux u cut) frontier.1)
+    (z : BoundedNode b (n - m)) :
+    (CompleteSupportSurjective.inverseAddress T hcomplete
+      (projectExtraLevel T hcomplete cut hcut hlevel hm frontier hf z)).1 =
+      (CompleteSupportSurjective.inverseAddress T hcomplete frontier).1 ++ z.1 := by
+  simpa only [projectExtraLevel, extraLevelTail_value] using
+    (CanonicalConeCoordinates.inverse_project_tail T hcomplete frontier
+      (extraLevelTail T hcomplete cut hcut hlevel hm frontier hf z))
+
+
 end DualTree.UniformConeDomains
