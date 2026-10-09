@@ -563,3 +563,8 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.Lemma27QImmediate.uniqueBranch_of_directional_descendant
 #print axioms DualTree.Lemma27QImmediate.sourceQ_full_immediate_directions
+
+#print axioms DualTree.Lemma27QRooted.common_support_root_of_meetClosed
+#print axioms DualTree.Lemma27QRooted.rootedB_of_meetClosed_nonempty
+#print axioms DualTree.Lemma27QRooted.sourceQ_rooted
+#print axioms DualTree.Lemma27QRooted.sourceQ_full_immediate_at_nonleaf
