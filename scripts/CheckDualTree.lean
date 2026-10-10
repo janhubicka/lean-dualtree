@@ -890,3 +890,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQRooted.sourceRoot_prefix_literal_marker
 #print axioms DualTree.ForwardQRooted.sourceRoot_prefix_Q
 #print axioms DualTree.ForwardQRooted.Q_rootedB
+
+#print axioms DualTree.ForwardQLiteralSkeletonMeets.source_meetClosed
+#print axioms DualTree.ForwardQLiteralSkeletonMeets.cut_full_directions
+#print axioms DualTree.ForwardQLiteralSkeletonMeets.literalMarker_has_source_descendant
+#print axioms DualTree.ForwardQLiteralSkeletonMeets.literalR_antichain
+#print axioms DualTree.ForwardQLiteralSkeletonMeets.literalR_not_prefix_interior
+#print axioms DualTree.ForwardQLiteralSkeletonMeets.distinct_skeleton_meet_in_interior
+#print axioms DualTree.ForwardQLiteralSkeletonMeets.sourceSkeleton_meetClosed
