@@ -756,3 +756,14 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardCompleteEmbedding.canonicalEmbedding_injective
 #print axioms DualTree.ForwardCompleteEmbedding.canonicalEmbedding_lex_mono
 #print axioms DualTree.ForwardCompleteEmbedding.canonicalEmbedding_forward_mono
+
+#print axioms DualTree.ForwardCompleteBijection.unique_direction_of_immediate
+#print axioms DualTree.ForwardCompleteBijection.walk_address_of_prefix_forward
+#print axioms DualTree.ForwardCompleteBijection.support_height_lt_k
+#print axioms DualTree.ForwardCompleteBijection.support_has_address
+#print axioms DualTree.ForwardCompleteBijection.canonicalEmbedding_surjective
+#print axioms DualTree.ForwardCompleteBijection.canonicalEmbedding_bijective
+#print axioms DualTree.ForwardCompleteBijection.inverse_right
+#print axioms DualTree.ForwardCompleteBijection.inverse_left
+#print axioms DualTree.ForwardCompleteBijection.inverse_length
+#print axioms DualTree.ForwardCompleteBijection.canonicalEmbedding_forward_iff

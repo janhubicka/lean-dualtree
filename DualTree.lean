@@ -201,3 +201,5 @@ import DualTree.ForwardMarkerAntichain
 import DualTree.ForwardSignatureInteriorPersistence
 
 import DualTree.ForwardCompleteEmbedding
+
+import DualTree.ForwardCompleteBijection
