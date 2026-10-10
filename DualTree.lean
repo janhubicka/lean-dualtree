@@ -213,3 +213,5 @@ import DualTree.ForwardAuxTransitivity
 import DualTree.ForwardSortedFrontiers
 
 import DualTree.ForwardUniformConeDomains
+
+import DualTree.ForwardSortedMixedProduct

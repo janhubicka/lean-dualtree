@@ -1607,6 +1607,39 @@ full corrected $Q$-tree proofs
 are still being completed; the
 colouring pullback remains open.
 
+\paragraph{Typed corrected $D_0/D_2$ mixed-product kind and point assembly.} \ok
+The corrected literal marker set $R$ now
+maps injectively into an explicitly
+forward-sorted list of $d$ frontiers.
+The new module
+\lean{DualTree.ForwardSortedMixedProduct}
+constructs from this map the actual
+mixed-product coordinate-kind function:
+exactly the selected image coordinates
+are $D_2$ (bullet) coordinates,
+all other coordinates are $D_0$
+(plain), and $D_1$ is empty.
+It proves a bijection between the
+literal marker type and the $D_2$
+indices, then assembles an actual
+mixed-product element from an
+ordinary coordinate word at each
+frontier and a bounded marked
+point for each literal marker.
+The word component is unchanged
+at every index, and every selected
+bullet index retrieves \emph{exactly}
+its designated marker point.
+All five source-facing declarations passed Lean CI and the transitive
+axiom audit in PR~\#169.
+These typing results do not yet
+establish Definition~20's extra
+$W^D_*$ vector-$1$-complete
+condition for arbitrary input
+points, nor do they construct
+the output word $g_w$ or verify
+colouring preservation.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}

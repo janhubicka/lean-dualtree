@@ -806,3 +806,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardUniformConeDomains.projectCommon_inverse
 #print axioms DualTree.ForwardUniformConeDomains.extraLevelTail
 #print axioms DualTree.ForwardUniformConeDomains.extraLevelTail_value
+
+#print axioms DualTree.ForwardSortedMixedProduct.kind_bullet_iff
+#print axioms DualTree.ForwardSortedMixedProduct.kind_ne_up
+#print axioms DualTree.ForwardSortedMixedProduct.bulletIndex_bijective
+#print axioms DualTree.ForwardSortedMixedProduct.assemble_words
+#print axioms DualTree.ForwardSortedMixedProduct.assemble_marker_point
