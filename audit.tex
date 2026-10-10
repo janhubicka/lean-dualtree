@@ -1415,14 +1415,51 @@ auxiliary-order isomorphism for
 \emph{genuine forward-complete supports},
 strengthening the previously checked
 printed-complete-support special case.
-All ten new source-facing declarations passed the Lean build and
-transitive axiom audit on the original PR~\#163 branch.
+All ten source-facing declarations passed the full Lean build and
+transitive axiom audit; PR~\#163 is merged.
 These are the exact prerequisites to
 rebuilding \emph{typed} forward-canonical
 cone projections and correcting the
 remaining leaf-replacement construction.
 The global Lemma~27 word, colouring
 and Ramsey induction are not yet proved.
+
+\paragraph{Typed collision-free $D_2$ marker coordinates for the corrected literal $R$.} \ok
+With source interior persistence and the first-exit
+marker antichain formally verified, the new module
+\lean{DualTree.ForwardLiteralFrontierCoordinates}
+constructs the complete assignment for the
+\emph{actual} corrected signature's literal marker
+list $R$. Each marker has a unique minimal
+outside-cut frontier
+(\lean{frontierFor_spec}); two different markers
+cannot have the same frontier
+(\lean{frontierFor_injective}).
+A duplicate-free enumeration of all minimal
+frontiers and \texttt{List.Nodup.getEquiv}
+then yield a collision-free map
+$R\to\operatorname{Fin}(d)$, with the exact
+retrieval equation verified by
+\lean{coordinate_injective} and
+\lean{coordinate_frontier}.
+All seven declarations passed the Lean build and transitive axiom audit on the original PR~\#164 branch.
+
+\emph{Important ordering caveat.} The temporary
+frontier list is the filtered input support
+list, with duplicate removal. The paper
+requires the frontiers to be enumerated in
+increasing \emph{forward auxiliary order}.
+Injectivity alone does not enforce that
+order, and Definition~20's vector
+$1$-complete condition refers to the chosen
+coordinate ordering. The next separate
+proof must normalize the frontier list,
+prove the associated sorting permutation,
+and check that the corrected projected
+node order matches the starred marked
+point order. No claim of full repaired
+$Q$ skewness or colouring validity follows
+from this coordinate construction alone.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample

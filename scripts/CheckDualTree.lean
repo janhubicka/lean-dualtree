@@ -767,3 +767,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardCompleteBijection.inverse_left
 #print axioms DualTree.ForwardCompleteBijection.inverse_length
 #print axioms DualTree.ForwardCompleteBijection.canonicalEmbedding_forward_iff
+
+#print axioms DualTree.ForwardLiteralFrontierCoordinates.frontierFor_spec
+#print axioms DualTree.ForwardLiteralFrontierCoordinates.frontierFor_injective
+#print axioms DualTree.ForwardLiteralFrontierCoordinates.frontiers_nodup
+#print axioms DualTree.ForwardLiteralFrontierCoordinates.mem_frontiers_iff
+#print axioms DualTree.ForwardLiteralFrontierCoordinates.frontierMember_injective
+#print axioms DualTree.ForwardLiteralFrontierCoordinates.coordinate_injective
+#print axioms DualTree.ForwardLiteralFrontierCoordinates.coordinate_frontier
