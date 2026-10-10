@@ -1384,14 +1384,45 @@ A nonsingleton hypothesis is maintained
 explicitly; it is automatic at the early
 cut of Lemma~27, but the general height-one
 convention must be accounted for separately.
-The twelve declarations passed the full Lean build and
-transitive axiom audit on the original PR~\#162 branch. The remaining
+The twelve declarations passed Lean CI and transitive axiom audit; PR~\#162 is merged. The remaining
 canonical-map obligations are surjectivity,
 inverse addresses and full order reflection,
 followed by corrected cone projection
 domains and the reconstructed $Q$ word.
 No use of printed-order completeness is
 permitted in those corrected theorems.
+
+\paragraph{Full bijection and inverse for genuinely forward-complete support.} \ok
+The new module
+\lean{DualTree.ForwardCompleteBijection}
+extends the forward-complete support map without
+falling back to the printed-order constructor.
+It proves every support descendant can be
+reached by the unique sequence of ambient
+directions, that every support point has
+intrinsic rank below $k$, and that its
+address length equals that rank.
+Hence the canonical map from $b^{<k}$
+to a nonsingleton $k$-complete
+\emph{forward}-skew support is
+surjective as well as injective, with
+two-sided inverse and the required
+inverse-height equation.
+The theorem
+\lean{DualTree.ForwardCompleteBijection.canonicalEmbedding_forward_iff}
+establishes the full corrected forward
+auxiliary-order isomorphism for
+\emph{genuine forward-complete supports},
+strengthening the previously checked
+printed-complete-support special case.
+All ten new source-facing declarations passed the Lean build and
+transitive axiom audit on the original PR~\#163 branch.
+These are the exact prerequisites to
+rebuilding \emph{typed} forward-canonical
+cone projections and correcting the
+remaining leaf-replacement construction.
+The global Lemma~27 word, colouring
+and Ramsey induction are not yet proved.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
