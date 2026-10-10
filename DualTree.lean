@@ -185,3 +185,5 @@ import DualTree.QTernaryOrderAudit
 import DualTree.CanonicalForwardAuxIso
 
 import DualTree.ForwardCutTerminalOrder
+
+import DualTree.ForwardFrontierRanks
