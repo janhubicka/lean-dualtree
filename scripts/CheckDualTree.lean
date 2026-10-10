@@ -659,3 +659,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.QLengthStarredCoordinateOrder.right_index_is_zero
 #print axioms DualTree.QLengthStarredCoordinateOrder.left_index_is_one
 #print axioms DualTree.QLengthStarredCoordinateOrder.actual_starred_input_certificate
+
+#print axioms DualTree.QOrderRepairAudit.root_forward_indexed_Q_is_semiComplete
+#print axioms DualTree.QOrderRepairAudit.deep_printed_source_semiComplete
+#print axioms DualTree.QOrderRepairAudit.deep_printed_source_not_forward_semiComplete
+#print axioms DualTree.QOrderRepairAudit.deep_reindex_only_Q_fails_condII
+#print axioms DualTree.QOrderRepairAudit.deep_reindex_only_Q_not_semiComplete
+#print axioms DualTree.QOrderRepairAudit.equal_length_marked_points_are_vector_one_complete
+#print axioms DualTree.QOrderRepairAudit.deep_forward_source_semiComplete
+#print axioms DualTree.QOrderRepairAudit.deep_forward_Q_semiComplete
