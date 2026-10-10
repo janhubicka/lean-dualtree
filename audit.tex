@@ -2008,7 +2008,7 @@ inequalities, of full branching or
 semi-complete skewness, or of the
 variable-word and colouring parts.
 
-\paragraph{Projected marker Q ranks depend only on old-interior prefix masks.} \todo
+\paragraph{Projected marker Q ranks depend only on old-interior prefix masks.} \ok
 The signature marker $r\in R$ is an inclusive
 forward-cut first-exit boundary. Every original
 interior node $s$ belongs to the inclusive cut;
@@ -2041,6 +2041,33 @@ relate these marker masks to the source's
 forward-cut and lexicographic order so that
 all old/new and marked/marked length
 inequalities hold.
+
+\paragraph{Retained original interior vertices preserve their intrinsic ranks.} \todo
+For every $s\in\operatorname{Int}(S)$
+retained by the corrected forward $Q$ construction,
+the intrinsic height is unchanged:
+\[
+      h_{S_x}(s)=h_S(s).
+\]
+Every strict predecessor of an interior node
+in the original source $S$ is itself an interior
+node, since it has a strict support descendant.
+Combining this with the exact Q predecessor
+formula gives
+\lean{DualTree.ForwardQRetainedRanks.original_interior_Q_height_eq_source}.
+The proof uses the source's verified
+semi-completeness and duplicate-free support;
+it does not assume all source subtrees have
+the same ambient lengths.
+Two new source-facing declarations await
+stacked Lean CI and transitive axiom audit.
+With the projected-leaf prefix-mask
+rank formula, this identifies intrinsic
+ranks for \emph{all} nodes of the
+corrected $Q$ support. The separate
+skew clauses (ii) and (iii), final
+branching completeness, and the word
+and colouring arguments still require proof.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
