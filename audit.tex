@@ -1129,6 +1129,50 @@ needed before certifying the corrected
 semi-completeness statement, independently
 of the still-open word and colouring parts.
 
+\paragraph{Ambient-length monotonicity of forward ordered cone projections.} \todo
+The frontier-rank calculation alone is insufficient:
+Lemma~27 requires ambient node lengths to be
+nondecreasing at a \emph{fixed intrinsic height
+of the reconstructed $S_w$}, whereas the canonical
+cone maps advance the rank in the enclosing support
+$T$ by the length of their local tails.
+For the globally repaired forward-lex convention
+we can, however, establish the following
+general ordering theorem in $T$ itself.
+
+Let $f\ne g$ be incomparable minimal outside-cut
+frontiers in forward auxiliary order, and
+let $u,v\in T$ extend $f,g$ respectively with
+$h_T(u)=h_T(f)+n$, $h_T(v)=h_T(g)+m$,
+where $n\le m$ is the marked singleton-vector
+condition. Then
+\[
+ u\preceq_{\rm fwd}v,\qquad |u|\le |v|.
+\]
+Indeed forward order of frontiers implies
+$h_T(f)\le h_T(g)$, and so the projected
+ranks are nondecreasing. If the ranks are
+equal, both summands are equal, which forces
+equal frontier ranks and equal local tail
+lengths. Forward frontier order and the
+skew same-height axiom imply lex order of
+$f,g$; incomparability propagates that lex
+comparison to all their extensions.
+The skew height/length clauses then imply
+the required forward auxiliary order and
+the ambient-length inequality.
+This is formalized as
+\lean{DualTree.ForwardProjectedTerminalOrder.ordered_frontier_projections_forwardAux}
+and
+\lean{DualTree.ForwardProjectedTerminalOrder.ordered_frontier_projections_length_le}
+(pending CI).
+The next source-specific step is to identify the
+intrinsic $S_w$-rank groups of projected markers
+and show that they appear in contiguous blocks
+of the correct forward frontier order.
+Comparisons with \emph{retained interior vertices}
+and the global $g_w$/colouring proof remain open.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
