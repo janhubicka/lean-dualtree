@@ -179,3 +179,5 @@ import DualTree.QOrderRepairAudit
 import DualTree.ForwardOrderCompatibility
 
 import DualTree.CanonicalForwardAux
+
+import DualTree.QTernaryOrderAudit
