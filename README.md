@@ -43,17 +43,22 @@ obligation; `\todo` marks a remaining gap or proposed change.
   and interior, is rooted and ambient meet-closed, has exactly 0 or b
   immediate successors at each vertex, and satisfies skew clause (iv).
   None of these facts alone establishes semi-complete skewness.
-- A **kernel-checked source-facing counterexample** to unrestricted Q
-  leaf replacement: independent D2 bullet depths in a typed binary
-  small-height example produce two new nodes at the same intrinsic
-  Q-height but with reversed lex/ambient-length order. Therefore
-  `condIIB(S_w) = false`, so the reconstructed tree is not
-  semi-complete skew (see `QLengthActualSkewFailure.lean`).
-  This is an obstruction to the displayed Q construction, not a proof
-  that the final large-parameter Ramsey theorem is false.
+- A **kernel-checked source-facing counterexample** to the displayed
+  Q leaf replacement, including the paper's Definition 20 starred-domain
+  constraint: independent D2 bullet depths, in the actual reverse-lex
+  ordered coordinates of a typed binary height-three example, produce
+  new Q nodes at the same intrinsic height but with reversed
+  lex/ambient-length order. In particular `condIIB(S_w) = false`,
+  and the tree is not semi-complete skew. See
+  `QLengthActualSkewFailure.lean`,
+  `QLengthStarredDomain.lean`, and
+  `QLengthStarredCoordinateOrder.lean`.
+  The standalone author note proves the same obstruction for arbitrary
+  complete-tree height n >= 3. This refutes the claimed unrestricted
+  well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **535 source-facing declarations** for transitive
+audits **546 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are

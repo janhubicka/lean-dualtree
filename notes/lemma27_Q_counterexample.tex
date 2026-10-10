@@ -20,7 +20,7 @@
 \title{An ordered marked-point obstruction in the $Q$-construction\\[3pt]
 \large A note on the proof of Lemma~27 of Todorcevic--Tyros}
 \author{Verification note for the authors}
-\date{9 October 2026}
+\date{10 October 2026}
 \begin{document}
 \maketitle
 \vspace{-1.5em}
@@ -192,18 +192,28 @@ necessarily fails. Two changes seem worth examining:
 \end{enumerate}
 Neither option has yet been proved to repair the full argument.
 
-For computational cross-checking, see the Lean development:
-\begin{center}
+\paragraph{Formal verification and a question for the authors.}
+The Lean development at
 \url{https://github.com/janhubicka/lean-dualtree}
-\end{center}
-The module \texttt{QLengthActualSkewFailure} checks the unrestricted
-$Q$-tree obstruction.
+checks the complete-height-three instance with the \emph{literal}
+marker-to-frontier indexing, not just an analogous three-node tree.
+In particular, the theorem
+\texttt{sourceQ\_condIIB\_false} in
+\texttt{QLengthActualSkewFailure}
+proves failure of skew clause~(ii) for the actual projected $Q$ tree.
+The theorem \path{actual_marked_points_in_starred_domain}
+in \texttt{QLengthStarredDomain} verifies the vector $1$-complete
+condition. The theorem \path{actual_starred_input_certificate}
+in \texttt{QLengthStarredCoordinateOrder} verifies the order of the
+genuine marked-point coordinates returned by the source's
+noncomputable coordinate map. These declarations passed
+the Lean build and transitive axiom audit (PRs~147--148).
+The arbitrary-height family above is an elementary extension;
+it has not yet been formalized uniformly in $n$.
 
-The module \texttt{QLengthStarredDomain} addresses the paper's
-additional coordinate-order restriction. The latter checks were
-being added when this note was prepared, so only declarations
-that pass the complete Lean audit should be called formally verified.
-The elementary starred-domain and arbitrary-height arguments above
-are self-contained and do not rely on Lean.
+We would welcome clarification if an additional constraint on the
+points in $W^{\mathcal D}_*$ or on the map $Q$ was intended but is not
+stated in Definitions~20 and the proof of Lemma~27. Without such a
+constraint, the tree component of the displayed $Q$ need not be skew.
 
 \end{document}
