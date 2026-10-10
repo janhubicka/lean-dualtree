@@ -1349,12 +1349,49 @@ forward skew support, and
 \lean{DualTree.ForwardSignatureInteriorPersistence.literalR_unique_frontier}
 supplies each literal marker a unique minimal
 outside-cut frontier.
-All seven source-facing declarations passed Lean CI and transitive axiom auditing in PR~\#161; the clean integration is separately checked.
+All seven source-facing declarations passed the full CI and transitive axiom audit; PR~\#161 is merged.
 Combined with the independently formalized
 first-exit antichain principle, this should give
 the collision-free $R\to D_2$ coordinate map.
 The full repaired $Q$ tree and colouring argument
 remain to be proved.
+
+\paragraph{A genuine canonical embedding for forward-complete skew supports.} \ok
+An important distinction in the proposed global-order
+repair has emerged. Earlier Lean theorems
+\lean{DualTree.CanonicalForwardAuxIso.canonicalEmbedding_forward_iff}
+assumed the *printed-order* complete support
+$\operatorname{completeB}(\mathrm{paperAuxB},k,T)$
+and established preservation of the candidate
+forward order for that restricted family.
+This does \emph{not} directly construct the
+canonical embedding for a support complete
+under the \emph{corrected} forward-order skew
+predicate. Those two source classes need not
+coincide.
+The new
+\lean{DualTree.ForwardCompleteEmbedding}
+reconstructs the map using genuinely
+$\operatorname{completeB}(\mathrm{forwardAuxB},k,T)$
+throughout. It proves an intrinsic root,
+full directionally unique successors,
+admissibility of every bounded address,
+the exact intrinsic-height equation,
+prefix preservation, injectivity, and
+preservation of forward lexicographic and
+forward auxiliary order.
+A nonsingleton hypothesis is maintained
+explicitly; it is automatic at the early
+cut of Lemma~27, but the general height-one
+convention must be accounted for separately.
+The twelve declarations passed the full Lean build and
+transitive axiom audit on the original PR~\#162 branch. The remaining
+canonical-map obligations are surjectivity,
+inverse addresses and full order reflection,
+followed by corrected cone projection
+domains and the reconstructed $Q$ word.
+No use of printed-order completeness is
+permitted in those corrected theorems.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample

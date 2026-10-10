@@ -199,3 +199,5 @@ import DualTree.ForwardMarkerFrontierCoverage
 import DualTree.ForwardMarkerAntichain
 
 import DualTree.ForwardSignatureInteriorPersistence
+
+import DualTree.ForwardCompleteEmbedding

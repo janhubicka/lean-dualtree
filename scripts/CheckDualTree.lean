@@ -743,3 +743,16 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSignatureInteriorPersistence.literalR_is_inclusive_boundary
 #print axioms DualTree.ForwardSignatureInteriorPersistence.literalR_has_support_descendant
 #print axioms DualTree.ForwardSignatureInteriorPersistence.literalR_unique_frontier
+
+#print axioms DualTree.ForwardCompleteEmbedding.support_nodup
+#print axioms DualTree.ForwardCompleteEmbedding.exists_root
+#print axioms DualTree.ForwardCompleteEmbedding.rootOf_mem
+#print axioms DualTree.ForwardCompleteEmbedding.rootOf_prefix
+#print axioms DualTree.ForwardCompleteEmbedding.branch_of_height_lt
+#print axioms DualTree.ForwardCompleteEmbedding.admissible_and_height
+#print axioms DualTree.ForwardCompleteEmbedding.canonical_bounded_address
+#print axioms DualTree.ForwardCompleteEmbedding.canonicalEmbedding_height
+#print axioms DualTree.ForwardCompleteEmbedding.canonicalEmbedding_prefix
+#print axioms DualTree.ForwardCompleteEmbedding.canonicalEmbedding_injective
+#print axioms DualTree.ForwardCompleteEmbedding.canonicalEmbedding_lex_mono
+#print axioms DualTree.ForwardCompleteEmbedding.canonicalEmbedding_forward_mono
