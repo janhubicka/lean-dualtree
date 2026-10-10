@@ -1756,6 +1756,45 @@ genuine vector-$1$-complete singleton
 marked supports. This source-specific
 W-starred domain bridge remains open.
 
+\paragraph{Exact interior of the globally corrected signature.} \ok
+The corrected Definition~26 signature $S'$ retains
+the original interior vertices and replaces each
+exceptional leaf by its first forward-cut boundary.
+The previous persistence theorem proved only that
+every old interior point other than the cut
+remains interior in $S'$.
+The module
+\lean{DualTree.ForwardSignatureInteriorExact}
+now proves that every exceptional boundary is
+terminal in $S'$, because a boundary is outside
+the inclusive forward cut, no original interior
+vertex lies beyond that cut, and the boundary
+markers form a prefix antichain.
+It also proves that the final cut itself is
+terminal in $S'$, because no original interior
+strictly extends the maximal cut and no
+exceptional path extends it.
+Consequently
+\[
+ \operatorname{Int}(S')
+ =\operatorname{Int}(S)\setminus\{t_0\},\qquad
+ \operatorname{Int}(S')\cup\{t_0\}
+ =\operatorname{Int}(S).
+\]
+The source-facing theorem
+\lean{DualTree.ForwardSignatureInteriorExact.oldBase_mem_iff_original_interior}
+certifies the second equality at the level
+of finite support membership, without using
+the printed reverse-order formalization.
+All six declarations passed the source-branch Lean build and
+transitive axiom audit (PR~\#173); the clean integration check is separate.
+This identity will be used to show that every
+new projected $D_2$ point is a leaf of the
+actual corrected $S_x$, and that no original
+interior vertex is lost during replacement.
+It does not settle the full $Q$ skewness
+or the colouring argument.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
