@@ -856,3 +856,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQMarkerCoverage.literalMarker_has_Q_descendant
 #print axioms DualTree.ForwardQMarkerCoverage.strict_Q_descendant_of_literal_marker
 #print axioms DualTree.ForwardQMarkerCoverage.cut_has_strict_Q_descendant
+
+#print axioms DualTree.ForwardQSourceTerminals.literal_oldBase_before_cut
+#print axioms DualTree.ForwardQSourceTerminals.markedProjection_terminal
+#print axioms DualTree.ForwardQSourceTerminals.Q_interior_subset_original
+#print axioms DualTree.ForwardQSourceTerminals.Q_nodes_subset_complete
