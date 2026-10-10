@@ -1683,6 +1683,53 @@ to the literal sorted bullet
 coordinates in the forthcoming
 source-specific $Q$ construction.
 
+\paragraph{The actual source-facing corrected $Q$ tree skeleton.} \todo
+With the sorted frontier coordinates and
+uniformly safe forward-canonical cones,
+the proposed repaired $Q$ tree component
+can now be defined \emph{literally}:
+\[
+ S_x=\operatorname{Int}(S')\cup\{t_0\}
+ \cup\{P_i(s_i):i\in D_2\}.
+\]
+The new
+\lean{DualTree.ForwardSourceQTree.Frame}
+records the forward starred input,
+final interior cut, maximality,
+enclosing genuine forward-complete
+support, source inclusion, and
+the safe common cone height.
+The definition
+\lean{DualTree.ForwardSourceQTree.nodes}
+uses the actual corrected signature
+interior, sorted $D_2$ coordinate
+kind, and support-valued canonical
+projections.
+Lean proves the old base and all
+genuine projected markers belong
+to $S_x$; distinct marked coordinates
+yield distinct nodes because their
+frontier cones are incomparable.
+For the $\Gamma_2=D_2$ smoothness
+case, the exact $S_x$ is fixed.
+The source-specific
+\lean{DualTree.ForwardSourceQTree.markedProjection_forward_order}
+and
+\lean{DualTree.ForwardSourceQTree.markedProjection_length_le}
+transport ordered bullet lengths
+to forward auxiliary order and
+nondecreasing ambient lengths in
+the actual reconstructed Q support.
+Seven declarations await stacked
+Lean CI and transitive axiom audit.
+These results do \emph{not}
+yet identify intrinsic levels
+inside $S_x$, prove all skew
+clauses (ii)--(iv), construct
+the word $g_x$, or establish
+the full colouring pullback
+and Ramsey induction.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}

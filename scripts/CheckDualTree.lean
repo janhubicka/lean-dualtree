@@ -820,3 +820,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardOrderedProjections.projectAt_forward_order
 #print axioms DualTree.ForwardOrderedProjections.projectAt_length_le
 #print axioms DualTree.ForwardOrderedProjections.projectAt_injective
+
+#print axioms DualTree.ForwardSourceQTree.oldBase_mem
+#print axioms DualTree.ForwardSourceQTree.markedProjection_mem
+#print axioms DualTree.ForwardSourceQTree.markedProjection_cone
+#print axioms DualTree.ForwardSourceQTree.markedProjection_injective
+#print axioms DualTree.ForwardSourceQTree.nodes_eq_of_gamma2_smooth
+#print axioms DualTree.ForwardSourceQTree.markedProjection_forward_order
+#print axioms DualTree.ForwardSourceQTree.markedProjection_length_le
