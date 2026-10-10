@@ -181,3 +181,5 @@ import DualTree.ForwardOrderCompatibility
 import DualTree.CanonicalForwardAux
 
 import DualTree.QTernaryOrderAudit
+
+import DualTree.CanonicalForwardAuxIso
