@@ -1870,6 +1870,40 @@ intrinsic Q levels, skew clauses
 (ii)--(iv), and the word/colouring
 construction remain open.
 
+\paragraph{Each literal corrected marker has a selected projected $Q$ descendant.} \ok
+The corrected sorted-frontier coordinate
+map associates every literal signature marker
+$r\in R$ with an actual $D_2$ coordinate.
+The module
+\lean{DualTree.ForwardQMarkerCoverage}
+now identifies the complete-support frontier
+at that coordinate with the
+\emph{unique} chosen frontier above $r$
+(\lean{bullet_frontier_eq_marker_frontier}).
+The certified safe forward cone projection
+places the corresponding $P_i(s_i)$
+above that frontier; therefore
+$r\sqsubseteq P_i(s_i)$
+(\lean{marker_prefix_projected_point}).
+The source-facing theorem
+\lean{literalMarker_has_Q_descendant}
+establishes an actual $Q$ support node
+above each marker. In particular, any
+strict predecessor of a marker retains a
+strict descendant in the new tree, and
+for positive branching $t_0$ has a
+strict $Q$ descendant in one of its
+immediate ambient child directions
+(\lean{cut_has_strict_Q_descendant}).
+The five assertions passed the Lean build and transitive
+axiom audit on PR~\#176's original branch.
+Combined with exact corrected signature
+interior persistence, they will prove
+the source original interior nodes
+remain nonleaves in the $Q$ support.
+They do not yet establish any new
+intrinsic rank or skew order comparison.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
