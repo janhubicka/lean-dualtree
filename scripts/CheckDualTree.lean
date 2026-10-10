@@ -832,3 +832,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.VectorOneMarkedLengths.singleton_at_zero
 #print axioms DualTree.VectorOneMarkedLengths.lengths_mono_of_sameLevelOrdered
 #print axioms DualTree.VectorOneMarkedLengths.lengths_mono_of_vectorOneComplete
+
+#print axioms DualTree.ForwardSignatureInteriorExact.exceptional_boundary_no_strict_signature_descendant
+#print axioms DualTree.ForwardSignatureInteriorExact.exceptional_boundary_not_interior
+#print axioms DualTree.ForwardSignatureInteriorExact.signature_interior_subset_original
+#print axioms DualTree.ForwardSignatureInteriorExact.cut_not_signature_interior
+#print axioms DualTree.ForwardSignatureInteriorExact.signature_interior_iff_original_ne_cut
+#print axioms DualTree.ForwardSignatureInteriorExact.oldBase_mem_iff_original_interior
