@@ -839,3 +839,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSignatureInteriorExact.cut_not_signature_interior
 #print axioms DualTree.ForwardSignatureInteriorExact.signature_interior_iff_original_ne_cut
 #print axioms DualTree.ForwardSignatureInteriorExact.oldBase_mem_iff_original_interior
+
+#print axioms DualTree.ForwardQFixedBase.oldBase_mem_iff_original_interior
+#print axioms DualTree.ForwardQFixedBase.oldBase_before_cut
+#print axioms DualTree.ForwardQFixedBase.oldBase_subset_complete
+#print axioms DualTree.ForwardQFixedBase.originalInterior_mem_Q
+#print axioms DualTree.ForwardQFixedBase.cut_mem_Q
