@@ -217,3 +217,5 @@ import DualTree.ForwardUniformConeDomains
 import DualTree.ForwardSortedMixedProduct
 
 import DualTree.ForwardOrderedProjections
+
+import DualTree.ForwardSourceQTree
