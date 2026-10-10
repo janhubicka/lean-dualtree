@@ -1029,6 +1029,33 @@ forward order yields none. These results are
 pending CI, and they remain \emph{finite checks},
 not a repaired Lemma~27 for arbitrary $b$.
 
+\paragraph{Full auxiliary order reflection for the repaired canonical map.} \todo
+The previously verified theorem
+\lean{DualTree.CanonicalForwardAux.canonicalEmbedding_forward_mono_of_complete}
+establishes one-way preservation of the repaired
+length-first forward-lex auxiliary order by the
+canonical map $I_T$.
+The new module \lean{DualTree.CanonicalForwardAuxIso}
+proves that this repaired order is reflexive,
+total, and antisymmetric, then combines the
+canonical map's injectivity with its monotonicity
+to obtain \emph{order reflection}. Thus, for
+a nonsingleton complete skew support $T$,
+\[
+ u\preceq_{\rm fwd}v
+ \quad\Longleftrightarrow\quad
+ I_T(u)\preceq_{\rm fwd} I_T(v).
+\]
+The theorem
+\lean{DualTree.CanonicalForwardAuxIso.canonicalEmbedding_forward_iff}
+would supply precisely the missing order-isomorphism
+property from Section~3 under the globally corrected
+forward-lex convention, with no changes to the
+prefix or height geometry. These five Lean
+declarations await CI and the transitive axiom
+audit. This does \emph{not} repair the published
+full Lemma~27 proof or the separate Remark~1 gap.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
