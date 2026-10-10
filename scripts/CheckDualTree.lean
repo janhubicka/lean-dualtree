@@ -694,3 +694,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardCutTerminalOrder.cut_forwardAux_before_terminal
 #print axioms DualTree.ForwardCutTerminalOrder.terminal_height_ge_cut
 #print axioms DualTree.ForwardCutTerminalOrder.terminal_not_lex_before_cut_at_same_height
+
+#print axioms DualTree.ForwardFrontierRanks.rank_le_of_forwardAux
+#print axioms DualTree.ForwardFrontierRanks.cut_rank_le_frontier
+#print axioms DualTree.ForwardFrontierRanks.frontier_rank_le_cut_succ
+#print axioms DualTree.ForwardFrontierRanks.frontier_rank_band
+#print axioms DualTree.ForwardFrontierRanks.ordered_frontiers_rank_le
+#print axioms DualTree.ForwardFrontierRanks.ordered_frontiers_projected_rank_mono
