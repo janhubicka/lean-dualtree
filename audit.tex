@@ -1056,7 +1056,7 @@ declarations await CI and the transitive axiom
 audit. This does \emph{not} repair the published
 full Lemma~27 proof or the separate Remark~1 gap.
 
-\paragraph{Terminal rank and lex separation at the forward cut.} \ok
+\paragraph{Terminal rank and lex separation at the forward cut.} \todo
 A key source-support invariant of the globally repaired
 convention can be proved independently of the $Q$ map.
 Suppose $S$ satisfies forward-order skew clauses
@@ -1076,8 +1076,8 @@ earlier than $t_0$
 These are the two source-side comparisons needed
 to divide the literal $R$ markers into the
 same-height and next-height groups in a repaired
-$Q$ reconstruction. The three declarations passed the Lean build and transitive
-axiom audit (PR~\#154; 575 checked declarations). The next open
+$Q$ reconstruction. The three declarations await
+CI and transitive axiom audit. The next open
 step is to identify the \emph{ambient complete-support
 frontier ranks} of these groups and use ordered
 local marked-point lengths to verify $S_w$
@@ -1253,6 +1253,46 @@ inclusive boundary condition and have
 support descendants, prove injectivity
 of their assigned frontiers, and
 rebuild the actual Q coordinate maps.
+
+\paragraph{Both corrected literal marker types meet unique frontiers.} \todo
+The corrected literal $R$ consists of boundary
+markers from exceptional leaves and the $b$
+immediate ambient children of the final cut.
+The inclusive frontier theorem requires that
+each candidate marker be a boundary of the
+\emph{inclusive} forward cut and have a
+descendant in $T$.
+
+For an exceptional source leaf $t$ outside
+the strict forward cut, let $s$ be its first
+ambient prefix outside that strict cut.
+Since $t$ is not a descendant of the cut,
+$s\ne t_0$; therefore $s$ also lies
+outside the \emph{inclusive} cut, and
+its earlier prefixes lie inside.
+Moreover $s\sqsubseteq t\in S\subseteq T$,
+so it has a $T$-descendant. Hence it
+has a unique minimal outside-cut frontier
+in a complete forward skew support:
+\lean{DualTree.ForwardMarkerFrontierCoverage.exceptional_boundary_unique_frontier}.
+
+For a child marker $t_0^\frown i$,
+all earlier ambient prefixes lie at or before
+the inclusive forward cut, and the child
+itself lies outside. A complete support
+at an early cut has one support successor
+in every direction, so this marker also
+has a $T$-descendant. The corresponding
+unique frontier is supplied by
+\lean{DualTree.ForwardMarkerFrontierCoverage.cut_child_unique_frontier}.
+These five source-facing declarations await CI.
+They establish individual frontier existence
+and uniqueness for both marker types, but not
+yet collision-freeness \emph{between} distinct
+members of the corrected literal $R$.
+The next tasks are the corrected marker antichain,
+a genuine $R\hookrightarrow F$ injection, and
+the global Q support reconstruction.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample

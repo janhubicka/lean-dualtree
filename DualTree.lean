@@ -193,3 +193,5 @@ import DualTree.ForwardProjectedTerminalOrder
 import DualTree.ForwardSignatureBoundary
 
 import DualTree.ForwardInclusiveFrontier
+
+import DualTree.ForwardMarkerFrontierCoverage
