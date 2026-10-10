@@ -861,3 +861,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQSourceTerminals.markedProjection_terminal
 #print axioms DualTree.ForwardQSourceTerminals.Q_interior_subset_original
 #print axioms DualTree.ForwardQSourceTerminals.Q_nodes_subset_complete
+
+#print axioms DualTree.ForwardQInteriorExact.exceptional_boundary_mem_literalR
+#print axioms DualTree.ForwardQInteriorExact.nonlast_original_interior_persists
+#print axioms DualTree.ForwardQInteriorExact.cut_is_Q_interior
+#print axioms DualTree.ForwardQInteriorExact.Q_interior_iff_original
