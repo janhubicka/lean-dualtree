@@ -1056,6 +1056,35 @@ declarations await CI and the transitive axiom
 audit. This does \emph{not} repair the published
 full Lemma~27 proof or the separate Remark~1 gap.
 
+\paragraph{Terminal rank and lex separation at the forward cut.} \todo
+A key source-support invariant of the globally repaired
+convention can be proved independently of the $Q$ map.
+Suppose $S$ satisfies forward-order skew clauses
+(ii)--(iv), $t_0$ is its final branching cut,
+and a leaf $u$ belongs to $S$.
+The full-before clause implies that no terminal
+$u\ne t_0$ can occur before $t_0$ in the
+forward auxiliary order
+(\lean{DualTree.ForwardCutTerminalOrder.cut_forwardAux_before_terminal}).
+Using clause~(iii), it follows that
+$h_S(u)\ge h_S(t_0)$
+(\lean{DualTree.ForwardCutTerminalOrder.terminal_height_ge_cut}).
+Using clause~(ii), if their intrinsic heights
+are equal then $u$ cannot be lexicographically
+earlier than $t_0$
+(\lean{DualTree.ForwardCutTerminalOrder.terminal_not_lex_before_cut_at_same_height}).
+These are the two source-side comparisons needed
+to divide the literal $R$ markers into the
+same-height and next-height groups in a repaired
+$Q$ reconstruction. The three declarations await
+CI and transitive axiom audit. The next open
+step is to identify the \emph{ambient complete-support
+frontier ranks} of these groups and use ordered
+local marked-point lengths to verify $S_w$
+satisfies clauses~(ii)--(iii).
+The large-parameter theorem and colouring part
+remain unverified.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
