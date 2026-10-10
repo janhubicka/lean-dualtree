@@ -668,3 +668,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.QOrderRepairAudit.equal_length_marked_points_are_vector_one_complete
 #print axioms DualTree.QOrderRepairAudit.deep_forward_source_semiComplete
 #print axioms DualTree.QOrderRepairAudit.deep_forward_Q_semiComplete
+
+#print axioms DualTree.ForwardOrderCompatibility.finLexLE_of_prefix
+#print axioms DualTree.ForwardOrderCompatibility.finLexLE_of_ordered_cones
+#print axioms DualTree.ForwardOrderCompatibility.forwardAux_of_equal_height_lex
+#print axioms DualTree.ForwardOrderCompatibility.forwardAux_of_lower_height
