@@ -730,3 +730,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardMarkerFrontierCoverage.cut_child_is_inclusive_boundary
 #print axioms DualTree.ForwardMarkerFrontierCoverage.cut_child_has_support_descendant
 #print axioms DualTree.ForwardMarkerFrontierCoverage.cut_child_unique_frontier
+
+#print axioms DualTree.ForwardMarkerAntichain.eq_of_prefix_boundaries
+#print axioms DualTree.ForwardMarkerAntichain.eq_of_common_extension
+#print axioms DualTree.ForwardMarkerAntichain.assignment_injective
+#print axioms DualTree.ForwardMarkerAntichain.boundary_list_frontier_injective

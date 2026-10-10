@@ -1294,6 +1294,31 @@ The next tasks are the corrected marker antichain,
 a genuine $R\hookrightarrow F$ injection, and
 the global Q support reconstruction.
 
+\paragraph{Forward-cut boundary antichain and marker assignment injectivity.} \todo
+Unique-frontier existence for individual repaired markers
+does not on its own make the map from the literal marker
+set $R$ to frontiers injective. The generic lemma
+\lean{DualTree.ForwardMarkerAntichain.eq_of_common_extension}
+shows that two inclusive forward-cut first-exit boundaries
+below one common ambient node must coincide. This proves
+that the set of such boundaries is a prefix antichain.
+The theorem
+\lean{DualTree.ForwardMarkerAntichain.boundary_list_frontier_injective}
+then verifies injection of \emph{any} chosen extending
+frontier map on a typed list of literal markers, provided
+each marker is an inclusive first-exit boundary.
+Four generic declarations await CI and transitive axiom
+checks. The source-specific missing argument is to show
+that every point of the corrected literal $R$ is an
+inclusive boundary. That requires persistence of all
+old interior vertices except the final cut in the
+corrected signature; otherwise the literal terminal
+filter could introduce spurious markers.
+After that, the checked unique-frontier choice gives
+the collision-free $D_2$ coordinate injection.
+The full repaired $Q$ tree, word coding, and colouring
+remain open.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
