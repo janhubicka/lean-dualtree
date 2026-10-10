@@ -707,3 +707,14 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardProjectedTerminalOrder.frontiers_incomparable
 #print axioms DualTree.ForwardProjectedTerminalOrder.ordered_frontier_projections_forwardAux
 #print axioms DualTree.ForwardProjectedTerminalOrder.ordered_frontier_projections_length_le
+
+#print axioms DualTree.ForwardSignatureBoundary.beforeCut_of_strictPrefix
+#print axioms DualTree.ForwardSignatureBoundary.boundary_at_cut
+#print axioms DualTree.ForwardSignatureBoundary.boundary_iff_frontier
+#print axioms DualTree.ForwardSignatureBoundary.existsUnique_boundary_on_path
+#print axioms DualTree.ForwardSignatureBoundary.firstBoundary_spec
+#print axioms DualTree.ForwardStarredSignature.exceptionalLeaves_not_before_of_fullBefore
+#print axioms DualTree.ForwardStarredSignature.exceptionalLeaves_not_before_of_maxInterior
+#print axioms DualTree.ForwardStarredSignature.interior_mem_signatureTree
+#print axioms DualTree.ForwardStarredSignature.literalR_nodup
+#print axioms DualTree.ForwardStarredSignature.cut_child_mem_literalR
