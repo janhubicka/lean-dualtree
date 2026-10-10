@@ -227,3 +227,5 @@ import DualTree.ForwardSignatureInteriorExact
 import DualTree.ForwardQFixedBase
 
 import DualTree.ForwardQMarkedTerminals
+
+import DualTree.ForwardQMarkerCoverage
