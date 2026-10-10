@@ -798,3 +798,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSortedFrontiers.coordinate_injective
 #print axioms DualTree.ForwardSortedFrontiers.coordinate_frontier
 #print axioms DualTree.ForwardSortedFrontiers.coordinate_frontier_order
+
+#print axioms DualTree.ForwardUniformConeDomains.commonTail_value
+#print axioms DualTree.ForwardUniformConeDomains.projectCommon_prefix
+#print axioms DualTree.ForwardUniformConeDomains.projectCommon_cone
+#print axioms DualTree.ForwardUniformConeDomains.projectCommon_height
+#print axioms DualTree.ForwardUniformConeDomains.projectCommon_inverse
+#print axioms DualTree.ForwardUniformConeDomains.extraLevelTail
+#print axioms DualTree.ForwardUniformConeDomains.extraLevelTail_value

@@ -1558,6 +1558,55 @@ required height separations.
 The global colouring pullback and
 Hales--Jewett step remain open.
 
+\paragraph{Uniform safe cone heights for corrected forward-complete $Q$.} \ok
+The new module \lean{DualTree.ForwardUniformConeDomains}
+adapts the already established frontier rank
+band to the actual forward-complete
+canonical embedding and its inverse.
+If $T$ is $k$-complete under the
+\emph{forward}-lexicographic auxiliary
+order, the final cut has intrinsic
+rank $m$, and $f$ is a minimal
+support frontier beyond the inclusive
+cut, then
+\[
+ h_T(f)\le m+1.
+\]
+Consequently, every local tail
+$z\in b^{<\,k-(m+1)}$ fits safely
+after the genuine inverse address
+$I_T^{-1}(f)$:
+\[
+ |I_T^{-1}(f)|+|z|<k.
+\]
+The typed uniform projection
+$P_f(z)=I_T(I_T^{-1}(f)^\frown z)$
+lies in $T$ and in the ambient
+cone above $f$; it preserves local
+prefixes and has exact equations
+\[
+ h_T(P_f(z))=h_T(f)+|z|,
+ \qquad
+ I_T^{-1}(P_f(z))=I_T^{-1}(f)^\frown z.
+\]
+The module also constructs the
+extra-complete-level alternative:
+a $(k+1)$-complete support allows
+the original local tail height
+$k-m$ without violating the
+canonical domain.
+All seven audited declarations passed the Lean build and transitive
+axiom checks on PR~\#168's development branch.
+The source's original recursive
+dimension bounds and the
+mixed-product Hales--Jewett
+application must be adjusted
+to whichever domain repair is
+chosen. The sorted-frontier and
+full corrected $Q$-tree proofs
+are still being completed; the
+colouring pullback remains open.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
