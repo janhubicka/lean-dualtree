@@ -1173,6 +1173,40 @@ of the correct forward frontier order.
 Comparisons with \emph{retained interior vertices}
 and the global $g_w$/colouring proof remain open.
 
+\paragraph{Corrected Definition~26 boundary and literal marker set.} \todo
+The existing source-facing implementation of
+Definition~26 and its literal marker set $R$
+are tied to the printed length-first
+\emph{reverse}-lexicographic auxiliary order.
+A repaired proof must not silently re-use
+these objects after changing the order.
+We therefore introduce the independent
+forward-order definitions
+\lean{DualTree.ForwardSignatureBoundary.BeforeCut},
+\lean{DualTree.ForwardSignatureBoundary.Boundary},
+\lean{DualTree.ForwardStarredSignature.signatureTree}
+and
+\lean{DualTree.ForwardStarredSignature.literalR}
+in a separate module without altering any
+printed-source formalizations.
+The corrected path boundary exists uniquely
+as soon as the selected leaf lies outside
+the strict forward cut. For a genuine last
+interior cut, this hypothesis follows from
+the generic full-before branching lemma:
+no earlier support node can be a leaf.
+The module also checks that every ambient
+child $t_0^\frown i$ is included in the
+corrected $R$, and that $R$ is duplicate-free.
+These ten source-facing declarations await
+the Lean build and transitive axiom audit.
+The next obligations are forward-order
+boundary antichain/frontier uniqueness,
+marker-to-coordinate injection and the
+semi-complete $Q$ support theorem.
+The original reverse-order construction
+and its counterexample remain intact.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
