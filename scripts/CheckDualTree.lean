@@ -875,3 +875,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQMarkerRanks.oldBase_strictPrefix_projection_iff_marker
 #print axioms DualTree.ForwardQMarkerRanks.markedProjection_height_eq_marker_prefix_card
 #print axioms DualTree.ForwardQMarkerRanks.equal_Q_height_of_equal_marker_masks
+
+#print axioms DualTree.ForwardQRetainedRanks.source_predecessor_interior
+#print axioms DualTree.ForwardQRetainedRanks.original_interior_Q_height_eq_source
