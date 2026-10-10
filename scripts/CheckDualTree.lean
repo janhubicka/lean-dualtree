@@ -881,3 +881,12 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.ForwardQFinalCutOrder.Q_interior_before_cut
 #print axioms DualTree.ForwardQFinalCutOrder.Q_emptyAfterB
+
+#print axioms DualTree.ForwardQRooted.source_nonsingleton
+#print axioms DualTree.ForwardQRooted.source_has_root
+#print axioms DualTree.ForwardQRooted.sourceRoot_mem
+#print axioms DualTree.ForwardQRooted.sourceRoot_prefix
+#print axioms DualTree.ForwardQRooted.sourceRoot_interior
+#print axioms DualTree.ForwardQRooted.sourceRoot_prefix_literal_marker
+#print axioms DualTree.ForwardQRooted.sourceRoot_prefix_Q
+#print axioms DualTree.ForwardQRooted.Q_rootedB
