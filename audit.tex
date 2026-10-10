@@ -895,7 +895,7 @@ The fully checked example has complete height three;
 the self-contained author note gives the elementary
 arbitrary-height construction independently.
 
-\paragraph{Repair attempt: global forward order versus frontier-only reindexing.} \todo
+\paragraph{Repair attempt: global forward order versus frontier-only reindexing.} \ok/\todo
 The first counterexample disappears if one merely lists the
 two frontier coordinates in forward lexicographic order,
 while retaining all other printed conventions.
@@ -954,7 +954,7 @@ test, $176/2509$ cases still fail.
 The printed-order height-four sample contains $1038$
 clause-(ii) and $88$ clause-(iii) failures, with $16$
 overlap. These are \emph{finite computational evidence}
-and await the new CI regression step.
+and all recorded binary regression tests passed CI in PR~\#149.
 
 \paragraph{Why global forward lex agrees with the skew rank axioms.} \todo
 The candidate global order is not merely a change of
@@ -1000,6 +1000,34 @@ They would establish the desired direction of order
 preservation for the \emph{globally} corrected convention.
 They do not validate the whole repaired $Q$ map, and
 the published source remains frozen.
+
+\paragraph{Ternary cross-check of the global forward-order candidate.} \todo
+For $b=3$, the complete support $T=3^{<3}$
+with root-cut source $S=\{\varnothing,0,1,2\}$
+gives a second concrete obstruction. The printed
+reverse-lex frontier enumeration $(2,1,0)$ and
+the vector $1$-complete marked tuple
+$(\varnothing,\varnothing,0)$ produce
+$\{\varnothing,00,1,2\}$, violating clause~(ii).
+With forward-lex auxiliary order used consistently
+in both the source and frontier enumeration, the
+same locally marked tuple produces
+$\{\varnothing,0,1,20\}$, which satisfies every
+semi-complete skew clause. These shape checks are
+formalized in
+\lean{DualTree.QTernaryOrderAudit}.
+
+The independent finite regression
+\texttt{scripts/check-q-order-repair-ternary.py}
+exhaustively enumerates all relevant ternary
+semi-complete sources and vector $1$-complete
+singleton marked tuples at height three:
+$40$ sources and $1600$ admissible $Q$ inputs
+per order convention. The printed order yields
+$480$ failures (all clause~(ii)); the global
+forward order yields none. These results are
+pending CI, and they remain \emph{finite checks},
+not a repaired Lemma~27 for arbitrary $b$.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample

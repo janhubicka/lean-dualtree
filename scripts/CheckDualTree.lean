@@ -678,3 +678,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.CanonicalForwardAux.canonicalEmbedding_lex_mono
 #print axioms DualTree.CanonicalForwardAux.canonicalEmbedding_forward_mono_of_conditions
 #print axioms DualTree.CanonicalForwardAux.canonicalEmbedding_forward_mono_of_complete
+
+#print axioms DualTree.QTernaryOrderAudit.source_is_printed_semiComplete
+#print axioms DualTree.QTernaryOrderAudit.source_is_forward_semiComplete
+#print axioms DualTree.QTernaryOrderAudit.marked_is_vector_one_complete
+#print axioms DualTree.QTernaryOrderAudit.printed_Q_fails_condII
+#print axioms DualTree.QTernaryOrderAudit.globally_forward_Q_is_semiComplete

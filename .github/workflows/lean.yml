@@ -49,6 +49,9 @@ jobs:
       - name: Regress finite Q order repair candidates
         run: python3 scripts/check-q-order-repair.py
 
+      - name: Regress ternary Q order repair candidates
+        run: python3 scripts/check-q-order-repair-ternary.py
+
       - name: Check TeX ledger encoding
         run: python3 scripts/check-audit-tex.py
 
@@ -56,7 +59,7 @@ jobs:
         run: |
           mkdir -p proof-audit
           lake env lean scripts/CheckDualTree.lean > proof-audit/dualtree-axioms.log 2>&1
-          python3 scripts/check-axiom-log.py proof-audit/dualtree-axioms.log 562 || {
+          python3 scripts/check-axiom-log.py proof-audit/dualtree-axioms.log 567 || {
             cat proof-audit/dualtree-axioms.log
             exit 1
           }
