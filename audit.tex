@@ -895,6 +895,67 @@ The fully checked example has complete height three;
 the self-contained author note gives the elementary
 arbitrary-height construction independently.
 
+\paragraph{Repair attempt: global forward order versus frontier-only reindexing.} \todo
+The first counterexample disappears if one merely lists the
+two frontier coordinates in forward lexicographic order,
+while retaining all other printed conventions.
+However, \emph{reindexing the frontiers alone does not repair
+Lemma~27}. In the binary support $T=2^{<4}$, take the
+printed semi-complete skew source
+\[
+ S=\{\varnothing,0,1,10,11\},\qquad t_0=1.
+\]
+Then $R=\{0,10,11\}$ and the frontier set equals $R$.
+Choose the one-letter marked tail $0$ at every $D_2$
+coordinate. Because all selected tails have length one,
+the marked tuple is vector $1$-complete in \emph{either}
+enumeration order. The displayed $Q$ produces
+\[
+ S_w=\{\varnothing,1,00,100,110\}.
+\]
+Inside $S_w$, the two nodes $00$ and $1$ have the same
+intrinsic height one, with $00<_{\rm lex}1$, but
+$|00|=2>|1|=1$. This is another exact failure of clause~(ii),
+and it persists if only the $D_2$ coordinates are reindexed.
+Lean tests the source, equal-tail starred admissibility,
+and the failed condition in
+\lean{DualTree.QOrderRepairAudit} (pending CI).
+
+A coherent \emph{candidate} is to change the
+auxiliary linear order \emph{globally}: in Section~3.1,
+replace the equal-length comparison
+$t\le_{\rm lex}s$ by $s\le_{\rm lex}t$,
+and propagate this convention through all definitions,
+signature cuts, canonical embeddings, and frontier
+enumerations. Then the printed source $S$ above ceases
+to be skew. Its mirror
+$\{\varnothing,0,1,00,01\}$ is semi-complete skew in
+the global forward order, and the corresponding finite
+reconstruction
+$\{\varnothing,0,10,000,010\}$ is also semi-complete
+skew. These are individual kernel tests, \emph{not}
+a general proof of repaired Lemma~27 or a correction
+to the separately refuted Remark~1.
+
+Independent exhaustive regressions, added as
+\texttt{scripts/check-q-order-repair.py}, test
+the literal signature/frontier geometry and all
+vector $1$-complete singleton marked tuples for
+full binary supports of intrinsic heights three
+and four, and all $45$ complete skew supports of
+intrinsic height three embedded in $2^{<4}$.
+For the consistent forward-order convention the
+respective tests find zero failures among $49$,
+$2509$, and $2205$ admissible $Q$-tree instances.
+For the printed reverse-lex convention, they find
+$14$, $1110$, and $518$ distinct failures.
+For frontier-only reindexing in the full height-four
+test, $176/2509$ cases still fail.
+The printed-order height-four sample contains $1038$
+clause-(ii) and $88$ clause-(iii) failures, with $16$
+overlap. These are \emph{finite computational evidence}
+and await the new CI regression step.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
