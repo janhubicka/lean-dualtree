@@ -1493,6 +1493,28 @@ a compatible adjustment. In particular,
 arbitrary longer tails cannot be admitted
 by silently composing an out-of-domain map.
 
+\paragraph{Transitivity of the repaired forward auxiliary order.} \todo
+The length-first forward-lex comparison is now
+verified as a genuine linear order at the
+proposition level: reflexivity, totality and
+antisymmetry were established earlier, and
+\lean{DualTree.ForwardAuxTransitivity.finLexLE_trans}
+and
+\lean{DualTree.ForwardAuxTransitivity.forwardAux_trans}
+provide transitivity for all finite words.
+These two declarations await Lean CI and a
+transitive axiom audit. This result allows
+the set of actual forward-cut frontiers
+to be \emph{sorted} by the corrected
+auxiliary order, independently of the input
+list order, and provides the comparator
+invariant needed to show that Definition~20's
+vector $1$-completeness orders marked
+coordinates consistently with the projected
+$Q$-tree. A sorted enumeration and sorted
+coordinate map are the next steps; the
+global Lemma~27 remains open.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
