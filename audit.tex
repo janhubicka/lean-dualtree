@@ -1294,7 +1294,7 @@ The next tasks are the corrected marker antichain,
 a genuine $R\hookrightarrow F$ injection, and
 the global Q support reconstruction.
 
-\paragraph{Forward-cut boundary antichain and marker assignment injectivity.} \todo
+\paragraph{Forward-cut boundary antichain and marker assignment injectivity.} \ok
 Unique-frontier existence for individual repaired markers
 does not on its own make the map from the literal marker
 set $R$ to frontiers injective. The generic lemma
@@ -1307,8 +1307,7 @@ The theorem
 then verifies injection of \emph{any} chosen extending
 frontier map on a typed list of literal markers, provided
 each marker is an inclusive first-exit boundary.
-Four generic declarations await CI and transitive axiom
-checks. The source-specific missing argument is to show
+All four generic declarations passed Lean CI and the transitive axiom audit (PR~\#160). The source-specific missing argument is to show
 that every point of the corrected literal $R$ is an
 inclusive boundary. That requires persistence of all
 old interior vertices except the final cut in the
@@ -1318,6 +1317,44 @@ After that, the checked unique-frontier choice gives
 the collision-free $D_2$ coordinate injection.
 The full repaired $Q$ tree, word coding, and colouring
 remain open.
+
+\paragraph{Corrected signature interior persistence and all literal $R$ boundaries.} \ok
+The printed-order proof of interior persistence cannot be
+silently reused for the globally corrected order.
+The new theorem
+\lean{DualTree.ForwardSignatureInteriorPersistence.interiorPersists_of_maxInterior}
+proves directly that each old interior vertex other
+than the final forward auxiliary cut remains interior
+in the corrected signature: its immediate successor
+either remains interior or is an exceptional leaf
+whose first boundary supplies a strict signature
+descendant. The proof also checks the strict forward
+initial segment is downward closed under ambient
+prefixes.
+Consequently every terminal marker of the
+\emph{literal} corrected signature
+$S'\setminus(\operatorname{Int}(S')\cup\{t_0\})$
+is an actual exceptional-leaf boundary, not a
+lost original interior vertex.
+Together with the immediate children of $t_0$,
+the theorem
+\lean{DualTree.ForwardSignatureInteriorPersistence.literalR_is_inclusive_boundary}
+establishes that \emph{every} point in the
+corrected literal $R$ is a first-exit boundary
+of the \emph{inclusive} forward cut.
+The theorem
+\lean{DualTree.ForwardSignatureInteriorPersistence.literalR_has_support_descendant}
+provides a descendant in the enclosing complete
+forward skew support, and
+\lean{DualTree.ForwardSignatureInteriorPersistence.literalR_unique_frontier}
+supplies each literal marker a unique minimal
+outside-cut frontier.
+All seven source-facing declarations passed Lean CI and transitive axiom auditing in PR~\#161; the clean integration is separately checked.
+Combined with the independently formalized
+first-exit antichain principle, this should give
+the collision-free $R\to D_2$ coordinate map.
+The full repaired $Q$ tree and colouring argument
+remain to be proved.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample

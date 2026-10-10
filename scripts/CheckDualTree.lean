@@ -735,3 +735,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardMarkerAntichain.eq_of_common_extension
 #print axioms DualTree.ForwardMarkerAntichain.assignment_injective
 #print axioms DualTree.ForwardMarkerAntichain.boundary_list_frontier_injective
+
+#print axioms DualTree.ForwardSignatureInteriorPersistence.beforeCut_of_prefix
+#print axioms DualTree.ForwardSignatureInteriorPersistence.mem_signatureTree_iff
+#print axioms DualTree.ForwardSignatureInteriorPersistence.interiorPersists_of_maxInterior
+#print axioms DualTree.ForwardSignatureInteriorPersistence.signatureTerminal_is_exceptional_boundary
+#print axioms DualTree.ForwardSignatureInteriorPersistence.literalR_is_inclusive_boundary
+#print axioms DualTree.ForwardSignatureInteriorPersistence.literalR_has_support_descendant
+#print axioms DualTree.ForwardSignatureInteriorPersistence.literalR_unique_frontier
