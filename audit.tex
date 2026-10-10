@@ -1640,6 +1640,49 @@ points, nor do they construct
 the output word $g_w$ or verify
 colouring preservation.
 
+\paragraph{Ambient-length monotonicity of the actual sorted forward cone projections.} \ok
+The previously checked common domain and
+forward-sorted frontier enumeration can now
+be combined without introducing untyped
+canonical maps or arbitrary list orders.
+The module \lean{DualTree.ForwardOrderedProjections}
+defines, for every actual sorted frontier
+index $i$, the support-valued projection
+\[
+ u_i=I_T(I_T^{-1}(f_i)^\frown z_i),
+ \qquad z_i\in b^{<\,k-(m+1)}.
+\]
+It verifies $f_i\sqsubseteq u_i$ and
+\[
+ h_T(u_i)=h_T(f_i)+|z_i|.
+\]
+For $i<j$, the forward-sorted frontier
+relation gives $f_i\preceq_{\rm fwd} f_j$.
+If the marked singleton points satisfy
+$|z_i|\le |z_j|$, as required by
+Definition~20, the theorem
+\lean{DualTree.ForwardOrderedProjections.projectAt_forward_order}
+gives $u_i\preceq_{\rm fwd}u_j$,
+and \lean{DualTree.ForwardOrderedProjections.projectAt_length_le}
+establishes the actual ambient-word
+length inequality $|u_i|\le |u_j|$.
+The projected nodes are also injective
+over distinct sorted frontier indices.
+All seven declarations passed the complete Lean build and transitive
+axiom audit on PR~\#170's stacked branch.
+This completes the \emph{marked-to-marked
+ambient-length monotonicity} input
+for skew clause~(ii); proving that the
+newly projected nodes have the required
+intrinsic levels \emph{inside $S_w$}, and
+the comparisons with retained old
+interior nodes, are still separate.
+The starred product's vector
+$1$-completeness must be connected
+to the literal sorted bullet
+coordinates in the forthcoming
+source-specific $Q$ construction.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}

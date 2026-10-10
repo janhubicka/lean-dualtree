@@ -812,3 +812,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSortedMixedProduct.bulletIndex_bijective
 #print axioms DualTree.ForwardSortedMixedProduct.assemble_words
 #print axioms DualTree.ForwardSortedMixedProduct.assemble_marker_point
+
+#print axioms DualTree.ForwardOrderedProjections.frontierAt_spec
+#print axioms DualTree.ForwardOrderedProjections.frontierAt_injective
+#print axioms DualTree.ForwardOrderedProjections.projectAt_cone
+#print axioms DualTree.ForwardOrderedProjections.projectAt_height
+#print axioms DualTree.ForwardOrderedProjections.projectAt_forward_order
+#print axioms DualTree.ForwardOrderedProjections.projectAt_length_le
+#print axioms DualTree.ForwardOrderedProjections.projectAt_injective
