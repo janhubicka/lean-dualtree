@@ -177,3 +177,5 @@ import DualTree.QLengthStarredCoordinateOrder
 import DualTree.QOrderRepairAudit
 
 import DualTree.ForwardOrderCompatibility
+
+import DualTree.CanonicalForwardAux

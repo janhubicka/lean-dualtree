@@ -673,3 +673,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardOrderCompatibility.finLexLE_of_ordered_cones
 #print axioms DualTree.ForwardOrderCompatibility.forwardAux_of_equal_height_lex
 #print axioms DualTree.ForwardOrderCompatibility.forwardAux_of_lower_height
+
+#print axioms DualTree.CanonicalForwardAux.walk_lex_of_admissible
+#print axioms DualTree.CanonicalForwardAux.canonicalEmbedding_lex_mono
+#print axioms DualTree.CanonicalForwardAux.canonicalEmbedding_forward_mono_of_conditions
+#print axioms DualTree.CanonicalForwardAux.canonicalEmbedding_forward_mono_of_complete

@@ -978,6 +978,29 @@ canonical embedding of a complete skew support preserves
 the repaired forward auxiliary order; they do not alone
 establish Lemma~27. Pending Lean CI and transitive axiom checks.
 
+\paragraph{Candidate repair of canonical order preservation.} \ok
+The printed page~8 assertion that the canonical map $I_T$
+preserves the length-first reverse-lex order is already
+refuted by a kernel-checked three-node example.
+For the \emph{forward}-lex candidate replacement there
+is now a structural proof plan, not merely finite evidence.
+First, the canonical support walk preserves ordinary lex
+order on all admissible source addresses, since the first
+different ambient direction is preserved by the walk
+(\lean{DualTree.CanonicalForwardAux.walk_lex_of_admissible}).
+The proved admissibility of all bounded addresses yields
+\lean{DualTree.CanonicalForwardAux.canonicalEmbedding_lex_mono}.
+Next, the skew axioms on intrinsic height and ambient
+length make forward auxiliary comparison monotone along
+both same-rank and different-rank pairs, yielding
+\lean{DualTree.CanonicalForwardAux.canonicalEmbedding_forward_mono_of_complete}
+for any nonsingleton complete skew support. All four new declarations passed the Lean build and transitive
+axiom audit in PR~\#151, bringing the checked endpoints to 562.
+They would establish the desired direction of order
+preservation for the \emph{globally} corrected convention.
+They do not validate the whole repaired $Q$ map, and
+the published source remains frozen.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
