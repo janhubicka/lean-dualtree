@@ -690,3 +690,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.CanonicalForwardAuxIso.forwardAux_antisymm
 #print axioms DualTree.CanonicalForwardAuxIso.canonicalEmbedding_forward_reflect
 #print axioms DualTree.CanonicalForwardAuxIso.canonicalEmbedding_forward_iff
+
+#print axioms DualTree.ForwardCutTerminalOrder.cut_forwardAux_before_terminal
+#print axioms DualTree.ForwardCutTerminalOrder.terminal_height_ge_cut
+#print axioms DualTree.ForwardCutTerminalOrder.terminal_not_lex_before_cut_at_same_height
