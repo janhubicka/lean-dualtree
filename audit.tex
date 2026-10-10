@@ -1493,7 +1493,7 @@ a compatible adjustment. In particular,
 arbitrary longer tails cannot be admitted
 by silently composing an out-of-domain map.
 
-\paragraph{Transitivity of the repaired forward auxiliary order.} \todo
+\paragraph{Transitivity of the repaired forward auxiliary order.} \ok
 The length-first forward-lex comparison is now
 verified as a genuine linear order at the
 proposition level: reflexivity, totality and
@@ -1502,8 +1502,8 @@ antisymmetry were established earlier, and
 and
 \lean{DualTree.ForwardAuxTransitivity.forwardAux_trans}
 provide transitivity for all finite words.
-These two declarations await Lean CI and a
-transitive axiom audit. This result allows
+Both declarations passed Lean CI and the transitive axiom audit
+in PR~\#166. This result allows
 the set of actual forward-cut frontiers
 to be \emph{sorted} by the corrected
 auxiliary order, independently of the input
@@ -1514,6 +1514,49 @@ coordinates consistently with the projected
 $Q$-tree. A sorted enumeration and sorted
 coordinate map are the next steps; the
 global Lemma~27 remains open.
+
+\paragraph{A canonically forward-sorted frontier list and ordered literal $D_2$ coordinates.} \ok
+Definition~20's starred marked-point condition
+depends on the \emph{order} of the $D_2$
+coordinates, not just their existence.
+The previously proved collision-free map
+$R\to\operatorname{Fin}(d)$ was defined
+using a filtered support list and could
+violate the prescribed auxiliary ordering.
+The new module
+\lean{DualTree.ForwardSortedFrontiers}
+sorts the actual outside-cut frontier list
+by the globally repaired length-first
+forward-lexicographic comparison.
+The independent order transitivity proof
+makes this a valid total comparator.
+The exact frontier membership predicate
+and cardinality are preserved under the
+sort, duplicate-freeness is retained,
+and the sorted list satisfies
+\[
+  i<j \ \Longrightarrow\
+  t_i\preceq_{\rm fwd}t_j.
+\]
+The new literal marker coordinates are
+proved injective, retrieve their designated
+unique minimal frontiers, and satisfy
+the corresponding index-order theorem
+\lean{DualTree.ForwardSortedFrontiers.coordinate_frontier_order}.
+This removes the last *enumeration*
+problem in transporting Definition~20
+to the corrected $Q$ map.
+All eleven source-facing declarations passed the complete Lean build
+and transitive axiom audit on PR~\#167.
+The remaining nontrivial geometric step is
+to prove that each projected terminal
+has the correct intrinsic rank in the
+\emph{new} $S_w$ support and that the
+selected word tails satisfy the forward
+complete-T projection domain and
+required height separations.
+The global colouring pullback and
+Hales--Jewett step remain open.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample

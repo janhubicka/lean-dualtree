@@ -786,3 +786,15 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.ForwardAuxTransitivity.finLexLE_trans
 #print axioms DualTree.ForwardAuxTransitivity.forwardAux_trans
+
+#print axioms DualTree.ForwardSortedFrontiers.frontiers_perm
+#print axioms DualTree.ForwardSortedFrontiers.mem_frontiers_iff
+#print axioms DualTree.ForwardSortedFrontiers.frontiers_nodup
+#print axioms DualTree.ForwardSortedFrontiers.frontiers_length
+#print axioms DualTree.ForwardSortedFrontiers.comparator_trans
+#print axioms DualTree.ForwardSortedFrontiers.comparator_total
+#print axioms DualTree.ForwardSortedFrontiers.frontiers_pairwise
+#print axioms DualTree.ForwardSortedFrontiers.frontiers_get_order
+#print axioms DualTree.ForwardSortedFrontiers.coordinate_injective
+#print axioms DualTree.ForwardSortedFrontiers.coordinate_frontier
+#print axioms DualTree.ForwardSortedFrontiers.coordinate_frontier_order
