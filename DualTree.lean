@@ -207,3 +207,5 @@ import DualTree.ForwardCompleteBijection
 import DualTree.ForwardLiteralFrontierCoordinates
 
 import DualTree.ForwardCanonicalConeCoordinates
+
+import DualTree.ForwardAuxTransitivity
