@@ -94,7 +94,6 @@ theorem Q_height_eq_oldBase_prefix_card
     simp only [List.mem_toFinset, Finset.mem_filter,
       Q_preds_iff_oldBase c x s hs u,
       SkewBranchGeometry.strictPrefixB_iff]
-    tauto
   calc
     SkewTree.heightAt (nodes c x).toList s =
       (SkewTree.preds (nodes c x).toList s).length := rfl
