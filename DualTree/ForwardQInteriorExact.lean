@@ -66,8 +66,10 @@ theorem exceptional_boundary_mem_literalR
       O cut hout t.1 t.2).1
   have hrNe : r ≠ cut := by
     intro heq
-    subst r
-    exact hrOutside (CanonicalForwardAuxIso.forwardAux_refl cut)
+    have hcutEarly : ForwardAux r cut := by
+      rw [heq]
+      exact CanonicalForwardAuxIso.forwardAux_refl cut
+    exact hrOutside hcutEarly
   have hrTerminal :
       r ∈ ForwardStarredSignature.signatureTerminalMarkers
         O cut hout := by
