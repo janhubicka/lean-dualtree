@@ -223,3 +223,5 @@ import DualTree.ForwardSourceQTree
 import DualTree.VectorOneMarkedLengths
 
 import DualTree.ForwardSignatureInteriorExact
+
+import DualTree.ForwardQFixedBase

@@ -1795,6 +1795,40 @@ interior vertex is lost during replacement.
 It does not settle the full $Q$ skewness
 or the colouring argument.
 
+\paragraph{The fixed old base of the corrected source-facing $Q$ tree.} \todo
+Instantiating the independent exact-signature-interior
+proof in the genuine
+\lean{DualTree.ForwardSourceQTree.Frame}
+gives
+\[
+ \operatorname{oldBase}
+ =\operatorname{Int}(S')\cup\{t_0\}
+ =\operatorname{Int}(S)
+\]
+for the \emph{actual} typed repaired map.
+The theorem
+\lean{DualTree.ForwardQFixedBase.oldBase_mem_iff_original_interior}
+records this at the level of node membership.
+All fixed base vertices are therefore
+forward-auxiliary at or before $t_0$
+(\lean{oldBase_before_cut}) and belong to
+the enclosing genuinely forward-complete
+support $T$ (\lean{oldBase_subset_complete}).
+Every original interior node, in particular
+$t_0$, is present in the new finite
+$Q$ support (\lean{originalInterior_mem_Q}
+and \lean{cut_mem_Q}).
+These five declarations await stacked CI
+and transitive axiom auditing. With them,
+the explicit base-before-cut hypothesis of
+\lean{ForwardQMarkedTerminals.markedProjection_not_interior}
+can be discharged, and the corrected
+$Q$ tree has no new interior vertices.
+Still open are the converse interior
+persistence inside $S_x$, exact intrinsic
+heights, all skew order clauses, and
+the variable word and colouring.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
