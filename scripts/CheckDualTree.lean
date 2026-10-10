@@ -701,3 +701,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardFrontierRanks.frontier_rank_band
 #print axioms DualTree.ForwardFrontierRanks.ordered_frontiers_rank_le
 #print axioms DualTree.ForwardFrontierRanks.ordered_frontiers_projected_rank_mono
+
+#print axioms DualTree.ForwardProjectedTerminalOrder.lex_extensions_of_incomparable
+#print axioms DualTree.ForwardProjectedTerminalOrder.lex_of_equal_rank_forwardAux
+#print axioms DualTree.ForwardProjectedTerminalOrder.frontiers_incomparable
+#print axioms DualTree.ForwardProjectedTerminalOrder.ordered_frontier_projections_forwardAux
+#print axioms DualTree.ForwardProjectedTerminalOrder.ordered_frontier_projections_length_le
