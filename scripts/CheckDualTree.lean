@@ -724,3 +724,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardInclusiveFrontier.unique_frontier_of_boundary
 #print axioms DualTree.ForwardInclusiveFrontier.meetClosed_complete_forward
 #print axioms DualTree.ForwardInclusiveFrontier.unique_frontier_complete_forward
+
+#print axioms DualTree.ForwardMarkerFrontierCoverage.exceptional_boundary_is_inclusive
+#print axioms DualTree.ForwardMarkerFrontierCoverage.exceptional_boundary_unique_frontier
+#print axioms DualTree.ForwardMarkerFrontierCoverage.cut_child_is_inclusive_boundary
+#print axioms DualTree.ForwardMarkerFrontierCoverage.cut_child_has_support_descendant
+#print axioms DualTree.ForwardMarkerFrontierCoverage.cut_child_unique_frontier
