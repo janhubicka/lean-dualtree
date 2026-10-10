@@ -718,3 +718,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardStarredSignature.interior_mem_signatureTree
 #print axioms DualTree.ForwardStarredSignature.literalR_nodup
 #print axioms DualTree.ForwardStarredSignature.cut_child_mem_literalR
+
+#print axioms DualTree.ForwardInclusiveFrontier.forwardAux_of_prefix
+#print axioms DualTree.ForwardInclusiveFrontier.outside_of_prefix
+#print axioms DualTree.ForwardInclusiveFrontier.unique_frontier_of_boundary
+#print axioms DualTree.ForwardInclusiveFrontier.meetClosed_complete_forward
+#print axioms DualTree.ForwardInclusiveFrontier.unique_frontier_complete_forward
