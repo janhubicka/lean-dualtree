@@ -783,3 +783,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardCanonicalConeCoordinates.project_height
 #print axioms DualTree.ForwardCanonicalConeCoordinates.inverse_project
 #print axioms DualTree.ForwardCanonicalConeCoordinates.inverse_project_tail
+
+#print axioms DualTree.ForwardAuxTransitivity.finLexLE_trans
+#print axioms DualTree.ForwardAuxTransitivity.forwardAux_trans
