@@ -2137,6 +2137,54 @@ and the last branching witness still
 need proof. The word $g_x$ and
 colouring pullback remain untouched.
 
+\paragraph{Ambient meet closure of the repaired literal source skeleton.} \todo
+The proposed global forward-order repair requires
+careful distinction of the \emph{source}
+signature skeleton and its reconstructed
+$Q$-image: a prefix-poset isomorphism does not
+automatically preserve ambient longest-prefix
+meets. The source-side assertions are collected
+in \lean{DualTree.ForwardQLiteralSkeletonMeets}.
+
+Using the generic semi-complete skew branching
+theorems, a genuinely forward-semi-complete
+starred source $S$ is ambient meet-closed.
+Every literal marker $r\in R$ has an
+actual descendant in $S$, not only in
+the enclosing complete support $T$:
+exceptional-leaf boundaries have their
+defining leaf, and immediate cut-children
+have a support descendant from full
+semi-complete branching at the cut.
+The inclusive forward-cut first-boundary
+property makes the markers $R$ a prefix
+antichain and prohibits a marker from
+prefixing any old interior vertex.
+The general marker/interior meet theorem
+therefore gives, for any two distinct
+labels $u,v\in\operatorname{Int}(S)\cup R$,
+\[
+ u\wedge v\in\operatorname{Int}(S).
+\]
+In particular the \emph{actual} corrected
+literal source skeleton is ambient meet-closed
+(\lean{sourceSkeleton_meetClosed}).
+All seven source-facing declarations await
+the Lean build and transitive axiom audit.
+
+The image-side step is still separate:
+one must show that the actual sorted
+D2 replacement fixes all source-interior
+meets and preserves the first ambient
+direction at each old interior node.
+After that, the generic
+\lean{DualTree.MeetImageTransfer}
+can prove ambient Q meet-closure; neither
+rootedness nor prefix equivalence alone
+is enough. Full branching, skew order
+clauses, word construction and colouring
+remain open.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
