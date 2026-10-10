@@ -1730,6 +1730,32 @@ the word $g_x$, or establish
 the full colouring pullback
 and Ramsey induction.
 
+\paragraph{Deriving marked-point length order from Definition~20 itself.} \ok
+Definition~20 requires the sorted $D_2$ marked-point
+singleton supports to be vector $1$-complete skew.
+For any ordered family of singleton local nodes
+$(s_i)_{i<d}$, this entails
+\[
+ i<j\quad\Longrightarrow\quad |s_i|\le |s_j|.
+\]
+The theorem
+\lean{DualTree.VectorOneMarkedLengths.lengths_mono_of_vectorOneComplete}
+derives the inequality directly from
+\lean{VectorSkew.vectorCompleteB}, via the same-level
+vector-skew condition, without importing it as
+an unrelated extra assumption.
+The original branch was fully Lean/axiom checked
+after adding the missing directional enumeration
+import (PR~\#171). This verification applies for
+arbitrary $b,d$ and auxiliary convention.
+To instantiate in the actual corrected $Q$ map
+one must enumerate the selected $D_2$
+bullet indices in their sorted frontier
+order, then apply this result to their
+genuine vector-$1$-complete singleton
+marked supports. This source-specific
+W-starred domain bridge remains open.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}

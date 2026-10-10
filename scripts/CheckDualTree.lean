@@ -828,3 +828,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSourceQTree.nodes_eq_of_gamma2_smooth
 #print axioms DualTree.ForwardSourceQTree.markedProjection_forward_order
 #print axioms DualTree.ForwardSourceQTree.markedProjection_length_le
+
+#print axioms DualTree.VectorOneMarkedLengths.singleton_at_zero
+#print axioms DualTree.VectorOneMarkedLengths.lengths_mono_of_sameLevelOrdered
+#print axioms DualTree.VectorOneMarkedLengths.lengths_mono_of_vectorOneComplete
