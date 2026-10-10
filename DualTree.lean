@@ -233,3 +233,5 @@ import DualTree.ForwardQMarkerCoverage
 import DualTree.ForwardQSourceTerminals
 
 import DualTree.ForwardQInteriorExact
+
+import DualTree.ForwardQIntrinsicRanks
