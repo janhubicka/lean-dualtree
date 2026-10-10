@@ -775,3 +775,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardLiteralFrontierCoordinates.frontierMember_injective
 #print axioms DualTree.ForwardLiteralFrontierCoordinates.coordinate_injective
 #print axioms DualTree.ForwardLiteralFrontierCoordinates.coordinate_frontier
+
+#print axioms DualTree.ForwardCanonicalConeCoordinates.address_empty
+#print axioms DualTree.ForwardCanonicalConeCoordinates.project_empty
+#print axioms DualTree.ForwardCanonicalConeCoordinates.project_prefix
+#print axioms DualTree.ForwardCanonicalConeCoordinates.project_cone
+#print axioms DualTree.ForwardCanonicalConeCoordinates.project_height
+#print axioms DualTree.ForwardCanonicalConeCoordinates.inverse_project
+#print axioms DualTree.ForwardCanonicalConeCoordinates.inverse_project_tail

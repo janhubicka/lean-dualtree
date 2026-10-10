@@ -205,3 +205,5 @@ import DualTree.ForwardCompleteEmbedding
 import DualTree.ForwardCompleteBijection
 
 import DualTree.ForwardLiteralFrontierCoordinates
+
+import DualTree.ForwardCanonicalConeCoordinates

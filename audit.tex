@@ -1461,6 +1461,38 @@ point order. No claim of full repaired
 $Q$ skewness or colouring validity follows
 from this coordinate construction alone.
 
+\paragraph{Typed canonical cones for genuine forward-complete supports.} \ok
+The corrected forward-complete canonical bijection
+now permits a source-faithful replacement for the
+printed-order cone maps of Lemma~27.
+In \lean{DualTree.ForwardCanonicalConeCoordinates},
+the exact local domain at $t\in T$ is the set
+of tails $z$ satisfying
+\[
+ |I_T^{-1}(t)|+|z|<k,
+\]
+using the inverse for a genuinely forward-complete
+support. The projected node
+$I_T(I_T^{-1}(t)^\frown z)$ belongs to $T$,
+lies in the ambient cone of $t$, and preserves
+local prefixes and intrinsic rank increments:
+\[
+ h_T(P_t(z))=h_T(t)+|z|,\qquad
+ I_T^{-1}(P_t(z))=I_T^{-1}(t)^\frown z.
+\]
+Projection of the empty tail fixes $t$.
+All seven associated statements passed Lean CI and transitive
+axiom auditing on PR~\#165 (original development branch).
+These replace the geometry of the old
+printed-order cone API but do not imply that
+every point of the \emph{printed} mixed product
+is in their corrected intrinsic domains.
+The uniform frontier-rank budget and the
+recursive Hales--Jewett parameters still need
+a compatible adjustment. In particular,
+arbitrary longer tails cannot be admitted
+by silently composing an out-of-domain map.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
