@@ -956,6 +956,28 @@ clause-(ii) and $88$ clause-(iii) failures, with $16$
 overlap. These are \emph{finite computational evidence}
 and await the new CI regression step.
 
+\paragraph{Why global forward lex agrees with the skew rank axioms.} \todo
+The candidate global order is not merely a change of
+notation: the paper's clause~(ii) requires weakly increasing
+ambient lengths with \emph{forward}-lexicographic order
+inside each intrinsic support level, and clause~(iii)
+requires strictly increasing lengths across levels.
+The general theorems
+\lean{DualTree.ForwardOrderCompatibility.forwardAux_of_equal_height_lex}
+and
+\lean{DualTree.ForwardOrderCompatibility.forwardAux_of_lower_height}
+derive the corresponding forward auxiliary comparison
+directly from clauses~(ii) and (iii).
+The companion cone lemma
+\lean{DualTree.ForwardOrderCompatibility.finLexLE_of_ordered_cones}
+shows that ordered sibling directions in a (possibly
+stretched) support enforce ordinary lexicographic
+order on their entire ambient cones.
+These lemmas are intended as input to a proof that the
+canonical embedding of a complete skew support preserves
+the repaired forward auxiliary order; they do not alone
+establish Lemma~27. Pending Lean CI and transitive axiom checks.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
