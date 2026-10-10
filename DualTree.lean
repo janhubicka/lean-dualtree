@@ -209,3 +209,5 @@ import DualTree.ForwardLiteralFrontierCoordinates
 import DualTree.ForwardCanonicalConeCoordinates
 
 import DualTree.ForwardAuxTransitivity
+
+import DualTree.ForwardSortedFrontiers
