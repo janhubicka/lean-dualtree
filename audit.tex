@@ -1173,7 +1173,7 @@ of the correct forward frontier order.
 Comparisons with \emph{retained interior vertices}
 and the global $g_w$/colouring proof remain open.
 
-\paragraph{Corrected Definition~26 boundary and literal marker set.} \todo
+\paragraph{Corrected Definition~26 boundary and literal marker set.} \ok
 The existing source-facing implementation of
 Definition~26 and its literal marker set $R$
 are tied to the printed length-first
@@ -1198,14 +1198,61 @@ no earlier support node can be a leaf.
 The module also checks that every ambient
 child $t_0^\frown i$ is included in the
 corrected $R$, and that $R$ is duplicate-free.
-These ten source-facing declarations await
-the Lean build and transitive axiom audit.
+These ten source-facing declarations passed
+Lean CI and transitive axiom auditing (PR~\#157,
+596 audited endpoints).
 The next obligations are forward-order
 boundary antichain/frontier uniqueness,
 marker-to-coordinate injection and the
 semi-complete $Q$ support theorem.
 The original reverse-order construction
 and its counterexample remain intact.
+
+\paragraph{Corrected inclusive-cut frontier uniqueness for forward supports.} \todo
+Lemma~27 uses an \emph{inclusive} auxiliary cut
+of the complete support $T$ to define minimal
+frontiers, whereas Definition~26 uses a
+\emph{strict} auxiliary cut to locate
+signature leaf boundaries. Under the
+globally repaired forward order, these
+must continue to be distinguished.
+
+The corrected forward auxiliary order is
+closed downward along ambient prefixes:
+if $s\sqsubseteq t\preceq_{\rm fwd}t_0$,
+then $s\preceq_{\rm fwd}t_0$. Hence
+any extension of a node \emph{outside}
+the inclusive cut remains outside.
+For a minimal ambient boundary $s$
+of this inclusive cut which has a
+support descendant, ambient meet
+closure of $T$ implies that there
+is a unique minimal frontier $f\in T$
+outside the inclusive cut with
+$s\sqsubseteq f$.
+This general result is
+\lean{DualTree.ForwardInclusiveFrontier.unique_frontier_of_boundary}.
+
+Moreover, the generic complete-skew
+branching argument gives ambient meet
+closure for any nonsingleton support
+that is $k$-complete under the \emph{forward}
+auxiliary convention; it does not assume
+that the support is complete under the
+old printed-order convention.
+Thus
+\lean{DualTree.ForwardInclusiveFrontier.unique_frontier_complete_forward}
+provides the corrected analogue of the
+original source frontier theorem.
+These five declarations await CI and the
+transitive axiom audit.
+The remaining source-specific steps are
+to show that all markers in the forward
+signature's literal $R$ satisfy the
+inclusive boundary condition and have
+support descendants, prove injectivity
+of their assigned frontiers, and
+rebuild the actual Q coordinate maps.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
