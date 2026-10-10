@@ -1085,6 +1085,50 @@ satisfies clauses~(ii)--(iii).
 The large-parameter theorem and colouring part
 remain unverified.
 
+\paragraph{Forward-order frontier rank bands and projected-rank arithmetic.} \todo
+For a nonsingleton forward-auxiliary skew support
+$T$ with an interior cut $t_0$ of rank $m$,
+every minimal support point $f$ outside the
+inclusive forward-auxiliary cut satisfies
+\[
+ m\le h_T(f)\le m+1.
+\]
+The lower bound follows because a node of rank
+less than $m$ is shorter than $t_0$ by skew
+clause~(iii), hence lies \emph{inside} the auxiliary
+cut. For the upper bound, all proper support
+predecessors of a minimal outside-cut frontier
+must precede $t_0$ and therefore have rank at
+most $m$; the rank map is injective along each
+branch. The checked declarations under development
+are \lean{DualTree.ForwardFrontierRanks.frontier_rank_band}
+and its two constituent inequalities.
+
+More strongly, if frontiers $f_i,f_j$ are
+listed in the \emph{forward} auxiliary order,
+$i<j$ implies $h_T(f_i)\le h_T(f_j)$.
+A vector $1$-complete family of singleton
+$D_2$ points has nondecreasing local tail lengths
+$|s_i|\le |s_j|$; therefore
+\[
+ h_T(f_i)+|s_i|
+ \le h_T(f_j)+|s_j|.
+\]
+This gives the precise monotonicity of the
+\emph{intrinsic projected ranks in $T$}, provided
+the canonical cone-height formula is verified
+for the corrected globally forward-auxiliary
+support class. The module
+\lean{DualTree.ForwardFrontierRanks}
+formalizes both results (pending CI).
+It does not identify the ranks of these
+points in $S_w$, nor show their
+\emph{ambient word lengths} are monotone.
+Those are the two remaining geometric steps
+needed before certifying the corrected
+semi-completeness statement, independently
+of the still-open word and colouring parts.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
