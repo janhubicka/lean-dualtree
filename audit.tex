@@ -1974,7 +1974,7 @@ rooted, full-branch, last-witness axioms.
 The global variable word and colouring
 part of Lemma~27 also remain open.
 
-\paragraph{Exact intrinsic Q rank as a cardinality of old-interior prefixes.} \todo
+\paragraph{Exact intrinsic Q rank as a cardinality of old-interior prefixes.} \ok
 For every actual node $t$ in the globally
 forward-corrected $Q$ support, the new projected
 $D_2$ nodes are terminal and therefore cannot
@@ -2007,6 +2007,40 @@ It is \emph{not} yet a proof of these
 inequalities, of full branching or
 semi-complete skewness, or of the
 variable-word and colouring parts.
+
+\paragraph{Projected marker Q ranks depend only on old-interior prefix masks.} \todo
+The signature marker $r\in R$ is an inclusive
+forward-cut first-exit boundary. Every original
+interior node $s$ belongs to the inclusive cut;
+the selected projected Q point $P(r)$ extends $r$.
+The kernel-level geometric equivalence
+\[
+ s\sqsubset P(r)\quad\Longleftrightarrow\quad
+ s\sqsubset r,\qquad s\in\operatorname{Int}(S),
+\]
+follows because if $r\sqsubseteq s$ then the
+forward-cut initial segment would be violated.
+The theorem
+\lean{DualTree.ForwardQMarkerRanks.oldBase_strictPrefix_projection_iff_marker}
+makes this precise. Combining it with the
+exact intrinsic Q rank count gives
+\[
+ h_{S_x}(P(r))=
+   \left|\{s\in\operatorname{Int}(S):s\sqsubset r\}\right|.
+\]
+This is the projected-marker rank independently
+of its chosen local $D_2$ tail length, and
+\lean{equal_Q_height_of_equal_marker_masks}
+identifies the corresponding same-height
+classes. Three source-facing declarations
+await stacked Lean CI and transitive axiom
+audit. This supplies the main intrinsic-rank
+calculation required for the repaired Q skew
+conditions. The remaining difficulty is to
+relate these marker masks to the source's
+forward-cut and lexicographic order so that
+all old/new and marked/marked length
+inequalities hold.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
