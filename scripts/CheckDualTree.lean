@@ -866,3 +866,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQInteriorExact.nonlast_original_interior_persists
 #print axioms DualTree.ForwardQInteriorExact.cut_is_Q_interior
 #print axioms DualTree.ForwardQInteriorExact.Q_interior_iff_original
+
+#print axioms DualTree.ForwardQIntrinsicRanks.Q_strict_predecessor_is_oldBase
+#print axioms DualTree.ForwardQIntrinsicRanks.Q_preds_iff_oldBase
+#print axioms DualTree.ForwardQIntrinsicRanks.Q_height_eq_oldBase_prefix_card
+#print axioms DualTree.ForwardQIntrinsicRanks.Q_height_eq_original_interior_prefix_card

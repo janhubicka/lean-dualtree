@@ -1936,7 +1936,7 @@ We do not yet claim full semi-completeness,
 a variable word, or a valid colouring
 pullback.
 
-\paragraph{Exact Q interior under the globally corrected forward order.} \todo
+\paragraph{Exact Q interior under the globally corrected forward order.} \ok
 For positive branching $b>0$, the genuine corrected
 source-facing Q tree has precisely its original interior:
 \[
@@ -1973,6 +1973,40 @@ including old/new pairs, and the genuine
 rooted, full-branch, last-witness axioms.
 The global variable word and colouring
 part of Lemma~27 also remain open.
+
+\paragraph{Exact intrinsic Q rank as a cardinality of old-interior prefixes.} \todo
+For every actual node $t$ in the globally
+forward-corrected $Q$ support, the new projected
+$D_2$ nodes are terminal and therefore cannot
+appear as strict $Q$ predecessors. Consequently,
+\[
+ h_{S_x}(t)=
+ \left|\{s\in\operatorname{Int}(S):s\sqsubset t\}\right|.
+\]
+This applies equally to retained old interior
+vertices and to newly projected terminal leaves;
+it requires only the previously verified
+old-base equality and source-facing marked
+terminality. The theorem
+\lean{DualTree.ForwardQIntrinsicRanks.Q_height_eq_original_interior_prefix_card}
+makes the formula exact with \texttt{Finset.card}
+and does not assume the retained base list has
+no duplicates. The intermediate lemmas
+\lean{Q_strict_predecessor_is_oldBase} and
+\lean{Q_preds_iff_oldBase} characterize all
+predecessors. Four source-facing declarations
+await stacked Lean CI and transitive axiom
+audit.
+
+This reduces the remaining skew conditions
+(ii)--(iii) to comparisons between the
+prefix masks of the projected Q leaves
+and the ambient lengths supplied by the
+genuine forward-canonical cone maps.
+It is \emph{not} yet a proof of these
+inequalities, of full branching or
+semi-complete skewness, or of the
+variable-word and colouring parts.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
