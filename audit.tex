@@ -1904,6 +1904,38 @@ remain nonleaves in the $Q$ support.
 They do not yet establish any new
 intrinsic rank or skew order comparison.
 
+\paragraph{Source-facing corrected $Q$: projected leaves and ambient containment.} \ok
+The exact signature-base theorem makes the
+old-base-before-cut hypothesis of the
+projected-terminal argument automatic
+for the genuine corrected frame.
+The new module
+\lean{DualTree.ForwardQSourceTerminals}
+proves without any extra hypothesis that
+every $D_2$ projected point is a leaf of
+the \emph{actual} corrected $S_x$
+(\lean{markedProjection_terminal}), that
+\[
+ \operatorname{Int}(S_x)\subseteq
+ \operatorname{Int}(S),
+\]
+and that all $S_x$ nodes lie in the
+genuinely forward-complete ambient support
+$T$. These results use the sorted
+frontiers and safe canonical projections,
+not the false printed-order map.
+Four declarations await stacked CI and
+transitive axiom auditing.
+The reverse interior inclusion, now
+within reach using the already checked
+literal-marker-to-projected-point
+coverage, will give exact intrinsic
+old levels and allow a direct check
+of the remaining skew rank inequalities.
+We do not yet claim full semi-completeness,
+a variable word, or a valid colouring
+pullback.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
