@@ -241,3 +241,5 @@ import DualTree.ForwardQMarkerRanks
 import DualTree.ForwardQRetainedRanks
 
 import DualTree.ForwardQFinalCutOrder
+
+import DualTree.ForwardQRooted

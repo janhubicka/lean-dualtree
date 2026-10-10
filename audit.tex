@@ -2069,7 +2069,7 @@ skew clauses (ii) and (iii), final
 branching completeness, and the word
 and colouring arguments still require proof.
 
-\paragraph{Corrected Q has no branching after the maximal forward cut.} \todo
+\paragraph{Corrected Q has no branching after the maximal forward cut.} \ok
 The printed skew clause~(iv) requires all
 nodes strictly later than the designated
 final branching cut to be terminal.
@@ -2101,6 +2101,41 @@ directional branching theorem.
 The intrinsic level/ambient length
 conditions (ii)--(iii), $g_x$ and
 colouring are still open.
+
+\paragraph{Corrected Q rootedness is inherited from the original source root.} \todo
+The complete ambient support $T$ and the
+starred source $S$ can have different roots;
+a proof that $S_x\subseteq T$ therefore
+does \emph{not} establish that the actual
+$Q$ support is rooted.
+The module \lean{DualTree.ForwardQRooted}
+constructs the source's genuine prefix
+root $r_S$ from semi-completeness and
+the existence of the final interior cut.
+It proves $r_S\in\operatorname{Int}(S)$,
+so $r_S$ is retained in $S_x$.
+For each literal corrected signature
+marker $r\in R$, its defining boundary
+lies on the path to an exceptional
+source leaf, or is an immediate child
+of the cut. Thus it extends $r_S$.
+The actual sorted D2 coordinate map
+is bijective with $R$ and its cone
+projection extends the marker; hence
+every new projected $Q$ node extends
+$r_S$ as well.
+The theorem
+\lean{DualTree.ForwardQRooted.Q_rootedB}
+verifies the literal Boolean rootedness
+predicate on the source-facing $S_x$.
+Eight declarations await stacked CI
+and transitive axiom auditing.
+This discharges skew clause~(i);
+full directional branching, the
+rank/ambient-length clauses (ii)--(iii)
+and the last branching witness still
+need proof. The word $g_x$ and
+colouring pullback remain untouched.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
