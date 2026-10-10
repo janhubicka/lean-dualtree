@@ -211,3 +211,5 @@ import DualTree.ForwardCanonicalConeCoordinates
 import DualTree.ForwardAuxTransitivity
 
 import DualTree.ForwardSortedFrontiers
+
+import DualTree.ForwardUniformConeDomains
