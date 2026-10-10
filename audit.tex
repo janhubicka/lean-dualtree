@@ -2042,7 +2042,7 @@ forward-cut and lexicographic order so that
 all old/new and marked/marked length
 inequalities hold.
 
-\paragraph{Retained original interior vertices preserve their intrinsic ranks.} \todo
+\paragraph{Retained original interior vertices preserve their intrinsic ranks.} \ok
 For every $s\in\operatorname{Int}(S)$
 retained by the corrected forward $Q$ construction,
 the intrinsic height is unchanged:
@@ -2068,6 +2068,39 @@ corrected $Q$ support. The separate
 skew clauses (ii) and (iii), final
 branching completeness, and the word
 and colouring arguments still require proof.
+
+\paragraph{Corrected Q has no branching after the maximal forward cut.} \todo
+The printed skew clause~(iv) requires all
+nodes strictly later than the designated
+final branching cut to be terminal.
+This part can be discharged for the
+\emph{actual} corrected Q construction
+without first proving meet-closure or
+full branching. By
+\lean{DualTree.ForwardQSourceTerminals.Q_interior_subset_original},
+every Q-interior point is an original
+interior point of $S$, hence at or
+before the maximal source cut $t_0$
+in the forward auxiliary order.
+Forward-order antisymmetry makes
+a strictly later Q vertex impossible
+to be interior. The theorem
+\lean{DualTree.ForwardQFinalCutOrder.Q_emptyAfterB}
+verifies the exact Boolean
+$\operatorname{emptyAfterB}$ part
+of clause~(iv). Its companion lemma
+\lean{Q_interior_before_cut} records
+the stronger source-facing interior
+upper bound.
+Two declarations await CI and
+transitive axiom audit.
+The remaining $\operatorname{fullBeforeB}$
+and $\operatorname{partialAtB}$
+requirements need the exact
+directional branching theorem.
+The intrinsic level/ambient length
+conditions (ii)--(iii), $g_x$ and
+colouring are still open.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample

@@ -878,3 +878,6 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.ForwardQRetainedRanks.source_predecessor_interior
 #print axioms DualTree.ForwardQRetainedRanks.original_interior_Q_height_eq_source
+
+#print axioms DualTree.ForwardQFinalCutOrder.Q_interior_before_cut
+#print axioms DualTree.ForwardQFinalCutOrder.Q_emptyAfterB
