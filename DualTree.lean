@@ -261,3 +261,5 @@ import DualTree.ForwardQCutChildRank
 import DualTree.ForwardQMarkerRankBand
 
 import DualTree.ForwardSourceRankAncestors
+
+import DualTree.ForwardQExceptionalLength
