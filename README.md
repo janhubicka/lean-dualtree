@@ -53,12 +53,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   (h_S(cut)+1, h_T(cut)+1), independent of local marked-point tails.
   This gives exact equivalences of strict and equal new/new intrinsic
   Q ranks with ambient T-frontier ranks.
-- The conditional proof that the *whole Q support* is semi-complete
-  skew when the selected D2 marked-point lengths are nondecreasing
-  in sorted index order is proposed in PR #213 and **not yet part of
-  verified main**. An explicit order-reflecting vector-one-complete
-  D2 certificate is available as a source-facing proof interface,
-  but still needs to be constructed from every printed W_* input.
+- The *actual forward-corrected Q support* has been proved
+  **semi-complete skew**, conditional on the explicit selected D2
+  marked-point length monotonicity (PR #213, merged and CI-audited).
+  An order-reflecting vector-one-complete D2 certificate suffices.
+  Constructing that certificate from every printed W_* input is
+  an independent, still-open source-domain obligation.
+- Under an explicit ambient T-bound and the proved Q geometric
+  condition, the old source variable word gives a well-typed
+  **placeholder** starred word on the actual Q support (PR #214).
+  This does not yet construct the prescribed mixed-cone word g_w.
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -74,7 +78,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **832 source-facing declarations** for transitive
+audits **841 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -89,24 +93,19 @@ proposed consistent **forward-lex repair**. For the repaired
 construction the root, interior, branching, marker ranks, ambient
 frontier bands and mixed old/new inequalities have passed Lean CI.
 
-1. **Complete the conditional Q geometric repair:** verify PR #213,
-   which combines the two-band matching with sorted D2 tail-length
-   monotonicity to prove full semi-completeness of the *actual* Q
-   support. This is a different statement from unrestricted
-   well-definedness of the printed construction.
-2. **Connect the actual W_* domain:** show that every relevant
+1. **Connect the actual W_* domain:** show that every relevant
    Definition 20 starred input yields the selected D2 order certificate,
    rather than assuming marked-point lengths are sorted for arbitrary
    mixed-product elements.
-3. **Correct cone domains and quantitative bounds:** the verified
+2. **Correct cone domains and quantitative bounds:** the verified
    common safe domain is b^{<k-(m+1)}; alternatively an extra complete
    level permits the original longer tails. The manuscript's numerical
    recursion and mixed Hales--Jewett parameters still need reconciliation.
-4. **Construct the full Q word:** define g_w using actual cone words,
+3. **Construct the full Q word:** define g_w using actual cone words,
    typed original/auxiliary/cone-variable decoding and root-aligned
    substitution. Prove variable fibres, starredness and smooth
    colouring pullback. Current geometric proofs do not imply this.
-5. **Finish the Ramsey induction:** Lemma 28, Theorem 25, the required
+4. **Finish the Ramsey induction:** Lemma 28, Theorem 25, the required
    recursive inequalities and the final dual-tree theorem remain open.
 
 The typed counterexample is for complete height three. It has not
@@ -151,13 +150,16 @@ and `CanonicalConeCoordinates.lean` under `DualTree/`.
 The counting/coordinate work is in `FrontierCardinality.lean`,
 `LiteralMarkerCoordinates.lean`, and `BulletCoordinateRange.lean`.
 The actual cone-word decoding bridge is in `CanonicalConeWordTransport.lean`.
+The author-facing proposed geometric proof is
+[notes/corrected_forward_Q_geometry.tex](notes/corrected_forward_Q_geometry.tex).
 The repaired source-facing Q construction and geometry occupy the
 `ForwardSourceQTree`, `ForwardQInteriorExact`,
 `ForwardQSkewIV`, `ForwardQExceptionalRanks`,
 `ForwardQMarkerRankBand`, `ForwardQFrontierBandMatch`,
 and `ForwardQAmbientRankClosure` modules.
-The conditional full support proof under the selected starred D2
-order is in the still-pending
-`ForwardQCertifiedSemiComplete` module (PR #213).
+The conditional full support proof under selected D2 length order
+is now verified in `ForwardQCertifiedSemiComplete` (merged PR #213).
+`ForwardQRetainedWordScaffold` isolates boundedness and retained
+variable roots, but does not implement the mixed-cone output word.
 The TeX audit is intentionally cumulative: older partial TODOs should
 be read together with later validation entries.
