@@ -307,3 +307,5 @@ import DualTree.ForwardQThreeWayConeWordAssembly
 import DualTree.ForwardQStarredOrderReindexObstruction
 
 import DualTree.ForwardQStarredSmoothConePatches
+
+import DualTree.ForwardQThreeWayEvaluation
