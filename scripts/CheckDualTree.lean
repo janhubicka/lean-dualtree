@@ -915,3 +915,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQBranchCount.Q_zero_or_b
 #print axioms DualTree.ForwardQBranchCount.Q_boolean_branch_clause
 #print axioms DualTree.ForwardQBranchCount.Q_semiComplete_iff_skew
+
+#print axioms DualTree.ForwardQSkewIV.Q_before_cut_old_interior
+#print axioms DualTree.ForwardQSkewIV.Q_fullBeforeB
+#print axioms DualTree.ForwardQSkewIV.Q_nonsingleton
+#print axioms DualTree.ForwardQSkewIV.Q_condIVB
+#print axioms DualTree.ForwardQSkewIV.Q_skew_iff_order_conditions
+#print axioms DualTree.ForwardQSkewIV.Q_semiComplete_iff_order_conditions

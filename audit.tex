@@ -2280,6 +2280,39 @@ axiom audit (PR~\#187, followed by a clean main rebase). This remains separate
 from the ambient-length/intrinsic-level order
 conditions and the word/colouring component of Q.
 
+\paragraph{Skew clause~(iv) and exact residual order axioms for corrected Q.} \ok
+The corrected Q node set is already known to be rooted at
+the original source root, to have the same interior as the
+source, and to satisfy the no-branching-after-cut clause.
+The new theorem
+\lean{DualTree.ForwardQSkewIV.Q_before_cut_old_interior}
+verifies that any actual Q node at or before the final
+forward auxiliary cut is an old source interior: the newly
+projected markers all lie outside the inclusive cut.
+Consequently every Q node strictly before the cut has
+unique immediate successors in all $b$ directions, as
+certified by
+\lean{DualTree.ForwardQSkewIV.Q_fullBeforeB}.
+At the cut itself we already know all directions occur
+exactly once. The generic last-branch witness theorem
+with $i_*=b-1$ then establishes
+\lean{DualTree.ForwardQSkewIV.Q_condIVB}, the literal
+skew clause~(iv). The source-facing Q support is also
+shown to be nonsingleton under $b>0$.
+
+Combining this with exact numerical $0$-or-$b$ branching,
+rootedness and duplicate-freeness proves
+\lean{DualTree.ForwardQSkewIV.Q_semiComplete_iff_order_conditions}:
+the \emph{entire} corrected Q semi-completeness assertion
+is equivalent to exactly the two pending conditions
+$\operatorname{condIIB}(S_x)$ and
+$\operatorname{condIIIB}(S_x)$ comparing intrinsic Q heights
+and ambient lengths. All six theorems passed Lean CI and transitive axiom auditing
+on PR~\#188 before clean integration. This is a precise reduction,
+not a proof of those remaining inequalities. The Q
+word, observable signature and colouring pullback also
+remain unverified.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
