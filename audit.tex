@@ -4484,7 +4484,7 @@ Three additional Lean transitive-axiom audit
 endpoints are included; pending CI.
 
 
-\paragraph{Sorted bullet coordinates and exact ambient $T$-rank transport.} \todo
+\paragraph{Sorted bullet coordinates and exact ambient $T$-rank transport.} \ok
 In the repaired construction the $D_2$ coordinates are a subset
 of the genuinely \emph{forward-sorted} minimal outside-cut
 frontiers. It is important not to silently assume that an
@@ -4526,16 +4526,17 @@ full finite coordinate set; the ordered $D_2$ sub-index
 transport must still be connected to the concrete
 Definition~20 domain.
 
-More importantly, the outstanding new/new clauses depend on
-the relation between $h_Q(P_i)$ and the order of its
-literal $D_2$ indices, not just on monotonicity of $h_T$
-for $i<j$. This precise residual obstruction should not
-be mistaken for a proof of the full corrected $Q$ skewness.
-Six transitive Lean axiom checks are added for the new
-lemmas; status \todo{} until CI passes.
+The additional relation between $Q$-intrinsic marker ranks
+and sorted $D_2$ indices is supplied by the later verified
+frontier-band and lex-to-index results (PRs~\#211--\#213).
+Monotonicity of $h_T$ alone was not sufficient.
 
+The six stated conditional theorems passed Lean compilation and
+the transitive axiom audit in merged PR~\#204. The hypotheses
+about selected bullet lengths remain explicit and are not
+asserted for arbitrary mixed-product elements.
 
-\paragraph{An explicit starred $D_2$ vector-completeness certificate.} \todo
+\paragraph{An explicit starred $D_2$ vector-completeness certificate.} \ok
 The actual repaired $Q$ tree uses selected $D_2$ coordinates,
 a subtype of the \emph{sorted} ambient $\mathrm{Fin}(d)$ frontier
 positions. The printed Definition~20 vector $1$-completeness
@@ -4565,14 +4566,18 @@ claim that every arbitrary mixed-product input is starred.
 A separate source-domain construction must recover this
 certificate from actual members of the paper's $W_*$,
 including verification of the induced $D_2$ enumeration
-and its order preservation. Three transitive axioms are
-added for auditing; pending CI before marking \ok{}.
+and its order preservation.
 
+The three certificate-based implications passed Lean and the
+transitive axiom audit in merged PR~\#210. The order-reflecting
+certificate is still a hypothesis; its construction from the
+full printed $W_*$ input is an unresolved source-domain task.
 
-\paragraph{Planned four-way closure of the new/new $Q$ skew inequalities.} \todo
-The frontier rank-band interpretation suggests a short
-last step once the two source-facing marker-family
-proofs and starred $D_2$ certificate are available.
+\paragraph{Conditional four-way closure of the new/new $Q$ skew inequalities.} \ok
+The frontier rank-band interpretation gives the following
+short conditional proof, now verified after the two
+source-facing marker-family proofs and the explicit
+starred $D_2$ certificate interface were formalized.
 Write $M=h_T(t_0)$ and $m=h_S(t_0)$. The proposed
 matching for every actual marked projection is
 \[
@@ -4602,16 +4607,16 @@ conditional closure theorem
 \lean{ForwardQOrderClosure.Q\_semiComplete\_of\_pairwise\_order}
 combines all four pair types.
 
-This is a \emph{proof plan with conditional inputs},
-not a claim that the matching or the $W_*$ certificate
-has been fully discharged. Distinguish it from
-the already CI-verified root, branching and
-retained-interior geometry. Even after the tree
-component is closed, construction of the word $g_w$,
-its smoothness and colouring pullback, Lemma~28,
-and the final Ramsey theorem remain separate tasks.
+The conditional proof plan above was implemented and verified
+as \lean{ForwardQCertifiedSemiComplete} in merged PR~\#213,
+including both new/new skew conditions and the actual
+semi-complete reconstructed support. The conclusion assumes
+the selected $D_2$ length order, or the explicit vector-$1$
+certificate, and does not yet establish all conditions in
+the paper's full $W_*$ domain. The $g_w$ word, its colouring
+pullback, Lemma~28, and the final theorem remain open.
 
-\paragraph{Exact ambient $T$-frontier rank of literal cut-child markers.} \todo
+\paragraph{Exact ambient $T$-frontier rank of literal cut-child markers.} \ok
 The corrected literal $R$ contains each ambient child
 $r=t_0^\frown i$ of the original last source interior
 vertex $t_0$. Its selected minimal outside-cut frontier
@@ -4636,13 +4641,17 @@ other selected bullet points.
 The source-facing Lean module
 \lean{ForwardQCutChildFrontierRank} provides two
 transitively audited declarations for these identities.
-It settles the \emph{cut-child} family of a proposed
-alignment between $Q$-intrinsic leaf levels and the
-enclosing $T$-frontier levels. The exceptional-terminal
-marker family and the actual $D_2$ vector-order bridge
-are still open. Retain \todo{} until Lean CI succeeds.
+It settles the cut-child case of the frontier rank
+matching subsequently completed for exceptional terminals
+in merged PR~\#211.
 
-\paragraph{Exceptional terminals: support-frontier path and higher-rank alignment.} \todo
+Both cut-child rank statements passed the kernel build and
+transitive axiom audit in merged PR~\#211. The other
+frontier families were verified in the same integration;
+this passage is now a certified component of the unified
+two-band theorem in PR~\#212.
+
+\paragraph{Exceptional terminals: support-frontier path and higher-rank alignment.} \ok
 The ambient $T$-frontier selected by a literal first-boundary
 marker $r(t)$ of an exceptional source terminal $t$ is not merely
 an arbitrary descendant of $r(t)$: it actually prefixes $t$.
@@ -4668,15 +4677,13 @@ The verified two-level frontier bound then gives
 \[
  h_T(f(t))=h_T(t_0)+1.
 \]
-These geometric statements are collected in
-\lean{ForwardQExceptionalHighFrontier} with two transitive
-Lean axiom checks, pending CI. Together with the separate
-cut-child frontier theorem, they address both \emph{higher}
-intrinsic $Q$-rank marker families. The low-rank exceptional
-family still requires a matching ambient frontier rank proof
-before the full new/new skew comparison can be closed.
 
-\paragraph{Exceptional terminals: lower-rank ambient frontier alignment.} \todo
+The two exceptional high-rank frontier statements passed
+Lean compilation and the transitive axiom audit in merged
+PR~\#211. The lower-rank exceptional family was verified
+in the same integration, completing the literal case split.
+
+\paragraph{Exceptional terminals: lower-rank ambient frontier alignment.} \ok
 The remaining exceptional family consists of terminals $t$
 with $h_S(t)=h_S(t_0)$. As established for the actual source,
 $t$ is after the final cut in corrected forward auxiliary order,
@@ -4707,16 +4714,13 @@ so the exact lower-rank matching is
  h_S(t)=h_S(t_0)\quad\Longrightarrow\quad
  h_T(f(t))=h_T(t_0).
 \]
-The helper ambient rank ancestor lemma and the source-facing
-lower-rank theorem are in
-\lean{ForwardQExceptionalLowFrontier}, stacked on the
-high-rank exceptional frontier module. Two additional
-transitive axiom checks are included. Their status remains
-\todo{} until the stack passes Lean CI. After both families
-are certified, the Q-vs-T frontier rank classification can
-be combined into one theorem for every actual $D_2$ marker.
 
-\paragraph{Equal-frontier-rank lex orientation recovers sorted $D_2$ indices.} \todo
+The ambient ancestor and lower-exceptional-frontier statements
+passed Lean compilation and the transitive axiom audit
+in merged PR~\#211. Their combination with the higher
+cases was verified in the all-markers theorem PR~\#212.
+
+\paragraph{Equal-frontier-rank lex orientation recovers sorted $D_2$ indices.} \ok
 Two selected frontier roots $f_i,f_j$ of equal
 intrinsic $T$-rank occur in the corrected forward
 auxiliary order exactly when their incomparable cones
@@ -4739,19 +4743,14 @@ The converse source-facing frontier-rank monotonicity
 \[
  i<j\ \Longrightarrow\ h_T(f_i)\le h_T(f_j)
 \]
-is also formalized. These declarations live in
-\lean{ForwardQFrontierIndexOrder} and add two
-transitive Lean axiom checks (pending CI).
+is also formalized.
 
-Together with the two-band frontier matching and the
-sorted local $D_2$ tail lengths, this will establish
-the equal-$Q$-rank new/new clause~(ii) without
-comparing arbitrary projected ambient lengths by hand.
-This bridge is conditional until all constituent
-frontier and starred-domain statements are certified.
+Both lex-to-index declarations passed Lean and the transitive
+axiom audit in merged PR~\#211. Their use in the conditional
+new/new skew proof is verified in PR~\#213, without
+assuming arbitrary mixed-product inputs are starred.
 
-
-\paragraph{Adversarial two-band frontier regression.} \todo
+\paragraph{Adversarial two-band frontier regression.} \ok
 The strengthened reproducible test
 \texttt{scripts/check-q-arbitrary-source.py} now checks
 for every actual projected marked point $P_i$ in each
@@ -4762,12 +4761,15 @@ h_Q(P_i)-h_S(t_0)=h_T(f_i)-h_T(t_0)\in\{0,1\}.
 It also checks nondecreasing Q ranks by sorted bullet
 index and the consistency of equal-rank projection lex
 order with that index, while retaining the existing
-full semi-complete-skew check. The finite regression
-does not replace a general proof and does not check the
-Q word or colouring.
+full semi-complete-skew check.
 
+The strengthened finite regression passed CI in merged
+PR~\#211, including the previously checked 4,292 Q instances.
+This is computational verification of the test cases,
+not a substitute for a universal theorem. The matching
+was established independently in Lean by PR~\#212.
 
-\paragraph{Uniform source-facing $Q$/$T$ frontier rank-band matching.} \todo
+\paragraph{Uniform source-facing $Q$/$T$ frontier rank-band matching.} \ok
 The previously isolated source marker cases are combined in
 \lean{ForwardQFrontierBandMatch.marked\_Q\_T\_frontier\_rank\_band}.
 For any actual selected $D_2$ bullet index $i$, write $f_i$
@@ -4798,13 +4800,14 @@ i<j&\Longrightarrow h_Q(P_i)\le h_Q(P_j).
 These are independent of the local bullet tail lengths
 and make precise the geometric content of the
 computer-checked two-band invariant.
-Four source-facing declarations were added to the
-transitive Lean axiom audit. No new/new Q length
-inequality or Q word/colouring conclusion is silently
-claimed; await CI before marking this entry \ok{}.
 
+The four all-marker rank matching and comparison corollaries
+passed Lean compilation and transitive axiom audit in merged
+PR~\#212. This certifies the full two-band matching;
+the conditional new/new skew order is separately proved
+by PR~\#213, while the word and colouring remain unproved.
 
-\paragraph{Complete semi-completeness of the literal corrected $Q$ under starred $D_2$ order.} \todo
+\paragraph{Complete semi-completeness of the literal corrected $Q$ under starred $D_2$ order.} \ok
 Once the uniform two-band matching has been established,
 the remaining new/new skew conditions have short proofs.
 For equal $Q$ ranks of projected leaves $P_i,P_j$, the
@@ -4846,17 +4849,18 @@ reproved or assumed: the earlier verified closure API
 supplies them. No assumption of an arbitrary unstarred
 mixed-product input being valid is made.
 
-Four new transitive Lean axiom checks are included
-in the development, pending compilation and CI.
-To recover the printed Lemma~27, it remains to
-construct the certificate from the paper's full
-$W_*$ domain; prove that the corrected local cone
-height and selected parameter bounds are compatible
-with the required recursion; construct the new word
-$g_w$; and establish smoothness and colouring pullback.
-Full theorem and Lemma~28 remain \emph{unverified}.
+The four statements in \lean{ForwardQCertifiedSemiComplete}
+passed Lean compilation, finite regressions, and the
+transitive axiom audit in merged PR~\#213, giving the
+actual corrected Q support semi-complete skew when the
+selected $D_2$ length order (or certificate) is provided.
+This is a conditional geometric result, \emph{not} the
+full printed Lemma~27: construction of the certificate from
+the original $W_*$ domain, safe recursive height bounds,
+specific mixed-cone word $g_w$, and smooth colouring
+pullback remain open.
 
-\paragraph{Source word roots and ambient bounding on corrected Q.} \todo
+\paragraph{Source word roots and ambient bounding on corrected Q.} \ok
 The actual corrected Q support retains precisely the old
 source interior. The module
 \lean{ForwardQRetainedWordScaffold} isolates three
@@ -4889,8 +4893,15 @@ that the resulting support is literally the actual Q
 support. This does \textbf{not} construct the particular
 mixed-cone word $g_w$ required by Lemma~27 and asserts
 no span, smoothness, or colouring pullback compatibility.
-Those remain outstanding. Five transitive Lean axiom
-audit endpoints have been added; pending CI.
+The required mixed-cone word and its colouring properties
+remain outstanding; the five scaffold endpoints are checked.
+
+The five word-scaffold endpoints passed Lean compilation
+and the transitive axiom audit in the rebased, merged
+PR~\#214. This verifies only boundedness, original-root
+support and an explicitly labelled placeholder starred
+word. It is \emph{not} a construction of the required
+mixed-cone output $g_w$ or its colouring properties.
 
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
