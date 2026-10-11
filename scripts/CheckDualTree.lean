@@ -1042,3 +1042,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQWordSymbolAssembly.onCorrectedQ_tree
 #print axioms DualTree.ForwardQWordSymbolAssembly.onCorrectedQ_symbol
 #print axioms DualTree.ForwardQWordSymbolAssembly.sourcePlaceholder
+
+#print axioms DualTree.ForwardQStarredOrderReindexObstruction.printed_right_before_left
+#print axioms DualTree.ForwardQStarredOrderReindexObstruction.corrected_left_before_right
+#print axioms DualTree.ForwardQStarredOrderReindexObstruction.corrected_order_actual_eq_reversed
+#print axioms DualTree.ForwardQStarredOrderReindexObstruction.printed_actual_is_starred
+#print axioms DualTree.ForwardQStarredOrderReindexObstruction.corrected_fixed_assignment_not_starred
+#print axioms DualTree.ForwardQStarredOrderReindexObstruction.naive_reindexing_breaks_starred_domain
