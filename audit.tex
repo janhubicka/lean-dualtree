@@ -4526,11 +4526,10 @@ full finite coordinate set; the ordered $D_2$ sub-index
 transport must still be connected to the concrete
 Definition~20 domain.
 
-More importantly, the outstanding new/new clauses depend on
-the relation between $h_Q(P_i)$ and the order of its
-literal $D_2$ indices, not just on monotonicity of $h_T$
-for $i<j$. This precise residual obstruction should not
-be mistaken for a proof of the full corrected $Q$ skewness.
+The additional relation between $Q$-intrinsic marker ranks
+and sorted $D_2$ indices is supplied by the later verified
+frontier-band and lex-to-index results (PRs~\#211--\#213).
+Monotonicity of $h_T$ alone was not sufficient.
 
 The six stated conditional theorems passed Lean compilation and
 the transitive axiom audit in merged PR~\#204. The hypotheses
@@ -4575,9 +4574,10 @@ certificate is still a hypothesis; its construction from the
 full printed $W_*$ input is an unresolved source-domain task.
 
 \paragraph{Conditional four-way closure of the new/new $Q$ skew inequalities.} \ok
-The frontier rank-band interpretation suggests a short
-last step once the two source-facing marker-family
-proofs and starred $D_2$ certificate are available.
+The frontier rank-band interpretation gives the following
+short conditional proof, now verified after the two
+source-facing marker-family proofs and the explicit
+starred $D_2$ certificate interface were formalized.
 Write $M=h_T(t_0)$ and $m=h_S(t_0)$. The proposed
 matching for every actual marked projection is
 \[
@@ -4641,11 +4641,9 @@ other selected bullet points.
 The source-facing Lean module
 \lean{ForwardQCutChildFrontierRank} provides two
 transitively audited declarations for these identities.
-It settles the \emph{cut-child} family of a proposed
-alignment between $Q$-intrinsic leaf levels and the
-enclosing $T$-frontier levels. The exceptional-terminal
-marker family and the actual $D_2$ vector-order bridge
-are still open.
+It settles the cut-child case of the frontier rank
+matching subsequently completed for exceptional terminals
+in merged PR~\#211.
 
 Both cut-child rank statements passed the kernel build and
 transitive axiom audit in merged PR~\#211. The other
@@ -4895,8 +4893,8 @@ that the resulting support is literally the actual Q
 support. This does \textbf{not} construct the particular
 mixed-cone word $g_w$ required by Lemma~27 and asserts
 no span, smoothness, or colouring pullback compatibility.
-Those remain outstanding. Five transitive Lean axiom
-audit endpoints have been added; pending CI.
+The required mixed-cone word and its colouring properties
+remain outstanding; the five scaffold endpoints are checked.
 
 The five word-scaffold endpoints passed Lean compilation
 and the transitive axiom audit in the rebased, merged
