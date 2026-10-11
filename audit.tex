@@ -5373,6 +5373,53 @@ translation with an allowed patched-coordinate
 comparison, and proving the missing compatibility
 of its colours and the recursive Ramsey subspace.
 
+\paragraph{Pointwise and evaluated semantics of the actual decoded $Q$ word.} \todo
+The module \lean{ForwardQThreeWayEvaluation} exposes the
+pointwise content of the previously verified three-way
+local-cone assembly. At a position $t$ belonging to the actual
+selected projected cone indexed by $i$, the three raw
+constructors have separate, exhaustive translations:
+\[
+\begin{split}
+ \operatorname{inl}(\operatorname{inl}a)
+     &\longmapsto \operatorname{inl}a,\\
+ \operatorname{inl}(\operatorname{inr}u)
+     &\longmapsto \operatorname{decodeAux}_i(u),\\
+ \operatorname{inr}z
+     &\longmapsto \operatorname{inr}(\operatorname{coneRoot}_i(z)).
+\end{split}
+\]
+Thus genuine cone variables can never be accidentally
+confused with auxiliary letters. Two occurrences of the
+same cone variable in a given marked cone translate to
+the same original source variable even at different
+homogeneous-tree positions. For each valuation $\sigma$
+of source variable names the resulting \emph{evaluated}
+starred $Q$ word satisfies
+\[
+ \operatorname{eval}_{\sigma}(g_Q)(t)=
+ \begin{cases}
+ a,&\operatorname{raw}_i(t)=\operatorname{inl}(\operatorname{inl}a),\\
+ \operatorname{eval}_{\sigma}(\operatorname{decodeAux}_i u),
+    &\operatorname{raw}_i(t)=\operatorname{inl}(\operatorname{inr}u),\\
+ \sigma(\operatorname{coneRoot}_i z),
+    &\operatorname{raw}_i(t)=\operatorname{inr}z.
+ \end{cases}
+\]
+Outside \emph{all} selected marked cones its evaluation agrees
+exactly with the original source word under the same valuation.
+These are source-facing statements about the actual word on Q,
+rather than an abstract decoder map.
+Six new Lean declarations are included in the transitive axiom
+audit; \todo{} until CI succeeds.
+
+This is not yet the printed Lemma~27 word $g_w$: the raw local
+cone words and the source's auxiliary/root decoding prescriptions
+must still be identified with \lean{ConeData} and shown to satisfy
+its alignment assumptions. Nor does pointwise evaluation alone
+prove smoothness, invariance of the colouring, simplicity of the
+pulled-back colouring or the required recursive parameter bounds.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
