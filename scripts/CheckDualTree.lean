@@ -960,3 +960,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQExceptionalLength.exceptional_boundary_strict_length
 #print axioms DualTree.ForwardQExceptionalLength.exceptional_projection_strict_length
 #print axioms DualTree.ForwardQExceptionalLength.old_strict_below_exceptional_projection
+
+#print axioms DualTree.ForwardQTopRankLength.marked_projection_next_rank_strict_length
+#print axioms DualTree.ForwardQTopRankLength.old_to_marked_condIII
+#print axioms DualTree.ForwardQTopRankLength.marked_to_old_condIII_impossible
