@@ -2280,6 +2280,31 @@ axiom audit (PR~\#187, followed by a clean main rebase). This remains separate
 from the ambient-length/intrinsic-level order
 conditions and the word/colouring component of Q.
 
+\paragraph{Stretched complete-skew support regression for the global forward correction.} \todo
+The earlier exhaustive Q reconstruction checks concerned full binary
+and ternary supports and small embedded complete skew supports. We
+also need to test \emph{stretched} $k$-complete forward skew supports,
+where ambient word length differs from intrinsic support height.
+The independent deterministic script
+\texttt{scripts/check-q-stretched-forward.py} samples genuinely
+stretched canonical embeddings of binary complete supports of heights
+four and five, and ternary complete supports of height three.
+For every admissible semi-complete forward-order source it constructs
+the strict-cut first-exit signature, sorted inclusive-cut frontiers,
+injective literal marker assignment, and actual support-valued Q
+projection by concatenation of \emph{canonical addresses}, not
+ambient tree words. The chosen singleton $D_2$ tails have
+nondecreasing lengths in the sorted coordinate order, as required
+by Definition~20. The script tests the full forward-skew predicate
+on the output Q for a fixed random seed.
+The initial independent execution found no violations among
+$252+540+120=912$ admissible Q trials, spread over $34$ distinct
+stretched complete supports. This remains finite adversarial
+evidence, not a proof of the globally repaired Lemma~27, and
+the reproducible GitHub CI regression has not yet completed.
+The script deliberately uses a subset of structurally valid
+source configurations and does not test the word/colouring map.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
