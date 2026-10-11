@@ -905,3 +905,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQMeetClosed.recoveredMarker_prefix_projection
 #print axioms DualTree.ForwardQMeetClosed.Q_meetClosed
 #print axioms DualTree.ForwardQMeetClosed.Q_atMostOneDirection
+
+#print axioms DualTree.ForwardQAllDirections.first_boundary_preserves_earlier_direction
+#print axioms DualTree.ForwardQAllDirections.source_full_directions
+#print axioms DualTree.ForwardQAllDirections.Q_all_directions
+#print axioms DualTree.ForwardQAllDirections.Q_full_immediate_directions

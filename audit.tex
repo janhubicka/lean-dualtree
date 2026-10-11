@@ -2185,7 +2185,7 @@ is enough. Full branching, skew order
 clauses, word construction and colouring
 remain open.
 
-\paragraph{Ambient meet closure and directional uniqueness of the corrected Q support.} \todo
+\paragraph{Ambient meet closure and directional uniqueness of the corrected Q support.} \ok
 The old literal source skeleton is now known to be meet-closed.
 For the genuine corrected $Q$ tree we must not equate ambient
 meets merely because the replacement map preserves the abstract
@@ -2209,13 +2209,46 @@ ambient meet closure of the *actual* corrected finite $Q$ support.
 The converse
 \lean{DualTree.ForwardQMeetClosed.Q_atMostOneDirection}
 rules out two immediate support successors in the same
-ambient direction. These six declarations await CI and a
-transitive axiom audit.
+ambient direction. All six declarations passed Lean CI and the transitive axiom
+audit (PR~\#185, merged into main).
 
 This is independent of ambient-length and rank monotonicity,
 and still does not establish the exact number of immediate
 successors, the remaining skew clauses, or the $Q$ word
 and colouring pullback. Published source unchanged.
+
+\paragraph{Every old interior vertex retains every ambient branching direction in Q.} \ok
+Meet closure of the new Q support rules out multiple immediate
+successors in one direction, but alone does not ensure all
+$b$ ambient cones at an old interior node remain occupied.
+The source-specific lemma
+\lean{DualTree.ForwardQAllDirections.Q_all_directions}
+takes any old source interior vertex $s$ and direction
+$i$ and finds an \emph{actual} corrected Q node extending
+$s^\frown i$. For $s=t_0$ it uses the literal cut-child
+marker. For an earlier source interior vertex it takes
+the unique immediate source successor in direction $i$.
+If that node remains interior it survives unchanged in Q;
+otherwise it is an exceptional leaf, and the first boundary
+outside the strict forward cut must still lie \emph{in the
+same direction} from $s$. The new first-boundary lemma
+verifies that directional preservation from the downward
+closure of the strict forward auxiliary cut, not from an
+invalid abstract prefix-isomorphism assumption.
+The actual marker-to-Q projection then supplies the
+required descendant.
+
+Combining this occupancy with Q meet closure and the
+generic immediate-successor extraction lemma proves
+\lean{DualTree.ForwardQAllDirections.Q_full_immediate_directions}:
+each original interior node of corrected Q has exactly
+one immediate successor in every ambient direction.
+The four declarations passed CI and the transitive axiom audit
+in PR~\#186; the clean main-branch integration remains to be checked. Together with exact interior
+persistence they should imply the precise $0$-or-$b$
+branch count required by semi-completeness.
+The skew rank/ambient-length clauses and the Q word
+and colouring pullback are independent remaining tasks.
 
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
