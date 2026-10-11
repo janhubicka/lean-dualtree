@@ -5086,6 +5086,54 @@ occurrence-prefix conditions for \emph{that} function.
 The smooth colouring pullback and the numerical
 height/iteration bounds remain separate obligations.
 
+
+\paragraph{Constructor-wise prefix alignment for the three-way cone-word decoder.} \todo
+The intended Lemma~27 word $g_w$ contains three
+distinct kinds of local symbols: old alphabet constants,
+auxiliary symbols which must decode either to a constant
+or to an old visible ancestor variable, and genuine local
+cone variables transported to the target global support.
+The existing typed
+\lean{ConeWordLift.liftWord} implements this
+three-way distinction.
+
+The new module \lean{ThreeWayQDecoderRootAlignment}
+isolates an exact necessary-to-use decomposition
+of the local variable-occurrence prefix check.
+For a source-root map $\operatorname{root}:\nu\to b^{<n}$,
+the decoded symbol at a homogeneous-tree position
+$u$ can equal a target variable $v$ only if it
+came from (i) an auxiliary symbol $a$ decoded to
+$v$ or (ii) a genuine local variable $z$ whose
+transported target is $v$. Thus the two separate
+hypotheses
+\[
+\begin{split}
+ w(u)=\operatorname{aux}(a),\
+ \operatorname{decodeAux}(a)=v
+ &\Longrightarrow \operatorname{root}(v)\sqsubseteq u,\\
+ w(u)=\operatorname{var}(z)
+ &\Longrightarrow
+ \operatorname{root}(\operatorname{variableRoot}(z))
+      \sqsubseteq u
+\end{split}
+\]
+imply the required global decoded-variable prefix
+condition. Original alphabet constants need no
+such hypothesis. Both the single-cone and arbitrary
+indexed-family versions are formalized as source-facing
+Lean theorems, with two transitive axiom endpoints
+pending CI.
+
+This is a precise \emph{interface} for verifying the
+specific word $g_w$ from the actual mixed-product
+cone maps; it does not assert that either hypothesis
+is already established for those maps. Once they are
+proved, the independent disjoint-cone patching and
+decoded-word assembly modules can produce the valid
+global variable word. Smooth colouring and the
+numerical recursive bounds remain separate obligations.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
