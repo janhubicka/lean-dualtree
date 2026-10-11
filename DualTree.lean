@@ -253,3 +253,5 @@ import DualTree.ForwardQAllDirections
 import DualTree.ForwardQExceptionalRanks
 
 import DualTree.ForwardQCutChildRank
+
+import DualTree.ForwardQMarkerRankBand
