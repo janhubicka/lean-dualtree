@@ -273,3 +273,5 @@ import DualTree.ForwardQTopRankLength
 
 import DualTree.ForwardQOrderClosure
 import DualTree.ForwardQAmbientRankClosure
+
+import DualTree.ForwardQExceptionalHighFrontier
