@@ -4113,6 +4113,35 @@ families whenever the old vertex lies below the cut rank.
 It leaves only the top-cut-rank / exceptional-terminal mixed
 strict comparison, plus new--new comparisons. Pending Lean CI.
 
+
+\paragraph{Ordinary lex orientation of equal-rank exceptional Q projections.} \todo
+For a source terminal $t$ exceptional relative to the final cut
+$t_0$, assume $h_S(t)=h_S(t_0)$. Because $t$ occurs after the
+inclusive forward cut and the original source satisfies skew
+clause~(ii), the ordinary forward lex comparison gives
+$t_0\le_{\rm lex}t$.
+Let $r$ be the first outside-cut prefix of $t$.
+Since $r$ and $t_0$ are prefix-incomparable and
+$r\sqsubseteq t$, ordinary lex order reflects to
+$t_0\le_{\rm lex}r$. The actual projected replacement
+$P(r)$ extends $r$, so it also satisfies
+$t_0\le_{\rm lex}P(r)$.
+
+The general finite-word reflection lemma and the two
+source-facing statements are in
+\lean{ForwardQExceptionalLex}. In particular, any retained
+old interior vertex $s$ at the cut's intrinsic rank obeys
+$s\le_{\rm lex}P(r)$, since source skew clause~(ii) likewise
+gives $s\le_{\rm lex}t_0$.
+Together with the already certified old--new weak ambient
+length inequality, this determines the orientation relevant
+to skew clause~(ii) for old-top versus equal-rank exceptional
+replacement pairs. It does not settle the strict length
+condition when the exceptional replacement lies one intrinsic
+rank above the cut, nor any new--new comparison.
+Three new Lean transitive-axiom checks have been added;
+the proof remains pending CI.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
