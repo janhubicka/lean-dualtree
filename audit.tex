@@ -4016,6 +4016,40 @@ The final inclusion of every continuation of the fixed signature in the
 monochromatic image remains unproved.  The local coding lemma must still be
 reconstructed with typed domains.
 
+\paragraph{Intrinsic rank of all forward-corrected $Q$ projected leaves.} \todo
+The modules \lean{ForwardQExceptionalRanks},
+\lean{ForwardQCutChildRank}, and \lean{ForwardQMarkerRankBand}
+separate intrinsic $Q$ rank from ambient word length for the two
+genuine literal marker families. For any exceptional source leaf $t$,
+its first outside-cut boundary has the same old-interior strict
+predecessors as $t$. The actual projected point has rank
+\[
+  h_Q(P(t))=h_S(t)\in\{h_S(t_0),h_S(t_0)+1\}.
+\]
+For each literal child marker $t_0^\frown i$, its strict old-interior
+predecessors are precisely the strict predecessors of $t_0$ and
+$t_0$ itself, giving
+\[
+  h_Q(P(t_0^\frown i))=h_S(t_0)+1.
+\]
+The genuine sorted marker-to-$D_2$ bijection therefore yields
+\[
+  h_Q(P_j(s_j))\in\{h_S(t_0),h_S(t_0)+1\}
+\]
+for \emph{every} actual bullet index $j$, independent of the local
+bullet-tail length. The first exceptional-boundary proof reuses the
+already checked generic strict-prefix extension lemma; another
+arithmetic proof explicitly normalizes the first-boundary alias
+to avoid an \texttt{omega} syntactic mismatch found by CI.
+
+These statements concern the explicitly repaired \emph{forward}
+auxiliary order only; they do not repair the printed reverse-order
+construction. In particular, equal-rank new--new comparisons,
+strict mixed-rank old--new inequalities, and the word/colouring
+compatibility of $Q$ remain open. Seven new axioms are added to the
+transitive audit. This entry remains \textbf{PENDING} until the
+integrated Lean build and no-\texttt{sorryAx} CI check pass.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
