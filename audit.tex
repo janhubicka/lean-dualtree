@@ -4568,6 +4568,49 @@ including verification of the induced $D_2$ enumeration
 and its order preservation. Three transitive axioms are
 added for auditing; pending CI before marking \ok{}.
 
+
+\paragraph{Planned four-way closure of the new/new $Q$ skew inequalities.} \todo
+The frontier rank-band interpretation suggests a short
+last step once the two source-facing marker-family
+proofs and starred $D_2$ certificate are available.
+Write $M=h_T(t_0)$ and $m=h_S(t_0)$. The proposed
+matching for every actual marked projection is
+\[
+ h_Q(P_i)-m=h_T(f_i)-M\in\{0,1\}.
+\]
+For \emph{equal} $Q$ ranks this forces equal frontier
+$T$ ranks. If $P_i\le_{\rm lex}P_j$, the independent
+frontier lex/index theorem gives $i\le j$.
+The order-correct vector-$1$ certificate then gives
+$|s_i|\le|s_j|$, hence the checked sorted-projection
+length lemma gives $|P_i|\le|P_j|$.
+
+For \emph{strictly} increasing $Q$ ranks, the
+matching gives $h_T(f_i)=M$ and $h_T(f_j)=M+1$.
+Sorted frontier rank monotonicity excludes $j\le i$,
+so $i<j$, and the starred-domain certificate gives
+$|s_i|\le|s_j|$. The additive canonical projection
+rank formula yields
+\[
+ h_T(P_i)=M+|s_i|
+  <M+1+|s_j|=h_T(P_j),
+\]
+so enclosing $T$ skew clause~(iii) supplies
+$|P_i|<|P_j|$. The two corresponding old/new
+clauses have already been merged in Lean, and the
+conditional closure theorem
+\lean{ForwardQOrderClosure.Q\_semiComplete\_of\_pairwise\_order}
+combines all four pair types.
+
+This is a \emph{proof plan with conditional inputs},
+not a claim that the matching or the $W_*$ certificate
+has been fully discharged. Distinguish it from
+the already CI-verified root, branching and
+retained-interior geometry. Even after the tree
+component is closed, construction of the word $g_w$,
+its smoothness and colouring pullback, Lemma~28,
+and the final Ramsey theorem remain separate tasks.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
