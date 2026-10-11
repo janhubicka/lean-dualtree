@@ -298,3 +298,6 @@ import DualTree.ForwardQActualStarredSpace
 import DualTree.ForwardQWordSymbolAssembly
 
 import DualTree.ThreeWayQDecoderRootAlignment
+
+import DualTree.ForwardQDisjointWordCones
+import DualTree.ForwardQLocalWordPatching
