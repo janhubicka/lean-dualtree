@@ -5086,6 +5086,44 @@ occurrence-prefix conditions for \emph{that} function.
 The smooth colouring pullback and the numerical
 height/iteration bounds remain separate obligations.
 
+\paragraph{Disjoint selected $D_2$ cones and preservation of source variable roots.} \todo
+The mixed-cone word $g_w$ must eventually patch locally decoded
+symbols inside the inclusive cones of the \emph{actual}
+corrected projected points $P_i(s_i)$, indexed by the
+genuine selected $D_2$ subtype. Two geometric properties
+ensure such patches cannot overwrite old variable roots
+or conflict with one another.
+
+Every old source variable root $v\in\operatorname{supp}(g)$
+is an interior source node at/before the final forward cut,
+while each projected point lies outside that inclusive cut.
+Thus $P_i\not\sqsubseteq v$ for every selected $i$.
+If two projected cones shared any ambient node $u$, then
+both selected minimal complete-support frontiers $f_i,f_j$
+would prefix $u$. Frontier antichain uniqueness would
+give $f_i=f_j$, and the genuine injective sorted-coordinate
+indexing would force $i=j$. Consequently for $i\neq j$
+\[
+ \nexists u\quad
+ P_i\sqsubseteq u\ \land\ P_j\sqsubseteq u.
+\]
+In particular the projected points themselves are
+prefix-incomparable, and all their inclusive successor
+cones are pairwise disjoint in the \emph{whole ambient
+tree}, not merely as subsets of $T$.
+
+The three source-facing Lean lemmas are
+\lean{ForwardQDisjointWordCones.projected\_cone\_avoids\_source\_root},
+\lean{projected\_cones\_no\_common\_extension}, and
+\lean{projected\_nodes\_incomparable}. They use no
+additional starred point-order or colouring hypotheses.
+They supply a clean partition interface for the
+three-way cone-word decoding and root-aligned
+substitution used to construct $g_w$, but they do not
+\emph{yet} construct that word or show smoothness of
+the induced colouring. Three transitive axiom endpoints
+have been added; pending Lean CI.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
