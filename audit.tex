@@ -4939,6 +4939,56 @@ obligations are an explicit sorted enumeration of the
 selected $D_2$ subtype and its linkage to the exact
 published starred-space definition.
 
+
+\paragraph{Canonical increasing enumeration of the actual $D_2$ subtype.} \todo
+No abstract external choice of a sorted enumeration is needed:
+the selected corrected bullet coordinates carry the inherited
+linear order of their $\operatorname{Fin}(d)$ ambient frontier indices.
+Using the finite linear-order equivalence in the pinned Mathlib,
+\lean{ForwardQCanonicalD2.orderedBulletIso} constructs
+\[
+ e:\operatorname{Fin}(|D_2|)\ \cong_{\rm ord}\ D_2.
+\]
+Its surjectivity, strict order preservation, and order reflection
+are separately exposed and audited, including the empty-$D_2$ case.
+Combining this canonical order isomorphism with the verified
+singleton-vector characterization yields the exact equivalence
+\[
+ \operatorname{VectorComplete}_1
+   \bigl(([s_{e(i)}])_{i<|D_2|}\bigr)
+ \iff
+ \operatorname{BulletLengthsOrdered}(c,x).
+\]
+It also constructs the earlier type-correct
+\lean{ForwardQStarredD2Certificate.Certificate}
+from the length-order predicate without any extra
+enumeration hypothesis, and shows that existence of such
+a certificate is equivalent to this predicate.
+
+The existing fully verified conditional geometric theorem
+now gives
+\[
+  \operatorname{VectorComplete}_1
+   \bigl(([s_{e(i)}])_{i<|D_2|}\bigr)
+ \Longrightarrow
+  \operatorname{SemiComplete}_{\rm fwd}(Q(c,x)),
+\]
+for the \emph{actual} corrected Q support and its genuine
+selected marker index set. Eight Lean declarations are
+added to the transitive no-\texttt{sorryAx} audit.
+Their status remains \todo{} until CI passes.
+
+\emph{Remaining source-domain distinction:}
+the development has not yet defined the printed $W_*$
+subset with its full set of coordinate restrictions
+and proved that membership induces the canonical
+selected-$D_2$ singleton vector condition. The finite
+enumeration problem and the singleton-vector length
+characterization are addressed here; the source
+domain equivalence, numerical height/recursion repair,
+particular $Q$ word $g_w$, its smooth colouring pullback,
+and the final Ramsey theorem are not.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
