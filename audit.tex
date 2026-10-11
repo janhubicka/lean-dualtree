@@ -4601,6 +4601,21 @@ already verified strict intrinsic-rank/ambient-length
 separation. The rank-transport implication itself is
 presently computational evidence only, not a lemma.
 
+The test now also checks the stronger \emph{two-band alignment}
+for every actual projected $D_2$ point:
+\[
+ h_Q(P_i)-h_S(t_0)=h_T(f_i)-h_T(t_0)\in\{0,1\},
+\]
+where $f_i$ is its sorted minimal outside-cut $T$-frontier.
+It checks that $h_Q(P_i)$ is nondecreasing in the actual sorted
+bullet index, and that equal-$Q$-rank lexicographic comparisons
+cannot reverse those indices.
+These additional invariants explain why the remaining
+source-specific proof naturally splits into the two exceptional
+terminal families and the direct cut-child family. All are
+\emph{computational assertions only}; each needs a separate
+source-facing Lean proof before full Q skewness can be certified.
+
 Neither exhaustive small tests nor random stretched tests
 constitute a proof for arbitrary parameters; they also do
 not verify construction of the word $g_w$, smoothness, or
