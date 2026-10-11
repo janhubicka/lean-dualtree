@@ -1042,3 +1042,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQWordSymbolAssembly.onCorrectedQ_tree
 #print axioms DualTree.ForwardQWordSymbolAssembly.onCorrectedQ_symbol
 #print axioms DualTree.ForwardQWordSymbolAssembly.sourcePlaceholder
+
+#print axioms DualTree.ThreeWayQDecoderRootAlignment.liftWord_root_aligned
+#print axioms DualTree.ThreeWayQDecoderRootAlignment.indexed_liftWord_root_aligned
