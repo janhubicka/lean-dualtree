@@ -4989,6 +4989,51 @@ domain equivalence, numerical height/recursion repair,
 particular $Q$ word $g_w$, its smooth colouring pullback,
 and the final Ramsey theorem are not.
 
+
+\paragraph{A genuine corrected forward $D_0/D_2$ starred-input subtype.} \todo
+The previous canonical enumeration and singleton-vector
+equivalence permit the first explicit \emph{input type}
+for the corrected $Q$ geometry. The new
+\lean{ForwardQActualStarredSpace.IsStarred}
+predicate on the actual
+\lean{ForwardSourceQTree.Input} mixed-product type
+asserts exactly the vector-$1$-complete condition
+on singleton marked-point supports indexed by the
+canonical increasing enumeration of the genuine
+$D_2$ subtype. The abbreviation
+\lean{ForwardQActualStarredSpace.StarredInput}
+packages an input with its proof, avoiding any
+accidental application of $Q$ to an unrestricted
+mixed-product point.
+
+From such an actual corrected starred input, the
+formal theorem
+\lean{actual\_starred\_Q\_semiComplete}
+proves the full reconstructed support
+\[
+ \operatorname{SemiComplete}_{\rm fwd}(Q(c,x))
+\]
+without any additional length-order hypothesis:
+the point order is part of its input type.
+Another theorem identifies precisely the original
+variable roots with the new Q interior, and the
+typed placeholder starred word is available provided
+the enclosing complete support $T$ lies in $b^{<n}$.
+It has the literal Q support, but deliberately reuses
+the old word and does not claim to implement $g_w$.
+
+Eight declarations are included in the transitive
+axiom audit; keep \todo{} until CI passes.
+This is a corrected \emph{forward-order} and
+shortened-safe-tail analogue of the $D_0/D_2$
+part of the paper's $W^D_*$ input domain.
+Identification with the entire \emph{printed}
+$W_*^D$, including its original order and
+numerical parameter package, is not asserted.
+The specific word output $g_w$, its smoothness
+and colouring compatibility, Lemma~28, and the
+final Ramsey theorem are still open.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
