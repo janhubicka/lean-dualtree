@@ -292,3 +292,5 @@ import DualTree.ForwardQRetainedWordScaffold
 import DualTree.VectorOneD2Characterization
 
 import DualTree.ForwardQCanonicalD2
+
+import DualTree.ForwardQActualStarredSpace
