@@ -4050,6 +4050,30 @@ compatibility of $Q$ remain open. Seven new axioms are added to the
 transitive audit. This entry remains \textbf{PENDING} until the
 integrated Lean build and no-\texttt{sorryAx} CI check pass.
 
+
+\paragraph{Rank-by-rank predecessors on finite rooted support paths.} \todo
+The generic finite-support lemma
+\lean{ForwardSourceRankAncestors.ancestor\_at\_each\_rank}
+proves that whenever $t$ belongs to a duplicate-free
+rooted support $T$, every integer $0\le j\le h_T(t)$
+occurs as the intrinsic rank of a genuine support
+ancestor of $t$. Starting from the common root, the
+argument repeatedly takes the first immediate support
+successor along the root-to-$t$ path; each such move
+increases intrinsic height by exactly one. This uses
+neither completeness nor any skew ambient-length axiom.
+
+The source-facing consequences
+\lean{source\_ancestor\_at\_rank} and
+\lean{source\_strict\_ancestor\_at\_cut\_rank}
+show that an exceptional terminal at source rank
+$h_S(t_0)+1$ has a proper source-support predecessor
+of rank $h_S(t_0)$. This is the missing ingredient for
+proving its first outside-cut boundary has
+\emph{strictly larger ambient word length} than $t_0$.
+Three transitive Lean axiom endpoints are added to
+CI; pending kernel build and audit confirmation.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
