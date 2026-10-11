@@ -249,3 +249,5 @@ import DualTree.ForwardQLiteralSkeletonMeets
 import DualTree.ForwardQMeetClosed
 
 import DualTree.ForwardQAllDirections
+
+import DualTree.ForwardQBranchCount

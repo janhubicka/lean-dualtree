@@ -2250,6 +2250,36 @@ branch count required by semi-completeness.
 The skew rank/ambient-length clauses and the Q word
 and colouring pullback are independent remaining tasks.
 
+\paragraph{Exact zero-or-$b$ immediate successor counts in corrected Q.} \ok
+The source-facing all-directions lemma and the independent
+Q meet-closure theorem together imply that every actual
+nonleaf of the repaired forward-order Q support has
+\emph{exactly one immediate successor in every ambient
+direction}. The theorem
+\lean{DualTree.ForwardQBranchCount.Q_full_immediate_at_nonleaf}
+uses the checked equality $\operatorname{Int}(Q)=
+\operatorname{Int}(S)$ to transfer that fact to
+all new Q interior vertices.
+The exact numerical statement
+\lean{DualTree.ForwardQBranchCount.Q_zero_or_b}
+then shows each vertex has either no immediate
+support successor or precisely $b$, using
+an explicit direction-to-immediate-successor
+bijection, rather than identifying cone occupancy
+with successor count by fiat.
+The source-facing Boolean theorem
+\lean{DualTree.ForwardQBranchCount.Q_boolean_branch_clause}
+discharges the branching conjunct in Definition~23.
+Consequently
+\lean{DualTree.ForwardQBranchCount.Q_semiComplete_iff_skew}
+reduces full Q semi-completeness exactly to the
+remaining skew predicates of Definition~3.1.1
+under $b>0$.
+The four declarations passed the full Lean build and transitive
+axiom audit (PR~\#187, followed by a clean main rebase). This remains separate
+from the ambient-length/intrinsic-level order
+conditions and the word/colouring component of Q.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
