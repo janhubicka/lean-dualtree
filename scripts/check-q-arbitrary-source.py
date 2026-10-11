@@ -207,6 +207,43 @@ def check_support(address_to_node, branching, height):
                     projected.append(address_to_node[address])
                 reconstructed = old_interior | set(projected)
                 valid_q += 1
+                # Stronger level-band matching, independent of local tails:
+                # actual Q rank relative to the source cut agrees exactly
+                # with the ambient T-frontier rank relative to the T cut.
+                # Both differences must be 0 or 1.
+                q_ranks = [rank(reconstructed, p) for p in projected]
+                source_cut_rank = rank(source, cut)
+                ambient_cut_rank = rank(support, cut)
+                frontier_ranks = [
+                    rank(support, frontiers[j]) for j in marker_indices
+                ]
+                for idx, p in enumerate(projected):
+                    q_offset = q_ranks[idx] - source_cut_rank
+                    t_offset = frontier_ranks[idx] - ambient_cut_rank
+                    assert q_offset in (0, 1) and q_offset == t_offset, {
+                        "error": "Q-to-T frontier band mismatch",
+                        "source": source, "cut": cut,
+                        "marker_indices": marker_indices,
+                        "frontiers": frontiers, "projected": projected,
+                        "Q_rank": q_ranks[idx],
+                        "T_frontier_rank": frontier_ranks[idx],
+                        "source_cut_rank": source_cut_rank,
+                        "ambient_cut_rank": ambient_cut_rank,
+                    }
+                assert q_ranks == sorted(q_ranks), {
+                    "error": "Q rank not monotone by sorted D2 index",
+                    "source": source, "cut": cut,
+                    "projected": projected, "Q_ranks": q_ranks,
+                }
+                for a, p in enumerate(projected):
+                    for b, q in enumerate(projected):
+                        if q_ranks[a] == q_ranks[b] and p < q:
+                            assert a < b, {
+                                "error": "equal-Q-rank lex/index reversal",
+                                "source": source, "cut": cut,
+                                "projected": projected, "Q_ranks": q_ranks,
+                                "indices": marker_indices,
+                            }
                 # Stronger new/new rank transport candidate: a strict
                 # increase in intrinsic Q rank should already appear
                 # as a strict increase of ambient complete-T rank.
