@@ -4856,6 +4856,42 @@ with the required recursion; construct the new word
 $g_w$; and establish smoothness and colouring pullback.
 Full theorem and Lemma~28 remain \emph{unverified}.
 
+\paragraph{Source word roots and ambient bounding on corrected Q.} \todo
+The actual corrected Q support retains precisely the old
+source interior. The module
+\lean{ForwardQRetainedWordScaffold} isolates three
+source-facing prerequisites for the later construction
+of $g_w$:
+\begin{enumerate}[label=(\roman*)]
+\item If all nodes of the enclosing complete support $T$
+lie in $b^{<n}$, then so does the actual reconstructed
+Q node set, by the verified inclusion $Q\subseteq T$.
+The bound on $T$ is an explicit additional premise:
+the current source-facing \lean{Frame} does not encode it.
+\item Every original variable-root support node of the
+source word belongs to the actual Q interior, and
+conversely, using the verified exact interior
+persistence:
+\[
+\operatorname{supp}(g)=\operatorname{Int}(Q)
+                    =\operatorname{Int}(S).
+\]
+\item The interior of the reconstructed Q support has
+exactly the original dimension $l$, irrespective of
+its canonical Finset enumeration, as proved by equality
+of the finite predecessor-root sets and Nodup.
+\end{enumerate}
+As a well-typed sanity check, the same module constructs
+a \emph{placeholder} starred word on Q using the
+unchanged original source variable word, assuming Q
+semi-completeness and the ambient bound on T. It verifies
+that the resulting support is literally the actual Q
+support. This does \textbf{not} construct the particular
+mixed-cone word $g_w$ required by Lemma~27 and asserts
+no span, smoothness, or colouring pullback compatibility.
+Those remain outstanding. Five transitive Lean axiom
+audit endpoints have been added; pending CI.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

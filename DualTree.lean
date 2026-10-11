@@ -286,3 +286,5 @@ import DualTree.ForwardQFrontierIndexOrder
 import DualTree.ForwardQFrontierBandMatch
 
 import DualTree.ForwardQCertifiedSemiComplete
+
+import DualTree.ForwardQRetainedWordScaffold
