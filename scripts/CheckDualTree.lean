@@ -975,3 +975,6 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.ForwardQExceptionalHighFrontier.exceptional_frontier_prefix_terminal
 #print axioms DualTree.ForwardQExceptionalHighFrontier.exceptional_high_frontier_T_rank
+
+#print axioms DualTree.ForwardQExceptionalLowFrontier.ambient_ancestor_at_cut_rank
+#print axioms DualTree.ForwardQExceptionalLowFrontier.exceptional_low_frontier_T_rank
