@@ -5328,6 +5328,51 @@ That compatibility, including smooth colouring and
 the recursive mixed-product Ramsey argument, remains
 a separate genuine proof obligation.
 
+
+\paragraph{Actual corrected starred inputs are stable under smooth inside-cone word patches.} \todo
+The source-facing module
+\lean{ForwardQStarredSmoothConePatches}
+defines, for an actual mixed-product input $x$ in the
+\emph{forward-corrected} $D_0/D_2$ presentation, a word
+replacement which changes only the $\Gamma_2=D_2$
+coordinate letters \emph{inside} the inclusive cone
+of the corresponding marked local point, keeping
+the marked-point array and all other coordinate
+words fixed.
+
+Two structural identities are important:
+\[
+ \operatorname{IsStarred}(c,\operatorname{patch}(x))
+ \iff \operatorname{IsStarred}(c,x),\qquad
+ Q(c,\operatorname{patch}(x))=Q(c,x).
+\]
+These hold because the corrected starred vector-$1$
+condition and the reconstructed support both depend
+only on the selected marked points, not on the
+letters of the coordinate words.
+
+More precisely, the old and patched mixed-product
+elements are related by the literal
+Definition~21 $\Gamma_2$ smoothness relation:
+their nonbullet-coordinate words and marked points
+coincide, and each bullet-coordinate word is unchanged
+outside its own marked-point cone. Thus every colouring
+genuinely constant on smoothness classes of the
+corrected starred input subtype is invariant under
+arbitrary such inside-cone patches. The colouring
+need not be assumed smooth on all unstarred inputs.
+
+Six source-facing theorem endpoints are included
+in the transitive Lean axiom audit; \todo{} until CI
+has completed. This conditional smooth-colour
+invariance is a \emph{reduction}, not a proof that
+the particular induced colouring $c\circ Q$ in
+the paper satisfies smoothness. That requires
+identifying the actual prescribed local word
+translation with an allowed patched-coordinate
+comparison, and proving the missing compatibility
+of its colours and the recursive Ramsey subspace.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
