@@ -1002,3 +1002,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQCertifiedSemiComplete.marked_marked_condIII
 #print axioms DualTree.ForwardQCertifiedSemiComplete.Q_semiComplete_of_bullet_lengths
 #print axioms DualTree.ForwardQCertifiedSemiComplete.Q_semiComplete_of_starred_D2_certificate
+
+#print axioms DualTree.ForwardQRetainedWordScaffold.Q_nodes_bounded_of_ambient_bound
+#print axioms DualTree.ForwardQRetainedWordScaffold.original_word_support_iff_Q_interior
+#print axioms DualTree.ForwardQRetainedWordScaffold.Q_interior_card_eq_source_dimension
+#print axioms DualTree.ForwardQRetainedWordScaffold.retained_source_word_witness
+#print axioms DualTree.ForwardQRetainedWordScaffold.retained_source_word_witness_tree
