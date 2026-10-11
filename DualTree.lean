@@ -282,3 +282,5 @@ import DualTree.ForwardQCutChildFrontierRank
 import DualTree.ForwardQExceptionalHighFrontier
 import DualTree.ForwardQExceptionalLowFrontier
 import DualTree.ForwardQFrontierIndexOrder
+
+import DualTree.ForwardQFrontierBandMatch

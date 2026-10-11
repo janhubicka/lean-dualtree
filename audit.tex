@@ -4766,6 +4766,43 @@ full semi-complete-skew check. The finite regression
 does not replace a general proof and does not check the
 Q word or colouring.
 
+
+\paragraph{Uniform source-facing $Q$/$T$ frontier rank-band matching.} \todo
+The previously isolated source marker cases are combined in
+\lean{ForwardQFrontierBandMatch.marked\_Q\_T\_frontier\_rank\_band}.
+For any actual selected $D_2$ bullet index $i$, write $f_i$
+for its true sorted minimal complete-support frontier and
+$P_i$ for its reconstructed $Q$ projection. Then the theorem
+has exactly two alternatives,
+\[
+\begin{split}
+ &(h_Q(P_i),h_T(f_i))=(h_S(t_0),h_T(t_0)),\\
+ \text{or}\quad
+ &(h_Q(P_i),h_T(f_i))=(h_S(t_0)+1,h_T(t_0)+1).
+\end{split}
+\]
+The exceptional-source-terminal cases use the certified
+individual low/high frontier theorems; direct child markers
+use their independently certified exact source and ambient
+frontier ranks. Every selected bullet index is covered by the
+genuine sorted $R\leftrightarrow D_2$ bijection.
+
+Three algebraic corollaries are also formalized:
+\[
+\begin{aligned}
+h_Q(P_i)<h_Q(P_j)&\iff h_T(f_i)<h_T(f_j),\\
+h_Q(P_i)=h_Q(P_j)&\iff h_T(f_i)=h_T(f_j),\\
+i<j&\Longrightarrow h_Q(P_i)\le h_Q(P_j).
+\end{aligned}
+\]
+These are independent of the local bullet tail lengths
+and make precise the geometric content of the
+computer-checked two-band invariant.
+Four source-facing declarations were added to the
+transitive Lean axiom audit. No new/new Q length
+inequality or Q word/colouring conclusion is silently
+claimed; await CI before marking this entry \ok{}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
