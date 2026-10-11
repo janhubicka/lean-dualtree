@@ -4483,6 +4483,41 @@ hypothesis is declared automatically satisfied.
 Three additional Lean transitive-axiom audit
 endpoints are included; pending CI.
 
+
+\paragraph{Equal-frontier-rank lex orientation recovers sorted $D_2$ indices.} \todo
+Two selected frontier roots $f_i,f_j$ of equal
+intrinsic $T$-rank occur in the corrected forward
+auxiliary order exactly when their incomparable cones
+occur in ordinary forward lex order. Since the
+projected points $P_i(s_i),P_j(s_j)$ extend these
+incomparable frontier roots, their lex order is
+independent of the local tail words. Thus
+\[
+ h_T(f_i)=h_T(f_j),\qquad
+ P_i(s_i)\le_{\rm lex}P_j(s_j)
+ \quad\Longrightarrow\quad i\le j.
+\]
+Indeed $j<i$ would imply $f_j\preceq_{\rm fwd}f_i$,
+then source support skew clause~(ii) would give
+$f_j\le_{\rm lex}f_i$, and incomparability transports
+this to $P_j(s_j)\le_{\rm lex}P_i(s_i)$.
+Lex antisymmetry and the verified injectivity of
+actual marked projections contradict $j<i$.
+The converse source-facing frontier-rank monotonicity
+\[
+ i<j\ \Longrightarrow\ h_T(f_i)\le h_T(f_j)
+\]
+is also formalized. These declarations live in
+\lean{ForwardQFrontierIndexOrder} and add two
+transitive Lean axiom checks (pending CI).
+
+Together with the two-band frontier matching and the
+sorted local $D_2$ tail lengths, this will establish
+the equal-$Q$-rank new/new clause~(ii) without
+comparing arbitrary projected ambient lengths by hand.
+This bridge is conditional until all constituent
+frontier and starred-domain statements are certified.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
