@@ -294,3 +294,5 @@ import DualTree.VectorOneD2Characterization
 import DualTree.ForwardQCanonicalD2
 
 import DualTree.ForwardQActualStarredSpace
+
+import DualTree.ForwardQWordSymbolAssembly

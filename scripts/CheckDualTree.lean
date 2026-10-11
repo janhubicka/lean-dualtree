@@ -1033,3 +1033,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQActualStarredSpace.actual_starred_Q_variable_roots
 #print axioms DualTree.ForwardQActualStarredSpace.placeholderStarredWordOnQ
 #print axioms DualTree.ForwardQActualStarredSpace.placeholderStarredWordOnQ_tree
+
+#print axioms DualTree.ForwardQWordSymbolAssembly.DecodedWord
+#print axioms DualTree.ForwardQWordSymbolAssembly.DecodedWord.toVariableWord
+#print axioms DualTree.ForwardQWordSymbolAssembly.toVariableWord_symbol
+#print axioms DualTree.ForwardQWordSymbolAssembly.toVariableWord_support
+#print axioms DualTree.ForwardQWordSymbolAssembly.DecodedWord.onCorrectedQ
+#print axioms DualTree.ForwardQWordSymbolAssembly.onCorrectedQ_tree
+#print axioms DualTree.ForwardQWordSymbolAssembly.onCorrectedQ_symbol
+#print axioms DualTree.ForwardQWordSymbolAssembly.sourcePlaceholder

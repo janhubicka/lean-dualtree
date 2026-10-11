@@ -5045,6 +5045,47 @@ The specific word output $g_w$, its smoothness
 and colouring compatibility, Lemma~28, and the
 final Ramsey theorem are still open.
 
+\paragraph{A structural assembly interface for the mixed-cone output word $g_w$.} \todo
+The reconstructed corrected $Q$ support already has the exact
+old source interior and is conditionally semi-complete skew.
+The module \lean{ForwardQWordSymbolAssembly} packages the
+following \emph{remaining structural} word conditions:
+a total symbol map
+\[
+  \widetilde g:b^{<n}\longrightarrow
+  \Lambda\sqcup\operatorname{Vars}(g)
+\]
+uses precisely the original source variable roots;
+at every such root $v$ it satisfies
+$\widetilde g(v)=v$; and whenever
+$\widetilde g(u)=v$ it has $v\sqsubseteq u$.
+These two conditions are sufficient for a well-typed
+\lean{VariableWord}, with exact original root support.
+
+Under the already proved geometric condition
+\lean{ForwardQIndexedTRanks.BulletLengthsOrdered}
+and an explicit ambient $T\subseteq b^{<n}$ bound, the
+assembly theorem \lean{DecodedWord.onCorrectedQ}
+then packages the decoded word into a genuine
+\lean{StarredSignature.StarredWord} on the \emph{actual}
+reconstructed $Q$, with verified support, dimension and
+full semi-complete skewness.
+The resulting word component is \emph{literally} the
+supplied decoded function, not a reinterpreted
+auxiliary value.
+
+Eight source-facing Lean declarations are added to
+the transitive axiom audit; pending CI.
+This does \textbf{not} supply the particular function
+$\widetilde g=g_w$ defined by the paper's cone words.
+The needed next step is to instantiate the interface
+using the existing three-way
+\lean{ConeWordLift.liftWord} decoding and
+root-aligned substitutions, and prove both root and
+occurrence-prefix conditions for \emph{that} function.
+The smooth colouring pullback and the numerical
+height/iteration bounds remain separate obligations.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
