@@ -100,8 +100,9 @@ theorem exceptional_low_frontier_T_rank
   have hnotCutT : ¬ IsPrefix c.cut t.1 := htSpec.2.2
   have htNeCut : t.1 ≠ c.cut := by
     intro heq
-    subst t
-    exact hnotCutT (isPrefix_refl c.cut)
+    apply hnotCutT
+    rw [heq]
+    exact isPrefix_refl c.cut
   have htOutside : ¬ ForwardAux t.1 c.cut := by
     intro h
     exact c.hout t.1 t.2 ⟨h, htNeCut⟩
