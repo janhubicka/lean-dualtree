@@ -245,3 +245,5 @@ import DualTree.ForwardQFinalCutOrder
 import DualTree.ForwardQRooted
 
 import DualTree.ForwardQLiteralSkeletonMeets
+
+import DualTree.ForwardQMeetClosed
