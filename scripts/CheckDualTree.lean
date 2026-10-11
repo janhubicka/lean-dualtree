@@ -945,3 +945,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQOldCutChildOrder.old_Q_rank_le_every_marked
 #print axioms DualTree.ForwardQOldCutChildOrder.old_below_cut_length_lt_every_marked
 #print axioms DualTree.ForwardQOldCutChildOrder.old_below_cut_Q_rank_lt_every_marked
+
+#print axioms DualTree.ForwardQExceptionalLex.lex_of_lex_extension_of_incomparable
+#print axioms DualTree.ForwardQExceptionalLex.cut_lex_exceptional_equal_rank_projection
+#print axioms DualTree.ForwardQExceptionalLex.old_top_rank_lex_exceptional_equal_rank_projection
