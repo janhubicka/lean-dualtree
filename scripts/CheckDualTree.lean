@@ -953,3 +953,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQMixedCondII.old_lex_marked_of_equal_Q_rank
 #print axioms DualTree.ForwardQMixedCondII.old_to_marked_condII
 #print axioms DualTree.ForwardQMixedCondII.marked_to_old_condII
+
+#print axioms DualTree.ForwardSourceRankAncestors.ancestor_at_each_rank
+#print axioms DualTree.ForwardSourceRankAncestors.source_ancestor_at_rank
+#print axioms DualTree.ForwardSourceRankAncestors.source_strict_ancestor_at_cut_rank
+#print axioms DualTree.ForwardQExceptionalLength.exceptional_boundary_strict_length
+#print axioms DualTree.ForwardQExceptionalLength.exceptional_projection_strict_length
+#print axioms DualTree.ForwardQExceptionalLength.old_strict_below_exceptional_projection
