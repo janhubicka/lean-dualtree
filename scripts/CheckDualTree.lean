@@ -1015,3 +1015,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.VectorOneD2Characterization.vector_one_complete_iff_lengths_mono
 #print axioms DualTree.VectorOneD2Characterization.certificate_of_sorted_enumeration
 #print axioms DualTree.VectorOneD2Characterization.exists_certificate_iff_bullet_lengths_of_sorted_enumeration
+
+#print axioms DualTree.ForwardQCanonicalD2.orderedBulletIso
+#print axioms DualTree.ForwardQCanonicalD2.orderedBulletIso_surjective
+#print axioms DualTree.ForwardQCanonicalD2.orderedBulletIso_order_preserve
+#print axioms DualTree.ForwardQCanonicalD2.orderedBulletIso_order_reflect
+#print axioms DualTree.ForwardQCanonicalD2.canonical_vector_one_iff_bullet_lengths_ordered
+#print axioms DualTree.ForwardQCanonicalD2.canonicalCertificate
+#print axioms DualTree.ForwardQCanonicalD2.certificate_exists_iff_bullet_lengths_ordered
+#print axioms DualTree.ForwardQCanonicalD2.Q_semiComplete_of_canonical_D2_vectorOne
