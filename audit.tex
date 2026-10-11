@@ -5220,6 +5220,65 @@ word of Lemma~27, and its smooth colouring pullback
 must still be established. This is not a proof
 of the complete lemma.
 
+
+\paragraph{Three-way decoded local cone words assemble into a genuine starred $Q$ word.} \todo
+The source-facing word construction can be stated with
+a precise \emph{local decoding certificate}, without
+yet assuming the paper's chosen cone words satisfy it.
+At each actual selected $D_2$ index $i$ we take a total
+raw local symbol map
+\[
+ w_i:b^{<n}\longrightarrow
+       (\Lambda\sqcup\mathrm{Aux})\sqcup\kappa,
+\]
+an auxiliary decoder $\mathrm{Aux}\to
+\Lambda\sqcup\operatorname{Vars}(g)$ and a transport
+$\kappa\to\operatorname{Vars}(g)$ of genuine cone
+variables. Their root-alignment conditions require that
+(i) any auxiliary symbol decoded to an old variable
+occurs above that variable's source root, and
+(ii) any genuine transported cone variable also
+occurs above its designated old root.
+
+The module
+\lean{ForwardQThreeWayConeWordAssembly}
+uses the verified
+\lean{ThreeWayQDecoderRootAlignment}
+three-way constructor analysis to obtain an aligned
+symbol map at each selected cone. It then applies
+\lean{ForwardQLocalWordPatching} to construct
+an unambiguous global patched variable word:
+inside the actual inclusive cone of $P_i(s_i)$
+the symbol is \emph{literally} the corresponding
+three-way decoded $w_i$, whereas outside all
+marked cones the symbol is the unchanged old
+source word. Original source variable roots are
+automatically preserved because the selected
+cones avoid them.
+
+Finally, for an actual member of the corrected
+typed \lean{ForwardQActualStarredSpace.StarredInput}
+and an explicitly $n$-bounded enclosing complete
+support $T$, the decoded-word interface
+\lean{ForwardQWordSymbolAssembly.DecodedWord}
+packages this variable word into a genuine
+\lean{StarredSignature.StarredWord} whose tree
+is \emph{exactly} the actual corrected $Q$ support.
+The inside/outside symbol identities and full
+tree support equality are formalized as separate
+statements. Seven transitive no-\texttt{sorryAx}
+audit endpoints are added; pending Lean CI.
+
+This closes an important \emph{conditional algebraic
+assembly step}. It does not identify the raw maps,
+auxiliary decoder or cone-variable root transport with
+the \emph{particular} ones prescribed by Lemma~27;
+their root-alignment certificate is therefore still
+a genuine missing argument. Moreover, the original
+printed $W_*$ to corrected starred-domain transport,
+smooth colouring pullback, recursive local-height
+bound and final Ramsey induction remain open.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
