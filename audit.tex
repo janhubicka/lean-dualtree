@@ -4903,6 +4903,53 @@ support and an explicitly labelled placeholder starred
 word. It is \emph{not} a construction of the required
 mixed-cone output $g_w$ or its colouring properties.
 
+
+\paragraph{Reverse direction of Definition~20's singleton $D_2$ vector-$1$ test.} \todo
+The previously certified module
+\lean{VectorOneMarkedLengths} establishes that a
+vector-$1$-complete family of singleton marked nodes
+must have nondecreasing ambient word lengths across
+increasing coordinate indices. The separate module
+\lean{VectorOneD2Characterization} now formalizes the
+converse: for any finite ordered family $(s_i)_{i<d_2}$
+of singleton support nodes, and any auxiliary order,
+\[
+ \operatorname{VectorComplete}_1\bigl(([s_i])_{i<d_2}\bigr)
+ \iff
+ (\forall i<j<d_2)\ |s_i|\le |s_j|.
+\]
+Individual singleton supports are automatically
+$1$-complete; the extra successive-level condition
+is vacuous at height one. The only remaining constraint
+is the ordinary same-level ordering.
+
+Under a \emph{genuinely} order-preserving and
+order-reflecting exhaustive enumeration
+$e:\operatorname{Fin}(d_2)\to D_2$ of the
+selected corrected bullet indices, the new module
+constructs the earlier
+\lean{ForwardQStarredD2Certificate.Certificate}
+from \lean{ForwardQIndexedTRanks.BulletLengthsOrdered}.
+Conversely any certificate implies the latter order
+predicate by the already proved theorem. Thus
+\[
+  \bigl(\exists \text{ vector-$1$ certificate}\bigr)
+  \iff
+  \operatorname{BulletLengthsOrdered}(c,x)
+\]
+under the stated existence of a sorted enumeration.
+This characterization does not assert the existence
+of that enumeration, nor identify all actual source
+elements of the printed $W_*$ with the repaired
+mixed-product representation.
+
+Six additional Lean declarations are included in
+the transitive no-\texttt{sorryAx} audit; retain
+\todo{} pending the new CI run. The next source-facing
+obligations are an explicit sorted enumeration of the
+selected $D_2$ subtype and its linkage to the exact
+published starred-space definition.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
