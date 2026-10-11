@@ -76,7 +76,7 @@ theorem orderedBulletIso_order_reflect
       ((orderedBulletIso c) j).1) :
     i < j := by
   have h : (orderedBulletIso c) i < (orderedBulletIso c) j := hij
-  exact (orderedBulletIso c).symm.strictMono h
+  simpa using (orderedBulletIso c).symm.strictMono h
 
 /-- On the canonical selected bullet enumeration the exact
 Definition 20 vector-one-complete condition has only one
