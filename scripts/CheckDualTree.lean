@@ -972,3 +972,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQAmbientRankClosure.marked_length_lt_of_ambient_rank_lt
 #print axioms DualTree.ForwardQAmbientRankClosure.marked_length_le_of_ambient_rank_le
 #print axioms DualTree.ForwardQAmbientRankClosure.Q_semiComplete_of_ambient_rank_transport
+
+#print axioms DualTree.ForwardQIndexedTRanks.marked_T_rank_formula
+#print axioms DualTree.ForwardQIndexedTRanks.marked_forwardAux_of_bullet_order
+#print axioms DualTree.ForwardQIndexedTRanks.marked_T_rank_mono_of_bullet_order
+#print axioms DualTree.ForwardQIndexedTRanks.marked_length_mono_of_bullet_order
+#print axioms DualTree.ForwardQIndexedTRanks.marked_T_rank_lt_of_strict_point_length
+#print axioms DualTree.ForwardQIndexedTRanks.equal_T_rank_forces_equal_frontier_and_tail

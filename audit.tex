@@ -4483,6 +4483,57 @@ hypothesis is declared automatically satisfied.
 Three additional Lean transitive-axiom audit
 endpoints are included; pending CI.
 
+
+\paragraph{Sorted bullet coordinates and exact ambient $T$-rank transport.} \todo
+In the repaired construction the $D_2$ coordinates are a subset
+of the genuinely \emph{forward-sorted} minimal outside-cut
+frontiers. It is important not to silently assume that an
+arbitrary mixed-product input satisfies Definition~20's starred
+vector-completeness condition.
+
+The source-facing predicate
+\lean{ForwardQIndexedTRanks.BulletLengthsOrdered}
+isolates the necessary pairwise statement
+\[
+ i,j\in D_2,\quad i<j\quad\Longrightarrow\quad
+ |s_i|\le |s_j|.
+\]
+The new module \lean{ForwardQIndexedTRanks} proves that this
+implies both
+\[
+ h_T(P_i(s_i))\le h_T(P_j(s_j))
+ \qquad\text{and}\qquad
+ |P_i(s_i)|\le |P_j(s_j)|.
+\]
+The quantitative identity behind the argument is
+\[
+ h_T(P_i(s_i))=h_T(f_i)+|s_i|,
+\]
+where $f_i$ is the actual sorted minimal $T$-frontier of
+coordinate $i$. If $|s_i|<|s_j|$ then the first inequality is
+strict. Moreover, equality of projected $T$-ranks under the
+sorted-coordinate and length hypotheses forces
+\[
+ h_T(f_i)=h_T(f_j),\qquad |s_i|=|s_j|.
+\]
+
+These are \emph{conditional} proofs and do not yet establish
+that every actual starred point satisfies
+\lean{BulletLengthsOrdered}. The separate existing
+\lean{VectorOneMarkedLengths} lemmas verify the length
+consequence of a vector $1$-complete family indexed by a
+full finite coordinate set; the ordered $D_2$ sub-index
+transport must still be connected to the concrete
+Definition~20 domain.
+
+More importantly, the outstanding new/new clauses depend on
+the relation between $h_Q(P_i)$ and the order of its
+literal $D_2$ indices, not just on monotonicity of $h_T$
+for $i<j$. This precise residual obstruction should not
+be mistaken for a proof of the full corrected $Q$ skewness.
+Six transitive Lean axiom checks are added for the new
+lemmas; status \todo{} until CI passes.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
