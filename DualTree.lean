@@ -277,3 +277,8 @@ import DualTree.ForwardQAmbientRankClosure
 import DualTree.ForwardQIndexedTRanks
 
 import DualTree.ForwardQStarredD2Certificate
+
+import DualTree.ForwardQCutChildFrontierRank
+import DualTree.ForwardQExceptionalHighFrontier
+import DualTree.ForwardQExceptionalLowFrontier
+import DualTree.ForwardQFrontierIndexOrder
