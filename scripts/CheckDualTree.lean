@@ -979,3 +979,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQIndexedTRanks.marked_length_mono_of_bullet_order
 #print axioms DualTree.ForwardQIndexedTRanks.marked_T_rank_lt_of_strict_point_length
 #print axioms DualTree.ForwardQIndexedTRanks.equal_T_rank_forces_equal_frontier_and_tail
+
+#print axioms DualTree.ForwardQStarredD2Certificate.bullet_lengths_ordered_of_certificate
+#print axioms DualTree.ForwardQStarredD2Certificate.marked_T_rank_mono_of_certificate
+#print axioms DualTree.ForwardQStarredD2Certificate.marked_length_mono_of_certificate
