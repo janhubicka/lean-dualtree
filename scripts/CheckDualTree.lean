@@ -1072,3 +1072,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQStarredOrderReindexObstruction.printed_actual_is_starred
 #print axioms DualTree.ForwardQStarredOrderReindexObstruction.corrected_fixed_assignment_not_starred
 #print axioms DualTree.ForwardQStarredOrderReindexObstruction.naive_reindexing_breaks_starred_domain
+
+#print axioms DualTree.ForwardQThreeWayEvaluation.original_letter_inside
+#print axioms DualTree.ForwardQThreeWayEvaluation.auxiliary_letter_inside
+#print axioms DualTree.ForwardQThreeWayEvaluation.cone_variable_inside
+#print axioms DualTree.ForwardQThreeWayEvaluation.cone_variable_fibre_uniform
+#print axioms DualTree.ForwardQThreeWayEvaluation.eval_inside
+#print axioms DualTree.ForwardQThreeWayEvaluation.eval_outside
