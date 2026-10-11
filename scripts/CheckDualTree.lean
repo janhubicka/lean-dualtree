@@ -910,3 +910,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQAllDirections.source_full_directions
 #print axioms DualTree.ForwardQAllDirections.Q_all_directions
 #print axioms DualTree.ForwardQAllDirections.Q_full_immediate_directions
+
+#print axioms DualTree.ForwardQExceptionalRanks.exceptional_is_source_frontier
+#print axioms DualTree.ForwardQExceptionalRanks.exceptional_source_rank_band
+#print axioms DualTree.ForwardQExceptionalRanks.interior_prefix_exceptional_boundary_iff
+#print axioms DualTree.ForwardQExceptionalRanks.exceptional_projection_Q_rank_eq_source
