@@ -63,6 +63,25 @@ obligation; `\todo` marks a remaining gap or proposed change.
   condition, the old source variable word gives a well-typed
   **placeholder** starred word on the actual Q support (PR #214).
   This does not yet construct the prescribed mixed-cone word g_w.
+- The actual corrected forward D₀/D₂ starred input subtype has a
+  canonical selected D₂ order with vector-one-complete marked-point
+  lengths, and the real Q support is semi-complete skew on that subtype.
+- The projected marked cones are disjoint and avoid the retained old
+  variable roots; root-aligned local cone words can be patched into
+  a genuine starred word on Q. A three-way raw-symbol decoder
+  (original letters, auxiliary letters and cone variables) has
+  a verified pointwise and evaluated semantics, including uniform
+  variable fibres (merged PRs #225, #226, #228).
+- Inside-cone changes to the coordinate words preserve the corrected
+  starred domain and Q support and are Gamma₂-smooth-related
+  (merged PR #229). A colouring on the corrected starred subtype
+  extends to a total smooth colouring **exactly when** it is
+  already constant on its starred smoothness classes (PR #230).
+- A kernel-checked binary witness demonstrates that simply reordering
+  the *same* marked-point assignment from the paper's reverse-lex
+  frontier order to the corrected forward order can destroy
+  vector-one-completeness (PR #227). Thus the old printed W_* domain
+  is not automatically transported by a change of tie-break order.
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -78,7 +97,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **841 source-facing declarations** for transitive
+audits **912 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -93,18 +112,24 @@ proposed consistent **forward-lex repair**. For the repaired
 construction the root, interior, branching, marker ranks, ambient
 frontier bands and mixed old/new inequalities have passed Lean CI.
 
-1. **Connect the actual W_* domain:** show that every relevant
-   Definition 20 starred input yields the selected D2 order certificate,
-   rather than assuming marked-point lengths are sorted for arbitrary
-   mixed-product elements.
+1. **Relate the printed and repaired W_* domains:** the naive
+   reverse-to-forward frontier permutation is refuted by the typed
+   vector-one-completeness counterexample. Any corrected proof must
+   transport/reassign cone words and marked points together or
+   establish a new source-domain Ramsey lemma compatible with the
+   forward-sorted selected D₂ order.
 2. **Correct cone domains and quantitative bounds:** the verified
    common safe domain is b^{<k-(m+1)}; alternatively an extra complete
    level permits the original longer tails. The manuscript's numerical
    recursion and mixed Hales--Jewett parameters still need reconciliation.
-3. **Construct the full Q word:** define g_w using actual cone words,
-   typed original/auxiliary/cone-variable decoding and root-aligned
-   substitution. Prove variable fibres, starredness and smooth
-   colouring pullback. Current geometric proofs do not imply this.
+3. **Identify the paper's particular Q word and colouring:** the
+   general root-aligned three-way decoder and its evaluated semantics
+   are verified. It remains to instantiate its *specific* raw cone
+   words, auxiliary decoder and variable-root transport from Lemma 27,
+   prove their alignment and fibre properties, and demonstrate
+   classwise compatibility of the actual induced colouring c ∘ Q.
+   The smooth extension mechanism is verified, but the required
+   compatibility is not automatic.
 4. **Finish the Ramsey induction:** Lemma 28, Theorem 25, the required
    recursive inequalities and the final dual-tree theorem remain open.
 
@@ -158,8 +183,15 @@ The repaired source-facing Q construction and geometry occupy the
 `ForwardQMarkerRankBand`, `ForwardQFrontierBandMatch`,
 and `ForwardQAmbientRankClosure` modules.
 The conditional full support proof under selected D2 length order
-is now verified in `ForwardQCertifiedSemiComplete` (merged PR #213).
-`ForwardQRetainedWordScaffold` isolates boundedness and retained
-variable roots, but does not implement the mixed-cone output word.
+is verified in `ForwardQCertifiedSemiComplete` (merged PR #213).
+`ForwardQRetainedWordScaffold` isolates boundedness and old roots.
+`ForwardQDisjointWordCones`, `ForwardQLocalWordPatching`,
+`ForwardQThreeWayConeWordAssembly` and
+`ForwardQThreeWayEvaluation` supply conditional word assembly and
+its exact evaluation. `ForwardQStarredSmoothConePatches` and
+`ForwardQStarredSmoothExtension` isolate the remaining
+smooth-colouring compatibility obligation.
+`ForwardQStarredOrderReindexObstruction` records the verified
+failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should
 be read together with later validation entries.
