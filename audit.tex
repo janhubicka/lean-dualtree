@@ -5134,6 +5134,92 @@ decoded-word assembly modules can produce the valid
 global variable word. Smooth colouring and the
 numerical recursive bounds remain separate obligations.
 
+\paragraph{Disjoint selected $D_2$ cones and preservation of source variable roots.} \todo
+The mixed-cone word $g_w$ must eventually patch locally decoded
+symbols inside the inclusive cones of the \emph{actual}
+corrected projected points $P_i(s_i)$, indexed by the
+genuine selected $D_2$ subtype. Two geometric properties
+ensure such patches cannot overwrite old variable roots
+or conflict with one another.
+
+Every old source variable root $v\in\operatorname{supp}(g)$
+is an interior source node at/before the final forward cut,
+while each projected point lies outside that inclusive cut.
+Thus $P_i\not\sqsubseteq v$ for every selected $i$.
+If two projected cones shared any ambient node $u$, then
+both selected minimal complete-support frontiers $f_i,f_j$
+would prefix $u$. Frontier antichain uniqueness would
+give $f_i=f_j$, and the genuine injective sorted-coordinate
+indexing would force $i=j$. Consequently for $i\neq j$
+\[
+ \nexists u\quad
+ P_i\sqsubseteq u\ \land\ P_j\sqsubseteq u.
+\]
+In particular the projected points themselves are
+prefix-incomparable, and all their inclusive successor
+cones are pairwise disjoint in the \emph{whole ambient
+tree}, not merely as subsets of $T$.
+
+The three source-facing Lean lemmas are
+\lean{ForwardQDisjointWordCones.projected\_cone\_avoids\_source\_root},
+\lean{projected\_cones\_no\_common\_extension}, and
+\lean{projected\_nodes\_incomparable}. They use no
+additional starred point-order or colouring hypotheses.
+They supply a clean partition interface for the
+three-way cone-word decoding and root-aligned
+substitution used to construct $g_w$, but they do not
+\emph{yet} construct that word or show smoothness of
+the induced colouring. Three transitive axiom endpoints
+have been added; pending Lean CI.
+
+\paragraph{Root-preserving cone-local word stitching on the actual projected $D_2$ cones.} \todo
+The first two geometric components of the mixed-cone word
+construction are checked separately: distinct actual projected
+cones are disjoint in the whole homogeneous ambient tree, and no
+old variable root is contained in a projected cone.
+The module \lean{ForwardQLocalWordPatching} now formalizes
+the corresponding \emph{single-valued, noncomputable}
+cone selector on the actual bounded homogeneous tree:
+a position $u$ above a marked point $P_i(s_i)$ is assigned
+to precisely that selected bullet index $i$, whereas
+positions outside all selected cones are assigned \texttt{none}.
+
+Given a family of locally translated total symbol maps
+\[
+ L_i:b^{<n}\longrightarrow
+     \Lambda\sqcup\operatorname{Vars}(g),
+ \qquad i\in D_2,
+\]
+the globally patched symbol is
+\[
+ G(u)=
+ \begin{cases}
+   L_i(u)&P_i(s_i)\sqsubseteq u,\\
+   g(u)&\text{outside every marked cone}.
+ \end{cases}
+\]
+The disjointness theorem makes this formula unambiguous,
+and the absence of old source roots from the marked
+cones ensures $G(v)=v$ for each old variable root $v$.
+If each \emph{locally translated} variable occurrence
+$L_i(u)=v$ is aligned with its original root,
+$v\sqsubseteq u$, then every variable occurrence of
+$G$ also lies above its root. Hence $G$ becomes a
+well-typed tree-variable word with support literally equal
+to the old source variable-root list.
+
+The new module establishes the cone selector's
+exact correctness, the patched word inside/outside
+equalities, root preservation, the resulting
+\lean{VariableWord} and its exact support and word
+component. Eight source-facing transitive axiom
+checks are added to the Lean audit; pending CI.
+The local root-alignment premise must still be shown
+for the \emph{particular} three-way decoded cone
+word of Lemma~27, and its smooth colouring pullback
+must still be established. This is not a proof
+of the complete lemma.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
