@@ -288,3 +288,5 @@ import DualTree.ForwardQFrontierBandMatch
 import DualTree.ForwardQCertifiedSemiComplete
 
 import DualTree.ForwardQRetainedWordScaffold
+
+import DualTree.VectorOneD2Characterization
