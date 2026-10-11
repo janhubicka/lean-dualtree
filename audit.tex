@@ -2316,6 +2316,40 @@ ranks with the ordered canonical projections in $T$;
 they are not consequences of rank classification
 alone.
 
+\paragraph{All actual corrected Q projected markers occupy just two intrinsic ranks.} \todo
+The literal corrected signature marker set $R$ contains only
+exceptional old-source-leaf first boundaries and direct
+ambient children of the retained maximal interior cut.
+The first family and the second family have now been
+treated separately at the source-facing Q intrinsic-rank
+level, without substituting the rank of the enclosing
+complete skew support $T$.
+The inverse sorted $R\leftrightarrow D_2$ coordinate map
+lets us recover the unique literal marker for \emph{any}
+actual bullet coordinate $i$ of the corrected Q input.
+The combined theorem
+\lean{DualTree.ForwardQMarkerRankBand.markedProjection_Q_rank_band}
+therefore verifies
+\[
+ h_{S_x}\bigl(P_i(s_i)\bigr)\in
+   \{h_S(t_0),\,h_S(t_0)+1\}
+\]
+for every selected D₂ coordinate, independently of local
+tail depths. The source proof splits on the actual two
+types of literal $R$ membership, invokes the relevant
+rank theorem and transports its equality across the
+verified marker-coordinate bijection.
+The new theorem is pending stacked Lean CI and
+transitive axiom audit.
+
+This completes the *intrinsic rank classification* of
+the terminal Q nodes only. The global skew clauses
+(ii)--(iii) additionally compare these ranks to ambient
+word lengths, and require the exact same-rank and
+rank-jump ordering arguments for marked pairs and
+old/marked pairs. The geometric and colouring
+subproblems remain independent.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
