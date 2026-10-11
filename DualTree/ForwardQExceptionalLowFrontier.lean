@@ -150,7 +150,7 @@ theorem exceptional_low_frontier_T_rank
   have hII : SkewTree.condIIB c.T = true := hcore.1.1.2
   have hCutBeforeA : ForwardAux c.cut a :=
     ForwardOrderCompatibility.forwardAux_of_equal_height_lex
-      c.T hII c.cut a c.hcutT haT haRank.symm hcutLexA
+      c.T hII c.hcutT haT haRank.symm hcutLexA
   have haOutside : ¬ ForwardAux a c.cut := by
     intro hac
     have hcutEqA :=
