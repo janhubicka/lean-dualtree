@@ -5279,6 +5279,71 @@ printed $W_*$ to corrected starred-domain transport,
 smooth colouring pullback, recursive local-height
 bound and final Ramsey induction remain open.
 
+\paragraph{Starred $D_2$ membership is not invariant under naive reverse-to-forward frontier reindexing.} \todo
+The forward-order geometric repair of Lemma~27 changes
+the tie-breaking order of \emph{equal-length} complete-support
+frontiers: the printed convention is length-first
+reverse lexicographic, whereas the repaired convention
+is length-first forward lexicographic. Merely retaining
+the same marker-to-local-point assignment and
+re-enumerating the $D_2$ coordinates is not guaranteed
+to preserve Definition~20's vector $1$-completeness.
+
+The typed binary height-$3$ witness already developed
+in \lean{QLengthStarredDomain} provides an exact
+source-facing test. Its two selected frontier markers
+are the right and left children of the empty cut.
+The printed order is $(\mathrm{right},\mathrm{left})$,
+with actual local point lengths $(0,1)$ and hence
+vector-$1$-complete. The corrected forward
+frontier order is $(\mathrm{left},\mathrm{right})$.
+Retaining the actual local point assigned to each
+marker gives lengths $(1,0)$, which is \emph{not}
+vector-$1$-complete:
+\[
+ \begin{split}
+ &\operatorname{VectorComplete}_1
+       ((),(0))=\mathrm{true},\\
+ &\operatorname{VectorComplete}_1
+       ((0),())=\mathrm{false}.
+ \end{split}
+\]
+The module
+\lean{ForwardQStarredOrderReindexObstruction}
+checks the actual typed selected marked points
+under both enumerations, rather than substituting
+unrelated abstract singleton supports.
+Six source-facing transitive axiom endpoints
+have been added; pending CI.
+
+This is a \emph{counterexample to naive coordinate
+reindexing}, not a counterexample to the conditional
+forward $Q$-geometry theorem or to the final Ramsey
+conclusion. It establishes that deriving the repaired
+$W_*$ domain from the printed one must either
+transport/reassign the local cone words and marked
+points \emph{along with} the frontier permutation,
+or explicitly change/restrict the starred domain.
+That compatibility, including smooth colouring and
+the recursive mixed-product Ramsey argument, remains
+a separate genuine proof obligation.
+
+\subsection{Lemma 28 and Theorem 25}
+Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
+model signature in $b^{<m}$ and the corresponding signature observable in the
+current variable word.
+
+In Theorem 25, after pulling the signature-coloring back along $Q$, the proof
+invokes the induction hypothesis without showing that the new coloring is
+simple.  Tree-only finite tests are positive: the modeled $Q$ is onto in the
+tested $l=1,2$ cases and tested simple colorings remain simple.  This should be
+isolated as a lemma.
+
+\subsection{Appendix Remark 3(ii)}
+The unrestricted union assertion is false for disjoint $L_1,L_2$.  It becomes
+true when $L_1\cap L_2\ne\varnothing$, which is sufficient for the actual
+application $L_j=\{a_j,a_{j+1}\}$.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

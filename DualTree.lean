@@ -303,3 +303,5 @@ import DualTree.ForwardQDisjointWordCones
 import DualTree.ForwardQLocalWordPatching
 
 import DualTree.ForwardQThreeWayConeWordAssembly
+
+import DualTree.ForwardQStarredOrderReindexObstruction
