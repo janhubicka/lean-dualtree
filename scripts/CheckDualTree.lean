@@ -1042,3 +1042,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQWordSymbolAssembly.onCorrectedQ_tree
 #print axioms DualTree.ForwardQWordSymbolAssembly.onCorrectedQ_symbol
 #print axioms DualTree.ForwardQWordSymbolAssembly.sourcePlaceholder
+
+#print axioms DualTree.ForwardQDisjointWordCones.projected_cone_avoids_source_root
+#print axioms DualTree.ForwardQDisjointWordCones.projected_cones_no_common_extension
+#print axioms DualTree.ForwardQDisjointWordCones.projected_nodes_incomparable
