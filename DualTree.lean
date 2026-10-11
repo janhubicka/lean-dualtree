@@ -275,3 +275,5 @@ import DualTree.ForwardQOrderClosure
 import DualTree.ForwardQAmbientRankClosure
 
 import DualTree.ForwardQIndexedTRanks
+
+import DualTree.ForwardQStarredD2Certificate
