@@ -922,3 +922,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQSkewIV.Q_condIVB
 #print axioms DualTree.ForwardQSkewIV.Q_skew_iff_order_conditions
 #print axioms DualTree.ForwardQSkewIV.Q_semiComplete_iff_order_conditions
+
+#print axioms DualTree.ForwardQRetainedOrder.source_condIIB
+#print axioms DualTree.ForwardQRetainedOrder.source_condIIIB
+#print axioms DualTree.ForwardQRetainedOrder.Q_old_old_condII
+#print axioms DualTree.ForwardQRetainedOrder.Q_old_old_condIII
+#print axioms DualTree.ForwardQRetainedOrder.Q_old_before_new
+#print axioms DualTree.ForwardQRetainedOrder.Q_old_new_length_le
