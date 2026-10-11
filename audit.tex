@@ -4276,6 +4276,213 @@ top-rank projection length theorem and the two mixed skew
 clause~(iii) endpoints; all three are separately audited.
 The new/new Q order inequalities and $g_w$ remain open.
 
+\paragraph{A minimal pairwise-order API for finishing corrected Q skewness.} \todo
+The generic forward-corrected source-facing constructor
+has already been checked to be rooted, meet-closed,
+semi-complete in its numerical immediate branching,
+and to retain the original interior and final skew
+branching witness. The remaining \emph{global}
+semi-completeness reduces to the two ambient-length
+skew clauses. The module
+\lean{ForwardQOrderClosure} proves a complete pairwise
+case decomposition of those clauses, using the
+literal original-interior/actual-projection union
+rather than an abstract surrogate for $S_w$.
+
+For positive branching, every old interior Q vertex
+has intrinsic rank at most every projected $D_2$
+vertex. The old/old clauses transfer from the source;
+old-to-new weak length monotonicity is previously
+verified. To conclude
+\[
+ \operatorname{SemiComplete}_{\rm fwd}(S_w),
+\]
+it is therefore enough to provide precisely four
+source-facing inequalities:
+\begin{enumerate}[label=(\roman*)]
+\item if $s\in\operatorname{Int}(S)$ and
+  $h_Q(s)=h_Q(P_i)$, then $s\le_{\rm lex}P_i$;
+\item if $s\in\operatorname{Int}(S)$ and
+  $h_Q(s)<h_Q(P_i)$, then $|s|<|P_i|$;
+\item if $h_Q(P_i)=h_Q(P_j)$ and
+  $P_i\le_{\rm lex}P_j$, then $|P_i|\le|P_j|$;
+\item if $h_Q(P_i)<h_Q(P_j)$, then
+  $|P_i|<|P_j|$.
+\end{enumerate}
+The first two are the mixed old/new cases under
+development in the separate marker-rank and
+exceptional-boundary PR chains. The latter two
+are the \emph{only} outstanding new/new intrinsic
+rank / ambient word length clauses. The converse
+new-to-old strict-rank case is impossible, and
+the reverse same-rank lex case follows from
+antisymmetry. No additional branching hypotheses
+are silently introduced.
+
+The Lean theorem
+\lean{ForwardQOrderClosure.Q\_semiComplete\_of\_pairwise\_order}
+states this precise closure interface; its proof
+and the three helper results are pending CI,
+with four new transitive axiom audit endpoints.
+This does not yet construct the $Q$ word $g_w$.
+
+
+\paragraph{Transport new/new order to ambient complete-support ranks.} \todo
+The actual marked projections $P_i$ are guaranteed to belong
+to the enclosing forward-complete skew support $T$. Hence
+$T
+Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
+model signature in $b^{<m}$ and the corresponding signature observable in the
+current variable word.
+
+In Theorem 25, after pulling the signature-coloring back along $Q$, the proof
+invokes the induction hypothesis without showing that the new coloring is
+simple.  Tree-only finite tests are positive: the modeled $Q$ is onto in the
+tested $l=1,2$ cases and tested simple colorings remain simple.  This should be
+isolated as a lemma.
+
+\subsection{Appendix Remark 3(ii)}
+The unrestricted union assertion is false for disjoint $L_1,L_2$.  It becomes
+true when $L_1\cap L_2\ne\varnothing$, which is sufficient for the actual
+application $L_j=\{a_j,a_{j+1}\}$.
+
+\paragraph{Lean status.} \ok
+Definition~30's exact assignment relation is formalized as
+\lean{DualTree.StarInsensitivity.StarRelated}, and
+\lean{DualTree.StarInsensitivity.starRelated_iff} identifies it with the
+three printed clauses.  The unrestricted printed claim is refuted by the
+kernel-checked
+\lean{DualTree.StarInsensitivity.disjoint_union_failure}.
+The corrected overlap statement actually used in the proof is
+\lean{DualTree.StarInsensitivity.starInsensitive_union_of_overlap}.
+Its proof normalizes both assignments through a common bridge letter in
+$L_1\cap L_2$, making the suppressed transitivity explicit.
+
+\subsection{Lemma 31}
+The rendered PDF removes two OCR false alarms: Lemma~31 assumes $k\ge2$, and
+the proof of Theorem~8 later assumes $k\ge3$.  Two genuine one-step index
+errors remain in Lemma~31 itself.
+
+First, at construction stage $i\in\{1,\ldots,m\}$ the new wildcard occupies
+the coordinate interval $[q_{i-1},q_i)$ inserted after the first $i-1$
+variables.  It is therefore the wildcard of $v_{i-1}$, not $v_i$.  The error
+is forced already at the final stage: since
+\[
+d_m=m+n_0-q_m=m,
+\]
+the word $w_m$ has precisely the variables
+$v_0,\ldots,v_{m-1}$, so a wildcard $v_m$ cannot occur.
+
+Second, with
+\[
+d_{i-1}=(i-1)+n_0-q_{i-1}
+\qquad\text{and}\qquad
+p_i=q_i-q_{i-1},
+\]
+the set
+\[
+J=\{0,\ldots,d_{i-1}-1\}
+   \setminus [i-1,i-1+p_i)
+\]
+has cardinality
+\[
+\begin{aligned}
+|J|
+ &=d_{i-1}-p_i \\
+ &=(i-1)+n_0-q_i \\
+ &=(i-1)+f_1(k,\kappa,m-i,m,r),
+\end{aligned}
+\]
+using equation~(8).  Thus the printed $m-i-1$ must be $m-i$.  With this
+correction the exponent in (10) matches equation~(9), so the pigeonhole bound
+has the intended value $p_i$.
+
+Both corrections are local to the indexing of the Shelah-style construction;
+nothing else in the mechanism needs to change at this point.  A source-faithful
+Lean formalization of Lemma~31 remains \todo.
+
+\subsection{Theorem 29}
+The product theorem is only asserted to follow by modifying the preceding
+argument.  It remains unverified.
+
+\section{Computational evidence retained}
+Before Lean formalization, exhaustive finite programs established or tested:
+\begin{itemize}
+\item failures of the printed auxiliary order and Remark 2, with zero failures
+of the corresponding local tests after the forward-lex change;
+\item a separate forward-lex counterexample to Remark 1's extension claim;
+\item collapse of refinement for $|\Lambda|=1$ and no nonsyntactic inclusion
+in the tested two-letter instances;
+\item the height-one Corollary 22 counterexample;
+\item the small counterexample to the displayed PTGR/TGR inequality;
+\item 1244 finite overlap tests supporting the repaired Remark 3(ii);
+\item onto behavior of the Theorem 25 signature map and simplicity preservation
+in the tested tree-only cases.
+\item The executable regression \texttt{scripts/check-skew-meet.py}
+exhaustively enumerates all skew subsets (under both the printed
+reverse-lex order and the candidate forward-lex order) in the binary
+height-$3$ and height-$4$ trees and the ternary height-$2$ tree.
+It found, respectively, $25$, $201$, and $7$ skew trees in each order
+convention, and all were closed under ambient meets; of these,
+$17$, $114$, and $5$ were complete.  These tests corroborate the
+proposed meet-closure lemma for complete skew supports but are
+\emph{not} a formal proof for arbitrary height or branching number.
+\end{itemize}
+
+\section{Formalization order}
+\begin{enumerate}
+\item finite homogeneous trees, prefix and the two candidate auxiliary orders;
+\item skew, complete skew and semi-complete trees, followed by Remarks 1--2;
+\item variable words, evaluation, syntactic substitution and span inclusion;
+\item the $|\Lambda|\ge2$ substitution/refinement lemma and the unary
+counterexample;
+\item starred insensitivity and the Appendix argument;
+\item mixed products and Theorem 13;
+\item signatures and a repaired Lemma 27;
+\item Lemma 28 and Theorem 25;
+\item Theorem 3 and finally the product theorem.
+\end{enumerate}
+
+Qualitative statements take priority over the large recursive bounds until the
+underlying constructions are type-correct.
+
+\end{document}
+s already validated skew conditions imply
+\[
+ h_T(P_i)<h_T(P_j) \implies |P_i|<|P_j|
+\]
+and
+\[
+ h_T(P_i)\le h_T(P_j)\ \wedge\ P_i\le_{\rm lex}P_j
+ \implies |P_i|\le|P_j|.
+\]
+The Lean statements
+\lean{ForwardQAmbientRankClosure.marked\_length\_lt\_of\_ambient\_rank\_lt}
+and
+\lean{ForwardQAmbientRankClosure.marked\_length\_le\_of\_ambient\_rank\_le}
+formalize these direct consequences of $T$ skewness.
+Consequently
+\lean{Q\_semiComplete\_of\_ambient\_rank\_transport}
+reduces the two outstanding \emph{new/new} skew clauses
+to the following purely intrinsic ambient-$T$ rank
+transport interfaces:
+\[
+\begin{split}
+h_Q(P_i)=h_Q(P_j)\ \wedge\ P_i\le_{\rm lex}P_j
+ &\Longrightarrow h_T(P_i)\le h_T(P_j),\\
+h_Q(P_i)<h_Q(P_j)
+ &\Longrightarrow h_T(P_i)<h_T(P_j).
+\end{split}
+\]
+The second implication has passed new small-height
+adversarial regression tests but is not yet proved
+for general sources. The source-facing closure also
+requires the two old/new interfaces separately
+formalized in pending PR chains. No conditional
+hypothesis is declared automatically satisfied.
+Three additional Lean transitive-axiom audit
+endpoints are included; pending CI.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
