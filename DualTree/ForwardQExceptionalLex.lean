@@ -54,7 +54,7 @@ theorem lex_of_lex_extension_of_incomparable {b : Nat}
     have heq : f = g ++ tail :=
       PaperAuxAntisymm.finLexLE_antisymm
         f (g ++ tail) hfu huf
-    have hgfPre : IsPrefix g f := ⟨tail, heq.symm⟩
+    have hgfPre : IsPrefix g f := ⟨tail, heq⟩
     exact False.elim (hgf hgfPre)
 
 /-- When an exceptional source leaf is at the same intrinsic
@@ -120,7 +120,7 @@ theorem cut_lex_exceptional_equal_rank_projection
     exact ForwardQMarkerCoverage.marker_prefix_projected_point
       c x marker
   rcases hrProjected with ⟨tail, hproj⟩
-  rw [← hproj]
+  rw [hproj]
   simpa using
     (ForwardProjectedTerminalOrder.lex_extensions_of_incomparable
       c.cut r [] tail hlexCutR hcutNotR hrNotCut)
@@ -168,8 +168,7 @@ theorem old_top_rank_lex_exceptional_equal_rank_projection
     cut_lex_exceptional_equal_rank_projection hb c x t htRank
   change FinLexLE c.cut
     (markedProjection c x
-      (ForwardQMarkerCoverage.bulletForMarker c marker)).1 at
-    hlexCutProjected
+      (ForwardQMarkerCoverage.bulletForMarker c marker)).1 at hlexCutProjected
   exact ForwardAuxTransitivity.finLexLE_trans
     s c.cut _ hlexSCut hlexCutProjected
 
