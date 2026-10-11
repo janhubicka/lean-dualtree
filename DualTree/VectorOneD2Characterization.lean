@@ -125,12 +125,13 @@ noncomputable def certificate_of_sorted_enumeration
       (orderPreserve i j hij)
 }
 
-/-- Relative to any fixed genuinely increasing enumeration of
-the selected D₂ subtype, existence of the vector-one
-certificate is equivalent to the explicit ordered-bullet
-length predicate. The forward implication requires only
-surjectivity and order reflection, as in Definition 20. -/
-theorem certificate_iff_bullet_lengths_of_sorted_enumeration
+/-- Relative to one fixed order-correct exhaustive enumeration
+of the actual D₂ subtype, the existence of a genuine
+vector-one-complete certificate is *equivalent* to the
+pairwise marked-length condition. The construction of a
+canonical enumeration from the concrete marker map is
+kept as a separate finite-order theorem obligation. -/
+theorem exists_certificate_iff_bullet_lengths_of_sorted_enumeration
     {b n l k m : Nat} {α : Type*}
     (c : Frame b n l k m α)
     (x : Input c)
@@ -141,11 +142,14 @@ theorem certificate_iff_bullet_lengths_of_sorted_enumeration
       (enumerate i).1 < (enumerate j).1 → i < j)
     (orderPreserve : ∀ (i j : Fin d2),
       i < j → (enumerate i).1 < (enumerate j).1) :
-    (∃ cert : ForwardQStarredD2Certificate.Certificate c x,
-      cert.d2 = d2) →
+    Nonempty (ForwardQStarredD2Certificate.Certificate c x) ↔
       BulletLengthsOrdered c x := by
-  intro ⟨cert, _⟩
-  exact ForwardQStarredD2Certificate.bullet_lengths_ordered_of_certificate
-    c x cert
+  constructor
+  · rintro ⟨cert⟩
+    exact ForwardQStarredD2Certificate.bullet_lengths_ordered_of_certificate
+      c x cert
+  · intro hordered
+    exact ⟨certificate_of_sorted_enumeration
+      c x d2 enumerate onto orderReflect orderPreserve hordered⟩
 
 end DualTree.VectorOneD2Characterization
