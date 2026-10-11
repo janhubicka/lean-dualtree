@@ -1,0 +1,288 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,enumitem,hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Int}{\operatorname{Int}}
+\newcommand{\htS}{h_S}
+\newcommand{\htT}{h_T}
+\newcommand{\htQ}{h_Q}
+\newcommand{\pre}{\sqsubseteq}
+\newcommand{\lex}{\le_{\mathrm{lex}}}
+\newcommand{\fwd}{\preccurlyeq_{\mathrm{fwd}}}
+\newcommand{\len}[1]{\lvert #1\rvert}
+
+\title{A conditional geometric repair of the Lemma 27 \(Q\)-construction}
+\author{Verification note for Todorcevic--Tyros,
+\emph{A Dual Ramsey Theorem for Trees}}
+\date{October 2026}
+\begin{document}
+\maketitle
+
+\paragraph{Scope.}
+This note states a \emph{corrected and explicitly conditional}
+version of the tree-support component of Lemma~27
+(arXiv:2207.14599v1).
+It is not an erratum for the entire paper and does not
+prove its Ramsey conclusion. In particular, neither the
+mixed-cone word \(g_w\), its smoothness/colouring pullback,
+nor the original recursive bounds are supplied here.
+The printed length-first reverse-lexicographic order and
+unrestricted leaf replacement have separately documented
+counterexamples in
+\texttt{notes/lemma27\_Q\_counterexample.tex}.
+The development below uses the globally \emph{forward}
+length-first auxiliary order consistently.
+
+\section*{Data and precise hypothesis}
+
+Let \(b>0\), and let \(S\) be a finite semi-complete skew
+source support with its last interior vertex \(t_0\)
+in length-first forward auxiliary order.
+The original starred source word has variable roots
+\(\Int(S)\).
+Let \(T\) be a finite \(k\)-complete skew support under
+the same forward convention, with \(S\subseteq T\) and
+\(t_0\in T\).
+Write \(m=\htT(t_0)\), and assume
+\begin{equation}\label{eq:early}
+ m+1<k.
+\end{equation}
+The repaired signature has a literal marker set \(R\)
+comprising (a) the first exit boundary of each exceptional
+terminal \(t\in S\) not extending \(t_0\), and (b) each
+ambient child \(t_0^\frown i\) for \(i<b\).
+Every marker has a unique minimal \(T\)-frontier \(f\)
+outside the \emph{inclusive} forward cut at \(t_0\).
+The marker-to-frontier assignment is injective.
+Enumerate \emph{all} such minimal frontiers in increasing
+forward auxiliary order, and let \(D_2\) be the finite
+subset of indices assigned to markers in \(R\).
+
+For each \(i\in D_2\), choose a local marked point
+\(s_i\in b^{<k-(m+1)}\). Let \(f_i\) be its selected
+\(T\)-frontier, and let
+\[
+ P_i=I_T\bigl(I_T^{-1}(f_i)^\frown s_i\bigr),
+\]
+where \(I_T:b^{<k}\to T\) is the canonical
+support-address map for the \emph{forward} complete
+skew support.
+The shortened common tail space makes every \(P_i\)
+well-defined even when \(\htT(f_i)=m+1\), and
+\begin{equation}\label{eq:projectrank}
+ f_i\pre P_i,\qquad
+ \htT(P_i)=\htT(f_i)+\len{s_i}.
+\end{equation}
+The actual reconstructed support is
+\[
+ Q=\Int(S)\cup\{P_i:i\in D_2\}.
+\]
+
+\paragraph{Starred \(D_2\)-order hypothesis.}
+The only numerical consequence of Definition~20 used
+by the geometric argument is
+\begin{equation}\label{eq:D2}
+  i<j,\quad i,j\in D_2
+       \quad\Longrightarrow\quad
+       \len{s_i}\le\len{s_j}.
+\end{equation}
+This follows from a genuine vector \(1\)-complete
+singleton family indexed by the \emph{selected} \(D_2\)
+coordinates in their induced order. It is false to
+assume \eqref{eq:D2} for an arbitrary element of the
+unstarred mixed product. The Lean development uses an
+explicit order-reflecting enumeration/certificate and
+does not silently identify it with every printed
+\(W_*\)-input.
+
+\section*{The matching of the two intrinsic rank bands}
+
+\begin{lemma}[Exact leaf/frontier rank matching]
+\label{lem:bands}
+For every actual marked projection \(P_i\) one of the
+following two alternatives holds:
+\[
+\begin{aligned}
+ \bigl(\htQ(P_i),\htT(f_i)\bigr)
+      &=(\htS(t_0),\htT(t_0)),\\
+ \text{or}\qquad
+ \bigl(\htQ(P_i),\htT(f_i)\bigr)
+      &=(\htS(t_0)+1,\htT(t_0)+1).
+\end{aligned}
+\]
+The alternative is independent of the local point \(s_i\).
+\end{lemma}
+
+\begin{proof}
+All new projected \(P_i\) are terminal in \(Q\),
+and the actual old interior is preserved:
+\(\Int(Q)=\Int(S)\). Consequently \(\htQ(P_i)\)
+is the number of strict old-interior predecessors of
+its literal marker.
+
+For an exceptional terminal \(t\in S\), the first-exit
+boundary has exactly the original interior predecessors
+of \(t\); thus \(\htQ(P_i)=\htS(t)\).
+A minimal outside-cut source terminal has height
+\(\htS(t_0)\) or \(\htS(t_0)+1\).
+
+Its selected \(T\)-frontier \(f_i\) lies
+\emph{on the original path to \(t\)}:
+both \(t\) and \(f_i\) extend the literal first boundary,
+so their meet is still outside the inclusive cut.
+Meet-closure of \(T\) and minimality of \(f_i\)
+force \(f_i\pre t\).
+
+If \(\htS(t)=\htS(t_0)+1\), choose the genuine
+source-support ancestor \(u\pre t\) of height
+\(\htS(t_0)\). The two same-height interior points
+\(u,t_0\) are in incomparable cones and
+\(u\lex t_0\). This lexicographic relation persists
+to \(f_i\), and the existing strict boundary-length
+argument shows that the first exit is longer than \(t_0\).
+Were \(\htT(f_i)=\htT(t_0)\), the \(T\) skew
+same-rank clause would put \(f_i\fwd t_0\),
+contradicting its being outside the inclusive cut.
+The general frontier bound
+\(\htT(f_i)\le\htT(t_0)+1\) gives the high alternative.
+
+If \(\htS(t)=\htS(t_0)\), source skewness gives
+\(t_0\lex t\). Take the \(T\)-support ancestor \(a\pre t\)
+of height \(\htT(t_0)\). It is incomparable with \(t_0\)
+and lexicographically to its right, hence outside
+the inclusive cut by \(T\) skewness. The frontier
+\(f_i\) must prefix \(a\), or \(a\) would violate
+its outside-cut minimality. Thus
+\(\htT(f_i)\le\htT(a)=\htT(t_0)\), and the standard
+outside-cut frontier lower bound gives equality.
+
+Finally, if the literal marker is the direct child
+\(t_0^\frown j\), then \(t_0\) is itself a strict
+predecessor in \(Q\), giving
+\(\htQ(P_i)=\htS(t_0)+1\).
+Its selected frontier extends \(t_0^\frown j\),
+hence has \(\htT(f_i)>\htT(t_0)\).
+The same frontier upper bound gives
+\(\htT(f_i)=\htT(t_0)+1\).
+These are all the literal markers.
+\end{proof}
+
+\begin{remark}
+Lemma~\ref{lem:bands} is stronger than the previously
+known band bounds on \(Q\)-heights and \(T\)-frontier
+heights separately. It proves that the \emph{same}
+alternative occurs for each selected marker.
+Therefore
+\[
+\begin{gathered}
+ \htQ(P_i)<\htQ(P_j)
+   \iff \htT(f_i)<\htT(f_j),\\
+ \htQ(P_i)=\htQ(P_j)
+   \iff \htT(f_i)=\htT(f_j).
+\end{gathered}
+\]
+\end{remark}
+
+\section*{Conditional semi-completeness}
+
+\begin{theorem}[Corrected \(Q\)-support component]
+\label{thm:Q}
+Under the data above, including the explicit
+\(D_2\)-length order \eqref{eq:D2},
+the actual reconstructed support \(Q\) is a
+semi-complete skew tree under the
+length-first \emph{forward} auxiliary order.
+\end{theorem}
+
+\begin{proof}
+The root, exact old interior, ambient meet closure,
+\(0\)-or-\(b\) immediate successor counts, all
+directions below the maximal cut, and final skew
+branching witness are independent verified geometric
+facts about this corrected \(Q\) support.
+It therefore suffices to verify the two skew
+rank/ambient-length conditions.
+
+For two old interior vertices, both clauses transfer
+from \(S\), since their intrinsic heights in \(Q\)
+are unchanged. For an old interior vertex and a
+marked projection, the equal-rank lexicographic
+orientation and strict-rank length inequality
+have been proved using the literal exceptional and
+cut-child marker cases. A new marked leaf can never
+have smaller \(Q\)-height than an old interior vertex.
+
+It remains to compare two new projected points.
+The genuine forward-sorted frontier list has
+nondecreasing \(T\)-ranks by index.
+If \(\htQ(P_i)=\htQ(P_j)\), Lemma~\ref{lem:bands}
+gives \(\htT(f_i)=\htT(f_j)\).
+The selected frontier cones are incomparable;
+therefore \(P_i\lex P_j\) forces \(i\le j\).
+The case \(i=j\) is trivial. If \(i<j\),
+hypothesis \eqref{eq:D2} and the verified
+monotonicity of canonical projections in the
+sorted frontier order give
+\(\len{P_i}\le\len{P_j}\).
+This is the new/new skew same-height clause.
+
+If \(\htQ(P_i)<\htQ(P_j)\), then
+\(\htT(f_i)<\htT(f_j)\) by
+Lemma~\ref{lem:bands}. Frontier-rank
+monotonicity excludes \(j\le i\), hence \(i<j\).
+Using \eqref{eq:projectrank} and \eqref{eq:D2},
+\[
+ \htT(P_i)=\htT(f_i)+\len{s_i}
+         <\htT(f_j)+\len{s_j}
+         =\htT(P_j).
+\]
+The skew strict-height clause in the enclosing
+complete support \(T\) now yields
+\(\len{P_i}<\len{P_j}\).
+This is the remaining new/new condition.
+\end{proof}
+
+\section*{What is still not proved}
+
+\begin{enumerate}[label=(\roman*)]
+\item The source-facing Lean certificate of
+selected \(D_2\) vector \(1\)-completeness
+must be constructed from precisely the actual
+members of the printed \(W_*\) domain.
+This note does not assert the same length property
+for arbitrary mixed-product inputs.
+\item The paper's original local cone height
+and recursive numerical bounds must be reconciled
+with the shortened common tail space in
+\eqref{eq:early}, or an extra complete level
+must be supplied and the iteration adjusted.
+\item The particular word \(g_w\) must be constructed,
+including root-aligned substitution, typed
+three-way local symbol decoding, and
+consistency of its variable fibres.
+\item Smoothness of the colouring pullback
+and classwise compatibility must be proved
+before applying mixed-product Ramsey results.
+A separate checked example shows that an
+arbitrary letter-at-marked-point colouring
+need not be smooth.
+\item Lemma~28, Theorem~25, and the full dual
+Ramsey theorem remain beyond this note.
+\end{enumerate}
+
+\paragraph{Lean status and source policy.}
+The statements in this note are mirrored by the
+modules \texttt{ForwardQFrontierBandMatch} and
+\texttt{ForwardQCertifiedSemiComplete}, with supporting
+source-facing modules for each marker family.
+Proof status must be read from the corresponding
+current GitHub Actions runs and transitive axiom audit.
+Until those complete, the statements above are
+\emph{proposed Lean proofs awaiting CI}.
+The original paper's manuscript is not modified;
+proposed corrections and verification markers
+are maintained in \texttt{audit.tex}.
+
+\end{document}

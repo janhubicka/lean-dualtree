@@ -284,3 +284,5 @@ import DualTree.ForwardQExceptionalLowFrontier
 import DualTree.ForwardQFrontierIndexOrder
 
 import DualTree.ForwardQFrontierBandMatch
+
+import DualTree.ForwardQCertifiedSemiComplete

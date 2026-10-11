@@ -997,3 +997,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFrontierBandMatch.Q_rank_lt_iff_frontier_T_rank_lt
 #print axioms DualTree.ForwardQFrontierBandMatch.Q_rank_eq_iff_frontier_T_rank_eq
 #print axioms DualTree.ForwardQFrontierBandMatch.Q_rank_mono_of_sorted_bullets
+
+#print axioms DualTree.ForwardQCertifiedSemiComplete.marked_marked_condII
+#print axioms DualTree.ForwardQCertifiedSemiComplete.marked_marked_condIII
+#print axioms DualTree.ForwardQCertifiedSemiComplete.Q_semiComplete_of_bullet_lengths
+#print axioms DualTree.ForwardQCertifiedSemiComplete.Q_semiComplete_of_starred_D2_certificate
