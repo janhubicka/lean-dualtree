@@ -301,3 +301,5 @@ import DualTree.ThreeWayQDecoderRootAlignment
 
 import DualTree.ForwardQDisjointWordCones
 import DualTree.ForwardQLocalWordPatching
+
+import DualTree.ForwardQThreeWayConeWordAssembly
