@@ -4231,6 +4231,51 @@ The remaining family at equal cut rank is covered by the
 separate equal-rank lexical argument; all new/new pairs
 and the word/colouring portion of Lemma~27 remain open.
 
+\paragraph{Universal strict top-rank projected length and mixed condition~(iii).} \todo
+The genuine corrected marker-to-D$_2$ bijection permits a
+uniform statement without distinguishing marker types in later
+applications. For every actual marked projection $P_i(s_i)$ with
+intrinsic new-support height exactly one above the old final cut,
+\[
+ h_Q(P_i(s_i))=h_S(t_0)+1
+ \quad\Longrightarrow\quad
+ |P_i(s_i)|>|t_0|.
+\]
+For a child marker this follows from
+$t_0^\frown j\sqsubseteq P_i(s_i)$.
+For an exceptional terminal marker, the exact Q rank formula
+identifies the source terminal rank with $h_S(t_0)+1$,
+and the verified cone-order argument above gives a first
+boundary $r$ satisfying $|t_0|<|r|\le|P_i(s_i)|$.
+
+Thus every strictly rank-increasing old-to-new pair also has
+strictly increasing ambient word length. If the original old
+interior vertex has source rank below the cut, apply the
+old source's skew clause~(iii) and the weak cut-before-projection
+length bound. Otherwise the old vertex has rank $h_S(t_0)$
+and the projected point necessarily lies at Q rank
+$h_S(t_0)+1$, so apply the universal length inequality.
+There is no new-to-old strict rank orientation because all
+new Q ranks are at least the old cut rank.
+Hence \emph{both mixed old/new orientations of clause~(iii)}
+are discharged by
+\lean{ForwardQTopRankLength.old\_to\_marked\_condIII}
+and
+\lean{ForwardQTopRankLength.marked\_to\_old\_condIII\_impossible}.
+This formulation is independent of any ordering of local
+D$_2$ bullet tails; new/new clauses and the word/colouring
+pullback are the remaining geometric/algebraic gaps.
+Three further Lean transitive-axiom checks are added.
+Pending CI before promoting from \todo{} to \ok{}.
+
+\paragraph{Integration checkpoint after the predecessor and exceptional-boundary merges.} \todo
+This branch is based on the merged rank-ancestor and exceptional
+boundary proof modules, independently CI-verified before their
+integration. Its additional obligations are the universal
+top-rank projection length theorem and the two mixed skew
+clause~(iii) endpoints; all three are separately audited.
+The new/new Q order inequalities and $g_w$ remain open.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

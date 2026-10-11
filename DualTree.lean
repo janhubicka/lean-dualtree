@@ -268,3 +268,5 @@ import DualTree.ForwardQMixedCondII
 
 import DualTree.ForwardSourceRankAncestors
 import DualTree.ForwardQExceptionalLength
+
+import DualTree.ForwardQTopRankLength
