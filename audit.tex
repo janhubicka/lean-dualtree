@@ -4125,6 +4125,40 @@ Lean formalization of Lemma~31 remains \todo.
 The product theorem is only asserted to follow by modifying the preceding
 argument.  It remains unverified.
 
+
+\paragraph{Independent stretched and arbitrary-source Q regression.} \todo
+Two deterministic Python programs now exercise the globally
+forward-auxiliary corrected reconstruction against independently
+generated complete skew supports. The first,
+\texttt{scripts/check-q-stretched-forward.py}, constructs
+forward-initial source interiors inside genuinely stretched
+complete supports and checks $912$ valid reconstructed
+instances across $34$ distinct supports, using the real
+minimal frontier, marker injection, sorted $D_2$ order and
+canonical support-address projection.
+
+The independent
+\texttt{scripts/check-q-arbitrary-source.py} enumerates
+\emph{every} source subset of four binary stretched height-$4$
+complete supports and one ternary stretched height-$3$
+complete support, discarding precisely those that fail
+semi-complete skewness, interior skewness or the early-cut
+hypotheses. Across $139{,}259$ nonempty candidates, it finds
+$538$ admissible sources and checks $4{,}292$ reconstructed
+Q supports against the full executable semi-complete skew
+predicate. For every exceptional source terminal at rank
+$h_S(t_0)+1$, it additionally asserts the first outside-cut
+boundary has ambient length strictly greater than $|t_0|$.
+Both programs use fixed seeds and assert their expected
+coverage counts.
+
+Neither exhaustive small tests nor random stretched tests
+constitute a proof for arbitrary parameters; they also do
+not verify construction of the word $g_w$, smoothness, or
+the final colouring pullback. They serve as adversarial
+regressions while the corresponding Lean theorems are
+reviewed and the repaired Q construction is completed.
+
 \section{Computational evidence retained}
 Before Lean formalization, exhaustive finite programs established or tested:
 \begin{itemize}
