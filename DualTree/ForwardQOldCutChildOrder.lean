@@ -1,4 +1,5 @@
 import DualTree.ForwardQCutChildRank
+import DualTree.ForwardQMarkerRankBand
 import DualTree.ForwardQRetainedOrder
 import DualTree.ForwardFrontierRanks
 import DualTree.ForwardQMarkerCoverage
@@ -137,5 +138,33 @@ theorem old_Q_rank_lt_projected_cut_child
         (ForwardQMarkerCoverage.bulletForMarker c marker)).1 =
     SkewTree.heightAt c.source.tree c.cut + 1 at hnew
   omega
+
+
+/-- Every retained original interior vertex has Q intrinsic rank
+at most that of every actual marked projected leaf.  In particular, the
+new-to-old orientation of skew clause (iii) never occurs. This is
+the combination of the exact old interior rank preservation and the
+two-level band theorem for all D₂ projections. -/
+theorem old_Q_rank_le_every_marked
+    {b n l k m : Nat} {α : Type*}
+    (hb : 0 < b)
+    (c : Frame b n l k m α)
+    (x : Input c)
+    (s : Node b)
+    (hs : s ∈ SkewTree.interior c.source.tree)
+    (i : MixedProduct.BulletIndex (kind c)) :
+    SkewTree.heightAt (nodes c x).toList s ≤
+      SkewTree.heightAt (nodes c x).toList
+        (markedProjection c x i).1 := by
+  have hrank : SkewTree.heightAt c.source.tree s ≤
+      SkewTree.heightAt c.source.tree c.cut :=
+    old_interior_source_rank_le_cut c s hs
+  have hold :=
+    ForwardQRetainedRanks.original_interior_Q_height_eq_source
+      c x s hs
+  rcases ForwardQMarkerRankBand.markedProjection_Q_rank_band
+      hb c x i with hnew | hnew
+  · omega
+  · omega
 
 end DualTree.ForwardQOldCutChildOrder
