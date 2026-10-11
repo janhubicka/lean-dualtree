@@ -167,4 +167,56 @@ theorem old_Q_rank_le_every_marked
   · omega
   · omega
 
+
+/-- A retained interior node strictly below the final cut's
+source rank is strictly shorter than every newly projected Q leaf,
+regardless of which literal marker family produces that leaf. -/
+theorem old_below_cut_length_lt_every_marked
+    {b n l k m : Nat} {α : Type*}
+    (c : Frame b n l k m α)
+    (x : Input c)
+    (s : Node b)
+    (hs : s ∈ SkewTree.interior c.source.tree)
+    (hsmall : SkewTree.heightAt c.source.tree s <
+      SkewTree.heightAt c.source.tree c.cut)
+    (i : MixedProduct.BulletIndex (kind c)) :
+    s.length < (markedProjection c x i).1.length := by
+  have hsemi := c.source.semi_complete
+  simp only [SkewTree.semiCompleteB, Bool.and_eq_true] at hsemi
+  have hbefore : s.length < c.cut.length :=
+    SkewLevelOrder.length_lt_of_height_lt
+      c.source.tree SkewTree.forwardAuxB hsemi.1
+      (ForwardQRooted.source_nonsingleton c)
+      (List.mem_filter.mp hs).1 (List.mem_filter.mp c.hcut).1
+      hsmall
+  have hafter :=
+    ForwardQRetainedOrder.Q_old_new_length_le
+      c x c.cut c.hcut i
+  omega
+
+/-- For an old interior node below the cut, every new leaf
+also has strictly higher Q intrinsic rank. This handles the
+source-below-cut part of the mixed old/new skew clause (iii)
+for both marker families, independently of local D₂ tails. -/
+theorem old_below_cut_Q_rank_lt_every_marked
+    {b n l k m : Nat} {α : Type*}
+    (hb : 0 < b)
+    (c : Frame b n l k m α)
+    (x : Input c)
+    (s : Node b)
+    (hs : s ∈ SkewTree.interior c.source.tree)
+    (hsmall : SkewTree.heightAt c.source.tree s <
+      SkewTree.heightAt c.source.tree c.cut)
+    (i : MixedProduct.BulletIndex (kind c)) :
+    SkewTree.heightAt (nodes c x).toList s <
+      SkewTree.heightAt (nodes c x).toList
+        (markedProjection c x i).1 := by
+  have hold :=
+    ForwardQRetainedRanks.original_interior_Q_height_eq_source
+      c x s hs
+  rcases ForwardQMarkerRankBand.markedProjection_Q_rank_band
+      hb c x i with hnew | hnew
+  · omega
+  · omega
+
 end DualTree.ForwardQOldCutChildOrder
