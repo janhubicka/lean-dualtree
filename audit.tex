@@ -4050,6 +4050,30 @@ compatibility of $Q$ remain open. Seven new axioms are added to the
 transitive audit. This entry remains \textbf{PENDING} until the
 integrated Lean build and no-\texttt{sorryAx} CI check pass.
 
+\paragraph{Strict old--new skew comparisons for cut-child projections.} \todo
+The reconstructed Q has two distinct families of projected leaves.
+For the genuinely literal child markers $t_0^\frown i$, the strict
+old--new part of skew clause~(iii) can be discharged uniformly:
+each retained old interior node $s$ satisfies
+\[
+h_Q(s)=h_S(s)\le h_S(t_0),\qquad |s|\le |t_0|,
+\]
+by maximality of $t_0$ in the corrected forward auxiliary order
+and the rank monotonicity of a forward skew support. Conversely
+the projected marker point $P(t_0^\frown i)$ extends the ambient
+word $t_0^\frown i$, hence
+\[
+|s|<|P(t_0^\frown i)|,\qquad
+h_Q(s)<h_Q(P(t_0^\frown i))=h_S(t_0)+1.
+\]
+The Lean module \lean{ForwardQOldCutChildOrder} isolates four
+source-facing facts implementing these calculations, with no
+assumption on local marked-point tail lengths.
+This does \emph{not} resolve the exceptional-source-leaf
+old--new comparisons, nor either of the new--new skew
+conditions or the mixed-product word/colouring pullback.
+The proof is pending CI and the expanded transitive axiom audit.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
