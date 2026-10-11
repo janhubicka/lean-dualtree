@@ -52,6 +52,9 @@ jobs:
       - name: Regress ternary Q order repair candidates
         run: python3 scripts/check-q-order-repair-ternary.py
 
+      - name: Regress stretched-support forward Q reconstruction
+        run: python3 scripts/check-q-stretched-forward.py
+
       - name: Check TeX ledger encoding
         run: python3 scripts/check-audit-tex.py
 
