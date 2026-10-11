@@ -296,3 +296,5 @@ import DualTree.ForwardQCanonicalD2
 import DualTree.ForwardQActualStarredSpace
 
 import DualTree.ForwardQWordSymbolAssembly
+
+import DualTree.ThreeWayQDecoderRootAlignment
