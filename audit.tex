@@ -2250,6 +2250,38 @@ branch count required by semi-completeness.
 The skew rank/ambient-length clauses and the Q word
 and colouring pullback are independent remaining tasks.
 
+\paragraph{Ranks of exceptional source terminals and their true Q replacements.} \todo
+The globally forward-corrected Q reconstruction has two distinct
+rank functions: intrinsic height in the enclosing complete
+support $T$, and intrinsic height in the reconstructed $S_x$.
+The new module \lean{DualTree.ForwardQExceptionalRanks}
+proves that an exceptional source leaf $t$ is a minimal
+outside-cut frontier \emph{of the original source support}.
+The previously validated forward frontier theorem yields
+\[
+ h_S(t)\in\{h_S(t_0),\,h_S(t_0)+1\}.
+\]
+Every original source interior vertex is a strict ambient
+prefix of the first boundary marker of $t$ exactly when
+it is a strict prefix of $t$. Consequently the
+source-facing theorem
+\lean{DualTree.ForwardQExceptionalRanks.exceptional_projection_Q_rank_eq_source}
+identifies the intrinsic rank of its \emph{actual}
+projected Q replacement as exactly $h_S(t)$,
+independently of the local $D_2$ tail depth. This is
+proved by comparing finite strict-prefix sets, and
+does not conflate the new Q height with height in $T$.
+These four declarations await CI and the transitive
+axiom audit.
+
+The other class of literal markers, the cut children,
+still needs its own exact Q-height equation. Together
+the two families should classify all new Q levels
+and help establish the remaining strict and equal-rank
+ambient-length inequalities of skew clauses (ii)--(iii).
+No full Q semi-completeness or word/colouring validity
+is claimed.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
