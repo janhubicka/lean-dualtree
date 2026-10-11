@@ -171,6 +171,11 @@ theorem equal_T_rank_forces_equal_frontier_and_tail
     SkewTree.heightAt c.T f.1 + (x.bulletPoint i).1.length at hri
   change SkewTree.heightAt c.T (markedProjection c x j).1 =
     SkewTree.heightAt c.T g.1 + (x.bulletPoint j).1.length at hrj
+  -- Normalize the local frontier aliases in the conclusion as well:
+  -- omega treats different syntactic spellings of the same term separately.
+  change (SkewTree.heightAt c.T f.1 =
+    SkewTree.heightAt c.T g.1) ∧
+    (x.bulletPoint i).1.length = (x.bulletPoint j).1.length
   constructor <;> omega
 
 end DualTree.ForwardQIndexedTRanks
