@@ -1045,3 +1045,15 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.ThreeWayQDecoderRootAlignment.liftWord_root_aligned
 #print axioms DualTree.ThreeWayQDecoderRootAlignment.indexed_liftWord_root_aligned
+
+#print axioms DualTree.ForwardQDisjointWordCones.projected_cone_avoids_source_root
+#print axioms DualTree.ForwardQDisjointWordCones.projected_cones_no_common_extension
+#print axioms DualTree.ForwardQDisjointWordCones.projected_nodes_incomparable
+#print axioms DualTree.ForwardQLocalWordPatching.selectedCone_none_at_source_root
+#print axioms DualTree.ForwardQLocalWordPatching.selectedCone_eq_some_of_prefix
+#print axioms DualTree.ForwardQLocalWordPatching.patchedSymbol_inside
+#print axioms DualTree.ForwardQLocalWordPatching.patchedSymbol_outside
+#print axioms DualTree.ForwardQLocalWordPatching.patchedSymbol_at_source_root
+#print axioms DualTree.ForwardQLocalWordPatching.patchedVariableWord
+#print axioms DualTree.ForwardQLocalWordPatching.patchedVariableWord_support
+#print axioms DualTree.ForwardQLocalWordPatching.patchedVariableWord_symbol
