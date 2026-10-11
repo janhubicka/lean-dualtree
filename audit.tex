@@ -2282,6 +2282,40 @@ ambient-length inequalities of skew clauses (ii)--(iii).
 No full Q semi-completeness or word/colouring validity
 is claimed.
 
+\paragraph{Exact intrinsic Q rank of projected cut-child markers.} \todo
+Every ambient immediate child $t_0^\frown i$ of the
+maximal source interior cut belongs to the literal
+corrected signature marker set $R$, even when the
+child is not itself in the old source support.
+The new lemma
+\lean{DualTree.ForwardQCutChildRank.interior_prefix_cut_child_iff}
+proves that an original interior vertex is
+a strict prefix of this child exactly when it
+is a prefix of $t_0$. Its rank contribution
+therefore consists of the $h_S(t_0)$ strict
+source-support predecessors of $t_0$ and
+$t_0$ itself. Using the existing source-facing
+Q prefix-card equation, the theorem
+\lean{DualTree.ForwardQCutChildRank.projected_cut_child_Q_height}
+certifies
+\[
+ h_Q(P(t_0^\frown i))=h_S(t_0)+1
+\]
+for every actual projected child marker, regardless
+of the selected local $D_2$ point length and
+ambient complete-$T$ level.
+Both theorems await stacked Lean CI and transitive
+axiom audit.
+
+Together with the exceptional-marker rank theorem,
+this should classify all projected Q intrinsic
+levels as either $h_S(t_0)$ or $h_S(t_0)+1$.
+The remaining ambient length inequalities of the
+skew definition must compare these intrinsic Q
+ranks with the ordered canonical projections in $T$;
+they are not consequences of rank classification
+alone.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}

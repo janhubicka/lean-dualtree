@@ -251,3 +251,5 @@ import DualTree.ForwardQMeetClosed
 import DualTree.ForwardQAllDirections
 
 import DualTree.ForwardQExceptionalRanks
+
+import DualTree.ForwardQCutChildRank
