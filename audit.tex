@@ -5420,6 +5420,44 @@ its alignment assumptions. Nor does pointwise evaluation alone
 prove smoothness, invariance of the colouring, simplicity of the
 pulled-back colouring or the required recursive parameter bounds.
 
+\paragraph{Exact classwise criterion for smooth extension of corrected $W_*$ colourings.} \todo
+The source-facing theorem
+\lean{ForwardQStarredSmoothExtension.total\_smooth\_extension\_iff\_starred\_smooth}
+specializes the previously verified partial-colouring
+extension lemma to the \emph{actual corrected} forward
+$D_0/D_2$ starred-input subtype. For a colouring
+$d:W_*\to\Gamma$, the following conditions are
+equivalent:
+\begin{enumerate}[label=(\roman*)]
+\item There exists a total colouring
+$\widehat d:W^D\to\Gamma$ agreeing with $d$ on
+every corrected starred point and constant on all
+$\Gamma_2=D_2$ smoothness classes.
+\item Whenever two actual starred inputs $x,y\in W_*$
+are related by Definition~21 smoothness,
+$d(x)=d(y)$.
+\end{enumerate}
+The implication $(i)\Rightarrow(ii)$ follows by
+restriction. Conversely, smoothness is an equivalence
+relation, and the classwise-compatible partial
+colouring extends by the existing general theorem,
+with an arbitrary fallback colour on classes
+disjoint from $W_*$. Thus the true obstacle is
+\emph{classwise compatibility of the induced
+colouring on the starred domain}, not the extension
+mechanism itself.
+
+Three declarations are included in the new
+transitive no-\texttt{sorryAx} audit. This
+theorem should not be interpreted as proof that
+the \emph{particular} Lemma~27 colouring
+$c\circ Q$ satisfies condition~(ii).
+Its compatibility must be derived from the
+actual constructed local cone words and the
+source colouring, while respecting the
+forward-vs-reverse reindexing obstruction and
+the quantitative induction hypotheses.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

@@ -309,3 +309,5 @@ import DualTree.ForwardQStarredOrderReindexObstruction
 import DualTree.ForwardQStarredSmoothConePatches
 
 import DualTree.ForwardQThreeWayEvaluation
+
+import DualTree.ForwardQStarredSmoothExtension

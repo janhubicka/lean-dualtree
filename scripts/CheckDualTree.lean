@@ -1086,3 +1086,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQThreeWayEvaluation.cone_variable_fibre_uniform
 #print axioms DualTree.ForwardQThreeWayEvaluation.eval_inside
 #print axioms DualTree.ForwardQThreeWayEvaluation.eval_outside
+
+#print axioms DualTree.ForwardQStarredSmoothExtension.smooth_starred_of_total_extension
+#print axioms DualTree.ForwardQStarredSmoothExtension.exists_total_smooth_extension_of_smooth_starred
+#print axioms DualTree.ForwardQStarredSmoothExtension.total_smooth_extension_iff_starred_smooth
