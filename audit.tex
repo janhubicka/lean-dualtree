@@ -4483,6 +4483,41 @@ hypothesis is declared automatically satisfied.
 Three additional Lean transitive-axiom audit
 endpoints are included; pending CI.
 
+
+\paragraph{Exceptional terminals: support-frontier path and higher-rank alignment.} \todo
+The ambient $T$-frontier selected by a literal first-boundary
+marker $r(t)$ of an exceptional source terminal $t$ is not merely
+an arbitrary descendant of $r(t)$: it actually prefixes $t$.
+To verify this, take the ambient meet of the chosen frontier
+$f(t)$ and the source terminal $t$, both belonging to $T$.
+They share the boundary prefix $r(t)$, so their meet remains
+outside the inclusive forward cut. Meet-closure of the
+complete skew support makes this meet a $T$-node; minimality
+of $f(t)$ forces the meet to equal $f(t)$, hence
+$f(t)\sqsubseteq t$.
+
+Now suppose $h_S(t)=h_S(t_0)+1$. The previously proved
+rank-by-rank ancestor theorem supplies an interior source
+ancestor $u\sqsubset t$ of rank $h_S(t_0)$.
+It is incomparable with $t_0$, and the old source's
+same-height skew condition implies $u\le_{\rm lex}t_0$.
+Since $u$ prefixes $f(t)$, ordinary lex order gives
+$f(t)\le_{\rm lex}t_0$.
+If $h_T(f(t))=h_T(t_0)$, skew clause~(ii) in $T$
+would imply $f(t)\preceq_{\rm fwd}t_0$,
+contradicting the selected frontier's being outside the cut.
+The verified two-level frontier bound then gives
+\[
+ h_T(f(t))=h_T(t_0)+1.
+\]
+These geometric statements are collected in
+\lean{ForwardQExceptionalHighFrontier} with two transitive
+Lean axiom checks, pending CI. Together with the separate
+cut-child frontier theorem, they address both \emph{higher}
+intrinsic $Q$-rank marker families. The low-rank exceptional
+family still requires a matching ambient frontier rank proof
+before the full new/new skew comparison can be closed.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
