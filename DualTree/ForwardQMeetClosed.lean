@@ -125,9 +125,9 @@ noncomputable def markerOfBullet
     (i : MixedProduct.BulletIndex (ForwardSourceQTree.kind c)) :
     ForwardSortedMixedProduct.Marker c.source c.cut c.hout :=
   Classical.choose
-    (ForwardSortedMixedProduct.bulletIndex_bijective
+    ((ForwardSortedMixedProduct.bulletIndex_bijective
       c.source c.cut c.hcut c.hmax c.hout
-      c.T c.hcomplete c.hnon c.hST c.hcutT c.hearly).2 i
+      c.T c.hcomplete c.hnon c.hST c.hcutT c.hearly).2 i)
 
 /-- The chosen marker's genuine sorted frontier coordinate
 is exactly the given D₂ bullet coordinate. -/
@@ -137,9 +137,9 @@ theorem bulletForMarker_markerOfBullet
     (i : MixedProduct.BulletIndex (ForwardSourceQTree.kind c)) :
     ForwardQMarkerCoverage.bulletForMarker c (markerOfBullet c i) = i :=
   Classical.choose_spec
-    (ForwardSortedMixedProduct.bulletIndex_bijective
+    ((ForwardSortedMixedProduct.bulletIndex_bijective
       c.source c.cut c.hcut c.hmax c.hout
-      c.T c.hcomplete c.hnon c.hST c.hcutT c.hearly).2 i
+      c.T c.hcomplete c.hnon c.hST c.hcutT c.hearly).2 i)
 
 /-- The source marker recovered from a bullet coordinate
 is injective: a marker cannot represent two distinct bullets. -/
