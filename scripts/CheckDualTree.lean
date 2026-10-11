@@ -1079,3 +1079,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQStarredSmoothConePatches.patchedInput_Q_nodes_eq
 #print axioms DualTree.ForwardQStarredSmoothConePatches.original_smooth_patched
 #print axioms DualTree.ForwardQStarredSmoothConePatches.smooth_starred_color_invariant
+
+#print axioms DualTree.ForwardQThreeWayEvaluation.original_letter_inside
+#print axioms DualTree.ForwardQThreeWayEvaluation.auxiliary_letter_inside
+#print axioms DualTree.ForwardQThreeWayEvaluation.cone_variable_inside
+#print axioms DualTree.ForwardQThreeWayEvaluation.cone_variable_fibre_uniform
+#print axioms DualTree.ForwardQThreeWayEvaluation.eval_inside
+#print axioms DualTree.ForwardQThreeWayEvaluation.eval_outside
