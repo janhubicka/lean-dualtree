@@ -942,3 +942,4 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQOldCutChildOrder.old_interior_length_le_cut
 #print axioms DualTree.ForwardQOldCutChildOrder.old_length_lt_projected_cut_child
 #print axioms DualTree.ForwardQOldCutChildOrder.old_Q_rank_lt_projected_cut_child
+#print axioms DualTree.ForwardQOldCutChildOrder.old_Q_rank_le_every_marked
