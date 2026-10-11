@@ -207,6 +207,27 @@ def check_support(address_to_node, branching, height):
                     projected.append(address_to_node[address])
                 reconstructed = old_interior | set(projected)
                 valid_q += 1
+                # Stronger new/new rank transport candidate: a strict
+                # increase in intrinsic Q rank should already appear
+                # as a strict increase of ambient complete-T rank.
+                # This would discharge new/new skew clause (iii)
+                # directly from T's verified strict rank/length axiom.
+                for p in projected:
+                    for q in projected:
+                        if rank(reconstructed, p) < rank(reconstructed, q):
+                            assert rank(support, p) < rank(support, q), {
+                                "error": "new/new ambient rank transport",
+                                "source": source, "cut": cut,
+                                "Q": reconstructed, "p": p, "q": q,
+                                "Q_ranks": (
+                                    rank(reconstructed, p),
+                                    rank(reconstructed, q),
+                                ),
+                                "T_ranks": (
+                                    rank(support, p),
+                                    rank(support, q),
+                                ),
+                            }
                 assert semi_complete_skew(reconstructed, branching), {
                     "error": "Q not semi-complete skew",
                     "support": support, "source": source, "cut": cut,
