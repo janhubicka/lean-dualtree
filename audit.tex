@@ -4152,6 +4152,22 @@ boundary has ambient length strictly greater than $|t_0|$.
 Both programs use fixed seeds and assert their expected
 coverage counts.
 
+The arbitrary-subtree checker also tests the following
+stronger emph{new/new rank transport candidate}, for every
+ordered pair of projected markers in each reconstructed Q:
+\[
+ h_Q(P_i)<h_Q(P_j)
+ \quad\Longrightarrow\quad
+ h_T(P_i)<h_T(P_j).
+\]
+It held throughout all $4{,}292$ sampled Q instances,
+including unequal local $D_2$ tail lengths. If established
+in Lean, this would make new/new skew clause~(iii) a
+direct consequence of the enclosing complete support's
+already verified strict intrinsic-rank/ambient-length
+separation. The rank-transport implication itself is
+presently computational evidence only, not a lemma.
+
 Neither exhaustive small tests nor random stretched tests
 constitute a proof for arbitrary parameters; they also do
 not verify construction of the word $g_w$, smoothness, or
