@@ -4483,6 +4483,38 @@ hypothesis is declared automatically satisfied.
 Three additional Lean transitive-axiom audit
 endpoints are included; pending CI.
 
+
+\paragraph{Exact ambient $T$-frontier rank of literal cut-child markers.} \todo
+The corrected literal $R$ contains each ambient child
+$r=t_0^\frown i$ of the original last source interior
+vertex $t_0$. Its selected minimal outside-cut frontier
+$f(r)$ in the enclosing complete support $T$ extends $r$.
+Consequently $t_0\sqsubset f(r)$ strictly, and strict
+intrinsic height monotonicity gives
+$h_T(f(r))>h_T(t_0)$. The already validated forward
+frontier bound gives
+$h_T(f(r))\le h_T(t_0)+1$. Thus
+\[
+ h_T(f(t_0^\frown i))=h_T(t_0)+1.
+\]
+The canonical projection rank increment immediately yields
+\[
+ h_T(P(t_0^\frown i))=
+ h_T(t_0)+1+|s_i|,
+\]
+with $s_i$ the chosen local $D_2$ tail. Both formulas
+are independent of the ambient edge lengths and the
+other selected bullet points.
+
+The source-facing Lean module
+\lean{ForwardQCutChildFrontierRank} provides two
+transitively audited declarations for these identities.
+It settles the \emph{cut-child} family of a proposed
+alignment between $Q$-intrinsic leaf levels and the
+enclosing $T$-frontier levels. The exceptional-terminal
+marker family and the actual $D_2$ vector-order bridge
+are still open. Retain \todo{} until Lean CI succeeds.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
