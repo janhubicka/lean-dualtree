@@ -4170,6 +4170,67 @@ The entire file is pending Lean CI (three added transitive-axiom
 audits), and does not settle the new/new comparisons or the
 strict unequal-rank mixed condition~(iii).
 
+\paragraph{Rank-by-rank predecessors on finite rooted support paths.} \todo
+The generic finite-support lemma
+\lean{ForwardSourceRankAncestors.ancestor\_at\_each\_rank}
+proves that whenever $t$ belongs to a duplicate-free
+rooted support $T$, every integer $0\le j\le h_T(t)$
+occurs as the intrinsic rank of a genuine support
+ancestor of $t$. Starting from the common root, the
+argument repeatedly takes the first immediate support
+successor along the root-to-$t$ path; each such move
+increases intrinsic height by exactly one. This uses
+neither completeness nor any skew ambient-length axiom.
+
+The source-facing consequences
+\lean{source\_ancestor\_at\_rank} and
+\lean{source\_strict\_ancestor\_at\_cut\_rank}
+show that an exceptional terminal at source rank
+$h_S(t_0)+1$ has a proper source-support predecessor
+of rank $h_S(t_0)$. This is the missing ingredient for
+proving its first outside-cut boundary has
+\emph{strictly larger ambient word length} than $t_0$.
+Three transitive Lean axiom endpoints are added to
+CI; pending kernel build and audit confirmation.
+
+
+\paragraph{Strict ambient length of exceptional $Q$ replacements above cut rank.} \todo
+Let $t$ be an exceptional old source terminal with
+$h_S(t)=h_S(t_0)+1$. The preceding rooted support rank
+lemma produces an actual strict source ancestor $u\sqsubset t$
+of rank $h_S(u)=h_S(t_0)$. Since $u$ is interior,
+maximality of the final cut and source skew clause~(ii)
+imply $u\le_{\rm lex}t_0$. The exceptional condition
+$t_0\not\sqsubseteq t$ excludes $t_0\sqsubseteq u$,
+and strict rank monotonicity along support chains excludes
+$u\sqsubseteq t_0$. Thus their prefix cones are incomparable.
+
+Write $r$ for the first outside-inclusive-cut prefix of $t$.
+If $|r|\le|t_0|$, its boundary property forces equality
+of those ambient lengths. But the old interior ancestor
+$u$ prefixes $r$ and lies in a lexicographically earlier
+incomparable cone than $t_0$, so
+$r\le_{\rm lex}t_0$; equality of lengths would place
+$r$ inside the inclusive cut, contradiction. Therefore
+\[
+  |t_0|<|r|\le |P(r)|.
+\]
+This argument depends on neither the selected D$_2$
+tail length nor the complete support's ambient rank.
+It yields strict old/new inequalities simultaneously in
+ambient length and intrinsic $Q$ rank for every retained
+old interior vertex versus such an exceptional replacement.
+
+The source-facing Lean module
+\lean{ForwardQExceptionalLength} isolates the
+strict boundary length, strict projected length, and
+combined old/new comparison as three audited theorems.
+They remain \textbf{PENDING} until GitHub Actions verifies
+compilation and transitive absence of nonstandard axioms.
+The remaining family at equal cut rank is covered by the
+separate equal-rank lexical argument; all new/new pairs
+and the word/colouring portion of Lemma~27 remain open.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
