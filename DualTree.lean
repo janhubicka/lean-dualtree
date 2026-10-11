@@ -305,3 +305,5 @@ import DualTree.ForwardQLocalWordPatching
 import DualTree.ForwardQThreeWayConeWordAssembly
 
 import DualTree.ForwardQStarredOrderReindexObstruction
+
+import DualTree.ForwardQThreeWayEvaluation
