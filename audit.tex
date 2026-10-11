@@ -2185,6 +2185,38 @@ is enough. Full branching, skew order
 clauses, word construction and colouring
 remain open.
 
+\paragraph{Ambient meet closure and directional uniqueness of the corrected Q support.} \todo
+The old literal source skeleton is now known to be meet-closed.
+For the genuine corrected $Q$ tree we must not equate ambient
+meets merely because the replacement map preserves the abstract
+prefix poset. The new generic lemma
+\lean{DualTree.ForwardQMeetClosed.meetClosed_of_terminal_extensions}
+checks a stronger, sufficient geometric condition: a prefix
+antichain of old terminal first-exit markers can be replaced by
+arbitrary extensions inside their own cones without changing
+its ambient meets with other source vertices. The proof works
+directly with original-source support descendants and meets,
+including the old-base/marker and marker/marker cases.
+
+In the source-facing corrected reconstruction, the exact
+bijective sorted $R\to D_2$ coordinate map lets us recover the
+unique literal marker from any bullet coordinate, and
+\lean{DualTree.ForwardQMeetClosed.recoveredMarker_prefix_projection}
+shows that its true projected $Q$ point extends the recovered
+marker. The theorem
+\lean{DualTree.ForwardQMeetClosed.Q_meetClosed} then establishes
+ambient meet closure of the *actual* corrected finite $Q$ support.
+The converse
+\lean{DualTree.ForwardQMeetClosed.Q_atMostOneDirection}
+rules out two immediate support successors in the same
+ambient direction. These six declarations await CI and a
+transitive axiom audit.
+
+This is independent of ambient-length and rank monotonicity,
+and still does not establish the exact number of immediate
+successors, the remaining skew clauses, or the $Q$ word
+and colouring pullback. Published source unchanged.
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
