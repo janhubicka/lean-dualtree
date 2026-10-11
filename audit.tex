@@ -4803,6 +4803,59 @@ transitive Lean axiom audit. No new/new Q length
 inequality or Q word/colouring conclusion is silently
 claimed; await CI before marking this entry \ok{}.
 
+
+\paragraph{Complete semi-completeness of the literal corrected $Q$ under starred $D_2$ order.} \todo
+Once the uniform two-band matching has been established,
+the remaining new/new skew conditions have short proofs.
+For equal $Q$ ranks of projected leaves $P_i,P_j$, the
+matching forces equal ambient $T$-frontier heights.
+If $P_i\le_{\rm lex}P_j$, the independently checked
+equal-frontier lex/index lemma forces $i\le j$.
+For $i<j$, the selected $D_2$ point-length order gives
+$|s_i|\le |s_j|$, and the sorted projection theorem
+gives $|P_i|\le|P_j|$. For $i=j$ the inequality is
+trivial. This is source-facing skew clause~(ii).
+
+For strictly increasing $Q$ ranks,
+the matching forces $h_T(f_i)<h_T(f_j)$.
+Monotonicity of frontier $T$ ranks by the
+actual sorted indices forces $i<j$, and the starred
+point-length order gives $|s_i|\le|s_j|$.
+The canonical projection rank identity yields
+\[
+ h_T(P_i)=h_T(f_i)+|s_i|
+   <h_T(f_j)+|s_j|=h_T(P_j).
+\]
+The enclosing complete support's skew clause~(iii)
+then gives $|P_i|<|P_j|$, the desired strict
+new/new skew condition.
+
+The Lean module \lean{ForwardQCertifiedSemiComplete}
+proves both source-facing new/new clauses and concludes
+\[
+ \operatorname{SemiComplete}_{\rm fwd}(S_w)
+\]
+for the \emph{actual reconstructed support}
+$S_w=(\operatorname{nodes}(c,x)).\mathrm{toList}$,
+provided the selected $D_2$ point lengths satisfy
+\lean{ForwardQIndexedTRanks.BulletLengthsOrdered}.
+It also states the same conclusion from a concrete
+\lean{ForwardQStarredD2Certificate.Certificate}.
+The old/old and mixed old/new pair cases are not
+reproved or assumed: the earlier verified closure API
+supplies them. No assumption of an arbitrary unstarred
+mixed-product input being valid is made.
+
+Four new transitive Lean axiom checks are included
+in the development, pending compilation and CI.
+To recover the printed Lemma~27, it remains to
+construct the certificate from the paper's full
+$W_*$ domain; prove that the corrected local cone
+height and selected parameter bounds are compatible
+with the required recursion; construct the new word
+$g_w$; and establish smoothness and colouring pullback.
+Full theorem and Lemma~28 remain \emph{unverified}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
