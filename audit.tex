@@ -2313,6 +2313,39 @@ not a proof of those remaining inequalities. The Q
 word, observable signature and colouring pullback also
 remain unverified.
 
+\paragraph{Old-interior rank/ambient-length comparisons in corrected Q.} \ok
+The globally corrected $Q$ construction retains the exact
+old source interior, and every such vertex keeps its
+original intrinsic rank. Its old/old comparisons in the
+two independent skew numerical axioms are therefore
+automatic: the theorems
+\lean{DualTree.ForwardQRetainedOrder.Q_old_old_condII}
+and
+\lean{DualTree.ForwardQRetainedOrder.Q_old_old_condIII}
+pull them directly from the original forward-skew source
+via the checked rank-preservation equation.
+
+Furthermore each retained old interior vertex is at
+or before the maximal source cut in forward auxiliary
+order, whereas every new projected marker is strictly
+outside that inclusive cut. Totality and transitivity
+give \lean{DualTree.ForwardQRetainedOrder.Q_old_before_new}
+and its ambient-length consequence
+\lean{DualTree.ForwardQRetainedOrder.Q_old_new_length_le}.
+These six declarations passed Lean CI and the transitive axiom audit
+(PR~\#189; 775 expected checks on the clean main branch). They solve the entire old/old part of skew
+clauses~(ii)--(iii), and the weak old-to-new length
+comparison, without imposing any additional local
+point conditions on the mixed-product input.
+
+The remaining Q numerical obligations concern
+new/new comparisons at equal and unequal intrinsic
+ranks, strict old/new rank separation, and proving
+the necessary absence of lexicographically reversed
+equal-rank mixed pairs. In particular, the weak
+ambient-length comparison proved here cannot
+replace the strict inequality required by clause~(iii).
+
 \paragraph{A verified obstruction in the literal $Q$-tree reconstruction.} \bad
 The source-facing Lean counterexample
 \lean{DualTree.QLengthActualSkewFailure}
