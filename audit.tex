@@ -4142,6 +4142,34 @@ rank above the cut, nor any new--new comparison.
 Three new Lean transitive-axiom checks have been added;
 the proof remains pending CI.
 
+
+\paragraph{Complete mixed old/new skew clause~(ii).} \todo
+The Q rank formulas and the preceding lexicographic orientation
+combine into a source-facing universal statement: whenever a
+retained old interior vertex $s$ and an actual D$_2$ projection
+$P_i(s_i)$ have the same intrinsic rank in reconstructed $Q$,
+\[
+ s\le_{\mathrm{lex}} P_i(s_i).
+\]
+Indeed the child-marker family always has rank $h_S(t_0)+1$,
+strictly above the entire old interior, so only an exceptional
+source leaf of rank $h_S(t_0)$ contributes. That exceptional
+leaf's old-to-projected lex comparison was established above.
+
+Thus the old-to-new ordered pair has the required weak ambient
+length inequality, already proved from corrected forward auxiliary
+order. In the reverse lex orientation the two nodes must coincide
+by finite-word lexicographic antisymmetry, so the weak inequality
+is automatic. This discharges both \emph{mixed} orientations of
+condition~(ii), independently of local D$_2$ point depths.
+The formalized declarations are
+\lean{ForwardQMixedCondII.old\_lex\_marked\_of\_equal\_Q\_rank},
+\lean{ForwardQMixedCondII.old\_to\_marked\_condII}, and
+\lean{ForwardQMixedCondII.marked\_to\_old\_condII}.
+The entire file is pending Lean CI (three added transitive-axiom
+audits), and does not settle the new/new comparisons or the
+strict unequal-rank mixed condition~(iii).
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
