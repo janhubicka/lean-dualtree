@@ -4518,6 +4518,47 @@ intrinsic $Q$-rank marker families. The low-rank exceptional
 family still requires a matching ambient frontier rank proof
 before the full new/new skew comparison can be closed.
 
+
+\paragraph{Exceptional terminals: lower-rank ambient frontier alignment.} \todo
+The remaining exceptional family consists of terminals $t$
+with $h_S(t)=h_S(t_0)$. As established for the actual source,
+$t$ is after the final cut in corrected forward auxiliary order,
+and the old source skew clause~(ii) implies
+$t_0\le_{\rm lex}t$.
+Since $t$ belongs to the complete support $T$, and
+$h_T(t_0)\le h_T(t)$, the generic rank-by-rank support
+ancestor theorem produces $a\sqsubseteq t$ with
+$h_T(a)=h_T(t_0)$. The exceptional condition
+$t_0\not\sqsubseteq t$ and strict rank growth on common
+support paths make $a,t_0$ prefix-incomparable.
+The lex order reflects from $t$ to $a$:
+$t_0\le_{\rm lex}a$.
+Then skew clause~(ii) of $T$ places $a$ outside the
+inclusive forward cut.
+
+The selected minimal frontier $f(t)$ already lies on
+the terminal path (proved in the companion module).
+It must prefix $a$: otherwise $a$ would be an
+outside-cut $T$-node strictly before $f(t)$.
+Consequently
+\[
+ h_T(f(t))\le h_T(a)=h_T(t_0).
+\]
+The general frontier bound supplies the converse inequality,
+so the exact lower-rank matching is
+\[
+ h_S(t)=h_S(t_0)\quad\Longrightarrow\quad
+ h_T(f(t))=h_T(t_0).
+\]
+The helper ambient rank ancestor lemma and the source-facing
+lower-rank theorem are in
+\lean{ForwardQExceptionalLowFrontier}, stacked on the
+high-rank exceptional frontier module. Two additional
+transitive axiom checks are included. Their status remains
+\todo{} until the stack passes Lean CI. After both families
+are certified, the Q-vs-T frontier rank classification can
+be combined into one theorem for every actual $D_2$ marker.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
