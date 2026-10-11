@@ -136,6 +136,7 @@ theorem interior_prefix_exceptional_boundary_iff
       have heqlen := congrArg List.length heq
       -- Keep the local first-boundary alias syntactically uniform for omega.
       change s.length < r.length at hlength
+      change s.length = r.length at heqlen
       omega⟩
 
 /-- The projected corrected Q leaf replacing an exceptional
