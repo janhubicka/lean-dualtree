@@ -205,7 +205,7 @@ theorem exceptional_high_frontier_T_rank
   rcases hband with hsame | hnext
   · have hwrong : ForwardAux f c.cut :=
       ForwardOrderCompatibility.forwardAux_of_equal_height_lex
-        c.T hII f c.cut hfFront.1 c.hcutT hsame
+        c.T hII hfFront.1 c.hcutT hsame
         hfLexCut
     exact False.elim (hfFront.2.1 hwrong)
   · exact hnext
