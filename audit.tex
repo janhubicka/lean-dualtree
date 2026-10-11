@@ -4611,6 +4611,161 @@ component is closed, construction of the word $g_w$,
 its smoothness and colouring pullback, Lemma~28,
 and the final Ramsey theorem remain separate tasks.
 
+\paragraph{Exact ambient $T$-frontier rank of literal cut-child markers.} \todo
+The corrected literal $R$ contains each ambient child
+$r=t_0^\frown i$ of the original last source interior
+vertex $t_0$. Its selected minimal outside-cut frontier
+$f(r)$ in the enclosing complete support $T$ extends $r$.
+Consequently $t_0\sqsubset f(r)$ strictly, and strict
+intrinsic height monotonicity gives
+$h_T(f(r))>h_T(t_0)$. The already validated forward
+frontier bound gives
+$h_T(f(r))\le h_T(t_0)+1$. Thus
+\[
+ h_T(f(t_0^\frown i))=h_T(t_0)+1.
+\]
+The canonical projection rank increment immediately yields
+\[
+ h_T(P(t_0^\frown i))=
+ h_T(t_0)+1+|s_i|,
+\]
+with $s_i$ the chosen local $D_2$ tail. Both formulas
+are independent of the ambient edge lengths and the
+other selected bullet points.
+
+The source-facing Lean module
+\lean{ForwardQCutChildFrontierRank} provides two
+transitively audited declarations for these identities.
+It settles the \emph{cut-child} family of a proposed
+alignment between $Q$-intrinsic leaf levels and the
+enclosing $T$-frontier levels. The exceptional-terminal
+marker family and the actual $D_2$ vector-order bridge
+are still open. Retain \todo{} until Lean CI succeeds.
+
+\paragraph{Exceptional terminals: support-frontier path and higher-rank alignment.} \todo
+The ambient $T$-frontier selected by a literal first-boundary
+marker $r(t)$ of an exceptional source terminal $t$ is not merely
+an arbitrary descendant of $r(t)$: it actually prefixes $t$.
+To verify this, take the ambient meet of the chosen frontier
+$f(t)$ and the source terminal $t$, both belonging to $T$.
+They share the boundary prefix $r(t)$, so their meet remains
+outside the inclusive forward cut. Meet-closure of the
+complete skew support makes this meet a $T$-node; minimality
+of $f(t)$ forces the meet to equal $f(t)$, hence
+$f(t)\sqsubseteq t$.
+
+Now suppose $h_S(t)=h_S(t_0)+1$. The previously proved
+rank-by-rank ancestor theorem supplies an interior source
+ancestor $u\sqsubset t$ of rank $h_S(t_0)$.
+It is incomparable with $t_0$, and the old source's
+same-height skew condition implies $u\le_{\rm lex}t_0$.
+Since $u$ prefixes $f(t)$, ordinary lex order gives
+$f(t)\le_{\rm lex}t_0$.
+If $h_T(f(t))=h_T(t_0)$, skew clause~(ii) in $T$
+would imply $f(t)\preceq_{\rm fwd}t_0$,
+contradicting the selected frontier's being outside the cut.
+The verified two-level frontier bound then gives
+\[
+ h_T(f(t))=h_T(t_0)+1.
+\]
+These geometric statements are collected in
+\lean{ForwardQExceptionalHighFrontier} with two transitive
+Lean axiom checks, pending CI. Together with the separate
+cut-child frontier theorem, they address both \emph{higher}
+intrinsic $Q$-rank marker families. The low-rank exceptional
+family still requires a matching ambient frontier rank proof
+before the full new/new skew comparison can be closed.
+
+\paragraph{Exceptional terminals: lower-rank ambient frontier alignment.} \todo
+The remaining exceptional family consists of terminals $t$
+with $h_S(t)=h_S(t_0)$. As established for the actual source,
+$t$ is after the final cut in corrected forward auxiliary order,
+and the old source skew clause~(ii) implies
+$t_0\le_{\rm lex}t$.
+Since $t$ belongs to the complete support $T$, and
+$h_T(t_0)\le h_T(t)$, the generic rank-by-rank support
+ancestor theorem produces $a\sqsubseteq t$ with
+$h_T(a)=h_T(t_0)$. The exceptional condition
+$t_0\not\sqsubseteq t$ and strict rank growth on common
+support paths make $a,t_0$ prefix-incomparable.
+The lex order reflects from $t$ to $a$:
+$t_0\le_{\rm lex}a$.
+Then skew clause~(ii) of $T$ places $a$ outside the
+inclusive forward cut.
+
+The selected minimal frontier $f(t)$ already lies on
+the terminal path (proved in the companion module).
+It must prefix $a$: otherwise $a$ would be an
+outside-cut $T$-node strictly before $f(t)$.
+Consequently
+\[
+ h_T(f(t))\le h_T(a)=h_T(t_0).
+\]
+The general frontier bound supplies the converse inequality,
+so the exact lower-rank matching is
+\[
+ h_S(t)=h_S(t_0)\quad\Longrightarrow\quad
+ h_T(f(t))=h_T(t_0).
+\]
+The helper ambient rank ancestor lemma and the source-facing
+lower-rank theorem are in
+\lean{ForwardQExceptionalLowFrontier}, stacked on the
+high-rank exceptional frontier module. Two additional
+transitive axiom checks are included. Their status remains
+\todo{} until the stack passes Lean CI. After both families
+are certified, the Q-vs-T frontier rank classification can
+be combined into one theorem for every actual $D_2$ marker.
+
+\paragraph{Equal-frontier-rank lex orientation recovers sorted $D_2$ indices.} \todo
+Two selected frontier roots $f_i,f_j$ of equal
+intrinsic $T$-rank occur in the corrected forward
+auxiliary order exactly when their incomparable cones
+occur in ordinary forward lex order. Since the
+projected points $P_i(s_i),P_j(s_j)$ extend these
+incomparable frontier roots, their lex order is
+independent of the local tail words. Thus
+\[
+ h_T(f_i)=h_T(f_j),\qquad
+ P_i(s_i)\le_{\rm lex}P_j(s_j)
+ \quad\Longrightarrow\quad i\le j.
+\]
+Indeed $j<i$ would imply $f_j\preceq_{\rm fwd}f_i$,
+then source support skew clause~(ii) would give
+$f_j\le_{\rm lex}f_i$, and incomparability transports
+this to $P_j(s_j)\le_{\rm lex}P_i(s_i)$.
+Lex antisymmetry and the verified injectivity of
+actual marked projections contradict $j<i$.
+The converse source-facing frontier-rank monotonicity
+\[
+ i<j\ \Longrightarrow\ h_T(f_i)\le h_T(f_j)
+\]
+is also formalized. These declarations live in
+\lean{ForwardQFrontierIndexOrder} and add two
+transitive Lean axiom checks (pending CI).
+
+Together with the two-band frontier matching and the
+sorted local $D_2$ tail lengths, this will establish
+the equal-$Q$-rank new/new clause~(ii) without
+comparing arbitrary projected ambient lengths by hand.
+This bridge is conditional until all constituent
+frontier and starred-domain statements are certified.
+
+
+\paragraph{Adversarial two-band frontier regression.} \todo
+The strengthened reproducible test
+\texttt{scripts/check-q-arbitrary-source.py} now checks
+for every actual projected marked point $P_i$ in each
+admissible generated Q support that
+\[
+h_Q(P_i)-h_S(t_0)=h_T(f_i)-h_T(t_0)\in\{0,1\}.
+\]
+It also checks nondecreasing Q ranks by sorted bullet
+index and the consistency of equal-rank projection lex
+order with that index, while retaining the existing
+full semi-complete-skew check. The finite regression
+does not replace a general proof and does not check the
+Q word or colouring.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
