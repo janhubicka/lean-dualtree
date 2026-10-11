@@ -997,3 +997,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFrontierBandMatch.Q_rank_lt_iff_frontier_T_rank_lt
 #print axioms DualTree.ForwardQFrontierBandMatch.Q_rank_eq_iff_frontier_T_rank_eq
 #print axioms DualTree.ForwardQFrontierBandMatch.Q_rank_mono_of_sorted_bullets
+
+#print axioms DualTree.ForwardQRetainedWordScaffold.Q_nodes_bounded_of_ambient_bound
+#print axioms DualTree.ForwardQRetainedWordScaffold.original_word_support_iff_Q_interior
+#print axioms DualTree.ForwardQRetainedWordScaffold.Q_interior_card_eq_source_dimension
+#print axioms DualTree.ForwardQRetainedWordScaffold.retained_source_word_witness
+#print axioms DualTree.ForwardQRetainedWordScaffold.retained_source_word_witness_tree
