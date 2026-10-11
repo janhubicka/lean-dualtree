@@ -5086,6 +5086,56 @@ occurrence-prefix conditions for \emph{that} function.
 The smooth colouring pullback and the numerical
 height/iteration bounds remain separate obligations.
 
+
+\paragraph{Starred $D_2$ membership is not invariant under naive reverse-to-forward frontier reindexing.} \todo
+The forward-order geometric repair of Lemma~27 changes
+the tie-breaking order of \emph{equal-length} complete-support
+frontiers: the printed convention is length-first
+reverse lexicographic, whereas the repaired convention
+is length-first forward lexicographic. Merely retaining
+the same marker-to-local-point assignment and
+re-enumerating the $D_2$ coordinates is not guaranteed
+to preserve Definition~20's vector $1$-completeness.
+
+The typed binary height-$3$ witness already developed
+in \lean{QLengthStarredDomain} provides an exact
+source-facing test. Its two selected frontier markers
+are the right and left children of the empty cut.
+The printed order is $(\mathrm{right},\mathrm{left})$,
+with actual local point lengths $(0,1)$ and hence
+vector-$1$-complete. The corrected forward
+frontier order is $(\mathrm{left},\mathrm{right})$.
+Retaining the actual local point assigned to each
+marker gives lengths $(1,0)$, which is \emph{not}
+vector-$1$-complete:
+\[
+ \begin{split}
+ &\operatorname{VectorComplete}_1
+       ((),(0))=\mathrm{true},\\
+ &\operatorname{VectorComplete}_1
+       ((0),())=\mathrm{false}.
+ \end{split}
+\]
+The module
+\lean{ForwardQStarredOrderReindexObstruction}
+checks the actual typed selected marked points
+under both enumerations, rather than substituting
+unrelated abstract singleton supports.
+Six source-facing transitive axiom endpoints
+have been added; pending CI.
+
+This is a \emph{counterexample to naive coordinate
+reindexing}, not a counterexample to the conditional
+forward $Q$-geometry theorem or to the final Ramsey
+conclusion. It establishes that deriving the repaired
+$W_*$ domain from the printed one must either
+transport/reassign the local cone words and marked
+points \emph{along with} the frontier permutation,
+or explicitly change/restrict the starred domain.
+That compatibility, including smooth colouring and
+the recursive mixed-product Ramsey argument, remains
+a separate genuine proof obligation.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
