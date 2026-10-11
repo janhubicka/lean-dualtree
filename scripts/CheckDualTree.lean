@@ -964,3 +964,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQTopRankLength.marked_projection_next_rank_strict_length
 #print axioms DualTree.ForwardQTopRankLength.old_to_marked_condIII
 #print axioms DualTree.ForwardQTopRankLength.marked_to_old_condIII_impossible
+
+#print axioms DualTree.ForwardQOrderClosure.old_Q_rank_le_marked
+#print axioms DualTree.ForwardQOrderClosure.Q_condIIB_of_mixed_new_pairs
+#print axioms DualTree.ForwardQOrderClosure.Q_condIIIB_of_mixed_new_pairs
+#print axioms DualTree.ForwardQOrderClosure.Q_semiComplete_of_pairwise_order
+#print axioms DualTree.ForwardQAmbientRankClosure.marked_length_lt_of_ambient_rank_lt
+#print axioms DualTree.ForwardQAmbientRankClosure.marked_length_le_of_ambient_rank_le
+#print axioms DualTree.ForwardQAmbientRankClosure.Q_semiComplete_of_ambient_rank_transport
