@@ -4534,6 +4534,40 @@ be mistaken for a proof of the full corrected $Q$ skewness.
 Six transitive Lean axiom checks are added for the new
 lemmas; status \todo{} until CI passes.
 
+
+\paragraph{An explicit starred $D_2$ vector-completeness certificate.} \todo
+The actual repaired $Q$ tree uses selected $D_2$ coordinates,
+a subtype of the \emph{sorted} ambient $\mathrm{Fin}(d)$ frontier
+positions. The printed Definition~20 vector $1$-completeness
+statement is formulated on the selected $D_2$ family.
+It must not be silently applied to all mixed-product coordinates
+or to an arbitrarily reindexed bullet family.
+
+The Lean structure
+\lean{ForwardQStarredD2Certificate.Certificate}
+packages an order-reflecting surjective enumeration of the
+actual $D_2$ subtype by $\mathrm{Fin}(d_2)$, together with
+a genuine vector-$1$-complete proof for the corresponding
+singleton marked-point supports. Its three checked target
+statements are
+\[
+ \begin{gathered}
+ i,j\in D_2,\quad i<j\implies |s_i|\le |s_j|,\\
+ h_T(P_i(s_i))\le h_T(P_j(s_j)),\\
+ |P_i(s_i)|\le|P_j(s_j)|.
+ \end{gathered}
+\]
+These implications use the earlier
+\lean{VectorOneMarkedLengths} theorem and the exact
+sorted-frontier projection rank/order lemmas.
+The certificate is a \emph{hypothesis} rather than a
+claim that every arbitrary mixed-product input is starred.
+A separate source-domain construction must recover this
+certificate from actual members of the paper's $W_*$,
+including verification of the induced $D_2$ enumeration
+and its order preservation. Three transitive axioms are
+added for auditing; pending CI before marking \ok{}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
