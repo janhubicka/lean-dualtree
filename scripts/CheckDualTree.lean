@@ -1024,3 +1024,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQCanonicalD2.canonicalCertificate
 #print axioms DualTree.ForwardQCanonicalD2.certificate_exists_iff_bullet_lengths_ordered
 #print axioms DualTree.ForwardQCanonicalD2.Q_semiComplete_of_canonical_D2_vectorOne
+
+#print axioms DualTree.ForwardQActualStarredSpace.IsStarred
+#print axioms DualTree.ForwardQActualStarredSpace.StarredInput
+#print axioms DualTree.ForwardQActualStarredSpace.isStarred_iff_bullet_lengths_ordered
+#print axioms DualTree.ForwardQActualStarredSpace.starredInputOfOrdered
+#print axioms DualTree.ForwardQActualStarredSpace.actual_starred_Q_semiComplete
+#print axioms DualTree.ForwardQActualStarredSpace.actual_starred_Q_variable_roots
+#print axioms DualTree.ForwardQActualStarredSpace.placeholderStarredWordOnQ
+#print axioms DualTree.ForwardQActualStarredSpace.placeholderStarredWordOnQ_tree
