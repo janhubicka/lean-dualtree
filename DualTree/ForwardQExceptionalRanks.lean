@@ -115,12 +115,7 @@ theorem interior_prefix_exceptional_boundary_iff
       c.source c.cut c.hout t.1 t.2
   constructor
   · intro hsr
-    exact ⟨isPrefix_trans hsr.1 hrSpec.1, by
-      intro heq
-      have hlt := MeetClosedFromBranching.length_lt_of_strictPrefix hsr
-      have hrLen := prefix_length_le hrSpec.1
-      rw [← heq] at hrLen
-      omega⟩
+    exact Lemma27QInterior.strictPrefix_trans_prefix hsr hrSpec.1
   · intro hst
     have hsEarly : ForwardAux s c.cut := by
       simpa [SkewTree.forwardAuxB] using c.hmax s hs
@@ -139,6 +134,8 @@ theorem interior_prefix_exceptional_boundary_iff
     exact ⟨hsr, by
       intro heq
       have heqlen := congrArg List.length heq
+      -- Keep the local first-boundary alias syntactically uniform for omega.
+      change s.length < r.length at hlength
       omega⟩
 
 /-- The projected corrected Q leaf replacing an exceptional
