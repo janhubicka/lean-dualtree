@@ -4050,6 +4050,69 @@ compatibility of $Q$ remain open. Seven new axioms are added to the
 transitive audit. This entry remains \textbf{PENDING} until the
 integrated Lean build and no-\texttt{sorryAx} CI check pass.
 
+\paragraph{Strict old--new skew comparisons for cut-child projections.} \todo
+The reconstructed Q has two distinct families of projected leaves.
+For the genuinely literal child markers $t_0^\frown i$, the strict
+old--new part of skew clause~(iii) can be discharged uniformly:
+each retained old interior node $s$ satisfies
+\[
+h_Q(s)=h_S(s)\le h_S(t_0),\qquad |s|\le |t_0|,
+\]
+by maximality of $t_0$ in the corrected forward auxiliary order
+and the rank monotonicity of a forward skew support. Conversely
+the projected marker point $P(t_0^\frown i)$ extends the ambient
+word $t_0^\frown i$, hence
+\[
+|s|<|P(t_0^\frown i)|,\qquad
+h_Q(s)<h_Q(P(t_0^\frown i))=h_S(t_0)+1.
+\]
+The Lean module \lean{ForwardQOldCutChildOrder} isolates four
+source-facing facts implementing these calculations, with no
+assumption on local marked-point tail lengths.
+This does \emph{not} resolve the exceptional-source-leaf
+old--new comparisons, nor either of the new--new skew
+conditions or the mixed-product word/colouring pullback.
+The proof is pending CI and the expanded transitive axiom audit.
+
+
+\paragraph{No new projected Q leaf has lower rank than an old interior.} \todo
+The bound on old interior source heights, together with exact
+rank preservation under Q and the two-level new-leaf rank band,
+implies
+\[
+ h_Q(s)\le h_Q(P_i(s_i))
+ \quad
+ (s\in\operatorname{Int}(S),\ i\in D_2).
+\]
+This is formalized in
+\lean{ForwardQOldCutChildOrder.old\_Q\_rank\_le\_every\_marked}.
+Thus pairs oriented new-to-old cannot trigger skew clause~(iii).
+It remains possible that a new leaf and an old interior vertex
+have equal intrinsic rank; the corresponding same-rank lexicographic
+and ambient-length comparisons still need verification.
+This source-facing theorem remains pending CI.
+
+
+\paragraph{Strict mixed comparisons below the source's maximal cut rank.} \todo
+An old interior vertex $s$ with $h_S(s)<h_S(t_0)$ satisfies
+$|s|<|t_0|$ by the original source's skew clause~(iii).
+The general forward-order comparison also gives
+$|t_0|\le |P_j(s_j)|$ for every actual new projected
+leaf. The combined inequalities yield
+\[
+ h_Q(s)<h_Q(P_j(s_j))
+ \quad\text{and}\quad
+ |s|<|P_j(s_j)|
+ \qquad(h_S(s)<h_S(t_0)).
+\]
+The Lean module \lean{ForwardQOldCutChildOrder} contains the two
+lemmas \lean{old\_below\_cut\_length\_lt\_every\_marked}
+and \lean{old\_below\_cut\_Q\_rank\_lt\_every\_marked}.
+This handles both the exceptional-terminal and cut-child marker
+families whenever the old vertex lies below the cut rank.
+It leaves only the top-cut-rank / exceptional-terminal mixed
+strict comparison, plus new--new comparisons. Pending Lean CI.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
