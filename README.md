@@ -121,8 +121,8 @@ obligation; `\todo` marks a remaining gap or proposed change.
   frontier indices defines a Gamma₁/Gamma₂ split. The marked
   Gamma₁ words are identical; Gamma₂ marked points, outside-cone
   letters and projected Q nodes are preserved under smoothness.
-  **Open:** identify R with the paper's canonical simplicity marker
-  set A and transport its B₁/B₂ conditions (new Lean module,
+  **Open:** construct the canonical address transport from the paper's
+  abstract simplicity marker set A to R and transfer B₁/B₂ (new Lean module,
   pending CI).
 - A separate **full-frontier Q word interface** now patches one
   root-aligned local symbol map at every sorted complete-support
