@@ -168,6 +168,66 @@ theorem gamma2_marked_Q_eq_of_smooth
     exact hp.1
   simp only [markedProjection, hpoint]
 
+/-- Equality of the ACTUAL canonical projected D2 node for a fixed
+frontier index is equivalent to equality of its local marked tail.
+The reverse implication follows from the checked T-inverse address
+formula, not from any assumption that the Q tree has unique leaves. -/
+theorem markedProjection_eq_iff_bulletPoint_eq
+    {b n l k m : Nat} {α : Type*}
+    (c : Frame b n l k m α)
+    (x y : Input c)
+    (j : MixedProduct.BulletIndex (kind c)) :
+    markedProjection c x j = markedProjection c y j ↔
+      x.bulletPoint j = y.bulletPoint j := by
+  constructor
+  · intro hp
+    have hx :
+        (ForwardCompleteBijection.inverseAddress
+          c.T c.hcomplete c.hnon (markedProjection c x j)).1 =
+          (ForwardCompleteBijection.inverseAddress
+            c.T c.hcomplete c.hnon
+            (ForwardOrderedProjections.frontierAt c.T c.cut j.1)).1 ++
+              (x.bulletPoint j).1 :=
+      ForwardUniformConeDomains.projectCommon_inverse
+        c.T c.hcomplete c.hnon c.cut c.hcutT c.hm
+        (ForwardOrderedProjections.frontierAt c.T c.cut j.1)
+        (ForwardOrderedProjections.frontierAt_spec c.T c.cut j.1)
+        (x.bulletPoint j)
+    have hy :
+        (ForwardCompleteBijection.inverseAddress
+          c.T c.hcomplete c.hnon (markedProjection c y j)).1 =
+          (ForwardCompleteBijection.inverseAddress
+            c.T c.hcomplete c.hnon
+            (ForwardOrderedProjections.frontierAt c.T c.cut j.1)).1 ++
+              (y.bulletPoint j).1 :=
+      ForwardUniformConeDomains.projectCommon_inverse
+        c.T c.hcomplete c.hnon c.cut c.hcutT c.hm
+        (ForwardOrderedProjections.frontierAt c.T c.cut j.1)
+        (ForwardOrderedProjections.frontierAt_spec c.T c.cut j.1)
+        (y.bulletPoint j)
+    let base : Node b :=
+      (ForwardCompleteBijection.inverseAddress
+        c.T c.hcomplete c.hnon
+        (ForwardOrderedProjections.frontierAt c.T c.cut j.1)).1
+    have happend :
+        base ++ (x.bulletPoint j).1 =
+          base ++ (y.bulletPoint j).1 := by
+      calc
+        base ++ (x.bulletPoint j).1 =
+            (ForwardCompleteBijection.inverseAddress
+              c.T c.hcomplete c.hnon (markedProjection c x j)).1 :=
+          hx.symm
+        _ = (ForwardCompleteBijection.inverseAddress
+              c.T c.hcomplete c.hnon (markedProjection c y j)).1 := by
+          rw [hp]
+        _ = base ++ (y.bulletPoint j).1 := hy
+    have htail := congrArg (fun z : Node b => z.drop base.length) happend
+    have hnode : (x.bulletPoint j).1 = (y.bulletPoint j).1 := by
+      simpa [base] using htail
+    exact Subtype.ext hnode
+  · intro hp
+    simp only [markedProjection, hp]
+
 /-- The exact observable Q fingerprint for two ACTUAL corrected
 starred inputs and a chosen Gamma1/Gamma2 split: the full
 projected word is compared only where Definition 21 sees it,
@@ -260,8 +320,8 @@ theorem smooth_of_Q_observables
             x.1.bulletPoint j = y.1.bulletPoint j := by
           -- The selected canonical frontier projection is injective
           -- on local marked points.
-          exact ForwardSourceQTree.markedProjection_injective_point
-            c x.1 y.1 j hproj
+          exact
+            (markedProjection_eq_iff_bulletPoint_eq c x.1 y.1 j).mp hproj
         have houtside :
             ∀ z : BoundedNode b (k - (m + 1)),
               ¬ IsPrefix (x.1.bulletPoint j).1 z.1 →
