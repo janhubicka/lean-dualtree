@@ -61,6 +61,17 @@ noncomputable def gamma1OfMarkerB2
   classical
   exact fun i => decide (ForwardQMeetClosed.markerOfBullet c i ∉ B2)
 
+/-- Boolean membership of a literal marker in Gamma₁.
+Keeping the classical decidability proof inside this definition
+makes statements about arbitrary B₂ sets type-correct. -/
+noncomputable def markerGamma1
+    {b n l k m : Nat} {α : Type*}
+    (c : Frame b n l k m α)
+    (B2 : Set (Marker c))
+    (s : Marker c) : Bool := by
+  classical
+  exact decide (s ∉ B2)
+
 /-- A particular literal marker receives its intended
 Gamma₁/Gamma₂ membership, with no possible permutation
 or duplicate coordinate in the sorted D₂ family. -/
@@ -71,9 +82,9 @@ theorem gamma1_at_marker
     (s : Marker c) :
     gamma1OfMarkerB2 c B2
       (ForwardQMarkerCoverage.bulletForMarker c s) =
-        decide (s ∉ B2) := by
+        markerGamma1 c B2 s := by
   classical
-  simp [gamma1OfMarkerB2, markerOfBullet_bulletForMarker]
+  simp [gamma1OfMarkerB2, markerGamma1, markerOfBullet_bulletForMarker]
 
 /-- Gamma₁ is precisely the complement of the selected
 B₂ marker set in the actual (sorted) D₂ coordinate domain. -/
@@ -87,7 +98,7 @@ theorem gamma1_iff_not_B2
       s ∉ B2 := by
   classical
   rw [gamma1_at_marker]
-  simp
+  simp [markerGamma1]
 
 /-- Gamma₂ membership is exact literal B₂ marker membership. -/
 theorem gamma2_iff_B2
