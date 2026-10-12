@@ -5279,7 +5279,7 @@ printed $W_*$ to corrected starred-domain transport,
 smooth colouring pullback, recursive local-height
 bound and final Ramsey induction remain open.
 
-\paragraph{Starred $D_2$ membership is not invariant under naive reverse-to-forward frontier reindexing.} \todo
+\paragraph{Starred $D_2$ membership is not invariant under naive reverse-to-forward frontier reindexing.} \ok
 The forward-order geometric repair of Lemma~27 changes
 the tie-breaking order of \emph{equal-length} complete-support
 frontiers: the printed convention is length-first
@@ -5314,7 +5314,7 @@ checks the actual typed selected marked points
 under both enumerations, rather than substituting
 unrelated abstract singleton supports.
 Six source-facing transitive axiom endpoints
-have been added; pending CI.
+passed the Lean build and transitive no-sorry axiom audit in merged PR~\#227.
 
 This is a \emph{counterexample to naive coordinate
 reindexing}, not a counterexample to the conditional
@@ -5329,7 +5329,7 @@ the recursive mixed-product Ramsey argument, remains
 a separate genuine proof obligation.
 
 
-\paragraph{Actual corrected starred inputs are stable under smooth inside-cone word patches.} \todo
+\paragraph{Actual corrected starred inputs are stable under smooth inside-cone word patches.} \ok
 The source-facing module
 \lean{ForwardQStarredSmoothConePatches}
 defines, for an actual mixed-product input $x$ in the
@@ -5362,9 +5362,8 @@ corrected starred input subtype is invariant under
 arbitrary such inside-cone patches. The colouring
 need not be assumed smooth on all unstarred inputs.
 
-Six source-facing theorem endpoints are included
-in the transitive Lean axiom audit; \todo{} until CI
-has completed. This conditional smooth-colour
+All six source-facing patch-invariance declarations passed Lean
+compilation and transitive axiom audit in merged PR~\#229. This conditional smooth-colour
 invariance is a \emph{reduction}, not a proof that
 the particular induced colouring $c\circ Q$ in
 the paper satisfies smoothness. That requires
@@ -5373,7 +5372,7 @@ translation with an allowed patched-coordinate
 comparison, and proving the missing compatibility
 of its colours and the recursive Ramsey subspace.
 
-\paragraph{Pointwise and evaluated semantics of the actual decoded $Q$ word.} \todo
+\paragraph{Pointwise and evaluated semantics of the actual decoded $Q$ word.} \ok
 The module \lean{ForwardQThreeWayEvaluation} exposes the
 pointwise content of the previously verified three-way
 local-cone assembly. At a position $t$ belonging to the actual
@@ -5410,8 +5409,8 @@ Outside \emph{all} selected marked cones its evaluation agrees
 exactly with the original source word under the same valuation.
 These are source-facing statements about the actual word on Q,
 rather than an abstract decoder map.
-Six new Lean declarations are included in the transitive axiom
-audit; \todo{} until CI succeeds.
+All six source-facing evaluation declarations passed the Lean build
+and transitive axiom audit in merged PR~\#228.
 
 This is not yet the printed Lemma~27 word $g_w$: the raw local
 cone words and the source's auxiliary/root decoding prescriptions
@@ -5420,7 +5419,7 @@ its alignment assumptions. Nor does pointwise evaluation alone
 prove smoothness, invariance of the colouring, simplicity of the
 pulled-back colouring or the required recursive parameter bounds.
 
-\paragraph{Exact classwise criterion for smooth extension of corrected $W_*$ colourings.} \todo
+\paragraph{Exact classwise criterion for smooth extension of corrected $W_*$ colourings.} \ok
 The source-facing theorem
 \lean{ForwardQStarredSmoothExtension.total\_smooth\_extension\_iff\_starred\_smooth}
 specializes the previously verified partial-colouring
@@ -5447,8 +5446,9 @@ disjoint from $W_*$. Thus the true obstacle is
 colouring on the starred domain}, not the extension
 mechanism itself.
 
-Three declarations are included in the new
-transitive no-\texttt{sorryAx} audit. This
+All three source-facing extension criterion statements passed
+Lean compilation and transitive no-\texttt{sorryAx} audit
+in merged PR~\#230. This
 theorem should not be interpreted as proof that
 the \emph{particular} Lemma~27 colouring
 $c\circ Q$ satisfies condition~(ii).
