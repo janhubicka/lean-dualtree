@@ -6414,6 +6414,88 @@ coordinate identity is an exact
 source-facing bridge, not the
 full Lemma~27 conclusion.
 
+
+\paragraph{Every selected $D_2$ frontier has an available old source variable.} \todo
+The visibility obstruction from the preceding
+cone-root analysis is not equally severe
+at all frontier coordinates.
+The corrected source support is genuinely
+rooted at an old interior variable
+$r_0\in\operatorname{Int}(S)$.
+For every literal corrected signature
+marker $s\in R$, the already verified
+root geometry shows $r_0\sqsubseteq s$.
+The selected $D_2$ frontier $f_i$
+extends exactly this literal marker.
+Moreover $r_0$ lies \emph{inside}
+the forward auxiliary initial segment
+through $t_0$, whereas $f_i$ is
+a minimal support vertex outside it.
+Therefore $r_0\ne f_i$, giving
+\[
+    r_0\sqsubset f_i,
+    \qquad i\in D_2.
+\]
+In particular $r_0$ is a genuine
+old source-variable root \emph{in}
+the per-frontier visible-root list:
+\[
+  r_0\in V_i,\qquad
+  |V_i|\ge 1\quad(i\in D_2).
+\]
+This identifies a concrete auxiliary
+label under the verified $R_i$ decoder
+that returns the root variable for every
+selected $D_2$ index. It also gives
+a uniformly aligned possible
+cone-variable root for \emph{any}
+local occurrence in a selected $D_2$
+frontier cone. No analogous statement
+has been established for arbitrary
+ordinary $D_0$ frontiers, which need
+not be reached by one of the original
+source signature markers.
+
+Thus whenever an array of raw
+three-constructor local words has
+\emph{genuine cone-variable}
+occurrences only at $D_2$ coordinates
+(the $D_0$ coordinates use only
+original and auxiliary letters),
+the necessary-and-sufficient
+visibility condition for existence
+of a legal output root assignment
+holds automatically, even if
+some $D_0$ visible lists are empty.
+The checked first-visible-root
+constructor can therefore yield
+an actual starred word on $Q(x)$
+for \emph{every} corrected-starred
+input $x$ under the explicit
+ambient height bound.
+This is a positive source-facing
+conditional repair, but it may
+collapse distinct local variable
+names and hence proves no unchanged
+mixed-word span.
+
+The proposed
+\lean{ForwardQBulletRootVisibility}
+module verifies the genuine source-root
+variable name, the strict $D_2$
+frontier-prefix property, its membership
+in the true $V_i$, nonemptiness and
+decoder reachability, and the bullet-only
+variable occurrence constructor.
+Eight additional source-facing theorems
+(target: 1018) await Lean CI.
+The original proof's particular local
+variable words have not yet been
+proved to obey the bullet-only
+occurrence restriction, and the
+canonical $A=B_1\dot\cup B_2$
+simplicity transport is still open.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
