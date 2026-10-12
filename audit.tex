@@ -5647,6 +5647,92 @@ repair must explicitly verify the required span and
 refinement properties \emph{after} normalization,
 rather than infer them from its smoothness.
 
+
+\paragraph{Definition~21 requires a split of $D_2$, not necessarily $\Gamma_2=D_2$.} \todo
+A further source-facing review of the rendered pp.~24 and~29
+revealed that the preceding Gamma$_2$-patch criterion and
+constant-letter normalization use only the
+\emph{special case} $\Gamma_1=\varnothing$,
+$\Gamma_2=D_2$.  Definition~21 instead says that
+a colouring is smooth if there \emph{exists} a
+partition
+\[
+ D_2=\Gamma_1\mathbin{\dot\cup}\Gamma_2
+\]
+such that (a) the \emph{entire word} is fixed at
+coordinates of $D_0\cup D_1\cup\Gamma_1$,
+(b) the $D_1$ terminal points are fixed, and
+(c) at coordinates of $\Gamma_2$ the marked point
+and the word \emph{outside} its inclusive cone
+are fixed. In contrast, a $\Gamma_1$ marked point
+may move even when its whole word is unchanged.
+The two types of coordinates therefore encode
+different information, and the two relations are
+not interchangeable.
+
+In particular, colours depending only on the entire
+array of coordinate \emph{words}, and not on marked
+point locations, are smooth with $\Gamma_1=D_2$.
+There is an explicit binary one-bullet witness:
+colour a mixed input by the Boolean value at the
+fixed ambient root of its word. It is smooth for
+$\Gamma_1=D_2$, but two words that differ inside
+the common marked-root cone prove it is not smooth
+for $\Gamma_1=\varnothing$. Hence the all-Gamma$_2$
+classwise criterion from the previous audit is
+\emph{sufficient but not necessary} for the
+published existential notion of smoothness.
+
+\paragraph{Lean API correction.}
+The new
+\lean{ForwardQStarredSmoothPartitions.SmoothStarredFor}
+exposes an arbitrary membership predicate
+$\gamma_1:D_2\to\{\mathrm{false},\mathrm{true}\}$.
+The source-facing theorem
+\lean{smooth\_starred\_extension\_iff}
+establishes, for each fixed predicate, that a colouring
+of the \emph{actual corrected starred subtype}
+extends to a total $\gamma_1$-smooth colouring
+if and only if it is already constant on those
+smooth-related pairs \emph{within} the starred
+subtype. The theorem
+\lean{exists\_partition\_total\_extension\_iff}
+then quantifies existentially over the predicate,
+exactly as in Definition~21. The
+\lean{StrictnessWitness.smooth\_for\_some\_partition\_but\_not\_gamma2\_all}
+proof distinguishes this statement from the
+previous all-Gamma$_2$ version.
+
+\paragraph{Required connection to Definition~24.}
+Definition~24 gives a \emph{possibly different}
+partition $A=B_1\dot\cup B_2$ associated with
+simplicity of the original starred colouring.
+The proof of Lemma~27 must explicitly map this
+witness onto a choice of $\Gamma_1$ and $\Gamma_2$
+on the *selected frontier indices*, verifying
+both implications:
+\begin{enumerate}[label=(\roman*)]
+\item if a selected index belongs to $\Gamma_1$,
+the full word equality should suffice to control
+all colour-sensitive symbols inside that cone,
+\emph{even as the marked point moves};
+\item if it belongs to $\Gamma_2$, fixed marked points
+and equality outside their local cones must
+transport to the $B_2$-insensitivity condition
+for the original output starred word.
+\end{enumerate}
+The corrected forward-sorted coordinate order,
+the literal $B_1/B_2$ marker correspondence,
+and the typed three-way decoder must all be
+included. No such matching is currently
+proved. The earlier Gamma$_2=D_2$ normalization
+and its non-surjectivity results remain valid
+for their exact restricted statements, but
+\emph{cannot} be demanded as prerequisites
+for every Definition~21 smooth colouring.
+Eight transitive source-facing Lean checks are
+pending CI in the new branch (target 935).
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

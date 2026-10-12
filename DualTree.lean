@@ -317,3 +317,5 @@ import DualTree.ForwardQStarredPatchCriterion
 import DualTree.ForwardQStarredNormalization
 
 import DualTree.ForwardQNormalizationObstruction
+
+import DualTree.ForwardQStarredSmoothPartitions

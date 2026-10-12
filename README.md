@@ -94,6 +94,15 @@ obligation; `\todo` marks a remaining gap or proposed change.
   precomposed with normalization is smooth. **Important:** doing so may
   destroy the specific Q decoding or mixed-word span/surjectivity needed
   for Lemma 27; those properties remain unproved (PR #233, verified).
+- **Definition 21 uses an existential Gamma₁/Gamma₂ partition** of
+  the selected D₂ coordinates. The earlier all-Gamma₂ patch
+  normalization treats only one special split, and should not
+  be imposed on the full Lemma 27 colouring pullback. An arbitrary
+  split now has its own corrected-starred compatibility/total-extension
+  interface, and a binary one-bullet witness proves that some
+  genuinely smooth word-dependent colourings fail the all-Gamma₂
+  criterion. Transporting the original simple-colouring B₁/B₂
+  witness to the selected frontier split remains open (pending CI).
 - The normalization map is additionally **provably non-surjective**
   on any inhabited corrected-starred domain with a selected D₂
   coordinate and two alphabet letters: every normalized input has
@@ -122,7 +131,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **927 source-facing declarations** for transitive
+audits **935 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -153,8 +162,9 @@ frontier bands and mixed old/new inequalities have passed Lean CI.
    words, auxiliary decoder and variable-root transport from Lemma 27,
    prove their alignment and fibre properties, and demonstrate
    classwise compatibility of the actual induced colouring c ∘ Q.
-   The smooth extension mechanism is verified, but the required
-   compatibility is not automatic.
+   General smooth extension works for an arbitrary Gamma₁/Gamma₂
+   split, but the particular B₁/B₂-to-Gamma transport and
+   classwise compatibility are not automatic.
 4. **Finish the Ramsey induction:** Lemma 28, Theorem 25, the required
    recursive inequalities and the final dual-tree theorem remain open.
 
@@ -219,7 +229,9 @@ smooth-colouring compatibility obligation.
 `ForwardQStarredPatchCriterion` supplies its exact marked-cone-patch
 normal form and the universal output-map diagnostic.
 `ForwardQStarredNormalization` supplies canonical smoothness-class
-representatives; its effect on the required Ramsey span remains open.
+representatives for the all-Gamma₂ special case; its effect on the
+required Ramsey span remains open. `ForwardQStarredSmoothPartitions`
+handles the paper's existential Gamma₁/Gamma₂ split.
 `ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should
