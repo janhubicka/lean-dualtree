@@ -6003,7 +6003,7 @@ colouring, the exact mixed-word span or
 the Lemma~27 recursion from these prerequisites.
 
 
-\paragraph{Concrete forward-frontier visible-ancestor auxiliary decoder $R_i$.} \todo
+\paragraph{Concrete forward-frontier visible-ancestor auxiliary decoder $R_i$.} \ok
 The full-frontier three-way interface now isolates the
 remaining local auxiliary-decoder obligation in Lemma~27.
 For a genuine \emph{forward-sorted} minimal outside-cut
@@ -6069,9 +6069,9 @@ This is a stronger local decoder repair than simply
 postulating an arbitrary $R_i$: the target, numeric
 bound, root type and surjectivity onto visible roots
 are all derived from the \emph{actual corrected frame}.
-Fourteen transitive theorem endpoints (target 980)
-await the Lean build, finite regressions and
-no-\texttt{sorryAx} audit.
+All fourteen new source-facing theorem endpoints passed the
+Lean build, finite regressions and 980-declaration
+transitive no-\texttt{sorryAx} audit in merged PR~\#240.
 
 \paragraph{Not yet repaired.}
 The genuine cone variables require a
@@ -6086,6 +6086,95 @@ all mixed-product span/refinement and
 colouring-induction claims remain \todo.
 The constructed $R_i$ cannot by itself
 establish Lemma~27 or the main theorem.
+
+
+\paragraph{A necessary-and-sufficient \emph{visibility} condition for genuine cone-variable transport.} \todo
+The corrected $Q$ support has variable roots exactly
+$\operatorname{Int}(S)$, whereas every outside-cut
+frontier $f_i$ lies outside the inclusive forward cut.
+No old source variable root is a descendant of $f_i$.
+Suppose a genuine local cone-variable symbol
+$z$ occurs at a position $t$ extending $f_i$,
+and is translated to an actual old source
+variable $v_i(z)$. Root alignment forces
+\[
+   \operatorname{root}(v_i(z))\sqsubseteq t.
+\]
+Two prefixes of $t$ are comparable. Since the
+reverse comparison
+$f_i\sqsubseteq\operatorname{root}(v_i(z))$
+is impossible, the output root must be a
+\emph{strict} predecessor:
+\[
+  \operatorname{root}(v_i(z))\sqsubset f_i.
+\]
+Because every source variable root belongs to the
+ambient complete support $T$, it necessarily
+lies in the already verified list $V_i$
+of visible source-variable predecessors of
+$f_i$. Conversely every root in $V_i$
+prefixes every position in the full cone of
+$f_i$. Thus, for arbitrary raw local cone words,
+\[
+\begin{aligned}
+&\forall i,t,z\
+ [f_i\sqsubseteq t\ \land\
+   \operatorname{raw}_i(t)=\operatorname{inr}(z)
+  \Longrightarrow
+   \operatorname{root}(v_i(z))\sqsubseteq t]\\
+{}\iff\;&
+\forall i,t,z\
+ [f_i\sqsubseteq t\ \land\
+   \operatorname{raw}_i(t)=\operatorname{inr}(z)
+  \Longrightarrow
+   \operatorname{root}(v_i(z))\in V_i].
+\end{aligned}
+\]
+In particular $V_i=\varnothing$ forces the
+absence of genuine cone-variable occurrences
+in the $f_i$ cone whenever the decoded output
+is a valid variable word on the existing $Q$
+support. This is a source-facing obstruction,
+not merely a convenient sufficient hypothesis.
+The proposed module
+\lean{ForwardQConeVariableVisibility}
+formalizes the old source-root membership in
+$T$ and its support, strict comparability
+of co-cone prefixes, both directions of
+the visibility equivalence, and the
+empty-visible-cone impossibility. It also
+specializes the verified $R_i$ constructor to
+an explicitly chosen visible-root certificate,
+replacing the arbitrary geometric alignment
+premise by an exact finite condition at the
+occurrences. Eight transitive axiom endpoints
+are pending CI (target 988).
+
+\paragraph{Correction to the genuine cone-root prescription.}
+The canonical forward complete-support cone
+projection $P_i$ takes local tail nodes into
+the \emph{descendant} cone of $f_i$.
+In general the image $P_i(r)$ of a local
+cone-variable root $r$ is \emph{not} an allowable
+variable root of $g_w$, whose support is
+$\operatorname{Int}(S)$ and hence entirely
+outside every frontier descendant cone.
+Therefore an argument that simply defines
+$v_i(r):=P_i(r)$ is ill typed as a translation
+into the old source-variable subtype.
+The repair must explicitly select an old
+variable root in $V_i$ for every genuine
+variable \emph{occurring} in the cone, and
+separately check any required injectivity,
+independence and mixed-word span properties.
+The visibility bound $|V_i|\le m+1$
+may force identifications of distinct local
+variables; arbitrary collapsing cannot be
+used to infer the unmodified Ramsey span.
+This observation does not refute Lemma~27's
+existence conclusion, but identifies a
+substantive remaining condition on any
+faithful $g_w$ construction.
 
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
