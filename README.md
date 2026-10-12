@@ -121,9 +121,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   frontier indices defines a Gamma₁/Gamma₂ split. The marked
   Gamma₁ words are identical; Gamma₂ marked points, outside-cone
   letters and projected Q nodes are preserved under smoothness.
-  **Open:** identify R with the paper's canonical simplicity marker
-  set A and transport its B₁/B₂ conditions (new Lean module,
+  **Open:** construct the canonical address transport from the paper's
+  abstract simplicity marker set A to R and transfer B₁/B₂ (new Lean module,
   pending CI).
+- A separate **full-frontier Q word interface** now patches one
+  root-aligned local symbol map at every sorted complete-support
+  outside-cut frontier coordinate (D₀ and D₂), not just inside
+  D₂ projected marked-point cones. Its selector, root preservation,
+  inside/outside word semantics, conditional starred output on the
+  actual Q tree and independence from marked points for fixed local
+  maps are subject to Lean CI (follow-up PR).
+  The specific paper decoder and colouring compatibility remain open.
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -139,7 +147,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **943 source-facing declarations** for transitive
+audits **956 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -173,11 +181,11 @@ frontier bands and mixed old/new inequalities have passed Lean CI.
    General smooth extension works for an arbitrary Gamma₁/Gamma₂
    split, but the particular B₁/B₂-to-Gamma transport and
    classwise compatibility are not automatic.
-4. **Match the paper's full-frontier word decoding:** the current
-   generic three-way Q word patches *D₂ projected marked-point cones*,
-   whereas the printed g_w decodes the word in *every D₀/D₂
-   complete-support frontier cone*. This difference in domains
-   needs a separate, precise construction; no equivalence is claimed.
+4. **Complete the particular full-frontier Q decoding:** a conditional
+   all-frontier local word patcher is now formalized, retaining every
+   source root. The original raw cone words, specific auxiliary decoder,
+   transported variables, root alignment and span remain to be shown.
+   The older marked-point-cone word interface is distinct.
 5. **Finish the Ramsey induction:** Lemma 28, Theorem 25, the required
    recursive inequalities and the final dual-tree theorem remain open.
 
@@ -247,6 +255,8 @@ required Ramsey span remains open. `ForwardQStarredSmoothPartitions`
 handles the paper's existential Gamma₁/Gamma₂ split.
 `ForwardQMarkerSmoothPartition` transports literal signature-marker
 splits to genuine corrected D₂ Gamma₁/Gamma₂ coordinates.
+`ForwardQFullFrontierWord` supplies conditional word patching on all
+outside-cut complete-support frontiers, not just marked-point cones.
 `ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should

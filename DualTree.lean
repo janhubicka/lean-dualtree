@@ -321,3 +321,5 @@ import DualTree.ForwardQNormalizationObstruction
 import DualTree.ForwardQStarredSmoothPartitions
 
 import DualTree.ForwardQMarkerSmoothPartition
+
+import DualTree.ForwardQFullFrontierWord
