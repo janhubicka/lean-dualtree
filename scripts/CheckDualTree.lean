@@ -1208,6 +1208,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQProjectedSmoothObservables.Q_symbol_eq_on_observable
 #print axioms DualTree.ForwardQProjectedSmoothObservables.gamma2_marked_Q_eq_of_smooth
 #print axioms DualTree.ForwardQProjectedSmoothObservables.markedProjection_eq_iff_bulletPoint_eq
+#print axioms DualTree.ForwardQProjectedSmoothObservables.Q_projected_symbol_eq_iff_local_word_eq
 #print axioms DualTree.ForwardQProjectedSmoothObservables.Q_observables_of_smooth
 #print axioms DualTree.ForwardQProjectedSmoothObservables.smooth_of_Q_observables
 #print axioms DualTree.ForwardQProjectedSmoothObservables.smooth_iff_Q_observables
