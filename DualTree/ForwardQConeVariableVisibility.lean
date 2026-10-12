@@ -86,7 +86,7 @@ theorem root_strict_frontier_of_occurrence
   refine ⟨hpre, ?_⟩
   intro heq
   apply hnot
-  rw [← heq]
+  rw [heq]
   exact isPrefix_refl _
 
 /-- A source variable root can occur within a full frontier
