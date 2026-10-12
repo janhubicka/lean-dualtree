@@ -249,6 +249,12 @@ theorem Q_projected_symbol_eq_iff_local_word_eq
       x.1.words i z = y.1.words i z := by
   rw [coordinateConeData_Q_symbol_projected hb c x fallback hTbound i z,
       coordinateConeData_Q_symbol_projected hb c y fallback hTbound i z]
+  -- The two Q support-subtypes are definitionally the same old
+  -- source-variable support. Expose its fixed type before eliminating
+  -- the Sum.inl equality, rather than relying on implicit transparency.
+  change ((Sum.inl (x.1.words i z) : Sum α c.source.word.Vars) =
+      (Sum.inl (y.1.words i z) : Sum α c.source.word.Vars)) ↔
+        x.1.words i z = y.1.words i z
   simp only [Sum.inl.injEq]
 
 /-- Exact Q-observable fingerprint stored as ORIGINAL coordinate
