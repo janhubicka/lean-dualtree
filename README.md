@@ -200,8 +200,10 @@ obligation; `\todo` marks a remaining gap or proposed change.
   agree. Conversely these observed Q-word/point equalities
   recover the input SmoothRelated comparison because the canonical
   projection reflects equality of local tails. Gamma₁ marked points
-  need not agree and full Q trees need not coincide. This is the
-  interface for proving colouring-factorization of the specific
+  need not agree and full Q trees need not coincide. The exact pointwise equality between actual Q output symbols
+  and these typed original coordinate letters is checked separately,
+  avoiding arbitrary universe choices for the empty local-variable
+  type. This is the interface for proving colouring-factorization of the specific
   Definition 24 simple colouring (10 new Lean endpoints; pending CI).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
@@ -218,7 +220,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1020 source-facing declarations** for transitive
+audits **1021 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
