@@ -6484,8 +6484,16 @@ bidirectional characterization
  \text{observable projected $Q$ letters
  and $\Gamma_2$ projected points agree}.
 \]
-Ten new source-facing Lean endpoints
-(target 1020) await CI.
+Eleven new source-facing Lean endpoints
+(target 1021) await CI. To avoid a
+universe-polymorphism ambiguity from the empty
+raw cone-variable type, the formal observation
+record stores the actual letters $x_i(z)$;
+a separate theorem identifies their equality
+with equality of the genuine decoded $Q$
+symbols at $P_i(z)$. This is a representation
+choice only, not a change to the observable
+relation.
 The remaining \emph{particular}
 Lemma~27 colouring pullback must show
 that the original simple colouring
