@@ -225,6 +225,19 @@ obligation; `\todo` marks a remaining gap or proposed change.
   fingerprints supplied by a fallback colour. This is a quotient
   normal form, NOT proof of the paper's specific simple-colouring
   factorization or its variable-word span (10 CI-verified endpoints in merged PR #247).
+- The canonical smoothness fingerprint now has a proposed
+  **literal corrected R/B₂ marker interface**. A subset B₂ of
+  actual source signature markers determines exactly Gamma₂ via the
+  checked R ↔ D₂ coordinate bijection; B₁ markers preserve whole
+  words but hide marked points, whereas B₂ masks inside-cone
+  letters and records the point and outside-cone letters.
+  Equality of these records is exactly Definition 21 smoothness,
+  and arbitrary smooth corrected-starred colourings factor through
+  this concrete marker record. The remaining paper-specific
+  obligation is the canonical address transport from its abstract
+  Definition 24 A=B₁⊔B₂ to the actual R, followed by verifying its
+  particular colouring factors through the record (7 new Lean
+  endpoints; pending CI).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -240,7 +253,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1039 source-facing declarations** for transitive
+audits **1046 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -375,6 +388,8 @@ and fixed Gamma₂ projected nodes.
 `ForwardQObservableFingerprint` constructs an explicit quotient record,
 whose equality characterizes the same relation and through which
 smooth starred colourings factor.
+`ForwardQMarkerFingerprint` specializes this quotient to actual literal
+signature marker subsets B₂ ⊆ R and the sorted corrected D₂ coordinates.
 `ForwardQBulletRootVisibility` establishes nonempty old variable roots at all
 actual D₂ frontiers, without inferring the same property for D₀.
 `ForwardQStarredOrderReindexObstruction` records the verified
