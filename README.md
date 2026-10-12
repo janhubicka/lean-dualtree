@@ -132,6 +132,14 @@ obligation; `\todo` marks a remaining gap or proposed change.
   actual Q tree and independence from marked points for fixed local
   maps are subject to Lean CI (follow-up PR).
   The specific paper decoder and colouring compatibility remain open.
+- The full-frontier three-constructor interface now conditionally
+  assembles and evaluates typed raw cone words at EVERY corrected
+  sorted D₀/D₂ frontier: original letters remain constants, auxiliary
+  letters use a typed per-frontier decoder, and genuine cone variables
+  are uniformly mapped to old source roots. Local root alignment is
+  explicit and the global decoded word has exact corrected Q support.
+  The prescribed paper-specific local words and image/refinement
+  properties remain unproved (stacked PR, Lean CI pending).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -147,7 +155,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **956 source-facing declarations** for transitive
+audits **966 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -257,6 +265,8 @@ handles the paper's existential Gamma₁/Gamma₂ split.
 splits to genuine corrected D₂ Gamma₁/Gamma₂ coordinates.
 `ForwardQFullFrontierWord` supplies conditional word patching on all
 outside-cut complete-support frontiers, not just marked-point cones.
+`ForwardQFullFrontierThreeWay` supplies a conditional three-constructor
+decoder and exact evaluated semantics on those full frontier cones.
 `ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should
