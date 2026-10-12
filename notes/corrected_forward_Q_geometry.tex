@@ -25,9 +25,12 @@ This note states a \emph{corrected and explicitly conditional}
 version of the tree-support component of Lemma~27
 (arXiv:2207.14599v1).
 It is not an erratum for the entire paper and does not
-prove its Ramsey conclusion. In particular, neither the
-mixed-cone word \(g_w\), its smoothness/colouring pullback,
-nor the original recursive bounds are supplied here.
+prove its Ramsey conclusion. In particular, the paper's
+\emph{specific} mixed-cone word \(g_w\), its induced
+colouring pullback, and the original recursive bounds
+are not established here. A conditional, type-correct
+three-way word assembly and exact algebraic smoothness
+criterion are verified separately, as summarized below.
 The printed length-first reverse-lexicographic order and
 unrestricted leaf replacement have separately documented
 counterexamples in
@@ -244,45 +247,133 @@ complete support \(T\) now yields
 This is the remaining new/new condition.
 \end{proof}
 
+
+\section*{Subsequent word and smoothness verification}
+
+The corrected geometric result above has now been connected to
+the \emph{actual} forward-sorted, selected-\(D_2\) starred
+input subtype in Lean. In that subtype a vector-one-complete
+ordered list of marked points gives the precise monotonicity
+hypothesis \eqref{eq:D2}. This is a correction of the input
+domain, \emph{not} a proof that the paper's printed
+reverse-lexicographic \(W_*\) is equivalent to it:
+the same marker-to-point assignment need not remain starred
+after changing the frontier order. A typed binary witness
+proves this failure.
+
+A separately verified three-way interface constructs an
+actual starred word on \(Q\) from a family of cone symbol maps
+having three disjoint symbol types:
+original letters in \(\Lambda\), auxiliary letters, and
+genuine cone variables. Each auxiliary decoder and
+cone-variable-to-source-root map must obey an explicit
+root-prefix alignment condition. Under these conditions,
+the cones are disjoint, the old source variable roots are
+unmodified, variable fibres are uniform, and the resulting
+word has \emph{exactly} support \(Q\).
+Its evaluated letters are pointwise described by the three
+cases of the decoder, with the original word used outside
+the marked cones. This is a \emph{conditional} construction
+of a valid \(Q\) word, not yet an identification with the
+particular local maps prescribed by the printed Lemma~27.
+
+There is also an exact normal form for
+Definition~21's \(\Gamma_2=D_2\) smoothness relation on the
+corrected starred mixed product. Write
+\(\operatorname{patch}(x,r)\) for replacing the word of
+every bullet coordinate \(i\) only within the inclusive
+marked cone of its \emph{unchanged} marked point \(s_i\).
+For corrected starred \(x,y\) one has
+\[
+ x\sim_{\Gamma_2}y
+ \quad\Longleftrightarrow\quad
+ \operatorname{patch}(x,y.\mathrm{words})=y.
+\]
+Consequently a colouring \(d\) on the corrected starred
+space is smooth if and only if
+\[
+ d(x)=d(\operatorname{patch}(x,r))
+ \qquad\text{for all corrected starred }x
+ \text{ and all replacement word arrays }r.
+\]
+This turns the colour-compatibility obligation for the
+\emph{specific} \(c\circ Q\) into an exact patch-invariance
+test. It does \emph{not} follow just from the already
+verified invariance of the support \(Q\) under such patches.
+
+A further verified construction fixes one letter
+\(a\in\Lambda\) and replaces \emph{all} symbols inside
+each marked cone with \(a\); denote the result by \(N_a(x)\).
+Then
+\[
+ N_a^2=N_a,\qquad
+ x\sim_{\Gamma_2}y
+ \quad\Longleftrightarrow\quad N_a(x)=N_a(y).
+\]
+Thus every \(d\circ N_a\) is smooth. Crucially, this
+set-theoretic normalization can erase the original
+cone-word information used for mixed-product spans
+and Hales--Jewett substitutions. It must \emph{not}
+be used as a shortcut for the Ramsey proof until
+those image/refinement requirements are verified.
+
+The source-facing Lean modules are
+\texttt{ForwardQActualStarredSpace},
+\texttt{ForwardQThreeWayConeWordAssembly},
+\texttt{ForwardQThreeWayEvaluation},
+\texttt{ForwardQStarredSmoothExtension},
+\texttt{ForwardQStarredPatchCriterion}, and
+\texttt{ForwardQStarredNormalization}.
+The exact statements passed Lean CI and the transitive
+no-\texttt{sorryAx} audit in merged PRs through
+\#233 (921 audited endpoints). The cumulative
+\texttt{audit.tex} distinguishes these checked
+conditional results from the remaining proof gaps.
+
 \section*{What is still not proved}
 
 \begin{enumerate}[label=(\roman*)]
-\item The source-facing Lean certificate of
-selected \(D_2\) vector \(1\)-completeness
-must be constructed from precisely the actual
-members of the printed \(W_*\) domain.
-This note does not assert the same length property
-for arbitrary mixed-product inputs.
+\item Relate the actual \emph{printed} \(W_*\) input
+space to the globally forward-repaired starred domain.
+Naive permutation of the selected \(D_2\) frontier
+indices, while retaining their marked points,
+is refuted by a typed example. One needs a new
+joint transport of words and marked points, or a
+corrected source-domain Ramsey argument.
 \item The paper's original local cone height
 and recursive numerical bounds must be reconciled
 with the shortened common tail space in
 \eqref{eq:early}, or an extra complete level
 must be supplied and the iteration adjusted.
-\item The particular word \(g_w\) must be constructed,
-including root-aligned substitution, typed
-three-way local symbol decoding, and
-consistency of its variable fibres.
-\item Smoothness of the colouring pullback
-and classwise compatibility must be proved
-before applying mixed-product Ramsey results.
-A separate checked example shows that an
-arbitrary letter-at-marked-point colouring
-need not be smooth.
+\item Identify the printed Lemma~27 cone words and
+auxiliary-variable substitutions with the verified
+\emph{generic} three-way \(Q\)-word interface.
+Prove that the \emph{particular} raw symbols, decoder,
+and variable transport satisfy the root-alignment
+conditions and preserve the intended image/span.
+\item Establish the exact marked-cone patch invariance
+of the \emph{particular} induced colouring \(c\circ Q\),
+and prove that its original mixed-word image, refinement
+and simplicity properties are retained. The general
+extension and normalization lemmas are verified, but
+do not themselves provide these facts.
 \item Lemma~28, Theorem~25, and the full dual
 Ramsey theorem remain beyond this note.
 \end{enumerate}
 
 \paragraph{Lean status and source policy.}
-The statements in this note are mirrored by the
-modules \texttt{ForwardQFrontierBandMatch} and
+The geometric statements are checked by
+\texttt{ForwardQFrontierBandMatch} and
 \texttt{ForwardQCertifiedSemiComplete}, with supporting
-source-facing modules for each marker family.
-Proof status must be read from the corresponding
-current GitHub Actions runs and transitive axiom audit.
-Until those complete, the statements above are
-\emph{proposed Lean proofs awaiting CI}.
-The original paper's manuscript is not modified;
-proposed corrections and verification markers
-are maintained in \texttt{audit.tex}.
+marker-family lemmas. The generic word, evaluation,
+smoothness-patch and normalization statements listed
+above also passed the repository's Lean build and
+transitive axiom audit (up to 921 audited endpoints,
+merged through PR~\#233). This verifies these
+\emph{specific conditional statements}, not the
+original Lemma~27 or the final dual-tree Ramsey theorem.
+The original paper's manuscript remains unchanged;
+author-facing corrections and validation markers are
+collected in \texttt{audit.tex}.
 
 \end{document}
