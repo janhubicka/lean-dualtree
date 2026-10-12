@@ -88,7 +88,7 @@ theorem sourceRoot_strict_prefix_bullet_frontier
     have h := c.hmax
       (ForwardQRooted.sourceRoot c)
       (ForwardQRooted.sourceRoot_interior c)
-    simpa only [SkewTree.forwardAuxB] using h
+    simpa only [SkewTree.forwardAuxB, decide_eq_true_eq] using h
   have houtside :
       ¬ ForwardAux
         (ForwardOrderedProjections.frontierAt c.T c.cut j.1).1 c.cut :=
