@@ -214,7 +214,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   frontiers admits the verified first-visible-root assignment and
   constructs a legal starred Q word. This does NOT establish the
   same for arbitrary D₀ frontiers or preserve independent local
-  variable names (8 new source-facing theorems, CI pending).
+  variable names (8 CI-verified endpoints in merged PR #246).
+- A canonical **Gamma₁/Gamma₂ observable fingerprint** now retains
+  entire D₀/Gamma₁ words, masks inside-cone letters on Gamma₂, and
+  keeps only Gamma₂ marked points (Gamma₁ marked points may move).
+  The exact source-facing target is fingerprint(x)=fingerprint(y)
+  iff SmoothRelated(gamma1,x,y). Every smooth colouring of the
+  genuine corrected starred domain then factors through this
+  explicit record, with a total factor map on unrepresented
+  fingerprints supplied by a fallback colour. This is a quotient
+  normal form, NOT proof of the paper's specific simple-colouring
+  factorization or its variable-word span (10 CI-verified endpoints in merged PR #247).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -230,7 +240,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1029 source-facing declarations** for transitive
+audits **1039 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -362,6 +372,9 @@ at corrected canonical projected positions across all D₀/D₂ frontiers.
 `ForwardQProjectedSmoothObservables` characterizes arbitrary Gamma₁/Gamma₂
 smoothness by exactly the corresponding observable genuine Q symbols
 and fixed Gamma₂ projected nodes.
+`ForwardQObservableFingerprint` constructs an explicit quotient record,
+whose equality characterizes the same relation and through which
+smooth starred colourings factor.
 `ForwardQBulletRootVisibility` establishes nonempty old variable roots at all
 actual D₂ frontiers, without inferring the same property for D₀.
 `ForwardQStarredOrderReindexObstruction` records the verified
