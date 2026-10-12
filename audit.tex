@@ -6339,6 +6339,80 @@ variable words, the canonical $A/B_1/B_2$
 simplicity transport, the numerical induction,
 and the full dual-tree theorem remain \todo.
 
+\paragraph{Reading genuine mixed-product coordinate words at canonical projected positions.} \todo
+The conditional full-frontier three-way $Q$ word
+was previously assembled from externally supplied
+raw local symbol maps $\operatorname{raw}_i$.
+To connect it to the actual mixed-product
+\emph{element} $x$, a new source-facing
+construction reads the real coordinate word
+$x_i:b^{<k-(m+1)}\to\Lambda$ using the
+corrected canonical forward projection
+\[
+ P_i(z)=I_T\bigl(I_T^{-1}(f_i)^\frown z\bigr),
+ \quad i\in D_0\cup D_2,\quad z\in b^{<k-(m+1)}.
+\]
+Here $f_i$ is the exact sorted complete-support
+frontier at index $i$, including ordinary
+$D_0$ coordinates, not just selected
+$D_2$ markers. The verified forward inverse
+address equation gives
+\[
+ I_T^{-1}(P_i(z))=I_T^{-1}(f_i)^\frown z.
+\]
+Removing the inverse frontier prefix
+recovers the original local tail:
+\[
+ \operatorname{tail}_i(P_i(z))
+ =\operatorname{drop}_{|I_T^{-1}(f_i)|}
+     (I_T^{-1}(P_i(z)))=z.
+\]
+An interpolated letter map
+$L_i:b^{<n}\to\Lambda$ reads
+$x_i(\operatorname{tail}_i(t))$ when $t$
+lies in $T$ and the recovered tail
+has the safe height; otherwise it
+uses a fixed fallback letter. Thus
+\[
+ \boxed{L_i(P_i(z))=x_i(z)}
+ \qquad (i\in D_0\cup D_2).
+\]
+Inserting these concrete sampled
+letters into the original-letter
+case of the checked full-frontier
+decoder produces a starred output
+word on $Q(x)$ with unchanged old
+source variable roots, whose symbol
+at each actual $P_i(z)$ is exactly
+the genuine input coordinate letter.
+
+The proposed module
+\lean{ForwardQActualCoordinateWord}
+formalizes the forward projection,
+its inverse, tail extraction,
+actual coordinate-letter recovery
+and the resulting corrected starred
+$Q$ word. Seven new transitive axiom
+checks target 1004, pending CI.
+
+\paragraph{Scope and remaining gap.}
+The actual mixed-product \emph{element}
+$x$ carries ordinary alphabet words.
+The new raw maps use only the
+original-letter constructor; they
+do not yet handle the source's
+enlarged auxiliary alphabet or a
+\emph{variable} mixed-product word
+with genuine local cone variables.
+The particular $g_w$ substitution,
+simplicity-to-smoothness transport,
+evaluated span and recursive Ramsey
+bounds all remain independent
+obligations. The displayed
+coordinate identity is an exact
+source-facing bridge, not the
+full Lemma~27 conclusion.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
