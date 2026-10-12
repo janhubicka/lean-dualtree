@@ -1192,3 +1192,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQCanonicalConeRootChoice.firstVisibleConeRoot_aligned
 #print axioms DualTree.ForwardQCanonicalConeRootChoice.exists_alignedConeRoot_iff
 #print axioms DualTree.ForwardQCanonicalConeRootChoice.coneData_actual_Q_tree
+
+#print axioms DualTree.ForwardQActualCoordinateWord.projectLocal_cone
+#print axioms DualTree.ForwardQActualCoordinateWord.projectLocal_inverse
+#print axioms DualTree.ForwardQActualCoordinateWord.tailOfTNode_projectLocal
+#print axioms DualTree.ForwardQActualCoordinateWord.sampledLetter_projected
+#print axioms DualTree.ForwardQActualCoordinateWord.rawCoordinateLetters_projected
+#print axioms DualTree.ForwardQActualCoordinateWord.coordinateConeData_Q_tree
+#print axioms DualTree.ForwardQActualCoordinateWord.coordinateConeData_Q_symbol_projected
