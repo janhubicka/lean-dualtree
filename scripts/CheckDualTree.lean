@@ -1140,3 +1140,14 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFullFrontierWord.onActualStarredQ_symbol_outside
 #print axioms DualTree.ForwardQFullFrontierWord.toVariableWord_support
 #print axioms DualTree.ForwardQFullFrontierWord.onActualStarredQ_word_eq_for_fixed_local
+
+#print axioms DualTree.ForwardQFullFrontierThreeWay.ConeData.localSymbol_aligned
+#print axioms DualTree.ForwardQFullFrontierThreeWay.ConeData.onActualStarredQ_tree
+#print axioms DualTree.ForwardQFullFrontierThreeWay.ConeData.symbol_inside
+#print axioms DualTree.ForwardQFullFrontierThreeWay.ConeData.symbol_outside
+#print axioms DualTree.ForwardQFullFrontierThreeWay.ConeData.original_letter_inside
+#print axioms DualTree.ForwardQFullFrontierThreeWay.ConeData.auxiliary_letter_inside
+#print axioms DualTree.ForwardQFullFrontierThreeWay.ConeData.cone_variable_inside
+#print axioms DualTree.ForwardQFullFrontierThreeWay.ConeData.cone_variable_fibre_uniform
+#print axioms DualTree.ForwardQFullFrontierThreeWay.ConeData.eval_inside
+#print axioms DualTree.ForwardQFullFrontierThreeWay.ConeData.eval_outside
