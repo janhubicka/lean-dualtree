@@ -343,9 +343,9 @@ The exact statements passed Lean CI and the transitive
 no-\texttt{sorryAx} audit in merged PRs through
 \#233 (921 audited endpoints). The later normalization non-surjectivity
 and existential smooth-partition theorems passed CI in
-PRs~\#235--\#236 (935 audited endpoints). The marker
-transport and all-frontier word interface are pending
-further checks (target 956). The cumulative
+PRs~\#235--\#236 (935 audited endpoints). The literal marker transport and the full-frontier
+three-constructor word/evaluation interfaces passed CI in
+PRs~\#237--\#239 (966 audited endpoints). The cumulative
 \texttt{audit.tex} distinguishes these checked
 conditional results from the remaining proof gaps.
 
@@ -364,7 +364,7 @@ that point's inclusive cone agree, so its
 canonical projected \(Q\) node also agrees.
 These transport identities are formalized in
 \texttt{ForwardQMarkerSmoothPartition}
-(pending CI).
+(merged PR~\#237, verified).
 
 However, the paper's Definition~24
 takes \(A\) to be the canonical terminal
@@ -417,9 +417,54 @@ does not yet encode this particular
 does not supply the prescribed \(R_i\)
 decoders, Hales--Jewett span or colour
 invariance. Those remain separate proof
-obligations. The all-frontier patcher and
-its thirteen source-facing axiom checks
-are pending CI.
+obligations. The full-frontier patcher and its thirteen
+source-facing results passed CI in PR~\#238;
+the conditional three-way evaluated decoder passed CI
+in PR~\#239.
+
+
+\paragraph{Concrete visible-ancestor decoder at each repaired frontier.}
+The next source-facing correction defines the auxiliary decoder
+\(R_i\) for each forward-sorted minimal frontier \(f_i\)
+using exactly the old variable roots strictly preceding \(f_i\)
+in the ambient support \(T\). Its target is therefore the
+\emph{visible root chain}, not all of \(\operatorname{Int}(S)\).
+The proved forward frontier height bound gives
+\[
+ \bigl|\{v\in\operatorname{Vars}(g):
+          \operatorname{root}(v)\sqsubset f_i\}\bigr|
+ \le h_T(f_i)\le m+1.
+\]
+Choose a map from the \(m+1\) auxiliary indices
+onto this visible list whenever it is nonempty,
+and map them all to a fallback original letter
+when it is empty. The resulting typed decoder
+satisfies
+\[
+ R_i(j)=v\quad\Longrightarrow\quad
+ \operatorname{root}(v)\sqsubset f_i,
+\]
+so every auxiliary output in the \(f_i\) cone
+is aligned with its original source root.
+
+The module \texttt{ForwardQVisibleAncestorDecoder}
+constructs these actual source variable witnesses,
+the forward-specific rank bound and the decoder
+with its coverage/strict-prefix properties.
+It also replaces irrelevant local raw symbols
+\emph{outside their own frontier cone} with
+an original fallback letter. Since the global
+full-frontier selector never reads these positions,
+this masking changes no output symbol in its
+actual cone. It removes the previous auxiliary
+alignment assumption from the conditional
+three-way Q word interface. The transport of
+\emph{genuine cone variables} still requires a
+separate explicit root-alignment hypothesis,
+as do the source-specific raw words and
+Hales--Jewett image/refinement claims.
+The 14 new source-facing declarations (target:
+980 audited statements) await Lean CI.
 
 \section*{What is still not proved}
 
@@ -464,8 +509,8 @@ The geometric statements are checked by
 marker-family lemmas. The generic word, evaluation,
 smoothness-patch and normalization statements listed
 above also passed the repository's Lean build and
-transitive axiom audit (up to 921 audited endpoints,
-merged through PR~\#233). This verifies these
+transitive axiom audit (966 audited endpoints,
+merged through PR~\#239). This verifies these
 \emph{specific conditional statements}, not the
 original Lemma~27 or the final dual-tree Ramsey theorem.
 The original paper's manuscript remains unchanged;
