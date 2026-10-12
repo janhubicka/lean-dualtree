@@ -5734,7 +5734,7 @@ Eight transitive source-facing Lean checks are
 pending CI in the new branch (target 935).
 
 
-\paragraph{Exact transport of a literal marker split to the sorted $D_2$ coordinates.} \todo
+\paragraph{Exact transport of a literal marker split to the sorted $D_2$ coordinates.} \ok
 The corrected source-facing reconstruction uses a finite set $R$
 of literal signature markers (exceptional first-exit boundaries
 and immediate children of the final source cut). The preceding
@@ -5782,8 +5782,8 @@ The source-facing lemmas are
 \lean{gamma2\_marker\_points\_equal},
 \lean{gamma2\_marker\_words\_outside\_equal}, and
 \lean{gamma2\_Q\_projected\_marker\_equal}.
-These eight new statements require the normal Lean
-build and transitive axiom audit (target: 943).
+These eight statements passed Lean compilation, the finite regressions,
+and the 943-declaration transitive axiom audit in merged PR~\#237.
 
 \paragraph{Remaining correction, not yet discharged.}
 The partition $B_1\dot\cup B_2$ from the
@@ -5822,7 +5822,7 @@ construction, colouring-pullback, quantitative
 recursion, Lemma~28 and Theorem~25 remain \todo.
 
 
-\paragraph{Full-frontier word assembly, including all $D_0$ and $D_2$ cones.} \todo
+\paragraph{Full-frontier word assembly, including all $D_0$ and $D_2$ cones.} \ok
 The previous paragraph identifies a substantive mismatch
 between the printed and conditional decoded-word
 constructions. We now isolate the precise corrected
@@ -5886,9 +5886,9 @@ frontier selector's root-avoidance and
 single-valuedness, the patched symbol
 inside/outside equalities, the exact old
 root support, and the conditional legal
-starred-word construction. Its thirteen
-source-facing declarations await the
-956-declaration transitive axiom audit.
+starred-word construction. Its thirteen source-facing declarations passed the Lean build,
+finite regressions and 956-declaration transitive axiom audit
+in merged PR~\#238.
 
 \paragraph{What the new word interface still requires.}
 This conditional all-frontier assembly is
@@ -5913,7 +5913,7 @@ mixed-word span/refinement, nor the
 numerical Ramsey induction follows.
 
 
-\paragraph{Three-constructor semantics on the \emph{full} corrected frontier family.} \todo
+\paragraph{Three-constructor semantics on the \emph{full} corrected frontier family.} \ok
 The earlier checked \lean{ForwardQThreeWayEvaluation}
 translated original letters, auxiliary letters and
 genuine cone variables, but only over the
@@ -5980,8 +5980,9 @@ include local root alignment, support-tree
 equality, inside/outside symbols, all three
 constructor equations, fibre uniformity and
 the two evaluation equations.
-The stacked transitive axiom audit target is
-966, pending CI.
+All ten new source-facing declarations passed the Lean build,
+finite regressions and 966-declaration transitive axiom audit
+in merged PR~\#239.
 
 \paragraph{Remaining author-facing proof gap.}
 This is a \emph{conditional typed assembly}, not
@@ -6000,6 +6001,91 @@ No axiom-free statement yet derives smoothness
 of $c\circ Q$, simplicity of its induced
 colouring, the exact mixed-word span or
 the Lemma~27 recursion from these prerequisites.
+
+
+\paragraph{Concrete forward-frontier visible-ancestor auxiliary decoder $R_i$.} \todo
+The full-frontier three-way interface now isolates the
+remaining local auxiliary-decoder obligation in Lemma~27.
+For a genuine \emph{forward-sorted} minimal outside-cut
+frontier $f_i$ of $T$, put
+\[
+ V_i=\{v\in\operatorname{Vars}(g):
+                 \operatorname{root}(v)\sqsubset f_i\}.
+\]
+Here $V_i$ is taken as the actual finite list of
+interior roots that are \emph{support predecessors}
+of $f_i$; it is not an unrestricted collection of
+all source variables. The corrected forward-skew
+rank lemma supplies
+\[
+ h_T(f_i)\le h_T(t_0)+1=m+1,\qquad
+ |V_i|\le h_T(f_i)\le m+1.
+\]
+Each member of $V_i$ is lifted from its node to
+the \emph{actual bounded source-variable subtype},
+preserving its exact root. The decoder
+\[
+ R_i:\{0,\ldots,m\}\longrightarrow
+       \Lambda\sqcup\operatorname{Vars}(g)
+\]
+is chosen to cover $V_i$ when nonempty; if $V_i$
+is empty, all auxiliary symbols decode to one
+prescribed fallback letter $a\in\Lambda$.
+Its variable outputs always satisfy
+\[
+ R_i(j)=v\quad\Longrightarrow\quad
+       \operatorname{root}(v)\sqsubset f_i.
+\]
+Thus for any position $t$ in the full cone of
+$f_i$ one obtains $\operatorname{root}(v)\sqsubseteq t$,
+the exact auxiliary root-prefix condition
+needed by the corrected three-way word constructor.
+
+The proposed source-facing Lean module
+\lean{ForwardQVisibleAncestorDecoder}
+formalizes (i) the forward frontier height bound,
+(ii) exact source-variable witnesses for all visible
+ancestor nodes, (iii) a typed decoder covering the
+visible roots, and (iv) auxiliary root-prefix alignment.
+It also masks raw symbols \emph{outside their own}
+full frontier cones to a fallback original letter.
+Those symbols are ignored by the global selector,
+so this change preserves \emph{all} original raw
+symbols inside the actual cones, while making
+the generic decoder's all-position alignment
+hypotheses well typed. Given an explicit further
+root-alignment certificate only for the
+\emph{genuine transported cone variables},
+the source-facing constructor
+\lean{ForwardQVisibleAncestorDecoder.coneData}
+supplies a valid
+\lean{ForwardQFullFrontierThreeWay.ConeData}
+with no independent auxiliary-alignment hypothesis.
+The evaluated output of the resulting starred
+$Q$-word agrees with the original three-case
+raw-word formula on every selected frontier cone.
+
+This is a stronger local decoder repair than simply
+postulating an arbitrary $R_i$: the target, numeric
+bound, root type and surjectivity onto visible roots
+are all derived from the \emph{actual corrected frame}.
+Fourteen transitive theorem endpoints (target 980)
+await the Lean build, finite regressions and
+no-\texttt{sorryAx} audit.
+
+\paragraph{Not yet repaired.}
+The genuine cone variables require a
+\emph{source-facing} transport from the local
+variable-root addresses to old source roots;
+the cone-variable alignment certificate remains
+an explicit hypothesis. The printed source
+word restriction, the canonical
+$A=B_1\dot\cup B_2$ to $R$ transport, the
+corrected starred-domain Ramsey step and
+all mixed-product span/refinement and
+colouring-induction claims remain \todo.
+The constructed $R_i$ cannot by itself
+establish Lemma~27 or the main theorem.
 
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
