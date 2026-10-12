@@ -397,6 +397,17 @@ theorem coneData_actual_Q_eval_inside
   have h :=
     (coneData c fallback raw coneRoot hcone).eval_inside
       hb c x hTbound i t ht σ
-  simpa [coneData, maskedRaw, ht] using h
+  have hraw :
+      (coneData c fallback raw coneRoot hcone).raw i t =
+        raw i t :=
+    coneData_raw_inside c fallback raw coneRoot hcone i t ht
+  have hdecoder :
+      (coneData c fallback raw coneRoot hcone).decodeAux =
+        decodeAux c fallback := rfl
+  have hroot :
+      (coneData c fallback raw coneRoot hcone).coneRoot =
+        coneRoot := rfl
+  rw [hraw, hdecoder, hroot] at h
+  exact h
 
 end DualTree.ForwardQVisibleAncestorDecoder
