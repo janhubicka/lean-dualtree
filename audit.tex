@@ -5818,6 +5818,97 @@ valid under their precise statements. The
 construction, colouring-pullback, quantitative
 recursion, Lemma~28 and Theorem~25 remain \todo.
 
+
+\paragraph{Full-frontier word assembly, including all $D_0$ and $D_2$ cones.} \todo
+The previous paragraph identifies a substantive mismatch
+between the printed and conditional decoded-word
+constructions. We now isolate the precise corrected
+word-patching domain as a separate source-facing Lean
+interface. Let
+\[
+ F=(f_i:i\in[d])
+\]
+be the \emph{complete} list of minimal outside-cut
+frontiers of the forward-complete support $T$,
+sorted by the globally corrected length-first
+forward-lex order. For every ambient homogeneous-tree
+position $t\in b^{<n}$, choose the unique $i$ such
+that $f_i\sqsubseteq t$ (if such an $i$ exists).
+Both its existence and uniqueness are genuinely
+based on $F$, not the chosen marked points $s_j$
+at the indices $j\in D_2$. The frontier cones
+are pairwise disjoint even outside $T$, by the
+frontier-antichain theorem; furthermore, none
+of the original source variable roots lies in
+an outside-cut frontier cone.
+
+Supply for \emph{each} $i\in[d]$ a total
+root-aligned decoded local symbol map
+\[
+ L_i:b^{<n}\longrightarrow
+ \Lambda\sqcup \operatorname{Vars}(g),
+ \qquad
+ L_i(t)=v\Longrightarrow v\sqsubseteq t.
+\]
+The full-frontier output word is
+\[
+ G_F(t)=
+ \begin{cases}
+   L_i(t),&f_i\sqsubseteq t,\\
+   g(t),&\text{outside all frontier cones}.
+ \end{cases}
+\]
+All symbol replacements now take place in
+\emph{frontier} cones at both ordinary and
+bullet coordinates, as in the source's displayed
+$g_w$ construction, rather than solely in the
+\emph{projected marked-point} cones. Its
+variable roots remain literally the old
+$\operatorname{Int}(S)$, and the root-alignment
+hypotheses ensure a legal variable word. For
+any independently selected corrected-starred
+mixed input $x$, packaging this word with the
+already-verified tree support $Q(x)$ gives a
+starred object with support exactly $Q(x)$.
+The whole word $G_F$ depends on the decoded
+local maps and the frontier geometry, but
+\emph{not} on the local marked points
+when the maps are held fixed. Thus changing
+a $\Gamma_1$ marked point may change the
+$Q$ tree but need not change the word.
+
+The proposed Lean module
+\lean{ForwardQFullFrontierWord} proves the
+frontier selector's root-avoidance and
+single-valuedness, the patched symbol
+inside/outside equalities, the exact old
+root support, and the conditional legal
+starred-word construction. Its thirteen
+source-facing declarations await the
+956-declaration transitive axiom audit.
+
+\paragraph{What the new word interface still requires.}
+This conditional all-frontier assembly is
+\emph{closer to the printed} Lemma~27
+word-construction domain but still does
+not identify the particular $L_i$ with
+its local variable words, enlarged
+auxiliary alphabet, $R_i$ decoders,
+and canonical cone-root transport.
+Each must be instantiated from the
+actual corrected mixed-product word
+coordinate $w_i$, with explicit proof
+of root-prefix alignment. Furthermore,
+the simple-colouring $B_1/B_2$ criterion
+must be transported from the source
+canonical signature $A$ to the literal
+corrected marker set $R$ and hence to
+a smoothness split on $D_2$.
+Without those steps neither smoothness
+of $c\circ Q$, the required
+mixed-word span/refinement, nor the
+numerical Ramsey induction follows.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
