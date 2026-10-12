@@ -101,8 +101,9 @@ obligation; `\todo` marks a remaining gap or proposed change.
   split now has its own corrected-starred compatibility/total-extension
   interface, and a binary one-bullet witness proves that some
   genuinely smooth word-dependent colourings fail the all-Gamma₂
-  criterion. Transporting the original simple-colouring B₁/B₂
-  witness to the selected frontier split remains open (pending CI).
+  criterion. The arbitrary-partition extension criterion passed CI in PR #236;
+  transporting the original simple-colouring B₁/B₂ witness to
+  the selected frontier split remains open.
 - The normalization map is additionally **provably non-surjective**
   on any inhabited corrected-starred domain with a selected D₂
   coordinate and two alphabet letters: every normalized input has
@@ -110,7 +111,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   starred input can be patched to have a different letter there.
   The Q tree is unaffected. This precisely obstructs treating
   normalization as a lossless reparameterization of the full
-  mixed-product domain (new Lean module, pending CI).
+  mixed-product domain (verified in merged PR #235).
 - A kernel-checked binary witness demonstrates that simply reordering
   the *same* marked-point assignment from the paper's reverse-lex
   frontier order to the corrected forward order can destroy
@@ -139,7 +140,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   are uniformly mapped to old source roots. Local root alignment is
   explicit and the global decoded word has exact corrected Q support.
   The prescribed paper-specific local words and image/refinement
-  properties remain unproved (stacked PR, Lean CI pending).
+  properties remain unproved (merged PR #239 verifies the conditional interface).
+- At each genuine forward-sorted frontier, an explicit auxiliary
+  decoder `R_i` from m+1 symbols now targets only the *actual
+  visible old source variable roots* (proper support predecessors).
+  The forward frontier rank bound supplies its numerical domain,
+  and masking irrelevant raw symbols outside the cone makes the
+  required auxiliary root alignment automatic. Genuine cone-variable
+  root transport remains an independent premise. This source-facing
+  decoder and its evaluated Q-word statement are pending Lean CI
+  (14 additional transitive theorem endpoints; 980 target).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -189,11 +199,14 @@ frontier bands and mixed old/new inequalities have passed Lean CI.
    General smooth extension works for an arbitrary Gamma₁/Gamma₂
    split, but the particular B₁/B₂-to-Gamma transport and
    classwise compatibility are not automatic.
-4. **Complete the particular full-frontier Q decoding:** a conditional
-   all-frontier local word patcher is now formalized, retaining every
-   source root. The original raw cone words, specific auxiliary decoder,
-   transported variables, root alignment and span remain to be shown.
-   The older marked-point-cone word interface is distinct.
+4. **Finish the particular full-frontier Q decoding:** the
+   corrected all-frontier patcher and three-constructor evaluation
+   are checked. The proposed genuine visible-ancestor R_i decoder
+   now discharges the auxiliary alignment step (pending CI).
+   The paper's specific local raw words, transport of genuine
+   cone-variable roots, source signature and span/refinement
+   preservation remain open. The older marked-point-cone
+   interface is distinct.
 5. **Finish the Ramsey induction:** Lemma 28, Theorem 25, the required
    recursive inequalities and the final dual-tree theorem remain open.
 
@@ -267,6 +280,8 @@ splits to genuine corrected D₂ Gamma₁/Gamma₂ coordinates.
 outside-cut complete-support frontiers, not just marked-point cones.
 `ForwardQFullFrontierThreeWay` supplies a conditional three-constructor
 decoder and exact evaluated semantics on those full frontier cones.
+`ForwardQVisibleAncestorDecoder` constructs the proposed concrete
+per-frontier R_i using genuinely visible typed source variables.
 `ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should
