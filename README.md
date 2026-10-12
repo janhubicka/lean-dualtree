@@ -77,6 +77,15 @@ obligation; `\todo` marks a remaining gap or proposed change.
   (merged PR #229). A colouring on the corrected starred subtype
   extends to a total smooth colouring **exactly when** it is
   already constant on its starred smoothness classes (PR #230).
+- The converse smoothness theorem identifies **all** corrected-starred
+  Gamma₂-smooth comparisons as marked-cone patches: every related
+  starred pair is recovered exactly by replacing the first input's
+  bullet words inside its fixed marked cones with those of the second.
+  Consequently smoothness of a starred colouring is **equivalent**
+  to invariance under every such patch. The induced colouring
+  \(c\circ Q\) still needs this invariance proved for its specific
+  decoder and source colouring; support invariance by itself is
+  insufficient (pending PR, Lean CI required).
 - A kernel-checked binary witness demonstrates that simply reordering
   the *same* marked-point assignment from the paper's reverse-lex
   frontier order to the corrected forward order can destroy
@@ -97,7 +106,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **912 source-facing declarations** for transitive
+audits **916 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -190,8 +199,7 @@ is verified in `ForwardQCertifiedSemiComplete` (merged PR #213).
 `ForwardQThreeWayEvaluation` supply conditional word assembly and
 its exact evaluation. `ForwardQStarredSmoothConePatches` and
 `ForwardQStarredSmoothExtension` isolate the remaining
-smooth-colouring compatibility obligation.
-`ForwardQStarredOrderReindexObstruction` records the verified
+smooth-colouring compatibility obligation.\n`ForwardQStarredPatchCriterion` supplies its exact marked-cone-patch\nnormal form and the universal output-map diagnostic.\n`ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should
 be read together with later validation entries.
