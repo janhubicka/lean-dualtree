@@ -192,6 +192,19 @@ obligation; `\todo` marks a remaining gap or proposed change.
   Auxiliary and genuine local variable symbols are not yet part
   of this concrete interpolation (7 proposed Lean endpoints,
   pending CI).
+- Definition 21's **general** Gamma₁/Gamma₂ smoothness relation now
+  has a verified exact observable characterization in ACTUAL corrected
+  Q outputs: at every fixed canonical projected position P_i(z),
+  words agree on D₀ and Gamma₁, and on Gamma₂ outside the
+  selected marked cone; the Gamma₂ projected marked points also
+  agree. Conversely these observed Q-word/point equalities
+  recover the input SmoothRelated comparison because the canonical
+  projection reflects equality of local tails. Gamma₁ marked points
+  need not agree and full Q trees need not coincide. The exact pointwise equality between actual Q output symbols
+  and these typed original coordinate letters is checked separately,
+  avoiding arbitrary universe choices for the empty local-variable
+  type. This is the interface for proving colouring-factorization of the specific
+  Definition 24 simple colouring (10 new Lean endpoints; pending CI).
 - **Every actual selected D₂ frontier has an old visible source variable.**
   The genuine original source root is an interior variable and strictly
   precedes the sorted frontier of each literal D₂ signature marker,
@@ -217,7 +230,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1018 source-facing declarations** for transitive
+audits **1029 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -346,8 +359,11 @@ for existence of some old-root transport and a deliberately collapsing
 first-visible-root witness.
 `ForwardQActualCoordinateWord` samples genuine input coordinate letters
 at corrected canonical projected positions across all D₀/D₂ frontiers.
-`ForwardQBulletRootVisibility` derives nonempty actual visible old-variable
-roots at all selected D₂ frontiers; D₀ is deliberately excluded.
+`ForwardQProjectedSmoothObservables` characterizes arbitrary Gamma₁/Gamma₂
+smoothness by exactly the corresponding observable genuine Q symbols
+and fixed Gamma₂ projected nodes.
+`ForwardQBulletRootVisibility` establishes nonempty old variable roots at all
+actual D₂ frontiers, without inferring the same property for D₀.
 `ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should
