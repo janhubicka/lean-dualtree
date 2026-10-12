@@ -215,6 +215,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   constructs a legal starred Q word. This does NOT establish the
   same for arbitrary D₀ frontiers or preserve independent local
   variable names (8 new source-facing theorems, CI pending).
+- The actual full-frontier Q word now has a proposed
+  **mixed-product evaluated-span bridge**: if a genuine corrected-starred
+  input x belongs to the span of a variable mixed-product word f, then
+  each coordinatewise Q symbol at P_i(z) is exactly the constant
+  carrying the evaluation of f_i under a local substitution σ_i.
+  All component assignments can be selected simultaneously, and
+  outside all frontier cones the old source word is unchanged.
+  These are independent LOCAL assignments, not a single substitution
+  into the limited old Q-source roots, so no global span-preservation
+  or Ramsey step follows (5 new endpoints; CI pending).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -230,7 +240,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1029 source-facing declarations** for transitive
+audits **1034 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -359,6 +369,8 @@ for existence of some old-root transport and a deliberately collapsing
 first-visible-root witness.
 `ForwardQActualCoordinateWord` samples genuine input coordinate letters
 at corrected canonical projected positions across all D₀/D₂ frontiers.
+`ForwardQMixedSpanEvaluation` connects genuine variable mixed-product
+span membership with all certified projected Q-coordinate evaluations.
 `ForwardQProjectedSmoothObservables` characterizes arbitrary Gamma₁/Gamma₂
 smoothness by exactly the corresponding observable genuine Q symbols
 and fixed Gamma₂ projected nodes.
