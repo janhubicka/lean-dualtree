@@ -192,6 +192,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   Auxiliary and genuine local variable symbols are not yet part
   of this concrete interpolation (7 proposed Lean endpoints,
   pending CI).
+- **Every actual selected D₂ frontier has an old visible source variable.**
+  The genuine original source root is an interior variable and strictly
+  precedes the sorted frontier of each literal D₂ signature marker,
+  so its checked visible-root list is nonempty and the explicit
+  R_i decoder reaches that root. In particular a raw local family
+  whose genuine cone-variable occurrences are confined to D₂
+  frontiers admits the verified first-visible-root assignment and
+  constructs a legal starred Q word. This does NOT establish the
+  same for arbitrary D₀ frontiers or preserve independent local
+  variable names (8 new source-facing theorems, CI pending).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -207,7 +217,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1010 source-facing declarations** for transitive
+audits **1018 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -336,6 +346,8 @@ for existence of some old-root transport and a deliberately collapsing
 first-visible-root witness.
 `ForwardQActualCoordinateWord` samples genuine input coordinate letters
 at corrected canonical projected positions across all D₀/D₂ frontiers.
+`ForwardQBulletRootVisibility` derives nonempty actual visible old-variable
+roots at all selected D₂ frontiers; D₀ is deliberately excluded.
 `ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should
