@@ -228,10 +228,34 @@ theorem markedProjection_eq_iff_bulletPoint_eq
   · intro hp
     simp only [markedProjection, hp]
 
-/-- The exact observable Q fingerprint for two ACTUAL corrected
-starred inputs and a chosen Gamma1/Gamma2 split: the full
-projected word is compared only where Definition 21 sees it,
-and Gamma2 projected marked nodes are compared explicitly. -/
+/-- Equality of actual decoded Q-output symbols at the
+canonical P_i(z) is equivalent to equality of the REAL coordinate
+letters x_i(z), independently of the Gamma split. In particular
+we may store their observable fingerprint without an arbitrary
+universe choice for the empty raw cone-variable type. -/
+theorem Q_projected_symbol_eq_iff_local_word_eq
+    {b n l k m : Nat} {α : Type*}
+    (hb : 0 < b)
+    (c : Frame b n l k m α)
+    (x y : ForwardQActualStarredSpace.StarredInput c)
+    (fallback : α)
+    (hTbound : ∀ t : Node b, t ∈ c.T → InHomTree n t)
+    (i : Index c)
+    (z : BoundedNode b (k - (m + 1))) :
+    (((coordinateConeData c x.1 fallback).onActualStarredQ
+      hb c x hTbound).word.word (projectedBounded c hTbound i z) =
+     ((coordinateConeData c y.1 fallback).onActualStarredQ
+      hb c y hTbound).word.word (projectedBounded c hTbound i z)) ↔
+      x.1.words i z = y.1.words i z := by
+  rw [coordinateConeData_Q_symbol_projected hb c x fallback hTbound i z,
+      coordinateConeData_Q_symbol_projected hb c y fallback hTbound i z]
+  simp only [Sum.inl.injEq]
+
+/-- Exact Q-observable fingerprint stored as ORIGINAL coordinate
+letters, which the preceding theorem identifies pointwise with
+the actual Q output symbols at every canonical projection.
+Together with Gamma2 projected marker points this is precisely
+the information visible in Definition 21. -/
 def QObservableAgreement
     {b n l k m : Nat} {α : Type*}
     (hb : 0 < b)
@@ -242,12 +266,7 @@ def QObservableAgreement
     (hTbound : ∀ t : Node b, t ∈ c.T → InHomTree n t) : Prop :=
   (∀ (i : Index c) (z : BoundedNode b (k - (m + 1))),
     ObservableLocal c gamma1 x.1 i z →
-      ((coordinateConeData c x.1 fallback).onActualStarredQ
-        hb c x hTbound).word.word
-        (projectedBounded c hTbound i z) =
-      ((coordinateConeData c y.1 fallback).onActualStarredQ
-        hb c y hTbound).word.word
-        (projectedBounded c hTbound i z)) ∧
+      x.1.words i z = y.1.words i z) ∧
   (∀ j : MixedProduct.BulletIndex (kind c),
     gamma1 j = false →
       markedProjection c x.1 j = markedProjection c y.1 j)
@@ -266,8 +285,7 @@ theorem Q_observables_of_smooth
     QObservableAgreement hb c x y gamma1 fallback hTbound := by
   constructor
   · intro i z hobs
-    exact Q_symbol_eq_on_observable hb c x y gamma1 hxy
-      fallback hTbound i z hobs
+    exact local_letters_eq_of_smooth c gamma1 x.1 y.1 hxy i z hobs
   · intro j hg
     exact gamma2_marked_Q_eq_of_smooth c gamma1 x.1 y.1 hxy j hg
 
@@ -290,10 +308,7 @@ theorem smooth_of_Q_observables
         ObservableLocal c gamma1 x.1 i z →
           x.1.words i z = y.1.words i z := by
     intro i z hz
-    have h := hobs.1 i z hz
-    rw [coordinateConeData_Q_symbol_projected hb c x fallback hTbound i z,
-        coordinateConeData_Q_symbol_projected hb c y fallback hTbound i z] at h
-    exact Sum.inl.inj h
+    exact hobs.1 i z hz
   refine ⟨?_, ?_, ?_⟩
   · intro i hi
     funext z
@@ -333,7 +348,8 @@ theorem smooth_of_Q_observables
 
 /-- The mixed smooth relation on genuine corrected-starred inputs
 is EXACTLY equality of the observable letters and Gamma2 markers
-of their decoded original-letter Q outputs. This is the
+of their decoded original-letter Q outputs (via the checked
+projection/letter equivalence above). This is the
 input-output bridge needed before testing the specific simple
 colouring in Lemma 27. -/
 theorem smooth_iff_Q_observables
