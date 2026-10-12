@@ -1185,3 +1185,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQVisibleRootCapacity.decodeAux_onto_every_visible_variable
 #print axioms DualTree.ForwardQVisibleRootCapacity.no_injective_visible_root_transport
 #print axioms DualTree.ForwardQVisibleRootCapacity.no_injective_coneRoot_of_all_variables_occurring
+
+#print axioms DualTree.ForwardQCanonicalConeRootChoice.cutVariable_root
+#print axioms DualTree.ForwardQCanonicalConeRootChoice.firstVisibleConeRoot_visible
+#print axioms DualTree.ForwardQCanonicalConeRootChoice.firstVisibleConeRoot_constant
+#print axioms DualTree.ForwardQCanonicalConeRootChoice.firstVisibleConeRoot_aligned
+#print axioms DualTree.ForwardQCanonicalConeRootChoice.exists_alignedConeRoot_iff
+#print axioms DualTree.ForwardQCanonicalConeRootChoice.coneData_actual_Q_tree
