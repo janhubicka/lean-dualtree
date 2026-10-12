@@ -311,4 +311,37 @@ theorem onActualStarredQ_symbol_outside
   change patchedSymbol c local t = c.source.word.word t
   exact patchedSymbol_outside c local t ht
 
+/-- The complete-frontier decoded word keeps exactly the source
+variable-root list, rather than silently adding one variable
+for each frontier or for each marker. -/
+theorem toVariableWord_support
+    {b n l k m : Nat} {α : Type*}
+    (c : Frame b n l k m α)
+    (local : Index c →
+      BoundedNode b n → Sum α c.source.word.Vars)
+    (haligned : ∀ (i : Index c) (v : c.source.word.Vars)
+      (t : BoundedNode b n),
+      local i t = Sum.inr v → IsPrefix v.1.1 t.1) :
+    (toVariableWord c local haligned).support =
+      c.source.word.support := rfl
+
+/-- For fixed local decoded frontier words, the actual output
+word is independent of the selected D₂ marked-point array.
+Only the output SUPPORT tree depends on that array. This
+distinction is needed for Definition 21's Gamma₁ coordinates,
+whose points are allowed to move. -/
+theorem onActualStarredQ_word_eq_for_fixed_local
+    {b n l k m : Nat} {α : Type*}
+    (hb : 0 < b)
+    (c : Frame b n l k m α)
+    (x y : ForwardQActualStarredSpace.StarredInput c)
+    (hTbound : ∀ t : Node b, t ∈ c.T → InHomTree n t)
+    (local : Index c →
+      BoundedNode b n → Sum α c.source.word.Vars)
+    (haligned : ∀ (i : Index c) (v : c.source.word.Vars)
+      (t : BoundedNode b n),
+      local i t = Sum.inr v → IsPrefix v.1.1 t.1) :
+    (onActualStarredQ hb c x hTbound local haligned).word.word =
+      (onActualStarredQ hb c y hTbound local haligned).word.word := rfl
+
 end DualTree.ForwardQFullFrontierWord
