@@ -161,6 +161,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   The finite visibility certificate replaces an arbitrary prefix
   premise, but variable identifications may reduce the Ramsey span
   (8 new proof endpoints, pending CI).
+- A finite **visible-root capacity** result makes the outstanding
+  cone-variable transport quantitative. The actual list V_i of old
+  variable roots strictly preceding a frontier is duplicate-free,
+  has length at most m+1, and is in canonical bijection with the
+  corresponding source-variable subtype; the corrected R_i decoder
+  covers each of these ACTUAL variables. Consequently if m+2
+  different local variable symbols all occur in one frontier cone,
+  any root-aligned transport must identify at least two names.
+  This is a conditional obstruction to *injective* local-variable
+  transport, not a refutation of the Ramsey theorem (9 further
+  Lean proof endpoints, pending CI).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -176,7 +187,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **988 source-facing declarations** for transitive
+audits **997 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -295,6 +306,9 @@ decoder and exact evaluated semantics on those full frontier cones.
 per-frontier R_i using genuinely visible typed source variables.
 `ForwardQConeVariableVisibility` characterizes the necessary and sufficient
 per-occurrence condition for genuine cone-variable root transport.
+`ForwardQVisibleRootCapacity` bounds its number of distinct old-root targets,
+gives faithful finite indices and establishes the m+2 versus m+1
+non-injectivity obstruction.
 `ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should

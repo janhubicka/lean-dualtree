@@ -6176,6 +6176,89 @@ existence conclusion, but identifies a
 substantive remaining condition on any
 faithful $g_w$ construction.
 
+
+\paragraph{Exact visible-root capacity and obstruction to injective transport of too many cone variables.} \todo
+The finite visible-root chain $V_i$ in the previous
+paragraph is a filtered sublist of the genuinely
+duplicate-free ambient complete support $T$;
+hence it is itself duplicate-free and
+$|V_i|\le h_T(f_i)\le m+1$.
+The map from positions in $V_i$ to the actual
+source-variable subtype is injective:
+two different positions yield different
+source variable roots, and each actual old
+source variable whose root lies in $V_i$
+is represented by exactly one position.
+In particular the already checked decoder
+$R_i:\{0,\ldots,m\}\to
+\Lambda\sqcup\operatorname{Vars}(g)$
+is \emph{surjective onto the actual visible old
+source variables} (not just onto indices of
+an abstract ancestor list).
+
+There is also a quantitative obstruction.
+Suppose a single complete-support frontier cone
+contains $m+2$ distinct local cone-variable
+symbols $z_0,\ldots,z_{m+1}$, all of which
+actually occur at some position of the cone.
+If every occurrence is translated to an old
+source-variable root with valid prefix alignment,
+the previous visibility equivalence forces
+$v_i(z_j)$ to have its root in $V_i$ for
+every $j$. An injective variable-name
+transport would therefore embed a set of
+$m+2$ names into at most $m+1$ possible
+old variable roots, an impossibility:
+\[
+ \Bigl(|\kappa|=m+2,\quad
+       \forall z\in\kappa\ \exists t\in
+       \mathrm{Cone}(f_i)\
+       \operatorname{raw}_i(t)=\operatorname{inr}z\Bigr)
+ \Longrightarrow
+ \neg\operatorname{Injective}(v_i)
+\]
+whenever all occurrences obey the legal
+old-source-root alignment. This is a
+conditional obstruction to \emph{injective}
+transport of independent local variable names,
+not a refutation of Lemma~27's Ramsey
+existence statement.
+
+The module
+\lean{ForwardQVisibleRootCapacity}
+makes both results source-facing: it proves
+the actual finite list has no duplicates,
+gives faithful position-to-source-variable
+indices, shows that every genuinely visible
+source variable occurs in the image of the
+concrete $R_i$, and derives the strict
+$m+2$ versus $m+1$ non-injectivity by
+finite cardinal arithmetic. It also derives
+the obstruction directly from a family of
+raw symbols, each occurring within the
+actual corrected frontier cone.
+Nine new transitive axiom checks are pending
+CI on the stacked branch (target 997).
+
+\paragraph{Consequence for the Ramsey span.}
+Because the two-letter span-refinement
+theorem preserves variable fibres, the
+original proof cannot \emph{silently}
+assume distinct local cone variables
+become distinct old output variable
+names when their number exceeds the
+visible-root capacity. Identifying names
+may be mathematically legitimate, but
+one must then calculate the new evaluated
+span and show it has enough independent
+substitutions for the promised Ramsey
+step. A proof with a smaller number of
+genuinely occurring local cone variables
+or a different source-variable interface
+might avoid the obstruction. No such
+span-preserving construction has yet
+been established.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

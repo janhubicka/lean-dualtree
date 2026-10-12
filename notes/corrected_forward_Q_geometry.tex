@@ -463,8 +463,52 @@ three-way Q word interface. The transport of
 separate explicit root-alignment hypothesis,
 as do the source-specific raw words and
 Hales--Jewett image/refinement claims.
-The 14 new source-facing declarations (target:
-980 audited statements) await Lean CI.
+The fourteen source-facing declarations passed Lean compilation,
+finite regressions and the 980-declaration transitive axiom audit
+in merged PR~\#240.
+
+
+\paragraph{Capacity and necessary alignment of genuine cone variables.}
+The remaining genuine cone-variable roots are not the
+images of local tail roots under the complete-support
+projection \(P_i\): those images lie \emph{below}
+the frontier \(f_i\), whereas the output \(Q\)-word
+must have roots exactly at the old source interior
+vertices. Since no old variable root lies \emph{inside}
+an outside-cut frontier cone, root alignment of
+an occurrence of a genuine local variable \(z\)
+above \(f_i\) is equivalent to requiring its
+transported source root to be a strict ancestor
+of \(f_i\). Equivalently, the root must belong
+to the actual visible list \(V_i\) from the preceding
+paragraph. If \(V_i\) is empty, no such variable
+may occur in that cone in a legal output word.
+
+Moreover, the actual visible list is duplicate-free,
+has cardinality at most \(m+1\), and enumerates
+the corresponding bounded old source variables
+faithfully. Thus a family of \(m+2\) distinct
+local variables, \emph{each actually occurring}
+within the same frontier cone, cannot have an
+injective old-source-root transport. This is
+a finite-capacity limitation on preserving
+independent local variable names; it is not,
+by itself, a counterexample to the final
+dual Ramsey theorem. Any proof that identifies
+local variables must still establish the
+required span/refinement properties after
+that identification.
+
+The necessary-and-sufficient visibility condition
+and no-variable-in-empty-cone consequence are
+formalized in the proposed
+\texttt{ForwardQConeVariableVisibility};
+the bounded-list, faithful indexing, decoder
+coverage and \(m+2\)-versus-\(m+1\)
+non-injectivity facts are proposed in
+\texttt{ForwardQVisibleRootCapacity}.
+Their transitive axiom audit targets are
+988 and 997 respectively, pending CI.
 
 \section*{What is still not proved}
 
@@ -509,8 +553,8 @@ The geometric statements are checked by
 marker-family lemmas. The generic word, evaluation,
 smoothness-patch and normalization statements listed
 above also passed the repository's Lean build and
-transitive axiom audit (966 audited endpoints,
-merged through PR~\#239). This verifies these
+transitive axiom audit (980 audited endpoints,
+merged through PR~\#240). This verifies these
 \emph{specific conditional statements}, not the
 original Lemma~27 or the final dual-tree Ramsey theorem.
 The original paper's manuscript remains unchanged;

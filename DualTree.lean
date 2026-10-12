@@ -329,3 +329,5 @@ import DualTree.ForwardQFullFrontierThreeWay
 import DualTree.ForwardQVisibleAncestorDecoder
 
 import DualTree.ForwardQConeVariableVisibility
+
+import DualTree.ForwardQVisibleRootCapacity
