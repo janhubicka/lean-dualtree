@@ -6340,7 +6340,7 @@ variable words, the canonical $A/B_1/B_2$
 simplicity transport, the numerical induction,
 and the full dual-tree theorem remain \todo.
 
-\paragraph{Reading genuine mixed-product coordinate words at canonical projected positions.} \todo
+\paragraph{Reading genuine mixed-product coordinate words at canonical projected positions.} \ok
 The conditional full-frontier three-way $Q$ word
 was previously assembled from externally supplied
 raw local symbol maps $\operatorname{raw}_i$.
@@ -6393,8 +6393,9 @@ formalizes the forward projection,
 its inverse, tail extraction,
 actual coordinate-letter recovery
 and the resulting corrected starred
-$Q$ word. Seven new transitive axiom
-checks target 1004, pending CI.
+$Q$ word. All seven new source-facing endpoints passed Lean compilation,
+finite regressions and the 1010-declaration transitive
+no-\texttt{sorryAx} audit in merged PR~\#244.
 
 \paragraph{Scope and remaining gap.}
 The actual mixed-product \emph{element}
@@ -6413,6 +6414,96 @@ obligations. The displayed
 coordinate identity is an exact
 source-facing bridge, not the
 full Lemma~27 conclusion.
+
+
+\paragraph{Exact projected-word observables for an arbitrary smoothness partition.} \todo
+A further source-facing bridge connects the now-verified
+actual coordinate-letter identity with the full
+$\Gamma_1/\Gamma_2$ split of Definition~21,
+\emph{without imposing the overly strong special
+case $\Gamma_2=D_2$}. Fix a corrected-starred
+mixed-product input $x$ and an actual split
+$\gamma_1:D_2\to\{\texttt{true},\texttt{false}\}$.
+Call $(i,z)$ an \emph{observable coordinate position}
+when (i) $i\in D_0$, or (ii) $i\in\Gamma_1$,
+or (iii) $i\in\Gamma_2$ and $z$ lies
+\emph{outside} the inclusive local cone of
+the selected marked point $s_i(x)$.
+For any two actual corrected-starred inputs
+$x,y$ with $x\sim_{\gamma_1}y$,
+the genuine global $Q$-word constructed from
+actual input coordinate letters satisfies
+\[
+    G_x(P_i(z))=G_y(P_i(z))
+    \quad\text{at every observable }(i,z),
+\]
+where $P_i$ uses the fixed corrected
+forward-complete support $T$ and is therefore
+independent of both mixed-product inputs.
+For $i\in\Gamma_2$ the actual projected
+marked point is fixed:
+\[
+    P_i(s_i(x))=P_i(s_i(y)).
+\]
+Nothing here asserts equality of the
+\emph{entire} $Q$ support trees:
+$\Gamma_1$ marked points may move
+even while their whole coordinate words
+remain unchanged.
+
+Conversely these observable $Q$-symbol
+equalities and the $\Gamma_2$ projected
+marked-point equalities \emph{recover exactly}
+the original Definition~21 smoothness
+comparison on the corrected $D_0/D_2$
+mixed-product space.
+The only additional geometric argument is
+that a fixed-frontier canonical projection
+$P_i$ reflects equality of local marked tails:
+the genuine forward inverse gives
+\[
+ I_T^{-1}(P_i(s))=I_T^{-1}(f_i)^\frown s,
+ \qquad
+ P_i(s)=P_i(t)\Longrightarrow s=t
+\]
+by cancelling the common inverse-address
+prefix. The constructed observable relation
+is therefore neither a weakening nor an
+unjustified strengthening of the
+published $\Gamma_1/\Gamma_2$ condition.
+
+The proposed module
+\lean{ForwardQProjectedSmoothObservables}
+contains this fixed-frontier injectivity
+lemma, the observable-position cases,
+the actual $Q$-letter equalities and the
+bidirectional characterization
+\[
+ x\sim_{\gamma_1}y
+ \Longleftrightarrow
+ \text{observable projected $Q$ letters
+ and $\Gamma_2$ projected points agree}.
+\]
+Eleven new source-facing Lean endpoints
+(target 1021) await CI. To avoid a
+universe-polymorphism ambiguity from the empty
+raw cone-variable type, the formal observation
+record stores the actual letters $x_i(z)$;
+a separate theorem identifies their equality
+with equality of the genuine decoded $Q$
+symbols at $P_i(z)$. This is a representation
+choice only, not a change to the observable
+relation.
+The remaining \emph{particular}
+Lemma~27 colouring pullback must show
+that the original simple colouring
+depends only on these observables
+\emph{after} transporting the canonical
+Definition~24 signature $A=B_1\dot\cup B_2$
+to the corrected literal markers $R$.
+Equality of observables alone does not
+supply this colouring-factorization
+statement or the mixed-word span.
 
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
