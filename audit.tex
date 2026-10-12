@@ -6693,6 +6693,89 @@ No assertion of such a factorization,
 or of a span-preserving variable-word
 construction, is included here.
 
+\paragraph{Actual mixed-product span evaluations at the certified $Q$ projections.} \todo
+Having verified the literal original-letter
+construction
+\[
+ G_x(P_i(z))=\operatorname{inl}(x_i(z))
+\]
+for each genuine corrected-starred
+mixed-product input $x$, we can
+connect the statement to a \emph{genuine}
+variable mixed-product word rather than
+an arbitrary array of coordinate letters.
+Suppose $f$ is a variable word of
+the corrected $D_0/D_2$ product
+whose coordinate supports are
+vector-$q$-complete and suppose
+$x\in W_*\cap\operatorname{Span}(f)$.
+For every actual sorted coordinate $i$,
+the span premise supplies an actual
+assignment
+\[
+ \sigma_i:\operatorname{Vars}(f_i)\to\Lambda,
+ \qquad
+ x_i(z)=\operatorname{eval}_{\sigma_i}(f_i)(z).
+\]
+The proposed source-facing theorem then proves
+\[
+ G_x(P_i(z))
+   =\operatorname{inl}\Bigl(
+     \operatorname{eval}_{\sigma_i}(f_i)(z)
+     \Bigr).
+\]
+A dependent-choice argument selects
+\emph{all} assignments $\sigma_i$
+simultaneously, thereby certifying
+the independent coordinate evaluations
+in the actual mixed product.
+Under \emph{any} assignment $\tau$ to
+the old source variables of the
+starred output, evaluation at these
+projected positions has the same
+local value because $G_x(P_i(z))$
+is a literal constant there.
+Outside all complete-support
+frontier cones $G_x$ remains the
+old source word.
+
+The new proposed module
+\lean{ForwardQMixedSpanEvaluation}
+connects the real
+\lean{MixedProduct.VariableWord.span}
+membership to the actual $Q$
+symbol/evaluation identities,
+constructs simultaneous
+coordinate substitutions, and
+proves the corresponding
+outside-cone equality.
+Five source-facing transitive
+axiom checks are pending CI
+(target 1034 on the branch
+based on verified main at 1029).
+
+\paragraph{Important span limitation.}
+The family of component assignments
+$(\sigma_i)_i$ is a dependent product
+over \emph{all local mixed-product
+variables}. It is \emph{not} a
+single assignment to the old
+source-variable subtype carried
+by the actual $Q$ output word.
+The latter still has only the
+original roots in $\operatorname{Int}(S)$,
+with the previously verified visible
+root capacity restrictions.
+Consequently equality of
+\emph{coordinatewise} evaluations
+does not by itself establish
+an image embedding of the whole
+mixed-product variable-word span,
+the required Hales--Jewett
+independence, or the numerical
+Ramsey recursion of Lemma~27.
+Those remain \todo.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

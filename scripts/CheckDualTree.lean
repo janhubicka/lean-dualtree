@@ -1232,3 +1232,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQObservableFingerprint.smooth_of_fingerprint_eq
 #print axioms DualTree.ForwardQObservableFingerprint.fingerprint_eq_iff_smooth
 #print axioms DualTree.ForwardQObservableFingerprint.smoothStarred_iff_factors_through_fingerprint
+
+#print axioms DualTree.ForwardQMixedSpanEvaluation.projected_symbol_of_component_span
+#print axioms DualTree.ForwardQMixedSpanEvaluation.projected_symbol_of_mixed_span
+#print axioms DualTree.ForwardQMixedSpanEvaluation.projected_symbols_of_mixed_span
+#print axioms DualTree.ForwardQMixedSpanEvaluation.evaluated_projected_symbol_of_component_span
+#print axioms DualTree.ForwardQMixedSpanEvaluation.actual_Q_word_outside_all_frontiers
