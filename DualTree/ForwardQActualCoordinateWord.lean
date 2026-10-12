@@ -246,17 +246,14 @@ theorem coordinateConeData_Q_symbol_projected
     (coordinateConeData c x.1 fallback).symbol_inside
       hb c x hTbound i
       (projectedBounded c hTbound i z) hcone
-  calc
-    ((coordinateConeData c x.1 fallback).onActualStarredQ
-      hb c x hTbound).word.word
-        (projectedBounded c hTbound i z) =
-        (coordinateConeData c x.1 fallback).localSymbol i
-          (projectedBounded c hTbound i z) := hsymbol
-    _ = Sum.inl
-          (sampledLetter c x.1 fallback i
-            (projectedBounded c hTbound i z)) := rfl
-    _ = Sum.inl (x.1.words i z) :=
-      congrArg Sum.inl
-        (sampledLetter_projected c x.1 fallback hTbound i z)
+  rw [hsymbol]
+  change (Sum.inl
+      (sampledLetter c x.1 fallback i
+        (projectedBounded c hTbound i z)) :
+      Sum α c.source.word.Vars) =
+    Sum.inl (x.1.words i z)
+  exact congrArg
+    (fun a : α => (Sum.inl a : Sum α c.source.word.Vars))
+    (sampledLetter_projected c x.1 fallback hTbound i z)
 
 end DualTree.ForwardQActualCoordinateWord
