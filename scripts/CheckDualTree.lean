@@ -1221,3 +1221,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQBulletRootVisibility.sourceRoot_aligned_in_bullet_cone
 #print axioms DualTree.ForwardQBulletRootVisibility.variables_only_bullet_implies_visible
 #print axioms DualTree.ForwardQBulletRootVisibility.coneData_of_bullet_variables_Q_tree
+
+#print axioms DualTree.ForwardQMixedSpanEvaluation.projected_symbol_of_component_span
+#print axioms DualTree.ForwardQMixedSpanEvaluation.projected_symbol_of_mixed_span
+#print axioms DualTree.ForwardQMixedSpanEvaluation.projected_symbols_of_mixed_span
+#print axioms DualTree.ForwardQMixedSpanEvaluation.evaluated_projected_symbol_of_component_span
+#print axioms DualTree.ForwardQMixedSpanEvaluation.actual_Q_word_outside_all_frontiers
