@@ -116,6 +116,14 @@ obligation; `\todo` marks a remaining gap or proposed change.
   frontier order to the corrected forward order can destroy
   vector-one-completeness (PR #227). Thus the old printed W_* domain
   is not automatically transported by a change of tie-break order.
+- For any partition of the **literal corrected signature-marker set** R,
+  the actual bijection between R and the forward-sorted selected D₂
+  frontier indices defines a Gamma₁/Gamma₂ split. The marked
+  Gamma₁ words are identical; Gamma₂ marked points, outside-cone
+  letters and projected Q nodes are preserved under smoothness.
+  **Open:** identify R with the paper's canonical simplicity marker
+  set A and transport its B₁/B₂ conditions (new Lean module,
+  pending CI).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -131,7 +139,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **935 source-facing declarations** for transitive
+audits **943 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -165,7 +173,12 @@ frontier bands and mixed old/new inequalities have passed Lean CI.
    General smooth extension works for an arbitrary Gamma₁/Gamma₂
    split, but the particular B₁/B₂-to-Gamma transport and
    classwise compatibility are not automatic.
-4. **Finish the Ramsey induction:** Lemma 28, Theorem 25, the required
+4. **Match the paper's full-frontier word decoding:** the current
+   generic three-way Q word patches *D₂ projected marked-point cones*,
+   whereas the printed g_w decodes the word in *every D₀/D₂
+   complete-support frontier cone*. This difference in domains
+   needs a separate, precise construction; no equivalence is claimed.
+5. **Finish the Ramsey induction:** Lemma 28, Theorem 25, the required
    recursive inequalities and the final dual-tree theorem remain open.
 
 The typed counterexample is for complete height three. It has not
@@ -232,6 +245,8 @@ normal form and the universal output-map diagnostic.
 representatives for the all-Gamma₂ special case; its effect on the
 required Ramsey span remains open. `ForwardQStarredSmoothPartitions`
 handles the paper's existential Gamma₁/Gamma₂ split.
+`ForwardQMarkerSmoothPartition` transports literal signature-marker
+splits to genuine corrected D₂ Gamma₁/Gamma₂ coordinates.
 `ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should
