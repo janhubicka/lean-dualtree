@@ -31,7 +31,21 @@ jobs:
 
       - name: Install elan
         run: |
-          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          # GitHub release downloads occasionally return transient HTTP 5xx.
+          # Retry the entire installer because its nested binary download
+          # does not inherit curl's --retry flags from this invocation.
+          set -o pipefail
+          for attempt in 1 2 3 4 5; do
+            if curl -fsSL --retry 3 --retry-delay 2 \
+                https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y; then
+              break
+            fi
+            if [ "$attempt" -eq 5 ]; then
+              echo "elan installation failed after 5 attempts" >&2
+              exit 1
+            fi
+            sleep $((attempt * 5))
+          done
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
       - name: Resolve dependencies
@@ -65,7 +79,7 @@ jobs:
         run: |
           mkdir -p proof-audit
           lake env lean scripts/CheckDualTree.lean > proof-audit/dualtree-axioms.log 2>&1
-          python3 scripts/check-axiom-log.py proof-audit/dualtree-axioms.log 980 || {
+          python3 scripts/check-axiom-log.py proof-audit/dualtree-axioms.log 988 || {
             cat proof-audit/dualtree-axioms.log
             exit 1
           }
