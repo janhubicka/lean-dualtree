@@ -68,15 +68,20 @@ theorem reconstruct_mixed_input_from_smooth
               x.words i.1 t = y.words i.1 t := by
       simpa using hxy.2.2 i
     exact hi.1
-  cases hx : patchedInput c x (fun i => y.words i) with
-  | mk wx ux bx =>
-    cases hy : y with
-    | mk wy uy by_ =>
-      simp only [hx, hy] at hwords hup hbullet ⊢
-      cases hwords
-      cases hup
-      cases hbullet
-      rfl
+  have field_ext :
+      ∀ (p q : Input c), p.words = q.words →
+        p.upPoint = q.upPoint →
+        p.bulletPoint = q.bulletPoint → p = q := by
+    intro p q hw hu hb
+    cases p with
+    | mk wp up bp =>
+      cases q with
+      | mk wq uq bq =>
+        cases hw
+        cases hu
+        cases hb
+        rfl
+  exact field_ext _ _ hwords hup hbullet
 
 /-- On the ACTUAL corrected W-star subtype, two points are
 smooth-related if and only if one is the patch of the other
