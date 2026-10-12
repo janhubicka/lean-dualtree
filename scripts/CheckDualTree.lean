@@ -1151,3 +1151,18 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFullFrontierThreeWay.ConeData.cone_variable_fibre_uniform
 #print axioms DualTree.ForwardQFullFrontierThreeWay.ConeData.eval_inside
 #print axioms DualTree.ForwardQFullFrontierThreeWay.ConeData.eval_outside
+
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.frontier_height_le_m_succ
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.visibleList_get_mem_supportNodes
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.exists_variable_at_support_root
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.variableAtSupportRoot_node
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.visibleVariable_strict_prefix
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.decodeAux_variable_prefix
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.decodeAux_onto_visible
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.maskedRaw_inside
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.maskedRaw_aux_inside
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.maskedRaw_variable_inside
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.auxiliary_root_aligned
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.coneData_raw_inside
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.coneData_actual_Q_tree
+#print axioms DualTree.ForwardQVisibleAncestorDecoder.coneData_actual_Q_eval_inside
