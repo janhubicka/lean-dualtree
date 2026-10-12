@@ -338,6 +338,8 @@ import DualTree.ForwardQActualCoordinateWord
 
 import DualTree.ForwardQProjectedSmoothObservables
 
-import DualTree.ForwardQBulletRootVisibility
+import DualTree.ForwardQObservableFingerprint
 
 import DualTree.ForwardQMixedSpanEvaluation
+
+import DualTree.ForwardQBulletRootVisibility

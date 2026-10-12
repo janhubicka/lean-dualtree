@@ -6506,7 +6506,7 @@ Equality of observables alone does not
 supply this colouring-factorization
 statement or the mixed-word span.
 
-\paragraph{Every selected $D_2$ frontier has an available old source variable.} \todo
+\paragraph{Every selected $D_2$ frontier has an available old source variable.} \ok
 The visibility obstruction from the preceding
 cone-root analysis is not equally severe
 at all frontier coordinates.
@@ -6578,8 +6578,9 @@ frontier-prefix property, its membership
 in the true $V_i$, nonemptiness and
 decoder reachability, and the bullet-only
 variable occurrence constructor.
-Eight additional source-facing theorems
-(target: 1018) await Lean CI.
+All eight source-facing endpoints passed the Lean build,
+finite regressions and 1029-declaration transitive
+no-\texttt{sorryAx} audit in merged PR~\#246.
 The original proof's particular local
 variable words have not yet been
 proved to obey the bullet-only
@@ -6587,6 +6588,110 @@ occurrence restriction, and the
 canonical $A=B_1\dot\cup B_2$
 simplicity transport is still open.
 
+\paragraph{An explicit canonical quotient for all $\Gamma_1/\Gamma_2$ smoothness classes.} \ok
+The preceding verified projected-letter criterion
+can be presented as an actual finite record,
+rather than a binary relation on inputs.
+Fix a partition $D_2=\Gamma_1\dot\cup\Gamma_2$
+and a fallback letter $a\in\Lambda$.
+For any corrected mixed-product point $x$,
+record the local masked coordinate letters
+\[
+ M_{\gamma_1,a}(x)_{i,z}=
+ \begin{cases}
+   x_i(z),&i\in D_0\cup\Gamma_1,\\
+   a,&i\in\Gamma_2,\quad s_i(x)\sqsubseteq z,\\
+   x_i(z),&i\in\Gamma_2,\quad
+                      s_i(x)\not\sqsubseteq z,
+ \end{cases}
+\]
+and the marked-point record
+\[
+ B_{\gamma_1}(x)_i=
+  \begin{cases}
+   \mathrm{none},&i\in\Gamma_1,\\
+   \mathrm{some}(s_i(x)),&i\in\Gamma_2.
+  \end{cases}
+\]
+There are no $D_1$ coordinates in the
+particular corrected Lemma~27 frame.
+The \emph{observable fingerprint} is
+the typed pair $F_{\gamma_1,a}(x)=(M,B)$.
+It retains \emph{exactly} the visible
+local coordinate information, hiding the
+letters inside $\Gamma_2$ marked cones
+and hiding the movable marked points of
+$\Gamma_1$. It is not a canonical
+representative of a starred \emph{input}
+in the style of the earlier all-$\Gamma_2$
+normalization $N_a$; rather, it is a
+canonical \emph{quotient record} and
+does not require resetting any points.
+
+The exact proposed source-facing equivalence is
+\[
+ \boxed{
+ F_{\gamma_1,a}(x)=F_{\gamma_1,a}(y)
+   \iff x\sim_{\gamma_1}y
+ }
+\]
+for arbitrary corrected mixed-product
+inputs $x,y$, not just those in the
+starred subtype. Its proof handles the
+plain word coordinates, all $\Gamma_1$
+letters, $\Gamma_2$ local marked points
+and equality of letters outside their
+common marked cones. In view of the
+actual $Q$ coordinate theorem, the
+masked words can equivalently be read
+as the \emph{observable portions} of
+the original-letter $Q$ output at
+the certified projected points $P_i(z)$.
+
+A useful application is a complete
+factorization criterion for a colouring
+$d:W_*\to C$ on the actual corrected
+starred subtype:
+\[
+ \begin{split}
+ d\text{ is }\gamma_1\text{-smooth on }W_*
+ \quad\iff\quad
+ &\exists\widehat d:
+       \mathrm{Fingerprint}_{\gamma_1,a}\to C\\
+ &\forall x\in W_*,\
+       d(x)=\widehat d(F_{\gamma_1,a}(x)).
+ \end{split}
+\]
+The factor map may be chosen on
+\emph{all} fingerprint values,
+including those not attained by any
+starred point: on attained values
+choose a representative and evaluate
+$d$ there, using smoothness to
+show independence of the representative;
+on unattained values use one specified
+fallback colour. This proves a
+total factorization theorem, not merely
+a partial map on the image.
+
+The proposed module
+\lean{ForwardQObservableFingerprint}
+constructs the mask and point record,
+proves the equivalence with Definition~21,
+and gives this exact smooth-colouring
+factorization. All ten source-facing endpoints passed Lean compilation,
+finite regressions and the 1031-declaration transitive
+no-\texttt{sorryAx} audit in PR~\#247.
+The remaining Lemma~27 task is to
+show the \emph{particular} colouring
+obtained from a Definition~24
+$A=B_1\dot\cup B_2$ simplicity witness
+factors through \emph{this explicit record},
+after the unresolved canonical
+$A$-to-literal-$R$ transport.
+No assertion of such a factorization,
+or of a span-preserving variable-word
+construction, is included here.
 
 \paragraph{Actual mixed-product span evaluations at the certified $Q$ projections.} \todo
 Having verified the literal original-letter
