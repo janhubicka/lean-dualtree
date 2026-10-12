@@ -290,16 +290,31 @@ For corrected starred \(x,y\) one has
  \operatorname{patch}(x,y.\mathrm{words})=y.
 \]
 Consequently a colouring \(d\) on the corrected starred
-space is smooth if and only if
+space is smooth \emph{for this all-\(\Gamma_2\) split}
+if and only if
 \[
  d(x)=d(\operatorname{patch}(x,r))
  \qquad\text{for all corrected starred }x
  \text{ and all replacement word arrays }r.
 \]
-This turns the colour-compatibility obligation for the
-\emph{specific} \(c\circ Q\) into an exact patch-invariance
-test. It does \emph{not} follow just from the already
-verified invariance of the support \(Q\) under such patches.
+This gives a \emph{sufficient special-case} test for
+the particular colouring \(c\circ Q\).
+Definition~21 only demands that there \emph{exist}
+a partition \(D_2=\Gamma_1\dot\cup\Gamma_2\)
+for which the colouring is smooth.
+At \(\Gamma_1\), the full coordinate word must
+agree but the marked point may vary; at
+\(\Gamma_2\), the point and outside-cone
+word must agree. The all-\(\Gamma_2\)
+criterion must \emph{not} be imposed as a necessary
+condition for every smooth colouring.
+The general partition and its total-extension
+criterion are now verified separately.
+In particular, fixed-word colourings can be smooth
+for \(\Gamma_1=D_2\) and fail the all-\(\Gamma_2\) test.
+Even in that special case smoothness of \(c\circ Q\)
+does \emph{not} follow just from invariance of
+its support \(Q\).
 
 A further verified construction fixes one letter
 \(a\in\Lambda\) and replaces \emph{all} symbols inside
@@ -326,9 +341,85 @@ The source-facing Lean modules are
 \texttt{ForwardQStarredNormalization}.
 The exact statements passed Lean CI and the transitive
 no-\texttt{sorryAx} audit in merged PRs through
-\#233 (921 audited endpoints). The cumulative
+\#233 (921 audited endpoints). The later normalization non-surjectivity
+and existential smooth-partition theorems passed CI in
+PRs~\#235--\#236 (935 audited endpoints). The marker
+transport and all-frontier word interface are pending
+further checks (target 956). The cumulative
 \texttt{audit.tex} distinguishes these checked
 conditional results from the remaining proof gaps.
+
+
+\paragraph{Corrected source-marker partition transport.}
+The literal corrected signature marker set \(R\) is
+bijective with the actual selected \(D_2\) indices
+of the \emph{forward-sorted} frontier list.
+Consequently any partition \(R=B_1\dot\cup B_2\)
+induces a genuine \(\Gamma_1/\Gamma_2\) split
+on those mixed-product coordinates.
+For a smooth-related pair, the entire local word
+agrees at a \(B_1\) marker; at a \(B_2\)
+marker, the local point and the word outside
+that point's inclusive cone agree, so its
+canonical projected \(Q\) node also agrees.
+These transport identities are formalized in
+\texttt{ForwardQMarkerSmoothPartition}
+(pending CI).
+
+However, the paper's Definition~24
+takes \(A\) to be the canonical terminal
+frontier of the first \(l\) nodes under
+its auxiliary order. This abstract canonical
+\(A\) and the literal ambient signature
+marker set \(R\) should be related by
+a canonical structural/address identification,
+\emph{not} assumed literally equal as
+subsets of a common ambient tree.
+Transporting the paper's \(B_1/B_2\)
+simplicity condition across this
+identification is still open.
+
+\paragraph{The complete-frontier versus marked-point word distinction.}
+The printed Lemma~27 defines the symbol
+\(g_w(s)\) for source occurrences corresponding to
+\(P_i(z)\), for every \(i\in[d]\) and
+eligible local \(z\); this includes \(D_0\)
+as well as \(D_2\) frontier coordinates.
+The earlier conditional three-way construction
+patched only the inclusive cones above
+\emph{selected \(D_2\) marked projections}
+\(P_i(s_i)\). These have different domains.
+The new conditional
+\texttt{ForwardQFullFrontierWord} instead
+patches one root-aligned local symbol map
+on each \emph{complete-support frontier cone}
+rooted at \(t_i\), for every \(i\in[d]\).
+This gives a valid global variable word,
+with the unchanged old source roots and
+inside/outside-cone symbol identities.
+Its word component is independent of
+the chosen \(D_2\) marked-point array
+\emph{when all local decoded maps are fixed}.
+That last qualification matters: the specific
+local maps in the paper may themselves
+depend on mixed-product data.
+
+One further source-facing step is needed even
+after this domain correction: the printed
+clauses (i)--(iii) propagate constants and
+old variables of the enclosing \(f\) using
+the signature restriction \(g'\), rather than
+simply taking an arbitrary preassigned
+source word at outside-frontier positions.
+The complete-frontier patching interface
+does not yet encode this particular
+\(f\)/signature transport, and it also
+does not supply the prescribed \(R_i\)
+decoders, Hales--Jewett span or colour
+invariance. Those remain separate proof
+obligations. The all-frontier patcher and
+its thirteen source-facing axiom checks
+are pending CI.
 
 \section*{What is still not proved}
 
@@ -351,12 +442,17 @@ auxiliary-variable substitutions with the verified
 Prove that the \emph{particular} raw symbols, decoder,
 and variable transport satisfy the root-alignment
 conditions and preserve the intended image/span.
-\item Establish the exact marked-cone patch invariance
-of the \emph{particular} induced colouring \(c\circ Q\),
-and prove that its original mixed-word image, refinement
-and simplicity properties are retained. The general
-extension and normalization lemmas are verified, but
-do not themselves provide these facts.
+\item Derive the \emph{appropriate existential}
+\(\Gamma_1/\Gamma_2\) smoothness of the particular
+induced colouring \(c\circ Q\), by transporting
+Definition~24's canonical \(A=B_1\dot\cup B_2\)
+simplicity witness to the corrected signature
+markers and frontier coordinates.
+Prove in addition that the particular full-frontier
+decoded word preserves the required mixed-product
+image, refinement and simplicity properties.
+The abstract smooth-extension and normalization
+lemmas alone do not provide these facts.
 \item Lemma~28, Theorem~25, and the full dual
 Ramsey theorem remain beyond this note.
 \end{enumerate}
