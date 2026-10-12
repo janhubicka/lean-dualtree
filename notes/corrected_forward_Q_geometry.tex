@@ -500,15 +500,47 @@ required span/refinement properties after
 that identification.
 
 The necessary-and-sufficient visibility condition
-and no-variable-in-empty-cone consequence are
-formalized in the proposed
-\texttt{ForwardQConeVariableVisibility};
-the bounded-list, faithful indexing, decoder
-coverage and \(m+2\)-versus-\(m+1\)
-non-injectivity facts are proposed in
-\texttt{ForwardQVisibleRootCapacity}.
-Their transitive axiom audit targets are
-988 and 997 respectively, pending CI.
+and no-variable-in-empty-cone consequence
+are verified in
+\texttt{ForwardQConeVariableVisibility}
+(merged PR~\#241); the bounded-list, faithful
+indexing, decoder coverage and
+\(m+2\)-versus-\(m+1\) non-injectivity
+facts are verified in
+\texttt{ForwardQVisibleRootCapacity}
+(merged PR~\#242). Both passed the Lean build,
+finite regressions and transitive axiom audit,
+reaching 997 checked endpoints.
+
+
+\paragraph{Existence of an aligned cone-variable root assignment.}
+The finite visibility test has an exact constructive
+converse: a root-aligned assignment to the old source
+variable subtype exists precisely when no frontier
+cone with an empty visible-root list contains a genuine
+local variable occurrence. Indeed, if the visible list
+at \(f_i\) is nonempty, choose its \emph{first}
+old variable root and map \emph{all} local variable
+names in that cone to it. If the list is empty,
+no local cone variable may occur there; a genuine
+old variable at the final source cut serves merely
+as an unused total-map fallback. The resulting
+full-frontier three-way decoder, with the already
+verified explicit auxiliary \(R_i\), produces a
+legally rooted starred \(Q\)-word with the
+expected support.
+
+This construction is intentionally non-injective:
+all local cone variables at one frontier collapse
+to a single old root even when more old roots
+are available. The construction is therefore a
+positive witness of \emph{legal output-word existence},
+not a proof of the image or independent-variable
+span needed for Lemma~27. The corresponding proposed
+Lean module is
+\texttt{ForwardQCanonicalConeRootChoice}; its six
+source-facing proofs target 1003 transitive
+axiom checks, pending CI.
 
 \section*{What is still not proved}
 
@@ -553,8 +585,8 @@ The geometric statements are checked by
 marker-family lemmas. The generic word, evaluation,
 smoothness-patch and normalization statements listed
 above also passed the repository's Lean build and
-transitive axiom audit (980 audited endpoints,
-merged through PR~\#240). This verifies these
+transitive axiom audit (997 audited endpoints,
+merged through PR~\#242). This verifies these
 \emph{specific conditional statements}, not the
 original Lemma~27 or the final dual-tree Ramsey theorem.
 The original paper's manuscript remains unchanged;
