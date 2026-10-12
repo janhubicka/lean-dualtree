@@ -111,7 +111,7 @@ theorem gamma2_iff_B2
       s ∈ B2 := by
   classical
   rw [gamma1_at_marker]
-  simp
+  simp [markerGamma1]
 
 /-- A smooth comparison for this marker split fixes the entire
 local word at every B₁-marked selected coordinate. -/
