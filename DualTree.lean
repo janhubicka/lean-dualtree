@@ -327,3 +327,5 @@ import DualTree.ForwardQFullFrontierWord
 import DualTree.ForwardQFullFrontierThreeWay
 
 import DualTree.ForwardQVisibleAncestorDecoder
+
+import DualTree.ForwardQConeVariableVisibility
