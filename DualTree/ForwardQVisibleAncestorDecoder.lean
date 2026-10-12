@@ -339,4 +339,65 @@ theorem coneData_raw_inside
     (coneData c fallback raw coneRoot hcone).raw i t = raw i t := by
   simp [coneData, maskedRaw_inside c fallback raw i t ht]
 
+/-- Using the explicit visible-ancestor decoder R_i produces a
+valid starred word on the exact corrected Q support. -/
+theorem coneData_actual_Q_tree
+    {b n l k m : Nat} {α κ : Type*}
+    (hb : 0 < b)
+    (c : Frame b n l k m α)
+    (x : ForwardQActualStarredSpace.StarredInput c)
+    (hTbound : ∀ t : Node b, t ∈ c.T → InHomTree n t)
+    (fallback : α)
+    (raw : Index c → BoundedNode b n →
+      Sum (Sum α (Fin (m + 1))) κ)
+    (coneRoot : Index c → κ → c.source.word.Vars)
+    (hcone : ∀ (i : Index c) (t : BoundedNode b n)
+      (z : κ),
+      IsPrefix
+        (ForwardOrderedProjections.frontierAt c.T c.cut i).1 t.1 →
+      raw i t = Sum.inr z →
+      IsPrefix (coneRoot i z).1.1 t.1) :
+    ((coneData c fallback raw coneRoot hcone).onActualStarredQ
+      hb c x hTbound).tree = (nodes c x.1).toList := by
+  exact (coneData c fallback raw coneRoot hcone).onActualStarredQ_tree
+    hb c x hTbound
+
+/-- The actual decoded Q-word evaluation on an arbitrary D0/D2
+frontier is exactly the original raw word's three-case formula
+with the concrete visible-ancestor decoder R_i. Masking
+irrelevant symbols outside their own frontier cannot change it. -/
+theorem coneData_actual_Q_eval_inside
+    {b n l k m : Nat} {α κ : Type*}
+    (hb : 0 < b)
+    (c : Frame b n l k m α)
+    (x : ForwardQActualStarredSpace.StarredInput c)
+    (hTbound : ∀ t : Node b, t ∈ c.T → InHomTree n t)
+    (fallback : α)
+    (raw : Index c → BoundedNode b n →
+      Sum (Sum α (Fin (m + 1))) κ)
+    (coneRoot : Index c → κ → c.source.word.Vars)
+    (hcone : ∀ (i : Index c) (t : BoundedNode b n)
+      (z : κ),
+      IsPrefix
+        (ForwardOrderedProjections.frontierAt c.T c.cut i).1 t.1 →
+      raw i t = Sum.inr z →
+      IsPrefix (coneRoot i z).1.1 t.1)
+    (i : Index c) (t : BoundedNode b n)
+    (ht : IsPrefix
+      (ForwardOrderedProjections.frontierAt c.T c.cut i).1 t.1)
+    (σ : c.source.word.Vars → α) :
+    SpanAudit.evalSymbol σ
+      (((coneData c fallback raw coneRoot hcone).onActualStarredQ
+        hb c x hTbound).word.word t) =
+      match raw i t with
+      | Sum.inl (Sum.inl a) => a
+      | Sum.inl (Sum.inr j) =>
+          SpanAudit.evalSymbol σ (decodeAux c fallback i j)
+      | Sum.inr z => σ (coneRoot i z) := by
+  have h :=
+    (coneData c fallback raw coneRoot hcone).eval_inside
+      hb c x hTbound i t ht σ
+  simpa only [
+    coneData_raw_inside c fallback raw coneRoot hcone i t ht] using h
+
 end DualTree.ForwardQVisibleAncestorDecoder
