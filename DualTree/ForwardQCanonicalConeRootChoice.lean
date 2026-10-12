@@ -165,7 +165,7 @@ theorem exists_alignedConeRoot_iff
     · exact hpos
     · have hempty : visibleList c i = [] := by
         cases hs : visibleList c i with
-        | nil => exact hs
+        | nil => rfl
         | cons a xs =>
             have hh : 0 < (visibleList c i).length := by
               simp [hs]
