@@ -311,3 +311,5 @@ import DualTree.ForwardQStarredSmoothConePatches
 import DualTree.ForwardQThreeWayEvaluation
 
 import DualTree.ForwardQStarredSmoothExtension
+
+import DualTree.ForwardQStarredPatchCriterion
