@@ -408,6 +408,16 @@ theorem coneData_actual_Q_eval_inside
       (coneData c fallback raw coneRoot hcone).coneRoot =
         coneRoot := rfl
   rw [hraw, hdecoder, hroot] at h
-  exact h
+  -- Case splitting eliminates a residual match motive that Lean does
+  -- not identify by definitional equality after projection rewrites.
+  cases hsymbol : raw i t with
+  | inl u =>
+      cases u with
+      | inl a =>
+          simpa only [hsymbol] using h
+      | inr j =>
+          simpa only [hsymbol] using h
+  | inr z =>
+      simpa only [hsymbol] using h
 
 end DualTree.ForwardQVisibleAncestorDecoder
