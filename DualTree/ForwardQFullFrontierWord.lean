@@ -1,4 +1,5 @@
 import DualTree.ForwardQWordSymbolAssembly
+import DualTree.ForwardQActualStarredSpace
 import DualTree.ForwardOrderedProjections
 
 /-!
