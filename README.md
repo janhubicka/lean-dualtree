@@ -148,8 +148,19 @@ obligation; `\todo` marks a remaining gap or proposed change.
   and masking irrelevant raw symbols outside the cone makes the
   required auxiliary root alignment automatic. Genuine cone-variable
   root transport remains an independent premise. This source-facing
-  decoder and its evaluated Q-word statement are pending Lean CI
-  (14 additional transitive theorem endpoints; 980 target).
+  decoder and its evaluated Q-word statement passed CI in merged
+  PR #240 (980 transitive theorem endpoints).
+- A new necessary-and-sufficient **cone-variable-root visibility**
+  criterion identifies the remaining transport obligation: a local
+  cone-variable occurrence above frontier f_i can map to an original
+  source variable v exactly when v's root is a strict ancestor of f_i.
+  Thus the root must belong to the concrete visible ancestor list V_i;
+  if V_i is empty no genuine variable can occur in that cone. In
+  particular the canonical cone projection P_i(r) of a local variable
+  root r is generally **not itself** an allowable old variable root.
+  The finite visibility certificate replaces an arbitrary prefix
+  premise, but variable identifications may reduce the Ramsey span
+  (8 new proof endpoints, pending CI).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -165,7 +176,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **966 source-facing declarations** for transitive
+audits **988 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -202,7 +213,7 @@ frontier bands and mixed old/new inequalities have passed Lean CI.
 4. **Finish the particular full-frontier Q decoding:** the
    corrected all-frontier patcher and three-constructor evaluation
    are checked. The proposed genuine visible-ancestor R_i decoder
-   now discharges the auxiliary alignment step (pending CI).
+   now discharges the auxiliary alignment step (verified in #240).
    The paper's specific local raw words, transport of genuine
    cone-variable roots, source signature and span/refinement
    preservation remain open. The older marked-point-cone
@@ -280,8 +291,10 @@ splits to genuine corrected D₂ Gamma₁/Gamma₂ coordinates.
 outside-cut complete-support frontiers, not just marked-point cones.
 `ForwardQFullFrontierThreeWay` supplies a conditional three-constructor
 decoder and exact evaluated semantics on those full frontier cones.
-`ForwardQVisibleAncestorDecoder` constructs the proposed concrete
+`ForwardQVisibleAncestorDecoder` constructs the CI-verified concrete
 per-frontier R_i using genuinely visible typed source variables.
+`ForwardQConeVariableVisibility` characterizes the necessary and sufficient
+per-occurrence condition for genuine cone-variable root transport.
 `ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should
