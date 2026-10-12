@@ -5733,6 +5733,91 @@ for every Definition~21 smooth colouring.
 Eight transitive source-facing Lean checks are
 pending CI in the new branch (target 935).
 
+
+\paragraph{Exact transport of a literal marker split to the sorted $D_2$ coordinates.} \todo
+The corrected source-facing reconstruction uses a finite set $R$
+of literal signature markers (exceptional first-exit boundaries
+and immediate children of the final source cut). The preceding
+geometric Lean development has already proved a bijection
+\[
+ \iota:R\longrightarrow D_2
+\]
+onto \emph{exactly} the bullet indices of the genuine
+forward-sorted complete-support frontier list.
+The inverse is the verified noncomputable
+\lean{ForwardQMeetClosed.markerOfBullet}, with the
+two triangle identities.  Given any subset
+$B_2\subseteq R$, put
+\[
+ \Gamma_2=\{\iota(s):s\in B_2\},\qquad
+ \Gamma_1=D_2\setminus\Gamma_2.
+\]
+The concrete constructor
+\lean{ForwardQMarkerSmoothPartition.gamma1OfMarkerB2}
+encodes this partition on actual bullet indices
+($\mathrm{true}$ for $\Gamma_1$). Theorems
+\lean{markerOfBullet\_bulletForMarker},
+\lean{gamma1\_at\_marker},
+\lean{gamma1\_iff\_not\_B2}, and
+\lean{gamma2\_iff\_B2} verify the bijection,
+so no arbitrary reordering of the corrected
+frontier coordinates is silently introduced.
+
+For $x,y$ smooth-related under this particular split,
+the following are then true \emph{at the actual indexed
+mixed-product coordinates}:
+\begin{enumerate}[label=(\roman*)]
+\item for $s\notin B_2$, the complete local coordinate
+word at $\iota(s)$ agrees between $x$ and $y$;
+the local marked points are not assumed fixed;
+\item for $s\in B_2$, the local marked point at
+$\iota(s)$ agrees, and both local words agree
+outside the inclusive cone of that point;
+\item at the same $B_2$ marker the actual projected
+$Q$ leaf also agrees, by the corrected canonical
+cone projection formula.
+\end{enumerate}
+The source-facing lemmas are
+\lean{gamma1\_marker\_words\_equal},
+\lean{gamma2\_marker\_points\_equal},
+\lean{gamma2\_marker\_words\_outside\_equal}, and
+\lean{gamma2\_Q\_projected\_marker\_equal}.
+These eight new statements require the normal Lean
+build and transitive axiom audit (target: 943).
+
+\paragraph{Remaining correction, not yet discharged.}
+The partition $B_1\dot\cup B_2$ from the
+\emph{printed} simplicity Definition~24 is a partition
+of its canonical set $A$ of signature terminals.
+The present transport works for a \emph{given}
+partition of the corrected literal marker set $R$.
+It does not prove that the old canonical $A$ coincides
+with the new $R$, nor that a colouring simple on $A$
+transports its insensitivity condition to this $R$.
+Both assertions are needed before concluding smoothness
+of the actual induced $c\circ Q$.
+
+There is a second, independent word-construction
+distinction that must not be hidden. The source's
+displayed $g_w$ decodes words throughout
+\emph{each selected complete-support frontier cone}
+$P_i(b^{<\cdots})$, including coordinates $i\in D_0$.
+In contrast, the verified generic
+\lean{ForwardQThreeWayConeWordAssembly}
+patches the original word only in
+\emph{projected marked-point cones} at $D_2$,
+using explicitly supplied root-aligned local data.
+This is a genuine difference in the \emph{domain of
+symbol replacement}. The conditional word assembly
+cannot be identified with the printed Lemma~27 word
+without first extending the patching interface to
+the correct frontier cones and checking the
+prescribed decoder at all their positions.
+The Q-support and smoothness-setoid lemmas remain
+valid under their precise statements. The
+construction, colouring-pullback, quantitative
+recursion, Lemma~28 and Theorem~25 remain \todo.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
