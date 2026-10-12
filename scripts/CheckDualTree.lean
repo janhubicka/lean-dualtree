@@ -1212,3 +1212,14 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQProjectedSmoothObservables.Q_observables_of_smooth
 #print axioms DualTree.ForwardQProjectedSmoothObservables.smooth_of_Q_observables
 #print axioms DualTree.ForwardQProjectedSmoothObservables.smooth_iff_Q_observables
+
+#print axioms DualTree.ForwardQObservableFingerprint.maskedLetter_nonbullet
+#print axioms DualTree.ForwardQObservableFingerprint.maskedLetter_gamma1
+#print axioms DualTree.ForwardQObservableFingerprint.maskedLetter_gamma2_outside
+#print axioms DualTree.ForwardQObservableFingerprint.maskedLetter_gamma2_inside
+#print axioms DualTree.ForwardQObservableFingerprint.maskedLetter_eq_of_smooth
+#print axioms DualTree.ForwardQObservableFingerprint.observedPoint_eq_of_smooth
+#print axioms DualTree.ForwardQObservableFingerprint.fingerprint_eq_of_smooth
+#print axioms DualTree.ForwardQObservableFingerprint.smooth_of_fingerprint_eq
+#print axioms DualTree.ForwardQObservableFingerprint.fingerprint_eq_iff_smooth
+#print axioms DualTree.ForwardQObservableFingerprint.smoothStarred_iff_factors_through_fingerprint
