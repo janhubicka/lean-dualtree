@@ -192,4 +192,27 @@ noncomputable def coneData_of_bullet_variables
   ForwardQCanonicalConeRootChoice.coneData c fallback raw
     (variables_only_bullet_implies_visible c raw hbullet)
 
+/-- Under the source-facing bullet-only variable occurrence
+condition, the explicit first-visible source-root assignment
+produces a legal starred Q word on the ACTUAL corrected
+Q support for any genuine corrected starred input. -/
+theorem coneData_of_bullet_variables_Q_tree
+    {b n l k m : Nat} {α κ : Type*}
+    (hb : 0 < b)
+    (c : Frame b n l k m α)
+    (x : ForwardQActualStarredSpace.StarredInput c)
+    (fallback : α)
+    (hTbound : ∀ t : Node b, t ∈ c.T → InHomTree n t)
+    (raw : Index c → BoundedNode b n →
+      Sum (Sum α (Fin (m + 1))) κ)
+    (hbullet : ∀ (i : Index c) (t : BoundedNode b n) (z : κ),
+      IsPrefix
+        (ForwardOrderedProjections.frontierAt c.T c.cut i).1 t.1 →
+      raw i t = Sum.inr z →
+      kind c i = MixedProduct.CoordKind.bullet) :
+    ((coneData_of_bullet_variables c fallback raw hbullet).onActualStarredQ
+      hb c x hTbound).tree = (nodes c x.1).toList :=
+  (coneData_of_bullet_variables c fallback raw hbullet).onActualStarredQ_tree
+    hb c x hTbound
+
 end DualTree.ForwardQBulletRootVisibility
