@@ -193,7 +193,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   of this concrete interpolation (7 proposed Lean endpoints,
   pending CI).
 - Definition 21's **general** Gamma₁/Gamma₂ smoothness relation now
-  has a proposed exact observable characterization in ACTUAL corrected
+  has a verified exact observable characterization in ACTUAL corrected
   Q outputs: at every fixed canonical projected position P_i(z),
   words agree on D₀ and Gamma₁, and on Gamma₂ outside the
   selected marked cone; the Gamma₂ projected marked points also
@@ -205,6 +205,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   avoiding arbitrary universe choices for the empty local-variable
   type. This is the interface for proving colouring-factorization of the specific
   Definition 24 simple colouring (10 new Lean endpoints; pending CI).
+- **Every actual selected D₂ frontier has an old visible source variable.**
+  The genuine original source root is an interior variable and strictly
+  precedes the sorted frontier of each literal D₂ signature marker,
+  so its checked visible-root list is nonempty and the explicit
+  R_i decoder reaches that root. In particular a raw local family
+  whose genuine cone-variable occurrences are confined to D₂
+  frontiers admits the verified first-visible-root assignment and
+  constructs a legal starred Q word. This does NOT establish the
+  same for arbitrary D₀ frontiers or preserve independent local
+  variable names (8 CI-verified endpoints in merged PR #246).
 - A canonical **Gamma₁/Gamma₂ observable fingerprint** now retains
   entire D₀/Gamma₁ words, masks inside-cone letters on Gamma₂, and
   keeps only Gamma₂ marked points (Gamma₁ marked points may move).
@@ -214,8 +224,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   explicit record, with a total factor map on unrepresented
   fingerprints supplied by a fallback colour. This is a quotient
   normal form, NOT proof of the paper's specific simple-colouring
-  factorization or its variable-word span (10 new Lean endpoints,
-  CI pending).
+  factorization or its variable-word span (10 CI-verified endpoints in merged PR #247).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -231,7 +240,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1031 source-facing declarations** for transitive
+audits **1039 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -366,6 +375,8 @@ and fixed Gamma₂ projected nodes.
 `ForwardQObservableFingerprint` constructs an explicit quotient record,
 whose equality characterizes the same relation and through which
 smooth starred colourings factor.
+`ForwardQBulletRootVisibility` establishes nonempty old variable roots at all
+actual D₂ frontiers, without inferring the same property for D₀.
 `ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should

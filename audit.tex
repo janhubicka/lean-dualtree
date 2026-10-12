@@ -6416,7 +6416,7 @@ source-facing bridge, not the
 full Lemma~27 conclusion.
 
 
-\paragraph{Exact projected-word observables for an arbitrary smoothness partition.} \todo
+\paragraph{Exact projected-word observables for an arbitrary smoothness partition.} \ok
 A further source-facing bridge connects the now-verified
 actual coordinate-letter identity with the full
 $\Gamma_1/\Gamma_2$ split of Definition~21,
@@ -6484,8 +6484,9 @@ bidirectional characterization
  \text{observable projected $Q$ letters
  and $\Gamma_2$ projected points agree}.
 \]
-Eleven new source-facing Lean endpoints
-(target 1021) await CI. To avoid a
+All eleven source-facing endpoints passed Lean compilation,
+finite regressions and the 1021-declaration transitive
+no-\texttt{sorryAx} audit in merged PR~\#245. To avoid a
 universe-polymorphism ambiguity from the empty
 raw cone-variable type, the formal observation
 record stores the actual letters $x_i(z)$;
@@ -6505,8 +6506,89 @@ Equality of observables alone does not
 supply this colouring-factorization
 statement or the mixed-word span.
 
+\paragraph{Every selected $D_2$ frontier has an available old source variable.} \ok
+The visibility obstruction from the preceding
+cone-root analysis is not equally severe
+at all frontier coordinates.
+The corrected source support is genuinely
+rooted at an old interior variable
+$r_0\in\operatorname{Int}(S)$.
+For every literal corrected signature
+marker $s\in R$, the already verified
+root geometry shows $r_0\sqsubseteq s$.
+The selected $D_2$ frontier $f_i$
+extends exactly this literal marker.
+Moreover $r_0$ lies \emph{inside}
+the forward auxiliary initial segment
+through $t_0$, whereas $f_i$ is
+a minimal support vertex outside it.
+Therefore $r_0\ne f_i$, giving
+\[
+    r_0\sqsubset f_i,
+    \qquad i\in D_2.
+\]
+In particular $r_0$ is a genuine
+old source-variable root \emph{in}
+the per-frontier visible-root list:
+\[
+  r_0\in V_i,\qquad
+  |V_i|\ge 1\quad(i\in D_2).
+\]
+This identifies a concrete auxiliary
+label under the verified $R_i$ decoder
+that returns the root variable for every
+selected $D_2$ index. It also gives
+a uniformly aligned possible
+cone-variable root for \emph{any}
+local occurrence in a selected $D_2$
+frontier cone. No analogous statement
+has been established for arbitrary
+ordinary $D_0$ frontiers, which need
+not be reached by one of the original
+source signature markers.
 
-\paragraph{An explicit canonical quotient for all $\Gamma_1/\Gamma_2$ smoothness classes.} \todo
+Thus whenever an array of raw
+three-constructor local words has
+\emph{genuine cone-variable}
+occurrences only at $D_2$ coordinates
+(the $D_0$ coordinates use only
+original and auxiliary letters),
+the necessary-and-sufficient
+visibility condition for existence
+of a legal output root assignment
+holds automatically, even if
+some $D_0$ visible lists are empty.
+The checked first-visible-root
+constructor can therefore yield
+an actual starred word on $Q(x)$
+for \emph{every} corrected-starred
+input $x$ under the explicit
+ambient height bound.
+This is a positive source-facing
+conditional repair, but it may
+collapse distinct local variable
+names and hence proves no unchanged
+mixed-word span.
+
+The proposed
+\lean{ForwardQBulletRootVisibility}
+module verifies the genuine source-root
+variable name, the strict $D_2$
+frontier-prefix property, its membership
+in the true $V_i$, nonemptiness and
+decoder reachability, and the bullet-only
+variable occurrence constructor.
+All eight source-facing endpoints passed the Lean build,
+finite regressions and 1029-declaration transitive
+no-\texttt{sorryAx} audit in merged PR~\#246.
+The original proof's particular local
+variable words have not yet been
+proved to obey the bullet-only
+occurrence restriction, and the
+canonical $A=B_1\dot\cup B_2$
+simplicity transport is still open.
+
+\paragraph{An explicit canonical quotient for all $\Gamma_1/\Gamma_2$ smoothness classes.} \ok
 The preceding verified projected-letter criterion
 can be presented as an actual finite record,
 rather than a binary relation on inputs.
@@ -6597,8 +6679,9 @@ The proposed module
 constructs the mask and point record,
 proves the equivalence with Definition~21,
 and gives this exact smooth-colouring
-factorization. Ten new source-facing
-endpoints target 1031, pending CI.
+factorization. All ten source-facing endpoints passed Lean compilation,
+finite regressions and the 1031-declaration transitive
+no-\texttt{sorryAx} audit in PR~\#247.
 The remaining Lemma~27 task is to
 show the \emph{particular} colouring
 obtained from a Definition~24
