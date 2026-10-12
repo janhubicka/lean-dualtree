@@ -340,4 +340,6 @@ import DualTree.ForwardQProjectedSmoothObservables
 
 import DualTree.ForwardQObservableFingerprint
 
+import DualTree.ForwardQMarkerFingerprint
+
 import DualTree.ForwardQBulletRootVisibility
