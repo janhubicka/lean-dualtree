@@ -208,7 +208,12 @@ is verified in `ForwardQCertifiedSemiComplete` (merged PR #213).
 `ForwardQThreeWayEvaluation` supply conditional word assembly and
 its exact evaluation. `ForwardQStarredSmoothConePatches` and
 `ForwardQStarredSmoothExtension` isolate the remaining
-smooth-colouring compatibility obligation.\n`ForwardQStarredPatchCriterion` supplies its exact marked-cone-patch\nnormal form and the universal output-map diagnostic.\n`ForwardQStarredOrderReindexObstruction` records the verified
+smooth-colouring compatibility obligation.
+`ForwardQStarredPatchCriterion` supplies its exact marked-cone-patch
+normal form and the universal output-map diagnostic.
+`ForwardQStarredNormalization` supplies canonical smoothness-class
+representatives; its effect on the required Ramsey span remains open.
+`ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should
 be read together with later validation entries.
