@@ -44,6 +44,7 @@ theorem original_span_not_subset_of_collapsed_span
     (hcollapse : ρ u = ρ v) :
     ¬ SpanAudit.span w ⊆
       SpanAudit.span (SpanAudit.substitute w ρ) := by
+  classical
   intro hreverse
   rcases hα with ⟨a, b, hab⟩
   let σ : κ → α := fun z => if z = u then a else b
