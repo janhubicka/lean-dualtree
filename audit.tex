@@ -5912,6 +5912,95 @@ of $c\circ Q$, the required
 mixed-word span/refinement, nor the
 numerical Ramsey induction follows.
 
+
+\paragraph{Three-constructor semantics on the \emph{full} corrected frontier family.} \todo
+The earlier checked \lean{ForwardQThreeWayEvaluation}
+translated original letters, auxiliary letters and
+genuine cone variables, but only over the
+\emph{marked-point cones} at selected $D_2$ indices.
+This is not the full domain of the displayed
+$g_w$ in Lemma~27. Following the corrected
+all-frontier patching interface above, the proposed
+\lean{ForwardQFullFrontierThreeWay.ConeData}
+now supplies for \emph{every} sorted frontier
+coordinate $i\in D_0\cup D_2$:
+\[
+ \operatorname{raw}_i:
+ b^{<n}\longrightarrow
+    (\Lambda\sqcup\mathrm{Aux})\sqcup\kappa,
+ \quad
+ R_i:\mathrm{Aux}\longrightarrow
+   \Lambda\sqcup\operatorname{Vars}(g),
+ \quad
+ v_i:\kappa\longrightarrow\operatorname{Vars}(g).
+\]
+The two local hypotheses distinguish occurrences
+of auxiliary letters that decode to old variables
+from genuine cone variables: both emitted variables
+must be ambient prefixes of their occurrences.
+These conditions are explicitly recorded; they are
+\emph{not} derived from the paper's still-unidentified
+specific $\operatorname{raw}_i$, $R_i$ and $v_i$.
+
+The global word is patched in the unique
+\emph{complete-support frontier cone} containing
+the ambient position. At such a position $t$
+the local decoded symbol and its value under any
+assignment $\sigma:\operatorname{Vars}(g)\to\Lambda$ are
+\[
+ G(t)=
+ \begin{cases}
+  a,&\operatorname{raw}_i(t)=\operatorname{inl}(\operatorname{inl}a),\\
+  R_i(u),&\operatorname{raw}_i(t)=\operatorname{inl}(\operatorname{inr}u),\\
+  \operatorname{inr}(v_i(z)),
+    &\operatorname{raw}_i(t)=\operatorname{inr}z,
+ \end{cases}
+\]
+\[
+ \operatorname{eval}_{\sigma}(G)(t)=
+ \begin{cases}
+  a,&\operatorname{raw}_i(t)=\operatorname{inl}(\operatorname{inl}a),\\
+  \operatorname{eval}_{\sigma}(R_i(u)),
+    &\operatorname{raw}_i(t)=\operatorname{inl}(\operatorname{inr}u),\\
+  \sigma(v_i(z)),&\operatorname{raw}_i(t)=\operatorname{inr}z.
+ \end{cases}
+\]
+Outside \emph{all} complete-support frontier cones,
+the output is the original source word and
+its corresponding evaluation. The old support-root
+set is preserved, repeated occurrences of each
+genuine cone variable are mapped uniformly, and
+for every actual corrected-starred input the
+decoded word is packaged on \emph{exactly}
+the corrected $Q$ tree (under the already
+verified geometric input certificate).
+The ten proposed source-facing endpoints
+\lean{ForwardQFullFrontierThreeWay.ConeData.*}
+include local root alignment, support-tree
+equality, inside/outside symbols, all three
+constructor equations, fibre uniformity and
+the two evaluation equations.
+The stacked transitive axiom audit target is
+966, pending CI.
+
+\paragraph{Remaining author-facing proof gap.}
+This is a \emph{conditional typed assembly}, not
+yet the paper's particular $g_w$. It neither
+establishes the prescription of $R_i$ by visible
+old ancestors nor constructs $v_i$ from the
+canonical local root addresses with all required
+source-domain bounds. The printed word-restriction
+and signature transport must also be checked
+for positions not lying in outside-cut frontier cones.
+Finally, the Definition~24 simplicity witness
+$A=B_1\dot\cup B_2$ must be transported by
+canonical addresses to literal signature markers,
+then to the smoothness split $\Gamma_1/\Gamma_2$.
+No axiom-free statement yet derives smoothness
+of $c\circ Q$, simplicity of its induced
+colouring, the exact mixed-word span or
+the Lemma~27 recursion from these prerequisites.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
