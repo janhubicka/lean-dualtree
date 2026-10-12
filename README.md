@@ -180,7 +180,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   it is an iff for mere root-aligned transport existence. This
   canonical root choice deliberately maps ALL local variable names
   in each cone to the same old root, so cannot on its own establish
-  the original independent-variable span (6 proposed endpoints;
+  the original independent-variable span (6 CI-certified endpoints,
+  merged PR #243).
+- The **actual mixed-product coordinate words** are now sampled
+  through the certified forward canonical cone projection. The
+  inverse-address equation proves that removing the frontier prefix
+  from P_i(z) recovers exactly z, so a concrete local letter
+  interpolation L_i satisfies L_i(P_i(z)) = x.words i z for every
+  forward-sorted D₀/D₂ coordinate. Using these original-letter
+  symbols gives a legal starred Q word on the actual Q support.
+  Auxiliary and genuine local variable symbols are not yet part
+  of this concrete interpolation (7 proposed Lean endpoints,
   pending CI).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
@@ -197,7 +207,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1003 source-facing declarations** for transitive
+audits **1010 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -321,9 +331,11 @@ per-occurrence condition for genuine cone-variable root transport.
 `ForwardQVisibleRootCapacity` bounds its number of distinct old-root targets,
 gives faithful finite indices and establishes the m+2 versus m+1
 non-injectivity obstruction.
-`ForwardQCanonicalConeRootChoice` supplies the proposed iff criterion
+`ForwardQCanonicalConeRootChoice` supplies the verified iff criterion
 for existence of some old-root transport and a deliberately collapsing
 first-visible-root witness.
+`ForwardQActualCoordinateWord` samples genuine input coordinate letters
+at corrected canonical projected positions across all D₀/D₂ frontiers.
 `ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should
