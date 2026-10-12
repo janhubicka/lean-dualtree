@@ -183,9 +183,23 @@ theorem maskedLetter_eq_of_smooth
                   x.words j.1 t = y.words j.1 t := by
           simpa [hg] using hxy.2.2 j
         by_cases hz : IsPrefix (x.bulletPoint j).1 z.1
-        · simp [maskedLetter, hi, j, hg, hz, hp.1]
-        · have hw := hp.2 z hz
-          simpa [maskedLetter, hi, j, hg, hz, hp.1] using hw
+        · have hy : IsPrefix (y.bulletPoint j).1 z.1 := by
+            simpa [← hp.1] using hz
+          have hxm :=
+            maskedLetter_gamma2_inside c gamma1 fallback x j hg z hz
+          have hym :=
+            maskedLetter_gamma2_inside c gamma1 fallback y j hg z hy
+          exact hxm.trans hym.symm
+        · have hy : ¬ IsPrefix (y.bulletPoint j).1 z.1 := by
+            simpa [← hp.1] using hz
+          have hxm :=
+            maskedLetter_gamma2_outside c gamma1 fallback x j hg z hz
+          have hym :=
+            maskedLetter_gamma2_outside c gamma1 fallback y j hg z hy
+          calc
+            maskedLetter c gamma1 fallback x i z = x.words i z := hxm
+            _ = y.words i z := hp.2 z hz
+            _ = maskedLetter c gamma1 fallback y i z := hym.symm
   · have hw : x.words i z = y.words i z :=
       congrFun (hxy.1 i hi) z
     simpa [maskedLetter, hi] using hw
@@ -279,8 +293,18 @@ theorem smooth_of_fingerprint_eq
               ¬ IsPrefix (x.bulletPoint j).1 z.1 →
                 x.words j.1 z = y.words j.1 z := by
           intro z hz
-          have hw := congrFun (congrFun hwords j.1) z
-          simpa [maskedLetter, j.2, hg, hp, hz] using hw
+          have hy : ¬ IsPrefix (y.bulletPoint j).1 z.1 := by
+            simpa [← hp] using hz
+          have hxm :=
+            maskedLetter_gamma2_outside c gamma1 fallback x j hg z hz
+          have hym :=
+            maskedLetter_gamma2_outside c gamma1 fallback y j hg z hy
+          calc
+            x.words j.1 z = maskedLetter c gamma1 fallback x j.1 z :=
+              hxm.symm
+            _ = maskedLetter c gamma1 fallback y j.1 z :=
+              congrFun (congrFun hwords j.1) z
+            _ = y.words j.1 z := hym
         simpa [hg] using And.intro hp hout
 
 /-- The exact complete observable normal form of arbitrary
