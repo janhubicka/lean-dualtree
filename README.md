@@ -160,7 +160,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   root r is generally **not itself** an allowable old variable root.
   The finite visibility certificate replaces an arbitrary prefix
   premise, but variable identifications may reduce the Ramsey span
-  (8 new proof endpoints, pending CI).
+  (8 verified source-facing endpoints, merged PR #241).
 - A finite **visible-root capacity** result makes the outstanding
   cone-variable transport quantitative. The actual list V_i of old
   variable roots strictly preceding a frontier is duplicate-free,
@@ -170,8 +170,18 @@ obligation; `\todo` marks a remaining gap or proposed change.
   different local variable symbols all occur in one frontier cone,
   any root-aligned transport must identify at least two names.
   This is a conditional obstruction to *injective* local-variable
-  transport, not a refutation of the Ramsey theorem (9 further
-  Lean proof endpoints, pending CI).
+  transport, not a refutation of the Ramsey theorem (9 verified source-facing
+  Lean endpoints, merged PR #242).
+- Under the exact requirement that no genuine local variable occur
+  in a frontier cone without any visible old source root, a fully
+  explicit *first-visible-root* assignment now constructs a legal
+  three-way starred Q word with the checked auxiliary R_i decoder.
+  Conversely the visibility theorem makes the condition necessary:
+  it is an iff for mere root-aligned transport existence. This
+  canonical root choice deliberately maps ALL local variable names
+  in each cone to the same old root, so cannot on its own establish
+  the original independent-variable span (6 proposed endpoints;
+  pending CI).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -187,7 +197,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **997 source-facing declarations** for transitive
+audits **1003 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -225,9 +235,11 @@ frontier bands and mixed old/new inequalities have passed Lean CI.
    corrected all-frontier patcher and three-constructor evaluation
    are checked. The proposed genuine visible-ancestor R_i decoder
    now discharges the auxiliary alignment step (verified in #240).
-   The paper's specific local raw words, transport of genuine
-   cone-variable roots, source signature and span/refinement
-   preservation remain open. The older marked-point-cone
+   Existence of some aligned cone-variable root assignment has a
+   proposed exact visible-nonemptiness characterization, but the
+   canonical construction collapses names. The paper's specific
+   local raw words, a faithful source-root transport, source
+   signature and span/refinement preservation remain open. The older marked-point-cone
    interface is distinct.
 5. **Finish the Ramsey induction:** Lemma 28, Theorem 25, the required
    recursive inequalities and the final dual-tree theorem remain open.
@@ -309,6 +321,9 @@ per-occurrence condition for genuine cone-variable root transport.
 `ForwardQVisibleRootCapacity` bounds its number of distinct old-root targets,
 gives faithful finite indices and establishes the m+2 versus m+1
 non-injectivity obstruction.
+`ForwardQCanonicalConeRootChoice` supplies the proposed iff criterion
+for existence of some old-root transport and a deliberately collapsing
+first-visible-root witness.
 `ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should

@@ -6088,7 +6088,7 @@ The constructed $R_i$ cannot by itself
 establish Lemma~27 or the main theorem.
 
 
-\paragraph{A necessary-and-sufficient \emph{visibility} condition for genuine cone-variable transport.} \todo
+\paragraph{A necessary-and-sufficient \emph{visibility} condition for genuine cone-variable transport.} \ok
 The corrected $Q$ support has variable roots exactly
 $\operatorname{Int}(S)$, whereas every outside-cut
 frontier $f_i$ lies outside the inclusive forward cut.
@@ -6147,8 +6147,9 @@ specializes the verified $R_i$ constructor to
 an explicitly chosen visible-root certificate,
 replacing the arbitrary geometric alignment
 premise by an exact finite condition at the
-occurrences. Eight transitive axiom endpoints
-are pending CI (target 988).
+occurrences. All eight source-facing endpoints passed Lean compilation,
+finite regressions and the 988-declaration transitive
+no-\texttt{sorryAx} audit in merged PR~\#241.
 
 \paragraph{Correction to the genuine cone-root prescription.}
 The canonical forward complete-support cone
@@ -6177,7 +6178,7 @@ substantive remaining condition on any
 faithful $g_w$ construction.
 
 
-\paragraph{Exact visible-root capacity and obstruction to injective transport of too many cone variables.} \todo
+\paragraph{Exact visible-root capacity and obstruction to injective transport of too many cone variables.} \ok
 The finite visible-root chain $V_i$ in the previous
 paragraph is a filtered sublist of the genuinely
 duplicate-free ambient complete support $T$;
@@ -6237,8 +6238,9 @@ finite cardinal arithmetic. It also derives
 the obstruction directly from a family of
 raw symbols, each occurring within the
 actual corrected frontier cone.
-Nine new transitive axiom checks are pending
-CI on the stacked branch (target 997).
+All nine source-facing endpoints passed Lean compilation,
+finite regressions and the 997-declaration transitive
+no-\texttt{sorryAx} audit in merged PR~\#242.
 
 \paragraph{Consequence for the Ramsey span.}
 Because the two-letter span-refinement
@@ -6258,6 +6260,84 @@ or a different source-variable interface
 might avoid the obstruction. No such
 span-preserving construction has yet
 been established.
+
+
+\paragraph{An explicit (generally collapsing) cone-root assignment: exact existence criterion.} \todo
+The visibility characterization can also be
+used constructively. Because the final source
+cut $t_0$ is interior, it carries a genuine
+old source variable that may serve as an
+\emph{unused fallback name} in a frontier
+with no visible old root.
+For every frontier with $V_i\ne\varnothing$,
+choose the \emph{first} visible old variable
+$v_i^0$. Define the map on local cone-variable
+names by
+\[
+  \operatorname{rootChoice}_i(z)=
+  \begin{cases}
+     v_i^0,&V_i\ne\varnothing,\\
+     v_{t_0},&V_i=\varnothing.
+  \end{cases}
+\]
+This choice is root-aligned at every
+\emph{genuine occurrence} inside a frontier
+cone exactly if no cone with
+$V_i=\varnothing$ contains a genuine local
+variable occurrence. More precisely,
+for arbitrary raw local cone words and
+the actual source-variable subtype,
+\[
+\begin{aligned}
+&\exists\operatorname{rootChoice}
+ \quad\forall i,t,z\
+  [f_i\sqsubseteq t\
+  \land\operatorname{raw}_i(t)=\operatorname{inr}(z)
+  \Longrightarrow
+  \operatorname{root}(\operatorname{rootChoice}_i(z))
+       \sqsubseteq t]
+\\
+&\quad\Longleftrightarrow\
+ \forall i,t,z\
+ [f_i\sqsubseteq t\
+ \land\operatorname{raw}_i(t)=\operatorname{inr}(z)
+ \Longrightarrow V_i\ne\varnothing].
+\end{aligned}
+\]
+Sufficiency uses the first visible root; necessity
+is the verified source-facing obstruction
+from the previous paragraphs. The resulting
+concrete $R_i$ and $\operatorname{rootChoice}_i$
+can be fed into the full-frontier three-way
+decoder to obtain an actual root-valid
+starred $Q$ word under exactly that
+nonemptiness condition.
+This is a positive algebraic construction,
+but does \emph{not} by itself solve the
+Ramsey step: for fixed $i$,
+\[
+ \operatorname{rootChoice}_i(z)
+ =\operatorname{rootChoice}_i(z')
+ \qquad\text{for all }z,z',
+\]
+so even when many visible roots are available,
+the canonical first-root choice collapses all
+local variable names in a cone.
+A proof of the original mixed-word span must
+supply a more faithful transport when possible,
+or prove the smaller span suffices.
+
+The source-facing proposed Lean module
+\lean{ForwardQCanonicalConeRootChoice}
+packages the genuine source-cut fallback,
+the first-visible-root selection, the
+necessary-and-sufficient existence theorem,
+and the conditional actual starred $Q$ support.
+Six new transitive axiom endpoints (target 1003)
+await CI. The paper's specific raw local
+variable words, the canonical $A/B_1/B_2$
+simplicity transport, the numerical induction,
+and the full dual-tree theorem remain \todo.
 
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
