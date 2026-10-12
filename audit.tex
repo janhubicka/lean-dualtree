@@ -6693,6 +6693,98 @@ No assertion of such a factorization,
 or of a span-preserving variable-word
 construction, is included here.
 
+
+\paragraph{A canonical observable fingerprint indexed by literal corrected signature markers $R$.} \todo
+The previous quotient theorem takes an
+arbitrary Boolean partition predicate
+$\gamma_1$ on the selected $D_2$
+coordinate indices. The corrected
+geometric construction has already
+proved a bijection between the
+\emph{literal} finite marker set
+$R$ and those actual forward-sorted
+indices. Consequently a subset
+$B_2\subseteq R$ determines the
+specific partition
+\[
+ \Gamma_2=\{\iota(s):s\in B_2\},
+ \qquad
+ \Gamma_1=\{\iota(s):s\in R\setminus B_2\}.
+\]
+The proposed source-facing
+marker fingerprint $F_{R,B_2,a}$
+is the checked $\Gamma$-fingerprint
+with this exact marker-induced
+predicate. It satisfies the
+following \emph{literal indexed}
+identities for every marker
+$s\in R$ and local tail $z$:
+\[
+\begin{array}{ll}
+s\notin B_2:&
+ M_{\iota(s),z}=x_{\iota(s)}(z),\quad
+ \mathrm{point}_{\iota(s)}=\mathrm{none};\\[1mm]
+s\in B_2,\ s_{\iota(s)}(x)\sqsubseteq z:&
+ M_{\iota(s),z}=a,\quad
+ \mathrm{point}_{\iota(s)}
+   =\mathrm{some}(s_{\iota(s)}(x));\\[1mm]
+s\in B_2,\ s_{\iota(s)}(x)\not\sqsubseteq z:&
+ M_{\iota(s),z}=x_{\iota(s)}(z),\quad
+ \mathrm{point}_{\iota(s)}
+   =\mathrm{some}(s_{\iota(s)}(x)).
+\end{array}
+\]
+These are the actual source
+$R$ markers, not an assumed
+identification with Definition~24's
+abstract canonical terminal set $A$.
+The proposed Lean
+\lean{ForwardQMarkerFingerprint}
+proves each of the two
+$B_1=R\setminus B_2$ and three
+$B_2$ observable cases, and derives
+the exact equivalence
+\[
+  F_{R,B_2,a}(x)=F_{R,B_2,a}(y)
+  \iff x\sim_{\Gamma_1,\Gamma_2}y.
+\]
+For any colouring of the genuine
+corrected-starred subtype it also
+provides a \emph{total}
+factorization criterion through
+$F_{R,B_2,a}$, equivalent
+to Definition~21 smoothness
+for this exact marker partition.
+Seven new source-facing transitive
+axiom endpoints are pending CI
+(target 1046 on main at 1039).
+
+\paragraph{Remaining $A\to R$ transport in Lemma~27.}
+This removes the arbitrary
+$\Gamma$-partition from the
+smoothness-factorization
+interface: for any prescribed
+subset $B_2$ of the \emph{corrected}
+literal marker set $R$, the
+observable record is explicit.
+It still does \emph{not}
+construct a canonical address
+transport from the abstract
+signature terminals
+$A=B_1\dot\cup B_2$
+of Definition~24 to $R$.
+Nor does it show that the
+paper's particular colouring,
+after its specific local
+variable-word substitutions,
+depends only on this record.
+Those facts, together with
+preservation of the correct
+mixed-product span, must be
+established before the printed
+Lemma~27 and its Ramsey
+iteration can be certified.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
