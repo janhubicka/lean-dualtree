@@ -5459,7 +5459,7 @@ forward-vs-reverse reindexing obstruction and
 the quantitative induction hypotheses.
 
 
-\paragraph{Converse patch theorem: exact normal form for Definition~21 smoothness.} \todo
+\paragraph{Converse patch theorem: exact normal form for Definition~21 smoothness.} \ok
 The earlier cone-patch theorem gave only one direction:
 replacing letters inside the inclusive marked $D_2$ cones
 preserves smooth-relatedness.  The converse is important in
@@ -5523,9 +5523,65 @@ the corrected starred subtype cannot simply be identified
 with the printed $W_*$ by reindexing.
 These are targeted repairs to the Lemma~27 proof,
 not a claim that its complete statement has been proved.
-\paragraph{Lean status.} \todo{} Four new transitive axiom
-checks are included in the pending branch. The proof
-status will be upgraded only when Lean CI succeeds.
+\paragraph{Lean status.} \ok{} The four source-facing
+patch-converse and colouring-criterion declarations passed
+Lean compilation, finite regressions, and the transitive
+no-\texttt{sorryAx} audit (merged PR~\#232; 916 declarations).
+
+
+\paragraph{A canonical representative of each corrected smoothness class.} \todo
+The exact patch normal form suggests a further algebraic
+construction independent of the paper's unverified
+specific $Q$ decoder.  Fix any letter $a\in\Lambda$.
+For each corrected starred mixed-product input $x$ define
+$N_a(x)$ by replacing all letters in the inclusive marked
+cones of the $D_2$ coordinate words with $a$, leaving
+the marked points and all outside-cone symbols unchanged.
+This is an actual element of the \emph{same} corrected
+starred subtype, and its reconstructed $Q$ support
+is unchanged.  By the override property of patches,
+\[
+ \operatorname{patch}(\operatorname{patch}(x,r),s)
+ =\operatorname{patch}(x,s).
+\]
+Consequently,
+\[
+ N_a(N_a(x))=N_a(x),\qquad
+ x\sim_{\Gamma_2}y
+   \Longleftrightarrow N_a(x)=N_a(y).
+\]
+The converse uses smooth-relatedness of $x$ to $N_a(x)$,
+its symmetry, and transitivity.  In particular
+\emph{every} colouring of the form
+$x\mapsto c(Q(N_a(x)))$ is smooth, for arbitrary
+$Q$ and $c$, because the input has first been replaced
+by a canonical smoothness-class representative.
+The new Lean source-facing declarations are
+\lean{ForwardQStarredNormalization.patchedInput\_override},
+\lean{normalizeStarred\_eq\_of\_smooth},
+\lean{smoothRelated\_iff\_normalizeStarred\_eq},
+\lean{normalizeStarred\_idempotent}, and
+\lean{normalized\_pullback\_is\_smooth}.
+
+\paragraph{Caution / suggested correction.}
+Although this proves that a colouring may be made
+smooth \emph{as a set-theoretic map}, it is \emph{not}
+by itself a repair of Lemma~27.  Replacing the original
+input by $N_a(x)$ discards the letters inside the marked
+cones.  The requisite image of the local mixed-word span,
+the Hales--Jewett variables, and the paper's particular
+decoded $g_w$ may depend on exactly these letters.
+Before adopting normalization in the proof one must
+establish that the induced map after normalization
+still has the required image/refinement and colouring
+factorization properties.  The forward/reverse
+starred-domain reindexing gap also persists.
+Thus normalization provides a diagnostic and a
+concrete possible intermediate definition,
+not a proved completion of the Ramsey argument.
+\paragraph{Lean status.} \todo{} The five new formal
+claims and 921-declaration transitive axiom audit
+await Lean CI.
 
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
