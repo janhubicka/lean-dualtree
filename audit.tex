@@ -6693,6 +6693,100 @@ No assertion of such a factorization,
 or of a span-preserving variable-word
 construction, is included here.
 
+
+\paragraph{Forced identification of occurring local variables strictly shrinks the evaluated span.} \todo
+The source-facing visible-root bound
+already proves that if one corrected
+full frontier cone contains $m+2$
+distinct local variable names, each
+actually occurring there, then no
+root-aligned assignment can map them
+\emph{injectively} to the at most
+$m+1$ visible old source-variable
+roots. This has an additional
+evaluated-span consequence over
+any alphabet with at least two
+distinct letters.
+
+Let $w:\mathcal I\to\Lambda\sqcup\kappa$
+be a local variable word, and suppose
+$u\ne v$ both actually occur:
+$w(s)=\operatorname{inr}(u)$ and
+$w(t)=\operatorname{inr}(v)$.
+If a substitution
+$\rho:\kappa\to\Lambda\sqcup\nu$
+identifies their symbols
+$\rho(u)=\rho(v)$, then
+\[
+  \operatorname{Span}(\rho_*w)
+       \subseteq\operatorname{Span}(w)
+  \quad\text{but}\quad
+  \operatorname{Span}(w)
+       \not\subseteq\operatorname{Span}(\rho_*w).
+\]
+Indeed, choose two different letters
+$a,b$ and evaluate $u$ as $a$,
+$v$ as $b$. That original evaluation
+takes different values at $s$ and $t$,
+while every evaluation of $\rho_*w$
+takes the same value there.
+The fact that the local names
+\emph{actually occur} is essential;
+identifying unused names creates
+no such witness.
+
+The proposed Lean lemma
+\lean{ForwardQVariableSpanCollapse.original\_span\_not\_subset\_of\_collapsed\_span}
+constructs this explicit witness,
+while
+\lean{collapsed\_span\_properly\_contained}
+pairs it with the previously verified
+general span-substitution inclusion.
+The specialized source-facing theorem
+\lean{actual\_frontier\_full\_span\_not\_preserved}
+then combines the exact corrected
+$Q$ visible-root capacity
+with local raw cone words over the
+enlarged auxiliary alphabet:
+if all $m+2$ distinct local names
+occur in the given frontier cone
+and the old-source-root transport
+is geometrically aligned, the
+evaluated span of that full raw
+cone word cannot be recovered
+from its root-translated word.
+Three transitive source-facing
+axiom checks are pending CI
+(target 1042 on the verified 1039
+main-branch baseline).
+
+\paragraph{Consequence for Lemma~27.}
+It is \emph{not sufficient} to
+repair the local $g_w$ construction
+by choosing arbitrary old source
+roots from the visible chain,
+nor even by showing the resulting
+word is geometrically valid.
+When that choice collapses
+two distinct \emph{occurring}
+local variable symbols, it
+strictly loses some evaluated
+assignments in the corresponding
+raw local cone word.
+The remaining proof must
+control which local names
+actually occur, their compatible
+assignment to old variables, or
+replace the full local span
+by a justified smaller one.
+This does not refute the full
+dual-tree Ramsey theorem; it
+identifies precisely why a
+naive rooted-word repair cannot
+by itself justify the claimed
+Hales--Jewett / mixed-word
+span induction.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
