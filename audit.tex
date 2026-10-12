@@ -5586,6 +5586,67 @@ The \emph{algebraic normal form} is verified; the proposed
 application to the particular Lemma~27 pullback and its
 Ramsey span remains \todo.
 
+
+\paragraph{Normalization provably loses starred-word information.} \todo
+The canonical smoothness normal form $N_a$ established above
+forces the letter $a$ at each marked point of a selected
+$D_2$ coordinate, because the inclusive cone contains
+its own root.  This restriction persists even though
+the normalization leaves the entire corrected $Q$
+support \emph{unchanged}.
+Let $x$ be a genuine member of the corrected starred
+mixed product, fix an actual index $i\in D_2$,
+and suppose the alphabet contains two distinct letters
+$a$ and $a'\ne a$.  The element
+\[
+ y=\operatorname{patch}\bigl(x,(\text{constant }a')_j\bigr)
+\]
+is also starred and has the same marked points and
+$Q$ support as $x$. But
+\[
+ y_i(s_i)=a',
+ \qquad
+ [N_a(z)]_i(s_i)=a
+ \quad\text{for all corrected starred }z
+ \text{ with }N_a(z)=y,
+\]
+where the latter equality uses the fact that
+normalization fixes the marked-point array.
+Thus $y$ cannot be in the image of $N_a$:
+\[
+ D_2\ne\varnothing,\quad W_*\ne\varnothing,\quad
+ |\Lambda|\ge 2
+ \ \Longrightarrow\quad
+ N_a:W_*\to W_* \text{ is not surjective}.
+\]
+This assertion is \emph{conditional on the existence}
+of a genuine corrected-starred input and a selected
+bullet coordinate; it makes no claim that all arbitrary
+marked-point arrays belong to $W_*$.
+
+The intended Lean certificate consists of
+\lean{ForwardQNormalizationObstruction.markedLetter\_patched\_constant},
+\lean{markedLetter\_normalized},
+\lean{normalized\_Q\_nodes\_eq},
+\lean{patched\_other\_letter\_not\_in\_normalization\_range},
+and the two \lean{normalizeStarred\_not\_surjective}
+statements. Six source-facing transitive axiom checks
+are pending on the development branch.
+
+\paragraph{Correction consequence.}
+A proof of Lemma~27 cannot simply replace its entire
+starred mixed-product domain by the image of $N_a$
+\emph{and simultaneously claim to retain the original
+full image of the marked-cone word coordinates}.
+The normalization deliberately erases at least one
+independent letter whenever a nontrivial marked cone
+is present. This does \emph{not} refute a possible
+Ramsey repair, since the selected subspace might need
+only carefully controlled restricted words. Such a
+repair must explicitly verify the required span and
+refinement properties \emph{after} normalization,
+rather than infer them from its smoothness.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
