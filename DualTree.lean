@@ -335,3 +335,5 @@ import DualTree.ForwardQVisibleRootCapacity
 import DualTree.ForwardQCanonicalConeRootChoice
 
 import DualTree.ForwardQActualCoordinateWord
+
+import DualTree.ForwardQProjectedSmoothObservables
