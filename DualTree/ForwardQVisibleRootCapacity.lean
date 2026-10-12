@@ -136,7 +136,12 @@ theorem indexOfVisibleRoot_eq_imp_root_eq
       (⟨v.1.1, hv⟩ :
         {r : Node b // r ∈ ForwardQVisibleAncestorDecoder.visibleList c i}) =
       ⟨w.1.1, hw⟩ := e.symm.injective heq
-  have hnodes : v.1.1 = w.1.1 := congrArg Subtype.val hsub
+  have hnodes : v.1.1 = w.1.1 :=
+    congrArg
+      (fun q :
+        {r : Node b // r ∈ ForwardQVisibleAncestorDecoder.visibleList c i} =>
+          q.1)
+      hsub
   apply Subtype.ext
   apply Subtype.ext
   exact hnodes
