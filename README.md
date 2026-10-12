@@ -93,8 +93,15 @@ obligation; `\todo` marks a remaining gap or proposed change.
   exactly when their normalizations agree. Consequently every colouring
   precomposed with normalization is smooth. **Important:** doing so may
   destroy the specific Q decoding or mixed-word span/surjectivity needed
-  for Lemma 27; those properties remain unproved (new Lean module,
-  pending CI).
+  for Lemma 27; those properties remain unproved (PR #233, verified).
+- The normalization map is additionally **provably non-surjective**
+  on any inhabited corrected-starred domain with a selected D₂
+  coordinate and two alphabet letters: every normalized input has
+  the fixed letter at each marked point, while a genuine corrected
+  starred input can be patched to have a different letter there.
+  The Q tree is unaffected. This precisely obstructs treating
+  normalization as a lossless reparameterization of the full
+  mixed-product domain (new Lean module, pending CI).
 - A kernel-checked binary witness demonstrates that simply reordering
   the *same* marked-point assignment from the paper's reverse-lex
   frontier order to the corrected forward order can destroy
@@ -115,7 +122,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **921 source-facing declarations** for transitive
+audits **927 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
