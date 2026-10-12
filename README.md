@@ -86,6 +86,15 @@ obligation; `\todo` marks a remaining gap or proposed change.
   \(c\circ Q\) still needs this invariance proved for its specific
   decoder and source colouring; support invariance by itself is
   insufficient (pending PR, Lean CI required).
+- Fixing one alphabet letter gives a canonical representative for each
+  Gamma₂ smoothness class of the **corrected** starred subtype: overwrite
+  every marked-cone word with that letter, keeping points and outside
+  symbols. This normalization is idempotent, and two inputs are related
+  exactly when their normalizations agree. Consequently every colouring
+  precomposed with normalization is smooth. **Important:** doing so may
+  destroy the specific Q decoding or mixed-word span/surjectivity needed
+  for Lemma 27; those properties remain unproved (new Lean module,
+  pending CI).
 - A kernel-checked binary witness demonstrates that simply reordering
   the *same* marked-point assignment from the paper's reverse-lex
   frontier order to the corrected forward order can destroy
@@ -106,7 +115,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **916 source-facing declarations** for transitive
+audits **921 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
