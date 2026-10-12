@@ -5458,6 +5458,75 @@ source colouring, while respecting the
 forward-vs-reverse reindexing obstruction and
 the quantitative induction hypotheses.
 
+
+\paragraph{Converse patch theorem: exact normal form for Definition~21 smoothness.} \todo
+The earlier cone-patch theorem gave only one direction:
+replacing letters inside the inclusive marked $D_2$ cones
+preserves smooth-relatedness.  The converse is important in
+checking the colouring pullback in Lemma~27, and it has
+no extra combinatorial hypothesis.
+For two elements $x,y$ of the actual corrected starred
+$W_*$ subtype (with fixed selected $D_0/D_2$ coordinates),
+let $\operatorname{patch}(x,y)$ retain all marked points and
+nonbullet words of $x$ and use the words of $y$ inside
+the inclusive marked cones of $x$. Then
+\[
+ x\sim_{\Gamma_2}y
+ \quad\Longleftrightarrow\quad
+ \operatorname{patch}(x,y)=y.
+\]
+Indeed, Definition~21 fixes all nonbullet words,
+all marked points, and each bullet word outside its
+marked cone; the remaining symbols are precisely
+those overwritten by the patch. Hence an arbitrary
+starred colouring $d$ is $\Gamma_2$-smooth \emph{if
+and only if} it is invariant under \emph{every}
+marked-cone patch:
+\[
+ \begin{split}
+ d \text{ is smooth on } W_*
+ \quad\Longleftrightarrow\quad
+ &d(x)=d(\operatorname{patch}(x,r))\\
+ &\text{for all starred }x
+   \text{ and all replacement word arrays }r.
+ \end{split}
+\]
+The source-facing theorem names are
+\lean{ForwardQStarredPatchCriterion.reconstruct\_mixed\_input\_from\_smooth},
+\lean{smoothRelated\_iff\_patchedStarred\_eq}, and
+\lean{smoothStarred\_iff\_all\_patches}.
+
+There is also a useful universal-colouring diagnostic.
+If $Q:W_*\to Y$ is an output map, then \emph{every}
+endocolouring $h:Y\to Y$ makes $h\circ Q$ smooth
+exactly when $Q$ itself is invariant under all marked-cone
+patches.  Necessity follows by taking $h=\mathrm{id}_Y$;
+sufficiency follows by composition.  The Lean interface is
+\lean{ForwardQStarredPatchCriterion.all\_endocolors\_smooth\_iff\_Q\_patch\_invariant}.
+This must \emph{not} be confused with smoothness of a
+\emph{fixed} induced colouring $c\circ Q$: the latter
+requires only equality of its resulting colours,
+not equality of the full output words $Q(x)$ and $Q(y)$.
+
+\paragraph{Proposed proof repair.}
+To justify the application of the smooth mixed-product
+lemma in Lemma~27 it is now enough, and also necessary,
+to verify the patch invariance of the \emph{particular}
+induced colouring $c\circ Q$ on the actual corrected
+starred domain.  Invariance of the support tree alone
+is insufficient, since the patched $Q$ output word
+may change inside a cone and $c$ may distinguish it.
+The local word decoder, source colouring and marked-point
+transport must be used together in this check.  Moreover
+the forward/reverse coordinate-order obstruction means
+the corrected starred subtype cannot simply be identified
+with the printed $W_*$ by reindexing.
+These are targeted repairs to the Lemma~27 proof,
+not a claim that its complete statement has been proved.
+\paragraph{Lean status.} \todo{} Four new transitive axiom
+checks are included in the pending branch. The proof
+status will be upgraded only when Lean CI succeeds.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
