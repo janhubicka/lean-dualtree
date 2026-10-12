@@ -180,8 +180,8 @@ obligation; `\todo` marks a remaining gap or proposed change.
   it is an iff for mere root-aligned transport existence. This
   canonical root choice deliberately maps ALL local variable names
   in each cone to the same old root, so cannot on its own establish
-  the original independent-variable span (6 proposed endpoints;
-  pending CI).
+  the original independent-variable span (6 CI-certified endpoints,
+  merged PR #243).
 - The **actual mixed-product coordinate words** are now sampled
   through the certified forward canonical cone projection. The
   inverse-address equation proves that removing the frontier prefix
@@ -331,7 +331,7 @@ per-occurrence condition for genuine cone-variable root transport.
 `ForwardQVisibleRootCapacity` bounds its number of distinct old-root targets,
 gives faithful finite indices and establishes the m+2 versus m+1
 non-injectivity obstruction.
-`ForwardQCanonicalConeRootChoice` supplies the proposed iff criterion
+`ForwardQCanonicalConeRootChoice` supplies the verified iff criterion
 for existence of some old-root transport and a deliberately collapsing
 first-visible-root witness.
 `ForwardQActualCoordinateWord` samples genuine input coordinate letters
