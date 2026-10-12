@@ -40,7 +40,7 @@ abbrev Index
 
 /-- The actual source interior roots that lie strictly above
 the selected minimal outside-cut complete-support frontier. -/
-def visibleList
+noncomputable def visibleList
     {b n l k m : Nat} {α : Type*}
     (c : Frame b n l k m α)
     (i : Index c) : List (Node b) :=
@@ -397,7 +397,6 @@ theorem coneData_actual_Q_eval_inside
   have h :=
     (coneData c fallback raw coneRoot hcone).eval_inside
       hb c x hTbound i t ht σ
-  simpa only [
-    coneData_raw_inside c fallback raw coneRoot hcone i t ht] using h
+  simpa [coneData, maskedRaw, ht] using h
 
 end DualTree.ForwardQVisibleAncestorDecoder
