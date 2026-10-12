@@ -193,7 +193,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   of this concrete interpolation (7 proposed Lean endpoints,
   pending CI).
 - Definition 21's **general** Gamma₁/Gamma₂ smoothness relation now
-  has a proposed exact observable characterization in ACTUAL corrected
+  has a verified exact observable characterization in ACTUAL corrected
   Q outputs: at every fixed canonical projected position P_i(z),
   words agree on D₀ and Gamma₁, and on Gamma₂ outside the
   selected marked cone; the Gamma₂ projected marked points also
@@ -205,6 +205,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   avoiding arbitrary universe choices for the empty local-variable
   type. This is the interface for proving colouring-factorization of the specific
   Definition 24 simple colouring (10 new Lean endpoints; pending CI).
+- **Every actual selected D₂ frontier has an old visible source variable.**
+  The genuine original source root is an interior variable and strictly
+  precedes the sorted frontier of each literal D₂ signature marker,
+  so its checked visible-root list is nonempty and the explicit
+  R_i decoder reaches that root. In particular a raw local family
+  whose genuine cone-variable occurrences are confined to D₂
+  frontiers admits the verified first-visible-root assignment and
+  constructs a legal starred Q word. This does NOT establish the
+  same for arbitrary D₀ frontiers or preserve independent local
+  variable names (8 new source-facing theorems, CI pending).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -220,7 +230,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1021 source-facing declarations** for transitive
+audits **1029 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -352,6 +362,8 @@ at corrected canonical projected positions across all D₀/D₂ frontiers.
 `ForwardQProjectedSmoothObservables` characterizes arbitrary Gamma₁/Gamma₂
 smoothness by exactly the corresponding observable genuine Q symbols
 and fixed Gamma₂ projected nodes.
+`ForwardQBulletRootVisibility` establishes nonempty old variable roots at all
+actual D₂ frontiers, without inferring the same property for D₀.
 `ForwardQStarredOrderReindexObstruction` records the verified
 failure of naive printed-to-repaired starred input reindexing.
 The TeX audit is intentionally cumulative: older partial TODOs should
