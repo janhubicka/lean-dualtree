@@ -1095,3 +1095,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQStarredPatchCriterion.smoothRelated_iff_patchedStarred_eq
 #print axioms DualTree.ForwardQStarredPatchCriterion.smoothStarred_iff_all_patches
 #print axioms DualTree.ForwardQStarredPatchCriterion.all_endocolors_smooth_iff_Q_patch_invariant
+
+#print axioms DualTree.ForwardQStarredNormalization.patchedInput_override
+#print axioms DualTree.ForwardQStarredNormalization.normalizeStarred_eq_of_smooth
+#print axioms DualTree.ForwardQStarredNormalization.smoothRelated_iff_normalizeStarred_eq
+#print axioms DualTree.ForwardQStarredNormalization.normalizeStarred_idempotent
+#print axioms DualTree.ForwardQStarredNormalization.normalized_pullback_is_smooth
