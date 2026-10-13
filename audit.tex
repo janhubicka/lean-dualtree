@@ -4461,6 +4461,66 @@ The repaired forward-order W$_*$ domain remains distinct from the
 paper's printed reverse-order domain. No conclusion about the truth
 of the final dual Ramsey theorem follows from the capacity obstruction.
 
+
+\paragraph{Corrected $Q$ on ordinary enlarged-alphabet inputs
+and its remaining ambient-fibre gap.} \ok
+It is essential to distinguish the \emph{first} map $Q$ in
+Lemma~27 from the later construction of the variable refinement $f'$.
+The input $w\in W^D_*(b,n',\Lambda')$ consists of \emph{ordinary
+constant local words} over
+$\Lambda'=\Lambda\sqcup\{0,\ldots,m'\}$; genuine
+cone-variable names and any Hall matching arise only if we
+add a \emph{stronger} independent-variable transport requirement.
+They are not preconditions for defining the paper's original $Q$.
+
+The revised Lean interface
+\texttt{DualTree.ForwardQEnlargedConstantWords}
+defines the genuine mixed-product enlarged-alphabet input, retains
+its selected D$_2$ bullet points \emph{unchanged} under alphabet
+erasure, and therefore transports the already certified forward
+starred-domain condition and the corrected $Q$ support.
+For each sorted frontier index $i$ and intrinsically safe local
+tail $z$, the projected symbol of the resulting legal starred
+word satisfies the \emph{literal two-case decoding identity}
+\[
+ g_w(P_i(z))=
+ \begin{cases}
+   a & w_i(z)=a\in\Lambda,\\
+   R_i(j) & w_i(z)=j\in\{0,\ldots,m'\}.
+ \end{cases}
+\]
+Here $R_i$ is the checked \emph{actual visible-ancestor} decoder,
+which targets genuine old source-variable roots and uses a
+fallback original letter if its visible list is empty. No
+occurrence-level Hall assumption enters. The source-facing Lean
+checks include
+\lean{DualTree.ForwardQEnlargedConstantWords.eraseAux_Q_nodes_invariant},
+\lean{DualTree.ForwardQEnlargedConstantWords.sampledEnlarged_projected},
+\lean{DualTree.ForwardQEnlargedConstantWords.enlarged_Q_tree},
+\lean{DualTree.ForwardQEnlargedConstantWords.enlarged_Q_symbol_projected},
+and
+\lean{DualTree.ForwardQEnlargedConstantWords.enlarged_Q_evaluated_projected}.
+
+\todo\ \textbf{This is still not the full formula for $g_w$ in
+printed Lemma~27.} Its clauses (i)--(v) act on the fibres of the
+\emph{ambient complete-support variable word} $f$: for each
+ambient position $s$ they first inspect whether $f(s)$ is an
+original constant, an old interior variable, the cut variable,
+a projected variable $v_{P_i(z)}$, or an unprojected variable.
+The existing Lean \texttt{Frame} stores the starred source word
+$(S,g')$ and its enclosing complete support $T$, but does
+\emph{not} carry $f$ or its full symbol/fibre map. Hence patching
+by the ambient \emph{position}'s frontier cone (even with the
+correct R$_i$) need not agree with the paper's fibrewise
+definition at arbitrary positions; it must not be called a
+verification of full Lemma~27 $Q$. The minimally faithful repair
+is to extend the source-facing frame with an ambient $f$
+whose support is $T$, specify and verify the compatibility
+between $(S,g')$ and $f$, and then define the global decoder by
+the five fibre cases. Only then prove the relevant smoothness
+and simple-colouring pullback, and separately construct $f'$
+with the projected new variable roots.
+
 \section{Computational evidence retained}
 Before Lean formalization, exhaustive finite programs established or tested:
 \begin{itemize}

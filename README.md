@@ -340,6 +340,24 @@ obligation; `\todo` marks a remaining gap or proposed change.
   simple-colouring factorization nor the Ramsey induction follows
   (4 proposed source-facing endpoints in PR #256; requires CI).
 
+- The **original Q construction uses ORDINARY enlarged-alphabet
+  local words, not independent local cone variables**. A new
+  source-facing module instantiates the verified corrected Q
+  full-frontier decoder on actual mixed-product inputs with alphabet
+  Lambda + Fin(m+1): original letters remain constants; auxiliary
+  labels are sent through the literal visible-ancestor R_i; the local
+  variable type is EMPTY. At every genuine canonical projected
+  support position P_i(z), the decoded Q symbol and its evaluation
+  reproduce exactly this two-case rule, and auxiliary erasure leaves
+  D2 points and the Q support unchanged. NO Hall matching is required.
+  However the present Frame records (S,g') and its enclosing T but
+  not the ambient source word f and its fibres. The paper's full
+  formula (i)--(v) classifies ambient positions by f(s), NOT merely
+  by their frontier cone; hence the new result does NOT yet verify
+  the complete printed g_w. Adding f and proving a fibrewise Q
+  decoder is the next obligation (9 proposed source-facing endpoints
+  in PR #257, Lean CI required).
+
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -355,7 +373,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1085 source-facing declarations** for transitive
+audits **1089 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
