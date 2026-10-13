@@ -281,7 +281,11 @@ obligation; `\todo` marks a remaining gap or proposed change.
   forces q≤|V_i|. This exact iff still does not establish
   compatibility of root assignments ACROSS cones or the printed
   Lemma 27 span, simplicity and Ramsey iteration
-  (6 pending Lean endpoints; 1064 target).
+  (6 pending Lean endpoints; 1064 target). At multiple
+  frontiers a GLOBAL independent-variable translation requires a
+  Hall-type matching condition on the unions of visible old-root
+  sets; separate per-frontier capacity inequalities alone do not
+  suffice. This is recorded as an unverified author-facing TODO.
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
