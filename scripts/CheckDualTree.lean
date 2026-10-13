@@ -1291,3 +1291,13 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQHallEvaluations.occurringHall_total_capacity
 #print axioms DualTree.ForwardQHallEvaluations.not_occurringHall_of_excess
 #print axioms DualTree.ForwardQHallEvaluations.hall_Q_realizes_all_local_variable_assignments
+
+#print axioms DualTree.ForwardQEnlargedConstantWords.eraseAux_bulletPoint
+#print axioms DualTree.ForwardQEnlargedConstantWords.eraseAux_Q_nodes_invariant
+#print axioms DualTree.ForwardQEnlargedConstantWords.sampledEnlarged_projected
+#print axioms DualTree.ForwardQEnlargedConstantWords.rawEnlarged_projected
+#print axioms DualTree.ForwardQEnlargedConstantWords.enlarged_Q_tree
+#print axioms DualTree.ForwardQEnlargedConstantWords.enlarged_Q_symbol_projected
+#print axioms DualTree.ForwardQEnlargedConstantWords.enlarged_Q_original_projected
+#print axioms DualTree.ForwardQEnlargedConstantWords.enlarged_Q_auxiliary_projected
+#print axioms DualTree.ForwardQEnlargedConstantWords.enlarged_Q_evaluated_projected
