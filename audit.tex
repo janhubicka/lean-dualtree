@@ -4678,6 +4678,67 @@ remain unproved. In particular do not claim that this
 starred-word construction alone establishes Lemma~27,
 Lemma~28 or Theorem~25.
 
+
+\paragraph{The whole corrected Q word is a \emph{single} ambient
+substitution; span and support refinement follow.} \ok
+There is a further simplification of the repaired
+Lemma~27 construction once the genuine ambient $f$-fibres
+are present. Define one substitution on the variable names
+of the original ambient word $f$ by
+\[
+  \rho_w(v_t)=
+  \begin{cases}
+    \rho(v_t),&t\preccurlyeq t_0,\\
+    \operatorname{decode}_{R_i}(w_i(z)),
+       &t\succ t_0\text{ in the frontier }i
+         \text{ with safe inverse tail }z,\\
+    a_0,&\text{otherwise},
+  \end{cases}
+\]
+where $\rho$ is the explicit witness $g'=f[\rho]$, and
+$a_0\in\Lambda$ is the chosen fallback. Here
+$t\preccurlyeq t_0$ denotes the \emph{forward auxiliary cut},
+not simply prefix comparability. The local decoder outputs
+either an original constant or a genuine source variable,
+never a new independent cone-variable name.
+
+By the actual uniform $f$-fibre formula at every ambient
+position $s$, the corrected output satisfies the
+\emph{global syntactic identity}
+\[
+             g_w=f[\rho_w].
+\]
+Therefore, for \emph{every nonempty alphabet}, including
+the singleton case (because the substitution is explicit),
+\[
+       [g_w]_\Lambda\subseteq[f]_\Lambda.
+\]
+The independently checked support containment
+$S_w\subseteq T=\operatorname{ws}(f)$ yields both defining
+parts of $(S_w,g_w)\leq f$, not merely a legal
+starred word with the correct old roots.
+The proposed checked endpoints are
+\lean{DualTree.ForwardQAmbientFibreSpan.fibreQSymbol_eq_substitute},
+\lean{DualTree.ForwardQAmbientFibreSpan.fibreQSymbol_span_subset_ambient},
+\lean{DualTree.ForwardQAmbientFibreSpan.fibreSubstitution_fixes_old_roots},
+\lean{DualTree.ForwardQAmbientFibreSpan.fibreQStarredWord_span_subset_ambient},
+and
+\lean{DualTree.ForwardQAmbientFibreSpan.fibreQStarredWord_refines_ambient}.
+
+\todo\ This proves one essential output requirement of the
+\emph{forward-repaired} Q construction under the strengthened
+input frame; it does not show that an arbitrary $(S,g')\leq f$
+in the paper supplies the syntactic witness $\rho$ over a
+singleton alphabet. The required transport of the original
+Definition~24 partition, smoothness of $c\circ Q$ on the
+corrected W$_*$ domain and the construction/refinement of
+the final ambient variable word $f'$ are separate.
+Do not infer that the matching capacity of old $g'$
+variables must accommodate independent variables of $f'$:
+the two support dimensions are different, and the earlier
+Hall obstruction was for a stronger independent-tag
+translation problem, not for this constant-word map $Q$.
+
 \section{Computational evidence retained}
 Before Lean formalization, exhaustive finite programs established or tested:
 \begin{itemize}
