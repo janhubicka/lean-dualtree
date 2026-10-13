@@ -298,7 +298,19 @@ obligation; `\todo` marks a remaining gap or proposed change.
   occur and the enlarged alphabet has two letters, preserving the
   full span forces Hall's inequalities. This is NOT yet the
   paper-specific global Q word, colouring compatibility or
-  Ramsey recursion (8 proposed endpoints, pending CI).
+  Ramsey recursion (8 CI-verified endpoints in merged PR #253).
+- **Only genuinely occurring local variables consume global
+  matching capacity.** The new proposed refinement masks symbols
+  outside their own complete-support frontier cones, tags only
+  variable names ACTUALLY appearing inside those cones, and applies
+  Hall's condition to that finite occurring-name subtype. A matching
+  extends to a total root map by assigning an unused old cut variable
+  to unused names, and preserves the full independent-coordinate
+  evaluated span. Conversely, over a two-letter alphabet,
+  full-span preservation and visible occurring roots imply Hall.
+  Matched roots are prefix-aligned at every occurrence. The
+  *particular* raw words and colour-factorization from Lemma 27
+  remain open (8 additional source-facing endpoints, CI pending).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -314,7 +326,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1072 source-facing declarations** for transitive
+audits **1080 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -444,8 +456,10 @@ when genuinely occurring cone-variable names are identified.
 by injectivity on exactly the occurring variable names.
 `ForwardQVisibleSpanCapacityIff` derives sharp q≤|V_i| local
 root-allocation capacity for full evaluated-span preservation.
-`ForwardQGlobalHallSpan` gives the proposed finite Hall iff criterion
+`ForwardQGlobalHallSpan` gives the CI-verified finite Hall iff criterion
 for simultaneous root-aligned allocation and full tagged global span.
+`ForwardQOccurringHallSpan` refines it to actually occurring cone variables,
+with unused local names ignored and inside-cone masking explicit.
 `ForwardQCanonicalConeRootChoice` supplies the verified iff criterion
 for existence of some old-root transport and a deliberately collapsing
 first-visible-root witness.
