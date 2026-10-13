@@ -270,6 +270,18 @@ obligation; `\todo` marks a remaining gap or proposed change.
   the precise remaining LOCAL span condition, not proof that
   the paper supplies an admissible injective assignment or
   completes the GLOBAL mixed Ramsey span (4 pending Lean checks).
+- A proposed **sharp single-frontier span-capacity theorem** now
+  matches the number q of genuine occurring local variable names
+  against the length |V_i| of actual visible old source roots.
+  If q≤|V_i|, an explicit first-q visible-root injection is
+  geometrically aligned throughout that cone and preserves its
+  FULL evaluated raw-word span. Conversely, if all q names
+  really occur inside that cone and the enlarged local alphabet
+  has two letters, any aligned full-span-preserving root map
+  forces q≤|V_i|. This exact iff still does not establish
+  compatibility of root assignments ACROSS cones or the printed
+  Lemma 27 span, simplicity and Ramsey iteration
+  (6 pending Lean endpoints; 1064 target).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -285,7 +297,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1058 source-facing declarations** for transitive
+audits **1064 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -413,6 +425,8 @@ non-injectivity obstruction.
 when genuinely occurring cone-variable names are identified.
 `ForwardQSpanExactInjectivity` characterizes full local span preservation
 by injectivity on exactly the occurring variable names.
+`ForwardQVisibleSpanCapacityIff` derives sharp q≤|V_i| local
+root-allocation capacity for full evaluated-span preservation.
 `ForwardQCanonicalConeRootChoice` supplies the verified iff criterion
 for existence of some old-root transport and a deliberately collapsing
 first-visible-root witness.
