@@ -7173,6 +7173,130 @@ the particular simple-colouring
 factorization remain separate
 open obligations.
 
+
+\paragraph{The missing \emph{global} root-allocation condition is a finite matching problem.} \todo
+Even after the single-frontier
+capacity equivalence, it would
+be incorrect to infer preservation
+of the \emph{whole independent
+mixed-product} coordinate span
+from the bounds
+$q_i\le|V_i|$ for each
+frontier separately. Two
+different cones may offer
+overlapping old source-variable
+roots.
+
+For a fixed finite family of
+raw local variable words, let
+\[
+  E_i=\{(i,z):\text{$z$ actually
+                   occurs in the
+                   $i$-th cone}\},
+  \qquad E=\mathop{\dot\bigcup}_i E_i.
+\]
+Distinct tags in $E$ represent
+\emph{independent} local variable
+assignments in the original
+mixed product, even if their
+un-tagged local names coincide.
+An old source-variable root
+$v$ is an allowable translated
+name for $(i,z)$ exactly when
+$\operatorname{root}(v)\in V_i$.
+If a root translation is
+required to preserve the entire
+\emph{independent cone-coordinate
+evaluated span} over a two-letter
+alphabet, its restriction to
+$E$ must be injective,
+by the exact occurring-variable
+span criterion. Conversely,
+an injective allowable assignment
+extends all independent local
+evaluations by a partial inverse.
+
+Thus the existence of a
+root-aligned, cone-coordinate
+full-span-preserving \emph{joint}
+translation is equivalent to a
+system of distinct representatives
+for the allowed root sets
+$(V_i)_{(i,z)\in E}$.
+By the finite marriage theorem
+the exact combinatorial criterion is
+\[
+ \boxed{
+   \forall X\subseteq E,\qquad
+   |X|\le
+   \left|\bigcup_{(i,z)\in X} V_i\right|.
+ }
+ \tag{Hall--Q}
+\]
+The single-frontier inequalities
+$q_i\le |V_i|$ cover only
+the special tests $X\subseteq E_i$.
+They do \emph{not} imply the
+Hall--Q inequalities for sets
+meeting several frontier cones.
+For example, at the abstract
+root-allocation level, two
+frontiers may each admit
+exactly one local variable
+and have the same singleton
+allowed root set. Their
+individual inequalities hold,
+but there cannot be two
+different assigned target names.
+This example is a warning
+about the matching argument,
+\emph{not} a claimed counterexample
+under all parameters of
+the printed Lemma~27.
+
+\paragraph{Limit of the Hall--Q reduction.}
+The equivalence above concerns
+the \emph{coordinatewise} span
+on the disjoint union of
+frontier-cone positions.
+A full starred output
+$Q$-word also retains the old
+source word outside the cones,
+and its canonical support
+and admissible orders require
+independent checks. Hence the
+Hall--Q condition, even if
+verified for the particular
+local words of Lemma~27,
+would not alone prove the
+exact image/refinement, simplicity
+or Ramsey-induction clauses
+of that lemma. Conversely, a
+Ramsey proof may legitimately
+work with a selected smaller
+mixed-word span that requires
+no such injective translation;
+it would then need a separate
+formal definition and
+justification of that span.
+
+This is a \emph{mathematical
+reduction and author-facing
+TODO}, not a new Lean-verified
+statement. To formalize it,
+one should construct the
+finite set of tagged
+\emph{occurring} cone variables,
+the family of allowable
+old source-variable root sets,
+and apply a finite Hall/matching
+lemma. It is essential to
+connect the proposed matching
+to the \emph{actual}
+three-constructor cone words
+before using it to repair
+Lemma~27.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
