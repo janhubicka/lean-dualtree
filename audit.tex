@@ -8061,7 +8061,7 @@ true when $L_1\cap L_2\ne\varnothing$, which is sufficient for the actual
 application $L_j=\{a_j,a_{j+1}\}$.
 
 
-\paragraph{The full-fibre $Q$ and the $B_2=\varnothing$ simplicity case.} \todo
+\paragraph{The full-fibre $Q$ and the $B_2=\varnothing$ simplicity case.} \ok
 A useful restricted case of the remaining colouring argument can be
 isolated without identifying the general abstract Definition~24
 marker partition with the corrected literal $R$.
@@ -8095,14 +8095,14 @@ The existing classwise-extension lemma then extends this
 partial induced colouring to a total smooth colouring of
 the full enlarged mixed-product space.
 
-The new \lean{ForwardQSimpleLetterSmooth} module proposes
+The merged \lean{ForwardQSimpleLetterSmooth} module verifies
 eight source-facing kernel-checked endpoints: word-only
 sampling, fibrewise decoding independence, all-$\Gamma_1$
 word visibility, universal interior agreement, the
 empty-$B_2$ simplicity pullback, and total smooth
-extension.  Marked \todo\ until GitHub Actions verifies
-the branch and its transitive no-\texttt{sorryAx} audit
-(target 1143 statements).
+extension.  GitHub Actions passed both the Lean build and the
+transitive no-\texttt{sorryAx} audit, reaching
+1143 source-facing declarations in merged PR~\#262.
 
 \textbf{Scope.}
 This is the honest special case $B_2=\varnothing$.
