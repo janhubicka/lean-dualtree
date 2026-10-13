@@ -8060,6 +8060,60 @@ The unrestricted union assertion is false for disjoint $L_1,L_2$.  It becomes
 true when $L_1\cap L_2\ne\varnothing$, which is sufficient for the actual
 application $L_j=\{a_j,a_{j+1}\}$.
 
+
+\paragraph{The full-fibre $Q$ and the $B_2=\varnothing$ simplicity case.} \todo
+A useful restricted case of the remaining colouring argument can be
+isolated without identifying the general abstract Definition~24
+marker partition with the corrected literal $R$.
+Fix the genuine ambient fibre frame $(f,g'=f[\rho],T)$, the
+forward-corrected starred mixed input domain with alphabet
+$\Lambda\sqcup\operatorname{Fin}(m+1)$, and a colouring $c$
+of starred refinements of $f$ with the \emph{empty-$B_2$}
+simplicity witness: any two refinements with the same interior
+vertex set and the same full ambient variable word receive
+the same colour.  Refinement here requires both support
+containment in $T$ and evaluated word-span containment in $[f]$.
+
+Take $\Gamma_1=D_2$ and $\Gamma_2=\varnothing$.
+If two enlarged mixed-product points are $\Gamma_1$-smooth-related,
+their complete local coordinate words agree at every $D_0$ and
+$D_2$ index, although their marked $D_2$ points need not agree.
+The genuine fibrewise corrected $Q$ decoder samples local
+letters using the original $f$-variable roots and canonical
+frontier inverse addresses; neither that sampling nor the
+early-fibre substitution uses the selected marked points.
+Thus the two complete $Q$ output words agree on
+\emph{every} ambient $f$-fibre, not just at the projected roots.
+The already verified interior theorem identifies both
+$Q$ interiors with $\operatorname{Int}(S)$, and the global
+ambient substitution theorem identifies both outputs as
+refinements of $f$. Empty-$B_2$ simplicity therefore makes
+$c\circ Q$ constant on $\Gamma_1$ smoothness classes.
+The existing classwise-extension lemma then extends this
+partial induced colouring to a total smooth colouring of
+the full enlarged mixed-product space.
+
+The new \lean{ForwardQSimpleLetterSmooth} module proposes
+seven source-facing kernel-checked endpoints: word-only
+sampling, fibrewise decoding independence, all-$\Gamma_1$
+word visibility, universal interior agreement, the
+empty-$B_2$ simplicity pullback, and total smooth
+extension.  Marked \todo\ until GitHub Actions verifies
+the branch and its transitive no-\texttt{sorryAx} audit
+(target 1142 statements).
+
+\textbf{Scope.}
+This is the honest special case $B_2=\varnothing$.
+The general $B_2\ne\varnothing$ argument needs the
+canonical abstract $A=B_1\dot\cup B_2$ to literal $R$
+marker correspondence \emph{and} the precise outside-cone
+word observability under an actual mixed-product
+variable-word substitution. In the general case the Q
+words need \emph{not} agree everywhere, and the selected
+Q marked points may vary at the $\Gamma_1$ coordinates.
+No general simplicity transport, recursive Ramsey bound,
+printed reverse-order Q or final $f'$ has been proved here.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
