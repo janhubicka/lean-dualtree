@@ -4623,6 +4623,61 @@ The present proof is not a proof of Lemma~27 for the printed
 ambient order, nor does it infer a substitution from evaluated
 span inclusion for a singleton alphabet.
 
+
+\paragraph{Finished root alignment of the corrected fibrewise $Q$
+word and legal starred output.} \ok
+Under the corrected forward-order \texttt{FibreFrame}
+(which carries the original ambient complete-support variable
+word $f$, its support $T$, and a uniform substitution witness
+$g'=f[\rho]$), the full $f$-fibrewise Q symbol map now satisfies
+both well-formedness axioms of a tree-variable word.
+At each retained old root $v$ the new map emits $v$;
+whenever it emits a source variable $u$ at an arbitrary
+ambient position $s$, the root of $u$ is a prefix of $s$.
+
+The second assertion has a short exact proof: if the original
+$f(s)$ is an old/early fibre, the property follows from the
+already valid $g'$; if it is a later fibre rooted at $t$ and the
+$R_i$ decoder emits $u$, then
+\[
+    \operatorname{root}(u)
+       \prec f_i\preceq t\preceq s.
+\]
+Here $f_i$ is the unique corrected outside-cut frontier
+containing the \emph{original $f$-variable root} $t$.
+The final prefix is supplied by the original ambient
+variable-word fibre axiom. Thus geometric membership of
+$s$ in the frontier cone is \emph{not} required.
+
+The resulting word has the original source variable-root
+support and, together with the independently verified
+semi-complete corrected $Q$ support, gives an actual legal
+starred word. The entire-fibre source Q(iv) identity carries
+over verbatim to that finished word, for both old alphabet
+letters and the auxiliary $R_i$ labels.
+Corresponding proposed Lean endpoints are
+\lean{DualTree.ForwardQAmbientFibreLegalWord.decodeAmbientRoot_below},
+\lean{DualTree.ForwardQAmbientFibreLegalWord.fibreQ_symbol_below},
+\lean{DualTree.ForwardQAmbientFibreLegalWord.fibreQVariableWord_support},
+\lean{DualTree.ForwardQAmbientFibreLegalWord.fibreQStarredWord_tree},
+\lean{DualTree.ForwardQAmbientFibreLegalWord.fibreQStarredWord_support_interior},
+and
+\lean{DualTree.ForwardQAmbientFibreLegalWord.fibreQStarredWord_projected_full_fibre}.
+
+\todo\ The original paper's printed-order Q is still refuted
+as a universal construction. The present \emph{forward-corrected}
+version uses a strengthened explicit syntactic-refinement
+hypothesis; it is not yet shown equivalent to the paper's
+hypothesis when the alphabet is a singleton. Moreover the
+mixed-product domain is the corrected safe-tail domain and
+its D$_2$ point order is not simply a permutation of the
+printed W$_*$ domain. The exact Definition~24
+simple-colouring/Gamma$_1$--Gamma$_2$ compatibility
+and the subsequent variable mixed-product refinement $f'$
+remain unproved. In particular do not claim that this
+starred-word construction alone establishes Lemma~27,
+Lemma~28 or Theorem~25.
+
 \section{Computational evidence retained}
 Before Lean formalization, exhaustive finite programs established or tested:
 \begin{itemize}
