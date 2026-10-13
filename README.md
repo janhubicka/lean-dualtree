@@ -340,6 +340,21 @@ obligation; `\todo` marks a remaining gap or proposed change.
   simple-colouring factorization nor the Ramsey induction follows
   (4 proposed source-facing endpoints in PR #256; requires CI).
 
+- **One global ambient substitution realizes the entire corrected
+  Q word.** The input carries an explicit syntactic refinement
+  g'=f[rho]. For each ambient f-variable root, the Q substitution
+  uses rho on early/cut fibres and the concrete R_i-decoded
+  enlarged letter on later fibres. The whole-domain identity
+  g_w=f[rho_w] follows, not just a collection of projected-root
+  equations. Consequently the FINISHED legal corrected starred
+  Q output satisfies both S_w subset ws(f)=T and
+  [g_w]_Lambda subset [f]_Lambda. This needs no Hall matching and
+  no two-letter assumption because the substitution is built
+  explicitly. It remains conditional on the corrected forward
+  order and the syntactic source-refinement premise; Def24
+  smoothness and the final f' Ramsey refinement are still open
+  (7 proposed source-facing endpoints, CI pending).
+
 - The **corrected full f-fibrewise Q word now has its variable-root
   well-formedness proof**: old variable roots are retained, and any
   emitted variable at an arbitrary ambient position is rooted above
