@@ -355,3 +355,5 @@ import DualTree.ForwardQVisibleSpanCapacityIff
 import DualTree.ForwardQGlobalHallSpan
 
 import DualTree.ForwardQOccurringHallSpan
+
+import DualTree.ForwardQHallConeData
