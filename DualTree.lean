@@ -349,3 +349,5 @@ import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQVariableSpanCollapse
 
 import DualTree.ForwardQSpanExactInjectivity
+
+import DualTree.ForwardQVisibleSpanCapacityIff
