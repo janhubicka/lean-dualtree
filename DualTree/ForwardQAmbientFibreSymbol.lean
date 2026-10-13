@@ -271,7 +271,7 @@ theorem decode_ambient_projected_root
         | Sum.inr h =>
             ForwardQVisibleAncestorDecoder.decodeAux
               c.core fallback j h) = _
-  rw [hselected, hletter]
+  simp only [hselected, hletter]
 
 /-- The FULL source-facing clause (iv) at an f-variable ROOT:
 we decode actual w_i(z), never a synthetic one-cone symbol. -/
