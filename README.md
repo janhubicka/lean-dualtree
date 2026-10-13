@@ -16,6 +16,17 @@ formal proof of the full dual-tree Ramsey theorem. The cumulative
 counterexamples, and proposed repairs. `\ok` records a discharged
 obligation; `\todo` marks a remaining gap or proposed change.
 
+
+- **B2-empty simplicity-to-smoothness (new, CI pending):** for the genuine
+  corrected ambient-fibrewise Q, equality of all enlarged coordinate words
+  implies equality of its complete root-labelled output words even if D2 marked points
+  move; the Q interior stays equal to the old source interior. Therefore a
+  Definition 24 simple colouring with the special witness B2 = empty pulls
+  back to a Gamma1-all smooth colouring, with a classwise total extension
+  to the enlarged mixed product. This does NOT transfer a general B2 witness
+  or complete the final Ramsey step. See
+  `DualTree/ForwardQSimpleLetterSmooth.lean` (eight audited endpoints).
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

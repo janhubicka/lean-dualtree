@@ -1342,3 +1342,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQAmbientFibreSpan.fibreSubstitution_fixes_old_roots
 #print axioms DualTree.ForwardQAmbientFibreSpan.fibreQStarredWord_span_subset_ambient
 #print axioms DualTree.ForwardQAmbientFibreSpan.fibreQStarredWord_refines_ambient
+
+#print axioms DualTree.ForwardQSimpleLetterSmooth.sampled_eq_of_words
+#print axioms DualTree.ForwardQSimpleLetterSmooth.decodeAmbientRoot_eq_of_words
+#print axioms DualTree.ForwardQSimpleLetterSmooth.fibreQSymbol_eq_of_words
+#print axioms DualTree.ForwardQSimpleLetterSmooth.words_eq_of_all_gamma1
+#print axioms DualTree.ForwardQSimpleLetterSmooth.Q_interiors_eq
+#print axioms DualTree.ForwardQSimpleLetterSmooth.rootLabel_fibreQ
+#print axioms DualTree.ForwardQSimpleLetterSmooth.simple_pullback_smooth_allGamma1
+#print axioms DualTree.ForwardQSimpleLetterSmooth.exists_total_smooth_color
