@@ -138,6 +138,20 @@ theorem Q_interiors_eq
     (ForwardQInteriorExact.Q_interior_iff_original hb c.core
       (ForwardQEnlargedConstantWords.eraseAux c.core fallback y.1) t).symm
 
+/-- The actual symbol of a starred variable word with its
+variable indexed by the ROOT node, rather than by a proof
+that the node belongs to a particular support list. This is
+the honest comparable notion of full word equality when two
+starred refinements have different support-list representations. -/
+def rootLabel
+    {b n l : Nat} {α : Type*}
+    (u : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)))
+    (s : BoundedNode b n) : Sum α (BoundedNode b n) :=
+  match u.word.word s with
+  | Sum.inl a => Sum.inl a
+  | Sum.inr v => Sum.inr v.1
+
 /-- Exact special case of Definition 24 with B₂ empty:
 for two starred refinements of the SAME ambient f, equal
 interiors and equal full words force equal colours.
@@ -158,7 +172,7 @@ def LetterSimpleWithinAmbient
     (∀ t : Node b,
       t ∈ SkewTree.interior u.tree ↔
       t ∈ SkewTree.interior v.tree) →
-    (∀ s : BoundedNode b n, u.word.word s = v.word.word s) →
+    (∀ s : BoundedNode b n, rootLabel u s = rootLabel v s) →
     color u = color v
 
 /-- Genuine B₂-empty simplicity of the original starred
@@ -188,9 +202,14 @@ theorem simple_pullback_smooth_allGamma1
   · intro t
     exact Q_interiors_eq hb c fallback x y t
   · intro s
-    change fibreQSymbol c fallback x.1 s =
-      fibreQSymbol c fallback y.1 s
-    exact fibreQSymbol_eq_of_words c fallback x.1 y.1 hwords s
+    change
+      (match fibreQSymbol c fallback x.1 s with
+       | Sum.inl a => Sum.inl a
+       | Sum.inr v => Sum.inr v.1) =
+      (match fibreQSymbol c fallback y.1 s with
+       | Sum.inl a => Sum.inl a
+       | Sum.inr v => Sum.inr v.1)
+    rw [fibreQSymbol_eq_of_words c fallback x.1 y.1 hwords s]
 
 /-- The pulled-back B₂-empty simple colouring of the corrected
 enlarged starred subtype extends to a total, Gamma1-all
