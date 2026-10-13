@@ -35,6 +35,19 @@ abbrev Index
     (c : Frame b n l k m α) :=
   ForwardQFullFrontierWord.Index c
 
+/-- Cardinality of the finite subtype of actually occurring tagged
+names. The occurrence predicate is not computably decidable, so we
+make its finite instance explicitly classical at definition time. -/
+noncomputable def occurringCount
+    {b n l k m : Nat} {α β : Type*}
+    (c : Frame b n l k m α)
+    (q : Index c → Nat)
+    (fallback : β)
+    (raw : ∀ i : Index c,
+      BoundedNode b n → Sum β (Fin (q i))) : Nat := by
+  classical
+  exact Fintype.card (OccurringTag c q fallback raw)
+
 /-- A root map injective on the variables that ACTUALLY occur admits
 a simultaneous extension of every assignment of source names.
 There is no requirement to distinguish unused variables. -/
@@ -74,7 +87,7 @@ theorem occurringHall_total_capacity
     (raw : ∀ i : Index c,
       BoundedNode b n → Sum β (Fin (q i)))
     (hHall : OccurringHall c q fallback raw) :
-    Fintype.card (OccurringTag c q fallback raw) ≤
+    occurringCount c q fallback raw ≤
       Fintype.card c.source.word.Vars := by
   classical
   have hHallAll :=
@@ -85,7 +98,7 @@ theorem occurringHall_total_capacity
           (Finset.univ : Finset c.source.word.Vars) :=
     Finset.subset_univ _
   have hle := hHallAll.trans (Finset.card_le_card hsubset)
-  simpa using hle
+  simpa [occurringCount] using hle
 
 /-- More genuinely independent local variable names than old
 source roots make the occurrence-level Hall criterion impossible. -/
@@ -98,7 +111,7 @@ theorem not_occurringHall_of_excess
       BoundedNode b n → Sum β (Fin (q i)))
     (hexcess :
       Fintype.card c.source.word.Vars <
-        Fintype.card (OccurringTag c q fallback raw)) :
+        occurringCount c q fallback raw) :
     ¬ OccurringHall c q fallback raw := by
   intro hHall
   exact (Nat.not_lt_of_ge
