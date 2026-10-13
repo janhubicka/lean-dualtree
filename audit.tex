@@ -4571,6 +4571,58 @@ Only after this do the literal definition of
 $Q$, the simplicity-to-smoothness comparison,
 and the subsequent variable-word refinement become available.
 
+
+\paragraph{Source-faithful $Q$-symbol map on entire $f$-fibres.} \ok
+Once the strengthened ambient frame is supplied, the symbol map
+$g_w$ is now defined at \emph{every} ambient position by inspecting
+the original ambient variable-word symbol $f(s)$ first.
+If $f(s)=a\in\Lambda$, the result is $a$ even if $s$
+happens to belong geometrically to a later frontier cone.
+If $f(s)=v_t$ with $t$ at or before the chosen cut,
+the result is $g'(s)=g'(t)$, where the equality uses the
+proved uniform-substitution refinement. If the root $t$
+lies after the cut, we determine its unique minimal
+outside-cut frontier, compute its intrinsic safe inverse
+support address $z$ and decode $w_i(z)$ as an original
+letter or through the certified $R_i$ decoder. Otherwise
+we use the original fallback letter.
+
+In particular the new source-facing fibre identity is
+\[
+  f(s)=v_{P_i(z)}
+  \quad\Longrightarrow\quad
+  g_w(s)=
+  \begin{cases}
+    a,& w_i(z)=a\in\Lambda,\\
+    R_i(j),& w_i(z)=j\in\{0,\ldots,m'\}.
+  \end{cases}
+\]
+Crucially, this is verified for \emph{every} $s$ in the
+entire original $f$-variable fibre, not just the projected
+root $s=P_i(z)$. Thus the earlier inaccurate replacement
+of $f$-fibres by geometric cones of ambient \emph{positions}
+has been eliminated. The checks are
+\lean{DualTree.ForwardQAmbientFibreSymbol.fibreQ_original_constant},
+\lean{DualTree.ForwardQAmbientFibreSymbol.fibreQ_before_cut},
+\lean{DualTree.ForwardQAmbientFibreSymbol.fibreQ_constant_on_ambient_fibre},
+\lean{DualTree.ForwardQAmbientFibreSymbol.fibreQ_at_old_root},
+\lean{DualTree.ForwardQAmbientFibreSymbol.fibreQ_projected_full_fibre},
+and
+\lean{DualTree.ForwardQAmbientFibreSymbol.fibreQ_unprojected_no_frontier}.
+
+\todo\ These are pointwise symbol identities \emph{under
+the explicitly strengthened ambient substitution premise}.
+The final legal starred-word proof must still establish that
+every decoded old variable has its genuine original root
+as a prefix of its ambient occurrence, that every old root
+is attained (the second is already proved), and that the
+result has the correct reconstructed $Q$ support. Afterwards
+check the exact Definition~24 simplicity-to-smoothness pullback
+and the mixed-product Hales--Jewett refinement $f'$.
+The present proof is not a proof of Lemma~27 for the printed
+ambient order, nor does it infer a substitution from evaluated
+span inclusion for a singleton alphabet.
+
 \section{Computational evidence retained}
 Before Lean formalization, exhaustive finite programs established or tested:
 \begin{itemize}
