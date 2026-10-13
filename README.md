@@ -310,7 +310,22 @@ obligation; `\todo` marks a remaining gap or proposed change.
   full-span preservation and visible occurring roots imply Hall.
   Matched roots are prefix-aligned at every occurrence. The
   *particular* raw words and colour-factorization from Lemma 27
-  remain open (8 additional source-facing endpoints, CI pending).
+  remain open (8 CI-verified endpoints in merged PR #254).
+- Under the exact occurring-variable Hall condition, a proposed
+  **single conditional FULL-frontier Q-word constructor** now
+  combines the matched old source-variable roots with the
+  source-facing visible-ancestor auxiliary decoders R_i.
+  Local variables are tagged by their actual frontier indices,
+  so independent names from different cones are not silently
+  identified. Masked raw symbols preserve the original three
+  constructors inside each genuine cone, and Hall visibility
+  discharges genuine-variable root alignment. The construction
+  yields an actual legal starred Q word on the corrected Q support
+  AND preserves the full evaluated independent tagged-coordinate
+  span under the same global root allocation. This does not yet
+  instantiate the paper's specific raw words, prove its signature
+  or simple-colouring factorization, or finish its Ramsey induction
+  (5 source-facing endpoints, pending CI).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -326,7 +341,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1080 source-facing declarations** for transitive
+audits **1085 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -460,6 +475,8 @@ root-allocation capacity for full evaluated-span preservation.
 for simultaneous root-aligned allocation and full tagged global span.
 `ForwardQOccurringHallSpan` refines it to actually occurring cone variables,
 with unused local names ignored and inside-cone masking explicit.
+`ForwardQHallConeData` connects the Hall allocation to the actual
+full-frontier three-constructor starred Q-word assembly, conditional on Hall.
 `ForwardQCanonicalConeRootChoice` supplies the verified iff criterion
 for existence of some old-root transport and a deliberately collapsing
 first-visible-root witness.
