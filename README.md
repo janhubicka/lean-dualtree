@@ -247,6 +247,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   obligation is the canonical address transport from its abstract
   Definition 24 A=B₁⊔B₂ to the actual R, followed by verifying its
   particular colouring factors through the record (7 source-facing Lean endpoints, CI-green in PR #250).
+- A proposed **strict evaluated-span loss** theorem quantifies
+  the genuine-variable transport obstruction: over any alphabet
+  with two distinct letters, identifying two different local
+  variable names that both actually occur strictly shrinks
+  the evaluated span. At a corrected Q frontier with m+2
+  such names and at most m+1 visible old roots, any
+  root-aligned transport necessarily identifies some names,
+  so it cannot preserve the FULL local raw-word span.
+  This is a conditional limitation on the naive Lemma 27
+  repair, not a counterexample to the main Ramsey theorem
+  (3 source-facing endpoints, CI-green on previous branch; final combined check pending).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -262,7 +273,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1051 source-facing declarations** for transitive
+audits **1054 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -386,6 +397,8 @@ per-occurrence condition for genuine cone-variable root transport.
 `ForwardQVisibleRootCapacity` bounds its number of distinct old-root targets,
 gives faithful finite indices and establishes the m+2 versus m+1
 non-injectivity obstruction.
+`ForwardQVariableSpanCollapse` proves the strict two-letter span loss
+when genuinely occurring cone-variable names are identified.
 `ForwardQCanonicalConeRootChoice` supplies the verified iff criterion
 for existence of some old-root transport and a deliberately collapsing
 first-visible-root witness.

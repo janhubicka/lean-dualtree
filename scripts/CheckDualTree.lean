@@ -1246,3 +1246,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQMarkerFingerprint.markerB2_point_recorded
 #print axioms DualTree.ForwardQMarkerFingerprint.markerFingerprint_eq_iff_smooth
 #print axioms DualTree.ForwardQMarkerFingerprint.markerSmoothStarred_iff_factors
+
+#print axioms DualTree.ForwardQVariableSpanCollapse.original_span_not_subset_of_collapsed_span
+#print axioms DualTree.ForwardQVariableSpanCollapse.collapsed_span_properly_contained
+#print axioms DualTree.ForwardQVariableSpanCollapse.actual_frontier_full_span_not_preserved
