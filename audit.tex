@@ -7055,6 +7055,125 @@ the injectivity condition or
 that their global mixed-product
 Ramsey span is now established.
 
+
+\paragraph{Exact visible-root capacity for preserving the full evaluated span of one corrected $Q$ frontier cone.} \todo
+The preceding exact span criterion
+can be combined with the explicit
+finite chain of old source-variable
+roots visible at a corrected
+outside-cut frontier $f_i$.
+Write
+\[
+ V_i=\{v\in\operatorname{Vars}(g):
+               \operatorname{root}(v)\sqsubset f_i\},
+ \qquad |V_i|\le m+1.
+\]
+Because the stored $V_i$ list is
+duplicate-free and each listed root
+lifts to a unique actual old
+source-variable subtype, any
+local variable set of size
+$q\le|V_i|$ admits a \emph{concrete
+injective} root assignment:
+send the ordered names
+$z\in\operatorname{Fin}(q)$
+to the first $q$ members of
+the visible-root list.
+Every selected target is
+a strict predecessor of
+$f_i$, and hence automatically
+root-aligned with all its
+occurrences in the full cone.
+The map is genuinely injective,
+so the preceding full-span
+criterion proves equality
+of evaluated raw-word spans
+for \emph{every} local word
+with these $q$ variable names.
+
+Conversely, suppose all $q$
+local names genuinely occur
+at positions inside that
+full frontier cone.
+Any assignment to old
+source roots that lies in
+$V_i$ and preserves the
+\emph{full} local two-letter
+evaluated span must be
+injective on all $q$ names,
+by the proved exact span
+criterion. Finite cardinality
+therefore forces $q\le|V_i|$.
+The sharpened positive/negative
+statement is
+\[
+ \boxed{
+  \begin{gathered}
+   \exists\,\rho_i:
+     \operatorname{Fin}(q)\to
+       \operatorname{Vars}(g),\\
+   \operatorname{root}(\rho_i(z))\in V_i
+        \ \text{for all }z,\quad
+   \operatorname{Span}((\rho_i)_*w_i)
+        =\operatorname{Span}(w_i)
+  \end{gathered}
+  \iff q\le|V_i|
+ }
+\]
+provided all $q$ symbols
+occur inside the cone
+and the enlarged local alphabet
+has two distinguishable letters.
+The \emph{positive} direction
+does not require this
+occurrence hypothesis.
+
+The proposed source-facing
+\lean{ForwardQVisibleSpanCapacityIff}
+module builds the literal
+first-$q$ root assignment,
+proves its visibility,
+prefix alignment and
+injectivity, obtains the
+positive full-span equality,
+and establishes the converse
+cardinality bound and
+existence/capacity equivalence.
+Six transitive theorem
+endpoints target 1064
+on the branch stacked after
+the 1058-declaration
+injectivity criterion,
+pending Lean CI.
+
+\paragraph{What this does not prove.}
+This is a sharp \emph{single
+frontier} capacity statement.
+The paper's specific raw local
+variable words must still
+be shown to have at most
+$|V_i|$ independent
+\emph{occurring} names for
+their respective frontiers,
+or have a correctly justified
+smaller span. Even if each
+cone has enough visible roots,
+the corresponding assignments
+may overlap across different
+$D_0/D_2$ cones and need not
+combine into one substitution
+of the global old source
+variables with the independence
+claimed in the mixed-product
+Ramsey recursion.
+The canonical address transport
+from Definition~24's
+$A=B_1\dot\cup B_2$ into
+literal corrected $R$ and
+the particular simple-colouring
+factorization remain separate
+open obligations.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
