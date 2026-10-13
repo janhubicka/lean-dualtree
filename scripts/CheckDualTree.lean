@@ -1301,3 +1301,14 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQEnlargedConstantWords.enlarged_Q_original_projected
 #print axioms DualTree.ForwardQEnlargedConstantWords.enlarged_Q_auxiliary_projected
 #print axioms DualTree.ForwardQEnlargedConstantWords.enlarged_Q_evaluated_projected
+
+#print axioms DualTree.ForwardQAmbientFibreFrame.source_root_in_ambient
+#print axioms DualTree.ForwardQAmbientFibreFrame.ambientAtSourceRoot_node
+#print axioms DualTree.ForwardQAmbientFibreFrame.ambient_at_source_root_symbol
+#print axioms DualTree.ForwardQAmbientFibreFrame.source_root_before_cut
+#print axioms DualTree.ForwardQAmbientFibreFrame.ambientAtTRoot_node
+#print axioms DualTree.ForwardQAmbientFibreFrame.ambient_at_T_root_symbol
+#print axioms DualTree.ForwardQAmbientFibreFrame.source_constant_of_ambient_constant
+#print axioms DualTree.ForwardQAmbientFibreFrame.source_uniform_on_ambient_fibre
+#print axioms DualTree.ForwardQAmbientFibreFrame.source_substitution_fixes_old_root
+#print axioms DualTree.ForwardQAmbientFibreFrame.old_root_fibre_is_retained
