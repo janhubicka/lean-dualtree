@@ -281,11 +281,24 @@ obligation; `\todo` marks a remaining gap or proposed change.
   forces q≤|V_i|. This exact iff still does not establish
   compatibility of root assignments ACROSS cones or the printed
   Lemma 27 span, simplicity and Ramsey iteration
-  (6 Lean endpoints, full CI green on PR #252; 1064 target). At multiple
+  (6 verified Lean endpoints in merged PR #252). At multiple
   frontiers a GLOBAL independent-variable translation requires a
   Hall-type matching condition on the unions of visible old-root
   sets; separate per-frontier capacity inequalities alone do not
   suffice. This is recorded as an unverified author-facing TODO.
+- **Global independent-variable allocation has a sharp proposed Hall
+  matching criterion.** Tags (i,z) remember their sorted D₀/D₂
+  frontier; each tag can use only actual old source variables whose
+  roots are visible above frontier i. A globally injective,
+  root-aligned assignment exists exactly when every set of tags
+  has at least as many distinct available old roots as tags.
+  By the checked injective-on-occurrences theorem this matching
+  preserves the entire evaluated span of the disjoint union of
+  local cone words; conversely, when all declared tagged names
+  occur and the enlarged alphabet has two letters, preserving the
+  full span forces Hall's inequalities. This is NOT yet the
+  paper-specific global Q word, colouring compatibility or
+  Ramsey recursion (8 proposed endpoints, pending CI).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -301,7 +314,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1064 source-facing declarations** for transitive
+audits **1072 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -431,6 +444,8 @@ when genuinely occurring cone-variable names are identified.
 by injectivity on exactly the occurring variable names.
 `ForwardQVisibleSpanCapacityIff` derives sharp q≤|V_i| local
 root-allocation capacity for full evaluated-span preservation.
+`ForwardQGlobalHallSpan` gives the proposed finite Hall iff criterion
+for simultaneous root-aligned allocation and full tagged global span.
 `ForwardQCanonicalConeRootChoice` supplies the verified iff criterion
 for existence of some old-root transport and a deliberately collapsing
 first-visible-root witness.
