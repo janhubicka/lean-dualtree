@@ -100,6 +100,9 @@ theorem Q_word_eq_on_observable_full_fibre
   rw [fibreQStarredWord_projected_full_fibre hb c fallback x i z s hs,
       fibreQStarredWord_projected_full_fibre hb c fallback y i z s hs]
   rw [hletter]
+  cases hz : y.1.words i z with
+  | inl a => simp [hz]
+  | inr j => simp [hz]
 
 /-- Every genuine D0/plain coordinate is entirely observable:
 its Q symbol agrees on the complete original f-fibre
