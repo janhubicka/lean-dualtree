@@ -17,7 +17,7 @@ counterexamples, and proposed repairs. `\ok` records a discharged
 obligation; `\todo` marks a remaining gap or proposed change.
 
 
-- **B2-empty simplicity-to-smoothness (new, CI pending):** for the genuine
+- **B2-empty simplicity-to-smoothness (merged #262, CI verified):** for the genuine
   corrected ambient-fibrewise Q, equality of all enlarged coordinate words
   implies equality of its complete root-labelled output words even if D2 marked points
   move; the Q interior stays equal to the old source interior. Therefore a
