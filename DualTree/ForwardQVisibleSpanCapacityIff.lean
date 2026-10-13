@@ -97,7 +97,10 @@ theorem visibleRootInjection_injective
     visibleVariable c i (Fin.castLE hq v) at heq
   have hindex : Fin.castLE hq u = Fin.castLE hq v :=
     (visibleVariable_injective c i) heq
-  exact Fin.ext (congrArg Fin.val hindex)
+  have hval : (Fin.castLE hq u).val =
+      (Fin.castLE hq v).val :=
+    congrArg (fun t : Fin (visibleList c i).length => t.val) hindex
+  exact Fin.ext (by simpa only [Fin.val_castLE] using hval)
 
 /-- Every raw local cone word with q variable names preserves
 its COMPLETE evaluated span after this root translation when
