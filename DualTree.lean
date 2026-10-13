@@ -365,3 +365,5 @@ import DualTree.ForwardQEnlargedConstantWords
 import DualTree.ForwardQAmbientFibreFrame
 
 import DualTree.ForwardQAmbientFibreSymbol
+
+import DualTree.ForwardQAmbientFibreLegalWord
