@@ -340,6 +340,22 @@ obligation; `\todo` marks a remaining gap or proposed change.
   simple-colouring factorization nor the Ramsey induction follows
   (4 proposed source-facing endpoints in PR #256; requires CI).
 
+- The **corrected full f-fibrewise Q word now has its variable-root
+  well-formedness proof**: old variable roots are retained, and any
+  emitted variable at an arbitrary ambient position is rooted above
+  that position. In a late fibre the key prefix chain is old source
+  root < visible frontier ≤ original f-variable root ≤ occurrence,
+  so the proof uses f's FIBRES, not geometric cone membership of the
+  occurrence. A genuinely legal StarredWord on the exact corrected
+  semi-complete Q support is constructed and retains the complete
+  projected full-fibre letter/R_i equation. This advances Q from
+  a conditional symbol scaffold to a real corrected starred word.
+  Hypotheses still include the explicit syntactic g'=f[rho]
+  witness and forward-sorted corrected Wstar points. Def24
+  simplicity-to-smoothness and the final f' refinement remain
+  open (9 proposed source-facing endpoints on the follow-up branch,
+  awaiting Lean CI).
+
 - A new **genuinely ambient-fibrewise Q symbol map** reads the
   original ambient f(s) BEFORE consulting any frontier.
   Original constants stay untouched; early/cut variables use g',
