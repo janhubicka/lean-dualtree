@@ -7418,7 +7418,7 @@ recursion also remain independent
 obligations, not consequences of Hall.
 
 
-\paragraph{Sharper Hall condition on the \emph{actually occurring} independent cone variables.} \todo
+\paragraph{Sharper Hall condition on the \emph{actually occurring} independent cone variables.} \ok
 The preceding verified global Hall
 criterion names \emph{all} declared
 local variables and requires all
@@ -7536,9 +7536,9 @@ unused names, both directions
 of full span preservation,
 and the actual root-prefix
 alignment consequence.
-Eight new transitive axiom
-endpoints target 1080,
-pending Lean CI.
+All eight source-facing endpoints passed Lean compilation,
+finite regressions and the 1080-declaration transitive
+no-\texttt{sorryAx} audit in merged PR~\#254.
 
 \paragraph{What the sharper matching theorem still leaves open.}
 This removes the artificial
@@ -7562,6 +7562,153 @@ transport, colouring pullback,
 forward starred-domain
 Ramsey input and recursive
 bounds remain \todo.
+
+
+\paragraph{Assembling one legal three-way $Q$ word from a global Hall matching.} \todo
+The global Hall theorem on genuinely
+occurring tagged cone variables
+can now be connected to the
+\emph{actual corrected}
+three-constructor $Q$-word
+assembly, rather than stopping
+at a standalone finite
+matching. Fix a corrected
+forward frame, a vector
+of local name counts $(q_i)_i$,
+and raw symbols of the type
+\[
+  \operatorname{raw}_i(t)
+   \in(\Lambda\sqcup
+          \operatorname{Fin}(m+1))
+                   \sqcup\operatorname{Fin}(q_i).
+\]
+Each local variable $z$ is
+tagged by its true sorted
+frontier index $i$,
+so its global name is $(i,z)$.
+Raw data outside its own
+complete frontier cone are
+replaced by a fallback
+original letter. Inside the
+cone the original three
+constructors are preserved
+literally. The decoder of
+auxiliary labels is the
+\emph{already verified}
+source-facing visible-ancestor
+map $R_i$.
+
+The enlarged alphabet
+$\Lambda\sqcup\operatorname{Fin}(m+1)$
+has two distinct symbols
+whenever an original fallback
+letter exists, regardless of
+whether $\Lambda$ has one or
+more than one letter: its
+original-letter and
+auxiliary-letter constructors
+cannot coincide. Thus the
+two-letter hypothesis of the
+global evaluated-span
+criterion is automatically
+available for the raw
+mixed-word alphabet.
+Under the exact
+\emph{occurring-tag Hall
+condition}, choose its
+certified total root map
+\[
+ \rho:\mathop{\dot\bigcup}_i
+        \operatorname{Fin}(q_i)
+       \longrightarrow
+        \operatorname{Vars}(g)
+\]
+which is visible and
+injective on the names
+actually occurring inside
+their frontiers, and may
+use a harmless old cut
+variable on unused names.
+The three-constructor
+$Q$ builder then receives
+\[
+ \operatorname{coneRoot}_i(i,z)
+       =\rho(i,z).
+\]
+At every genuine cone
+variable occurrence,
+the Hall visibility
+certificate makes
+$\operatorname{root}(\rho(i,z))$
+a strict predecessor
+of $f_i$, so the
+root-prefix alignment
+hypothesis of
+\lean{ForwardQVisibleAncestorDecoder.coneData}
+is \emph{derived}, not
+separately assumed.
+Consequently its decoded
+output is a legally
+rooted starred word
+on the \emph{exact}
+corrected $Q$ support
+for any actual
+corrected-starred input
+$x$ and the required
+ambient height bound.
+
+The same witness
+$\rho$ simultaneously
+preserves the full
+evaluated independent
+coordinate span of the
+cone-masked \emph{tagged}
+raw word. The proposed
+module
+\lean{ForwardQHallConeData}
+formalizes the two-letter
+enlarged-alphabet
+witness, the literal
+inside/outside raw
+symbol equations, the
+root-aligned
+three-way \lean{ConeData}
+construction together
+with global span equality,
+and the actual
+starred-$Q$ support and
+inside-cone word equations.
+Five transitive source-facing
+Lean endpoints target
+1085, pending CI.
+
+\paragraph{Boundary of the conditional repair.}
+The result is a \emph{single
+conditional source-facing
+word-construction interface}
+from a Hall certificate.
+It does not yet establish
+that the particular raw
+local words or chosen
+variable translations in
+the printed Lemma~27
+satisfy this certificate.
+Nor does equality of the
+disjoint-union tagged
+coordinate span alone
+prove that the resulting
+starred word has the
+paper's \emph{particular}
+signature restriction,
+that the simple colouring
+factors through the
+already verified
+$R/B_2$ fingerprint,
+or that the recursive
+mixed-product Ramsey
+parameter inequalities
+are valid. These remain
+independent \todo{} claims.
 
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a

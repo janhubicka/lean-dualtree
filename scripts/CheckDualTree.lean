@@ -1280,3 +1280,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQOccurringHallSpan.occurringHall_of_full_span
 #print axioms DualTree.ForwardQOccurringHallSpan.full_span_preserving_root_iff_occurringHall
 #print axioms DualTree.ForwardQOccurringHallSpan.occurringHall_gives_prefix_alignment
+
+#print axioms DualTree.ForwardQHallConeData.enlargedAlphabet_two_letters
+#print axioms DualTree.ForwardQHallConeData.taggedConeRaw_inside
+#print axioms DualTree.ForwardQHallConeData.taggedConeRaw_outside
+#print axioms DualTree.ForwardQHallConeData.hall_constructs_coneData_and_span
+#print axioms DualTree.ForwardQHallConeData.hall_constructs_actual_starred_Q
