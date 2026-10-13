@@ -7294,6 +7294,131 @@ three-constructor cone words
 before using it to repair
 Lemma~27.
 
+
+\paragraph{A sharp \emph{global} Hall criterion for independent tagged cone-variable spans.} \todo
+The verified one-frontier bound $q_i\le|V_i|$
+is not sufficient to produce a \emph{single}
+injective translation of all independent
+variables in the mixed product. The
+visible-root chains $V_i$ of different
+frontiers can overlap: the same old source
+variable may be a predecessor of many
+distinct outside-cut cones.
+The correct finite index set of variable
+names for the independent-coordinate
+span is the disjoint union
+\[
+ E=\mathop{\dot\bigcup}_{i\in D_0\cup D_2}
+          \operatorname{Fin}(q_i),
+\]
+whose elements $(i,z)$ remember the
+\emph{actual sorted frontier index} as well
+as the local name. A variable tagged by
+$i$ may be renamed only to an old
+source variable in the checked list
+$V_i$. Thus define the finite target
+family
+\[
+ N(i,z)=\bigl\{v\in\operatorname{Vars}(g):
+                  \operatorname{root}(v)\in V_i\bigr\}.
+\]
+The necessary-and-sufficient condition
+for a globally \emph{injective}
+root-aligned assignment
+$\rho:E\to\operatorname{Vars}(g)$ is
+\emph{Hall's condition}
+\[
+ \boxed{\quad
+  |H|\le\Bigl|\bigcup_{(i,z)\in H}N(i,z)\Bigr|
+  \quad\text{for every }H\subseteq E.
+ \quad}
+\]
+The proposed source-facing Lean module
+\lean{ForwardQGlobalHallSpan} applies the
+existing Mathlib finite Hall marriage
+theorem directly to the genuinely typed
+old source-variable subtype, rather
+than a hypothetical common set of local
+variables. Every chosen root is shown to
+be a strict ancestor of the corresponding
+frontier, so root-prefix alignment follows
+for \emph{every} occurrence inside its cone.
+
+For the disjoint-coordinate raw word
+\[
+ W(i,t)=
+ \begin{cases}
+  \operatorname{inl}(a),
+   &\operatorname{raw}_i(t)=\operatorname{inl}(a),\\
+  \operatorname{inr}(i,z),
+   &\operatorname{raw}_i(t)=\operatorname{inr}(z),
+ \end{cases}
+\]
+an injective Hall matching preserves its
+\emph{entire evaluated independent
+coordinate span}, by the verified
+injective-on-occurrences criterion.
+Conversely, if \emph{all tagged names}
+actually occur at some position
+\emph{inside their own frontier cones},
+and the enlarged alphabet has two
+distinct letters, any visible-root
+translation preserving the full evaluated
+span of $W$ must be injective on all
+of $E$. Hall's inequalities are therefore
+necessary. The intended exact statement
+is
+\[
+ \boxed{\quad
+ \begin{gathered}
+   \exists\rho:E\to\operatorname{Vars}(g)
+   \ \bigl[\rho(i,z)\in N(i,z)\ \forall(i,z),\\
+   \operatorname{Span}(\rho_*W)
+          =\operatorname{Span}(W)\bigr]
+ \end{gathered}
+ \quad\iff\quad
+ \text{Hall's condition on }(N(e))_{e\in E}.
+ \quad}
+\]
+The positive direction does not require
+every declared local variable name to
+occur; the reverse direction does.
+This is an exact finite \emph{algebraic}
+bridge for a disjoint union of raw
+local coordinate domains, not yet a
+theorem asserting that all those positions
+form a single legal \emph{paper} $g_w$
+with the correct signature and
+Hales--Jewett recursion.
+
+The proposed module adds eight
+transitive source-facing endpoints
+(target 1072), subject to the
+Lean build, finite regressions and
+axiom audit.
+
+\paragraph{Remaining hypotheses to discharge from the printed Lemma~27.}
+The local word construction must be
+shown to have precisely the tagged
+\emph{occurring} variable families
+whose visible old-root options satisfy
+Hall's inequalities; separate
+$q_i\le|V_i|$ bounds alone do not
+imply this. Even a Hall matching does
+not by itself construct the paper's
+literal raw cone words or show that
+its Definition~24 simplicity
+partition $A=B_1\dot\cup B_2$ transports
+through the corrected literal
+marker set $R$ to make the induced
+colouring depend only on the already
+verified $\Gamma_1/\Gamma_2$
+observable fingerprint.
+The printed-to-forward starred-domain
+transport and numerical Ramsey
+recursion also remain independent
+obligations, not consequences of Hall.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
