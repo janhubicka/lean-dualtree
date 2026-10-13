@@ -1262,3 +1262,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQVisibleSpanCapacityIff.visibleRootInjection_preserves_span
 #print axioms DualTree.ForwardQVisibleSpanCapacityIff.capacity_of_visible_span_preserving_root
 #print axioms DualTree.ForwardQVisibleSpanCapacityIff.exists_visible_span_preserving_root_iff_capacity
+
+#print axioms DualTree.ForwardQGlobalHallSpan.mem_allowedRoots_iff_visible
+#print axioms DualTree.ForwardQGlobalHallSpan.hall_iff_injective_visible_matching
+#print axioms DualTree.ForwardQGlobalHallSpan.matched_root_prefixes_cone
+#print axioms DualTree.ForwardQGlobalHallSpan.every_tag_occurs_globalRaw
+#print axioms DualTree.ForwardQGlobalHallSpan.hall_gives_root_aligned_matching
+#print axioms DualTree.ForwardQGlobalHallSpan.global_span_preserved_of_injective
+#print axioms DualTree.ForwardQGlobalHallSpan.hall_of_full_global_span
+#print axioms DualTree.ForwardQGlobalHallSpan.exists_full_global_span_iff_hall
