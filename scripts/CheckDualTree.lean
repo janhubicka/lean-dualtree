@@ -1271,3 +1271,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQGlobalHallSpan.global_span_preserved_of_injective
 #print axioms DualTree.ForwardQGlobalHallSpan.hall_of_full_global_span
 #print axioms DualTree.ForwardQGlobalHallSpan.exists_full_global_span_iff_hall
+
+#print axioms DualTree.ForwardQOccurringHallSpan.coneRaw_inside
+#print axioms DualTree.ForwardQOccurringHallSpan.coneRaw_outside
+#print axioms DualTree.ForwardQOccurringHallSpan.occurs_of_raw_inside
+#print axioms DualTree.ForwardQOccurringHallSpan.occurringHall_iff_matching
+#print axioms DualTree.ForwardQOccurringHallSpan.occurringHall_gives_full_span
+#print axioms DualTree.ForwardQOccurringHallSpan.occurringHall_of_full_span
+#print axioms DualTree.ForwardQOccurringHallSpan.full_span_preserving_root_iff_occurringHall
+#print axioms DualTree.ForwardQOccurringHallSpan.occurringHall_gives_prefix_alignment
