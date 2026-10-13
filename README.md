@@ -19,7 +19,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
 
 - **B2-empty simplicity-to-smoothness (new, CI pending):** for the genuine
   corrected ambient-fibrewise Q, equality of all enlarged coordinate words
-  implies equality of its complete output words even if D2 marked points
+  implies equality of its complete root-labelled output words even if D2 marked points
   move; the Q interior stays equal to the old source interior. Therefore a
   Definition 24 simple colouring with the special witness B2 = empty pulls
   back to a Gamma1-all smooth colouring, with a classwise total extension
