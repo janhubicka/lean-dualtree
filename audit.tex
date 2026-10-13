@@ -4405,6 +4405,62 @@ Lean formalization of Lemma~31 remains \todo.
 The product theorem is only asserted to follow by modifying the preceding
 argument.  It remains unverified.
 
+
+\paragraph{Simultaneous evaluation after occurrence-level Hall matching.} \ok
+For the corrected, forward-sorted D$_0$/D$_2$ complete-frontier
+decomposition, let $V$ be the genuine old source-variable root set and let
+$E$ comprise the \emph{actually occurring}, independently tagged cone
+variables. Each $e\in E$ has a finite permitted root set $V_e\subseteq V$
+consisting of old source roots strictly preceding its own frontier. The
+matching premise is the entire Hall condition
+\[
+  |F|\leq\left|\bigcup_{e\in F}V_e\right|
+  \qquad(F\subseteq E),
+\]
+not merely separate capacity inequalities at each frontier. In particular,
+\[
+  |E|\leq |V|
+\]
+is necessary; if $|E|>|V|$ the Hall premise is impossible. The Lean
+statements are
+\lean{DualTree.ForwardQHallEvaluations.occurringHall_total_capacity}
+and
+\lean{DualTree.ForwardQHallEvaluations.not_occurringHall_of_excess}.
+
+Under Hall, a \emph{single} legal three-constructor decoded $Q$-word
+$d$ on the actual corrected starred $Q$-support works simultaneously
+for \emph{all} independently prescribed local-variable assignments:
+\[
+ \exists d\;\forall \sigma:E\to\Lambda\;
+ \exists\tau:V\to\Lambda\;\forall(i,t,z),\quad
+  \bigl(t\text{ in frontier cone }i,\;
+    g_i(t)=z\bigr)
+ \ \Longrightarrow\
+   \operatorname{ev}_{\tau}(d(t))=\sigma(i,z).
+\]
+The Lean implementation extends each assignment along a root map
+injective on \emph{occurring} names, and proves the actual pointwise
+decoded-symbol identity rather than only an abstract equality of
+sets of evaluations:
+\lean{DualTree.ForwardQHallEvaluations.extend_occurring_assignment}
+and
+\lean{DualTree.ForwardQHallEvaluations.hall_Q_realizes_all_local_variable_assignments}.
+The same $d$ is chosen before $\sigma$.
+
+\todo\ This is a \emph{conditional} bridge, not the missing Lemma~27
+proof. We must verify Hall for the actual recursively produced local
+cone words (or replace independent tagging by the correct
+preidentified/correlated variable structure), transport the
+paper's Definition~24 B$_1$/B$_2$ witness through the literal
+signature-marker coordinates, and preserve the interactions with
+the unchanged original word outside the frontier cones and with the
+auxiliary decoders. Merely obtaining the simultaneous
+local-variable evaluations does not establish the required full
+$Q$-span, induced-colouring simplicity, or the Ramsey recursion.
+The repaired forward-order W$_*$ domain remains distinct from the
+paper's printed reverse-order domain. No conclusion about the truth
+of the final dual Ramsey theorem follows from the capacity obstruction.
+
 \section{Computational evidence retained}
 Before Lean formalization, exhaustive finite programs established or tested:
 \begin{itemize}
