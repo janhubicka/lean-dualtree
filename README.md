@@ -25,7 +25,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   back to a Gamma1-all smooth colouring, with a classwise total extension
   to the enlarged mixed product. This does NOT transfer a general B2 witness
   or complete the final Ramsey step. See
-  `DualTree/ForwardQSimpleLetterSmooth.lean` (seven audited endpoints).
+  `DualTree/ForwardQSimpleLetterSmooth.lean` (eight audited endpoints).
 
 ## Verified foundations
 
