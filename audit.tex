@@ -6693,6 +6693,178 @@ No assertion of such a factorization,
 or of a span-preserving variable-word
 construction, is included here.
 
+\paragraph{Actual mixed-product span evaluations at the certified $Q$ projections.} \ok
+Having verified the literal original-letter
+construction
+\[
+ G_x(P_i(z))=\operatorname{inl}(x_i(z))
+\]
+for each genuine corrected-starred
+mixed-product input $x$, we can
+connect the statement to a \emph{genuine}
+variable mixed-product word rather than
+an arbitrary array of coordinate letters.
+Suppose $f$ is a variable word of
+the corrected $D_0/D_2$ product
+whose coordinate supports are
+vector-$q$-complete and suppose
+$x\in W_*\cap\operatorname{Span}(f)$.
+For every actual sorted coordinate $i$,
+the span premise supplies an actual
+assignment
+\[
+ \sigma_i:\operatorname{Vars}(f_i)\to\Lambda,
+ \qquad
+ x_i(z)=\operatorname{eval}_{\sigma_i}(f_i)(z).
+\]
+The proposed source-facing theorem then proves
+\[
+ G_x(P_i(z))
+   =\operatorname{inl}\Bigl(
+     \operatorname{eval}_{\sigma_i}(f_i)(z)
+     \Bigr).
+\]
+A dependent-choice argument selects
+\emph{all} assignments $\sigma_i$
+simultaneously, thereby certifying
+the independent coordinate evaluations
+in the actual mixed product.
+Under \emph{any} assignment $\tau$ to
+the old source variables of the
+starred output, evaluation at these
+projected positions has the same
+local value because $G_x(P_i(z))$
+is a literal constant there.
+Outside all complete-support
+frontier cones $G_x$ remains the
+old source word.
+
+The new proposed module
+\lean{ForwardQMixedSpanEvaluation}
+connects the real
+\lean{MixedProduct.VariableWord.span}
+membership to the actual $Q$
+symbol/evaluation identities,
+constructs simultaneous
+coordinate substitutions, and
+proves the corresponding
+outside-cone equality.
+All five source-facing endpoints passed the Lean build,
+finite regressions and the 1044-declaration transitive
+no-\texttt{sorryAx} audit in merged PR~\#248.
+
+\paragraph{Important span limitation.}
+The family of component assignments
+$(\sigma_i)_i$ is a dependent product
+over \emph{all local mixed-product
+variables}. It is \emph{not} a
+single assignment to the old
+source-variable subtype carried
+by the actual $Q$ output word.
+The latter still has only the
+original roots in $\operatorname{Int}(S)$,
+with the previously verified visible
+root capacity restrictions.
+Consequently equality of
+\emph{coordinatewise} evaluations
+does not by itself establish
+an image embedding of the whole
+mixed-product variable-word span,
+the required Hales--Jewett
+independence, or the numerical
+Ramsey recursion of Lemma~27.
+Those remain \todo.
+
+\paragraph{A canonical observable fingerprint indexed by literal corrected signature markers $R$.} \ok
+The previous quotient theorem takes an
+arbitrary Boolean partition predicate
+$\gamma_1$ on the selected $D_2$
+coordinate indices. The corrected
+geometric construction has already
+proved a bijection between the
+\emph{literal} finite marker set
+$R$ and those actual forward-sorted
+indices. Consequently a subset
+$B_2\subseteq R$ determines the
+specific partition
+\[
+ \Gamma_2=\{\iota(s):s\in B_2\},
+ \qquad
+ \Gamma_1=\{\iota(s):s\in R\setminus B_2\}.
+\]
+The proposed source-facing
+marker fingerprint $F_{R,B_2,a}$
+is the checked $\Gamma$-fingerprint
+with this exact marker-induced
+predicate. It satisfies the
+following \emph{literal indexed}
+identities for every marker
+$s\in R$ and local tail $z$:
+\[
+\begin{array}{ll}
+s\notin B_2:&
+ M_{\iota(s),z}=x_{\iota(s)}(z),\quad
+ \mathrm{point}_{\iota(s)}=\mathrm{none};\\[1mm]
+s\in B_2,\ s_{\iota(s)}(x)\sqsubseteq z:&
+ M_{\iota(s),z}=a,\quad
+ \mathrm{point}_{\iota(s)}
+   =\mathrm{some}(s_{\iota(s)}(x));\\[1mm]
+s\in B_2,\ s_{\iota(s)}(x)\not\sqsubseteq z:&
+ M_{\iota(s),z}=x_{\iota(s)}(z),\quad
+ \mathrm{point}_{\iota(s)}
+   =\mathrm{some}(s_{\iota(s)}(x)).
+\end{array}
+\]
+These are the actual source
+$R$ markers, not an assumed
+identification with Definition~24's
+abstract canonical terminal set $A$.
+The proposed Lean
+\lean{ForwardQMarkerFingerprint}
+proves each of the two
+$B_1=R\setminus B_2$ and three
+$B_2$ observable cases, and derives
+the exact equivalence
+\[
+  F_{R,B_2,a}(x)=F_{R,B_2,a}(y)
+  \iff x\sim_{\Gamma_1,\Gamma_2}y.
+\]
+For any colouring of the genuine
+corrected-starred subtype it also
+provides a \emph{total}
+factorization criterion through
+$F_{R,B_2,a}$, equivalent
+to Definition~21 smoothness
+for this exact marker partition.
+All seven source-facing declarations passed compilation,
+finite regressions and the 1051-declaration transitive
+no-\texttt{sorryAx} audit in merged PR~\#250.
+
+\paragraph{Remaining $A\to R$ transport in Lemma~27.}
+This removes the arbitrary
+$\Gamma$-partition from the
+smoothness-factorization
+interface: for any prescribed
+subset $B_2$ of the \emph{corrected}
+literal marker set $R$, the
+observable record is explicit.
+It still does \emph{not}
+construct a canonical address
+transport from the abstract
+signature terminals
+$A=B_1\dot\cup B_2$
+of Definition~24 to $R$.
+Nor does it show that the
+paper's particular colouring,
+after its specific local
+variable-word substitutions,
+depends only on this record.
+Those facts, together with
+preservation of the correct
+mixed-product span, must be
+established before the printed
+Lemma~27 and its Ramsey
+iteration can be certified.
 
 \paragraph{Forced identification of occurring local variables strictly shrinks the evaluated span.} \todo
 The source-facing visible-root bound
@@ -6755,10 +6927,9 @@ is geometrically aligned, the
 evaluated span of that full raw
 cone word cannot be recovered
 from its root-translated word.
-Three transitive source-facing
-axiom checks are pending CI
-(target 1042 on the verified 1039
-main-branch baseline).
+The three source-facing declarations passed Lean CI on
+the earlier 1042-endpoint branch; the current combined
+1054-declaration branch awaits final confirmation.
 
 \paragraph{Consequence for Lemma~27.}
 It is \emph{not sufficient} to
