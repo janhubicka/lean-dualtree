@@ -8116,6 +8116,43 @@ Q marked points may vary at the $\Gamma_1$ coordinates.
 No general simplicity transport, recursive Ramsey bound,
 printed reverse-order Q or final $f'$ has been proved here.
 
+
+\paragraph{Full ambient $f$-fibre observability under arbitrary smoothness partitions.} \todo
+For a general prescribed $\Gamma_1/\Gamma_2$ split on the
+\emph{actual enlarged-alphabet} corrected $D_0/D_2$ input,
+Definition~21 fixes every $D_0$ and $\Gamma_1$ word,
+and fixes the selected marked point and every outside-cone
+letter at each $\Gamma_2$ index. The checked whole-$f$-fibre
+decoder then gives a stronger output statement:
+for every selected sorted frontier $i$, every safe local
+tail $z$, and every original ambient position $s$ with
+\[
+ f(s)=v_{P_i(z)},
+\]
+if $(i,z)$ is observable under this split, then
+$g_x(s)=g_y(s)$.
+This holds for the actual enlarged alphabet, both original
+and auxiliary constructors, throughout the entire
+original $f$-variable fibre, not merely at $P_i(z)$.
+Smoothness also fixes each projected $\Gamma_2$ Q marker.
+
+The new \lean{ForwardQAmbientFibreSmoothObservable}
+module proposes six kernel-audited source-facing endpoints:
+local enlarged-letter equality, whole-fibre equality,
+the $D_0$ and $\Gamma_1$ cases, the $\Gamma_2$
+outside-cone case, and marked-point preservation.
+GitHub Actions and transitive no-\texttt{sorryAx}
+verification (target 1149 declarations) are pending.
+
+\textbf{Remaining:} prove that all relevant original
+$f$-variable fibres \emph{outside} selected Q marked cones
+have such observable safe projected root addresses (including
+the boundary and fallback cases), and identify Definition~24's
+abstract $A=B_1\dot\cup B_2$ with corrected literal $R$.
+Without these two missing bridges the global general-$B_2$
+simplicity pullback and the final Ramsey refinement
+are not established.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
