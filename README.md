@@ -340,6 +340,22 @@ obligation; `\todo` marks a remaining gap or proposed change.
   simple-colouring factorization nor the Ramsey induction follows
   (4 proposed source-facing endpoints in PR #256; requires CI).
 
+- A new **genuinely ambient-fibrewise Q symbol map** reads the
+  original ambient f(s) BEFORE consulting any frontier.
+  Original constants stay untouched; early/cut variables use g',
+  which is proved uniform on f-fibres; post-cut f-variable roots
+  choose their unique frontier, recover their correct inverse
+  support tail, and decode the actual enlarged-alphabet letter by
+  R_i or as an original constant. It proves paper clause (iv)
+  on the ENTIRE original f-variable fibre, including ambient
+  positions outside the cone of the projected root. It avoids
+  conflating root coordinates with ambient positions and requires
+  no Hall matching. Further work must prove root alignment of
+  emitted old variables and package the word on the Q starred
+  support, then establish simplicity-to-smoothness and the
+  final variable refinement (11 proposed source-facing endpoints
+  in PR #259, pending Lean CI).
+
 - The **ambient f-fibre dependency** is now tracked as an
   explicit strengthening of the corrected Q frame: supply the real
   variable word f with exactly the complete support T, and a
@@ -386,7 +402,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1098 source-facing declarations** for transitive
+audits **1108 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are

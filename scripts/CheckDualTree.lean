@@ -1312,3 +1312,15 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQAmbientFibreFrame.source_uniform_on_ambient_fibre
 #print axioms DualTree.ForwardQAmbientFibreFrame.source_substitution_fixes_old_root
 #print axioms DualTree.ForwardQAmbientFibreFrame.old_root_fibre_is_retained
+
+#print axioms DualTree.ForwardQAmbientFibreSymbol.selectedFrontier_some_prefix
+#print axioms DualTree.ForwardQAmbientFibreSymbol.fibreQ_original_constant
+#print axioms DualTree.ForwardQAmbientFibreSymbol.fibreQ_before_cut
+#print axioms DualTree.ForwardQAmbientFibreSymbol.fibreQ_after_cut
+#print axioms DualTree.ForwardQAmbientFibreSymbol.fibreQ_constant_on_ambient_fibre
+#print axioms DualTree.ForwardQAmbientFibreSymbol.fibreQ_at_old_root
+#print axioms DualTree.ForwardQAmbientFibreSymbol.projected_root_after_cut
+#print axioms DualTree.ForwardQAmbientFibreSymbol.decode_ambient_projected_root
+#print axioms DualTree.ForwardQAmbientFibreSymbol.fibreQ_projected_root
+#print axioms DualTree.ForwardQAmbientFibreSymbol.fibreQ_projected_full_fibre
+#print axioms DualTree.ForwardQAmbientFibreSymbol.fibreQ_unprojected_no_frontier
