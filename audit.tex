@@ -7295,7 +7295,7 @@ before using it to repair
 Lemma~27.
 
 
-\paragraph{A sharp \emph{global} Hall criterion for independent tagged cone-variable spans.} \todo
+\paragraph{A sharp \emph{global} Hall criterion for independent tagged cone-variable spans.} \ok
 The verified one-frontier bound $q_i\le|V_i|$
 is not sufficient to produce a \emph{single}
 injective translation of all independent
@@ -7391,11 +7391,9 @@ form a single legal \emph{paper} $g_w$
 with the correct signature and
 Hales--Jewett recursion.
 
-The proposed module adds eight
-transitive source-facing endpoints
-(target 1072), subject to the
-Lean build, finite regressions and
-axiom audit.
+All eight source-facing endpoints passed Lean compilation,
+finite regressions and the 1072-declaration transitive
+no-\texttt{sorryAx} audit in merged PR~\#253.
 
 \paragraph{Remaining hypotheses to discharge from the printed Lemma~27.}
 The local word construction must be
@@ -7418,6 +7416,152 @@ The printed-to-forward starred-domain
 transport and numerical Ramsey
 recursion also remain independent
 obligations, not consequences of Hall.
+
+
+\paragraph{Sharper Hall condition on the \emph{actually occurring} independent cone variables.} \todo
+The preceding verified global Hall
+criterion names \emph{all} declared
+local variables and requires all
+of them to occur when deriving
+necessity from span preservation.
+This formulation is useful but
+stronger than needed for a
+general variable word, since
+unused local names do not affect
+its evaluated span. Moreover
+the paper's full-frontier $Q$
+word never reads positions
+\emph{outside the corresponding
+frontier cone}. A source-facing
+criterion should ignore both
+kinds of irrelevant data.
+
+Fix the actual corrected frame
+$T$, the vector of local name
+counts $(q_i)_i$, a fallback
+letter $a$ in the enlarged
+alphabet, and local raw words
+$\operatorname{raw}_i$.
+First form the cone-masked word
+\[
+ \widehat{\operatorname{raw}}_i(t)
+ =
+ \begin{cases}
+   \operatorname{raw}_i(t),&
+             f_i\sqsubseteq t,\\
+   \operatorname{inl}(a),&
+             f_i\not\sqsubseteq t.
+ \end{cases}
+\]
+This agrees with the original
+local symbols on \emph{every
+position actually read} by the
+full-frontier $Q$ constructor.
+Define the tagged occurrence set
+\[
+ E_{\mathrm{occ}}=
+  \left\{(i,z):
+    \exists t,\,
+       f_i\sqsubseteq t
+       \ \land\
+       \operatorname{raw}_i(t)=
+                  \operatorname{inr}(z)
+  \right\}.
+\]
+Thus local names that never
+appear \emph{inside} their own
+cone do not consume old-root
+capacity. For each occurring
+tag $(i,z)$, the allowable set
+is exactly the old source
+variables with roots in $V_i$.
+The proposed strengthened Hall
+condition is
+\[
+ \boxed{\quad
+  |H|\le
+   \left|\bigcup_{(i,z)\in H}V_i\right|
+  \quad\text{for every }
+    H\subseteq E_{\mathrm{occ}}.
+ \quad}
+\]
+
+Mathlib's finite Hall theorem
+gives a matching on this
+\emph{occurring subtype} exactly
+when the inequalities hold.
+Such a matching can be extended
+to a total assignment on all
+declared tagged names using
+the already verified genuine
+source-cut variable as an
+\emph{unused fallback} for tags
+outside $E_{\mathrm{occ}}$.
+The exact previously proved
+injectivity-on-occurrences
+criterion then yields
+\[
+ \operatorname{Span}(
+    \rho_*\widehat W)
+       =\operatorname{Span}(\widehat W),
+\]
+where $\widehat W$ is the
+disjoint-union cone-masked word.
+Conversely, over a two-letter
+enlarged alphabet, if a total
+old-root assignment has
+visible targets at each
+\emph{occurring} tag and
+preserves the full evaluated
+span of $\widehat W$, then
+its restriction to
+$E_{\mathrm{occ}}$ must be
+injective and the same Hall
+inequalities follow. For each
+genuine local occurrence,
+the resulting root is a
+strict predecessor of $f_i$
+and therefore prefixes that
+occurrence as required by
+the three-way decoder.
+
+The proposed source-facing
+\lean{ForwardQOccurringHallSpan}
+module proves the inside/outside
+cone mask equations, the
+tagged-occurrence witness,
+the finite Hall matching
+equivalence, extension to
+unused names, both directions
+of full span preservation,
+and the actual root-prefix
+alignment consequence.
+Eight new transitive axiom
+endpoints target 1080,
+pending Lean CI.
+
+\paragraph{What the sharper matching theorem still leaves open.}
+This removes the artificial
+requirement that \emph{unused}
+local variable names be
+injectively assigned to
+visible roots. It does
+\emph{not} show that the
+\emph{particular} source
+Lemma~27 local raw words
+satisfy Hall on their
+occurring names, nor does
+it identify the independent
+tagged assignments with
+the paper's required
+global variable-word
+refinement. The printed
+$A=B_1\dot\cup B_2$
+simplicity-to-$R$ marker
+transport, colouring pullback,
+forward starred-domain
+Ramsey input and recursive
+bounds remain \todo.
 
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
