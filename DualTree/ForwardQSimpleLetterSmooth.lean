@@ -152,6 +152,24 @@ def rootLabel
   | Sum.inl a => Sum.inl a
   | Sum.inr v => Sum.inr v.1
 
+/-- The finished Q output's common source-variable-root labels
+are recovered by explicitly rewriting its WORD field, without
+unfolding the large dependent starred-word constructor. -/
+theorem rootLabel_fibreQ
+    {b n l k m : Nat} {α : Type*}
+    (hb : 0 < b)
+    (c : FibreFrame b n l k m α)
+    (fallback : α)
+    (w : ForwardQEnlargedConstantWords.EnlargedStarredInput
+      c.core fallback)
+    (s : BoundedNode b n) :
+    rootLabel (fibreQStarredWord hb c fallback w) s =
+      (match fibreQSymbol c fallback w.1 s with
+       | Sum.inl a => Sum.inl a
+       | Sum.inr v => Sum.inr v.1) := by
+  unfold rootLabel
+  rw [fibreQStarredWord_symbol hb c fallback w s]
+
 /-- Exact special case of Definition 24 with B₂ empty:
 for two starred refinements of the SAME ambient f, equal
 interiors and equal full words force equal colours.
@@ -202,14 +220,9 @@ theorem simple_pullback_smooth_allGamma1
   · intro t
     exact Q_interiors_eq hb c fallback x y t
   · intro s
-    change
-      (match fibreQSymbol c fallback x.1 s with
-       | Sum.inl a => Sum.inl a
-       | Sum.inr v => Sum.inr v.1) =
-      (match fibreQSymbol c fallback y.1 s with
-       | Sum.inl a => Sum.inl a
-       | Sum.inr v => Sum.inr v.1)
-    rw [fibreQSymbol_eq_of_words c fallback x.1 y.1 hwords s]
+    rw [rootLabel_fibreQ hb c fallback x s,
+        rootLabel_fibreQ hb c fallback y s,
+        fibreQSymbol_eq_of_words c fallback x.1 y.1 hwords s]
 
 /-- The pulled-back B₂-empty simple colouring of the corrected
 enlarged starred subtype extends to a total, Gamma1-all
