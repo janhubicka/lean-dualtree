@@ -2,31 +2,33 @@ import DualTree.ForwardQAmbientFibreSpan
 import DualTree.ForwardQStarredSmoothPartitions
 
 /-!
-# A verified simplicity-to-smoothness case for the genuine fibrewise Q
+# The B₂ = ∅ simplicity-to-smoothness passage for the actual fibrewise Q
 
-Definition 24 has a witness partition A = B₁ ⊔ B₂.  This module settles
-the case B₂ = ∅ on the *actual* corrected Lemma 27 fibrewise Q output.
+The corrected Lemma 27 source has an original ambient variable word f,
+a starred refinement g' = f[rho], and a mixed product over the
+enlarged alphabet Lambda + Fin (m+1).
 
-Here "simple" is scoped to the original ambient f, as in the paper:
-both starred outputs must refine f (support containment and evaluated
-span containment).  With B₂ empty, simplicity requires agreement of
-the full words and equality of their interior vertex sets, but makes
-NO demand that their leaves, marked points, or whole tree supports agree.
+When the Definition 24 simplicity witness has B₂ = ∅, two starred
+outputs refining f get equal colours provided their interior sets
+and their ENTIRE ambient variable words are equal.  No equality of
+the terminal Q support is asserted: at Gamma1 coordinates the chosen
+D2 marked points may move.
 
-For the corrected forward-order mixed product, choose Γ₁ to contain
-every selected D₂ coordinate.  Smooth-related enlarged inputs then
-have identical coordinate WORDS, although their D₂ marked points may
-move.  The genuine ambient-fibrewise Q decoder depends only on those
-words (not the marked points), while the Q interior is always the
-original source interior.  Consequently the simple colouring pulled
-back along Q is smooth; the classwise extension lemma produces a
-TOTAL smooth colouring of the full enlarged mixed product.
+Choose Gamma1 = all selected D2 coordinates.  Definition 21's
+SmoothRelated relation now fixes every coordinate WORD, not the D2
+points.  The genuine Q decoder is fibrewise on the original ambient
+f, so it depends only on the coordinate words and not on any selected
+D2 marked point.  The Q interior is always the original source
+interior, independently of marked-point positions.
 
-This closes one genuine special case of the missing Definition 24
-transport.  It does NOT handle B₂ ≠ ∅, where the colour may observe
-selected Q marked points and ignore only the corresponding successor
-cones.  Nor does it supply the final mixed-product Ramsey refinement,
-the original printed auxiliary-order assertion, or Lemma 28.
+These facts prove the specific induced colouring is smooth in this
+genuine B₂-empty case.  The classwise extension lemma gives a total
+smooth colouring of the ENTIRE enlarged mixed-product input space.
+
+All of this is for the forward-corrected Q construction, conditional
+on the explicitly supplied syntactic source refinement f[rho] = g'.
+It does NOT prove arbitrary B₂, the paper's reverse-order construction,
+or the final Ramsey variable-word refinement and iteration.
 -/
 
 namespace DualTree.ForwardQSimpleLetterSmooth
@@ -36,27 +38,199 @@ open ForwardQAmbientFibreFrame
 open ForwardQAmbientFibreSymbol
 open ForwardQAmbientFibreLegalWord
 
-/-- The sampled enlarged letter depends only on the coordinate words,
-not on any D₂ marked point or D₁ leaf. -/
+/-- Sampling a local enlarged coordinate uses its actual word,
+not the selected bullet/marked point. -/
 theorem sampled_eq_of_words
     {b n l k m : Nat} {α : Type*}
     (c : Frame b n l k m α)
     (fallback : α)
     (x y : ForwardQEnlargedConstantWords.EnlargedInput c)
     (hw : ∀ i, x.words i = y.words i)
-    (i : ForwardQAmbientFibreSymbol.Index
-      ({ core := c
-         ambient := (by assumption)
-         ambient_support_T := (by assumption)
-         T_bounded := (by assumption)
-         substitution := (by assumption)
-         source_substitution := (by assumption) } :
-       FibreFrame b n l k m α))
+    (i : ForwardQFullFrontierWord.Index c)
     (t : BoundedNode b n) :
     ForwardQEnlargedConstantWords.sampledEnlarged c x fallback i t =
       ForwardQEnlargedConstantWords.sampledEnlarged c y fallback i t := by
   classical
   have heq : x.words = y.words := funext hw
   simp [ForwardQEnlargedConstantWords.sampledEnlarged, heq]
+
+/-- The genuine late-fibre R_i decoder reads the same letter
+when every selected enlarged coordinate word is the same. -/
+theorem decodeAmbientRoot_eq_of_words
+    {b n l k m : Nat} {α : Type*}
+    (c : FibreFrame b n l k m α)
+    (fallback : α)
+    (x y : ForwardQEnlargedConstantWords.EnlargedInput c.core)
+    (hw : ∀ i, x.words i = y.words i)
+    (v : c.ambient.Vars) :
+    decodeAmbientRoot c fallback x v =
+      decodeAmbientRoot c fallback y v := by
+  cases hsel : ForwardQFullFrontierWord.selectedFrontier c.core v.1 with
+  | none =>
+      simp [decodeAmbientRoot, hsel]
+  | some i =>
+      have hletter :=
+        sampled_eq_of_words c.core fallback x y hw i v.1
+      simp only [decodeAmbientRoot, hsel]
+      rw [hletter]
+
+/-- The full ambient Q words agree on EVERY original f-fibre
+(and also at original f-constant positions) under equality of
+all enlarged coordinate words.  It is NOT merely a projected
+root-coordinate identity. -/
+theorem fibreQSymbol_eq_of_words
+    {b n l k m : Nat} {α : Type*}
+    (c : FibreFrame b n l k m α)
+    (fallback : α)
+    (x y : ForwardQEnlargedConstantWords.EnlargedInput c.core)
+    (hw : ∀ i, x.words i = y.words i)
+    (s : BoundedNode b n) :
+    fibreQSymbol c fallback x s =
+      fibreQSymbol c fallback y s := by
+  cases hf : c.ambient.word s with
+  | inl a =>
+      simp [fibreQSymbol, hf]
+  | inr v =>
+      by_cases hcut : ForwardAux v.1.1 c.core.cut
+      · simp [fibreQSymbol, hf, hcut]
+      · simpa [fibreQSymbol, hf, hcut] using
+          decodeAmbientRoot_eq_of_words c fallback x y hw v
+
+/-- If every D₂ coordinate lies in Gamma1, Definition 21
+smoothness fixes ALL D0/D2 local coordinate words, but not
+the D₂ marked points. -/
+theorem words_eq_of_all_gamma1
+    {b n l k m : Nat} {α : Type*}
+    (c : Frame b n l k m α)
+    (x y : ForwardQEnlargedConstantWords.EnlargedInput c)
+    (hxy : MixedProduct.SmoothRelated (fun _ => true) x y) :
+    ∀ i : ForwardQFullFrontierWord.Index c,
+      x.words i = y.words i := by
+  intro i
+  by_cases hi : kind c i = MixedProduct.CoordKind.bullet
+  · have hbullet := hxy.2.2
+        (⟨i, hi⟩ : MixedProduct.BulletIndex (kind c))
+    simpa using hbullet
+  · exact hxy.1 i hi
+
+/-- In any two actual corrected Q outputs, the interior is
+the same old source interior, irrespective of the D₂ points. -/
+theorem Q_interiors_eq
+    {b n l k m : Nat} {α : Type*}
+    (hb : 0 < b)
+    (c : FibreFrame b n l k m α)
+    (fallback : α)
+    (x y : ForwardQEnlargedConstantWords.EnlargedStarredInput
+      c.core fallback)
+    (t : Node b) :
+    t ∈ SkewTree.interior (fibreQStarredWord hb c fallback x).tree ↔
+      t ∈ SkewTree.interior (fibreQStarredWord hb c fallback y).tree := by
+  change
+    t ∈ SkewTree.interior
+      (nodes c.core (ForwardQEnlargedConstantWords.eraseAux
+        c.core fallback x.1)).toList ↔
+    t ∈ SkewTree.interior
+      (nodes c.core (ForwardQEnlargedConstantWords.eraseAux
+        c.core fallback y.1)).toList
+  exact
+    (ForwardQInteriorExact.Q_interior_iff_original hb c.core
+      (ForwardQEnlargedConstantWords.eraseAux c.core fallback x.1) t).trans
+    (ForwardQInteriorExact.Q_interior_iff_original hb c.core
+      (ForwardQEnlargedConstantWords.eraseAux c.core fallback y.1) t).symm
+
+/-- Exact special case of Definition 24 with B₂ empty:
+for two starred refinements of the SAME ambient f, equal
+interiors and equal full words force equal colours.
+
+This is stated as a predicate on the original colouring,
+without silently treating all arbitrary colourings as simple. -/
+def LetterSimpleWithinAmbient
+    {b n l k m : Nat} {α γ : Type*}
+    (c : FibreFrame b n l k m α)
+    (color : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)) → γ) : Prop :=
+  ∀ (u v : StarredSignature.StarredWord b n l α
+    (SkewTree.forwardAuxB (b := b))),
+    ((∀ t : Node b, t ∈ u.tree → t ∈ c.core.T) ∧
+      u.word.span ⊆ c.ambient.span) →
+    ((∀ t : Node b, t ∈ v.tree → t ∈ c.core.T) ∧
+      v.word.span ⊆ c.ambient.span) →
+    (∀ t : Node b,
+      t ∈ SkewTree.interior u.tree ↔
+      t ∈ SkewTree.interior v.tree) →
+    (∀ s : BoundedNode b n, u.word.word s = v.word.word s) →
+    color u = color v
+
+/-- Genuine B₂-empty simplicity of the original starred
+colouring implies Gamma1-all smoothness of the *specific*
+corrected fibrewise Q pullback, not an arbitrary pullback. -/
+theorem simple_pullback_smooth_allGamma1
+    {b n l k m : Nat} {α γ : Type*}
+    (hb : 0 < b)
+    (c : FibreFrame b n l k m α)
+    (fallback : α)
+    (color : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)) → γ)
+    (hsimple : LetterSimpleWithinAmbient c color)
+    (x y : ForwardQEnlargedConstantWords.EnlargedStarredInput
+      c.core fallback)
+    (hxy : MixedProduct.SmoothRelated (fun _ => true) x.1 y.1) :
+    color (fibreQStarredWord hb c fallback x) =
+      color (fibreQStarredWord hb c fallback y) := by
+  have hwords := words_eq_of_all_gamma1 c.core x.1 y.1 hxy
+  apply hsimple
+    (fibreQStarredWord hb c fallback x)
+    (fibreQStarredWord hb c fallback y)
+  · exact ForwardQAmbientFibreSpan.fibreQStarredWord_refines_ambient
+      hb c fallback x
+  · exact ForwardQAmbientFibreSpan.fibreQStarredWord_refines_ambient
+      hb c fallback y
+  · intro t
+    exact Q_interiors_eq hb c fallback x y t
+  · intro s
+    change fibreQSymbol c fallback x.1 s =
+      fibreQSymbol c fallback y.1 s
+    exact fibreQSymbol_eq_of_words c fallback x.1 y.1 hwords s
+
+/-- The pulled-back B₂-empty simple colouring of the corrected
+enlarged starred subtype extends to a total, Gamma1-all
+smooth colouring on the WHOLE enlarged mixed product. -/
+theorem exists_total_smooth_color
+    {b n l k m : Nat} {α γ : Type*}
+    (hb : 0 < b)
+    (c : FibreFrame b n l k m α)
+    (fallback : α)
+    (fallbackColor : γ)
+    (color : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)) → γ)
+    (hsimple : LetterSimpleWithinAmbient c color) :
+    ∃ total : ForwardQEnlargedConstantWords.EnlargedInput c.core → γ,
+      (∀ x : ForwardQEnlargedConstantWords.EnlargedStarredInput
+        c.core fallback,
+        total x.1 = color (fibreQStarredWord hb c fallback x)) ∧
+      (∀ x y : ForwardQEnlargedConstantWords.EnlargedInput c.core,
+        MixedProduct.SmoothRelated (fun _ => true) x y →
+          total x = total y) := by
+  let D : Set (ForwardQEnlargedConstantWords.EnlargedInput c.core) :=
+    {w | ForwardQActualStarredSpace.IsStarred c.core
+      (ForwardQEnlargedConstantWords.eraseAux c.core fallback w)}
+  let pulled :
+      {w : ForwardQEnlargedConstantWords.EnlargedInput c.core //
+        w ∈ D} → γ :=
+    fun w => color (fibreQStarredWord hb c fallback ⟨w.1, w.2⟩)
+  have hcompat :
+      ∀ (x y : ForwardQEnlargedConstantWords.EnlargedInput c.core)
+        (hx : x ∈ D) (hy : y ∈ D),
+        MixedProduct.SmoothRelated (fun _ => true) x y →
+          pulled ⟨x, hx⟩ = pulled ⟨y, hy⟩ := by
+    intro x y hx hy hxy
+    exact simple_pullback_smooth_allGamma1
+      hb c fallback color hsimple ⟨x, hx⟩ ⟨y, hy⟩ hxy
+  obtain ⟨total, hagree, hsmooth⟩ :=
+    MixedProduct.exists_smooth_extension
+      (fun _ => true) D pulled fallbackColor hcompat
+  refine ⟨total, ?_, hsmooth⟩
+  intro x
+  exact hagree x.1 x.2
 
 end DualTree.ForwardQSimpleLetterSmooth
