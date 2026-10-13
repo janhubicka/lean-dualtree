@@ -4521,6 +4521,56 @@ the five fibre cases. Only then prove the relevant smoothness
 and simple-colouring pullback, and separately construct $f'$
 with the projected new variable roots.
 
+
+\paragraph{Restoring the ambient $f$-fibres to the corrected
+Lemma~27 frame.} \ok
+The next source-facing interface,
+\texttt{ForwardQAmbientFibreFrame.FibreFrame}, extends the old
+corrected geometric frame by the missing original variable word
+$f\in W_{v,n}(b,N,\Lambda)$, requires its root support to be
+exactly the existing complete skew support $T$, and records
+an explicit substitution $\rho$ with
+\[
+   g'=\operatorname{substitute}(f,\rho).
+\]
+Keeping the substitution witness is important: over a
+singleton alphabet, equality or inclusion of \emph{evaluated}
+spans does not force a uniform symbolic refinement. A proof
+using the paper's actual $(S,g')\leq f$ hypothesis must
+identify the appropriate syntactic strengthening; it must
+not silently infer $\rho$ from span containment in the
+singleton-alphabet case.
+
+The interface derives genuine ambient $f$ variables at every
+old source root and at every support node of $T$. It checks
+pointwise that original constants remain unchanged, that
+\emph{all} positions in the same original $f$-variable fibre
+carry one uniform $g'$ symbol, and that the retained source
+variables (including the cut) remain unchanged on their
+whole $f$-fibres:
+\lean{DualTree.ForwardQAmbientFibreFrame.source_root_in_ambient},
+\lean{DualTree.ForwardQAmbientFibreFrame.source_constant_of_ambient_constant},
+\lean{DualTree.ForwardQAmbientFibreFrame.source_uniform_on_ambient_fibre},
+\lean{DualTree.ForwardQAmbientFibreFrame.source_substitution_fixes_old_root},
+and
+\lean{DualTree.ForwardQAmbientFibreFrame.old_root_fibre_is_retained}.
+
+\todo\ The strengthened frame is deliberately conditional and
+does not by itself construct $Q$. The next genuinely
+source-faithful step is a symbol map on \emph{every ambient
+homogeneous-tree position} $s$: match $f(s)$ against the
+original alphabet, a variable at or before $t_0$,
+a projected support root $P_i(z)$, or an unprojected
+support root, and use the appropriate case (i)--(v)
+from page~29. The projected branch must read
+$w_i(z)$ from the \emph{root} of the $f$-fibre,
+not from the ambient position $s$. Prove the
+old-root occurrence and alignment conditions
+before packaging the map as a starred variable word.
+Only after this do the literal definition of
+$Q$, the simplicity-to-smoothness comparison,
+and the subsequent variable-word refinement become available.
+
 \section{Computational evidence retained}
 Before Lean formalization, exhaustive finite programs established or tested:
 \begin{itemize}

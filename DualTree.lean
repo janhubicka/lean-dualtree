@@ -361,3 +361,5 @@ import DualTree.ForwardQHallConeData
 import DualTree.ForwardQHallEvaluations
 
 import DualTree.ForwardQEnlargedConstantWords
+
+import DualTree.ForwardQAmbientFibreFrame

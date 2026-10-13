@@ -340,6 +340,19 @@ obligation; `\todo` marks a remaining gap or proposed change.
   simple-colouring factorization nor the Ramsey induction follows
   (4 proposed source-facing endpoints in PR #256; requires CI).
 
+- The **ambient f-fibre dependency** is now tracked as an
+  explicit strengthening of the corrected Q frame: supply the real
+  variable word f with exactly the complete support T, and a
+  syntactic substitution proving the starred source word g' refines
+  f. This yields uniformity of g' on whole ambient f-variable fibres,
+  retains the old source variables and cut, and preserves all old
+  alphabet constants. The construction is conditional on a
+  substitution witness (evaluated-span inclusion does not supply
+  one for singleton alphabets). The five-case paper Q symbol
+  definition on all ambient positions, simple colouring pullback
+  and final f' remain unverified (10 proposed source-facing
+  endpoints in PR #258, pending Lean CI).
+
 - The **original Q construction uses ORDINARY enlarged-alphabet
   local words, not independent local cone variables**. A new
   source-facing module instantiates the verified corrected Q
@@ -373,7 +386,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1089 source-facing declarations** for transitive
+audits **1098 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
