@@ -258,7 +258,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   This is a conditional limitation on the naive Lemma 27
   repair, not a counterexample to the main Ramsey theorem
   (3 source-facing endpoints, CI-green on previous branch; final combined check pending).
-- The full local two-letter evaluated span has a proposed **exact
+- The full local two-letter evaluated span has a verified **exact
   injectivity criterion**: a pure variable-name transport preserves
   every evaluated assignment if and only if it is injective on the
   local variable names that actually occur. Unused names may be
@@ -269,7 +269,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   raw local word and old source-variable-root subtype. This is
   the precise remaining LOCAL span condition, not proof that
   the paper supplies an admissible injective assignment or
-  completes the GLOBAL mixed Ramsey span (4 pending Lean checks).
+  completes the GLOBAL mixed Ramsey span (4 checked endpoints in merged PR #251).
 - A proposed **sharp single-frontier span-capacity theorem** now
   matches the number q of genuine occurring local variable names
   against the length |V_i| of actual visible old source roots.
