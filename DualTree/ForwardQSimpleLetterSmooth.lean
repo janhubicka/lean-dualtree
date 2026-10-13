@@ -169,7 +169,9 @@ theorem rootLabel_fibreQ
        | Sum.inr v => Sum.inr v.1) := by
   unfold rootLabel
   rw [fibreQStarredWord_symbol hb c fallback w s]
-  rfl
+  cases hs : fibreQSymbol c fallback w.1 s with
+  | inl a => simp [hs]
+  | inr v => simp [hs]
 
 /-- Exact special case of Definition 24 with B₂ empty:
 for two starred refinements of the SAME ambient f, equal
