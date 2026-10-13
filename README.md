@@ -247,7 +247,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   obligation is the canonical address transport from its abstract
   Definition 24 A=B₁⊔B₂ to the actual R, followed by verifying its
   particular colouring factors through the record (7 source-facing Lean endpoints, CI-green in PR #250).
-- A proposed **strict evaluated-span loss** theorem quantifies
+- A verified **strict evaluated-span loss** theorem quantifies
   the genuine-variable transport obstruction: over any alphabet
   with two distinct letters, identifying two different local
   variable names that both actually occur strictly shrinks
@@ -257,7 +257,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   so it cannot preserve the FULL local raw-word span.
   This is a conditional limitation on the naive Lemma 27
   repair, not a counterexample to the main Ramsey theorem
-  (3 source-facing endpoints, CI-green on previous branch; final combined check pending).
+  (3 verified endpoints in merged PR #249).
 - The full local two-letter evaluated span has a verified **exact
   injectivity criterion**: a pure variable-name transport preserves
   every evaluated assignment if and only if it is injective on the
@@ -281,7 +281,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   forces q≤|V_i|. This exact iff still does not establish
   compatibility of root assignments ACROSS cones or the printed
   Lemma 27 span, simplicity and Ramsey iteration
-  (6 pending Lean endpoints; 1064 target). At multiple
+  (6 Lean endpoints, full CI green on PR #252; 1064 target). At multiple
   frontiers a GLOBAL independent-variable translation requires a
   Hall-type matching condition on the unions of visible old-root
   sets; separate per-frontier capacity inequalities alone do not
