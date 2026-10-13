@@ -326,6 +326,20 @@ obligation; `\todo` marks a remaining gap or proposed change.
   instantiate the paper's specific raw words, prove its signature
   or simple-colouring factorization, or finish its Ramsey induction
   (5 source-facing endpoints, pending CI).
+- A **simultaneous actual-Q variable-evaluation bridge** is proposed:
+  under Hall's inequalities for the ACTUALLY occurring tagged cone
+  variables, one legal corrected full-frontier Q starred word (chosen
+  independently of evaluation) realizes EVERY assignment to all
+  independent local variable names by a SINGLE assignment to the
+  old source roots. Equality is verified pointwise at each original
+  D0/D2 cone-variable occurrence, not only as an abstract span
+  identity. An absolute capacity theorem shows that Hall is
+  IMPOSSIBLE when the total number of occurring independent
+  names exceeds the total number of old source roots. Neither
+  paper-specific Hall, auxiliary/outside-cone compatibility,
+  simple-colouring factorization nor the Ramsey induction follows
+  (4 proposed source-facing endpoints in PR #256; requires CI).
+
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex

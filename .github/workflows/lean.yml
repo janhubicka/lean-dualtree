@@ -79,7 +79,7 @@ jobs:
         run: |
           mkdir -p proof-audit
           lake env lean scripts/CheckDualTree.lean > proof-audit/dualtree-axioms.log 2>&1
-          python3 scripts/check-axiom-log.py proof-audit/dualtree-axioms.log 1085 || {
+          python3 scripts/check-axiom-log.py proof-audit/dualtree-axioms.log 1089 || {
             cat proof-audit/dualtree-axioms.log
             exit 1
           }

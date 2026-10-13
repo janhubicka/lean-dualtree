@@ -357,3 +357,5 @@ import DualTree.ForwardQGlobalHallSpan
 import DualTree.ForwardQOccurringHallSpan
 
 import DualTree.ForwardQHallConeData
+
+import DualTree.ForwardQHallEvaluations
