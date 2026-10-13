@@ -27,6 +27,15 @@ obligation; `\todo` marks a remaining gap or proposed change.
   or complete the final Ramsey step. See
   `DualTree/ForwardQSimpleLetterSmooth.lean` (eight audited endpoints).
 
+- **Full original f-fibre Q observability (six new endpoints, CI pending):**
+  for any Gamma1/Gamma2 split, smoothness fixes enlarged-alphabet
+  letters on the observable D0, Gamma1 and Gamma2-outside-cone
+  coordinates. Their decoded Q symbols agree throughout the WHOLE
+  corresponding original ambient f-variable fibre. Gamma2 also
+  preserves the projected Q marked node. This is not a proof of
+  full arbitrary-B2 simplicity without root coverage and A-to-R
+  marker transport. See `ForwardQAmbientFibreSmoothObservable.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
