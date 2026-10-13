@@ -70,8 +70,10 @@ theorem enlarged_letter_eq_of_smooth_observable
 /-- The genuine fibrewise Q output words agree at EVERY position
 of an original f-variable fibre rooted at P_i(z), provided z
 is observable under the arbitrary Gamma1/Gamma2 partition.
-In particular the argument is valid when the fibre has members
-outside the geometric frontier cone containing its root. -/
+This includes occurrences that are not T-support vertices and
+have no safe inverse support address of their own. Such occurrences
+still lie above the original f-root and therefore INSIDE its
+containing frontier cone, as guaranteed by VariableWord.below. -/
 theorem Q_word_eq_on_observable_full_fibre
     {b n l k m : Nat} {α : Type*}
     (hb : 0 < b)
