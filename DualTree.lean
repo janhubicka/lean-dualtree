@@ -367,3 +367,5 @@ import DualTree.ForwardQAmbientFibreFrame
 import DualTree.ForwardQAmbientFibreSymbol
 
 import DualTree.ForwardQAmbientFibreLegalWord
+
+import DualTree.ForwardQAmbientFibreSpan
