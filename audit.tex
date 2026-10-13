@@ -6866,7 +6866,7 @@ established before the printed
 Lemma~27 and its Ramsey
 iteration can be certified.
 
-\paragraph{Forced identification of occurring local variables strictly shrinks the evaluated span.} \todo
+\paragraph{Forced identification of occurring local variables strictly shrinks the evaluated span.} \ok
 The source-facing visible-root bound
 already proves that if one corrected
 full frontier cone contains $m+2$
@@ -6927,9 +6927,9 @@ is geometrically aligned, the
 evaluated span of that full raw
 cone word cannot be recovered
 from its root-translated word.
-The three source-facing declarations passed Lean CI on
-the earlier 1042-endpoint branch; the current combined
-1054-declaration branch awaits final confirmation.
+The three source-facing declarations passed Lean compilation,
+finite regressions and the 1054-declaration transitive
+no-\texttt{sorryAx} audit in merged PR~\#249.
 
 \paragraph{Consequence for Lemma~27.}
 It is \emph{not sufficient} to
@@ -7055,7 +7055,7 @@ that their global mixed-product
 Ramsey span is now established.
 
 
-\paragraph{Exact visible-root capacity for preserving the full evaluated span of one corrected $Q$ frontier cone.} \todo
+\paragraph{Exact visible-root capacity for preserving the full evaluated span of one corrected $Q$ frontier cone.} \ok
 The preceding exact span criterion
 can be combined with the explicit
 finite chain of old source-variable
@@ -7138,12 +7138,9 @@ positive full-span equality,
 and establishes the converse
 cardinality bound and
 existence/capacity equivalence.
-Six transitive theorem
-endpoints target 1064
-on the branch stacked after
-the 1058-declaration
-injectivity criterion,
-pending Lean CI.
+All six source-facing theorem endpoints passed Lean compilation,
+finite regressions and the 1064-declaration transitive
+no-\texttt{sorryAx} audit on PR~\#252.
 
 \paragraph{What this does not prove.}
 This is a sharp \emph{single
