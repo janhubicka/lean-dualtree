@@ -225,6 +225,28 @@ obligation; `\todo` marks a remaining gap or proposed change.
   fingerprints supplied by a fallback colour. This is a quotient
   normal form, NOT proof of the paper's specific simple-colouring
   factorization or its variable-word span (10 CI-verified endpoints in merged PR #247).
+- The actual full-frontier Q word now has a proposed
+  **mixed-product evaluated-span bridge**: if a genuine corrected-starred
+  input x belongs to the span of a variable mixed-product word f, then
+  each coordinatewise Q symbol at P_i(z) is exactly the constant
+  carrying the evaluation of f_i under a local substitution σ_i.
+  All component assignments can be selected simultaneously, and
+  outside all frontier cones the old source word is unchanged.
+  These are independent LOCAL assignments, not a single substitution
+  into the limited old Q-source roots, so no global span-preservation
+  or Ramsey step follows (5 source-facing Lean endpoints, CI-green on PR #248).
+- The canonical smoothness fingerprint now has a proposed
+  **literal corrected R/B₂ marker interface**. A subset B₂ of
+  actual source signature markers determines exactly Gamma₂ via the
+  checked R ↔ D₂ coordinate bijection; B₁ markers preserve whole
+  words but hide marked points, whereas B₂ masks inside-cone
+  letters and records the point and outside-cone letters.
+  Equality of these records is exactly Definition 21 smoothness,
+  and arbitrary smooth corrected-starred colourings factor through
+  this concrete marker record. The remaining paper-specific
+  obligation is the canonical address transport from its abstract
+  Definition 24 A=B₁⊔B₂ to the actual R, followed by verifying its
+  particular colouring factors through the record (7 source-facing Lean endpoints, CI-green in PR #250).
 - A proposed **strict evaluated-span loss** theorem quantifies
   the genuine-variable transport obstruction: over any alphabet
   with two distinct letters, identifying two different local
@@ -235,7 +257,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   so it cannot preserve the FULL local raw-word span.
   This is a conditional limitation on the naive Lemma 27
   repair, not a counterexample to the main Ramsey theorem
-  (3 new source-facing Lean endpoints, CI pending).
+  (3 source-facing endpoints, CI-green on previous branch; final combined check pending).
 - A **kernel-checked source-facing counterexample** to the displayed
   Q leaf replacement, including the paper's Definition 20 starred-domain
   constraint: independent D2 bullet depths, in the actual reverse-lex
@@ -251,7 +273,7 @@ obligation; `\todo` marks a remaining gap or proposed change.
   well-definedness of Q, not the final Ramsey existence theorem.
 
 These are Lean theorems, not assumed lemmas. The main branch already
-audits **1042 source-facing declarations** for transitive
+audits **1054 source-facing declarations** for transitive
 uses of unproved or nonstandard axioms. The authoritative count is
 maintained in the CI workflow and increases with new checked results.
 The complete theorem and the full construction of Lemma 27 are
@@ -375,19 +397,23 @@ per-occurrence condition for genuine cone-variable root transport.
 `ForwardQVisibleRootCapacity` bounds its number of distinct old-root targets,
 gives faithful finite indices and establishes the m+2 versus m+1
 non-injectivity obstruction.
-`ForwardQVariableSpanCollapse` supplies the corresponding strict
-evaluated-span loss witness when actually occurring names collapse.
+`ForwardQVariableSpanCollapse` proves the strict two-letter span loss
+when genuinely occurring cone-variable names are identified.
 `ForwardQCanonicalConeRootChoice` supplies the verified iff criterion
 for existence of some old-root transport and a deliberately collapsing
 first-visible-root witness.
 `ForwardQActualCoordinateWord` samples genuine input coordinate letters
 at corrected canonical projected positions across all D₀/D₂ frontiers.
+`ForwardQMixedSpanEvaluation` connects actual variable mixed-product
+span membership to simultaneous evaluated projected Q-coordinate letters.
 `ForwardQProjectedSmoothObservables` characterizes arbitrary Gamma₁/Gamma₂
 smoothness by exactly the corresponding observable genuine Q symbols
 and fixed Gamma₂ projected nodes.
 `ForwardQObservableFingerprint` constructs an explicit quotient record,
 whose equality characterizes the same relation and through which
 smooth starred colourings factor.
+`ForwardQMarkerFingerprint` specializes this record to actual literal
+corrected signature marker subsets B₂ ⊆ R.
 `ForwardQBulletRootVisibility` establishes nonempty old variable roots at all
 actual D₂ frontiers, without inferring the same property for D₀.
 `ForwardQStarredOrderReindexObstruction` records the verified
