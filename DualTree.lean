@@ -359,3 +359,5 @@ import DualTree.ForwardQOccurringHallSpan
 import DualTree.ForwardQHallConeData
 
 import DualTree.ForwardQHallEvaluations
+
+import DualTree.ForwardQEnlargedConstantWords
