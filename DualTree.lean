@@ -351,3 +351,5 @@ import DualTree.ForwardQVariableSpanCollapse
 import DualTree.ForwardQSpanExactInjectivity
 
 import DualTree.ForwardQVisibleSpanCapacityIff
+
+import DualTree.ForwardQGlobalHallSpan
