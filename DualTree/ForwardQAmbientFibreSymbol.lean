@@ -71,7 +71,6 @@ theorem selectedFrontier_some_prefix
     have heq : Classical.choose hex = i := by
       simpa using h
     rwa [heq] at hs
-  · cases h
 
 /-- The paper's local two-case map Lambda' -> Lambda + old
 source variables, with the input sampled at an AMBIENT f-root,
@@ -263,7 +262,16 @@ theorem decode_ambient_projected_root
     rw [hnode]
     exact ForwardQEnlargedConstantWords.sampledEnlarged_projected
       c.core w fallback c.T_bounded i z
-  simp [decodeAmbientRoot, hselected, hletter]
+  change (match ForwardQFullFrontierWord.selectedFrontier c.core v.1 with
+    | none => Sum.inl fallback
+    | some j =>
+        match ForwardQEnlargedConstantWords.sampledEnlarged
+          c.core w fallback j v.1 with
+        | Sum.inl a => Sum.inl a
+        | Sum.inr h =>
+            ForwardQVisibleAncestorDecoder.decodeAux
+              c.core fallback j h) = _
+  rw [hselected, hletter]
 
 /-- The FULL source-facing clause (iv) at an f-variable ROOT:
 we decode actual w_i(z), never a synthetic one-cone symbol. -/
@@ -288,7 +296,8 @@ theorem fibreQ_projected_root
   have hf : c.ambient.word v.1 = Sum.inr v :=
     ambient_at_T_root_symbol c p.1 p.2
   have hafter : ¬ ForwardAux v.1.1 c.core.cut := by
-    simpa [ambientAtTRoot] using projected_root_after_cut c i z
+    change ¬ ForwardAux p.1 c.core.cut
+    exact projected_root_after_cut c i z
   calc
     fibreQSymbol c fallback w v.1 =
       decodeAmbientRoot c fallback w v :=
