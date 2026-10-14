@@ -8844,6 +8844,30 @@ $R$ in each forward-semi-complete output,
 and verify compatibility of their chosen
 canonical successor cones.
 
+\paragraph{Canonical finite enumeration of the corrected model boundary.} \todo
+With the verified arithmetic heap bijection, the boundary interval
+$l\le\operatorname{ind}(s)\le bl$ can now be encoded by an actual
+finite equivalence
+\[
+  A_l\ \simeq\ \operatorname{Fin}(bl-l+1),\qquad
+  s\longmapsto\operatorname{ind}(s)-l.
+\]
+The inverse sends $i$ to the unique homogeneous direction word of
+heap index $i+l$. This makes the boundary cardinality $bl-l+1$
+explicit and avoids an arbitrary permutation of terminal vertices.
+The proposed \lean{ForwardModelBoundaryEnumeration} module checks
+this equivalence and cardinality (three source-facing endpoints,
+expected axiom-audit target 1222; Lean CI pending).
+
+This result is a model-side enumeration only: obtaining the
+paper's actual canonical $I_{Q(w)}(a)$ requires a
+prefix- and direction-preserving map from the first-$l$ model
+interior to the \,\emph{fixed} old interior of each corrected
+$Q$ output, and an identification of its outgoing boundary
+edges with the fixed literal first-exit markers $R$.
+The already checked $R\cong\operatorname{Leaves}(Q(w))$ does
+not supply those direction labels by mere cardinality.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

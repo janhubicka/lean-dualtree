@@ -211,6 +211,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   semi-complete skew sources remains open.
   See `DualTree/ForwardModelHeapSurjective.lean`.
 
+- **Explicit finite model boundary enumeration (three endpoints, CI pending):**
+  for positive b and l, the canonical forward model boundary
+  A_l is indexed without choices by its contiguous heap interval
+  [l, b*l]. Hence A_l is equivalent to Fin (b*l-l+1), and
+  its cardinality is exactly b*l-l+1. The equivalence uses the
+  corrected forward auxiliary order, not the false printed
+  reverse-lex order. This is the model side only: a genuine
+  direction-respecting boundary map A_l to source R is still open.
+  See `DualTree/ForwardModelBoundaryEnumeration.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

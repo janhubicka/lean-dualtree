@@ -1445,3 +1445,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardModelHeapSurjective.heapIndexEquivNat
 #print axioms DualTree.ForwardModelHeapSurjective.initialModelEquiv
 #print axioms DualTree.ForwardModelHeapSurjective.modelInterior_card
+
+#print axioms DualTree.ForwardModelBoundaryEnumeration.heapIndex_equiv_symm
+#print axioms DualTree.ForwardModelBoundaryEnumeration.boundaryIndexEquivFin
+#print axioms DualTree.ForwardModelBoundaryEnumeration.modelBoundary_card
