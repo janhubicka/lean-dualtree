@@ -200,6 +200,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   the canonical model A-to-literal-R direction transport remain
   separate obligations. See `DualTree/ForwardModelHeapInjective.lean`.
 
+- **Surjective model heap enumeration (four endpoints, CI pending):**
+  strong induction on an index k+1 constructs a parent word of index
+  k/b and attaches direction k%b. Together with heap injectivity,
+  this gives an explicit equivalence `Node b ≃ Nat` for positive b.
+  The first-l arithmetic model interior is now canonically equivalent
+  to `Fin l` and has exactly l elements. This completes the
+  homogeneous forward-order arithmetic model. The map from its
+  canonical boundary A to the literal R markers of arbitrary
+  semi-complete skew sources remains open.
+  See `DualTree/ForwardModelHeapSurjective.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
