@@ -1401,3 +1401,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQLiteralMarkerLeafEquiv.bulletToQLeaf_surjective
 #print axioms DualTree.ForwardQLiteralMarkerLeafEquiv.literalMarkerQLeafEquiv_value
 #print axioms DualTree.ForwardQLiteralMarkerLeafEquiv.marker_prefix_its_Q_leaf
+
+#print axioms DualTree.ForwardQRelativeMarkerSelector.Q_leaf_unique_above_literal_marker
+#print axioms DualTree.ForwardQRelativeMarkerSelector.canonicalTerminal_actual_Q
+#print axioms DualTree.ForwardQRelativeMarkerSelector.relativeR_simple_pullback_smooth
+#print axioms DualTree.ForwardQRelativeMarkerSelector.exists_total_relativeR_smooth_pullback
