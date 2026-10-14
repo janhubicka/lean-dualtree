@@ -180,6 +180,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   and canonical model A-to-literal-R transport remain open.
   See `DualTree/ForwardModelHeapLexOrder.lean`.
 
+- **Forward model heap levels (6 endpoints, CI pending):** exact
+  numerical min/max bands are defined for all tree depths, with
+  `max(b,n)+1=min(b,n+1)`. Every length-n address lies in its
+  level band, and positive branching makes shorter addresses have
+  strictly smaller heap indices. Combined with equal-level lex
+  monotonicity, the heap index is now proved MONOTONE for the
+  corrected length-first forward auxiliary order. Full order
+  reflection/injectivity and the canonical A-to-R address map
+  remain open. See `DualTree/ForwardModelHeapLevels.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
