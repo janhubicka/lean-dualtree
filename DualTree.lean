@@ -409,3 +409,5 @@ import DualTree.ForwardModelHeapSurjective
 import DualTree.ForwardModelBoundaryEnumeration
 
 import DualTree.ForwardQMarkerDirectionalIncidence
+
+import DualTree.ForwardQFixedVertexShape
