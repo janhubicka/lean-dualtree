@@ -8868,6 +8868,36 @@ edges with the fixed literal first-exit markers $R$.
 The already checked $R\cong\operatorname{Leaves}(Q(w))$ does
 not supply those direction labels by mere cardinality.
 
+\paragraph{Input-independent outgoing directions of corrected $Q$ leaves.} \todo
+The actual terminal of $Q(w)$ assigned to a literal signature marker
+$r\in R$ may change its ambient depth as the selected mixed-product
+point changes. However, the old-interior ancestor mask was already
+proved equal to that of $r$. It also determines every old-parent
+\emph{first outgoing direction}: if $s\in\operatorname{Int}(S)$
+and $i\in[b]$, then
+\[
+  s^\frown i\sqsubseteq P_{\iota(r)}(w)
+  \quad\Longleftrightarrow\quad
+  s^\frown i\sqsubseteq r.
+\]
+Indeed, the forward implication first puts $s$ strictly below the
+projected point; the checked old-interior ancestor theorem then
+puts $s$ strictly below $r$. Since $r$ itself precedes the projected
+point, the first direction after $s$ must coincide. The converse
+is transitivity of ambient prefix order.
+
+The proposed \lean{ForwardQMarkerDirectionalIncidence} module checks
+this cone equivalence for each actual corrected Q input and
+its corollary that the full old-interior direction signature of
+an $R$-labelled leaf is independent of the mixed-product input
+(two source-facing endpoints, target 1224; CI pending).
+This is the missing \emph{local incidence invariant} for building
+a fixed directed interior skeleton, but is not the complete
+canonical boundary isomorphism $A_l\cong R$. To finish that
+one must construct the interior address assignment recursively,
+prove it is the corrected first-$l$ forward model, and show the
+remaining outgoing leaf directions are indexed exactly by $R$.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
