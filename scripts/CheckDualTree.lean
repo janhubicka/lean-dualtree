@@ -1421,3 +1421,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardModelHeapChildOrder.heapIndex_child_lt_of_direction_lt
 #print axioms DualTree.ForwardModelHeapChildOrder.heapIndex_child_lt_of_parent_lt
 #print axioms DualTree.ForwardModelHeapChildOrder.heapIndex_child_lt_of_parent_or_direction
+
+#print axioms DualTree.ForwardModelBoundaryHeight.length_le_heapIndex
+#print axioms DualTree.ForwardModelBoundaryHeight.modelInterior_bounded_of_l_le_n
+#print axioms DualTree.ForwardModelBoundaryHeight.modelBoundary_bounded_of_n_gt_b_mul_l
