@@ -1425,3 +1425,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardModelBoundaryHeight.length_le_heapIndex
 #print axioms DualTree.ForwardModelBoundaryHeight.modelInterior_bounded_of_l_le_n
 #print axioms DualTree.ForwardModelBoundaryHeight.modelBoundary_bounded_of_n_gt_b_mul_l
+
+#print axioms DualTree.ForwardModelHeapLexOrder.heapIndex_append_lt_of_lt_same_length
+#print axioms DualTree.ForwardModelHeapLexOrder.heapIndex_append_le_of_same_length_lex
+#print axioms DualTree.ForwardModelHeapLexOrder.heapIndex_le_of_same_length_lex
+#print axioms DualTree.ForwardModelHeapLexOrder.finLexLE_of_heapIndex_lt_same_length
