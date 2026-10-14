@@ -8214,6 +8214,52 @@ explicit projection. Cardinality or an arbitrary
 bijection is \emph{not} sufficient: the required
 prefix/direction labelling must be respected.
 
+\paragraph{An explicit arithmetic model for Definition~24's boundary A.} \todo
+The missing model-to-literal boundary correspondence
+should not start from an unspecified ordering of
+arbitrary support nodes. A natural explicit model is
+the zero-based $b$-ary heap indexing of ambient words:
+\[
+  \operatorname{ind}(\varnothing)=0,\qquad
+  \operatorname{ind}(s^\frown i)
+    =b\,\operatorname{ind}(s)+1+i.
+\]
+For $b>0$ this strictly increases with every
+ambient prefix extension, so the candidate
+first-$l$ model interior
+\[
+ H_l=\{s:\operatorname{ind}(s)<l\}
+\]
+is prefix-closed. Its external immediate-child
+boundary is
+\[
+ A_l=\{s^\frown i:s\in H_l,\ s^\frown i\notin H_l\}.
+\]
+The proposed \lean{ForwardModelBoundaryHeap}
+module proves $A_l$ is a prefix antichain and
+the exact necessary arithmetic range
+\[
+       s\in A_l\ \Longrightarrow\
+       l\le\operatorname{ind}(s)\le bl.
+\]
+It also proves the heap child formula, strict
+growth along children, and prefix closure of
+$H_l$. Seven source-facing Lean endpoints
+target 1191 on this independent branch,
+pending CI and the transitive no-\texttt{sorryAx}
+audit.
+
+The next steps are to verify formally
+that this numerical heap enumeration agrees
+with the corrected \emph{forward} auxiliary
+order on the homogeneous model, prove the
+converse boundary characterization and unique
+decoding, and then construct the direction-
+preserving canonical map $A_l\cong R$.
+None of these is justified by an arbitrary
+finite-cardinality equivalence; the printed
+REVERSE-lex order remains separately refuted.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
