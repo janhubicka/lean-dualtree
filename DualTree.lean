@@ -405,3 +405,5 @@ import DualTree.ForwardModelHeapLevels
 import DualTree.ForwardModelHeapInjective
 
 import DualTree.ForwardModelHeapSurjective
+
+import DualTree.ForwardModelBoundaryEnumeration
