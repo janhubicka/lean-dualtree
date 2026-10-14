@@ -57,6 +57,7 @@ theorem Q_leaf_unique_above_literal_marker
     ⟨s, hterminal⟩
   obtain ⟨j, hproj⟩ :=
     ForwardQLiteralMarkerLeafEquiv.Q_leaf_has_bullet hb c x leaf
+  change (markedProjection c x j).1 = s at hproj
   have hmarked : IsPrefix (ForwardQMeetClosed.markerOfBullet c j).1 s := by
     rw [← hproj]
     exact ForwardQMeetClosed.recoveredMarker_prefix_projection c x j
