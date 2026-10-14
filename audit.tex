@@ -8044,6 +8044,35 @@ parameter inequalities
 are valid. These remain
 independent \todo{} claims.
 
+\paragraph{Corrected forward-complete support and inverse prefix order.} \todo
+The prefix-order transport needed to turn an ambient Q-marked
+cone exclusion into an intrinsic local-address exclusion
+cannot invoke the earlier canonical support theorem proved
+under \texttt{completeB paperAuxB}. The globally repaired
+Lemma~27 assumes \texttt{completeB forwardAuxB} instead.
+
+A separate \lean{ForwardCompletePrefixIso} module proves
+for the actual corrected embedding
+$I_T:b^{<k}\longrightarrow T$ that
+\[
+ x\sqsubseteq y\iff I_T(x)\sqsubseteq I_T(y),
+ \qquad
+ s\sqsubseteq t\iff
+ I_T^{-1}(s)\sqsubseteq I_T^{-1}(t).
+\]
+The proof uses strict growth of intrinsic support rank on
+prefixes, uniqueness of a support prefix at a given rank on
+a common path, and the already checked injectivity and
+rank correctness of $I_T$. It is independent of all
+mixed-product colouring assumptions. Four theorem endpoints
+are proposed; CI and transitive no-\texttt{sorryAx} audit
+(target 1147 declarations) remain pending.
+
+This is only the \emph{geometric} tool. Lemma~27 still
+needs to identify all safe local $P_i(z)$ addresses
+and transport the Definition~24 $B_2$ cone condition
+to exactly the appropriate literal $\Gamma_2$ cones.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

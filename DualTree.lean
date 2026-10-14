@@ -373,3 +373,5 @@ import DualTree.ForwardQAmbientFibreSpan
 import DualTree.ForwardQSimpleLetterSmooth
 
 import DualTree.ForwardQAmbientFibreSmoothObservable
+
+import DualTree.ForwardCompletePrefixIso
