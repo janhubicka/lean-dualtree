@@ -8760,6 +8760,49 @@ of arbitrary corrected semi-complete trees.
 The original reverse-lex statement is
 not used.
 
+\paragraph{Injective heap coding and the corrected model order.} \todo
+For positive arity $b$, the zero-based heap code
+is injective on all finite direction lists.
+Indeed, if two nonempty lists have the same
+code, their parents cannot have different
+indices: the verified child-block inequality
+would then force strict inequality of the
+children's indices. Equal parent indices
+imply equality of the final child directions
+from
+$bq+1+i=bq+1+j$; induction on the
+first list's length gives equality of the
+entire words. The empty-list case follows
+from the checked inequality
+$|s|\le\operatorname{ind}(s)$.
+
+Combining this injectivity with the already
+verified same-level lex monotonicity and
+distinct-level band separation establishes
+the exact \emph{corrected} model order
+equivalence
+\[
+  s\mathrel{\mathrm{ForwardAux}}t
+   \ \Longleftrightarrow\
+  \operatorname{ind}(s)\le \operatorname{ind}(t).
+\]
+The proposed
+\lean{ForwardModelHeapInjective} module
+contains these two source-facing lemmas
+(stacked transitive target 1215, pending CI).
+
+This is an order isomorphism of the
+homogeneous model onto the \emph{image}
+of its arithmetic index. Surjectivity
+onto all nonnegative integers remains
+to be made explicit before equating
+the heap-initial set $H_l$ with the
+literal first-$l$ model nodes for every $l$.
+Nor does this identify the canonical
+model boundary $A$ with corrected
+literal first-exit markers $R$ in a
+semi-complete skew tree.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
