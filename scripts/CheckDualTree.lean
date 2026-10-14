@@ -1392,3 +1392,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQAllExteriorFibres.root_exterior_of_ambient_position_exterior
 #print axioms DualTree.ForwardQAllExteriorFibres.starred_Q_word_eq_outside_gamma2_cones
 #print axioms DualTree.ForwardQAllExteriorFibres.corrected_Q_simple_observables
+
+#print axioms DualTree.ForwardQMarkerTransportInterface.simple_pullback_smooth_of_canonical_marker_transport
+#print axioms DualTree.ForwardQMarkerTransportInterface.exists_total_smooth_pullback_of_canonical_marker_transport
