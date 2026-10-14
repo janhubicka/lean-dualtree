@@ -177,4 +177,112 @@ theorem starred_Q_word_eq_all_gamma1
   intro v hv j hj
   simp at hj
 
+
+/-- A marked Q cone that misses an AMBIENT occurrence also misses
+the root of that occurrence's original f-variable fibre: the
+original word's variable-root axiom puts the root below s.
+Thus the root-exterior premise is not an additional hypothesis
+when comparing words at the observable ambient positions of
+Definition 24. -/
+theorem root_exterior_of_ambient_position_exterior
+    {b n l k m : Nat} {α : Type*}
+    (c : FibreFrame b n l k m α)
+    (fallback : α)
+    (x : ForwardQEnlargedConstantWords.EnlargedInput c.core)
+    (gamma1 : MixedProduct.BulletIndex (kind c.core) → Bool)
+    (s : BoundedNode b n)
+    (houtside :
+      ∀ j : MixedProduct.BulletIndex (kind c.core),
+        gamma1 j = false →
+        ¬ IsPrefix
+          (markedProjection c.core
+            (ForwardQEnlargedConstantWords.eraseAux
+              c.core fallback x) j).1 s.1) :
+    RootGamma2Exterior c fallback x gamma1 s := by
+  intro v hv j hj hmarkerroot
+  have hroots : IsPrefix v.1.1 s.1 :=
+    c.ambient.below v s hv
+  exact houtside j hj (isPrefix_trans hmarkerroot hroots)
+
+/-- Definition 21 smoothness makes the ACTUAL finished Q words
+equal at every ambient position outside the projected Gamma2
+marked cones. Unlike the earlier safe-fibre theorem, this
+assertion includes all default cases and all original positions
+of each original f-variable fibre. -/
+theorem starred_Q_word_eq_outside_gamma2_cones
+    {b n l k m : Nat} {α : Type*}
+    (hb : 0 < b)
+    (c : FibreFrame b n l k m α)
+    (fallback : α)
+    (x y : ForwardQEnlargedConstantWords.EnlargedStarredInput
+      c.core fallback)
+    (gamma1 : MixedProduct.BulletIndex (kind c.core) → Bool)
+    (hxy : MixedProduct.SmoothRelated gamma1 x.1 y.1)
+    (s : BoundedNode b n)
+    (houtside :
+      ∀ j : MixedProduct.BulletIndex (kind c.core),
+        gamma1 j = false →
+        ¬ IsPrefix
+          (markedProjection c.core
+            (ForwardQEnlargedConstantWords.eraseAux
+              c.core fallback x.1) j).1 s.1) :
+    (fibreQStarredWord hb c fallback x).word.word s =
+      (fibreQStarredWord hb c fallback y).word.word s := by
+  exact starred_Q_word_eq_of_root_gamma2_exterior
+    hb c fallback x y gamma1 hxy s
+      (root_exterior_of_ambient_position_exterior
+        c fallback x.1 gamma1 s houtside)
+
+/-- The THREE concrete observables demanded by the source
+Definition 24 simplicity test, indexed by the actual corrected
+D2 / literal-R markers rather than yet asserting their
+identification with the abstract canonical A-markers.
+
+(1) the two Q trees have the same interior;
+(2) every Gamma2 selected projected Q marked node is fixed;
+(3) the COMPLETE decoded Q word agrees at every ambient
+    position outside the union of those marked successor cones.
+
+The remaining source-facing task is to identify the paper's
+canonical A-to-R address correspondence. -/
+theorem corrected_Q_simple_observables
+    {b n l k m : Nat} {α : Type*}
+    (hb : 0 < b)
+    (c : FibreFrame b n l k m α)
+    (fallback : α)
+    (x y : ForwardQEnlargedConstantWords.EnlargedStarredInput
+      c.core fallback)
+    (gamma1 : MixedProduct.BulletIndex (kind c.core) → Bool)
+    (hxy : MixedProduct.SmoothRelated gamma1 x.1 y.1) :
+    (∀ t : Node b,
+      t ∈ SkewTree.interior
+        (fibreQStarredWord hb c fallback x).tree ↔
+      t ∈ SkewTree.interior
+        (fibreQStarredWord hb c fallback y).tree) ∧
+    (∀ j : MixedProduct.BulletIndex (kind c.core),
+      gamma1 j = false →
+      markedProjection c.core
+        (ForwardQEnlargedConstantWords.eraseAux c.core fallback x.1) j =
+      markedProjection c.core
+        (ForwardQEnlargedConstantWords.eraseAux c.core fallback y.1) j) ∧
+    (∀ s : BoundedNode b n,
+      (∀ j : MixedProduct.BulletIndex (kind c.core),
+        gamma1 j = false →
+        ¬ IsPrefix
+          (markedProjection c.core
+            (ForwardQEnlargedConstantWords.eraseAux
+              c.core fallback x.1) j).1 s.1) →
+      (fibreQStarredWord hb c fallback x).word.word s =
+        (fibreQStarredWord hb c fallback y).word.word s) := by
+  refine ⟨?_, ?_, ?_⟩
+  · intro t
+    exact ForwardQSimpleLetterSmooth.Q_interiors_eq
+      hb c fallback x y t
+  · intro j hj
+    exact ForwardQAmbientFibreSmoothObservable.gamma2_Q_markedProjection_eq_of_smooth
+      c fallback x y gamma1 hxy j hj
+  · intro s houtside
+    exact starred_Q_word_eq_outside_gamma2_cones
+      hb c fallback x y gamma1 hxy s houtside
+
 end DualTree.ForwardQAllExteriorFibres
