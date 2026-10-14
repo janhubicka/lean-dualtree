@@ -31,6 +31,7 @@ namespace DualTree.ForwardQAmbientFibreSmoothObservable
 open ForwardSourceQTree
 open ForwardQAmbientFibreFrame
 open ForwardQAmbientFibreLegalWord
+open ForwardQAmbientFibreSymbol
 open ForwardQProjectedSmoothObservables
 
 /-- Definition 21 smoothness fixes the ACTUAL enlarged input
