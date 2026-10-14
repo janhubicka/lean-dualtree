@@ -1358,3 +1358,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQAmbientFibreSmoothObservable.Q_word_eq_on_gamma1_full_fibre
 #print axioms DualTree.ForwardQAmbientFibreSmoothObservable.Q_word_eq_on_gamma2_outside_full_fibre
 #print axioms DualTree.ForwardQAmbientFibreSmoothObservable.gamma2_Q_markedProjection_eq_of_smooth
+
+#print axioms DualTree.ForwardCompletePrefixIso.canonicalEmbedding_prefix_reflect
+#print axioms DualTree.ForwardCompletePrefixIso.canonicalEmbedding_prefix_iff
+#print axioms DualTree.ForwardCompletePrefixIso.inverseAddress_prefix
+#print axioms DualTree.ForwardCompletePrefixIso.inverseAddress_prefix_iff

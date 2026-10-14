@@ -36,6 +36,13 @@ obligation; `\todo` marks a remaining gap or proposed change.
   full arbitrary-B2 simplicity without root coverage and A-to-R
   marker transport. See `ForwardQAmbientFibreSmoothObservable.lean`.
 
+- **Forward-complete prefix isomorphism (new, CI pending):** the genuine
+  corrected canonical support embedding I_T both preserves and reflects
+  ambient prefixes, and its inverse addresses preserve/reflect prefixes.
+  This gives an exact geometric bridge between marked cones and intrinsic
+  source addresses without using the false printed reverse-lex order.
+  See `DualTree/ForwardCompletePrefixIso.lean` (four new theorems).
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
