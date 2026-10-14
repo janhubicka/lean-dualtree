@@ -90,12 +90,12 @@ theorem realize_injective
   | inl s =>
       cases v with
       | inl t =>
-          have heq : s.1 = t.1 := congrArg Subtype.val huv
+          have heq : s.1 = t.1 := congrArg (fun q : QVertex c x => q.1) huv
           exact congrArg Sum.inl (Subtype.ext heq)
       | inr r =>
           have heq : s.1 =
               (markedProjection c x (bulletForMarker c r)).1 :=
-            congrArg Subtype.val huv
+            congrArg (fun q : QVertex c x => q.1) huv
           have hi : s.1 ∈ SkewTree.interior (nodes c x).toList :=
             (ForwardQInteriorExact.Q_interior_iff_original
               hb c x s.1).2 s.2
@@ -114,7 +114,7 @@ theorem realize_injective
           have heq :
               (markedProjection c x (bulletForMarker c r)).1 =
                 s.1 :=
-            congrArg Subtype.val huv
+            congrArg (fun q : QVertex c x => q.1) huv
           have hi : s.1 ∈ SkewTree.interior (nodes c x).toList :=
             (ForwardQInteriorExact.Q_interior_iff_original
               hb c x s.1).2 s.2
@@ -131,7 +131,7 @@ theorem realize_injective
           have heq :
               (markedProjection c x (bulletForMarker c r)).1 =
               (markedProjection c x (bulletForMarker c t)).1 :=
-            congrArg Subtype.val huv
+            congrArg (fun q : QVertex c x => q.1) huv
           have hbullet : bulletForMarker c r = bulletForMarker c t :=
             markedProjection_injective c x (Subtype.ext heq)
           have hrt : r = t :=
