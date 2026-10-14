@@ -8273,6 +8273,54 @@ abstract canonical $A=B_1\dot\cup B_2$ to
 literal corrected $R$, and the final mixed
 Ramsey refinement and recursion.
 
+
+\paragraph{Input-independent original $f$-fibre defaults.} \todo
+The verified corrected fibrewise Q formula and canonical
+forward-complete cone decomposition leave four
+input-independent cases:
+\begin{enumerate}
+\item $f(s)\in\Lambda$ is an original constant: $g_x(s)=f(s)$;
+\item $f(s)=v_t$ with $t$ at or before the corrected final cut:
+      $g_x(s)=g'(s)$;
+\item a post-cut $f$-variable root has no selected outside-cut
+      frontier: $g_x(s)=a_0$;
+\item a post-cut $f$-variable root has selected frontier $f_i$
+      but its actual inverse T address has a local suffix
+      of length at least $k-(m+1)$: $g_x(s)=a_0$.
+\end{enumerate}
+Here the final two cases use the \emph{same designated fallback
+original alphabet letter} $a_0$ regardless of the
+enlarged mixed-product input. In particular these are
+entire original $f$-fibres, not the ambient locations'
+own geometric cones.
+
+The proposed \lean{ForwardQFibreDefaults} module formalizes
+the four cases and packages them as
+$\mathrm{DefaultFibre}(c,s)$: for a constant position the
+predicate is automatic, and for a variable fibre it
+requires one of the early, no-frontier, or genuinely
+out-of-safe-domain alternatives. The main theorem proves
+\[
+ \mathrm{DefaultFibre}(c,s)
+ \quad\Longrightarrow\quad
+ g_x(s)=g_y(s)
+\]
+for arbitrary enlarged inputs $x,y$, not just
+smooth-related ones, and transfers the statement to
+the actual finished starred Q words. Eight
+source-facing Lean endpoints target 1171 declarations,
+pending CI and no-\texttt{sorryAx} audit.
+
+\textbf{Remaining:} combine the four default cases
+with the existing safe post-cut exterior theorem
+\lean{ForwardQSafeFibreSmoothness}, prove the desired
+disjunction for \emph{every} relevant ambient $f$-fibre,
+then identify Definition~24's canonical signature
+$A=B_1\dot\cup B_2$ with the corrected literal
+marker family $R$ before asserting a general smooth
+pullback. The numerical mixed-product Ramsey recursion
+and final $f'$ remain independent obligations.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
