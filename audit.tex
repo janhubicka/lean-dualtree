@@ -8123,6 +8123,56 @@ cases, the exact pullback of the selected $\Gamma_2$
 marked cones, and the Definition~24 $A\to R$ transport
 before asserting simplicity for an arbitrary $B_2$.
 
+
+\paragraph{Exact final simplicity-to-smoothness transport interface.} \todo
+The corrected Q construction now satisfies all three
+literal-$R$-indexed analogues of Definition~24's
+simplicity hypotheses for any smooth-related mixed-product
+pair: its interiors coincide, the actual projected
+$\Gamma_2$ terminal points coincide, and their full ambient
+decoded words agree outside those marked successor cones.
+The paper's simplicity test, however, is indexed by the
+abstract canonical model boundary
+\[
+ A=\bigcup_{u\in\mathrm{first}_l(b^{<n})}
+ \bigl(\operatorname{ImSucc}(u)\setminus\mathrm{first}_l(b^{<n})\bigr).
+\]
+To avoid silently identifying unrelated marker types,
+the new \lean{ForwardQMarkerTransportInterface} states
+the exact remaining geometrical input:
+an equivalence
+$e:A\longrightarrow D_2$,
+a canonical output marker-node map
+$I_U(a)$ for arbitrary starred output $U$,
+and, for every actual corrected Q output,
+\[
+ I_{Q(w)}(a)=P_{e(a)}(s_{e(a)}(w)).
+\]
+The chosen Definition~24 witness
+$B_2\subseteq A$ must correspond exactly
+to the selected partition
+$\Gamma_2=e(B_2)$.
+
+Under THESE EXPLICIT assumptions, and under
+the genuine Definition~24 simplicity predicate
+restricted to refinements of the same ambient $f$,
+the module proves that $c\circ Q$ is smooth on
+the actual corrected enlarged-starred input subtype.
+It then uses the independently verified classwise
+extension lemma to produce a TOTAL smooth colouring
+of the complete enlarged mixed-product domain.
+Two Lean endpoints bring the transitive audit
+target to 1179, CI pending.
+
+The source-facing marker correspondence
+$e$ and the canonical image identities are
+\emph{not} established by this conditional lemma.
+They are now isolated as the single remaining
+geometric condition in the colouring pullback;
+the corrected starred-domain/Corollary~22
+compatibility and final $f'$ Ramsey refinement
+are still independent obligations.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

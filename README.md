@@ -94,6 +94,18 @@ obligation; `\todo` marks a remaining gap or proposed change.
   final mixed-product Ramsey refinement are still open.
   See `DualTree/ForwardQAllExteriorFibres.lean`.
 
+- **Definition 24 canonical-marker transport interface (2 endpoints, CI pending):**
+  the proof of the corrected Q simplicity observables is now factored
+  from the one remaining canonical identification. Given an explicit
+  equivalence from the paper's model boundary A to the actual selected
+  D2 indices, a matching B2/Gamma2 partition, and the identity
+  `I_{Q(w)}(a) = P_{e(a)}(s_{e(a)}(w))`, a genuinely Definition 24-style
+  simple colouring pulls back to a smooth colouring. The existing
+  classwise-extension theorem then provides a total smooth colouring
+  of the entire enlarged mixed product. The canonical A-to-R
+  identification remains a necessary, UNPROVED hypothesis.
+  See `DualTree/ForwardQMarkerTransportInterface.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
