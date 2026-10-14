@@ -64,6 +64,18 @@ obligation; `\todo` marks a remaining gap or proposed change.
   Definition 24 A-to-R marker correspondence remain open.
   See `DualTree/ForwardQSafeFibreSmoothness.lean`.
 
+- **Whole ambient-fibre default cases (8 endpoints, CI pending):**
+  original f-constants, variables rooted at/before the cut, late roots
+  with no selected frontier, and post-cut roots whose canonical T-inverse
+  tail is beyond the shortened safe mixed-product domain all give
+  input-independent Q letters. These cases are packaged in
+  `DefaultFibre`; actual starred Q outputs agree at every such
+  position without any smoothness assumption. Together with the
+  already verified safe-root Gamma2-exterior transport, this reduces
+  general Q smoothness to a complete fibre-by-fibre partition and
+  Definition 24's A-to-R marker correspondence. See
+  `DualTree/ForwardQFibreDefaults.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
