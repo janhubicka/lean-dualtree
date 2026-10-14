@@ -8260,6 +8260,45 @@ None of these is justified by an arbitrary
 finite-cardinality equivalence; the printed
 REVERSE-lex order remains separately refuted.
 
+\paragraph{Exact forward-heap model boundary interval.} \todo
+For positive model interior size $l$, the proposed
+forward breadth-first heap code gives an \emph{exact}
+characterization of the external-child boundary:
+\[
+  s\in A_l
+  \quad\Longleftrightarrow\quad
+  l\le \operatorname{ind}(s)\le bl.
+\]
+The forward direction follows from the already
+verified external-child arithmetic bounds. For
+the converse, an address in this interval is
+nonempty and has a unique decomposition
+$s=p^\frown i$. If $\operatorname{ind}(p)\ge l$,
+then
+$\operatorname{ind}(s)=b\operatorname{ind}(p)+1+i
+ > bl$, a contradiction. Thus $p\in H_l$.
+
+The new \lean{ForwardModelBoundaryInterval}
+module formalizes this converse and the exact
+equivalence as two Lean declarations. The
+independent Python regression
+\texttt{scripts/check-model-boundary-heap.py}
+exhaustively checks the heap inverse, parent
+prefix closure and boundary interval for
+$b=1,\dots,4$, $l=1,\dots,29$.
+The transitive no-\texttt{sorryAx} target is
+1197, pending CI. The degenerate case $l=0$
+is deliberately excluded: the numerical
+interval contains the root while $A_0$ is empty.
+
+The model arithmetic is not yet the required
+canonical $A$-to-$R$ transport: heap indexing
+must first be identified with the corrected
+forward auxiliary order and then with the
+direction-preserving prefix address of the
+actual source signature. It does not justify
+the paper's printed reverse-lex order.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
