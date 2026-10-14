@@ -255,6 +255,18 @@ obligation; `\todo` marks a remaining gap or proposed change.
   first-l model address map and A-to-R correspondence. See
   `DualTree/ForwardQFixedPrefixIso.lean`.
 
+- **Fixed old-interior child-direction incidence (two endpoints, CI pending):**
+  for every old source interior node s and direction i, a
+  corrected Q vertex labelled either by an old node or a literal
+  R marker lies above the ambient child s++[i] exactly when its
+  SOURCE LABEL does. This is uniform in every corrected mixed
+  input x. Together with the previously verified fixed prefix
+  relation, all Q outputs now have the same old-interior
+  DIRECTION-LABELLED prefix shape. Constructing the canonical
+  first-l homogeneous model address embedding and its precise
+  boundary A-to-R map is still open. See
+  `DualTree/ForwardQFixedDirectionShape.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
