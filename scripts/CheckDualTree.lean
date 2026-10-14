@@ -1430,3 +1430,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardModelHeapLexOrder.heapIndex_append_le_of_same_length_lex
 #print axioms DualTree.ForwardModelHeapLexOrder.heapIndex_le_of_same_length_lex
 #print axioms DualTree.ForwardModelHeapLexOrder.finLexLE_of_heapIndex_lt_same_length
+
+#print axioms DualTree.ForwardModelHeapLevels.maxIndex_succ_eq_minIndex
+#print axioms DualTree.ForwardModelHeapLevels.heapIndex_level_bounds
+#print axioms DualTree.ForwardModelHeapLevels.minIndex_lt_succ
+#print axioms DualTree.ForwardModelHeapLevels.minIndex_mono
+#print axioms DualTree.ForwardModelHeapLevels.heapIndex_lt_of_length_lt
+#print axioms DualTree.ForwardModelHeapLevels.heapIndex_mono_of_forwardAux
