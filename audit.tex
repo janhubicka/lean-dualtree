@@ -8492,6 +8492,61 @@ mixed-product variable-word refinement and
 numerical recursion. Do not silently replace
 the published reverse auxiliary order.
 
+
+\paragraph{R-relative canonical terminal selector and unconditional R-simple pullback.} \todo
+The verified bijection
+$R\cong\operatorname{Leaves}(Q(w))$ also permits a
+canonical \emph{source-relative} marker map on arbitrary
+starred output trees. Fix $r\in R$. For an arbitrary
+output $U$, choose a terminal $t\in U$ extending $r$
+if one exists, falling back to $r$ otherwise.
+The choice is not asserted unique on arbitrary $U$.
+
+On the actual Q output, however, ANY terminal extending
+$r$ equals exactly $P_{\iota(r)}(s_{\iota(r)})$:
+every terminal belongs to a unique literal marker
+$r'\in R$ and both $r,r'$ are first-exit boundaries
+of the same corrected forward cut. The already checked
+antichain theorem forces $r=r'$.
+Thus the source-relative observable has the exact
+value
+\[
+ I^R_{Q(w)}(r)=P_{\iota(r)}(s_{\iota(r)}(w))
+\]
+without an additional structural assumption.
+
+This is sufficient to instantiate the conditional
+simplicity-to-smoothness theorem with
+$A=R$, $\Gamma_2=\iota(B_2)$ and the explicit
+relative marker selector $I^R_U$.
+For a colouring satisfying the \emph{R-relative}
+Definition~24-style simplicity predicate on refinements
+of the ambient word $f$, the resulting pullback
+$c\circ Q$ is smooth and extends to a TOTAL smooth
+colouring of the complete enlarged mixed-product
+domain. No unproved marker transport remains in
+this \emph{R-relative} statement.
+
+The proposed \lean{ForwardQRelativeMarkerSelector}
+module formalizes the unique-leaf principle,
+the source-specific marker identity,
+the resulting R-simple pullback and its
+total smooth extension (four new source-facing
+axiom endpoints, target 1188, CI pending).
+
+\textbf{Critical distinction.} In the paper
+Definition~24 uses the \emph{canonical model boundary}
+$A$ of the first $l$ ambient nodes, not the source
+signature marker family $R$. The relative terminal
+map $I^R$ need not coincide with the paper's
+$I_U(a)$ for arbitrary output $U$, and an arbitrary
+published-simple colouring is \emph{not yet}
+proved R-simple. The remaining task is the actual
+canonical direction/address transport
+$A\cong R$ and compatibility of their
+successor cones. The mixed Ramsey refinement
+and induction remain separate obligations.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
