@@ -8173,6 +8173,47 @@ the corrected starred-domain/Corollary~22
 compatibility and final $f'$ Ramsey refinement
 are still independent obligations.
 
+\paragraph{The literal R markers are exactly the terminals of the Q tree.} \todo
+The previously verified corrected Q node formula and exact
+interior equality immediately give a stronger terminal
+classification than the one-sided Lemma~27 marker coverage.
+If $s\in S_w$ is terminal and belongs to the retained old
+base, then $s\in\operatorname{Int}(S)$, contrary to the checked
+identity $\operatorname{Int}(S_w)=\operatorname{Int}(S)$.
+Hence \emph{every} terminal $s\in S_w$ equals $P_i(s_i)$ for
+some selected $i\in D_2$. The earlier pairwise frontier
+separation theorem makes the index $i$ unique.
+
+Composing the resulting bijection
+\[
+  D_2\;\cong\;\operatorname{Leaves}(S_w)
+\]
+with the already proved fixed-frame
+$R\cong D_2$ yields
+\[
+ \boxed{\quad
+ R\;\cong\; \operatorname{Leaves}(S_w),\qquad
+ r\longmapsto P_{\iota(r)}(s_{\iota(r)}).
+ \quad}
+\]
+The image extends the literal marker $r$ in the ambient
+prefix order. The proposed
+\lean{ForwardQLiteralMarkerLeafEquiv}
+module formalizes the terminal converse, injectivity,
+surjectivity, the two equivalences, and the actual
+marker-to-leaf formula. Five new axiom-audited theorem
+endpoints bring the independent branch target to 1182,
+pending CI.
+
+\textbf{Remaining canonical issue:} Definition~24 indexes
+successor cones by the canonical model boundary $A$
+of the first $l$ nodes. A self-contained identification
+$A\cong\operatorname{Leaves}(S_w)$ must still be built,
+with the particular $I_{S_w}(a)$ matching the above
+explicit projection. Cardinality or an arbitrary
+bijection is \emph{not} sufficient: the required
+prefix/direction labelling must be respected.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
