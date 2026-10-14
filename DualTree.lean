@@ -407,3 +407,5 @@ import DualTree.ForwardModelHeapInjective
 import DualTree.ForwardModelHeapSurjective
 
 import DualTree.ForwardModelBoundaryEnumeration
+
+import DualTree.ForwardQMarkerDirectionalIncidence
