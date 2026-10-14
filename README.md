@@ -231,6 +231,18 @@ obligation; `\todo` marks a remaining gap or proposed change.
   constructed its full canonical address map or the final Ramsey
   refinement. See `DualTree/ForwardQMarkerDirectionalIncidence.lean`.
 
+- **Fixed source-labelled Q vertex shape (four endpoints, CI pending):**
+  define the disjoint union of the fixed old source interior with
+  the literal source signature marker set R. Its realization in
+  any actual corrected Q output sends interior nodes to themselves
+  and marker r to the genuine projected terminal P_r(x). The map is
+  bijective, so any two Q outputs have a canonical matching of their
+  underlying vertices through a fixed type, without choosing an
+  arbitrary permutation of leaves. Preservation of the rooted
+  prefix/direction relations under this matching remains to prove;
+  no full Definition 24 A-to-R transport is asserted.
+  See `DualTree/ForwardQFixedVertexShape.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

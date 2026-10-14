@@ -1452,3 +1452,8 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.ForwardQMarkerDirectionalIncidence.oldBase_childCone_projection_iff_marker
 #print axioms DualTree.ForwardQMarkerDirectionalIncidence.projected_marker_childCone_invariant
+
+#print axioms DualTree.ForwardQFixedVertexShape.realize_injective
+#print axioms DualTree.ForwardQFixedVertexShape.realize_surjective
+#print axioms DualTree.ForwardQFixedVertexShape.fixedShapeEquiv
+#print axioms DualTree.ForwardQFixedVertexShape.vertexTransport
