@@ -401,3 +401,5 @@ import DualTree.ForwardModelBoundaryHeight
 import DualTree.ForwardModelHeapLexOrder
 
 import DualTree.ForwardModelHeapLevels
+
+import DualTree.ForwardModelHeapInjective
