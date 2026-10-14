@@ -1388,3 +1388,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQAllExteriorFibres.tailOfTNode_length_eq_rank_diff
 #print axioms DualTree.ForwardQAllExteriorFibres.starred_Q_word_eq_of_root_gamma2_exterior
 #print axioms DualTree.ForwardQAllExteriorFibres.starred_Q_word_eq_all_gamma1
+
+#print axioms DualTree.ForwardQAllExteriorFibres.root_exterior_of_ambient_position_exterior
+#print axioms DualTree.ForwardQAllExteriorFibres.starred_Q_word_eq_outside_gamma2_cones
+#print axioms DualTree.ForwardQAllExteriorFibres.corrected_Q_simple_observables
