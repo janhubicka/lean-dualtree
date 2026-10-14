@@ -8930,6 +8930,34 @@ case; leaf-to-leaf, leaf-to-old and old-to-old cases should be
 handled separately. Then one still needs the first-$l$ model
 canonical address enumeration and Definition~24 simplicity transport.
 
+\paragraph{Input-independent prefix order of the source-labelled corrected $Q$ shape.} \todo
+The previous fixed vertex equivalence can be strengthened to the
+entire ambient prefix order. On
+$F(c)=\operatorname{Int}(S)\,\dot\cup\,R$ define
+$\sqsubseteq_F$ by the four precise cases:
+\begin{itemize}
+\item old $s\sqsubseteq_F$ old $t$ iff $s\sqsubseteq t$;
+\item old $s\sqsubseteq_F$ marker $r$ iff $s\sqsubset r$ strictly;
+\item marker $r\sqsubseteq_F$ old $s$ never;
+\item marker $r\sqsubseteq_F$ marker $t$ iff $r=t$.
+\end{itemize}
+Every realized corrected Q input $x$ preserves and reflects exactly
+this fixed relation, including the nontrivial old/marker and
+marker/marker cases. The former uses the verified strict old ancestor
+mask, the latter the verified uniqueness of a Q terminal above any
+literal first-exit marker. Consequently the verified fixed-shape
+bijections between two actual Q outputs preserve and reflect the
+entire PREFIX order (not just vertex cardinality).
+The proposed \lean{ForwardQFixedPrefixIso} contains the precise
+realization equivalence and its input-independence consequence
+(two audited endpoints, target 1230; CI pending).
+
+This is not yet Definition~24: the fixed prefix shape must next be
+identified with the first-$l$ forward homogeneous model by a coherent
+rooted, direction-labelled address system. In particular the initial
+segments selected by different ambient leaf depths need not have
+the same ambient auxiliary order; no false preservation claim is made.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
