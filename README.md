@@ -106,6 +106,18 @@ obligation; `\todo` marks a remaining gap or proposed change.
   identification remains a necessary, UNPROVED hypothesis.
   See `DualTree/ForwardQMarkerTransportInterface.lean`.
 
+- **All corrected Q leaves are literal signature markers (five new endpoints,
+  CI pending):** an actual Q terminal is exactly the projection of one
+  selected D2 coordinate, and different D2 indices give different leaves.
+  Consequently the fixed literal signature marker set R is in a canonical
+  bijection with the terminal vertices of EACH reconstructed corrected
+  Q tree. Its value at r is the original projected point
+  `P_(index r)(s_(index r))`, which lies below r in the ambient
+  prefix order. This reduces the remaining Definition 24 boundary issue
+  to identifying the canonical model A with the Q leaves; existence of
+  that A-to-R identification is NOT asserted.
+  See `DualTree/ForwardQLiteralMarkerLeafEquiv.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

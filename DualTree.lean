@@ -385,3 +385,5 @@ import DualTree.ForwardQFibreDefaults
 import DualTree.ForwardQAllExteriorFibres
 
 import DualTree.ForwardQMarkerTransportInterface
+
+import DualTree.ForwardQLiteralMarkerLeafEquiv

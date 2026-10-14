@@ -1395,3 +1395,9 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.ForwardQMarkerTransportInterface.simple_pullback_smooth_of_canonical_marker_transport
 #print axioms DualTree.ForwardQMarkerTransportInterface.exists_total_smooth_pullback_of_canonical_marker_transport
+
+#print axioms DualTree.ForwardQLiteralMarkerLeafEquiv.Q_leaf_has_bullet
+#print axioms DualTree.ForwardQLiteralMarkerLeafEquiv.bulletToQLeaf_injective
+#print axioms DualTree.ForwardQLiteralMarkerLeafEquiv.bulletToQLeaf_surjective
+#print axioms DualTree.ForwardQLiteralMarkerLeafEquiv.literalMarkerQLeafEquiv_value
+#print axioms DualTree.ForwardQLiteralMarkerLeafEquiv.marker_prefix_its_Q_leaf
