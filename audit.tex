@@ -8803,6 +8803,47 @@ model boundary $A$ with corrected
 literal first-exit markers $R$ in a
 semi-complete skew tree.
 
+\paragraph{Surjectivity of the arithmetic forward heap model.} \todo
+For positive $b$, the arithmetic heap index
+is also surjective onto $\mathbb N$.
+Given $k+1$, write
+$q=\lfloor k/b\rfloor$ and $i=k\bmod b$.
+Because $q\le k$, strong induction
+supplies an ambient direction word $p$
+of heap index $q$. Its $i$-child then
+has heap index
+\[
+ b\lfloor k/b\rfloor+1+(k\bmod b)=k+1.
+\]
+Thus the previously checked injective,
+forward-order-preserving heap map is a
+bijection of the homogeneous model with
+the natural numbers. In particular the
+canonical first-$l$ interior has an
+explicit equivalence with $\operatorname{Fin}(l)$,
+and exactly $l$ vertices.
+
+The proposed
+\lean{ForwardModelHeapSurjective} module
+formalizes surjectivity, the
+$\operatorname{Node}(b)\simeq\mathbb N$
+equivalence, a model
+$\operatorname{Fin}(l)\simeq H_l$ equivalence,
+and the exact model interior cardinality
+(four axiom-audited endpoints, target 1219,
+CI pending).
+
+This completes the arithmetic model for
+the first-$l$ vertices under the
+\emph{corrected} forward auxiliary order.
+The genuinely geometric remaining task
+is to construct the direction- and prefix-
+preserving map from this model boundary
+$A$ into the literal signature markers
+$R$ in each forward-semi-complete output,
+and verify compatibility of their chosen
+canonical successor cones.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
