@@ -1363,3 +1363,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardCompletePrefixIso.canonicalEmbedding_prefix_iff
 #print axioms DualTree.ForwardCompletePrefixIso.inverseAddress_prefix
 #print axioms DualTree.ForwardCompletePrefixIso.inverseAddress_prefix_iff
+
+#print axioms DualTree.ForwardInverseConeTails.relativeTail_length
+#print axioms DualTree.ForwardInverseConeTails.relativeTail_address
+#print axioms DualTree.ForwardInverseConeTails.inverseAddress_injective
+#print axioms DualTree.ForwardInverseConeTails.projectCommon_reaches_target
+#print axioms DualTree.ForwardInverseConeTails.projectCommon_injective
+#print axioms DualTree.ForwardInverseConeTails.markedProjection_prefix_projectLocal_of_bullet_prefix
+#print axioms DualTree.ForwardInverseConeTails.local_outside_of_projected_outside
+#print axioms DualTree.ForwardInverseConeTails.local_outside_of_safe_target_outside

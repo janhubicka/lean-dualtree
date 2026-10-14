@@ -8073,6 +8073,56 @@ needs to identify all safe local $P_i(z)$ addresses
 and transport the Definition~24 $B_2$ cone condition
 to exactly the appropriate literal $\Gamma_2$ cones.
 
+\paragraph{Recovering EVERY safe corrected T-root from its local Q coordinate.} \todo
+The forward-corrected inverse-prefix isomorphism supplies the
+previously unavailable exact decomposition at an
+\emph{arbitrary} T-support descendant $t$ of a selected
+outside-cut frontier $f_i$. Under the explicit safe-rank bound
+\[
+   h_T(t)-h_T(f_i)<k-(m+1),
+\]
+define the original local tail
+\[
+  z=I_T^{-1}(t)
+       \mathbin{\upharpoonright}_{\ge |I_T^{-1}(f_i)|}.
+\]
+The two key assertions are
+\[
+ I_T^{-1}(t)=I_T^{-1}(f_i)^\frown z,
+ \qquad
+ P_i(z)=t.
+\]
+Thus every such actual ambient root is reached by exactly its
+canonical local mixed-product coordinate, not merely those
+roots originally introduced by a projected-point constructor.
+The projected common cone map is also injective.
+
+The \lean{ForwardInverseConeTails} module ports the old
+printed-order \lean{InverseConeTails} proof to
+\emph{forward-complete} support T using the new genuine
+prefix isomorphism. Eight audited theorem endpoints are
+proposed (target 1155 on the stacked branch).
+Three of these assert the crucial marked-cone
+visibility passage: if a selected local bullet point
+precedes a safe local address $z$, then the actual
+projected Q marker $P_i(s_i)$ precedes $P_i(z)$.
+Contrapositively, for any certified safe T-root
+$t=P_i(z)$, exclusion of the real projected
+marked-point cone forces $s_i
+otsqsubseteq z$.
+Thus the local letter $w_i(z)$ is precisely in
+the observable part of Definition~21 for $Gamma_2$.
+CI remains pending.
+
+\textbf{Remaining:} The out-of-safe-domain support roots
+cannot be assigned arbitrary fictitious tails: by the
+source-facing \lean{sampledEnlarged} definition their Q
+image is a fixed fallback original-alphabet symbol.
+One still needs to check the boundary/no-selected-frontier
+cases, the exact pullback of the selected $\Gamma_2$
+marked cones, and the Definition~24 $A\to R$ transport
+before asserting simplicity for an arbitrary $B_2$.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

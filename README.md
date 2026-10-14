@@ -43,6 +43,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   source addresses without using the false printed reverse-lex order.
   See `DualTree/ForwardCompletePrefixIso.lean` (four new theorems).
 
+- **Exact safe frontier-cone coverage (CI pending):** every actual
+  T-support descendant of a corrected forward-sorted frontier whose
+  intrinsic rank difference fits the safe common tail height
+  `k-(m+1)` is exactly `P_i(z)` for its unique canonical suffix `z`.
+  The inverse-address decomposition and injectivity of the common cone
+  projection are also proved. Out-of-budget roots use the distinct Q
+  fallback case and are NOT claimed to belong to this local image.
+  See `DualTree/ForwardInverseConeTails.lean` (eight audited theorems). This also proves that ambient
+  exclusion from a genuine projected Q marked cone forces the recovered
+  local address to lie outside its selected D2 marked cone.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
