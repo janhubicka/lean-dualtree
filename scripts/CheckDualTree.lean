@@ -1460,3 +1460,6 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.ForwardQFixedPrefixIso.realize_prefix_iff_fixedPrefix
 #print axioms DualTree.ForwardQFixedPrefixIso.realize_prefix_invariant
+
+#print axioms DualTree.ForwardQFixedDirectionShape.realize_old_childCone_iff
+#print axioms DualTree.ForwardQFixedDirectionShape.realize_old_childCone_invariant
