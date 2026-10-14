@@ -1372,3 +1372,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardInverseConeTails.markedProjection_prefix_projectLocal_of_bullet_prefix
 #print axioms DualTree.ForwardInverseConeTails.local_outside_of_projected_outside
 #print axioms DualTree.ForwardInverseConeTails.local_outside_of_safe_target_outside
+
+#print axioms DualTree.ForwardQSafeFibreSmoothness.safeRoot_observable_of_gamma2_exterior
+#print axioms DualTree.ForwardQSafeFibreSmoothness.fibreQ_eq_on_safe_gamma2_exterior
