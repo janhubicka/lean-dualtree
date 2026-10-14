@@ -1,6 +1,8 @@
 import DualTree.ForwardQLiteralMarkerLeafEquiv
 import DualTree.ForwardQAmbientFibreLegalWord
 import DualTree.ForwardQMeetClosed
+import DualTree.ForwardQMarkerSmoothPartition
+import DualTree.ForwardQMarkerTransportInterface
 
 /-!
 # A canonical literal-R terminal observable on arbitrary starred outputs
@@ -158,5 +160,141 @@ theorem canonicalTerminal_actual_Q
   exact Q_leaf_unique_above_literal_marker
     hb c.core erased r (Classical.choose hex)
     hchosenLeaf hchosen.2.2
+
+
+/-- Specialize the general canonical-marker simplicity interface to
+the ACTUAL literal corrected source boundary R. The R-to-D2
+indexing equivalence and canonical terminal identity have now
+both been constructed, rather than postulated.
+
+This is an R-RELATIVE simplicity result. It does not assert that
+the paper's separate model boundary A has yet been identified
+with R or that arbitrary Definition 24-simple colourings satisfy
+this particular R-indexed simplicity predicate. -/
+theorem relativeR_simple_pullback_smooth
+    {b n l k m : Nat} {α γ : Type*}
+    (hb : 0 < b)
+    (c : FibreFrame b n l k m α)
+    (fallback : α)
+    (B2 : Set (ForwardQMarkerSmoothPartition.Marker c.core))
+    (color : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)) → γ)
+    (hsimple :
+      ForwardQMarkerTransportInterface.CanonicalSimpleWithinAmbient
+        c (canonicalTerminal c.core)
+        (fun r => r ∈ B2) color)
+    (x y : ForwardQEnlargedConstantWords.EnlargedStarredInput
+      c.core fallback)
+    (hxy : MixedProduct.SmoothRelated
+      (ForwardQMarkerSmoothPartition.gamma1OfMarkerB2 c.core B2)
+      x.1 y.1) :
+    color (fibreQStarredWord hb c fallback x) =
+      color (fibreQStarredWord hb c fallback y) := by
+  have hpartition :
+      ∀ r : ForwardQMarkerSmoothPartition.Marker c.core,
+        r ∈ B2 ↔
+          ForwardQMarkerSmoothPartition.gamma1OfMarkerB2
+            c.core B2
+            ((ForwardQLiteralMarkerLeafEquiv.literalMarkerBulletEquiv
+              c.core) r) = false := by
+    intro r
+    change r ∈ B2 ↔
+      ForwardQMarkerSmoothPartition.gamma1OfMarkerB2 c.core B2
+        (ForwardQMarkerCoverage.bulletForMarker c.core r) = false
+    exact
+      (ForwardQMarkerSmoothPartition.gamma2_iff_B2 c.core B2 r).symm
+  have hcanonical :
+      ∀ (w : ForwardQEnlargedConstantWords.EnlargedStarredInput
+          c.core fallback)
+        (r : ForwardQMarkerSmoothPartition.Marker c.core),
+        canonicalTerminal c.core
+          (fibreQStarredWord hb c fallback w) r =
+        (markedProjection c.core
+          (ForwardQEnlargedConstantWords.eraseAux
+            c.core fallback w.1)
+          ((ForwardQLiteralMarkerLeafEquiv.literalMarkerBulletEquiv
+            c.core) r)).1 := by
+    intro w r
+    change canonicalTerminal c.core
+      (fibreQStarredWord hb c fallback w) r =
+      (markedProjection c.core
+        (ForwardQEnlargedConstantWords.eraseAux
+          c.core fallback w.1)
+        (ForwardQMarkerCoverage.bulletForMarker c.core r)).1
+    exact canonicalTerminal_actual_Q hb c fallback w r
+  exact
+    ForwardQMarkerTransportInterface.simple_pullback_smooth_of_canonical_marker_transport
+      hb c fallback (canonicalTerminal c.core)
+      (fun r => r ∈ B2)
+      (ForwardQLiteralMarkerLeafEquiv.literalMarkerBulletEquiv c.core)
+      (ForwardQMarkerSmoothPartition.gamma1OfMarkerB2 c.core B2)
+      hpartition hcanonical color hsimple x y hxy
+
+/-- A colouring simple with respect to the actual literal R
+boundary extends to a TOTAL smooth colouring on the enlarged
+mixed-product domain, with NO additional abstract canonical
+marker-transport witness. The only additional inputs are
+the genuine fixed R-indexed simplicity hypothesis and a
+fallback colour for classes outside the starred domain. -/
+theorem exists_total_relativeR_smooth_pullback
+    {b n l k m : Nat} {α γ : Type*}
+    (hb : 0 < b)
+    (c : FibreFrame b n l k m α)
+    (fallback : α)
+    (fallbackColor : γ)
+    (B2 : Set (ForwardQMarkerSmoothPartition.Marker c.core))
+    (color : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)) → γ)
+    (hsimple :
+      ForwardQMarkerTransportInterface.CanonicalSimpleWithinAmbient
+        c (canonicalTerminal c.core)
+        (fun r => r ∈ B2) color) :
+    ∃ total : ForwardQEnlargedConstantWords.EnlargedInput c.core → γ,
+      (∀ w : ForwardQEnlargedConstantWords.EnlargedStarredInput
+        c.core fallback,
+        total w.1 = color (fibreQStarredWord hb c fallback w)) ∧
+      (∀ x y : ForwardQEnlargedConstantWords.EnlargedInput c.core,
+        MixedProduct.SmoothRelated
+          (ForwardQMarkerSmoothPartition.gamma1OfMarkerB2 c.core B2)
+          x y → total x = total y) := by
+  have hpartition :
+      ∀ r : ForwardQMarkerSmoothPartition.Marker c.core,
+        r ∈ B2 ↔
+          ForwardQMarkerSmoothPartition.gamma1OfMarkerB2
+            c.core B2
+            ((ForwardQLiteralMarkerLeafEquiv.literalMarkerBulletEquiv
+              c.core) r) = false := by
+    intro r
+    change r ∈ B2 ↔
+      ForwardQMarkerSmoothPartition.gamma1OfMarkerB2 c.core B2
+        (ForwardQMarkerCoverage.bulletForMarker c.core r) = false
+    exact
+      (ForwardQMarkerSmoothPartition.gamma2_iff_B2 c.core B2 r).symm
+  have hcanonical :
+      ∀ (w : ForwardQEnlargedConstantWords.EnlargedStarredInput
+          c.core fallback)
+        (r : ForwardQMarkerSmoothPartition.Marker c.core),
+        canonicalTerminal c.core
+          (fibreQStarredWord hb c fallback w) r =
+        (markedProjection c.core
+          (ForwardQEnlargedConstantWords.eraseAux
+            c.core fallback w.1)
+          ((ForwardQLiteralMarkerLeafEquiv.literalMarkerBulletEquiv
+            c.core) r)).1 := by
+    intro w r
+    change canonicalTerminal c.core
+      (fibreQStarredWord hb c fallback w) r =
+      (markedProjection c.core
+        (ForwardQEnlargedConstantWords.eraseAux
+          c.core fallback w.1)
+        (ForwardQMarkerCoverage.bulletForMarker c.core r)).1
+    exact canonicalTerminal_actual_Q hb c fallback w r
+  exact
+    ForwardQMarkerTransportInterface.exists_total_smooth_pullback_of_canonical_marker_transport
+      hb c fallback fallbackColor (canonicalTerminal c.core)
+      (fun r => r ∈ B2)
+      (ForwardQLiteralMarkerLeafEquiv.literalMarkerBulletEquiv c.core)
+      (ForwardQMarkerSmoothPartition.gamma1OfMarkerB2 c.core B2)
+      hpartition hcanonical color hsimple
 
 end DualTree.ForwardQRelativeMarkerSelector
