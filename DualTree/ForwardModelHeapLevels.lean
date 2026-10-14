@@ -125,7 +125,6 @@ theorem minIndex_mono {b : Nat}
             Nat.le_of_lt (minIndex_lt_succ hb (n + d))
           _ = minIndex b (n + (d + 1)) := by
             congr 1
-            omega
   have h := haux (m - n)
   rwa [Nat.add_sub_of_le hnm] at h
 
