@@ -17,7 +17,7 @@ counterexamples, and proposed repairs. `\ok` records a discharged
 obligation; `\todo` marks a remaining gap or proposed change.
 
 
-- **B2-empty simplicity-to-smoothness (new, CI pending):** for the genuine
+- **B2-empty simplicity-to-smoothness (merged #262, CI verified):** for the genuine
   corrected ambient-fibrewise Q, equality of all enlarged coordinate words
   implies equality of its complete root-labelled output words even if D2 marked points
   move; the Q interior stays equal to the old source interior. Therefore a
@@ -26,6 +26,15 @@ obligation; `\todo` marks a remaining gap or proposed change.
   to the enlarged mixed product. This does NOT transfer a general B2 witness
   or complete the final Ramsey step. See
   `DualTree/ForwardQSimpleLetterSmooth.lean` (eight audited endpoints).
+
+- **Full original f-fibre Q observability (six new endpoints, CI pending):**
+  for any Gamma1/Gamma2 split, smoothness fixes enlarged-alphabet
+  letters on the observable D0, Gamma1 and Gamma2-outside-cone
+  coordinates. Their decoded Q symbols agree throughout the WHOLE
+  corresponding original ambient f-variable fibre. Gamma2 also
+  preserves the projected Q marked node. This is not a proof of
+  full arbitrary-B2 simplicity without root coverage and A-to-R
+  marker transport. See `ForwardQAmbientFibreSmoothObservable.lean`.
 
 ## Verified foundations
 

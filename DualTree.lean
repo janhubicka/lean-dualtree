@@ -371,3 +371,5 @@ import DualTree.ForwardQAmbientFibreLegalWord
 import DualTree.ForwardQAmbientFibreSpan
 
 import DualTree.ForwardQSimpleLetterSmooth
+
+import DualTree.ForwardQAmbientFibreSmoothObservable
