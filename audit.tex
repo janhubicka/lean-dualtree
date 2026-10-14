@@ -8958,6 +8958,36 @@ rooted, direction-labelled address system. In particular the initial
 segments selected by different ambient leaf depths need not have
 the same ambient auxiliary order; no false preservation claim is made.
 
+\paragraph{Fixed outgoing directions on the input-independent Q prefix tree.} \todo
+The model-to-literal boundary transport requires more than the
+prefix isomorphism verified above: it must preserve the directions
+of successive ambient branches. This input-dependence can now be
+removed completely. For each old interior $s$, direction $i\in[b]$
+and fixed shape vertex $v\in \operatorname{Int}(S)\,\dot\cup\,R$,
+define the fixed direction cone predicate
+\[
+D(s,i,v)\ \Longleftrightarrow\
+  \begin{cases}
+    s^\frown i\sqsubseteq t & v=\mathrm{old}(t),\\
+    s^\frown i\sqsubseteq r & v=\mathrm{marker}(r).
+  \end{cases}
+\]
+For every actual Q input $x$, its realization $\phi_x$ satisfies
+$s^\frown i\sqsubseteq\phi_x(v)$ if and only if $D(s,i,v)$.
+The old/old case is literal, while the marker case is the already
+verified fixed-direction result for the actual projected $Q$ leaf.
+Thus the direction-labelled prefix shape is input-independent.
+The proposed \lean{ForwardQFixedDirectionShape} packages this
+as two source-facing audited statements (target 1232, CI pending).
+
+The next obligation is a canonical address assignment from the
+first-$l$ forward-heap homogeneous interior into this
+\emph{source-labelled} directed prefix shape. The corresponding
+model boundary must map to the real $R$ markers, not to an
+arbitrary permutation of the same finite set. This issue, the
+original-to-corrected starred domain and numerical Ramsey
+iteration remain open.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
