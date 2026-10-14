@@ -1406,3 +1406,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQRelativeMarkerSelector.canonicalTerminal_actual_Q
 #print axioms DualTree.ForwardQRelativeMarkerSelector.relativeR_simple_pullback_smooth
 #print axioms DualTree.ForwardQRelativeMarkerSelector.exists_total_relativeR_smooth_pullback
+
+#print axioms DualTree.ForwardModelBoundaryHeap.heapIndex_child
+#print axioms DualTree.ForwardModelBoundaryHeap.heapIndex_lt_child
+#print axioms DualTree.ForwardModelBoundaryHeap.heapIndex_le_append
+#print axioms DualTree.ForwardModelBoundaryHeap.modelInterior_prefix_closed
+#print axioms DualTree.ForwardModelBoundaryHeap.modelBoundary_index_ge
+#print axioms DualTree.ForwardModelBoundaryHeap.modelBoundary_index_le
+#print axioms DualTree.ForwardModelBoundaryHeap.modelBoundary_antichain

@@ -132,6 +132,18 @@ obligation; `\todo` marks a remaining gap or proposed change.
   address/direction identification must still be proved.
   See `DualTree/ForwardQRelativeMarkerSelector.lean`.
 
+- **Arithmetic first-l model boundary (7 theorems, CI pending):**
+  define the b-ary heap address `index(∅)=0`,
+  `index(s⌢i)=b·index(s)+1+i`, to encode forward breadth-first
+  positions. For b>0, the candidate first-l model interior
+  `H_l={s:index(s)<l}` is ambient prefix-closed, and its external
+  immediate-child boundary `A_l` is an antichain whose indices lie
+  in `[l,b·l]`. This gives an explicit arithmetic model for the
+  A side of the remaining canonical correspondence. The equivalence
+  of this numbering with the CORRECTED forward auxiliary order,
+  and the direction-preserving A-to-R map, still require proof.
+  See `DualTree/ForwardModelBoundaryHeap.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
