@@ -8898,6 +8898,38 @@ one must construct the interior address assignment recursively,
 prove it is the corrected first-$l$ forward model, and show the
 remaining outgoing leaf directions are indexed exactly by $R$.
 
+\paragraph{Fixed two-sorted vertex shape of the corrected $Q$ construction.} \todo
+For each corrected frame $c$, define a single fixed disjoint-union
+vertex type
+\[
+  F(c)=\operatorname{Int}(S)\ \dot\cup\ R.
+\]
+For every actual mixed-product input $x$, send an old interior
+vertex to itself and a literal marker $r$ to its projected terminal
+$P_{\iota(r)}(x)$. The source-facing support classification gives
+surjectivity: $Q(c,x)$ has no other nodes. Injectivity follows from
+the fixed/terminal dichotomy, injectivity of distinct projections,
+and the fixed literal-marker/D2 bijection. Consequently each output
+has a canonical vertex equivalence
+\[
+   F(c)\ \simeq\ Q(c,x),
+\]
+and any two outputs are bijectively related through $F(c)$, with
+no arbitrary terminal enumeration or dependence of the abstract
+labels on $x$.
+The proposed \lean{ForwardQFixedVertexShape} module checks these
+maps, injectivity, surjectivity and the resulting input-to-input
+vertex transport (four audited endpoints; target 1228, CI pending).
+
+\textbf{Do not conflate a vertex equivalence with a tree
+isomorphism.} The remaining exact obligation is to show the
+correspondence preserves AND reflects intrinsic prefix order,
+root and first directional steps. The independent old-interior
+cone-incidence theorem supplies the difficult old-to-leaf direction
+case; leaf-to-leaf, leaf-to-old and old-to-old cases should be
+handled separately. Then one still needs the first-$l$ model
+canonical address enumeration and Definition~24 simplicity transport.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
