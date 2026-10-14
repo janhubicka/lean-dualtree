@@ -1449,3 +1449,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardModelBoundaryEnumeration.heapIndex_equiv_symm
 #print axioms DualTree.ForwardModelBoundaryEnumeration.boundaryIndexEquivFin
 #print axioms DualTree.ForwardModelBoundaryEnumeration.modelBoundary_card
+
+#print axioms DualTree.ForwardQMarkerDirectionalIncidence.oldBase_childCone_projection_iff_marker
+#print axioms DualTree.ForwardQMarkerDirectionalIncidence.projected_marker_childCone_invariant

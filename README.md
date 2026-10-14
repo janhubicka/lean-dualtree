@@ -221,6 +221,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   direction-respecting boundary map A_l to source R is still open.
   See `DualTree/ForwardModelBoundaryEnumeration.lean`.
 
+- **Fixed corrected-Q leaf direction incidence (two endpoints, CI pending):**
+  at every original interior node s and every direction i, the
+  genuine projected Q leaf P_r(x) lies in the cone of s++[i]
+  exactly when the literal marker r lies there. In particular
+  this direction incidence is independent of the selected
+  mixed-product point x and its leaf depths. This advances the
+  geometric model A-to-R transport without pretending to have
+  constructed its full canonical address map or the final Ramsey
+  refinement. See `DualTree/ForwardQMarkerDirectionalIncidence.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
