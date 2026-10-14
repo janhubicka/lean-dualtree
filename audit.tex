@@ -8632,6 +8632,34 @@ $A\cong R$ and compatibility of their
 successor cones. The mixed Ramsey refinement
 and induction remain separate obligations.
 
+\paragraph{Stable direction-order blocks in the forward model.} \todo
+The explicit forward heap child formula establishes
+two further facts needed by the canonical
+$A$-to-$R$ transport: if $i<j$ then the
+$i$-child precedes the $j$-child of any parent;
+and if $\operatorname{ind}(s)<\operatorname{ind}(t)$
+then \emph{all} children of $s$ precede
+\emph{all} children of $t$ regardless of their
+directions. The second follows from
+\[
+ b(\operatorname{ind}(s)+1)
+ \le b\operatorname{ind}(t),
+\qquad 1+i\le b.
+\]
+The proposed
+\lean{ForwardModelHeapChildOrder}
+module proves the strict direction ordering,
+the full parent block inequality and their
+combined lexicographic form. These are three
+new source-facing declarations (stacked audit
+target 1200), pending GitHub Actions.
+
+These statements are arithmetic preliminaries:
+the prefix/direction-respecting equivalence
+between model $A$ and corrected literal $R$
+and its agreement with the canonical
+semi-complete-tree embedding remain open.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

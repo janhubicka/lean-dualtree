@@ -393,3 +393,5 @@ import DualTree.ForwardQRelativeMarkerSelector
 import DualTree.ForwardModelBoundaryHeap
 
 import DualTree.ForwardModelBoundaryInterval
+
+import DualTree.ForwardModelHeapChildOrder

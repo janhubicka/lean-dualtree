@@ -153,6 +153,14 @@ obligation; `\todo` marks a remaining gap or proposed change.
   corrected forward shortlex and the canonical A-to-R direction
   transport remain open.
 
+- **Forward model child-order blocks (3 endpoints, CI pending):**
+  siblings are ordered by their direction, while all children
+  of an earlier heap-index parent precede all children of a later
+  parent. This is the direction-aware arithmetic input needed to
+  transport model boundary A to corrected literal R, not yet a
+  proof of the full heap/ForwardAux order isomorphism.
+  See `DualTree/ForwardModelHeapChildOrder.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
