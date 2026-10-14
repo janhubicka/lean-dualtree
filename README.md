@@ -170,6 +170,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   direction-preserving A-to-R correspondence.
   See `DualTree/ForwardModelBoundaryHeight.lean`.
 
+- **Equal-level forward lex order and heap index (4 new endpoints,
+  CI pending):** strict comparison of heap-indexed parents persists
+  under arbitrary equal-length suffixes. Ordinary forward lex order
+  on equal-length addresses implies nondecreasing heap index;
+  conversely strictly ordered heap indices on one level imply
+  forward lex order. This is a step toward the corrected
+  ForwardAux order-isomorphism; distinct levels, index bijectivity
+  and canonical model A-to-literal-R transport remain open.
+  See `DualTree/ForwardModelHeapLexOrder.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
