@@ -8721,6 +8721,45 @@ not by itself identify the actual
 $A$ markers with the literal $R$ markers
 of arbitrary semi-complete skew outputs.
 
+\paragraph{Exact heap bands and corrected auxiliary-order monotonicity.} \todo
+Define the first and last model heap indices
+of length-$n$ homogeneous nodes by
+\[
+m_0=M_0=0,\qquad
+m_{n+1}=bm_n+1,\qquad
+M_{n+1}=bM_n+b.
+\]
+An induction over fold-left heap coding proves
+$m_n\le\operatorname{ind}(s)\le M_n$
+whenever $|s|=n$, and a second induction
+establishes $M_n+1=m_{n+1}$.
+For $b>0$, the minima $m_n$ increase strictly,
+so
+\[
+ |s|<|t|\ \Longrightarrow\
+ \operatorname{ind}(s)<\operatorname{ind}(t).
+\]
+Together with equal-level forward lex monotonicity,
+this proves the complete \emph{forward implication}
+\[
+ s\mathrel{\mathrm{ForwardAux}}t
+ \Longrightarrow\
+ \operatorname{ind}(s)\le\operatorname{ind}(t).
+\]
+The proposed
+\lean{ForwardModelHeapLevels} module exports
+six new source-facing statements (stacked
+transitive audit target 1213, CI pending).
+
+The converse still requires address-code
+injectivity, especially to eliminate
+distinct nodes sharing one numerical index;
+then the model $A$ boundary can be compared
+with the actual canonical address system
+of arbitrary corrected semi-complete trees.
+The original reverse-lex statement is
+not used.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
