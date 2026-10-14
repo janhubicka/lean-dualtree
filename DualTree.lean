@@ -379,3 +379,5 @@ import DualTree.ForwardCompletePrefixIso
 import DualTree.ForwardInverseConeTails
 
 import DualTree.ForwardQSafeFibreSmoothness
+
+import DualTree.ForwardQFibreDefaults
