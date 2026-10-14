@@ -243,6 +243,18 @@ obligation; `\todo` marks a remaining gap or proposed change.
   no full Definition 24 A-to-R transport is asserted.
   See `DualTree/ForwardQFixedVertexShape.lean`.
 
+- **Fixed prefix-tree order of the actual corrected Q (two endpoints, CI pending):**
+  on the already verified fixed vertex type `interior S ⊕ R`,
+  define the input-independent relation: old-to-old means prefix;
+  old-to-marker means strict prefix; a marker is never below an
+  old vertex; and distinct markers are incomparable. The genuine
+  realization in each Q(x) preserves and reflects this relation.
+  Consequently all Q outputs have canonically identified PREFIX
+  TREE SHAPES even when marked leaf depths vary. The remaining
+  Definition 24 problem is the actual direction-labelled canonical
+  first-l model address map and A-to-R correspondence. See
+  `DualTree/ForwardQFixedPrefixIso.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
