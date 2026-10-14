@@ -1384,3 +1384,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFibreDefaults.equal_on_unsafe_fibre
 #print axioms DualTree.ForwardQFibreDefaults.equal_on_default_fibre
 #print axioms DualTree.ForwardQFibreDefaults.starred_Q_equal_on_default_fibre
+
+#print axioms DualTree.ForwardQAllExteriorFibres.tailOfTNode_length_eq_rank_diff
+#print axioms DualTree.ForwardQAllExteriorFibres.starred_Q_word_eq_of_root_gamma2_exterior
+#print axioms DualTree.ForwardQAllExteriorFibres.starred_Q_word_eq_all_gamma1
