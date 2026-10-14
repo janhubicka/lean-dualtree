@@ -1437,3 +1437,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardModelHeapLevels.minIndex_mono
 #print axioms DualTree.ForwardModelHeapLevels.heapIndex_lt_of_length_lt
 #print axioms DualTree.ForwardModelHeapLevels.heapIndex_mono_of_forwardAux
+
+#print axioms DualTree.ForwardModelHeapInjective.heapIndex_injective
+#print axioms DualTree.ForwardModelHeapInjective.forwardAux_iff_heapIndex_le
