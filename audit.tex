@@ -8687,6 +8687,40 @@ proves all three source-facing statements
 The canonical model $A$-to-literal-$R$
 direction and prefix matching remains open.
 
+\paragraph{Equal-level forward lex and heap-index comparison.} \todo
+The previously checked stable child blocks
+also give a useful model-side comparison
+for whole words. If two heap-addressed
+parent nodes have strictly ordered indices,
+then appending any two direction sequences
+of \emph{equal length} preserves that
+strict inequality. An induction on the
+length of the direction sequences shows
+that forward lexicographic order on two
+equal-length words gives nondecreasing
+heap indices, even after prepending any
+shared initial segment. Conversely,
+totality of finite forward lex order
+and this monotonicity imply that a
+strict heap-index inequality between
+equal-length words forces the same
+forward lex comparison.
+
+The proposed
+\lean{ForwardModelHeapLexOrder} module
+formalizes these four implications
+(stacked target 1207 transitive declarations,
+CI pending). The still-missing components
+of the corrected global
+$\operatorname{ind}$--\texttt{ForwardAux}
+isomorphism are order separation across
+\emph{different} homogeneous levels
+and injectivity of the arithmetic heap
+coding. Even that model isomorphism does
+not by itself identify the actual
+$A$ markers with the literal $R$ markers
+of arbitrary semi-complete skew outputs.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
