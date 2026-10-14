@@ -67,7 +67,7 @@ noncomputable def initialModelEquiv {b : Nat}
     Fin l ≃ {s : Node b // ModelInterior l s} where
   toFun := fun i =>
     ⟨(heapIndexEquivNat hb).symm i.val, by
-      change heapIndex ((heapIndexEquivNat hb).symm i.val) < l
+      change (heapIndexEquivNat hb) ((heapIndexEquivNat hb).symm i.val) < l
       simpa only [Equiv.apply_symm_apply] using i.isLt⟩
   invFun := fun s => ⟨heapIndex s.1, s.2⟩
   left_inv := by
@@ -83,15 +83,11 @@ noncomputable def initialModelEquiv {b : Nat}
 vertices, now justified by the explicit heap-bijection. -/
 theorem modelInterior_card {b : Nat}
     (hb : 0 < b) (l : Nat) :
-    Fintype.card {s : Node b // ModelInterior l s} = l := by
-  classical
-  let e := initialModelEquiv hb l
-  letI : Fintype {s : Node b // ModelInterior l s} :=
-    Fintype.ofEquiv (Fin l) e
+    Nat.card {s : Node b // ModelInterior l s} = l := by
   calc
-    Fintype.card {s : Node b // ModelInterior l s} =
-        Fintype.card (Fin l) :=
-      Fintype.card_congr e.symm
+    Nat.card {s : Node b // ModelInterior l s} =
+        Nat.card (Fin l) :=
+      Nat.card_congr (initialModelEquiv hb l).symm
     _ = l := by simp
 
 end DualTree.ForwardModelHeapSurjective
