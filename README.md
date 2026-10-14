@@ -118,6 +118,20 @@ obligation; `\todo` marks a remaining gap or proposed change.
   that A-to-R identification is NOT asserted.
   See `DualTree/ForwardQLiteralMarkerLeafEquiv.lean`.
 
+- **Literal-R canonical terminal and R-simple pullback (four endpoints,
+  CI pending):** for any starred output U, select a terminal above
+  an actual corrected first-exit marker r if one exists. For EVERY
+  genuine corrected Q(w), the selected terminal is UNIQUE and
+  exactly P_(index r)(s_(index r)). Consequently the abstract
+  canonical-marker transport hypothesis is now DISCHARGED for the
+  source-relative marker set R: an R-simple colouring pulls back
+  to a smooth colouring and extends to a TOTAL smooth colouring
+  of the entire enlarged mixed product. This is not a proof that
+  a colouring simple relative to Definition 24's canonical model
+  boundary A is necessarily R-simple. The remaining A-to-R
+  address/direction identification must still be proved.
+  See `DualTree/ForwardQRelativeMarkerSelector.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
