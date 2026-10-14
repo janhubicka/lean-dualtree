@@ -152,12 +152,8 @@ theorem simple_pullback_smooth_of_canonical_marker_transport
     have hword :=
       starred_Q_word_eq_outside_gamma2_cones
         hb c fallback x y gamma1 hxy s houtside
-    have hsymbol :
-        ForwardQAmbientFibreSymbol.fibreQSymbol
-          c fallback x.1 s =
-        ForwardQAmbientFibreSymbol.fibreQSymbol
-          c fallback y.1 s := by
-      simpa only [fibreQStarredWord_symbol] using hword
+    change ForwardQAmbientFibreSymbol.fibreQSymbol c fallback x.1 s =
+      ForwardQAmbientFibreSymbol.fibreQSymbol c fallback y.1 s at hword
     rw [ForwardQSimpleLetterSmooth.rootLabel_fibreQ
           hb c fallback x s,
         ForwardQSimpleLetterSmooth.rootLabel_fibreQ
@@ -166,7 +162,7 @@ theorem simple_pullback_smooth_of_canonical_marker_transport
       (fun q : Sum α c.core.source.word.Vars =>
         match q with
         | Sum.inl a => Sum.inl a
-        | Sum.inr v => Sum.inr v.1) hsymbol
+        | Sum.inr v => Sum.inr v.1) hword
 
 /-- Complete classwise extension of the particular simple-colouring
 pullback to a TOTAL smooth colouring of the enlarged mixed product,
