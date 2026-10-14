@@ -97,30 +97,19 @@ theorem Q_word_eq_on_observable_full_fibre
   have hletter :=
     enlarged_letter_eq_of_smooth_observable
       c.core gamma1 fallback x.1 y.1 hxy i z hobs
-  calc
-    (fibreQStarredWord hb c fallback x).word.word s =
-        (match x.1.words i z with
-         | Sum.inl a => Sum.inl a
-         | Sum.inr j =>
-             ForwardQVisibleAncestorDecoder.decodeAux
-               c.core fallback i j) :=
-      fibreQStarredWord_projected_full_fibre
-        hb c fallback x i z s hs
-    _ = (match y.1.words i z with
-         | Sum.inl a => Sum.inl a
-         | Sum.inr j =>
-             ForwardQVisibleAncestorDecoder.decodeAux
-               c.core fallback i j) := by
-      exact congrArg
-        (fun letter : Sum α (Fin (m + 1)) =>
-          match letter with
-          | Sum.inl a => Sum.inl a
-          | Sum.inr j =>
-              ForwardQVisibleAncestorDecoder.decodeAux
-                c.core fallback i j) hletter
-    _ = (fibreQStarredWord hb c fallback y).word.word s :=
-      (fibreQStarredWord_projected_full_fibre
-        hb c fallback y i z s hs).symm
+  change fibreQSymbol c fallback x.1 s =
+    fibreQSymbol c fallback y.1 s
+  rw [ForwardQAmbientFibreSymbol.fibreQ_projected_full_fibre
+        c fallback x.1 i z s hs,
+      ForwardQAmbientFibreSymbol.fibreQ_projected_full_fibre
+        c fallback y.1 i z s hs]
+  exact congrArg
+    (fun letter : Sum α (Fin (m + 1)) =>
+      match letter with
+      | Sum.inl a => Sum.inl a
+      | Sum.inr j =>
+          ForwardQVisibleAncestorDecoder.decodeAux
+            c.core fallback i j) hletter
 
 /-- Every genuine D0/plain coordinate is entirely observable:
 its Q symbol agrees on the complete original f-fibre
