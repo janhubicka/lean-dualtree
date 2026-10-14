@@ -144,6 +144,15 @@ obligation; `\todo` marks a remaining gap or proposed change.
   and the direction-preserving A-to-R map, still require proof.
   See `DualTree/ForwardModelBoundaryHeap.lean`.
 
+- **Exact model boundary interval (2 new endpoints, CI pending):**
+  for l>0 the forward heap candidate has the exact boundary
+  `A_l = {s : l ≤ heapIndex(s) ≤ b·l}`. The converse to the
+  previous numeric bound and the finite regression for b=1–4,
+  l=1–29 are in `ForwardModelBoundaryInterval.lean` and
+  `scripts/check-model-boundary-heap.py`. The identification with
+  corrected forward shortlex and the canonical A-to-R direction
+  transport remain open.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

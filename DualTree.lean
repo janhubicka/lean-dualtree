@@ -391,3 +391,5 @@ import DualTree.ForwardQLiteralMarkerLeafEquiv
 import DualTree.ForwardQRelativeMarkerSelector
 
 import DualTree.ForwardModelBoundaryHeap
+
+import DualTree.ForwardModelBoundaryInterval

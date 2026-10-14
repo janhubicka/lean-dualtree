@@ -72,6 +72,9 @@ jobs:
       - name: Regress corrected Q on arbitrary source subsets
         run: python3 scripts/check-q-arbitrary-source.py
 
+      - name: Regress arithmetic model boundary interval
+        run: python3 scripts/check-model-boundary-heap.py
+
       - name: Check TeX ledger encoding
         run: python3 scripts/check-audit-tex.py
 
@@ -79,7 +82,7 @@ jobs:
         run: |
           mkdir -p proof-audit
           lake env lean scripts/CheckDualTree.lean > proof-audit/dualtree-axioms.log 2>&1
-          python3 scripts/check-axiom-log.py proof-audit/dualtree-axioms.log 1195 || {
+          python3 scripts/check-axiom-log.py proof-audit/dualtree-axioms.log 1197 || {
             cat proof-audit/dualtree-axioms.log
             exit 1
           }
