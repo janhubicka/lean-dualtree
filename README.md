@@ -54,6 +54,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   exclusion from a genuine projected Q marked cone forces the recovered
   local address to lie outside its selected D2 marked cone.
 
+- **Safe whole-fibre smoothness (two new endpoints, CI pending):**
+  if a real ambient f-variable root is a safe descendant of frontier i
+  and outside every Gamma2 projected Q marked cone, its recovered local
+  suffix is an observable coordinate. Smoothness of two actual enlarged
+  mixed inputs then gives equal full Q output words on EVERY occurrence
+  of that f-variable. This combines real root coverage with the merged
+  fibrewise Q(iv) theorem; default/out-of-safe cases and the abstract
+  Definition 24 A-to-R marker correspondence remain open.
+  See `DualTree/ForwardQSafeFibreSmoothness.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
