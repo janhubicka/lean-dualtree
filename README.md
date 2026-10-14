@@ -76,6 +76,20 @@ obligation; `\todo` marks a remaining gap or proposed change.
   Definition 24's A-to-R marker correspondence. See
   `DualTree/ForwardQFibreDefaults.lean`.
 
+- **Complete Gamma2-exterior Q word equality (3 new endpoints, CI pending):**
+  the actual corrected fibrewise decoder is compared on EVERY ambient
+  original f-position by exhausting constants, early roots, absent
+  frontiers, unsafe tails, and safe roots. For safe roots, the
+  inverse-tail length equals the intrinsic T-rank difference,
+  so the verified safe-exterior lemma applies. Thus two smooth-related
+  enlarged mixed inputs have identical finished Q output symbols
+  wherever the original f-variable root is outside the selected
+  Gamma2 Q marked-point cones. No ambient-occurrence cone test or
+  Hall assignment is assumed. This is the missing global word
+  transport; Definition 24 canonical A-to-R identification and the
+  final mixed-product Ramsey refinement are still open.
+  See `DualTree/ForwardQAllExteriorFibres.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
