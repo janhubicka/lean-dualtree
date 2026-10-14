@@ -161,6 +161,15 @@ obligation; `\todo` marks a remaining gap or proposed change.
   proof of the full heap/ForwardAux order isomorphism.
   See `DualTree/ForwardModelHeapChildOrder.lean`.
 
+- **Finite ambient height for model boundary (3 endpoints, CI pending):**
+  every node has length at most its heap index. Thus the first-l
+  model interior fits in `b^{<n}` when `l≤n`, and the complete
+  external model boundary fits when `b·l<n`. This is a convenient
+  explicit bound for transporting Definition 24's FINITE canonical
+  boundary into the unbounded arithmetic model; it is not yet the
+  direction-preserving A-to-R correspondence.
+  See `DualTree/ForwardModelBoundaryHeight.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

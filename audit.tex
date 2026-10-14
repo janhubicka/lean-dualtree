@@ -8660,6 +8660,33 @@ between model $A$ and corrected literal $R$
 and its agreement with the canonical
 semi-complete-tree embedding remain open.
 
+\paragraph{Finite-height compatibility of the model A boundary.} \todo
+The published Definition~24 constructs its
+canonical first-$l$ interior and its boundary
+inside $b^{<n}$, while the heap model above
+uses all finite direction sequences.
+For $b>0$, each heap child strictly raises
+the index by at least one. A direct induction
+on the direction list yields
+\[
+ |s|\le \operatorname{ind}(s).
+\]
+Hence each node of $H_l$ belongs to $b^{<n}$
+when $l\le n$, and every external model
+boundary node lies in $b^{<n}$ whenever
+\[
+             bl<n.
+\]
+These sufficient bounds make precise when
+the finite and unbounded versions of the
+candidate model boundary coincide.
+The proposed
+\lean{ForwardModelBoundaryHeight} module
+proves all three source-facing statements
+(stack audit target 1203, CI pending).
+The canonical model $A$-to-literal-$R$
+direction and prefix matching remains open.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
