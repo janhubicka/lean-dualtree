@@ -397,3 +397,5 @@ import DualTree.ForwardModelBoundaryInterval
 import DualTree.ForwardModelHeapChildOrder
 
 import DualTree.ForwardModelBoundaryHeight
+
+import DualTree.ForwardModelHeapLexOrder
