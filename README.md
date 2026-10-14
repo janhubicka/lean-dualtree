@@ -190,6 +190,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   reflection/injectivity and the canonical A-to-R address map
   remain open. See `DualTree/ForwardModelHeapLevels.lean`.
 
+- **Arithmetic model forward-order isomorphism onto its image
+  (2 endpoints, CI pending):** every positive-arity b-ary heap index
+  uniquely determines its finite direction sequence. Combined with
+  the already checked heap level bands and same-level lex ordering,
+  `ForwardAux s t ↔ heapIndex(s) ≤ heapIndex(t)`. This is the exact
+  arithmetic correction of the printed REVERSE-lex convention on
+  the homogeneous model. Surjectivity of heap coding onto Nat and
+  the canonical model A-to-literal-R direction transport remain
+  separate obligations. See `DualTree/ForwardModelHeapInjective.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
