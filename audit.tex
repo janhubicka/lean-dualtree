@@ -9638,6 +9638,48 @@ selector and special \(l=0\) base case remain
 separate.
 
 
+\paragraph{Canonical admissible source walks preserve and reflect first directions.} \todo
+For the genuine semi-complete source, the rooted
+canonical walk was already proved bijective and
+prefix-order preserving/reflection. A stronger
+source-facing argument now checks the direction:
+if \(u,v\) are admissible rooted addresses and
+\(i<b\), then
+\[
+  u^\frown i\sqsubseteq v
+  \quad\Longleftrightarrow\quad
+  I_S(u)^\frown i\sqsubseteq I_S(v).
+\]
+For the forward implication, decompose
+\(v=u^\frown i^\frown t\), use admissibility
+of the tail from the realized \(u\), and
+apply the kernel-checked first-direction theorem
+for the unique immediate support successor.
+For reflection, the verified prefix isomorphism
+first gives \(v=u^\frown t\). If \(t\) is empty,
+the purported strictly deeper cone is impossible
+by ambient lengths; otherwise let \(j\) be its
+first direction. The corresponding realized
+descendant lies in both the \(i\)- and \(j\)-cones
+of \(I_S(u)\), forcing \(i=j\) by same-length
+prefix uniqueness.
+The proposed
+\lean{ForwardSourceAddressChildCone} isolates the
+generic admissible-suffix lemma, both directions
+and the iff statement (four audited endpoints,
+target 1326 after pruning four obsolete placeholder
+exports; CI pending).
+
+The next theorem must specialize this to the
+model's first-\(l\) interior addresses and the
+external boundary \(A_l\), then use the verified
+source leaf/R/Q first-direction incidence to prove
+the actual model-to-\(Q\) map preserves all
+outgoing directions. This is not yet an assertion
+about Definition~24's selector on arbitrary U.
+
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
