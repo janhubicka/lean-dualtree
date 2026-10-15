@@ -9115,6 +9115,47 @@ it cannot be substituted by an arbitrary leaf enumeration.
 
 
 
+\paragraph{Canonical admissible directional addresses of a semi-complete source.} \todo
+An arbitrary semi-complete forward-skew source is
+not necessarily \(k\)-complete, so the existing
+canonical embedding from \(b^{<k}\) into a complete
+support cannot directly be reused. Nevertheless,
+every source vertex \(t\) has a unique admissible
+directional address starting at the genuine source
+root. Recursively choose the first immediate support
+successor \(u\) on the path toward \(t\), identify
+its first ambient direction \(i\), and use
+semi-completeness to certify uniqueness of that
+direction. The gap \(|t|-|u|\) is strictly smaller
+than \(|t|-|s|\), so the recursion terminates.
+
+The existing generic rank theorem gives
+\[
+ \operatorname{height}_S(I_S(a))=|a|
+\]
+for each admissible root address \(a\).
+The verified directional-walk injectivity theorem
+together with the new surjectivity proof yields
+an actual canonical equivalence
+\[
+ \{a:\operatorname{Admissible}_S(a)\}
+    \ \simeq\ \{s:s\in S\}.
+\]
+The proposed \lean{ForwardSourceCanonicalAddresses}
+formalizes root-address existence, full source
+surjectivity, realization injectivity and the
+equivalence (five audited endpoints, target 1259
+based on current main 1254; CI pending).
+
+The crucial next theorem is that the admissible
+addresses ending at interior vertices are exactly
+the first \(l\) in corrected breadth-first forward
+heap order. This needs order preservation of the
+source walk, combined with the already verified
+source-interior initiality \#288; the external
+model boundary \(A_l\) is not yet identified.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

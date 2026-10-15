@@ -423,3 +423,5 @@ import DualTree.ForwardSourceExceptionalMarkers
 import DualTree.ForwardQFixedDirectionIso
 
 import DualTree.ForwardQFixedRank
+
+import DualTree.ForwardSourceCanonicalAddresses
