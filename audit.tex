@@ -8958,6 +8958,48 @@ rooted, direction-labelled address system. In particular the initial
 segments selected by different ambient leaf depths need not have
 the same ambient auxiliary order; no false preservation claim is made.
 
+\paragraph{The source interior is the corrected forward initial segment.} \todo
+For the genuine source frame in the repaired Lemma~27, the
+maximal interior cut \(t_0\) is the last branching witness.
+In positive branching \(b>0\), the skew full-before clause
+implies that every genuine source vertex
+\(s\preceq_{\mathrm{ForwardAux}}t_0\) has an immediate
+successor (unless it is \(t_0\), already interior). In fact
+all \(b\) directions occur, and selecting direction \(0\)
+gives a concrete witness.
+
+Conversely the source frame hypothesis says that each
+interior source vertex is at or before \(t_0\).
+Hence for a source vertex \(s\) one has the exact equivalence
+\[
+ s\in\operatorname{Int}(S)
+ \quad\Longleftrightarrow\quad
+ s\preceq_{\mathrm{ForwardAux}}t_0.
+\]
+Using the already kernel-checked forward-heap order
+equivalence yields the downward-closure statement
+\[
+ s,t\in S,\quad
+ t\in\operatorname{Int}(S),\quad
+ s\preceq_{\mathrm{ForwardAux}}t
+ \ \Longrightarrow\
+ s\in\operatorname{Int}(S).
+\]
+In particular every source vertex outside the inclusive
+cut is a leaf.
+
+The proposed \lean{ForwardSourceInitialInterior} checks
+these five source-facing statements (CI/no-sorryAx pending,
+independent branch; axiom-audit target 1235 from main).
+This proves an initial segment \emph{within the source
+skew tree}. The distinct next obligation is to prove
+that the compressed, direction-address canonical map
+transports this to the first \(l\) homogeneous forward-heap
+addresses, then identifies their boundary \(A_l\) with
+the source leaves and literal markers \(R\).
+The printed reverse-lex convention remains excluded.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

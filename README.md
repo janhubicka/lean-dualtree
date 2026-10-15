@@ -255,6 +255,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   first-l model address map and A-to-R correspondence. See
   `DualTree/ForwardQFixedPrefixIso.lean`.
 
+- **Initial-segment theorem for actual source interior (five endpoints, CI pending):**
+  for positive branching, a genuine source vertex is interior exactly
+  when it precedes or equals the last interior cut in corrected
+  ForwardAux. This follows from the full-before source witness and
+  supplies a concrete directional successor for every earlier vertex.
+  Hence the source interior is downward closed in forward order,
+  and every later source vertex is a leaf. The first-l canonical
+  **compressed address** identification and A-to-R marker transport
+  still require separate theorems.
+  See `DualTree/ForwardSourceInitialInterior.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
