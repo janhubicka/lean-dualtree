@@ -9547,6 +9547,47 @@ for arbitrary semi-complete starred \(U\) and the
 \(l=0\) convention are still outstanding.
 
 
+\paragraph{Canonical semi-complete source addresses reflect ambient prefixes.} \todo
+The bijective canonical directional walk of an arbitrary
+semi-complete skew source was previously shown to
+preserve prefix order; the converse requires a true
+source-specific argument. If \(I_S(a)\sqsubseteq I_S(b)\),
+follow first immediate source successors along this
+support path, obtaining an admissible tail \(w\) with
+\(I_S(a^\frown w)=I_S(b)\). By the kernel-checked
+injectivity of the source root walk, \(a^\frown w=b\).
+Hence
+\[
+  a\sqsubseteq b
+   \quad\Longleftrightarrow\quad
+  I_S(a)\sqsubseteq I_S(b)
+\]
+for admissible source addresses, and likewise
+for strict prefixes. In particular, the
+already verified first-\(l\) model interior
+realization preserves and reflects the
+model's \emph{own} prefix order on
+interior/interior pairs, not only the fixed
+Q prefix relation between two different
+mixed-product inputs.
+
+The proposed
+\lean{ForwardSourceAddressPrefixIso}
+checks the direct/reflected prefix pair,
+their equivalence, strict prefix transport,
+the concrete interior realization formula
+and its model-side prefix isomorphism
+(six endpoints, target 1318; CI pending).
+
+This advances the actual Definition~24
+canonical mapping beyond a vertex bijection.
+The full model-boundary to Q leaf prefix
+and first-direction relations still need
+the analogous source leaf and marker case;
+nor is the generic canonical selector on
+arbitrary starred refinements yet defined.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
