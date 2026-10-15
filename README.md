@@ -310,6 +310,18 @@ obligation; `\todo` marks a remaining gap or proposed change.
   The first-l model address map and A-to-R correspondence remain open.
   See `DualTree/ForwardQFixedRank.lean`.
 
+- **Canonical admissible addresses for arbitrary semi-complete source trees (five new endpoints, CI pending):**
+  the actual forward-skew source has a canonical admissible
+  directional path from its root to each source vertex, with
+  address length equal to intrinsic rank. The construction
+  adapts the generic first-immediate-successor induction and
+  unique direction property from the complete-support library
+  without falsely assuming equal source leaf heights.
+  The resulting realized address map is bijective.
+  Identifying its interior addresses with the first l forward
+  heap positions, and then transporting A_l to literal R,
+  remains open. See `DualTree/ForwardSourceCanonicalAddresses.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

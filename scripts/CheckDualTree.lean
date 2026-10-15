@@ -1489,3 +1489,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFixedRank.realize_height_eq_FixedRank
 #print axioms DualTree.ForwardQFixedRank.realize_height_invariant
 #print axioms DualTree.ForwardQFixedRank.vertexTransport_height_eq
+
+#print axioms DualTree.ForwardSourceCanonicalAddresses.source_walk_address_of_prefix
+#print axioms DualTree.ForwardSourceCanonicalAddresses.source_has_address
+#print axioms DualTree.ForwardSourceCanonicalAddresses.realize_injective
+#print axioms DualTree.ForwardSourceCanonicalAddresses.realize_surjective
+#print axioms DualTree.ForwardSourceCanonicalAddresses.sourceAddressEquiv
