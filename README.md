@@ -333,6 +333,19 @@ obligation; `\todo` marks a remaining gap or proposed change.
   address map or the Ramsey refinement. See
   `DualTree/ForwardSourceLeafMarkerEquiv.lean`.
 
+- **Exact forward-order transport for source canonical addresses (six endpoints, CI pending):**
+  the genuine semi-complete source walk preserves and reflects the
+  corrected length-first forward auxiliary order on all admissible
+  directional addresses, even when its support edges are stretched.
+  The proof uses the existing generic lex walk monotonicity and
+  source skew clauses (ii) and (iii). A concrete cut address is
+  chosen by the verified source-address equivalence, and the
+  original source interior is characterized as the admissible
+  address initial segment ending at this cut address. The
+  stronger equality with the full first-l HEAP initial segment
+  still requires admissibility of all intermediate addresses.
+  See `DualTree/ForwardSourceAddressOrder.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

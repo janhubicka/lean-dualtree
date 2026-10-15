@@ -9189,6 +9189,52 @@ full Lemma~27 smoothness and the Ramsey recursion.
 
 
 
+\paragraph{Forward auxiliary order isomorphism on admissible source addresses.} \todo
+The source address equivalence constructed above preserves
+and reflects the \emph{corrected forward} auxiliary order.
+An admissible address \(a\) has intrinsic image rank
+\(h_S(I_S(a))=|a|\). When two address lengths are
+unequal, source skew clause~(iii) gives strict ambient
+length separation. At equal lengths, the generic
+admissible-support-walk lex theorem preserves the
+ordinary forward lex relation, and source skew
+clause~(ii) supplies weak ambient length monotonicity.
+Thus
+\[
+  a\le_{\rm ForwardAux}b
+    \quad\Longleftrightarrow\quad
+  I_S(a)\le_{\rm ForwardAux}I_S(b)
+\]
+for all admissible direction addresses \(a,b\).
+Reflection follows from totality, antisymmetry and
+injectivity of the source walk.
+
+Let \(a_0\) denote the unique admissible address
+of the last source interior vertex \(t_0\).
+The merged source initial-segment theorem then gives
+the exact equivalence
+\[
+  I_S(a)\in\operatorname{Int}(S)
+    \quad\Longleftrightarrow\quad
+  a\le_{\rm ForwardAux}a_0
+\]
+for \emph{admissible} addresses \(a\).
+The proposed \lean{ForwardSourceAddressOrder}
+proves the rank and numeric-order interfaces, direct
+and reflected forward-order transport, realization
+of \(a_0\), and the interior-cut characterization
+(six source-facing endpoints; baseline 1259,
+target 1265, CI pending).
+
+The remaining combinatorial obligation is not merely
+counting: one must show that every homogeneous heap
+address preceding \(a_0\) is itself admissible.
+Only after this full-initial-segment theorem may one
+identify the first-\(l\) model boundary \(A_l\) with
+source leaves, and then transport it to literal \(R\).
+
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
