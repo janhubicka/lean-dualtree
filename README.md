@@ -382,6 +382,18 @@ obligation; `\todo` marks a remaining gap or proposed change.
   Surjectivity, and therefore the final A_l-to-R equivalence,
   remains open. See `DualTree/ForwardSourceBoundaryLeaves.lean`.
 
+- **Canonical model A_l-to-literal-R marker equivalence (four endpoints, CI pending):**
+  every original source leaf has a nonempty canonical direction
+  address; removing its last direction leaves an interior address,
+  while the terminal address lies outside the first-l interior.
+  This supplies surjectivity of the previously verified boundary
+  realization, hence a genuine A_l ≃ SourceLeaf(S) equivalence.
+  Composing with the already checked source-leaf/R equivalence
+  produces A_l ≃ R without an arbitrary leaf order.
+  The Definition 24 point-selector identity for actual corrected Q
+  outputs, starred input-domain transport and final Ramsey induction
+  remain open. See `DualTree/ForwardSourceBoundaryEquiv.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

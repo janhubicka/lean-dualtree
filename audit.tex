@@ -9355,6 +9355,48 @@ deduced by composition with the already checked
 \(\operatorname{Leaves}(S)\simeq R\).
 
 
+\paragraph{Canonical model A_l versus literal R equivalence.} \todo
+The original source's directional-address walk is now
+surjective onto all terminal vertices and carries
+the full first-\(l\) model interior to exactly the
+original source interior. Take a source leaf \(t\)
+and its unique admissible root address \(a\).
+Since the source root is interior, \(a\ne\varnothing\).
+Write \(a=p^\frown i\). The admissible-prefix
+criterion shows \(p\) is admissible and the last
+direction is a genuine immediate support successor;
+thus the source vertex of \(p\) is interior.
+By the first-\(l\) interior theorem,
+\(p\in\operatorname{ModelInterior}(l)\).
+The leaf \(t\) cannot have an interior address,
+so \(a\notin\operatorname{ModelInterior}(l)\).
+Hence \(a\in A_l\).
+
+This proves surjectivity of the already
+constructed injective boundary-to-source-leaf map,
+and therefore the canonical equivalence
+\(A_l\simeq\operatorname{Leaves}(S)\).
+Composition with the kernel-verified source
+leaf/R equivalence gives
+\[
+    A_l \simeq \operatorname{Leaves}(S) \simeq R.
+\]
+The proposed \lean{ForwardSourceBoundaryEquiv}
+formalizes the last-step strict-prefix lemma,
+surjectivity, and both equivalences
+(four source-facing endpoints; stacked
+baseline 1286, target 1290, CI pending).
+
+This supplies the correct *set-level* canonical
+boundary transport in corrected Lemma~27.
+The actual Definition~24 canonical marker-point
+selector \(I_U(a)\) must still be matched to the
+literal \(R\) projection on every Q output.
+The reverse-lex printed W_* domain, full source
+mixed-word span and Ramsey iteration are separate
+unproved obligations.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
