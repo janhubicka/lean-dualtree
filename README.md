@@ -1,7 +1,7 @@
 # lean-dualtree
 
 **Current verified status (15 October 2026).** The main branch through
-PR #302 has 1,326 registered transitive axiom-audit endpoints, full
+PR #302 has 1,322 registered transitive axiom-audit endpoints after removing four obsolete placeholder endpoints (previously 1,326), full
 model-to-genuine-Q prefix isomorphism for the corrected forward source,
 and conditional smooth-colouring transfer. The final theorem, printed
 reverse-order W_* compatibility, arbitrary-U Definition 24 canonical

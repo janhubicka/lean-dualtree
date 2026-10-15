@@ -118,3 +118,25 @@ paper. This cleanup removes root-import duplication without deleting
 counterexample fixtures or source-facing theorem implementations.
 The independent static CI now rejects a redundant umbrella import,
 so duplication cannot silently reappear.
+
+
+## Verified dead-scaffold elimination
+
+The independent source-audit job recorded the complete source-module
+references for four obsolete declarations before pruning:
+\`ForwardQActualStarredSpace.placeholderStarredWordOnQ\` and its
+\`_tree\` lemma occur **only** in the defining source module;
+\`ForwardQRetainedWordScaffold.retained_source_word_witness\` is
+referenced only by that old placeholder module and its own
+definition, and its \`_tree\` lemma only in its defining module.
+The actual fibrewise corrected starred output is now built in
+\`ForwardQAmbientFibreLegalWord\`, not from the retained source word.
+
+Accordingly the four obsolete declarations and their four registered
+axiom endpoints have been removed. The remaining source modules are
+preserved, including the *useful* boundedness, support/interior and
+dimension lemmas. The curated audited endpoint count changes from
+1,326 to **1,322** for this explicit dead-code removal. This is a
+deletion of replaced scaffolding, NOT a regression in the mathematical
+scope of the surviving exported theorems. Git history retains the old
+implementations.
