@@ -1,0 +1,24 @@
+name: Lean Source Audit
+
+on:
+  push:
+    paths:
+      - 'DualTree.lean'
+      - 'DualTree/**'
+      - 'scripts/audit-lean-library.py'
+      - '.github/workflows/library-audit.yml'
+  pull_request:
+    paths:
+      - 'DualTree.lean'
+      - 'DualTree/**'
+      - 'scripts/audit-lean-library.py'
+      - '.github/workflows/library-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  static-source-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Static import graph, proof-surface, and dead-code diagnostics
+        run: python3 scripts/audit-lean-library.py --verify-root-minimal
