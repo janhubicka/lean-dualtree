@@ -9758,6 +9758,49 @@ the full occurrence-sensitive span/Hall construction,
 and the recursive Ramsey numerical argument remain open.
 
 
+\paragraph{Rigidity of the positive-l partial canonical support walk and the l=0 convention.} \todo
+Definition~24 asks for canonical terminal points only
+at the first-\(l\) homogeneous interior addresses
+and their external children \(A_l\). Its special
+case \(l=0\) instead sets \(A_0=\{\varnothing\}\),
+not the empty external-child boundary.
+Both cases are now explicitly distinguished in
+\lean{ForwardCanonicalPartialWalkUniqueness}.
+
+For any positive branching \(b\), let two maps
+\(F,G:b^{<\omega}\to b^{<\omega}\) have the same
+root and satisfy the SAME outgoing-direction
+successor recursion on every first-\(l\) model
+interior parent:
+\[
+ F(p^\frown i)=\operatorname{next}_U(F(p),i),
+ \qquad
+ G(p^\frown i)=\operatorname{next}_U(G(p),i).
+\]
+Induction on a model address from its last
+direction is valid because every nonroot
+first-\(l\) interior or external boundary
+point \(p^\frown i\) has \(p\) interior.
+It follows that \(F=G\) on ALL first-\(l\)
+interior and external boundary addresses.
+Applying this to the actual directional
+support walk isolates the exact remaining
+canonical map obligation for arbitrary
+semi-complete starred supports \(U\):
+root identity plus immediate unique-successor
+recursion at interior model parents.
+
+The proposed module registers the \(l=0\)
+and positive-\(l\) boundary predicates,
+the model-parent lemma, finite model
+map rigidity and the support-walk
+uniqueness consequence
+(six source-facing endpoints; target 1337,
+CI pending). This is not a proof that the
+published \(I_U\) or the corrected Q realisation
+already satisfies the stated local recursion.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

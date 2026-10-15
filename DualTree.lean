@@ -30,3 +30,5 @@ this file exports exactly the intended graph without duplicate imports.
 -/
 
 import DualTree.ForwardQPaperSelectorReduction
+
+import DualTree.ForwardCanonicalPartialWalkUniqueness
