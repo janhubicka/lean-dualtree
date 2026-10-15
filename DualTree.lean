@@ -441,3 +441,5 @@ import DualTree.ForwardSourceBoundaryEquiv
 import DualTree.ForwardQModelBoundaryTransport
 
 import DualTree.ForwardQModelLeafIncidence
+
+import DualTree.ForwardQModelVertexEquiv
