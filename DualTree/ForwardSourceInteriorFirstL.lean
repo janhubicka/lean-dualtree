@@ -80,11 +80,16 @@ theorem realizeInitialCut_injective
     ⟨a.1, heap_le_cut_admissible hb c a.1 hleA⟩
   let v : SourceAddress c :=
     ⟨d.1, heap_le_cut_admissible hb c d.1 hleD⟩
-  have hval : (realize c u).1 = (realize c v).1 :=
+  have hraw :
+      (realizeInitialCut hb c a).1 =
+        (realizeInitialCut hb c d).1 :=
     congrArg Subtype.val had
+  change (realize c u).1 = (realize c v).1 at hraw
   have huv : u = v :=
-    realize_injective c (Subtype.ext hval)
-  exact Subtype.ext (congrArg Subtype.val huv)
+    realize_injective c (Subtype.ext hraw)
+  have haddr : a.1 = d.1 := by
+    exact congrArg Subtype.val huv
+  exact Subtype.ext haddr
 
 /-- Every source interior vertex is in the realized heap
 initial interval; this uses surjectivity of the source canonical
@@ -170,8 +175,10 @@ theorem modelInterior_iff_sourceInterior_address
         (realize c u).1 ∈ SkewTree.interior c.source.tree := by
   have hcount := cut_heapIndex_succ_eq_l hb c
   change heapIndex a < l ↔ _
-  rw [← hcount]
-  exact (Nat.lt_succ_iff).trans
+  have hcmp :
+      heapIndex a < l ↔ heapIndex a ≤
+        heapIndex (cutAddress c).1 := by omega
+  exact hcmp.trans
     (heap_le_cut_iff_source_interior_address hb c a)
 
 end DualTree.ForwardSourceInteriorFirstL
