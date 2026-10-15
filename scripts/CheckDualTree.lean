@@ -1485,3 +1485,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFixedDirectionIso.realize_childCone_invariant
 #print axioms DualTree.ForwardQFixedDirectionIso.vertexTransport_prefix_iff
 #print axioms DualTree.ForwardQFixedDirectionIso.vertexTransport_childCone_iff
+
+#print axioms DualTree.ForwardQFixedRank.realize_height_eq_FixedRank
+#print axioms DualTree.ForwardQFixedRank.realize_height_invariant
+#print axioms DualTree.ForwardQFixedRank.vertexTransport_height_eq
