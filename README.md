@@ -266,6 +266,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   still require separate theorems.
   See `DualTree/ForwardSourceInitialInterior.lean`.
 
+- **Uniqueness of actual source cut-child leaves (six endpoints, CI pending):**
+  for every direction i at the last source interior cut, the genuine
+  uniquely chosen immediate successor is an actual SOURCE LEAF, lies in
+  the cut++[i] cone, and is the ONLY source vertex in that cone.
+  Distinct directions give distinct leaves. This gives the cut-child
+  component of the source-leaf / literal-R correspondence without
+  choosing an arbitrary leaf enumeration. The exceptional first-exit
+  marker component and full first-l model boundary correspondence
+  remain separate.
+  See `DualTree/ForwardSourceCutLeaves.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

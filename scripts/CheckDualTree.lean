@@ -1466,3 +1466,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSourceInitialInterior.source_interior_iff_forward_le_cut
 #print axioms DualTree.ForwardSourceInitialInterior.source_interior_forward_initial
 #print axioms DualTree.ForwardSourceInitialInterior.source_outside_cut_not_interior
+
+#print axioms DualTree.ForwardSourceCutLeaves.cutLeaf_mem
+#print axioms DualTree.ForwardSourceCutLeaves.cutLeaf_cone
+#print axioms DualTree.ForwardSourceCutLeaves.cutLeaf_terminal
+#print axioms DualTree.ForwardSourceCutLeaves.cutLeaf_injective
+#print axioms DualTree.ForwardSourceCutLeaves.source_node_in_cut_cone_eq_cutLeaf
+#print axioms DualTree.ForwardSourceCutLeaves.cut_child_has_unique_source_leaf
