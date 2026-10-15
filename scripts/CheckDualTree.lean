@@ -1509,3 +1509,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSourceAddressOrder.forwardAux_realize_iff
 #print axioms DualTree.ForwardSourceAddressOrder.realize_cutAddress
 #print axioms DualTree.ForwardSourceAddressOrder.address_interior_iff_forward_le_cut
+
+#print axioms DualTree.ForwardSourceHeapInitial.admissible_append
+#print axioms DualTree.ForwardSourceHeapInitial.heap_le_cut_admissible
+#print axioms DualTree.ForwardSourceHeapInitial.heap_le_cut_realizes_interior
+#print axioms DualTree.ForwardSourceHeapInitial.interior_address_heap_le_cut
+#print axioms DualTree.ForwardSourceHeapInitial.heap_le_cut_iff_source_interior_address

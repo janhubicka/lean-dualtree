@@ -9235,6 +9235,57 @@ source leaves, and then transport it to literal \(R\).
 
 
 
+\paragraph{No missing full model heap addresses before the source cut.} \todo
+Let \(a_0\) be the canonical direction address of
+the final interior source vertex and
+\(N=\operatorname{heapIndex}(a_0)\).
+The source forward-order equivalence yields an
+initial segment among \emph{admissible} addresses;
+the following stronger claim supplies the missing
+homogeneous-model geometry:
+\[
+ \operatorname{heapIndex}(a)\le N
+ \Longrightarrow
+ \operatorname{Admissible}_S(a)
+ \quad\text{and}\quad
+ I_S(a)\in\operatorname{Int}(S).
+\]
+Prove it by strong induction on
+\(\operatorname{heapIndex}(a)\). For a nonempty
+address \(a=p^\frown i\), the heap parent
+\(p\) has strictly smaller index. Its
+admissibility follows by induction; its
+image is interior because \(p\) precedes
+\(a_0\) in the verified source forward-order
+isomorphism. Semi-completeness supplies
+the actual unique source successor in
+direction \(i\). The generic admissible
+concatenation lemma completes the step.
+
+Conversely every address ending at an interior
+source vertex precedes \(a_0\), and therefore
+its heap index is at most \(N\). Hence the
+source interior is \emph{exactly} the image
+of the full homogeneous arithmetic interval
+\([0,N]\), not an arbitrary subset thereof.
+The proposed \lean{ForwardSourceHeapInitial}
+isolates generic admissible concatenation,
+full-heap initial admissibility, interiority,
+the converse index bound and the exact
+source-facing equivalence (five audited endpoints;
+stacked baseline 1265, target 1270, CI pending).
+
+The immediate next fact is \(N+1=l\), obtained
+by comparing this interval with the given
+interior cardinality, after which
+\(\operatorname{ModelInterior}(l)\) is exactly
+the source's interior address set and the
+external boundary \(A_l\) may be identified
+with the source terminals. The latter is
+still open, as is the colour/span transport.
+
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

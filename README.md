@@ -346,6 +346,18 @@ obligation; `\todo` marks a remaining gap or proposed change.
   still requires admissibility of all intermediate addresses.
   See `DualTree/ForwardSourceAddressOrder.lean`.
 
+- **No missing homogeneous heap addresses before the source cut (five endpoints, CI pending):**
+  a strong induction on b-ary heap index proves that EVERY ambient
+  direction sequence no later than the canonical source cut address
+  is admissible, not just those previously known to occur in the
+  source. At each child, the parent is inside the already checked
+  initial source interior, so its full directional branching supplies
+  the missing successor. The resulting entire heap interval
+  is exactly the realized source interior address set.
+  Counting this interval against source interior cardinal l, and
+  then constructing the A_l-to-source-leaf bijection, are next.
+  See `DualTree/ForwardSourceHeapInitial.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
