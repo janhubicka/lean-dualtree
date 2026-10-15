@@ -9029,6 +9029,37 @@ source-facing bijection, and these must then be combined
 with the compressed first-\(l\) model boundary \(A_l\).
 
 
+\paragraph{Exceptionals have injective source first-exit markers.} \todo
+Let \(E\) be the actual exceptional leaf subtype of the
+semi-complete skew source \(S\), consisting of its leaves
+outside the final interior cut cone. For \(t\in E\), let
+\(r(t)\) be its unique first prefix outside the strict
+corrected forward cut. The verified signature geometry
+places \(r(t)\) in the \emph{literal} corrected marker set
+\(R\), and \(r(t)\sqsubseteq t\).
+
+If distinct \(t,u\in E\) had the same \(r\), their ambient
+meet \(w=t\wedge u\) would be in the source by its verified
+meet closure. Since \(t\) is terminal, \(w\sqsubset t\)
+strictly, so \(w\in\operatorname{Int}(S)\). But \(r\sqsubseteq
+w\) with \(r\) outside the inclusive cut implies \(w\)
+is also outside it. This contradicts maximality of the
+final interior cut. Consequently \(t\mapsto r(t)\) is
+injective. Conversely each genuine signature-terminal
+marker is the first-exit boundary of at least one
+exceptional leaf, by the already checked source
+signature classification.
+
+The proposed \lean{ForwardSourceExceptionalMarkers}
+checks exact prefix inclusion, membership in literal
+\(R\), exteriority, injectivity and the signature-terminal
+preimage (five new source-facing endpoints; target
+1246 after the merged 1241 from \#289, CI pending).
+The two marker types still need to be combined into a
+single source-leaf/R equivalence before transporting the
+first-\(l\) model boundary \(A_l\).
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

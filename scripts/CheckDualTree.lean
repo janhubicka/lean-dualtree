@@ -1473,3 +1473,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSourceCutLeaves.cutLeaf_injective
 #print axioms DualTree.ForwardSourceCutLeaves.source_node_in_cut_cone_eq_cutLeaf
 #print axioms DualTree.ForwardSourceCutLeaves.cut_child_has_unique_source_leaf
+
+#print axioms DualTree.ForwardSourceExceptionalMarkers.exceptionalBoundary_prefix
+#print axioms DualTree.ForwardSourceExceptionalMarkers.exceptionalBoundary_mem_literalR
+#print axioms DualTree.ForwardSourceExceptionalMarkers.exceptionalBoundary_outside_cut
+#print axioms DualTree.ForwardSourceExceptionalMarkers.exceptionalBoundary_injective
+#print axioms DualTree.ForwardSourceExceptionalMarkers.signatureTerminal_has_exceptionalBoundary
