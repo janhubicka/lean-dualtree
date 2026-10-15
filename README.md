@@ -445,6 +445,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   published selector on arbitrary semi-complete starred U remain
   separate tasks. See `DualTree/ForwardSourceAddressPrefixIso.lean`.
 
+- **Full homogeneous model/Q prefix isomorphism (eight endpoints, CI pending):**
+  the genuine first-l model interior and external boundary, with their
+  OWN ambient prefix relation, are canonically prefix-isomorphic
+  to every corrected Q support. The proof handles all four combinations:
+  two interiors, interior/leaf, leaf/interior, and two leaves,
+  using the verified source directional-walk prefix reflection,
+  leaf-to-R incidence and fixed Q prefix invariance.
+  First outgoing-direction preservation is still separate,
+  and equality with the published I_U for arbitrary starred U
+  is not claimed. See `DualTree/ForwardQModelPrefixIso.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

@@ -9588,6 +9588,56 @@ nor is the generic canonical selector on
 arbitrary starred refinements yet defined.
 
 
+\paragraph{The full first-l homogeneous model is prefix-isomorphic to every corrected Q output.} \todo
+We now compare the \emph{model's own} ambient
+initial-segment relation with its canonical
+source-labelled Q realization. Interior/interior
+comparisons use the verified reflected source
+admissible-direction walk. For an interior model
+address \(p\) and boundary address \(a\), the
+corresponding source interior vertex and original
+source terminal satisfy
+\[
+ p\sqsubseteq a\quad\Longleftrightarrow\quad
+ I_S(p)\sqsubseteq I_S(a).
+\]
+The literal first-exit marker of the source leaf
+has the same old-interior prefix mask, and the
+actual Q projected terminal likewise has that
+mask. Boundary vertices never prefix model
+interior vertices, and two different boundary
+points are prefix-incomparable on both sides.
+
+Combining these four cases proves that
+\[
+ u\sqsubseteq v
+ \quad\Longleftrightarrow\quad
+ \operatorname{ModelQ}_x(u)\sqsubseteq
+ \operatorname{ModelQ}_x(v)
+\]
+for all canonical interior-or-boundary model
+vertices \(u,v\) and every genuine corrected
+Q input \(x\). The proposed
+\lean{ForwardQModelPrefixIso} checks the exact
+source interior/boundary prefix correspondence,
+the two-sorted model prefix relation and its
+ambient interpretation, its matching source
+fixed-shape relation and the final Q prefix
+isomorphism (eight audited endpoints,
+target 1326, CI pending).
+
+This resolves the complete model PREFIX order
+for genuine Q outputs. The remaining geometric
+assertion before identifying
+\(\operatorname{ModelQ}_x=I_{Q(x)}\)
+is preservation of the FIRST OUTGOING DIRECTION
+for every model parent and child; plain prefix
+isomorphism does not suffice for it.
+The general arbitrary-\(U\) Definition~24
+selector and special \(l=0\) base case remain
+separate.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
