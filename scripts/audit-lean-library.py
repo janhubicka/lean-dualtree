@@ -147,7 +147,7 @@ def main() -> int:
 
     checked = (REPO / "scripts/CheckDualTree.lean").read_text(encoding="utf-8")
     endpoints = re.findall(
-        r"(?m)^\\s*#print axioms\\s+([A-Za-z0-9_.']+)\\s*$", checked
+        r"(?m)^\s*#print axioms\s+([A-Za-z0-9_.']+)\s*$", checked
     )
     counted = len(endpoints)
     endpoint_counts = Counter(endpoints)
