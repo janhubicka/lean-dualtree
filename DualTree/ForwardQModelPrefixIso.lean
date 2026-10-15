@@ -208,7 +208,8 @@ theorem modelShape_FixedPrefix_iff
               (modelBoundaryMarkerEquiv hb c) d ↔
             a = d
           constructor
-          · exact (modelBoundaryMarkerEquiv hb c).injective
+          · intro h
+          · exact (modelBoundaryMarkerEquiv hb c).injective h
           · intro heq
             simp [heq]
 
