@@ -99,10 +99,12 @@ theorem modelQ_childCone_iff_modelAddress
           IsPrefix
             (((modelInteriorSourceEquiv hb c) p).1 ++ [i])
             ((boundarySourceLeafEquiv hb c) a).1 := by
-        simpa only [
-          ForwardSourceAddressPrefixIso.modelInteriorSourceEquiv_value,
-          ForwardQModelPrefixIso.boundarySourceLeafEquiv_value
-        ] using hdir
+        rw [ForwardSourceAddressPrefixIso.modelInteriorSourceEquiv_value
+          hb c p, ForwardQModelPrefixIso.boundarySourceLeafEquiv_value
+          hb c a]
+        change IsPrefix (up.1 ++ [i]) ua.1 ↔
+          IsPrefix ((realize c up).1 ++ [i]) (realize c ua).1
+        exact hdir
       have hproject :=
         ForwardQModelLeafIncidence.model_Q_childCone_iff_source_leaf
           hb c x a
