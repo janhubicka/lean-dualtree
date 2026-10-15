@@ -9000,6 +9000,35 @@ the source leaves and literal markers \(R\).
 The printed reverse-lex convention remains excluded.
 
 
+\paragraph{Cut-child literal markers have unique source leaves.} \todo
+For each direction \(i\in[b]\) at the final source interior
+cut \(t_0\), the verified full-direction theorem selects an actual
+unique immediate support successor \(u_i\) of \(t_0\) in
+the cone \(t_0^\frown i\). As \(u_i\) strictly extends \(t_0\),
+the newly verified corrected forward source initial-segment
+theorem implies \(u_i\notin\operatorname{Int}(S)\).
+Distinct directions \(i\ne j\) produce different successors.
+
+Conversely any source vertex \(t\in S\) with
+\(t_0^\frown i\sqsubseteq t\) has an immediate support
+successor \(u\) on its path from \(t_0\).
+The first ambient direction forces \(u=u_i\) by the unique
+branch witness. Since \(u_i\) is terminal, \(t=u_i\).
+Thus the \(i\)-th direct cut-child marker lies below
+\emph{exactly one} original source terminal.
+
+The proposed \lean{ForwardSourceCutLeaves} proves six
+source-facing endpoints: existence in the source, cone
+membership, terminality, injectivity, uniqueness for all
+source vertices in the cone, and the exists-unique source
+terminal package (CI/no-sorryAx pending; audit target
+1241 based on merged main \#288 with 1235 endpoints).
+This covers only the direct cut-child markers. The
+exceptional leaf first-exit markers require a parallel
+source-facing bijection, and these must then be combined
+with the compressed first-\(l\) model boundary \(A_l\).
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
