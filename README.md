@@ -468,6 +468,15 @@ obligation; `\todo` marks a remaining gap or proposed change.
   and equality with the published I_U for arbitrary starred U
   is not claimed. See `DualTree/ForwardQModelPrefixIso.lean`.
 
+- **First-direction reflection for genuine admissible source addresses (four endpoints, CI pending):**
+  the directional support walk preserves and reflects every outgoing
+  child cone, not merely the prefix relation. The proof explicitly
+  recovers an admissible suffix and uses uniqueness of the first
+  ambient support direction, so stretched edges cannot silently
+  permute model directions. This is the reusable last input for
+  checking the first-l model-to-Q canonical map's direction labels.
+  See `DualTree/ForwardSourceAddressChildCone.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
