@@ -1574,3 +1574,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSourceAddressChildCone.sourceAddress_childCone_mono
 #print axioms DualTree.ForwardSourceAddressChildCone.sourceAddress_childCone_reflect
 #print axioms DualTree.ForwardSourceAddressChildCone.sourceAddress_childCone_iff
+
+#print axioms DualTree.ForwardQModelDirectionalIso.modelQ_childCone_iff_modelAddress
+#print axioms DualTree.ForwardQModelDirectionalIso.modelQ_prefix_and_childCones

@@ -18,7 +18,7 @@ import DualTree.ForwardQMixedSpanEvaluation
 import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
-import DualTree.ForwardSourceAddressChildCone
+import DualTree.ForwardQModelDirectionalIso
 
 /-!
 Public umbrella import for the dual-tree verification library.

@@ -477,6 +477,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   checking the first-l model-to-Q canonical map's direction labels.
   See `DualTree/ForwardSourceAddressChildCone.lean`.
 
+- **Direction-labelled first-l model/Q geometric transport (two endpoints, CI pending):**
+  every genuine corrected Q support is not only canonically
+  prefix-isomorphic to the first-l model interior plus boundary,
+  but the realization preserves and reflects the first outgoing
+  child direction at every interior node and for every model target.
+  Original source-leaf incidence handles external Q marked leaves.
+  This does not yet equate the source-relative selector with the
+  published Definition 24 I_U on arbitrary semi-complete refinements
+  or discharge the mixed Ramsey word/span obligations.
+  See `DualTree/ForwardQModelDirectionalIso.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
