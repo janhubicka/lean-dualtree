@@ -134,14 +134,17 @@ theorem unique_model_map_eq_support_walk
     (a : Node b)
     (ha : ModelInterior l a ∨ ModelBoundary l a) :
     F a = CanonicalSupportWalk.walk T root a := by
-  apply unique_on_model_of_local_step hb
-    (CanonicalSupportWalk.next T) F
-    (CanonicalSupportWalk.walk T root)
-  · exact hroot
-  · exact hstep
-  · intro p i _
+  have hwalkStep :
+      ∀ p i, ModelInterior l p →
+        CanonicalSupportWalk.walk T root (p ++ [i]) =
+          CanonicalSupportWalk.next T
+            (CanonicalSupportWalk.walk T root p) i := by
+    intro p i _
     rw [CanonicalSupportWalk.walk_append]
     rfl
-  · exact ha
+  exact unique_on_model_of_local_step hb
+    (CanonicalSupportWalk.next T) F
+    (CanonicalSupportWalk.walk T root)
+    hroot hstep hwalkStep a ha
 
 end DualTree.ForwardCanonicalPartialWalkUniqueness
