@@ -322,6 +322,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   heap positions, and then transporting A_l to literal R,
   remains open. See `DualTree/ForwardSourceCanonicalAddresses.lean`.
 
+- **Canonical source leaf / literal R marker equivalence (five new endpoints, CI pending):**
+  every corrected literal R marker lies below exactly one original
+  source leaf, and every original source leaf lies above exactly one
+  literal R marker. The proofs combine the two marker families,
+  source meet closure and the boundary antichain, without assuming
+  an arbitrary leaf ordering. The resulting explicit type equivalence
+  has prefix incidence as its characterizing invariant. This closes
+  the source-leaf/R component, NOT the model A_l-to-leaf canonical
+  address map or the Ramsey refinement. See
+  `DualTree/ForwardSourceLeafMarkerEquiv.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

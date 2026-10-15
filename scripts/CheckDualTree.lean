@@ -1495,3 +1495,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSourceCanonicalAddresses.realize_injective
 #print axioms DualTree.ForwardSourceCanonicalAddresses.realize_surjective
 #print axioms DualTree.ForwardSourceCanonicalAddresses.sourceAddressEquiv
+
+#print axioms DualTree.ForwardSourceLeafMarkerEquiv.marker_prefix_source_leaf_unique
+#print axioms DualTree.ForwardSourceLeafMarkerEquiv.marker_has_source_leaf
+#print axioms DualTree.ForwardSourceLeafMarkerEquiv.source_leaf_has_marker
+#print axioms DualTree.ForwardSourceLeafMarkerEquiv.source_leaf_prefix_marker_unique
+#print axioms DualTree.ForwardSourceLeafMarkerEquiv.sourceLeafMarkerEquiv
