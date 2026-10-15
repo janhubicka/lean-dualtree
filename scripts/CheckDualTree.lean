@@ -1577,3 +1577,7 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.ForwardQModelDirectionalIso.modelQ_childCone_iff_modelAddress
 #print axioms DualTree.ForwardQModelDirectionalIso.modelQ_prefix_and_childCones
+
+#print axioms DualTree.ForwardQPaperSelectorReduction.modelA_B2_gamma2_iff
+#print axioms DualTree.ForwardQPaperSelectorReduction.paper_simple_Q_pullback_smooth_of_local_agreement
+#print axioms DualTree.ForwardQPaperSelectorReduction.exists_total_paper_simple_Q_pullback_of_local_agreement

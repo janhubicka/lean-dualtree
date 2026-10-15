@@ -28,3 +28,5 @@ counterexample fixtures remain available via their individual imports.
 Run scripts/audit-lean-library.py --verify-root-minimal to check that
 this file exports exactly the intended graph without duplicate imports.
 -/
+
+import DualTree.ForwardQPaperSelectorReduction

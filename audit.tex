@@ -9722,6 +9722,42 @@ span and Ramsey induction is not addressed
 by this geometric result.
 
 
+\paragraph{Adversarial reduction: paper canonical-selector agreement is needed only on Q images.} \todo
+The published Definition~24 simplicity predicate quantifies over
+\emph{all} starred refinements \(U,V\) of the ambient word and
+compares the canonical points \(I_U(a)\), \(I_V(a)\) for
+\(a\in B_2\subseteq A_l\).
+The proof of the corrected Lemma~27 colours only pairs of
+ACTUAL Q outputs. Consequently it is not necessary to
+establish \(I_U(a)=I_U^R(a)\) for every arbitrary starred
+\(U\). It suffices to verify the \emph{Q-local} identity
+\[
+ I_{Q(w)}(a)=I^R_{Q(w)}(a)
+   = P_{\iota(r(a))}\bigl(s_{\iota(r(a))}(w)\bigr)
+ \qquad\text{for all actual starred inputs \(w\), \(a\in A_l\).}
+\]
+This is a strictly weaker and better focused mathematical
+obligation. The full original simplicity hypothesis is NOT
+weakened: it remains a statement about all ambient starred
+refinements. Only the geometric selector-comparison theorem
+used to instantiate it is restricted to the Q image.
+
+The source-facing
+\lean{ForwardQPaperSelectorReduction}
+proves the exact \(B_2\leftrightarrow\Gamma_2\) equivalence
+under the verified \(A_l\simeq R\simeq D_2\) coordinates,
+smoothness of the Q pullback from \emph{any}
+Definition~24-style simple selector \(I_U\) under the
+Q-local agreement hypothesis, and its extension to a
+TOTAL smooth colouring of the full enlarged mixed product
+(three axiom-audited endpoints, target 1331; CI pending).
+
+This does not prove the canonical Q-local agreement itself.
+The printed reverse auxiliary order and starred \(W_*\) domain,
+the full occurrence-sensitive span/Hall construction,
+and the recursive Ramsey numerical argument remain open.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
