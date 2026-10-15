@@ -9325,6 +9325,36 @@ literal \(R\), and the mixed-product word/colouring
 Ramsey construction remains open.
 
 
+\paragraph{Every model boundary address realizes a unique source leaf.} \todo
+After identifying the original source interior
+with the first \(l\) homogeneous forward-heap addresses,
+take a model external boundary point
+\(a=p^\frown i\in A_l\). Its parent \(p\) is a
+genuine source interior address, and semi-completeness
+supplies the unique source successor in direction \(i\).
+Consequently the address \(a\) is itself admissible.
+As it does not lie in \(\operatorname{ModelInterior}(l)\),
+the resulting source vertex cannot be interior and
+hence is an actual source terminal.
+
+The map \(A_l\to\operatorname{Leaves}(S)\) thus
+constructed is injective, since its values are
+canonical realizations of distinct admissible
+direction words and the source support walk is
+injective. The proposed
+\lean{ForwardSourceBoundaryLeaves} formalizes
+the singleton continuation criterion for
+admissible source walks, boundary admissibility,
+the actual terminal-valued realization, and its
+injectivity (four source-facing endpoints, stacked
+baseline 1282, target 1286; CI pending).
+Surjectivity remains to be proved by considering
+the predecessor address of each source terminal.
+Only then may the model A_l-to-R equivalence be
+deduced by composition with the already checked
+\(\operatorname{Leaves}(S)\simeq R\).
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
