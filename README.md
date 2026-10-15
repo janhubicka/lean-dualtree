@@ -394,6 +394,20 @@ obligation; `\todo` marks a remaining gap or proposed change.
   outputs, starred input-domain transport and final Ramsey induction
   remain open. See `DualTree/ForwardSourceBoundaryEquiv.lean`.
 
+- **Model-A-indexed relative simplicity and smooth pullback (eight endpoints, CI pending):**
+  use the verified corrected source equivalence A_l ≃ R ≃ D2
+  to define a source-relative terminal observable for model
+  boundary addresses a∈A_l on arbitrary starred outputs.
+  On every ACTUAL corrected Q(w) it equals the genuine projected
+  D2 marked point. Transport any B2⊆A_l to literal R,
+  and apply the previously checked relative-R theorem to
+  obtain smoothness and a TOTAL smooth extension of the
+  induced colouring under this precise A-relative simplicity
+  hypothesis. This does NOT identify that observable with
+  Definition 24's published canonical I_U(a) for arbitrary U,
+  or finish the mixed-product Ramsey refinement.
+  See `DualTree/ForwardQModelBoundaryTransport.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
