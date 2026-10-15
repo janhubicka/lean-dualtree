@@ -371,6 +371,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   is the remaining geometric bridge.
   See `DualTree/ForwardSourceInteriorFirstL.lean`.
 
+- **Injective realization of the canonical model boundary (four new endpoints, CI pending):**
+  every immediate child outside the first-l homogeneous interior
+  is admissible in the original semi-complete source: its parent
+  is interior and hence has all genuine directional successors.
+  Its realized source vertex must be terminal because the address
+  lies outside the interior. The resulting actual map from
+  the model boundary A_l into the original source leaf set
+  is injective by directional-walk uniqueness.
+  Surjectivity, and therefore the final A_l-to-R equivalence,
+  remains open. See `DualTree/ForwardSourceBoundaryLeaves.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
