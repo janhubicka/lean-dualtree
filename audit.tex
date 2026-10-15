@@ -9504,6 +9504,49 @@ starred refinements \(U\) until this extension and its
 relative compatibility are formally proved.
 
 
+\paragraph{Canonical two-sorted model vertex type and Q realization.} \todo
+The corrected source now has both
+\(\operatorname{ModelInterior}(l)\simeq\operatorname{Int}(S)\)
+from the verified full heap initiality and
+\(\operatorname{ModelBoundary}(l)\simeq R\)
+from the verified leaf/marker equivalence.
+Combine them into one canonical type equivalence
+\[
+ \operatorname{ModelInterior}(l)\,\dot\cup\,
+ \operatorname{ModelBoundary}(l)
+ \ \simeq\ \operatorname{Int}(S)\,\dot\cup\,R
+ \ \simeq\ Q(c,x)
+\]
+for every actual corrected mixed-product point \(x\).
+The source interior points are retained literally and
+the model boundary point \(a\) maps to
+\(P_{\iota(r(a))}(x_{\iota(r(a))})\) with the
+actual corrected sorted \(D_2\) index.
+
+The already checked fixed source-labelled Q invariants
+show that, as \(x\) varies, this canonical model
+address matching preserves and reflects every
+prefix relation, outgoing direction membership at
+an original interior node, and intrinsic Q rank.
+These are independent of ambient depth or local
+marked-point lengths. The proposed
+\lean{ForwardQModelVertexEquiv} packages this in
+eight source-facing endpoints (target 1312,
+CI pending).
+
+\textbf{Remaining step.} An arbitrary vertex
+equivalence preserving relations \emph{between}
+Q outputs does not itself prove that the model's
+own initial-segment and outgoing-direction
+relations are preserved. One must identify
+the direction walk on the model side with that on
+the old original source interior and its leaves,
+and only then conclude the realized Q map is the
+canonical \(I_{Q(x)}\). The analogous definition
+for arbitrary semi-complete starred \(U\) and the
+\(l=0\) convention are still outstanding.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

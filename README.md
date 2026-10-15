@@ -421,6 +421,19 @@ obligation; `\todo` marks a remaining gap or proposed change.
   convention, still require a separate formal definition.
   See `DualTree/ForwardQModelLeafIncidence.lean`.
 
+- **Canonical two-sorted model vertices of genuine Q (eight endpoints, CI pending):**
+  combine the actual first-l homogeneous interior with its external
+  boundary, then the checked interior/marker equivalences, to obtain
+  a canonical address-labelled equivalence with every corrected Q
+  vertex set. Interior addresses retain original source vertices;
+  boundary addresses give the genuine selected D2 projected points.
+  Across arbitrary corrected Q inputs this common labelling
+  preserves and reflects all prefix comparisons, every old-interior
+  outgoing cone, and intrinsic ranks. The final assertion that
+  this agrees with the model's OWN prefix/direction structure,
+  and with the published Definition 24 I_U on arbitrary U,
+  is still open. See `DualTree/ForwardQModelVertexEquiv.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
