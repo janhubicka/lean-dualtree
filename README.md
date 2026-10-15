@@ -488,6 +488,15 @@ obligation; `\todo` marks a remaining gap or proposed change.
   or discharge the mixed Ramsey word/span obligations.
   See `DualTree/ForwardQModelDirectionalIso.lean`.
 
+- **Axiom-endpoint coverage integrity (CI-enforced):**
+  the static source audit now rejects duplicate `#print axioms`
+  target names and checks every registered target belongs to the
+  local DualTree namespace. This prevents a duplicated endpoint
+  from inflating the report count while another selected result
+  is omitted. It does NOT mean the curated targets cover every
+  public theorem or the published theorem statements.
+  See `scripts/audit-lean-library.py`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

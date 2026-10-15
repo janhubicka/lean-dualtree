@@ -146,7 +146,17 @@ def main() -> int:
     only_root = sorted(m for m in source_mods if inbound[m] == {"DualTree"})
 
     checked = (REPO / "scripts/CheckDualTree.lean").read_text(encoding="utf-8")
-    counted = len(re.findall(r"(?m)^\s*#print axioms\s+", checked))
+    endpoints = re.findall(
+        r"(?m)^\\s*#print axioms\\s+([A-Za-z0-9_.']+)\\s*$", checked
+    )
+    counted = len(endpoints)
+    endpoint_counts = Counter(endpoints)
+    repeated_endpoints = sorted(
+        name for name, copies in endpoint_counts.items() if copies != 1
+    )
+    foreign_endpoints = sorted(
+        name for name in endpoints if not name.startswith("DualTree.")
+    )
     prohibited: dict[str, list[str]] = {}
     patterns = {
         "sorry": r"\bsorry\b",
@@ -180,6 +190,13 @@ def main() -> int:
     print(f"AUDIT_UNREACHABLE_SOURCE_MODULES {len(missed)}")
     print(f"AUDIT_ONLY_ROOT_IMPORTERS {len(only_root)}")
     print(f"AUDIT_AXIOM_REPORTS_REGISTERED {counted}")
+    print(f"AUDIT_AXIOM_ENDPOINTS_DISTINCT {len(endpoint_counts)}")
+    print(f"AUDIT_AXIOM_DUPLICATE_ENDPOINTS {len(repeated_endpoints)}")
+    print(f"AUDIT_AXIOM_FOREIGN_ENDPOINTS {len(foreign_endpoints)}")
+    if repeated_endpoints:
+        print("AUDIT_DUPLICATE_ENDPOINT_NAMES " + " ".join(repeated_endpoints))
+    if foreign_endpoints:
+        print("AUDIT_FOREIGN_ENDPOINT_NAMES " + " ".join(foreign_endpoints))
     for label, matches in prohibited.items():
         print(f"AUDIT_LEXICAL_{label.upper()} {len(matches)}")
         if matches:
@@ -239,6 +256,12 @@ def main() -> int:
         print(f"AUDIT_COMPACT_ROOT_SAVED {ROOT}")
     if args.verify_root_minimal and redundant:
         print("FAIL: transitive duplicate root imports", file=sys.stderr)
+        return 1
+    if args.verify_root_minimal and repeated_endpoints:
+        print("FAIL: duplicated #print axioms declarations", file=sys.stderr)
+        return 1
+    if args.verify_root_minimal and foreign_endpoints:
+        print("FAIL: axiom audit references external declarations", file=sys.stderr)
         return 1
     return 0
 

@@ -1,15 +1,15 @@
 # Adversarial audit of the dual-tree Lean library
-15 October 2026 — ongoing audit ledger; read together with \`audit.tex\`
+15 October 2026 — ongoing audit ledger; read together with `audit.tex`
 
 ## Scope and evidence policy
 
 This is a **proof-engineering and paper-alignment audit**, not a claim that
 Todorcevic–Tyros' entire dual-tree theorem has been verified. The exact
-Lean toolchain and two source libraries are pinned in \`lakefile.toml\`.
+Lean toolchain and two source libraries are pinned in `lakefile.toml`.
 The successful main-branch CI at the beginning of this pass audited
 **1,326 selected source-facing declarations** using transitive
-\`#print axioms\`, allowing only \`propext\`, \`Classical.choice\`, and
-\`Quot.sound\`. A green check proves that the registered Lean declarations
+`#print axioms`, allowing only `propext`, `Classical.choice`, and
+`Quot.sound`. A green check proves that the registered Lean declarations
 compile with those axioms. It does **not** prove that the registered list
 covers every theorem, that definitions match all published ones, or that
 the unpublished corrected forward-order hypothesis follows from the
@@ -35,35 +35,35 @@ corrected, or intentionally conditional.
 
 ### 2. Lean trust and transitive-dependency audit
 
-- \`scripts/CheckDualTree.lean\` is an explicit curated set of axiom endpoints.
-  \`scripts/check-axiom-log.py\` rejects \`sorryAx\`, other unexpected
+- `scripts/CheckDualTree.lean` is an explicit curated set of axiom endpoints.
+  `scripts/check-axiom-log.py` rejects `sorryAx`, other unexpected
   axioms and a mismatching endpoint count.
-- Add \`scripts/audit-lean-library.py\` to report **every source module's**
+- Add `scripts/audit-lean-library.py` to report **every source module's**
   static import closure, redundant umbrella imports, unimported files,
-  and lexical candidate declarations (\`sorry\`, \`admit\`, \`axiom\`,
-  \`opaque\`, \`unsafe\`, \`native_decide\`). A private declaration that
+  and lexical candidate declarations (`sorry`, `admit`, `axiom`,
+  `opaque`, `unsafe`, `native_decide`). A private declaration that
   appears only once is a **candidate** for review, not automatically dead.
-- \`lake build\` establishes type checking; the separate finite Python
+- `lake build` establishes type checking; the separate finite Python
   regressions test only bounded examples. They are not a proof of
   correctness for arbitrary parameters.
-- Transitive \`#print axioms\` endpoint count is **not a completion
+- Transitive `#print axioms` endpoint count is **not a completion
   percentage**. Every new theorem and any exported high-value witness
   should be registered explicitly.
 
 ### 3. Maintainability / API / obsolete code audit
 
-- \`DualTree.lean\` imports a historical succession of nearly every
+- `DualTree.lean` imports a historical succession of nearly every
   module, with many direct imports already guaranteed transitively.
   The audit script computes a *minimal root import cover*, while
   retaining the full transitive closure of currently exported modules.
   This is the first safe cleanup: remove redundant imports, **not**
   entire proof files merely because another module imports them.
-- The older \`QLength*\`, \`SkewOrderObstruction\`, and \`QOrderRepairAudit\`
+- The older `QLength*`, `SkewOrderObstruction`, and `QOrderRepairAudit`
   branches are **counterexample/regression evidence** and must not be
   erased as "dead ends" without an explicit replacement for their
   kernel-checked counterexamples.
 - Clearly separate real output from obsolete placeholder constructors.
-  For example, \`ForwardQActualStarredSpace.placeholderStarredWordOnQ\`
+  For example, `ForwardQActualStarredSpace.placeholderStarredWordOnQ`
   explicitly states it is only a typed *placeholder*, not Lemma 27's
   actual g_w. It may be removable *after* proving no imports or
   explicit axiom-audit endpoints rely on it; deleting it before that
@@ -71,7 +71,7 @@ corrected, or intentionally conditional.
 - Many historical README milestones still say "CI pending" even
   after later successful merges. Treat these as archival history.
   Maintain a concise current status above them and use the
-  mathematical TODOs in \`audit.tex\` as a cumulative ledger.
+  mathematical TODOs in `audit.tex` as a cumulative ledger.
 - Do not add compatibility wrappers for internal module APIs unless
   actual downstream consumers require them. Check three closely
   related repositories before changing the pinned Todorcevic
@@ -102,15 +102,15 @@ the source-facing theorem audit.
 ## Static inventory from the first green source audit
 
 The scanner on the pre-cleanup umbrella found **262 local Lean modules**
-(including \`DualTree.lean\` itself); **261** source modules were reachable,
+(including `DualTree.lean` itself); **261** source modules were reachable,
 and **none** was unreachable. The historical root contained **260**
 direct imports, of which **239** were already guaranteed by its other
 direct imports. After merging the next source-facing prefix-isomorphism
 module (#302), the root import cover requires only **21** essential
 imports and retains the *same* 262-module transitive closure.
 
-There were no uncommented local \`sorry\`, \`admit\`, \`axiom\`,
-\`opaque\`, \`unsafe\` or \`native_decide\` tokens, and zero private
+There were no uncommented local `sorry`, `admit`, `axiom`,
+`opaque`, `unsafe` or `native_decide` tokens, and zero private
 declarations with the crude one-occurrence unused signature.
 These are useful negative findings, **not** proof that all public
 declarations are actively needed or that all semantic lemmas match the
@@ -124,13 +124,13 @@ so duplication cannot silently reappear.
 
 The independent source-audit job recorded the complete source-module
 references for four obsolete declarations before pruning:
-\`ForwardQActualStarredSpace.placeholderStarredWordOnQ\` and its
-\`_tree\` lemma occur **only** in the defining source module;
-\`ForwardQRetainedWordScaffold.retained_source_word_witness\` is
+`ForwardQActualStarredSpace.placeholderStarredWordOnQ` and its
+`_tree` lemma occur **only** in the defining source module;
+`ForwardQRetainedWordScaffold.retained_source_word_witness` is
 referenced only by that old placeholder module and its own
-definition, and its \`_tree\` lemma only in its defining module.
+definition, and its `_tree` lemma only in its defining module.
 The actual fibrewise corrected starred output is now built in
-\`ForwardQAmbientFibreLegalWord\`, not from the retained source word.
+`ForwardQAmbientFibreLegalWord`, not from the retained source word.
 
 Accordingly the four obsolete declarations and their four registered
 axiom endpoints have been removed. The remaining source modules are
@@ -145,11 +145,27 @@ implementations.
 ### CI-revealed syntactic defect in initial cleanup
 
 The first direct-import compaction retained the correct transitive
-module graph but put a Lean \`/-! ... -/\` documentation command
-**before** the first \`import\`. Static graph analysis passed, while
-the full \`lake build\` correctly rejected \`DualTree.lean\` with
+module graph but put a Lean `/-! ... -/` documentation command
+**before** the first `import`. Static graph analysis passed, while
+the full `lake build` correctly rejected `DualTree.lean` with
 "invalid 'import' command, it must be used in the beginning of the file."
 This is a tooling error, not a mathematical theorem failure.
 The umbrella imports now come first, the documentation follows
 them, and the generator plus static audit enforce that ordering.
 The full Lean build must pass again before merging the cleanup.
+
+## Coverage-count integrity
+
+The curated transitive `#print axioms` audit previously checked only
+the number of reports emitted. A repeated declaration could satisfy
+that count while silently omitting another intended theorem. The
+static audit now also computes the number of DISTINCT registered
+endpoints, rejects duplicate entries, and rejects non-`DualTree.`
+endpoints in the checked local library. At this checkpoint all
+1,328 endpoints are distinct.
+
+This closes a **reporting** loophole, not every completeness gap:
+public declarations not present in the curated source-facing list
+are not automatically checked by `#print axioms`. The independent
+full `lake build` still compiles all imported source modules,
+and a semantic paper-to-Lean theorem audit is a separate task.
