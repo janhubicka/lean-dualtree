@@ -135,8 +135,9 @@ theorem boundaryRealize_injective
   change (realize c u).1 = (realize c v).1 at hraw
   have huv : u = v :=
     realize_injective c (Subtype.ext hraw)
-  have haddr : a.1 = d.1 := by
-    exact congrArg Subtype.val huv
+  have huvVal : u.1 = v.1 :=
+    congrArg (fun z : SourceAddress c => z.1) huv
+  have haddr : a.1 = d.1 := huvVal
   exact Subtype.ext haddr
 
 end DualTree.ForwardSourceBoundaryLeaves
