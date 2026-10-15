@@ -429,3 +429,5 @@ import DualTree.ForwardSourceCanonicalAddresses
 import DualTree.ForwardSourceLeafMarkerEquiv
 
 import DualTree.ForwardSourceAddressOrder
+
+import DualTree.ForwardSourceHeapInitial
