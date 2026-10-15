@@ -194,6 +194,21 @@ def main() -> int:
         print("AUDIT_REDUNDANT_ROOT_MODULES " + " ".join(redundant))
     print("AUDIT_ESSENTIAL_ROOT_MODULES " + " ".join(essential))
     print("AUDIT_EXTERNAL_IMPORT_NAMES " + " ".join(sorted(external)[:30]))
+    # Exact suspects for replacing now-obsolete scaffolding with the
+    # genuine fibrewise starred Q output. Report source-module references
+    # before editing a declaration or subtracting its audited endpoint.
+    for name in (
+        "placeholderStarredWordOnQ",
+        "placeholderStarredWordOnQ_tree",
+        "retained_source_word_witness",
+        "retained_source_word_witness_tree",
+    ):
+        refs = sorted(
+            mod for mod, source in texts.items()
+            if re.search(r"\b" + re.escape(name) + r"\b", strip_comments(source))
+        )
+        print("AUDIT_SUSPECT_REFERENCES " + name + " " + " ".join(refs))
+
     if args.compact_root:
         current = ROOT.read_text(encoding="utf-8")
         content_lines = [line for line in strip_comments(current).splitlines()
