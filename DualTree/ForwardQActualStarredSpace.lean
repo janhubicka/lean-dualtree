@@ -17,12 +17,9 @@ unrestricted mixed-product element.
 
 The resulting actual starred-input subtype has a fully
 semi-complete corrected Q support by the previously verified
-conditional geometric theorem. It also admits a legal
-starred-word witness using the original source word, provided
-the enclosing T support is n-bounded. Such a witness proves
-only well-typedness of the support/variable-root structure;
-it is not the particular mixed-cone output word g_w of
-Lemma 27 and proves nothing about colouring.
+conditional geometric theorem. The actual legal Q output word is constructed separately,
+fibrewise, in ForwardQAmbientFibreLegalWord; this module
+retains only the precise starred input domain and root geometry.
 
 The definition here is specific to the corrected forward
 auxiliary order, selected D₀/D₂ coordinates and safe local
@@ -101,30 +98,5 @@ theorem actual_starred_Q_variable_roots
   ForwardQRetainedWordScaffold.original_word_support_iff_Q_interior
     hb c x.1 s
 
-/-- A placeholder starred word on an actual starred Q support
-is well typed whenever the enclosing complete T is n-bounded.
-The resulting word is the unchanged source word and therefore
-must not be substituted for Lemma 27's required g_w. -/
-noncomputable def placeholderStarredWordOnQ
-    {b n l k m : Nat} {α : Type*}
-    (hb : 0 < b)
-    (c : Frame b n l k m α)
-    (x : StarredInput c)
-    (hTbound : ∀ s : Node b, s ∈ c.T → InHomTree n s) :
-    StarredSignature.StarredWord b n l α
-      (SkewTree.forwardAuxB (b := b)) :=
-  ForwardQRetainedWordScaffold.retained_source_word_witness
-    hb c x.1 hTbound (actual_starred_Q_semiComplete hb c x)
-
-/-- The placeholder starred-word support is literally the
-actual reconstructed Q support, with no approximation. -/
-theorem placeholderStarredWordOnQ_tree
-    {b n l k m : Nat} {α : Type*}
-    (hb : 0 < b)
-    (c : Frame b n l k m α)
-    (x : StarredInput c)
-    (hTbound : ∀ s : Node b, s ∈ c.T → InHomTree n s) :
-    (placeholderStarredWordOnQ hb c x hTbound).tree =
-      (nodes c x.1).toList := rfl
 
 end DualTree.ForwardQActualStarredSpace

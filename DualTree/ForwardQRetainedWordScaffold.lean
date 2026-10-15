@@ -17,13 +17,11 @@ This module isolates three simple but important consequences:
   of the reconstructed Q support;
 * the number of these roots remains the source dimension l.
 
-As a structural sanity check, under the explicit premise that Q
-is semi-complete skew, the *unchanged* original source variable
-word can be packaged as a valid starred word on Q. This is only a
-witness that the Q support has a legal rooted variable word; it is
-NOT the new g_w prescribed by Lemma 27, which depends on the mixed
-cone words and must satisfy a colouring pullback. The latter
-construction remains an independent, unverified obligation.
+The former unchanged-source-word placeholder has been removed now
+that the genuine fibrewise Q starred word has been constructed.
+This module exports only the reusable geometry: boundedness,
+support/interior identification and dimension preservation.
+The paper-specific Ramsey refinement remains an open obligation.
 
 The extra ambient bound on T is explicit: the existing Q Frame
 alone does not state that all T nodes lie in b^{<n}.
@@ -102,43 +100,5 @@ theorem Q_interior_card_eq_source_dimension
       List.toFinset_card_of_nodup hSnodup
     _ = l := c.source.interior_card
 
-/-- A legal starred-word witness on Q can use the source's
-old variable word if full Q semi-completeness and ambient
-height bounds are supplied. This is NOT the intended
-mixed-cone word g_w and asserts no colouring compatibility. -/
-noncomputable def retained_source_word_witness
-    {b n l k m : Nat} {α : Type*}
-    (hb : 0 < b)
-    (c : Frame b n l k m α)
-    (x : Input c)
-    (hTbound : ∀ s : Node b, s ∈ c.T → InHomTree n s)
-    (hsemi :
-      SkewTree.semiCompleteB SkewTree.forwardAuxB
-        (nodes c x).toList = true) :
-    StarredSignature.StarredWord b n l α
-      (SkewTree.forwardAuxB (b := b)) := {
-  tree := (nodes c x).toList
-  tree_bounded := Q_nodes_bounded_of_ambient_bound c x hTbound
-  semi_complete := hsemi
-  word := c.source.word
-  interior_card := Q_interior_card_eq_source_dimension hb c x
-  support_eq_interior := fun s =>
-    original_word_support_iff_Q_interior hb c x s
-  support_skew := c.source.support_skew
-}
-
-/-- The placeholder construction retains the actual Q support,
-not an inferred signature tree or its ambient complete support. -/
-theorem retained_source_word_witness_tree
-    {b n l k m : Nat} {α : Type*}
-    (hb : 0 < b)
-    (c : Frame b n l k m α)
-    (x : Input c)
-    (hTbound : ∀ s : Node b, s ∈ c.T → InHomTree n s)
-    (hsemi :
-      SkewTree.semiCompleteB SkewTree.forwardAuxB
-        (nodes c x).toList = true) :
-    (retained_source_word_witness hb c x hTbound hsemi).tree =
-      (nodes c x).toList := rfl
 
 end DualTree.ForwardQRetainedWordScaffold

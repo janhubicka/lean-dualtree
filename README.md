@@ -1,5 +1,17 @@
 # lean-dualtree
 
+**Current verified status (15 October 2026).** The main branch through
+PR #302 has 1,322 registered transitive axiom-audit endpoints after removing four obsolete placeholder endpoints (previously 1,326), full
+model-to-genuine-Q prefix isomorphism for the corrected forward source,
+and conditional smooth-colouring transfer. The final theorem, printed
+reverse-order W_* compatibility, arbitrary-U Definition 24 canonical
+selector, and full mixed-word/Hall/Ramsey induction remain open.
+Historical milestones below are cumulative: phrases such as
+"CI pending" record status *at the time of the note*, not current CI.
+The [adversarial library audit](notes/adversarial_library_audit_20261015.md)
+and `scripts/audit-lean-library.py` document trust coverage, obsolete-code
+candidates, and the import-graph cleanup.
+
 Lean 4 verification and adversarial audit of Todorcevic--Tyros,
 *A Dual Ramsey Theorem for Trees* (arXiv:2207.14599v1).
 

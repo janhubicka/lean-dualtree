@@ -1006,8 +1006,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQRetainedWordScaffold.Q_nodes_bounded_of_ambient_bound
 #print axioms DualTree.ForwardQRetainedWordScaffold.original_word_support_iff_Q_interior
 #print axioms DualTree.ForwardQRetainedWordScaffold.Q_interior_card_eq_source_dimension
-#print axioms DualTree.ForwardQRetainedWordScaffold.retained_source_word_witness
-#print axioms DualTree.ForwardQRetainedWordScaffold.retained_source_word_witness_tree
 
 #print axioms DualTree.VectorOneD2Characterization.singleton_level_zero
 #print axioms DualTree.VectorOneD2Characterization.same_level_one_of_lengths_mono
@@ -1031,8 +1029,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQActualStarredSpace.starredInputOfOrdered
 #print axioms DualTree.ForwardQActualStarredSpace.actual_starred_Q_semiComplete
 #print axioms DualTree.ForwardQActualStarredSpace.actual_starred_Q_variable_roots
-#print axioms DualTree.ForwardQActualStarredSpace.placeholderStarredWordOnQ
-#print axioms DualTree.ForwardQActualStarredSpace.placeholderStarredWordOnQ_tree
 
 #print axioms DualTree.ForwardQWordSymbolAssembly.DecodedWord
 #print axioms DualTree.ForwardQWordSymbolAssembly.DecodedWord.toVariableWord
