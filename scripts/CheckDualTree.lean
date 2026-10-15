@@ -1532,3 +1532,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSourceBoundaryEquiv.boundaryRealize_surjective
 #print axioms DualTree.ForwardSourceBoundaryEquiv.boundarySourceLeafEquiv
 #print axioms DualTree.ForwardSourceBoundaryEquiv.modelBoundaryMarkerEquiv
+
+#print axioms DualTree.ForwardQModelBoundaryTransport.modelAToD2
+#print axioms DualTree.ForwardQModelBoundaryTransport.modelAToD2_apply
+#print axioms DualTree.ForwardQModelBoundaryTransport.canonicalModelATerminal
+#print axioms DualTree.ForwardQModelBoundaryTransport.canonicalModelATerminal_actual_Q
+#print axioms DualTree.ForwardQModelBoundaryTransport.markerB2OfModelA
+#print axioms DualTree.ForwardQModelBoundaryTransport.modelA_simple_to_relativeR_simple
+#print axioms DualTree.ForwardQModelBoundaryTransport.modelA_simple_pullback_smooth
+#print axioms DualTree.ForwardQModelBoundaryTransport.exists_total_modelA_smooth_pullback
