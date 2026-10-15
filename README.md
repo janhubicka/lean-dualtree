@@ -497,6 +497,14 @@ obligation; `\todo` marks a remaining gap or proposed change.
   public theorem or the published theorem statements.
   See `scripts/audit-lean-library.py`.
 
+
+- **Umbrella Lean import placement guard:** the independent source
+  audit now rejects imports introduced after the initial import
+  block (including those accidentally appended after documentation),
+  in addition to rejecting redundant umbrella imports and duplicate
+  `#print axioms` endpoints. This guards against a real build failure
+  found during the latest selector formalization.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
