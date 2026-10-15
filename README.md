@@ -289,6 +289,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   A_l-to-R canonical direction-address map is still open.
   See `DualTree/ForwardSourceExceptionalMarkers.lean`.
 
+- **Fixed direction-labelled corrected-Q transport (four new endpoints, CI pending):**
+  for every old source interior node, every outgoing direction and every
+  Q vertex, child-cone membership is the same as for its FIXED source
+  label, independently of the mixed-product input and moving terminal
+  depths. The canonical input-to-input vertex transport now preserves
+  and reflects BOTH prefix order and every old-interior child cone.
+  This supplies a genuine direction-labelled source-shape invariant.
+  It does not yet produce the canonical model first-l address map,
+  the A-to-R boundary equivalence, or the full Ramsey refinement.
+  See `DualTree/ForwardQFixedDirectionIso.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
