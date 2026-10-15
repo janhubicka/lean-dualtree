@@ -277,6 +277,18 @@ obligation; `\todo` marks a remaining gap or proposed change.
   remain separate.
   See `DualTree/ForwardSourceCutLeaves.lean`.
 
+- **Exceptional source-leaf first-exit markers are injective (five new endpoints, CI pending):**
+  genuine exceptional terminals t outside the final cut cone map
+  to their literal corrected first-exit markers r(t) in R.
+  No two distinct source terminals have the same marker: their
+  ambient meet would be an interior source vertex outside the final
+  forward cut, contrary to the verified maximality condition.
+  Conversely every actual signature-terminal marker has an
+  exceptional-leaf preimage. Combined with #289 this isolates
+  the two halves of the source leaf/R correspondence. The full
+  A_l-to-R canonical direction-address map is still open.
+  See `DualTree/ForwardSourceExceptionalMarkers.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
