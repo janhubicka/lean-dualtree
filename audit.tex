@@ -9451,6 +9451,59 @@ source word span and final Ramsey recursion
 remain separate obligations.
 
 
+\paragraph{Canonical model-A Q-terminal incidence agrees with the original source leaf.} \todo
+The repaired forward source has a verified canonical equivalence
+\(A_l\simeq \operatorname{Leaves}(S)\simeq R\).
+The second equivalence is specified by the ambient-prefix property:
+if \(a\in A_l\) corresponds to a source terminal \(t(a)\), then
+its literal first-exit marker \(r(a)\in R\) satisfies
+\(r(a)\sqsubseteq t(a)\). For every source interior vertex
+\(s\) and direction \(i<b\), one has
+\[
+ s^\frown i\sqsubseteq t(a)
+ \quad\Longleftrightarrow\quad
+ s^\frown i\sqsubseteq r(a).
+\]
+The forward implication requires the already checked exclusion
+\(r(a)\not\sqsubseteq s\): since both \(r(a)\) and
+\(s^\frown i\) prefix the same source terminal, the marker
+cannot finish above the child \(s^\frown i\). The converse
+uses \(r(a)\sqsubseteq t(a)\).
+
+The existing corrected-Q directional-incidence theorem then gives
+\[
+ s^\frown i\sqsubseteq
+    P_{\iota(r(a))}(x_{\iota(r(a))})
+ \quad\Longleftrightarrow\quad
+ s^\frown i\sqsubseteq t(a)
+\]
+for \emph{every} genuine corrected Q input \(x\).
+Thus the full first-direction signature of a projected Q
+terminal is that of its source leaf under the actual canonical
+model-boundary address, without imposing equality of
+ambient terminal depths. The proposed
+\lean{ForwardQModelLeafIncidence} checks six source-facing
+endpoints for source-leaf prefix and first-direction
+incidence and the transported model-A Q point
+(target 1304, CI pending).
+
+\textbf{Definition 24 domain clarification.}
+In Section~3.1 the paper defines the unique canonical map
+\(I_T:b^{<k}\to T\) explicitly for \(k\)-complete skew
+trees. Definition~24 then uses \(I_S(a)\), \(a\in A_l\),
+for \emph{semi-complete} \(S\) with \(l\) interior vertices.
+The evident extension via the unique directional
+successor walk must be specified on the first-\(l\)
+interior addresses and their external boundary; the
+singleton \(l=0\) convention \(A_0=\{\varnothing\}\)
+must be kept separate from the positive-\(l\)
+external-child model. We do not infer the equality of
+the source-relative terminal selector and the
+paper's independent canonical \(I_U(a)\) for arbitrary
+starred refinements \(U\) until this extension and its
+relative compatibility are formally proved.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

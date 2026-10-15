@@ -408,6 +408,19 @@ obligation; `\todo` marks a remaining gap or proposed change.
   or finish the mixed-product Ramsey refinement.
   See `DualTree/ForwardQModelBoundaryTransport.lean`.
 
+- **Canonical model-leaf directional incidence (six endpoints, CI pending):**
+  the corrected model boundary equivalence A_l ≃ SourceLeaf(S) ≃ R
+  is shown to respect every outgoing direction at every original
+  source interior vertex. The actual projected Q terminal in the
+  corresponding D2 coordinate has precisely the same first-direction
+  cone membership as the original source leaf, even when its
+  ambient depth changes. This supplies the missing source-to-Q
+  direction-incidence invariant for extending the published
+  Definition 24 canonical selector. The published map I_U for
+  arbitrary semi-complete starred U, and its zero-interior
+  convention, still require a separate formal definition.
+  See `DualTree/ForwardQModelLeafIncidence.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
