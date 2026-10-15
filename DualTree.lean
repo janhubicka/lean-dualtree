@@ -435,3 +435,5 @@ import DualTree.ForwardSourceHeapInitial
 import DualTree.ForwardSourceInteriorFirstL
 
 import DualTree.ForwardSourceBoundaryLeaves
+
+import DualTree.ForwardSourceBoundaryEquiv

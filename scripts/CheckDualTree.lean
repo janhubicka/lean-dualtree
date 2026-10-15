@@ -1527,3 +1527,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSourceBoundaryLeaves.modelBoundary_admissible
 #print axioms DualTree.ForwardSourceBoundaryLeaves.boundaryRealize
 #print axioms DualTree.ForwardSourceBoundaryLeaves.boundaryRealize_injective
+
+#print axioms DualTree.ForwardSourceBoundaryEquiv.admissible_last_strictPrefix
+#print axioms DualTree.ForwardSourceBoundaryEquiv.boundaryRealize_surjective
+#print axioms DualTree.ForwardSourceBoundaryEquiv.boundarySourceLeafEquiv
+#print axioms DualTree.ForwardSourceBoundaryEquiv.modelBoundaryMarkerEquiv
