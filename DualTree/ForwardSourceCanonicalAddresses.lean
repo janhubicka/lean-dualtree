@@ -202,4 +202,14 @@ noncomputable def sourceAddressEquiv
   Equiv.ofBijective (realize c)
     ⟨realize_injective c, realize_surjective c⟩
 
+/-- Applying the canonical admissible source-address equivalence
+is exactly the realized directional support walk. -/
+@[simp] theorem sourceAddressEquiv_apply
+    {b n l k m : Nat} {α : Type*}
+    (c : ForwardSourceQTree.Frame b n l k m α)
+    (u : SourceAddress c) :
+    (sourceAddressEquiv c) u = realize c u := by
+  rfl
+
+
 end DualTree.ForwardSourceCanonicalAddresses
