@@ -358,6 +358,19 @@ obligation; `\todo` marks a remaining gap or proposed change.
   then constructing the A_l-to-source-leaf bijection, are next.
   See `DualTree/ForwardSourceHeapInitial.lean`.
 
+- **Exact first-l canonical source interior (six endpoints, CI pending):**
+  construct the canonical equivalence between the entire homogeneous
+  initial heap interval ending at the source cut and the ORIGINAL source
+  interior. Injectivity is directional-walk uniqueness; surjectivity
+  is the full source address theorem and the cut-index bound.
+  Compare the interval's verified cardinality with the source's
+  stipulated l interior vertices to conclude
+  `heapIndex(cutAddress)+1=l`. Thus the first l homogeneous heap
+  addresses are EXACTLY the source interior addresses, without gaps.
+  The model external boundary A_l to source-leaf/R correspondence
+  is the remaining geometric bridge.
+  See `DualTree/ForwardSourceInteriorFirstL.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

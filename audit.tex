@@ -9286,6 +9286,45 @@ still open, as is the colour/span transport.
 
 
 
+\paragraph{The source interior is exactly the first l homogeneous forward addresses.} \todo
+Let \(N=\operatorname{heapIndex}(a_0)\) for the unique
+admissible address \(a_0\) of the final interior cut.
+The previous source theorem identifies the interior
+with the *entire* heap interval
+\(\{a:\operatorname{heapIndex}(a)\le N\}\).
+Use the actual support-walk map to define the
+correspondence with the original source interior,
+and verify its injectivity by directional-walk
+uniqueness and surjectivity by source reachability.
+
+The already kernel-checked homogeneous heap bijection
+gives exactly \(N+1\) addresses in this interval.
+The starred source supplies precisely \(l\) interior
+vertices, and its list is duplicate-free by skewness.
+Comparing these finite cardinalities yields
+\[
+  N+1=l.
+\]
+Hence the \emph{canonical} source interior addresses
+are exactly \(\operatorname{ModelInterior}(l)\),
+the first \(l\) homogeneous tree addresses under
+the corrected forward auxiliary order. This discharges
+the full interior-indexing part of Definition~24.
+
+The proposed \lean{ForwardSourceInteriorFirstL}
+includes the initial interval realization, its
+injectivity and surjectivity, the corresponding
+explicit equivalence, the formula \(N+1=l\),
+and the final first-\(l\) interior characterization
+(six source-facing endpoints; stacked baseline
+1276, target 1282, CI pending).
+
+The model external boundary \(A_l\) is still to
+be identified with the source leaves, then with
+literal \(R\), and the mixed-product word/colouring
+Ramsey construction remains open.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
