@@ -169,3 +169,13 @@ public declarations not present in the curated source-facing list
 are not automatically checked by `#print axioms`. The independent
 full `lake build` still compiles all imported source modules,
 and a semantic paper-to-Lean theorem audit is a separate task.
+
+## CI defense against misplaced Lean imports
+
+A second proof branch failed because its new umbrella `import` was
+appended after the `/-! ... -/` documentation command. The previous
+static check only verified that the **first** non-whitespace token
+was an import and therefore missed this failure. The source-audit
+script now enforces a single initial import block and rejects any
+late import after documentation or another Lean command. This is a
+structural trust/CI guard, not a new mathematical proof.
