@@ -1541,3 +1541,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQModelBoundaryTransport.modelA_simple_to_relativeR_simple
 #print axioms DualTree.ForwardQModelBoundaryTransport.modelA_simple_pullback_smooth
 #print axioms DualTree.ForwardQModelBoundaryTransport.exists_total_modelA_smooth_pullback
+
+#print axioms DualTree.ForwardQModelLeafIncidence.sourceLeafMarkerEquiv_prefix
+#print axioms DualTree.ForwardQModelLeafIncidence.model_marker_prefix_source_leaf
+#print axioms DualTree.ForwardQModelLeafIncidence.interior_prefix_leaf_iff_marker
+#print axioms DualTree.ForwardQModelLeafIncidence.source_leaf_childCone_iff_marker
+#print axioms DualTree.ForwardQModelLeafIncidence.projected_Q_childCone_iff_source_leaf
+#print axioms DualTree.ForwardQModelLeafIncidence.model_Q_childCone_iff_source_leaf
