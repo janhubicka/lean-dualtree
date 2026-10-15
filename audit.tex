@@ -9156,6 +9156,39 @@ source-interior initiality \#288; the external
 model boundary \(A_l\) is not yet identified.
 
 
+\paragraph{Canonical source-leaf versus literal R equivalence.} \todo
+For the genuine forward-corrected frame, let \(L(S)\)
+be the original source terminal subtype and let \(R\)
+be the literal first-exit marker subtype. A source leaf
+\(t\in L(S)\) has an \(R\) marker on its ambient path:
+if \(t_0\sqsubseteq t\), choose the first cut-child
+direction, otherwise use the exceptional first-exit
+boundary. Conversely every \(r\in R\) has a source leaf
+extension, because signature-terminal markers come from
+exceptional source leaves and direct cut-child markers
+have the unique source leaf verified in \#289.
+
+The marker below a leaf is unique by the boundary
+antichain. The source leaf above a marker is unique:
+if two distinct source leaves extended \(r\), their
+ambient meet would be a source interior vertex
+extending \(r\), contradicting the checked fact that
+no literal \(R\) marker prefixes an interior vertex.
+These existence and uniqueness statements yield
+a canonical prefix-incidence type equivalence
+\[
+  L(S)\ \simeq\ R.
+\]
+The proposed \lean{ForwardSourceLeafMarkerEquiv}
+checks both uniqueness and both existence directions,
+then constructs the actual inverse equivalence
+(five audited endpoints; target 1256 over merged
+1251, CI pending). It does not identify the first-\(l\)
+model boundary \(A_l\) with \(L(S)\), or establish
+full Lemma~27 smoothness and the Ramsey recursion.
+
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
