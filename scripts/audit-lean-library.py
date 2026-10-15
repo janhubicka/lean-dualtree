@@ -229,10 +229,30 @@ def main() -> int:
     # Lean 4 requires all imports at the beginning of the file. A module
     # documentation block of the form /-! ... -/ is a command and must
     # come AFTER the import section, not before it.
-    imports_begin_file = ROOT.read_text(encoding="utf-8").lstrip().startswith("import ")
+    raw_root = ROOT.read_text(encoding="utf-8")
+    imports_begin_file = raw_root.lstrip().startswith("import ")
+    late_root_import_lines: list[int] = []
+    in_initial_import_block = True
+    for number, line in enumerate(raw_root.splitlines(), start=1):
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if stripped.startswith("import "):
+            if not in_initial_import_block:
+                late_root_import_lines.append(number)
+        else:
+            in_initial_import_block = False
     print(f"AUDIT_ROOT_IMPORTS_AT_BEGINNING {int(imports_begin_file)}")
+    print(f"AUDIT_ROOT_LATE_IMPORTS {len(late_root_import_lines)}")
+    if late_root_import_lines:
+        print("AUDIT_ROOT_LATE_IMPORT_LINES " +
+              " ".join(str(x) for x in late_root_import_lines))
     if args.verify_root_minimal and not imports_begin_file:
         raise SystemExit("FAIL: Lean imports must begin DualTree.lean")
+    if args.verify_root_minimal and late_root_import_lines:
+        raise SystemExit(
+            "FAIL: Lean imports must all precede documentation and commands"
+        )
 
     if args.compact_root:
         current = ROOT.read_text(encoding="utf-8")
