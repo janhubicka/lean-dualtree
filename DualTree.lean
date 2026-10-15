@@ -1,12 +1,3 @@
-/-!
-Public umbrella import for the dual-tree verification library.
-The imports below are a minimal transitive covering of the 261 source
-modules in this library. Independent research modules and audited
-counterexample fixtures remain available via their individual imports.
-Run scripts/audit-lean-library.py --verify-root-minimal to check that
-this file exports exactly the intended graph without duplicate imports.
--/
-
 import DualTree.Insensitivity
 import DualTree.Remark1Audit
 import DualTree.StarInsensitivity
@@ -28,3 +19,12 @@ import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardQModelPrefixIso
+
+/-!
+Public umbrella import for the dual-tree verification library.
+The imports below are a minimal transitive covering of the 261 source
+modules in this library. Independent research modules and audited
+counterexample fixtures remain available via their individual imports.
+Run scripts/audit-lean-library.py --verify-root-minimal to check that
+this file exports exactly the intended graph without duplicate imports.
+-/

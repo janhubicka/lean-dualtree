@@ -140,3 +140,16 @@ dimension lemmas. The curated audited endpoint count changes from
 deletion of replaced scaffolding, NOT a regression in the mathematical
 scope of the surviving exported theorems. Git history retains the old
 implementations.
+
+
+### CI-revealed syntactic defect in initial cleanup
+
+The first direct-import compaction retained the correct transitive
+module graph but put a Lean \`/-! ... -/\` documentation command
+**before** the first \`import\`. Static graph analysis passed, while
+the full \`lake build\` correctly rejected \`DualTree.lean\` with
+"invalid 'import' command, it must be used in the beginning of the file."
+This is a tooling error, not a mathematical theorem failure.
+The umbrella imports now come first, the documentation follows
+them, and the generator plus static audit enforce that ordering.
+The full Lean build must pass again before merging the cleanup.

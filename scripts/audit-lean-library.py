@@ -209,6 +209,14 @@ def main() -> int:
         )
         print("AUDIT_SUSPECT_REFERENCES " + name + " " + " ".join(refs))
 
+    # Lean 4 requires all imports at the beginning of the file. A module
+    # documentation block of the form /-! ... -/ is a command and must
+    # come AFTER the import section, not before it.
+    imports_begin_file = ROOT.read_text(encoding="utf-8").lstrip().startswith("import ")
+    print(f"AUDIT_ROOT_IMPORTS_AT_BEGINNING {int(imports_begin_file)}")
+    if args.verify_root_minimal and not imports_begin_file:
+        raise SystemExit("FAIL: Lean imports must begin DualTree.lean")
+
     if args.compact_root:
         current = ROOT.read_text(encoding="utf-8")
         content_lines = [line for line in strip_comments(current).splitlines()
@@ -218,13 +226,14 @@ def main() -> int:
                 "Refusing to rewrite a root file with non-import code: "
                 + repr(content_lines[:5]))
         compact = (
-            "/-!\n"
-            "Public umbrella import for the dual-tree verification library.\n"
-            "Imports below form a minimal transitive covering of all original\n"
-            "source modules. Run scripts/audit-lean-library.py --check to\n"
-            "recompute the graph; individual module files remain independently\n"
-            "importable. Audit/counterexample modules remain exported.\n"
-            "-/\n\n" + "\n".join(f"import {mod}" for mod in essential) + "\n"
+            "\n".join(f"import {mod}" for mod in essential)
+            + "\n\n"
+            + "/-!\n"
+            + "Public umbrella import for the dual-tree verification library.\n"
+            + "This list is a minimal transitive covering of all source modules;\n"
+            + "audit/counterexample modules remain exported. Run the static\n"
+            + "source graph audit to check the import closure and redundancy.\n"
+            + "-/\n"
         )
         ROOT.write_text(compact, encoding="utf-8")
         print(f"AUDIT_COMPACT_ROOT_SAVED {ROOT}")
