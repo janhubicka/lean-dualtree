@@ -9088,6 +9088,33 @@ claimed invariant.
 
 
 
+\paragraph{Input-independent intrinsic Q ranks for the fixed labelled shape.} \todo
+In addition to prefix order and first outgoing direction, a
+corrected Q vertex has an input-independent intrinsic level.
+For every fixed label \(u\in\operatorname{Int}(S)\dot\cup R\),
+let \(h_F(u)\) count the original interior nodes that are strict
+ambient prefixes of its underlying old node or literal marker.
+The verified Q predecessor theorem gives
+\[
+  h_{Q(x)}(\operatorname{realize}_x(u))=h_F(u)
+\]
+for every actual corrected mixed input \(x\).
+Thus any two Q outputs are canonically equivalent as \emph{ranked,
+direction-labelled prefix trees}, even if projected Q terminals
+lie at different ambient depths.
+
+The proposed \lean{ForwardQFixedRank} contains the exact
+realization identity, its input invariance, and the corresponding
+height-preservation theorem for canonical input-to-input
+vertex transport (three source-facing endpoints; stacked
+target 1237, CI pending). This still does not identify the
+abstract directed tree with the first-\(l\) homogeneous model.
+That identification requires a genuine coherent address map
+and proof of the interior's forward initial-segment property;
+it cannot be substituted by an arbitrary leaf enumeration.
+
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

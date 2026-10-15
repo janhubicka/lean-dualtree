@@ -421,3 +421,5 @@ import DualTree.ForwardSourceCutLeaves
 import DualTree.ForwardSourceExceptionalMarkers
 
 import DualTree.ForwardQFixedDirectionIso
+
+import DualTree.ForwardQFixedRank

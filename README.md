@@ -300,6 +300,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   the A-to-R boundary equivalence, or the full Ramsey refinement.
   See `DualTree/ForwardQFixedDirectionIso.lean`.
 
+- **Intrinsic Q rank on fixed source labels (three new endpoints, CI pending):**
+  each old interior or literal R label has a source-defined intrinsic
+  rank, counting its strict original-interior predecessors. The
+  genuine corrected Q realization has exactly this rank for every
+  mixed-product input, and the canonical vertex transport between Q
+  outputs preserves it. These results, with the verified prefix and
+  direction invariants, supply a common LEVELLED directed tree.
+  The first-l model address map and A-to-R correspondence remain open.
+  See `DualTree/ForwardQFixedRank.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
