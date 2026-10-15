@@ -9060,6 +9060,34 @@ single source-leaf/R equivalence before transporting the
 first-\(l\) model boundary \(A_l\).
 
 
+\paragraph{Input-independent direction-labelled Q geometry.} \todo
+The fixed vertex shape \(\operatorname{Int}(S)\dot\cup R\) now has
+both a source-determined prefix relation and a fixed outgoing-direction
+relation. For every old interior \(s\), direction \(i\), and fixed
+label \(u\), define its child-cone membership using the ambient
+source position of \(u\): the old vertex itself in the interior
+case, or its literal marker \(r\in R\) in the terminal case.
+The actual realization in each corrected \(Q(x)\) has exactly
+this cone membership. For a moving terminal this is the
+previously verified old-interior directional-incidence theorem;
+old-to-old incidence is definitional.
+
+Thus the canonical labelled vertex matching between any two
+corrected \(Q(x)\) and \(Q(y)\) preserves and reflects the
+entire prefix relation AND each first outgoing direction
+at every old interior node. Four source-facing endpoints are
+registered in \lean{ForwardQFixedDirectionIso}
+(target 1234; CI pending).
+This is still distinct from identifying the shape with the
+first-\(l\) \emph{forward} homogeneous model, constructing
+its coherent canonical address map, or equating the model
+boundary \(A_l\) with the literal signature markers \(R\).
+Ambient node depths and forward auxiliary order are not
+claimed invariant.
+
+
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

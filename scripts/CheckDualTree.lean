@@ -1479,3 +1479,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSourceExceptionalMarkers.exceptionalBoundary_outside_cut
 #print axioms DualTree.ForwardSourceExceptionalMarkers.exceptionalBoundary_injective
 #print axioms DualTree.ForwardSourceExceptionalMarkers.signatureTerminal_has_exceptionalBoundary
+
+#print axioms DualTree.ForwardQFixedVertexShape.fixedShapeEquiv_apply
+#print axioms DualTree.ForwardQFixedDirectionIso.realize_childCone_iff_fixedChildCone
+#print axioms DualTree.ForwardQFixedDirectionIso.realize_childCone_invariant
+#print axioms DualTree.ForwardQFixedDirectionIso.vertexTransport_prefix_iff
+#print axioms DualTree.ForwardQFixedDirectionIso.vertexTransport_childCone_iff

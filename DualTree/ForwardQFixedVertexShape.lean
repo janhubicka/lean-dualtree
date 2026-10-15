@@ -189,4 +189,18 @@ noncomputable def vertexTransport
   (fixedShapeEquiv hb c x).symm.trans
     (fixedShapeEquiv hb c y)
 
+
+/-- Applying the canonical labelled vertex equivalence does not
+change the underlying realization map. Making this explicit avoids
+fragile simplification of Equiv.ofBijective in downstream proofs. -/
+@[simp] theorem fixedShapeEquiv_apply
+    {b n l k m : Nat} {α : Type*}
+    (hb : 0 < b)
+    (c : ForwardSourceQTree.Frame b n l k m α)
+    (x : ForwardSourceQTree.Input c)
+    (u : FixedShape c) :
+    (fixedShapeEquiv hb c x) u = realize c x u := by
+  rfl
+
+
 end DualTree.ForwardQFixedVertexShape
