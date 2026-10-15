@@ -434,6 +434,17 @@ obligation; `\todo` marks a remaining gap or proposed change.
   and with the published Definition 24 I_U on arbitrary U,
   is still open. See `DualTree/ForwardQModelVertexEquiv.lean`.
 
+- **Prefix-order reflection for canonical semi-complete source addresses (six endpoints, CI pending):**
+  the actual directional support walk not only preserves ambient
+  prefixes but reflects them, using an admissible path tail and
+  uniqueness of root addresses. Strict-prefix relations follow.
+  The genuine first-l homogeneous interior address map therefore
+  preserves and reflects the model's OWN interior/interior prefix
+  order, not merely relations between different Q outputs.
+  Model-boundary-to-Q prefix/direction compatibility and the
+  published selector on arbitrary semi-complete starred U remain
+  separate tasks. See `DualTree/ForwardSourceAddressPrefixIso.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

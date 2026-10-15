@@ -1557,3 +1557,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQModelVertexEquiv.modelQ_prefix_invariant
 #print axioms DualTree.ForwardQModelVertexEquiv.modelQ_childCone_invariant
 #print axioms DualTree.ForwardQModelVertexEquiv.modelQ_intrinsic_rank_invariant
+
+#print axioms DualTree.ForwardSourceAddressPrefixIso.sourceAddress_prefix_mono
+#print axioms DualTree.ForwardSourceAddressPrefixIso.sourceAddress_prefix_reflect
+#print axioms DualTree.ForwardSourceAddressPrefixIso.sourceAddress_prefix_iff
+#print axioms DualTree.ForwardSourceAddressPrefixIso.sourceAddress_strictPrefix_iff
+#print axioms DualTree.ForwardSourceAddressPrefixIso.modelInteriorSourceEquiv_value
+#print axioms DualTree.ForwardSourceAddressPrefixIso.modelInterior_source_prefix_iff
