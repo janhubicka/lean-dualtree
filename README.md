@@ -893,6 +893,25 @@ edge by prefix reflection. This does not identify ambient adjacency,
 nor prove direction labels or the retained/new boundary.
 One selected axiom endpoint targets 1,486 (CI pending).
 
+### Exact first outgoing direction under canonical frontier projection (CI pending)
+
+`ForwardQFinalProjectionDirection` proves that the actual
+forward-complete canonical support embedding preserves the first
+outgoing direction at every bounded source address. Specializing
+to the genuine corrected frontier maps P_i via
+`inverse_T(P_i(z))=inverse_T(frontier_i)++z` gives:
+if `z++[dir]` prefixes `w`, then `P_i(z)++[dir]`
+prefixes `P_i(w)`. This proof does not mistake abstract
+prefix-order preservation for directional preservation; it
+uses the actual support successor walk, and admits stretched
+ambient edges.
+
+Combined with the separately merged immediate-edge gluing
+theorem, this is a key step toward full branching of T'_M.
+Two selected proof endpoints target 1,488 (CI pending).
+The retained/new branching interface and complete skew
+order clauses remain open.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

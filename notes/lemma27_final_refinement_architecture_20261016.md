@@ -369,3 +369,21 @@ reflects to a forbidden intermediate local support vertex.
 This checks one source-facing endpoint. The exact ambient direction
 of this projected edge, initial retained/new branching,
 and M-complete skewness are still open.
+
+
+## Fifteenth pass: labelled direction transport (rebased)
+
+`ForwardQFinalProjectionDirection` (CI pending) checks the
+labelled first-child cone for the genuine corrected
+forward-complete canonical embedding, using its intrinsic
+support-rank budget and directional CanonicalSupportWalk.
+After substituting the certified inverse-address formula
+for each P_i, it proves local child-direction cones are
+sent to the SAME ambient direction cones.
+
+This result is independent of abstract prefix-order preservation:
+a generic prefix isomorphism can permute the sibling labels.
+In conjunction with merged immediate edge gluing, it supports
+constructing the actual b directional immediate successors
+of sufficiently early projected vertices of T'_M. The retained
+cut interface must still be proved.

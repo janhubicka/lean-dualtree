@@ -1758,3 +1758,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalLocalBranching.selected_next_rank_succ
 
 #print axioms DualTree.ForwardQFinalImmediateGluing.selected_local_immediate_is_final_immediate
+
+#print axioms DualTree.ForwardQFinalProjectionDirection.canonicalEmbedding_childCone_mono
+#print axioms DualTree.ForwardQFinalProjectionDirection.projected_childCone_mono
