@@ -428,3 +428,23 @@ take the local root z_i of the corresponding mixed
 coordinate support f_i, prove P_i(z_i) replaces the
 outside endpoint t, and establish immediate adjacency
 plus its old ambient direction from s.
+
+
+## Eighteenth pass: immediate retained/new edge from rank-gap equality
+
+`ForwardQFinalRetainedFrontierGluing` (CI pending)
+uses the exact intrinsic rank formula for the target-filtered
+support: the projection P_i(z_i) of the local component
+ROOT has local summand zero and therefore has final height
+equal to height_T(frontier_i). When frontier_i is
+immediate in ambient T above retained s, this is
+height_T(s)+1 = height_(T'_M)(s)+1.
+The shared prefix relation and the generic rank-gap
+criterion imply that s→P_i(z_i) is IMMEDIATE in the
+whole T'_M, preserving the original outgoing ambient direction.
+
+This replaces a large and redundant intermediate-vertex
+classification in the retained/new proof. The next step
+is the sorted-frontier index lookup for every crossing
+ambient immediate edge and selecting z_i at rank m or m+1.
+Global M-complete skewness and final f' remain open.

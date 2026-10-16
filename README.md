@@ -956,6 +956,31 @@ that its projected node replaces t as the immediate
 direction-labelled T'_M successor. This does not yet
 establish complete skewness or the final word f'.
 
+### Retained-to-projected root edges via the intrinsic rank gap (CI pending)
+
+The proposed `ForwardQFinalRetainedFrontierGluing` uses the
+exact rank calculation to simplify the old/new case.
+If an immediate ambient T-edge goes from retained s
+to a genuine frontier t_i, and the true local component
+root z_i is selected, then its projection P_i(z_i)
+has final intrinsic rank exactly height_T(t_i),
+since the local root has rank zero. That equals
+height_(T'_M)(s)+1 by immediate T-rank increase and
+retained-rank preservation.
+
+Together with s prefix t_i prefix P_i(z_i), the verified
+rank-gap-implies-immediate lemma makes s→P_i(z_i)
+a genuine immediate edge of the FULL final support.
+The edge stays in the same first ambient direction
+as the original T-edge. Three selected axiom endpoints
+target 1,498 (CI pending).
+
+Completing retained branching now requires locating
+each crossing T-edge in the actual sorted frontier
+enumeration and checking selection of its local root
+under the two rank cases. The complete-skew length
+order and final variable word f' remain open.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
