@@ -1669,3 +1669,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalProjectionOrder.projected_height
 #print axioms DualTree.ForwardQFinalProjectionOrder.projected_forward_order_of_tail_length_le
 #print axioms DualTree.ForwardQFinalProjectionOrder.projected_length_le_of_tail_length_le
+
+#print axioms DualTree.ForwardQFinalVectorOrdering.local_lengths_le_of_equal_level
+#print axioms DualTree.ForwardQFinalVectorOrdering.local_lengths_lt_of_successive_level
+#print axioms DualTree.ForwardQFinalVectorOrdering.projected_forward_order_equal_level
+#print axioms DualTree.ForwardQFinalVectorOrdering.projected_forward_order_successive_level
+#print axioms DualTree.ForwardQFinalVectorOrdering.projected_length_le_equal_level
+#print axioms DualTree.ForwardQFinalVectorOrdering.projected_length_le_successive_level

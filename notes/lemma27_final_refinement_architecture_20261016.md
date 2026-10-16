@@ -142,3 +142,19 @@ i<j to forward auxiliary order and ambient length inequality
 of P_i(z),P_j(w). These four transitive-axiom endpoints are
 conditional on the local length inequality and do not
 infer it from mixed vector completeness yet.
+
+
+## Fourth pass: the actual vector-complete ordering assumptions
+
+The post-Ramsey mixed variable-word F carries vector-complete
+component supports. `ForwardQFinalVectorOrdering` isolates its
+two different cross-coordinate clauses: same-intrinsic-level
+roots at i<j have nondecreasing local ambient lengths, and
+successive local ranks anywhere in the vector have strictly
+increasing ambient local lengths. This matches precisely the
+conditions of `ForwardQFinalProjectionOrder` needed to
+transport forward-order/ambient-length monotonicity across
+sorted ambient frontier cones. It does NOT yet prove the
+assembled T' is complete skew, since that requires identifying
+its OWN intrinsic ranks and connecting its retained initial
+cut with the projected supports.

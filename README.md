@@ -657,6 +657,24 @@ vector-complete clauses must still provide the necessary
 tail-length comparisons and the assembled T' still needs
 its own complete-skew argument.
 
+### Mixed vector completeness supplies projected-root order (16 October; CI pending)
+
+`ForwardQFinalVectorOrdering` now extracts the two actual
+cross-coordinate length inequalities from the `vectorCompleteB`
+field of the post-Ramsey `LocalMixedWord`: at equal intrinsic local
+levels r<q, roots in coordinate i<j have lengths |z|<=|w|;
+at successive levels r and r+1 (r<q-1), every pair of coordinates
+has |z|<|w|. These are the exact hypotheses for the preceding
+projected-root ordering theorem. Thus same-level and successive-
+level variables in increasing frontier order project to
+forward-ordered ambient T roots, with nondecreasing ambient lengths.
+The combined branch targets 1,415 audited endpoints, CI pending.
+
+This is still NOT proof that candidate T' is complete/skew: the
+relative intrinsic ranks in T', cross-comparisons at reversed
+coordinate indices for successive levels, branching and the
+retained/new interface must be checked independently.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
