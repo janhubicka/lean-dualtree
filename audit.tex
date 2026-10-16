@@ -8499,6 +8499,26 @@ must still be connected to the necessary local-tail inequalities;
 the candidate \(T'\) has not been proved complete or skew.
 
 
+\paragraph{Vector-complete inputs furnish the needed local-root length order.} \todo
+The mixed-variable word delivered by Corollary~22 has vector
+\(q\)-complete support. For local roots \(z\in\mathrm{ws}(f_i)\),
+\(w\in\mathrm{ws}(f_j)\), the same-level clause yields
+\(|z|\le|w|\) whenever \(i<j\) and
+\(h_i(z)=h_j(w)<q\). The successive-level clause yields
+\(|z|<|w|\) for every \(i,j\) when \(h_i(z)=r\) and
+\(h_j(w)=r+1<q\).
+The proposed \lean{ForwardQFinalVectorOrdering} extracts these
+inequalities from the literal Boolean vector-complete
+predicate and composes them with the checked projection
+order/length lemmas to obtain forward-order and length
+comparisons of the \emph{actual} \(P_i(z)\), \(P_j(w)\).
+Six source-facing endpoints (16 October, CI pending).
+The complete-skew proof for \(T'\) additionally needs the
+new support's \emph{intrinsic} rank identification, cross-
+level comparisons at arbitrary frontier order, and
+retained/new interface; no such conclusion is implicit here.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
