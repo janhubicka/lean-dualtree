@@ -66,7 +66,7 @@ theorem local_component_complete
       (f.vector.components i).toVariableWord.supportNodes = true := by
   have hparts := f.vector.vector_complete
   simp only [VectorSkew.vectorCompleteB, Bool.and_eq_true] at hparts
-  exact (List.all_eq_true.mp hparts.1) i
+  exact (List.all_eq_true.mp hparts.1.1) i
     (DirectionalSupport.mem_allFin _ i)
 
 /-- Every genuine local component support root has intrinsic
