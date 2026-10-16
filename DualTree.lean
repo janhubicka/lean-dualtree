@@ -21,6 +21,7 @@ import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
 import DualTree.ForwardQFinalLocalBranching
 import DualTree.ForwardQFinalImmediateGluing
+import DualTree.ForwardQFinalProjectionDirection
 
 
 /-!

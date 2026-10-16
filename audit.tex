@@ -8793,6 +8793,28 @@ ambient directions, the retained/new boundary, and all
 complete-skew axioms remain open.
 
 
+\paragraph{Direction labels under canonical frontier projection.} \todo
+Prefix-order equivalence alone would permit an arbitrary
+permutation of sibling directions. The actual corrected
+canonical embedding is built by the labelled successor walk.
+For bounded source addresses \(u,v\) satisfying
+\(u^\frown j\sqsubseteq v\), the proposed
+\lean{ForwardQFinalProjectionDirection.canonicalEmbedding\_childCone\_mono}
+proves that the realized vertices also satisfy
+\(I_T(u)^\frown j\sqsubseteq I_T(v)\).
+The certified inverse-address identity
+\(I_T^{-1}(P_i(z))=I_T^{-1}(t_i)^\frown z\)
+then yields
+\(z^\frown j\sqsubseteq w\Longrightarrow
+P_i(z)^\frown j\sqsubseteq P_i(w)\).
+This second theorem is
+\lean{ForwardQFinalProjectionDirection.projected\_childCone\_mono}.
+The two endpoints (16 October, CI pending) handle stretched
+ambient support edges and complement the separately verified
+immediate-edge gluing theorem. All retained/new branching
+cases and complete-skew order properties remain open.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
