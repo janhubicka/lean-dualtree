@@ -1627,3 +1627,13 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQPaperSelectorRecursion.paperMap_Qlocal_of_root_successors
 #print axioms DualTree.ForwardQPaperSelectorRecursion.paper_simple_smooth_of_Q_root_successors
 #print axioms DualTree.ForwardQPaperSelectorRecursion.exists_total_paper_simple_of_Q_root_successors
+
+#print axioms DualTree.ForwardSemiCompleteZeroRoot.starred_has_root_all
+#print axioms DualTree.ForwardSemiCompleteZeroRoot.starredRootAll
+#print axioms DualTree.ForwardSemiCompleteZeroRoot.starredRootAll_mem
+#print axioms DualTree.ForwardSemiCompleteZeroRoot.starredRootAll_prefix
+#print axioms DualTree.ForwardSemiCompleteZeroRoot.starredRootAll_eq_positive
+#print axioms DualTree.ForwardSemiCompleteZeroRoot.canonicalWalkAll
+#print axioms DualTree.ForwardSemiCompleteZeroRoot.canonicalWalkAll_eq_positive
+#print axioms DualTree.ForwardSemiCompleteZeroRoot.canonicalWalkAll_zero_boundary
+#print axioms DualTree.ForwardSemiCompleteZeroRoot.canonicalWalkAll_boundary_rigidity

@@ -566,6 +566,15 @@ obligation; `\todo` marks a remaining gap or proposed change.
   have not been silently postulated as properties of undefined text.
   Three new source-facing endpoints target 1,371 audited declarations.
 
+- **Uniform semi-complete canonical root including l=0 (CI pending):**
+  an arbitrary starred semi-complete U has a unique common prefix
+  root whether its support is singleton or nonsingleton. The uniform
+  rooted directional walk agrees with the existing positive-l proof,
+  and Definition 24's exceptional A0={empty address} maps exactly
+  to this intrinsic support root. Root/step rigidity now has one
+  statement covering all l. Nine new endpoints target 1,380;
+  the reverse-order paper model and Hall/Ramsey induction remain open.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
