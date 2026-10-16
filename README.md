@@ -536,6 +536,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   build and transitive axiom audit. The original arbitrary-U selector
   and reverse-order starred domain remain independent.
 
+- **Canonical corrected Q support walk (CI pending):** from the
+  no-intermediate-vertex finite-support successor theorem, identify the
+  actual model/Q vertex map on every first-l interior and boundary
+  word with its unique root-directed support walk. In particular the
+  A_l boundary walk equals the true D2 projection on each finished
+  starred Q image. This eliminates Q-local agreement for the explicitly
+  SOURCE-ROOTED walk, but does not yet establish that the published
+  arbitrary-U selector uses exactly this root/walk. Nine source-facing
+  endpoints are registered (target 1,355); Lean CI pending.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

@@ -1599,3 +1599,13 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQModelSuccessor.modelQ_parent_strict_child
 #print axioms DualTree.ForwardQModelSuccessor.modelQ_child_immediate
 #print axioms DualTree.ForwardQModelSuccessor.modelQ_next_eq_modelChild
+
+#print axioms DualTree.ForwardQCanonicalWalk.modelQAddressImage
+#print axioms DualTree.ForwardQCanonicalWalk.modelQAddressImage_atShape
+#print axioms DualTree.ForwardQCanonicalWalk.modelQAddressImage_root
+#print axioms DualTree.ForwardQCanonicalWalk.modelQAddressImage_step
+#print axioms DualTree.ForwardQCanonicalWalk.modelQWalk_realizes_all
+#print axioms DualTree.ForwardQCanonicalWalk.modelQWalk_boundary
+#print axioms DualTree.ForwardQCanonicalWalk.modelQWalk_actual_starred_eq_relative_selector
+#print axioms DualTree.ForwardQCanonicalWalk.sourceRootedModelPoint
+#print axioms DualTree.ForwardQCanonicalWalk.sourceRootedModelPoint_Qlocal
