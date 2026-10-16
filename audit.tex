@@ -8603,6 +8603,30 @@ to \(h_{T'_M}(P_i(z))\), not yet the local projected-predecessor
 cardinality nor the complete-skew proof.
 
 
+\paragraph{Every selected new predecessor comes from the same local variable support.} \todo
+Distinct outside-cut frontier cones are prefix-incomparable,
+so a new projected support root strictly preceding \(P_i(z)\)
+must have the form \(P_i(w)\) with the \emph{same} frontier
+\(i\). The checked prefix reflection for \(P_i\) then yields
+\(w\sqsubset z\). Conversely any proper variable-support
+predecessor \(w\) of a selected \(z\) automatically satisfies
+the same target-height budget and produces a genuine strict
+predecessor \(P_i(w)\).
+Thus for each selected local root \(z\),
+\[
+ \{s\in T'_M\setminus T_{\le t_0}:s\sqsubset P_i(z)\}
+   =
+ \{P_i(w): w\in\mathrm{ws}(f_i),\,w\sqsubset z\}.
+\]
+The proposed \lean{ForwardQFinalSelectedPredecessors}
+formalizes this exact logical predecessor-set equivalence
+(four endpoints; 16 October, CI pending). Counting the
+set by projection injectivity and then combining it
+with the old predecessor count is the final missing
+rank-arithmetic step. The branch does not yet assert
+\(M\)-completeness.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

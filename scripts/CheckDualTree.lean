@@ -1708,3 +1708,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalRetainedRanks.retained_heightAt_eq_ambientT
 #print axioms DualTree.ForwardQFinalRetainedRanks.final_retained_predecessor_filters_eq
 #print axioms DualTree.ForwardQFinalRetainedRanks.finalBudgetSupport_retained_heightAt_eq_T
+
+#print axioms DualTree.ForwardQFinalSelectedPredecessors.taggedLocalRoots_mk_iff
+#print axioms DualTree.ForwardQFinalSelectedPredecessors.projected_strict_predecessor_same_frontier
+#print axioms DualTree.ForwardQFinalSelectedPredecessors.selected_new_predecessor_iff
+#print axioms DualTree.ForwardQFinalSelectedPredecessors.selected_new_predecessor_iff_local_support
