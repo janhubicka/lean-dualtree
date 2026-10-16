@@ -240,3 +240,22 @@ the full intrinsic height equality for projected nodes
 to cardinality preservation of the injective projected
 local prefix set. Four selected Lean proof endpoints are
 registered, pending CI.
+
+
+## Eighth pass: cardinality of new projected predecessors
+
+`ForwardQFinalProjectedPredecessorCount` (CI pending)
+introduces the bounded local predecessor Finset of z in
+the genuine coordinate variable support, proves its
+underlying-node image is exactly the local support
+strict-predecessor filter, and counts it using duplicate-free
+variable supports. The exact new projected predecessor
+set is its image under the injective canonical projection
+P_i, giving the same cardinality and hence the TRUE local
+intrinsic height height_(ws(f_i))(z).
+
+This closes the new contribution to the desired full
+rank equation. The remaining gluing lemma must use the
+disjoint union of retained and projected predecessor sets
+to add old height_T(frontier_i) and the local height.
+All complete-skew axioms and final f' word remain open.
