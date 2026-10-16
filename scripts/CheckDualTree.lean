@@ -1637,3 +1637,15 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSemiCompleteZeroRoot.canonicalWalkAll_eq_positive
 #print axioms DualTree.ForwardSemiCompleteZeroRoot.canonicalWalkAll_zero_boundary
 #print axioms DualTree.ForwardSemiCompleteZeroRoot.canonicalWalkAll_boundary_rigidity
+
+#print axioms DualTree.ForwardQFinalRefinementRoots.projected
+#print axioms DualTree.ForwardQFinalRefinementRoots.projected_mem_T
+#print axioms DualTree.ForwardQFinalRefinementRoots.projected_cone
+#print axioms DualTree.ForwardQFinalRefinementRoots.projectLocal_injective
+#print axioms DualTree.ForwardQFinalRefinementRoots.projected_injective
+#print axioms DualTree.ForwardQFinalRefinementRoots.projected_same_frontier_prefix
+#print axioms DualTree.ForwardQFinalRefinementRoots.projected_ne_old_source_root
+#print axioms DualTree.ForwardQFinalRefinementRoots.taggedLocalRoots
+#print axioms DualTree.ForwardQFinalRefinementRoots.projectedLocalRoots
+#print axioms DualTree.ForwardQFinalRefinementRoots.projectedLocalRoots_subset_T
+#print axioms DualTree.ForwardQFinalRefinementRoots.projectedLocalRoots_disjoint_old

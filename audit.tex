@@ -8408,6 +8408,42 @@ facts (16 October 2026, CI pending), without redefining \(A_0\)
 as an empty set or presuming any printed reverse-order transport.
 
 
+\paragraph{Lemma 27 final-refinement variables must live in \(T'\), not in the old \(l\) roots.} \todo
+An adversarial comparison with the printed proof (arXiv:2207.14599v1,
+pp.~28--29) reveals that the occurrence-level global Hall criterion of
+\lean{ForwardQOccurringHallSpan} is a \emph{strictly stronger} interface
+than the construction actually needs for the initial \(Q\) stage:
+\(Q\) is applied to \emph{ordinary} mixed-product elements,
+and its output preserves exactly the old \(l\) interior variable roots.
+The independently chosen mixed-coordinate \emph{variable} words \(f_i\)
+appear only after applying the product Ramsey theorem.  The final
+refined word \(f'\), not the intermediate \(Q(w)\), introduces a new
+variable at each support node \(P_i(z)\) projected from a variable
+root \(z\in\mathrm{ws}(f_i)\).  These new nodes lie in the much larger
+complete ambient support \(T\) and can be different across frontier
+coordinates without a matching into the old \(l\) roots.  Indeed,
+such an old-root matching is impossible when the number of occurring
+independent tags exceeds \(l\); that capacity obstruction is already
+formalized and must not be mistaken for a disproof of Lemma~27.
+
+The proposed \lean{ForwardQFinalRefinementRoots} (eleven
+source-facing endpoints, 16 October, CI pending) now proves
+injectivity of \(P_i\) on its local tail, disjointness of different
+frontier projections, membership of all projected local variable
+roots in \(T\), absence of collisions with original source
+roots, and the resulting finite root set.
+It does \emph{not} yet establish that the union \(T'\) has the
+full complete skew-tree properties or construct the global
+word \(f'\), whose definition must follow the original
+\(f\)-fibre cases.  The next obligations are this geometric
+gluing, the syntactic refinement \(f'\preceq f\), and the
+specific containment \([S,f']\subseteq
+ Q(\operatorname{span}((f_i)))\), not an unrelated Hall
+matching into the intermediate \(Q\)-variables.
+See \texttt{notes/lemma27\_final\_refinement\_architecture\_20261016.md}
+for a self-contained explanation and separate verification targets.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
