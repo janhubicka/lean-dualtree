@@ -84,7 +84,7 @@ theorem selectedLocalRoots_subset_tagged
     (M : Nat) :
     selectedLocalRoots c f M ⊆ taggedLocalRoots c f := by
   intro u hu
-  exact (selectedLocalRoots_mem_iff c f M u).1 hu |>.1
+  exact ((selectedLocalRoots_mem_iff c f M u).1 hu).1
 
 /-- Raising the desired final height never removes a
 previously admissible local tagged variable root. -/
