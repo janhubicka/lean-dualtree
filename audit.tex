@@ -8732,6 +8732,29 @@ heights, and reconcile all retained and projected ranks and
 forward auxiliary-order length axioms.
 
 
+\paragraph{Actual local support roots and selected frontier occupancy.} \todo
+For each component of the vector \(q\)-complete word supplied
+by Corollary~22, the local variable-support tree has a
+common prefix root of intrinsic level zero. This remains
+true in the singleton support case and does not depend
+on the root of the old source \(Q(w)\).
+The proposed \lean{ForwardQFinalLocalRoots} constructs
+the genuine bounded local root \(z_i\), proves
+\(h_{\mathrm{ws}(f_i)}(z_i)=0\), and shows
+\[
+  P_i(z_i)\in T'_M
+  \quad\text{if}\quad
+  h_T(t_i)=m_0,
+\]
+and also if \(h_T(t_i)=m_0+1\) and \(q=M-m_0\ge2\).
+The rank-\((m_0+1)\) case genuinely has no selected
+new root when \(q=1\), since then \(M=m_0+1\).
+Eight proposed proof endpoints (16 October, CI pending).
+These first-occupancy lemmas support the eventual global
+branching argument, but do not themselves imply full
+\(b\)-ary immediate branching or \(M\)-completeness.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

@@ -842,6 +842,24 @@ The one-level discrepancy is essential for the full branching
 argument. Seven additional audit endpoints target 1,471 (CI pending).
 No global complete-skewness, f' construction, or theorem is claimed.
 
+### Existence of genuine selected local roots above frontiers (16 October; CI pending)
+
+The proposed `ForwardQFinalLocalRoots` proves root existence in
+every **actual local q-complete variable support**, including its
+singleton case, and constructs an intrinsic-rank-zero bounded root
+that is a prefix of all other local support nodes. The exact
+M=m+q cutoff then guarantees that its actual ambient projection
+belongs to the selected final support at rank-m frontiers and at
+rank-(m+1) frontiers when q≥2. Upper frontiers contribute no
+new roots when q=1, exactly as required for the last-level base
+case. Eight selected endpoints target 1,479 (CI pending).
+
+This guarantees nonempty projected cone supports where needed;
+it does not yet show every retained nonleaf has a successor in
+EACH ambient direction or that the joined support is complete
+skew. The next arguments must use the original T's full
+branching and the local supports' q-completeness.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
