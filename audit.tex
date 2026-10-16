@@ -8842,6 +8842,28 @@ of possible additional first-direction witnesses remains
 a separate verification obligation.
 
 
+\paragraph{Retained immediate edges crossing the inclusive cut.} \todo
+Let \(s\in T_{\le t_0}\) be a retained old support node
+and \(s\to t\) an immediate support edge in the
+ambient complete \(T\). If \(t\) is also retained,
+the edge remains immediate in the full \(T'_M\):
+the original \(T\)-immediacy excludes old intermediates,
+and a new projected root outside the cut cannot prefix
+any retained old vertex.
+If \(t\) lies outside the inclusive cut, then \(t\) is
+itself a minimal outside-cut \(T\)-frontier: all proper
+\(T\)-predecessors are at or before the cut by
+immediacy. Hence the ambient rank of \(t\) is one
+of \(m_0,m_0+1\), as established by the forward
+frontier rank-band lemma.
+The proposed \lean{ForwardQFinalRetainedEdges} verifies
+these three claims (16 October, CI pending). The next
+step must replace \(t\) by the selected projected local
+root at that frontier, preserving both immediate
+adjacency and the requested first ambient direction.
+No retained/nonleaf full branching is claimed yet.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

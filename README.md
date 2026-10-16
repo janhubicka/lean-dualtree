@@ -932,6 +932,30 @@ appropriately early NEW vertices. Uniqueness of all
 full-support directional successors and the retained/new
 boundary remain to be proved before M-complete skewness.
 
+### Retained T-support edges and frontier crossings (CI pending)
+
+The proposed `ForwardQFinalRetainedEdges` divides the
+immediate edges s→t of the original complete ambient
+support T with retained parent s at/before the inclusive
+cut into two cases.
+
+If t is also retained, that edge is immediate in the
+WHOLE rank-budgeted T'_M support; no projected vertex
+can intervene as a predecessor of an old retained node.
+
+If t lies after the cut, it is itself a minimal
+outside-cut frontier of T. Its intrinsic T-rank is
+necessarily m or m+1, by the checked forward frontier
+rank band. Three selected source-facing endpoints target
+1,495 (CI pending).
+
+The remaining retained/new branching argument must
+identify the corresponding sorted frontier coordinate,
+select its true local support root P_i(z_i), and prove
+that its projected node replaces t as the immediate
+direction-labelled T'_M successor. This does not yet
+establish complete skewness or the final word f'.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
