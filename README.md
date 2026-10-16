@@ -881,6 +881,18 @@ projected successors are the actual immediate successors
 inside the UNION with the retained initial support; no
 complete-skewness or global f' claim is inferred yet.
 
+### Selected local immediate support edges in the glued T'_M (CI pending)
+
+`ForwardQFinalImmediateGluing.selected_local_immediate_is_final_immediate`
+proves that if selected local roots z,w form an immediate support edge
+in component i, their actual projections P_i(z),P_i(w) form an immediate
+edge of the **whole** target-filtered final support T'_M. No retained
+vertex can intervene beyond the cut. Every intervening projected root
+would come from the same frontier and contradict the local immediate
+edge by prefix reflection. This does not identify ambient adjacency,
+nor prove direction labels or the retained/new boundary.
+One selected axiom endpoint targets 1,486 (CI pending).
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
