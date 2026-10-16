@@ -546,6 +546,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   arbitrary-U selector uses exactly this root/walk. Nine source-facing
   endpoints are registered (target 1,355); Lean CI pending.
 
+- **Intrinsic rooted semi-complete selector (stacked proof, CI pending):**
+  every positive-interior starred U has a unique support root; the
+  corrected finished Q output has the SAME root as its original source.
+  Its intrinsic-root walk therefore equals the actual D2 projected
+  model-A point, not just a walk rooted at an externally frozen source.
+  Full arbitrary-U simplicity for this explicit intrinsic selector
+  implies Q-smoothness and a total extension. The paper's printed
+  selector alignment and reverse-order starred-domain transport remain
+  open; thirteen proposed new audit endpoints bring the branch to 1,368.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
