@@ -1191,6 +1191,30 @@ additional source-facing endpoint targets 1,519
 global forward skew/complete order conditions
 remain open.
 
+### Same-direction uniqueness at selected projected final-support vertices (CI pending)
+
+The proposed
+`ForwardQFinalProjectedDirectionUniqueness.selected_projected_atMostOneDirection`
+proves that two immediate final T'_M children of any
+selected P_i(z) in the same ambient outgoing direction
+must be EQUAL. Every final immediate child is a genuine
+local immediate support child in the SAME frontier
+(by the checked converse), and the corrected P_i map
+reflects its labelled first direction. The actual
+q-complete local support is ambient meet-closed
+whenever it contains a genuine immediate edge,
+hence has at most one immediate child per direction.
+
+This proves directional UNIQUENESS for all projected
+parents without assuming T'_M itself is complete skew
+or meet-closed. One source-facing endpoint targets
+1,520 (CI pending). Together with the previously
+checked full-direction existence theorem, it would
+settle the branching count at selected NEW vertices.
+Retained same-direction uniqueness, global forward
+skew ordering, complete boundary ranks, final f'
+and Q-span/Ramsey remain open.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
