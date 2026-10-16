@@ -9041,6 +9041,37 @@ No complete-skew theorem or final \(f'\) construction
 is yet claimed.
 
 
+\paragraph{Converse classification of retained immediate support edges.} \todo
+The existence proof must be supplemented by uniqueness:
+a retained vertex \(s\) might have additional immediate
+children in the final \(T'_M\) not produced by the original
+\(T\)-branch substitution. The proposed module
+\lean{ForwardQFinalRetainedChildConverse} proves otherwise.
+If the final immediate child \(t\) is also retained,
+then \(s\to t\) was already a genuine immediate
+edge of the original complete ambient \(T\), since
+any intermediate \(T\)-vertex would also be retained.
+If instead \(t=P_i(z)\) is a selected projected root,
+prefix reflection shows \(s\sqsubset t_i\), and the
+exact intrinsic rank equations imply
+\[
+ h_T(t_i)=h_T(s)+1,\qquad
+ h_{\mathrm{ws}(f_i)}(z)=0.
+\]
+The first identity makes \(t_i\) an immediate ambient
+\(T\)-successor of \(s\). The second forces \(z\) to
+be the UNIQUE common local support root \(z_i\),
+since every other local vertex strictly extends
+\(z_i\) and has positive intrinsic local rank.
+Thus EVERY possible immediate final child at a
+retained vertex projects an original immediate
+\(T\)-edge, with the same local root as the checked
+forward gluing construction. Three proposed Lean
+endpoints (17 October, CI pending). The resulting
+same-direction uniqueness corollary and the
+projected-parent converse are separate next steps.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

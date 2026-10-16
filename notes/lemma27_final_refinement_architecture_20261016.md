@@ -563,3 +563,26 @@ it will likely follow from ambient meet-closure of T'_M
 or equivalent predecessor/branch splitting geometry.
 Global skew order and full last-level leaf verification
 are also open.
+
+
+## Twentieth pass (17 October): converses for retained immediate children
+
+The proposed `ForwardQFinalRetainedChildConverse`
+(CI pending) proves:
+1. every immediate final support edge between retained
+   vertices was immediate in original complete T;
+2. if a retained s has immediate selected projected
+   child P_i(z), its actual frontier_i was immediate
+   above s in T and its local z has rank zero;
+3. any rank-zero vertex of a genuine q-complete
+   coordinate support equals its unique localRoot.
+
+So all final immediate children from retained parents
+are either old ambient T immediate children still
+retained, or the UNIQUE root projection replacing a
+cut-crossing ambient T immediate child. The remaining
+retained-vertex at-most-one-direction statement should
+follow from uniqueness of that original T successor
+per direction, with the selected projection replacing
+an outside child. The projected-parent uniqueness
+case will be treated separately.

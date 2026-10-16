@@ -1116,6 +1116,32 @@ condition. The ambient f' word, Q-span containment,
 reverse auxiliary-order text and Ramsey recursion
 remain separate work.
 
+### Converse classification of immediate children of retained vertices (CI pending)
+
+The forward Lemma 27 construction already gives immediate
+children in every required direction. To prove uniqueness,
+we must show that EVERY possible immediate final-support
+child arises from those constructions.
+
+The proposed `ForwardQFinalRetainedChildConverse`
+proves three inverse facts. First, any immediate T'_M
+edge whose endpoints are both retained was already
+immediate in the original ambient complete support T:
+an intermediate T vertex would survive the initial cut.
+Second, if an immediate final child of retained s
+is a selected projection P_i(z), the exact rank
+equations force frontier_i to be an immediate T child
+of s and the LOCAL intrinsic height of z to be zero.
+Third, a q-complete local support has a unique
+rank-zero root, so z is precisely the previously
+constructed `localRoot c f i`.
+
+This reduces uniqueness at a retained vertex to the
+known unique directional successor in T. Three new
+source-facing endpoints target 1,516 (CI pending).
+Uniqueness for projected parents and global skew
+order/length clauses remain open.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
