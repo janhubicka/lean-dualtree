@@ -8864,6 +8864,36 @@ adjacency and the requested first ambient direction.
 No retained/nonleaf full branching is claimed yet.
 
 
+\paragraph{Retained-to-projected immediate edges from a one-step rank gap.} \todo
+Suppose a retained vertex \(s\) has a genuine immediate
+ambient \(T\)-successor equal to the minimal outside-cut
+frontier \(t_i\), and the local root \(z_i\) of the mixed
+component \(f_i\) passes the final target-height selection.
+By the independently verified formula,
+\[
+ h_{T'_M}(P_i(z_i))
+  =h_T(t_i)+h_{\mathrm{ws}(f_i)}(z_i)=h_T(t_i).
+\]
+Since \(s\to t_i\) is immediate in \(T\), and the retained
+rank of \(s\) is unchanged inside \(T'_M\), this equals
+\(h_{T'_M}(s)+1\). The prefix chain
+\(s\sqsubset t_i\sqsubseteq P_i(z_i)\) is proper at its
+ends, because \(P_i(z_i)\) lies beyond the cut. The generic
+rank-gap criterion thus proves
+\(s\to P_i(z_i)\) is an immediate support edge in the
+FULL \(T'_M\). Its initial ambient direction is inherited
+from \(s\to t_i\) by prefix transitivity.
+The proposed
+\lean{ForwardQFinalRetainedFrontierGluing} checks
+this without repeating the exhaustive intermediate
+vertex case split (three Lean endpoints; 16 October,
+CI pending). The remaining integration step is to
+obtain the sorted coordinate \(i\) from any crossing
+immediate \(T\)-edge and verify selection of its true
+local root under the two frontier rank budgets.
+Full M-completeness and the final \(f'\) are not yet proved.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
