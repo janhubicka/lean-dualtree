@@ -34,7 +34,6 @@ namespace DualTree.ForwardQFinalProjectionOrder
 
 open ForwardSourceQTree
 open ForwardQFinalRefinementRoots
-open ForwardQActualCoordinateWord
 open ForwardQFinalSupportCut
 
 /-- Inside the SAME frontier, canonical projection reflects
@@ -52,12 +51,12 @@ theorem projected_same_frontier_prefix_iff
     have hpre :
         IsPrefix
           (ForwardCompleteBijection.inverseAddress
-            c.T c.hcomplete c.hnon (projectLocal c i z)).1
+            c.T c.hcomplete c.hnon (ForwardQActualCoordinateWord.projectLocal c i z)).1
           (ForwardCompleteBijection.inverseAddress
-            c.T c.hcomplete c.hnon (projectLocal c i w)).1 :=
+            c.T c.hcomplete c.hnon (ForwardQActualCoordinateWord.projectLocal c i w)).1 :=
       ForwardCompletePrefixIso.inverseAddress_prefix
         c.T c.hcomplete c.hnon
-        (projectLocal c i z) (projectLocal c i w) h
+        (ForwardQActualCoordinateWord.projectLocal c i z) (ForwardQActualCoordinateWord.projectLocal c i w) h
     rw [ForwardQActualCoordinateWord.projectLocal_inverse c i z,
       ForwardQActualCoordinateWord.projectLocal_inverse c i w]
       at hpre
