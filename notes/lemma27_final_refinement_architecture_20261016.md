@@ -303,3 +303,25 @@ This does not prove full M-COMPLETE skewness:
 full immediate support branching and all ordering axioms
 still require the exact support geometry; afterward the
 final f' word/refinement and Q-span containment remain open.
+
+
+## Eleventh pass: the indispensable rank-m versus rank-(m+1) split
+
+For the actual Corollary 22 dimension q=M-m and original cut
+rank m, a minimal corrected frontier f_i has ambient T-rank
+either m or m+1 (checked in `ForwardFrontierRanks`).
+Its proper local projected roots must satisfy
+
+    height_(ws(f_i))(z) + height_T(frontier_i) < m+q.
+
+The proposed `ForwardQFinalTwoFrontierBudget` proves:
+- if height_T(frontier_i)=m, EVERY local variable support root
+  is selected; its local height is automatically <q;
+- if height_T(frontier_i)=m+1, selection is EQUIVALENT to
+  membership in the local support plus local height+1<q;
+- q<=1 therefore selects NO roots from the upper frontiers.
+
+The latter is not a counterexample; the earlier cut at rank m
+is already a permissible terminal level if M=m+1.
+Any complete-skew gluing proof must respect this precise
+one-level height discrepancy across frontiers.
