@@ -8346,6 +8346,26 @@ arbitrary starred U is this particular rooted walk;
 its root and successor conventions must be verified separately.
 
 
+
+\paragraph{Intrinsic positive-\(l\) starred support root and selector.} \todo
+To avoid fixing the source root outside the actual output \(U\),
+the proposed \lean{ForwardSemiCompleteCanonicalRoot}
+formalizes existence and uniqueness of the common support root
+of each positive-interior semi-complete starred \(U\), and defines
+its canonical directional walk from THAT root. For every actual
+corrected Q output its intrinsic root is the retained original
+source root, so the intrinsic-walk boundary selector is the
+genuine projected \(D_2\) terminal. Full simplicity quantified
+over arbitrary \(U,V\), if interpreted with this intrinsic-root
+selector, implies Q-pullback smoothness and its total extension,
+without a Q-local equality assumption. The candidate construction
+satisfies root-and-successor rigidity on the full model boundary.
+This is a 16 October stacked Lean branch (CI pending).
+The remaining source-text obligation is to identify the
+published semi-complete Definition 24 map with this explicit
+positive-\(l\) extension and reconcile the printed auxiliary order.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
