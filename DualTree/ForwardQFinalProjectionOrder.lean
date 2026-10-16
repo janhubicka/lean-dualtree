@@ -34,6 +34,7 @@ namespace DualTree.ForwardQFinalProjectionOrder
 
 open ForwardSourceQTree
 open ForwardQFinalRefinementRoots
+open ForwardQActualCoordinateWord
 open ForwardQFinalSupportCut
 
 /-- Inside the SAME frontier, canonical projection reflects
