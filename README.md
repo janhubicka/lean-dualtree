@@ -488,6 +488,19 @@ obligation; `\todo` marks a remaining gap or proposed change.
   or discharge the mixed Ramsey word/span obligations.
   See `DualTree/ForwardQModelDirectionalIso.lean`.
 
+- **Original simplicity needs only Q-local canonical-selector agreement (three endpoints, CI pending):**
+  for any proposed Definition 24 canonical selector I_U and any
+  B2 subset of the genuine model boundary, retain the FULL
+  original simplicity hypothesis over all starred refinements U,V.
+  Its corrected Q pullback is smooth, and admits a TOTAL
+  smooth extension, provided I_{Q(w)} agrees with the verified
+  source-relative selector only on ACTUAL Q images. This
+  discharges the B2/Gamma2 coordinate matching without asking
+  for an unnecessarily strong equality of selectors on arbitrary
+  U outside the Q image. The Q-local selector identity, printed
+  W_* transport, Hall/span and Ramsey iteration remain open.
+  See `DualTree/ForwardQPaperSelectorReduction.lean`.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

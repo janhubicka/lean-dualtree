@@ -20,6 +20,8 @@ import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardQModelDirectionalIso
 
+import DualTree.ForwardQPaperSelectorReduction
+
 /-!
 Public umbrella import for the dual-tree verification library.
 The imports below are a minimal transitive covering of the 261 source
@@ -28,3 +30,4 @@ counterexample fixtures remain available via their individual imports.
 Run scripts/audit-lean-library.py --verify-root-minimal to check that
 this file exports exactly the intended graph without duplicate imports.
 -/
+

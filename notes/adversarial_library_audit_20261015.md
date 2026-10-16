@@ -153,3 +153,27 @@ This is a tooling error, not a mathematical theorem failure.
 The umbrella imports now come first, the documentation follows
 them, and the generator plus static audit enforce that ordering.
 The full Lean build must pass again before merging the cleanup.
+
+## Sharper selector obligation (second adversarial pass)
+
+The earlier ledger stated that the published Definition 24 map I_U
+on arbitrary semi-complete starred U must agree *globally* with the
+source-relative selector. This is **stronger than needed for
+Lemma 27**. The published simplicity predicate still quantifies
+over every pair U,V refining f, but the proof applies it only at
+U=Q(x), V=Q(y). Therefore the required geometric theorem is
+the restricted identity I_{Q(w)}(a)=I^R_{Q(w)}(a) for every actual
+corrected starred mixed input w and model boundary a.
+
+The new `ForwardQPaperSelectorReduction` module registers a direct
+conditional proof of the full smoothness consequence and total
+extension from the unweakened, paper-style simplicity predicate.
+Its sole additional selector hypothesis is this Q-local identity.
+Global arbitrary-U selector equality must not be assumed, and
+need not be formalized merely to finish this step.
+
+The remaining difficult issue is constructing I_U with the exact
+published meaning (positive-l geometry and l=0 exception),
+then verifying that the concrete corrected Q geometric map
+is indeed I_{Q(w)}. The printed reverse-lex/skew mismatch and
+actual W_* starred-domain correspondence remain independent.
