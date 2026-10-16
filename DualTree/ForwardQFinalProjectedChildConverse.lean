@@ -84,7 +84,7 @@ theorem selected_final_immediate_child_same_frontier
       by_contra hne
       exact
         (projected_incomparable_of_distinct_frontiers
-          c ⟨i,z⟩ ⟨j,w⟩ hne).1 hproj.1
+          c ⟨i,z⟩ ⟨j,w⟩ hne.symm).1 hproj.1
     subst j
     have hlocalPre : IsPrefix z.1 w.1 :=
       (ForwardQFinalProjectionOrder.projected_same_frontier_prefix_iff
@@ -172,6 +172,16 @@ theorem selected_final_immediate_child_is_local_immediate
   have hgapLocal :
       SkewTree.heightAt L w.1 =
         SkewTree.heightAt L z.1 + 1 := by
+    change SkewTree.heightAt
+      (finalBudgetSupport c f M).toList (projected c ⟨i,w⟩).1 =
+      SkewTree.heightAt
+        (finalBudgetSupport c f M).toList (projected c ⟨i,z⟩).1 + 1
+      at hgapProjected
+    rw [hrankW, hrankZ] at hgapProjected
+    change SkewTree.heightAt
+      (f.vector.components i).toVariableWord.supportNodes w.1 =
+      SkewTree.heightAt
+        (f.vector.components i).toVariableWord.supportNodes z.1 + 1
     omega
   have hlocal :
       SkewTree.immediateSuccB L z.1 w.1 = true :=
