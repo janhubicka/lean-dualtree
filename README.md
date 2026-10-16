@@ -1060,6 +1060,31 @@ retained-direction existence proof whenever a genuine
 coordinate is available. Full M-complete skewness still
 requires uniqueness and the global ordering clauses.
 
+### Unconditional retained-root branching existence in all directions (CI pending)
+
+The proposed `ForwardQFinalRetainedUnconditional` eliminates
+the numerical capacity and preselected frontier-index assumptions
+from retained-root directional EXISTENCE. Each requested direction
+`dir:Fin b` yields an actual immediate ambient T successor of
+the original cut (using c.hearly). Its T-rank increases by one,
+so it necessarily lies beyond the corrected inclusive cut.
+The previously verified crossing-to-sorted-frontier lemma gives
+a genuine mixed coordinate i. The q-complete bounded word at
+i then forces m+q≤k; this supplies precisely the capacity
+needed for the retained-direction construction.
+
+Consequently every retained support vertex whose ACTUAL final
+intrinsic rank r satisfies r+1<m+q has an immediate successor
+in the correct ambient direction in the WHOLE assembled T'_M.
+The branchWitnesses family is therefore nonempty. No extra
+capacity or coordinate hypothesis is added, and b=0
+is handled vacuously via the direction parameter.
+Four source-facing endpoints target 1,510 (CI pending).
+
+Still open: uniqueness of directional immediate successors,
+the complete-skew rank/length ordering, complete terminal
+height, and final f'/Q-span/Ramsey construction.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

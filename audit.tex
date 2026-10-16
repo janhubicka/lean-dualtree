@@ -8976,6 +8976,35 @@ complete-skew property nor the original paper's
 parameter conversions are silently assumed.
 
 
+\paragraph{Retained full-direction existence with no added numerical or index hypotheses.} \todo
+In the verified Frame, the distinguished cut \(t_0\)
+satisfies \(h_T(t_0)=m_0\) and \(m_0+1<k\).
+For every requested direction \(j\in b\), the
+\(k\)-complete ambient support has a genuine immediate
+successor \(t\) of \(t_0\) in direction \(j\).
+Its intrinsic rank is \(m_0+1\), so the checked
+forward auxiliary/rank compatibility implies that it
+lies outside the inclusive cut. Thus \(t\) belongs to
+the genuine finite sorted outside-cut frontier list,
+giving an actual index \(i\).
+The preceding bounded local completeness theorem yields
+\(q\le k-(m_0+1)\), hence \(m_0+q\le k\).
+Therefore the capacity and index premises of the
+retained full-direction theorem can be discharged from
+the existing Frame and actual mixed word, for each
+requested ambient direction.
+The proposed
+\lean{ForwardQFinalRetainedUnconditional}
+then proves every retained vertex of final rank
+\(r\) with \(r+1<m_0+q\) has an ACTUAL immediate
+\(T'_{m_0+q}\)-successor in all literal directions,
+and the corresponding branch-witness list is nonempty
+(four Lean endpoints; 17 October, CI pending).
+The empty direction alphabet \(b=0\) is vacuous.
+These are existence assertions, not directional
+uniqueness or full \(M\)-complete skewness.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

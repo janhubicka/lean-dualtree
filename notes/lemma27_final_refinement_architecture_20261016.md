@@ -516,3 +516,25 @@ or an outgoing-branch witness that yields such an index.
 Afterwards the two completeness difficulties are
 uniqueness of same-direction immediate successors
 and the global skew order/length clauses.
+
+
+## Eighteenth pass (17 October): unconditional retained directional existence
+
+`ForwardQFinalRetainedUnconditional` (CI pending) proves
+that a requested direction at the distinguished cut
+produces a genuine ambient T immediate successor of
+rank m+1. This successor lies outside the inclusive
+forward cut, and the existing sorted-frontier theorem
+gives an actual local mixed-product coordinate i.
+The q-complete bounded coordinate word forces m+q<=k,
+discharging the only added numerical premise.
+
+Therefore EVERY retained vertex whose final intrinsic
+rank r satisfies r+1<m+q has a genuine immediate final
+T'_M successor in each requested ambient direction.
+No preselected frontier index and no independent
+capacity bound remain. The remaining structural
+obligations are SAME-DIRECTION UNIQUENESS, the skew
+level/length clauses and full last-level branching
+classification, before constructing final f' and
+the span-containment statement of Lemma 27.
