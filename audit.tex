@@ -8653,6 +8653,32 @@ of the two predecessor families. No complete-skewness
 statement is inferred merely from cardinalities.
 
 
+\paragraph{Exact intrinsic rank of newly projected vertices in the final support.} \todo
+The preceding developments yield TWO exact disjoint families
+of strict predecessors of each selected \(P_i(z)\): retained
+old vertices (cardinality \(h_T(t_i)\)) and projected
+new roots (cardinality \(h_{\mathrm{ws}(f_i)}(z)\)).
+The proposed \lean{ForwardQFinalIntrinsicRank}
+formalizes the disjoint-union equality for filtered predecessor
+Finsets and proves the full intrinsic rank formula
+\[
+ h_{T'_M}(P_i(z))
+  =h_T(t_i)+h_{\mathrm{ws}(f_i)}(z).
+\]
+Thus every new projected support node selected by the
+paper's exact strict rank budget has
+\(h_{T'_M}(P_i(z))<M\). The old retained vertices already
+have their original \(T\)-ranks, independently of \(M\).
+Six source-facing Lean endpoints are proposed (16 October,
+CI pending). These statements do \emph{not} by themselves
+prove that \(T'_M\) is \(M\)-complete skew: one must still
+check the branching/successor structure, the global
+auxiliary-order length clauses and target-height bounds
+for all retained old vertices. Afterwards the final
+fibrewise variable word \(f'\), its refinement and Q-span
+containment remain unproved.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
