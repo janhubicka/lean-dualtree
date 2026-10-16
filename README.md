@@ -860,6 +860,27 @@ EACH ambient direction or that the joined support is complete
 skew. The next arguments must use the original T's full
 branching and the local supports' q-completeness.
 
+### Full local branching and selected directional successors (16 October; CI pending)
+
+For a genuine post-Ramsey mixed-word component (f_i), every
+local support root of intrinsic rank (r) with (r+1<q)
+has a unique immediate **support** successor in every one of
+the (b) ambient directions. That successor is a genuine
+bounded variable support root of rank (r+1); it need not
+be an immediate ambient child.
+
+The proposed `ForwardQFinalLocalBranching` proves that these
+successors remain in the exact selected final support
+at a rank-(m) frontier automatically. At a rank-((m+1))
+frontier they remain selected when (r+2<q), precisely
+accounting for the upper frontier's shorter local budget.
+Six selected axiom endpoints target **1,485** (CI pending).
+
+The outstanding gluing step must establish that these
+projected successors are the actual immediate successors
+inside the UNION with the retained initial support; no
+complete-skewness or global f' claim is inferred yet.
+
 ### Actual immediate-edge transport inside the glued final support (16 October; CI pending)
 
 The new `ForwardQFinalImmediateGluing` proves a

@@ -8755,6 +8755,26 @@ branching argument, but do not themselves imply full
 \(b\)-ary immediate branching or \(M\)-completeness.
 
 
+\paragraph{Local directional successors survive the correct two-frontier truncation.} \todo
+The mixed word's true \(q\)-complete local support gives, at
+every local vertex \(z\) of intrinsic level \(r\) with
+\(r+1<q\), exactly one immediate \emph{support} successor
+in each of the \(b\) ambient directions. The successor has
+local rank \(r+1\), though its ambient length may jump by
+more than one. Under the exact target-height selection
+with \(M=m_0+q\), every such local successor remains
+selected above rank-\(m_0\) frontiers. Above a rank-\((m_0+1)\)
+frontier, this conclusion holds provided \(r+2<q\),
+the additional unit of slack forced by the shorter budget.
+The six proposed statements in
+\lean{ForwardQFinalLocalBranching} (16 October, CI pending)
+formalize both cases directly from vector completeness.
+The next nonlocal obligation is to transfer these unique
+local support successors through \(P_i\) to actual
+immediate successors of the \emph{joined} support
+\(T'_M\), including the retained/new boundary.
+
+
 \paragraph{Local immediate support edges remain immediate after joining into \(T'_M\).} \todo
 Suppose \(z,w\) belong to the selected coordinate support
 for the same frontier \(i\), and \(w\) is an immediate
