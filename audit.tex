@@ -8311,6 +8311,22 @@ two final source-facing endpoints of the 16 October integration
 branch (CI pending). Neither theorem yet supplies the published
 \(I_U\) recursion for the actual corrected \(Q\) images.
 
+
+\paragraph{Model child as immediate support successor in corrected Q.} \todo
+For a first-\(l\) model interior word \(p\), the homogeneous child
+\(p^\frown i\) is in the interior or in the external model
+boundary.  Its realized vertex in the genuine corrected Q support
+need not be an \emph{ambient} immediate child, but the
+prefix-and-direction isomorphism should prove that it is the
+unique immediate \emph{support} successor in direction \(i\).
+The proposed Lean module \lean{ForwardQModelSuccessor}
+formalizes this by excluding intermediate Q vertices and
+competing directional immediate successors; it aims to establish
+the literal equation for \lean{CanonicalSupportWalk.next}
+(16 October 2026 branch, CI pending). This still does not equate
+the paper's unspecified \(I_U\) with this canonical walk on
+every arbitrary starred U, nor settle span/Hall/induction.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
