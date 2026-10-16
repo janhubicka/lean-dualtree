@@ -1142,6 +1142,33 @@ source-facing endpoints target 1,516 (CI pending).
 Uniqueness for projected parents and global skew
 order/length clauses remain open.
 
+### Converse classification of selected projected immediate children (CI pending)
+
+The proposed `ForwardQFinalProjectedChildConverse`
+shows that any immediate child of a selected projected
+parent P_i(z) in the FULL filtered final support must
+itself be a selected P_i(w) from the SAME frontier
+coordinate i. Retained nodes are excluded by the
+inclusive cut, and other frontiers have incomparable
+cones. The local z is a strict prefix of w.
+
+The full-support immediate rank gap is exactly one.
+Using the checked intrinsic final rank formula at
+both projected endpoints cancels their common
+ambient T frontier rank and forces the local
+height gap to be exactly one. Thus z→w must
+already be an immediate LOCAL support edge.
+No abstract prefix-order isomorphism or Hall
+matching is assumed.
+
+Two source-facing endpoints target 1,518 (CI pending).
+This is the key converse interface needed to
+transfer unique directional branching from the
+q-complete local component supports to all
+selected projected vertices. Retained direction
+uniqueness, meet closure, skew ordering and final
+f'/Q-span containment remain separate.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

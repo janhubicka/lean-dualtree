@@ -586,3 +586,25 @@ follow from uniqueness of that original T successor
 per direction, with the selected projection replacing
 an outside child. The projected-parent uniqueness
 case will be treated separately.
+
+
+## Twenty-first pass (17 October): projected final children are exactly local immediate children
+
+The proposed `ForwardQFinalProjectedChildConverse`
+(CI pending) classifies all immediate children of
+a projected selected P_i(z) in the WHOLE filtered T'_M.
+The child must be a selected projection P_i(w) in the
+same frontier (no retained or differently labelled
+frontier can occur), with a strict local prefix z<w.
+The final intrinsic rank gap of this immediate edge
+equals one, and the checked projected-final height
+formula cancels the common ambient frontier rank,
+yielding localRank(w)=localRank(z)+1. Thus z->w is
+a genuine LOCAL immediate support edge.
+
+Together with the already checked direction-labelled
+projected cone map, this should imply same-direction
+uniqueness at selected projected vertices from
+the local q-complete support's unique directions.
+The retained-parent case uses the separate converse
+classification of retained children.
