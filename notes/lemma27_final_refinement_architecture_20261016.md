@@ -325,3 +325,17 @@ The latter is not a counterexample; the earlier cut at rank m
 is already a permissible terminal level if M=m+1.
 Any complete-skew gluing proof must respect this precise
 one-level height discrepancy across frontiers.
+
+
+## Twelfth pass: selected local roots exist where needed
+
+A q-complete coordinate support f_i has a unique common prefix
+root z_i of local intrinsic height 0, even in the singleton
+case. The proposed `ForwardQFinalLocalRoots` supplies a
+genuine bounded variable-root witness z_i, and proves its
+projection P_i(z_i) is selected by the exact target M=m+q
+budget whenever the frontier has T-rank m; the same holds
+for frontiers of rank m+1 when q>=2. The exceptional q=1
+upper-frontier case correctly remains empty. These witnesses
+are an essential input to the retained/nonleaf branching
+proof; full branching in every direction is not yet shown.

@@ -1740,3 +1740,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalTwoFrontierBudget.selected_rank_m_iff_support
 #print axioms DualTree.ForwardQFinalTwoFrontierBudget.selected_rank_succ_iff
 #print axioms DualTree.ForwardQFinalTwoFrontierBudget.no_selected_at_succ_frontier_of_q_le_one
+
+#print axioms DualTree.ForwardQFinalLocalRoots.complete_forward_has_root
+#print axioms DualTree.ForwardQFinalLocalRoots.exists_local_component_root
+#print axioms DualTree.ForwardQFinalLocalRoots.localRoot
+#print axioms DualTree.ForwardQFinalLocalRoots.localRoot_mem
+#print axioms DualTree.ForwardQFinalLocalRoots.localRoot_prefix
+#print axioms DualTree.ForwardQFinalLocalRoots.localRoot_height_zero
+#print axioms DualTree.ForwardQFinalLocalRoots.rank_m_frontier_has_selected_root
+#print axioms DualTree.ForwardQFinalLocalRoots.rank_succ_frontier_has_selected_root_of_two_le_q
