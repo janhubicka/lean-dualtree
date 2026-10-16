@@ -20,7 +20,7 @@ import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardQModelDirectionalIso
 
-import DualTree.ForwardQPaperSelectorReduction
+import DualTree.ForwardCanonicalPartialWalkUniqueness
 
 /-!
 Public umbrella import for the dual-tree verification library.
