@@ -339,3 +339,18 @@ for frontiers of rank m+1 when q>=2. The exceptional q=1
 upper-frontier case correctly remains empty. These witnesses
 are an essential input to the retained/nonleaf branching
 proof; full branching in every direction is not yet shown.
+
+
+## Fourteenth pass: projecting local immediate edges into joined T'_M
+
+`ForwardQFinalImmediateGluing` (CI pending) proves that if
+selected coordinate supports contain a local immediate edge
+z -> w, then P_i(z) -> P_i(w) is an immediate edge in the
+entire exact filtered final support T'_M, not just within
+the i-th projected subfamily. Retained T vertices cannot
+lie between projected vertices; selected projected
+intermediate vertices would be forced to the same i
+and would contradict the local immediate condition by
+prefix reflection. This is the core local-new/new
+edge-gluing theorem. Direction-label transport and
+old-retained/new-root edges remain open.

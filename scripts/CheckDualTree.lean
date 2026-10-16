@@ -1749,3 +1749,5 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalLocalRoots.localRoot_height_zero
 #print axioms DualTree.ForwardQFinalLocalRoots.rank_m_frontier_has_selected_root
 #print axioms DualTree.ForwardQFinalLocalRoots.rank_succ_frontier_has_selected_root_of_two_le_q
+
+#print axioms DualTree.ForwardQFinalImmediateGluing.selected_local_immediate_is_final_immediate

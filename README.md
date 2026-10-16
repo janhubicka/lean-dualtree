@@ -860,6 +860,26 @@ EACH ambient direction or that the joined support is complete
 skew. The next arguments must use the original T's full
 branching and the local supports' q-completeness.
 
+### Actual immediate-edge transport inside the glued final support (16 October; CI pending)
+
+The new `ForwardQFinalImmediateGluing` proves a
+nontrivial glued-support theorem: whenever (z,w) are
+both selected roots in one coordinate and (w) is an
+immediate LOCAL SUPPORT successor of (z), their actual
+projections (P_i(z),P_i(w)) are an immediate successor
+pair **inside the entire target-filtered (T'_M)**.
+The proof rules out retained vertices between the
+projections and uses the same-frontier predecessor
+classification to rule out every additional projected
+vertex. It does NOT identify stretched ambient edges
+with one-letter ambient children.
+
+One new curated proof endpoint (target 1,480) is pending
+Lean and source CI. To complete M-skewness we still need
+the converse/immediate directional labelling, the
+old-retained/new boundary, and the global skew-order
+properties.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

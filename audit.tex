@@ -8755,6 +8755,29 @@ branching argument, but do not themselves imply full
 \(b\)-ary immediate branching or \(M\)-completeness.
 
 
+\paragraph{Local immediate support edges remain immediate after joining into \(T'_M\).} \todo
+Suppose \(z,w\) belong to the selected coordinate support
+for the same frontier \(i\), and \(w\) is an immediate
+\emph{support} successor of \(z\) in the local word
+\(f_i\). Prefix reflection gives
+\(P_i(z)\sqsubset P_i(w)\). If some vertex
+\(s\in T'_M\) lay strictly between these projections,
+then either \(s\) would be a retained old vertex (impossible
+since no projected outside-cut vertex prefixes a retained
+one), or it would be a new selected projection \(P_i(v)\)
+of the \emph{same} frontier by the exact predecessor
+classification. In the latter case
+\(z\sqsubset v\sqsubset w\), contradicting local immediacy.
+Thus the proposed
+\lean{ForwardQFinalImmediateGluing.selected_local_immediate_is_final_immediate}
+is a genuine immediate-successor assertion in the FULL
+glued support, not just an order-preservation lemma
+(one new endpoint; 16 October, CI pending).
+It does not yet prove all such successors occupy the
+correct ambient first directions, or treat the separate
+retained/new interface needed for full branching.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
