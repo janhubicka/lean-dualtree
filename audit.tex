@@ -8474,6 +8474,31 @@ accidentally treating a mere subset of \(T\) as a
 validated complete-skew support.
 
 
+\paragraph{Reflecting local projected prefixes and comparing distinct frontiers.} \todo
+The proposed \lean{ForwardQFinalProjectionOrder} extracts
+the exact support-rank identity
+\[
+ h_T(P_i(z))=h_T(f_i)+|z|,
+\]
+where \(f_i\) denotes the actual forward-sorted complete-support
+frontier. The checked inverse-address formula and full
+prefix reflection in \(T\) yield
+\[
+  P_i(z)\sqsubseteq P_i(w)
+     \Longleftrightarrow z\sqsubseteq w.
+\]
+For \(i<j\) and \(|z|\le |w|\), the sorted-frontier
+forward order and the rank/length axioms of the complete
+skew \(T\) imply \(P_i(z)\preccurlyeq_{\rm fwd}P_j(w)\),
+hence \(|P_i(z)|\le |P_j(w)|\). These are four
+source-facing formalization endpoints (16 October, CI pending)
+and provide the geometric comparison interface needed for
+the eventual complete-skew proof for the candidate \(T'\).
+The \emph{vector completeness of the post-Ramsey coordinate words}
+must still be connected to the necessary local-tail inequalities;
+the candidate \(T'\) has not been proved complete or skew.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

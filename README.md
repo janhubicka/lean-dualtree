@@ -642,6 +642,21 @@ NOT a claim of complete skewness, of a legal final variable word, or
 of Lemma 27. The unproved next step is the global complete-skew
 and uniform f'-fibre construction.
 
+### Reflected prefix and ordered cross-frontier projections (16 October; CI pending)
+
+The proposed `ForwardQFinalProjectionOrder` derives the full
+prefix **equivalence** for two projected local addresses from the same
+frontier, using the checked inverse canonical address in the complete
+T. It also records the exact intrinsic T-rank formula for P_i(z)
+and proves that for i<j and |z|<=|w|, the projections
+P_i(z),P_j(w) are correctly forward-ordered and have
+nondecreasing ambient lengths. These do NOT assume that support
+edges are ambient immediate children. Four audited endpoints
+(target 1,409) remain CI-pending. The mixed coordinate words'
+vector-complete clauses must still provide the necessary
+tail-length comparisons and the assembled T' still needs
+its own complete-skew argument.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

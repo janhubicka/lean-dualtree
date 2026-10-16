@@ -127,3 +127,18 @@ words, a common safe projection height, and the global corrected
 rank/ambient-length order. The proof of f' fibre uniformity and
 the family containment are still open. Target: fourteen further
 selected Lean axiom endpoints, pending complete CI.
+
+
+## Third pass: projected-prefix reflection and frontier order
+
+A new `ForwardQFinalProjectionOrder` module (CI pending)
+isolates the geometry needed for clauses (ii) and (iii) of the
+final T' skewness verification. It proves for any local tails
+z,w from one frontier that P_i(z) prefixes P_i(w) iff z
+prefixes w. It proves the true rank identity
+height_T(P_i(z)) = height_T(frontier_i) + |z|, and transfers
+length inequalities |z| <= |w| at increasing frontier indices
+i<j to forward auxiliary order and ambient length inequality
+of P_i(z),P_j(w). These four transitive-axiom endpoints are
+conditional on the local length inequality and do not
+infer it from mixed vector completeness yet.
