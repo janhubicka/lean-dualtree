@@ -1766,3 +1766,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalProjectedFullDirections.local_directional_immediate_witness
 #print axioms DualTree.ForwardQFinalProjectedFullDirections.final_new_full_direction_rank_m
 #print axioms DualTree.ForwardQFinalProjectedFullDirections.final_new_full_direction_rank_succ
+
+#print axioms DualTree.ForwardQFinalRetainedEdges.retained_T_immediate_is_final_immediate
+#print axioms DualTree.ForwardQFinalRetainedEdges.outside_immediate_T_edge_is_frontier
+#print axioms DualTree.ForwardQFinalRetainedEdges.outside_immediate_T_edge_rank_band

@@ -408,3 +408,23 @@ and r+2<q for rank-(m+1) frontiers.
 The retained/new interface, uniqueness of other
 successors per direction, global skew order, and
 final ambient f' remain open.
+
+
+## Seventeenth pass: immediate edges from retained old support
+
+`ForwardQFinalRetainedEdges` (CI pending) proves two
+cases for an ambient T immediate support edge s->t from
+a retained parent s. If t is retained then the edge
+remains immediate in the entire glued T'_M, because
+T-immediacy forbids other retained intermediates and
+selected projected nodes never prefix a retained node.
+
+If t is outside the inclusive cut, then t itself is a
+minimal outside-cut T frontier, whose rank is m or m+1.
+Thus there is no need for a new arbitrary frontier
+choice: the last retained edge determines its frontier
+uniquely. The remaining retained/new gluing lemma should
+take the local root z_i of the corresponding mixed
+coordinate support f_i, prove P_i(z_i) replaces the
+outside endpoint t, and establish immediate adjacency
+plus its old ambient direction from s.
