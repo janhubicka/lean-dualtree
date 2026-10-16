@@ -356,3 +356,16 @@ one-level shorter upper-frontier truncation.
 The remaining nonlocal gluing theorem must prove
 these become the actual immediate T'_M successors
 and verify the retained/new branching interface.
+
+
+## Fourteenth pass: immediate local edges in the full glued support
+
+The theorem `ForwardQFinalImmediateGluing.selected_local_immediate_is_final_immediate`
+(CI pending) proves that for a selected local immediate edge z -> w,
+the ambient projections P_i(z) -> P_i(w) are immediate in the FULL
+T'_M support. A retained vertex cannot intervene after the cut;
+a projected intermediate is forced into the same coordinate and
+reflects to a forbidden intermediate local support vertex.
+This checks one source-facing endpoint. The exact ambient direction
+of this projected edge, initial retained/new branching,
+and M-complete skewness are still open.

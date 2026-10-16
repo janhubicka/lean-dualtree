@@ -8775,6 +8775,24 @@ immediate successors of the \emph{joined} support
 \(T'_M\), including the retained/new boundary.
 
 
+\paragraph{Local immediate support edges remain immediate in the glued final support.} \todo
+Suppose selected roots \(z,w\) in a single coordinate \(i\) form
+an immediate edge in the local variable support. The checked
+prefix order/reflection theorem gives
+\(P_i(z)\sqsubset P_i(w)\). Any hypothetical intermediate
+\(s\in T'_M\) would be either retained or another projected
+root. A retained vertex cannot follow a projected outside-cut
+vertex. A projected intermediate must have the same frontier
+\(i\) and be the image \(P_i(v)\) of a local support root
+\(z\sqsubset v\sqsubset w\), contradicting immediacy.
+The proposed
+\lean{ForwardQFinalImmediateGluing.selected\_local\_immediate\_is\_final\_immediate}
+proves the full-support immediate edge (one selected endpoint;
+16 October, CI pending). Transporting the exact first
+ambient directions, the retained/new boundary, and all
+complete-skew axioms remain open.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
