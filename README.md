@@ -627,6 +627,21 @@ on original f-fibres, explicit syntactic f' <= f, and the required inclusion
 `[S,f'] subset Q(span(f_i))`, followed by starred-domain correction and
 Ramsey iteration. These remain OPEN.
 
+### Candidate final T' support (16 October; CI pending)
+
+`ForwardQFinalSupportCut` now defines the literal finite support
+candidate as the complete ambient T vertices at/before the **inclusive
+forward cut**, together with the projected local variable roots of the
+post-Ramsey mixed word. Fourteen source-facing endpoints (target **1,405**)
+check that both parts are subsets of the true T, that the original cut
+and old source roots are retained, that projected nodes stay beyond
+the cut, and that the two parts are disjoint; projections from
+different frontiers are mutually prefix-incomparable. The retained
+part is T-relative prefix closed. This is a geometric prerequisite,
+NOT a claim of complete skewness, of a legal final variable word, or
+of Lemma 27. The unproved next step is the global complete-skew
+and uniform f'-fibre construction.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

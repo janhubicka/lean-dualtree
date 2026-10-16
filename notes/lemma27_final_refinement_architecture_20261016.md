@@ -105,3 +105,25 @@ recorded as VERIFIED rather than proposed.
   raw-word span mapped into the old source-interior variables.
 
 No statement here claims Lemma 27 or Theorem 25 is completed.
+
+
+## Second implementation pass: precise candidate support
+
+`DualTree/ForwardQFinalSupportCut.lean` defines
+
+    Retained(c) = {t in T : ForwardAux(t,cut)}
+    Candidate(c,f) = Retained(c) union New(f).
+
+The first set contains the cut and all old source roots, and is
+prefix-closed among actual T vertices. Every new projected root
+lies strictly OUTSIDE the inclusive cut and cannot prefix an old
+retained node. Two new projected nodes from different frontier
+indices are mutually incomparable. Therefore the two parts
+are disjoint, and Candidate is a finite subset of T.
+
+The complete-skew condition is explicitly NOT claimed. Its
+remaining proof must use vector completeness of the chosen local
+words, a common safe projection height, and the global corrected
+rank/ambient-length order. The proof of f' fibre uniformity and
+the family containment are still open. Target: fourteen further
+selected Lean axiom endpoints, pending complete CI.
