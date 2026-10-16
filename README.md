@@ -776,6 +776,33 @@ these two DISJOINT families and add their cardinalities.
 Neither the complete-skew axioms nor final ambient f'
 word/refinement has yet been proved.
 
+### Full intrinsic projected-root height formula (16 October; CI pending)
+
+The proposed `ForwardQFinalIntrinsicRank` combines the exact
+old retained predecessor count with the exact local projected
+predecessor count. Since the retained and selected projected
+root families are disjoint, their filtered predecessor sets
+form a disjoint union. Consequently every selected P_i(z) in
+the EXACT target-M final support satisfies
+
+  height_(T'_M)(P_i(z)) =
+    height_T(frontier_i) + height_(ws(f_i))(z).
+
+By the *definition* of the printed target-height budget,
+every selected new projected root has height_(T'_M)<M.
+This is the first full projected-support INTRINSIC rank
+calculation; six selected Lean endpoints target 1,460
+(CI pending). The separate verified retained-rank formula
+supplies the corresponding answer for all old vertices.
+
+The remaining obligations before claiming M-complete skewness
+are the exact branching and uniqueness of directional support
+successors, the skew rank/ambient-length ordering, and
+the correct parameter bounds ensuring all retained vertices
+also have rank<M. Then the final f' word, syntactic
+refinement, Q(span) containment, starred domain and
+Ramsey induction still need proofs.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

@@ -259,3 +259,28 @@ rank equation. The remaining gluing lemma must use the
 disjoint union of retained and projected predecessor sets
 to add old height_T(frontier_i) and the local height.
 All complete-skew axioms and final f' word remain open.
+
+
+## Ninth pass: the complete projected intrinsic-rank equation
+
+The proposed `ForwardQFinalIntrinsicRank` (CI pending)
+splits all strict predecessors of P_i(z) in the EXACT M-filtered
+support into (1) retained T-predecessors and (2) selected
+projected local support predecessors. The disjointness
+lemma for the two support pieces makes their cardinalities
+add, yielding the precise intrinsic rank identity
+
+    height_(T'_M)(P_i(z))
+      = height_T(frontier_i) + height_(ws(f_i))(z).
+
+The rank-budget inequality from the original Lemma 27 formula
+then proves all selected new projected support roots lie at
+intrinsic final-support rank strictly below the target M.
+Rank preservation for retained vertices was validated in
+`ForwardQFinalRetainedRanks`.
+
+Full M-complete skewness is NOT an automatic consequence:
+the corrected proof must still check unique full branching,
+relative rank/length order including retained/new comparisons,
+and appropriate M versus old cut-rank parameter bounds.
+Then one must build the actual full ambient variable word f'.
