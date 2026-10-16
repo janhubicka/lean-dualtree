@@ -47,8 +47,9 @@ noncomputable def modelQAddressImage
     {b n l k m : Nat} {α : Type*}
     (hb : 0 < b)
     (c : Frame b n l k m α)
-    (x : Input c) (a : Node b) : Node b :=
-  if h : ModelInterior l a then
+    (x : Input c) (a : Node b) : Node b := by
+  classical
+  exact if h : ModelInterior l a then
     ((modelQVertexEquiv hb c x) (Sum.inl ⟨a, h⟩)).1
   else if h : ModelBoundary l a then
     ((modelQVertexEquiv hb c x) (Sum.inr ⟨a, h⟩)).1
@@ -65,6 +66,7 @@ theorem modelQAddressImage_atShape
     (v : ModelShape c) :
     modelQAddressImage hb c x (modelAddress v) =
       ((modelQVertexEquiv hb c x) v).1 := by
+  classical
   cases v with
   | inl p =>
       simp [modelQAddressImage, modelAddress, p.2]
@@ -149,7 +151,7 @@ theorem modelQWalk_realizes_all
   have hrigid :=
     ForwardCanonicalPartialWalkUniqueness.unique_model_map_eq_support_walk
       hb (nodes c x).toList
-      (modelQAddressImage hb c x)
+      (modelQAddressImage hb c x [])
       (modelQAddressImage hb c x)
       rfl
       (fun p i hp => modelQAddressImage_step hb c x p i hp)
