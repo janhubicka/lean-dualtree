@@ -8627,6 +8627,32 @@ rank-arithmetic step. The branch does not yet assert
 \(M\)-completeness.
 
 
+\paragraph{Counting the projected new-root predecessors in the final support.} \todo
+The preceding exact predecessor classification identifies the
+new strict predecessors of \(P_i(z)\) with the image, under the
+injective canonical projection \(P_i\), of the bounded variable
+roots \(w\in\mathrm{ws}(f_i)\) strictly preceding \(z\).
+For \(z\) satisfying the exact target-height cutoff,
+the hereditary budget condition makes every such \(w\)
+automatically selected. Consequently
+\[
+ \bigl|\{s\in T'_M\setminus T_{\le t_0}:
+     s\sqsubset P_i(z)\}\bigr|
+ =
+ h_{\mathrm{ws}(f_i)}(z).
+\]
+The proposed module
+\lean{ForwardQFinalProjectedPredecessorCount}
+proves this equation by constructing explicit image-filter
+equalities and applying injectivity on bounded local root
+types (six source-facing endpoints; 16 October, CI pending).
+Together with the retained contribution
+\(h_T(t_i)\), the sole missing arithmetic step in the
+projected intrinsic-rank formula is the disjoint union
+of the two predecessor families. No complete-skewness
+statement is inferred merely from cardinalities.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

@@ -756,6 +756,26 @@ with the already checked retained count h_T(frontier_i),
 and conclude the intrinsic rank identity. No complete
 skewness or final f' has been claimed.
 
+### Projected local predecessor count (16 October; CI pending)
+
+`ForwardQFinalProjectedPredecessorCount` carries out the
+finite cardinality argument for NEW support roots. Given a
+local variable-support root z that satisfies the exact target-M
+rank cutoff, the strict new predecessors of P_i(z) are
+exactly the image of the actual strict support predecessors w
+of z under the injective P_i. Passing to Finset cardinalities
+identifies their number with
+`height_(ws(f_i))(z)`. Six proposed source-facing endpoints
+(target 1,454) await CI.
+
+Together with the already checked old retained-predecessor
+count `height_T(frontier_i)`, this supplies BOTH summands
+of the desired full final-support intrinsic rank identity.
+The last step is to split the filtered predecessor set into
+these two DISJOINT families and add their cardinalities.
+Neither the complete-skew axioms nor final ambient f'
+word/refinement has yet been proved.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
