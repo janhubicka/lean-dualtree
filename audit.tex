@@ -8579,6 +8579,30 @@ and cardinality identity
 separately, before claiming \(M\)-completeness.
 
 
+\paragraph{The retained predecessor-count contribution is an actual T-rank.} \todo
+The corrected forward frontier \(t_i\) is, by definition,
+the first \(T\)-vertex beyond the inclusive cut on its
+branch. Thus every proper \(T\)-predecessor of \(t_i\)
+belongs to the retained portion \(T_{\le t_0}\).
+A direct cardinality argument yields
+\[
+  h_T(t_i)=
+  \bigl|\{s\in T_{\le t_0}:s\sqsubset t_i\}\bigr|.
+\]
+Moreover, for every retained vertex \(s\in T_{\le t_0}\)
+its strict predecessor set does not change after adjoining
+any rank-filtered projected roots, so
+\[
+  h_{T'_M}(s)=h_T(s).
+\]
+The proposed \lean{ForwardQFinalRetainedRanks} formalizes
+these assertions by two generic Finset predecessor-counting
+lemmas and exact filter equalities (nine selected endpoints;
+16 October, CI pending). This closes the \emph{old} contribution
+to \(h_{T'_M}(P_i(z))\), not yet the local projected-predecessor
+cardinality nor the complete-skew proof.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

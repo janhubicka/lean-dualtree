@@ -716,6 +716,26 @@ h_T(t_i)+h_ws(f_i)(z). The predecessor-set cardinality/counting
 lemma, all complete-skew axioms and the global final f' variable
 word remain separate outstanding obligations.
 
+### Rank preservation for retained T' vertices (16 October; CI pending)
+
+The `ForwardQFinalRetainedRanks` module now treats the OLD
+predecessor contribution quantitatively. The strict T-predecessor
+set of each corrected frontier is exactly its retained-predecessor
+set, so its cardinality is precisely the frontier's ambient
+support rank `height_T(frontier_i)`.
+For every retained initial-cut T vertex t, its intrinsic
+height in the FULL rank-budgeted final support `T'_M` equals
+its original intrinsic height in T: adding projected roots
+does not insert ancestors of t or remove any previous ones.
+These claims rely on generic finite-support predecessor-cardinality
+lemmas. Nine new axiom endpoints (target 1,444) await CI validation.
+
+This proves the old part of the desired projected rank formula,
+NOT the local new-root predecessor count nor M-complete skewness.
+The latter still requires a disjoint predecessor decomposition,
+the cardinality of projected local strict predecessors, the
+branching axioms, and the final variable word f'.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

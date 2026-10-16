@@ -202,3 +202,23 @@ The missing next theorem must COUNT these two disjoint
 predecessor families, giving the desired intrinsic rank
 height_(T'_M)(P_i(z)) = height_T(t_i)+height_(ws(f_i))(z).
 No completeness or global f' claim is being made until then.
+
+
+## Sixth pass: exact retained intrinsic-height calculation
+
+`ForwardQFinalRetainedRanks` (CI pending) adds generic
+rank-versus-predecessor-cardinality lemmas for finite supports,
+then identifies every proper ambient T predecessor of a genuine
+frontier with a retained old root. Its count is exactly
+height_T(frontier_i). It also proves for EVERY retained node s,
+even inside the FULL M-budgeted assembled candidate,
+height_(T'_M)(s)=height_T(s): no selected projected node
+can introduce a new predecessor of s and no retained
+T-predecessor is missing.
+
+The full rank equation for new P_i(z) now reduces to counting
+the selected projected predecessors in the i-th frontier.
+Those should correspond, via strict local prefix reflection
+and the hereditary M-budget filter, to the proper predecessors
+of z in the local component support. This bijection/cardinality
+step is still open, as is M-complete skewness.
