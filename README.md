@@ -556,6 +556,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   selector alignment and reverse-order starred-domain transport remain
   open; thirteen proposed new audit endpoints bring the branch to 1,368.
 
+- **Operational canonical-map bridge for printed I_U (CI pending):**
+  a proposed arbitrary-starred canonical map need satisfy its root and
+  unique outgoing-direction recursion only on actual Q images. The
+  finite-model rigidity proof then FORCES its A_l selector equality,
+  yielding paper-style full-ambient simple-colouring smoothness and
+  total product extension. The root/step laws are explicit assumptions
+  to check against the published semi-complete I_U convention; they
+  have not been silently postulated as properties of undefined text.
+  Three new source-facing endpoints target 1,371 audited declarations.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

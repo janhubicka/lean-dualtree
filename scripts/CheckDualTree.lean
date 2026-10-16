@@ -1623,3 +1623,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSemiCompleteCanonicalRoot.intrinsic_boundary_rigidity
 #print axioms DualTree.ForwardSemiCompleteCanonicalRoot.intrinsic_simple_Q_pullback_smooth
 #print axioms DualTree.ForwardSemiCompleteCanonicalRoot.exists_total_intrinsic_simple_Q_pullback
+
+#print axioms DualTree.ForwardQPaperSelectorRecursion.paperMap_Qlocal_of_root_successors
+#print axioms DualTree.ForwardQPaperSelectorRecursion.paper_simple_smooth_of_Q_root_successors
+#print axioms DualTree.ForwardQPaperSelectorRecursion.exists_total_paper_simple_of_Q_root_successors
