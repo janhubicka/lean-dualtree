@@ -675,6 +675,29 @@ relative intrinsic ranks in T', cross-comparisons at reversed
 coordinate indices for successive levels, branching and the
 retained/new interface must be checked independently.
 
+### Exact target-height budget for printed T' (16 October; CI pending)
+
+An adversarial revisit of Lemma 27, page 29, revealed the printed
+candidate was M-rank **TRUNCATED**, not the entire set of projected
+local variable roots. The actual condition is
+`height_ws(f_i)(z) + height_T(frontier_i) < M`, where **M is the
+FINAL target height**, and the Frame parameter `m` denotes the
+EARLIER rank of the source cut t0. Conflating those two heights
+would make the gluing proof prove the wrong theorem.
+
+`ForwardQFinalHeightBudget` introduces an explicit M and filters
+the genuine tagged local roots by precisely that condition.
+The resulting `finalBudgetSupport` consists of the same retained
+initial T prefix plus only the selected projected roots.
+It is a finite subset of the original unfiltered
+`candidateSupport`, hence of T; retained and projected parts
+stay disjoint, the original cut/source roots remain present,
+every selected projection carries a rank-budget witness, and the
+construction is monotone in M (15 endpoints, target 1,430;
+CI pending). This fixes the SET, not its full complete-skew
+structure. Intrinsic ranks in the assembled support, its
+complete branching and the actual f' word remain open.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
