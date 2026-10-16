@@ -18,9 +18,8 @@ import DualTree.ForwardQMixedSpanEvaluation
 import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
-import DualTree.ForwardQModelSuccessor
+import DualTree.ForwardQCanonicalWalk
 
-import DualTree.ForwardCanonicalPartialWalkUniqueness
 
 /-!
 Public umbrella import for the dual-tree verification library.
