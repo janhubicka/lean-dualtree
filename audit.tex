@@ -8444,6 +8444,36 @@ See \texttt{notes/lemma27\_final\_refinement\_architecture\_20261016.md}
 for a self-contained explanation and separate verification targets.
 
 
+\paragraph{A finite candidate for the final ambient support \(T'\).} \todo
+On top of the injective projected root family, define the initial
+ambient part \(T_{\le t_0}=\{t\in T:\,t\preccurlyeq t_0\}\)
+using the corrected \emph{inclusive} forward auxiliary cut,
+and form
+\[
+ T'_{\mathrm{cand}}=T_{\le t_0}\cup
+   \{\,P_i(z):i\in D_0\cup D_2,\,
+     z\in\mathrm{ws}(f_i)\,\}.
+\]
+The proposed Lean module \lean{ForwardQFinalSupportCut} checks that
+both parts lie in the genuine ambient complete support \(T\);
+the distinguished cut and old source-variable roots lie in the
+retained part; it is prefix closed relative to \(T\); every
+new projection lies strictly outside the forward cut; no projected
+node prefixes a retained node; projections from distinct
+frontiers are incomparable; and the two parts are \emph{disjoint}.
+These facts hold without any Hall matching into the old source
+interior (14 proposed endpoints; 16 October, CI pending).
+
+Disjointness alone does not prove the claimed
+\(m\)-complete skew structure: the next step must combine
+the coordinate variable words' vector-completeness with
+the precise support-rank and ambient-length gluing invariants.
+After that, construct \(f'\) fibrewise and verify the
+stated \([S,f']\) containment. This separation prevents
+accidentally treating a mere subset of \(T\) as a
+validated complete-skew support.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

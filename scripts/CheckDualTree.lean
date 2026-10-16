@@ -1649,3 +1649,18 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalRefinementRoots.projectedLocalRoots
 #print axioms DualTree.ForwardQFinalRefinementRoots.projectedLocalRoots_subset_T
 #print axioms DualTree.ForwardQFinalRefinementRoots.projectedLocalRoots_disjoint_old
+
+#print axioms DualTree.ForwardQFinalSupportCut.retained
+#print axioms DualTree.ForwardQFinalSupportCut.retained_subset_T
+#print axioms DualTree.ForwardQFinalSupportCut.retained_prefix_closed_in_T
+#print axioms DualTree.ForwardQFinalSupportCut.cut_mem_retained
+#print axioms DualTree.ForwardQFinalSupportCut.old_source_root_mem_retained
+#print axioms DualTree.ForwardQFinalSupportCut.oldBase_mem_retained
+#print axioms DualTree.ForwardQFinalSupportCut.projected_outside_cut
+#print axioms DualTree.ForwardQFinalSupportCut.projected_not_prefix_retained
+#print axioms DualTree.ForwardQFinalSupportCut.projected_incomparable_of_distinct_frontiers
+#print axioms DualTree.ForwardQFinalSupportCut.candidateSupport
+#print axioms DualTree.ForwardQFinalSupportCut.candidateSupport_subset_T
+#print axioms DualTree.ForwardQFinalSupportCut.retained_disjoint_projectedLocalRoots
+#print axioms DualTree.ForwardQFinalSupportCut.cut_mem_candidateSupport
+#print axioms DualTree.ForwardQFinalSupportCut.old_source_root_mem_candidateSupport
