@@ -8679,6 +8679,29 @@ fibrewise variable word \(f'\), its refinement and Q-span
 containment remain unproved.
 
 
+\paragraph{All final-support vertices satisfy the strict target rank bound.} \todo
+For every \(s\in T_{\le t_0}\), the corrected forward
+auxiliary order and skew rank/length separation in \(T\)
+give \(h_T(s)\le h_T(t_0)=m_0\). Since the rank of every
+retained vertex in the assembled exact \(T'_M\) equals its
+old \(T\)-rank, this yields \(h_{T'_M}(s)\le m_0\).
+The explicit numerical condition \(m_0<M\) is thus
+necessary for the intended target-height bound on retained
+vertices; it must not be silently omitted. The previous
+selected-projection rank identity and the printed rank filter
+give \(h_{T'_M}(P_i(z))<M\) for every selected new root.
+Consequently
+\[
+ \forall s\in T'_M,\qquad h_{T'_M}(s)<M
+\]
+under the explicit \(m_0<M\) hypothesis.
+The proposed \lean{ForwardQFinalRankBound} registers four
+source-facing endpoints (16 October, CI pending).
+This is a RANK BOUND, not the full proof of \(M\)-complete
+skewness; the remaining branching and length-order clauses
+must still be checked.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

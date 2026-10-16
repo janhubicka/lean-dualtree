@@ -803,6 +803,26 @@ also have rank<M. Then the final f' word, syntactic
 refinement, Q(span) containment, starred domain and
 Ramsey induction still need proofs.
 
+### Uniform target-rank bound for the exact final support (16 October; CI pending)
+
+The proposed `ForwardQFinalRankBound` completes the target-M
+RANK BOUND under the explicit necessary numerical hypothesis
+`m < M` (where m is the earlier source-cut rank). Every
+retained vertex has ambient T-rank at most m by the existing
+forward-order rank lemma and has the same intrinsic rank in
+the assembled T'_M support; hence its final rank is <M.
+Every selected projected root already has rank <M by
+the exact local + frontier rank formula and strict
+budget filter. Therefore EVERY vertex of T'_M has
+intrinsic support rank below target M. Four proposed
+source-facing endpoints (target 1,464, CI pending).
+
+This uniform height bound alone is NOT an M-COMPLETE
+skew-tree theorem. Full b-branching at every nonleaf,
+the skew ambient length/forward auxiliary ordering, and
+the actual ambient final variable-word construction
+remain independent proof obligations.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
