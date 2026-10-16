@@ -8815,6 +8815,33 @@ immediate-edge gluing theorem. All retained/new branching
 cases and complete-skew order properties remain open.
 
 
+\paragraph{Actual directional immediate successors above selected projected roots.} \todo
+Consecutive intrinsic support ranks on a strict prefix
+path imply immediate adjacency: an intermediate support
+vertex would have an integral rank strictly between
+\(r\) and \(r+1\). This is formalized in
+\lean{ForwardQFinalProjectedFullDirections.immediate\_of\_rank\_succ}.
+For each local variable support root \(z\) sufficiently
+below its final level, genuine \(q\)-complete branching
+provides a local immediate successor \(w\) in any requested
+literal direction \(j\). The separately verified
+immediate-edge gluing theorem makes
+\(P_i(z)\to P_i(w)\) immediate in the FULL filtered
+\(T'_M\) support. The direction-labelled projection
+theorem additionally gives
+\(P_i(z)^\frown j\sqsubseteq P_i(w)\).
+Hence projected new roots at rank-\(m_0\) frontiers
+have a genuine immediate T'_M successor in every
+direction when the local rank satisfies \(r+1<q\);
+at rank-\((m_0+1)\) frontiers the correct condition is
+\(r+2<q\).
+Four selected Lean endpoints are proposed (16 October,
+CI pending). No global full-branching or complete-skewness
+claim follows yet for retained vertices, and uniqueness
+of possible additional first-direction witnesses remains
+a separate verification obligation.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

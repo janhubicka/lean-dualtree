@@ -387,3 +387,24 @@ In conjunction with merged immediate edge gluing, it supports
 constructing the actual b directional immediate successors
 of sufficiently early projected vertices of T'_M. The retained
 cut interface must still be proved.
+
+
+## Sixteenth pass: immediate directional successors in glued T'_M
+
+`ForwardQFinalProjectedFullDirections` (CI pending)
+combines four carefully separated facts:
+(1) a strict local support prefix edge with rank difference one
+is immediate, even in a stretched ambient tree;
+(2) local q-completeness supplies an immediate child in
+each requested ambient direction at early intrinsic levels;
+(3) selected local immediate edges remain immediate
+in the FULL T'_M after gluing; and
+(4) the actual canonical projection preserves the
+first ambient direction label.
+Thus early selected NEW roots have actual immediate
+T'_M support successors in every direction.
+The exact height slack is r+1<q for rank-m frontiers,
+and r+2<q for rank-(m+1) frontiers.
+The retained/new interface, uniqueness of other
+successors per direction, global skew order, and
+final ambient f' remain open.

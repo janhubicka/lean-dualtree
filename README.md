@@ -912,6 +912,26 @@ Two selected proof endpoints target 1,488 (CI pending).
 The retained/new branching interface and complete skew
 order clauses remain open.
 
+### Actual direction-labelled immediate successors for selected new roots (CI pending)
+
+`ForwardQFinalProjectedFullDirections` combines local
+q-complete branching, the proof that consecutive intrinsic
+ranks determine an immediate local edge, the verified
+immediate-edge gluing into the WHOLE final T'_M support,
+and direction preservation under the canonical P_i map.
+
+At a rank-m frontier, every local root of rank r with r+1<q
+has a genuine immediate T'_M successor in each specified
+ambient direction. At a rank-(m+1) frontier the correct
+condition is r+2<q. The support edges may be stretched.
+Four selected source-facing endpoints target 1,492
+(CI pending).
+
+This establishes directional existence only for
+appropriately early NEW vertices. Uniqueness of all
+full-support directional successors and the retained/new
+boundary remain to be proved before M-complete skewness.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
