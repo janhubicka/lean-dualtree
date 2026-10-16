@@ -1664,3 +1664,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalSupportCut.retained_disjoint_projectedLocalRoots
 #print axioms DualTree.ForwardQFinalSupportCut.cut_mem_candidateSupport
 #print axioms DualTree.ForwardQFinalSupportCut.old_source_root_mem_candidateSupport
+
+#print axioms DualTree.ForwardQFinalProjectionOrder.projected_same_frontier_prefix_iff
+#print axioms DualTree.ForwardQFinalProjectionOrder.projected_height
+#print axioms DualTree.ForwardQFinalProjectionOrder.projected_forward_order_of_tail_length_le
+#print axioms DualTree.ForwardQFinalProjectionOrder.projected_length_le_of_tail_length_le
