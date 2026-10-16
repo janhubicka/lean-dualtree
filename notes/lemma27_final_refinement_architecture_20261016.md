@@ -339,3 +339,20 @@ for frontiers of rank m+1 when q>=2. The exceptional q=1
 upper-frontier case correctly remains empty. These witnesses
 are an essential input to the retained/nonleaf branching
 proof; full branching in every direction is not yet shown.
+
+
+## Thirteenth pass: full local branching under the two cutoffs
+
+The proposed `ForwardQFinalLocalBranching` (CI pending)
+uses actual q-completeness of each f_i support to show:
+at every local rank r with r+1<q, there is a unique
+immediate local SUPPORT successor in each ambient
+direction, and its local intrinsic rank equals r+1.
+At a rank-m ambient frontier, this successor belongs to
+the selected exact T'_M support. At rank-(m+1)
+frontiers, it belongs to that support under the
+stronger r+2<q condition. This accounts for the
+one-level shorter upper-frontier truncation.
+The remaining nonlocal gluing theorem must prove
+these become the actual immediate T'_M successors
+and verify the retained/new branching interface.
