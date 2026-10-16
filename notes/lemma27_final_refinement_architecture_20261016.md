@@ -284,3 +284,22 @@ the corrected proof must still check unique full branching,
 relative rank/length order including retained/new comparisons,
 and appropriate M versus old cut-rank parameter bounds.
 Then one must build the actual full ambient variable word f'.
+
+
+## Tenth pass: uniform actual intrinsic target-rank bound
+
+The proposed `ForwardQFinalRankBound` (CI pending)
+combines the complete T's corrected forward-order/rank
+monotonicity with rank preservation for retained vertices.
+Every retained t at/before cut has final rank at most
+height_T(cut)=m0, and under the explicit numerical
+hypothesis m0<M this is strictly below target M.
+The separately proved formula for every selected P_i(z)
+yields the same strict <M bound for NEW roots from the
+printed target-height filter. The union yields
+height_(T'_M)(s)<M for ALL support vertices.
+
+This does not prove full M-COMPLETE skewness:
+full immediate support branching and all ordering axioms
+still require the exact support geometry; afterward the
+final f' word/refinement and Q-span containment remain open.

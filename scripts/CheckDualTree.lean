@@ -1727,3 +1727,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalIntrinsicRank.final_projected_height_formula
 #print axioms DualTree.ForwardQFinalIntrinsicRank.final_projected_height_lt_target
 #print axioms DualTree.ForwardQFinalIntrinsicRank.final_all_selected_projected_heights_lt_target
+
+#print axioms DualTree.ForwardQFinalRankBound.retained_T_rank_le_cut_rank
+#print axioms DualTree.ForwardQFinalRankBound.retained_final_rank_le_cut_rank
+#print axioms DualTree.ForwardQFinalRankBound.retained_final_rank_lt_target
+#print axioms DualTree.ForwardQFinalRankBound.finalBudgetSupport_all_heights_lt_target
