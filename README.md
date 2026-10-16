@@ -823,6 +823,25 @@ the skew ambient length/forward auxiliary ordering, and
 the actual ambient final variable-word construction
 remain independent proof obligations.
 
+### Two-frontier height-budget dichotomy (16 October; CI pending)
+
+The **actual** mixed Ramsey variable word has local dimension q=M-m
+for the final target height M and original cut rank m. Every
+minimal outside-cut frontier has ambient T-height **m OR m+1**.
+The proposed `ForwardQFinalTwoFrontierBudget` now derives from the
+mixed word's `vectorCompleteB` hypothesis that every genuine
+local component support root has height <q. It follows that:
+
+* At a rank-m frontier the final M=m+q filter selects
+  **all** genuine local support variable roots.
+* At a rank-(m+1) frontier it selects exactly roots with
+  local intrinsic height + 1 < q.
+* At a rank-(m+1) frontier and q≤1, no new root is selected.
+
+The one-level discrepancy is essential for the full branching
+argument. Seven additional audit endpoints target 1,471 (CI pending).
+No global complete-skewness, f' construction, or theorem is claimed.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

@@ -8702,6 +8702,36 @@ skewness; the remaining branching and length-order clauses
 must still be checked.
 
 
+\paragraph{The two exact frontier rank cases for the final target height.} \todo
+The corrected forward ambient geometry gives
+\(h_T(t_i)\in\{m_0,m_0+1\}\) for each minimal
+outside-cut frontier, where \(m_0=h_T(t_0)\).
+In the actual post-Ramsey construction the local vector
+variable-word dimension is \(q=M-m_0\), for final target
+height \(M\), and vector completeness gives
+\(h_{\mathrm{ws}(f_i)}(z)<q\) at every actual local support root.
+The \emph{printed} rank budget therefore specializes to two
+different truncations:
+\[
+\begin{aligned}
+ h_T(t_i)=m_0:\quad&
+  z\in\mathrm{ws}(f_i)\implies P_i(z)\in T'_M,\\
+ h_T(t_i)=m_0+1:\quad&
+  P_i(z)\in T'_M\iff
+     z\in\mathrm{ws}(f_i)\ \wedge\
+     h_{\mathrm{ws}(f_i)}(z)+1<q.
+\end{aligned}
+\]
+In particular the upper-rank frontier contributes no new
+roots when \(q\le1\). The seven proposed Lean statements in
+\lean{ForwardQFinalTwoFrontierBudget} (16 October, CI pending)
+prove exactly this dichotomy without imposing a spurious
+uniform local height. The remaining complete-skew proof must
+verify full branching with these \emph{different} truncation
+heights, and reconcile all retained and projected ranks and
+forward auxiliary-order length axioms.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

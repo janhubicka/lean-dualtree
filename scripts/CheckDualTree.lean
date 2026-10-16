@@ -1732,3 +1732,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalRankBound.retained_final_rank_le_cut_rank
 #print axioms DualTree.ForwardQFinalRankBound.retained_final_rank_lt_target
 #print axioms DualTree.ForwardQFinalRankBound.finalBudgetSupport_all_heights_lt_target
+
+#print axioms DualTree.ForwardQFinalTwoFrontierBudget.frontier_rank_cut_or_succ
+#print axioms DualTree.ForwardQFinalTwoFrontierBudget.local_component_complete
+#print axioms DualTree.ForwardQFinalTwoFrontierBudget.local_component_height_lt_q
+#print axioms DualTree.ForwardQFinalTwoFrontierBudget.selected_of_rank_m_frontier
+#print axioms DualTree.ForwardQFinalTwoFrontierBudget.selected_rank_m_iff_support
+#print axioms DualTree.ForwardQFinalTwoFrontierBudget.selected_rank_succ_iff
+#print axioms DualTree.ForwardQFinalTwoFrontierBudget.no_selected_at_succ_frontier_of_q_le_one
