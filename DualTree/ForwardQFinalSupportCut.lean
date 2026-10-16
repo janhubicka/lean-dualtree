@@ -1,5 +1,6 @@
 import DualTree.ForwardQFinalRefinementRoots
 import DualTree.ForwardQSourceTerminals
+import DualTree.ForwardQConeVariableVisibility
 
 /-!
 # Lemma 27: the candidate support T' of the FINAL ambient word
