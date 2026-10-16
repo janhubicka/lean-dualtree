@@ -881,6 +881,23 @@ projected successors are the actual immediate successors
 inside the UNION with the retained initial support; no
 complete-skewness or global f' claim is inferred yet.
 
+### Direction-labelled projection of local support cones (CI pending)
+
+The proposed `ForwardQFinalProjectionDirection` proves that
+the corrected canonical embedding of a forward-complete
+support preserves exact FIRST outgoing ambient directions
+for bounded source addresses. This specializes to each
+genuine frontier cone map P_i: if z+[dir] prefixes w, then
+P_i(z)+[dir] prefixes P_i(w). The proof uses the precise
+inverse-source-address formula and the verified directional
+successor walk, not prefix order alone.
+
+Two source-facing axiom endpoints target 1,487 (CI pending).
+This provides the missing direction-label part of the
+new/new full-branching argument, but immediate support-edge
+gluing, retained/new boundary branching and complete skewness
+still require separate verification.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

@@ -8775,6 +8775,31 @@ immediate successors of the \emph{joined} support
 \(T'_M\), including the retained/new boundary.
 
 
+\paragraph{Outgoing direction labels survive corrected cone projections.} \todo
+The prefix order alone does not determine first ambient
+successor directions: an abstract rooted tree isomorphism
+could permute sibling labels. The corrected forward-complete
+canonical embedding, however, is defined recursively using
+the unique immediate successor in each literal direction.
+The proposed
+\lean{ForwardQFinalProjectionDirection.canonicalEmbedding\_childCone\_mono}
+therefore proves first-direction preservation on all
+bounded source addresses by canonical-walk recursion.
+The actual frontier projection satisfies
+\[
+ I_T^{-1}(P_i(z))=I_T^{-1}(t_i)^\frown z.
+\]
+Consequently the proposed
+\lean{ForwardQFinalProjectionDirection.projected\_childCone\_mono}
+establishes
+\(z^\frown j\sqsubseteq w
+  \Rightarrow P_i(z)^\frown j\sqsubseteq P_i(w)\).
+These two Lean endpoints (16 October, CI pending) hold with
+stretched ambient edges. They are needed alongside the
+separate immediate-edge gluing lemma before deriving full
+branching of the final support \(T'_M\).
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

@@ -356,3 +356,23 @@ one-level shorter upper-frontier truncation.
 The remaining nonlocal gluing theorem must prove
 these become the actual immediate T'_M successors
 and verify the retained/new branching interface.
+
+
+## Fifteenth pass: labelled first-direction preservation
+
+The independently proposed `ForwardQFinalProjectionDirection`
+(CI pending) proves that the forward-complete canonical map,
+being built from the actual directional successor walk,
+preserves the first ambient outgoing direction for
+bounded homogeneous addresses. Applying the literal inverse
+source identity inverse_T(P_i(z)) = inverse_T(frontier_i) ++ z,
+the map P_i also sends a local dir-cone of z to the ambient
+dir-cone of P_i(z), even with stretched edges.
+
+The proof does NOT assume an arbitrary prefix-poset
+isomorphism preserves direction labels. Together with
+the selected immediate-edge gluing module, this
+would yield actual outgoing directional successors
+in the FULL T'_M support for sufficiently early
+new projected vertices. The retained/new boundary
+still needs separate control.
