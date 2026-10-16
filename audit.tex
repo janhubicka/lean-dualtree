@@ -8921,6 +8921,34 @@ What remains is the old-vertex branching case distinction,
 then uniqueness and skew-order verification.
 
 
+\paragraph{Full directional existence at retained vertices of the final support.} \todo
+Let \(T'_M\) be the exact filtered candidate with
+\(M=m_0+q\), where \(m_0=h_T(t_0)\). We explicitly assume
+\(M\le k\), so the ambient \(k\)-complete tree \(T\)
+has enough levels for every retained vertex whose
+final rank \(r\) satisfies \(r+1<M\). Retained ranks in
+\(T'_M\) equal their old ambient ranks by the checked
+predecessor calculation. The ambient \(T\) therefore has
+a unique immediate support successor \(t\) in each
+direction \(j\) from such a retained vertex \(s\).
+If \(t\preccurlyeq t_0\), its edge remains immediate in
+the entire \(T'_M\). Otherwise \(t\) is the actual
+minimal outside-cut frontier for some sorted index
+\(i\); the checked selected local-root replacement
+lemma constructs \(s\to P_i(z_i)\) as an immediate edge
+in exactly the original direction \(j\).
+Thus the proposed
+\lean{ForwardQFinalRetainedFullDirections}
+proves directional \emph{existence} at every retained
+nonlast-level vertex, including the case crossing the cut
+(two selected endpoints, 17 October, CI pending).
+The numerical capacity \(M\le k\) must be derived from the
+actual mixed Ramsey parameter choices to discharge the
+conditional hypothesis. Directional uniqueness and all
+remaining global complete-skew axioms are independent
+obligations.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
