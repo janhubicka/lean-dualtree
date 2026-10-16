@@ -9102,6 +9102,33 @@ canonical projection theorem supplies the key
 direction-preservation implication.
 
 
+\paragraph{Reflection of the first outgoing ambient direction by the projected frontier map.} \todo
+The complete forward-support canonical map preserves
+literal first outgoing directions by its labelled
+successor recursion, but preserving the underlying
+prefix relation alone does not imply direction reflection.
+For the actual projected cone \(P_i\) the proposed
+\lean{ForwardQFinalProjectionDirectionReflect.projected\_childCone\_iff}
+proves, for uniformly safe local tails \(z,w\),
+\[
+ z^\frown j\sqsubseteq w
+ \quad\Longleftrightarrow\quad
+ P_i(z)^\frown j\sqsubseteq P_i(w).
+\]
+For the converse direction, prefix reflection first
+expresses \(w=z^\frown \tau\). The projected strict
+first-child cone forces \(\tau\ne\varnothing\).
+If \(\tau\) begins with \(r\), the verified forward
+direction preservation puts \(P_i(w)\) in the
+\(r\)-cone of \(P_i(z)\). Two distinct one-letter cones
+cannot share a descendant, so \(r=j\).
+This one new endpoint (17 October, CI pending)
+is the missing label-reflection ingredient in
+the projected-parent same-direction uniqueness
+argument, independent of the global complete-skew
+theorem for the final support.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

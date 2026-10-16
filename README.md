@@ -1169,6 +1169,28 @@ selected projected vertices. Retained direction
 uniqueness, meet closure, skew ordering and final
 f'/Q-span containment remain separate.
 
+### Corrected frontier projections reflect labelled first directions (CI pending)
+
+The proposed
+`ForwardQFinalProjectionDirectionReflect.projected_childCone_iff`
+establishes the exact two-way implication
+`z++[dir] ⊑ w ↔ P_i(z)++[dir] ⊑ P_i(w)`.
+Prefix reflection gives a nonempty local suffix;
+the already verified directional-preservation theorem
+places its first letter into the matching projected
+ambient cone. Equal-length prefix uniqueness then
+forces that local first letter to be exactly dir.
+No ambient one-letter edge hypothesis is used:
+projected support edges may be stretched.
+
+This is the precise direction-labelled equivalence
+needed to transfer local q-complete uniqueness to
+selected projected final-support children. One
+additional source-facing endpoint targets 1,519
+(CI pending). Retained unique branching and
+global forward skew/complete order conditions
+remain open.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
