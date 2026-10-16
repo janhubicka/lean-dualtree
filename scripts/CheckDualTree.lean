@@ -1778,3 +1778,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalRetainedCrossing.crossing_immediate_has_sorted_frontier
 #print axioms DualTree.ForwardQFinalRetainedCrossing.crossing_immediate_selects_local_root
 #print axioms DualTree.ForwardQFinalRetainedCrossing.crossing_immediate_has_replacement_in_direction
+
+#print axioms DualTree.ForwardQFinalRetainedFullDirections.retained_has_final_immediate_in_direction
+#print axioms DualTree.ForwardQFinalRetainedFullDirections.retained_branchWitnesses_nonempty

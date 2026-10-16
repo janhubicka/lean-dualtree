@@ -470,3 +470,27 @@ now reduces to taking the actual directional immediate
 T-successor and splitting on whether it is retained.
 Full uniqueness, global skew order and the final f'
 construction are still open.
+
+
+## Sixteenth pass (17 October): every early retained root has a directional successor
+
+`ForwardQFinalRetainedFullDirections` (CI pending)
+eliminates the last preselected-crossing-edge premise:
+for every retained root s of final rank r with r+1<M=m+q
+and requested ambient direction j, the original k-complete
+T has a unique immediate T-successor in direction j
+provided the explicit capacity M<=k holds.
+It either remains retained, yielding the same immediate
+T'_M edge, or crosses the inclusive cut; in the latter
+case `ForwardQFinalRetainedCrossing` supplies the actual
+sorted frontier index and selected projected local-root
+replacement in exactly the same direction. Hence the
+branch-witness list of T'_M at s,j is nonempty.
+
+This proves directional EXISTENCE, not uniqueness. A
+second theorem must rule out competing immediate successors
+in a given direction, ideally via meet-closure of T'_M
+(or an equivalent local-on-projection predecessor argument).
+The numerical capacity M<=k must be justified from the
+actual local q-complete word's ambient tail height before
+the manuscript uses this result without assumptions.

@@ -1009,6 +1009,33 @@ outside-cut branches. Uniqueness of every full-support
 directional successor and the global skew-order clauses
 remain open, as does the final f' word.
 
+### Retained-root directional existence in the final support (CI pending)
+
+For the corrected Lemma 27 construction with final target
+`M=m+q`, the proposed module `ForwardQFinalRetainedFullDirections`
+proves that every retained root s of intrinsic final-support rank
+r with r+1<M has an **immediate successor in every ambient
+direction in the entire glued T'_M**, under the explicitly
+stated ambient-height capacity bound `m+q≤k`.
+
+The proof uses the complete original ambient support T to
+select its unique immediate successor in the requested
+direction. If that successor stays before the cut, the
+checked retained-edge gluing applies. If it crosses the
+cut, the previously verified actual sorted-frontier
+replacement theorem supplies a selected projected local
+root in the SAME direction. This establishes nonempty
+immediate directional witness families, not their uniqueness.
+The capacity bound needs to be reconciled with the actual
+mixed-word parameter choices in the paper before any
+unconditional M-complete skew claim.
+
+Two source-facing endpoints target 1,503 (CI pending).
+The remaining structural obligations are directional
+UNIQUENESS, new projected vertices at all eligible
+levels, global skew ordering and complete-height
+boundary conditions, then the final ambient f'.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
