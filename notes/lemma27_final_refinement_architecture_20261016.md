@@ -538,3 +538,51 @@ obligations are SAME-DIRECTION UNIQUENESS, the skew
 level/length clauses and full last-level branching
 classification, before constructing final f' and
 the span-containment statement of Lemma 27.
+
+
+## Nineteenth pass (17 October): all low-rank final-support nodes branch in every direction
+
+The proposed `ForwardQFinalAllDirectionExistence` (CI pending)
+combines the actual retained-root full-direction theorem
+with the projected-root geometry. At a selected P_i(z),
+the checked final rank is height_T(frontier_i)+localRank_i(z).
+When this final height plus one is below M=m+q, the
+corrected frontier height band {m,m+1} gives exactly
+the local height inequalities already established in
+`ForwardQFinalProjectedFullDirections`. Therefore each
+selected new vertex receives a genuine IMMEDIATE edge
+in every requested ambient direction in the entire
+filtered final support. Retained vertices are handled
+by `ForwardQFinalRetainedUnconditional`.
+
+Consequently, for ANY s in T'_(m+q) with final rank
+r and r+1<m+q, all branchWitnesses lists are nonempty.
+This is the EXISTENCE half of global b-branching.
+The at-most-one-per-direction theorem is still needed;
+it will likely follow from ambient meet-closure of T'_M
+or equivalent predecessor/branch splitting geometry.
+Global skew order and full last-level leaf verification
+are also open.
+
+
+## Twentieth pass (17 October): converses for retained immediate children
+
+The proposed `ForwardQFinalRetainedChildConverse`
+(CI pending) proves:
+1. every immediate final support edge between retained
+   vertices was immediate in original complete T;
+2. if a retained s has immediate selected projected
+   child P_i(z), its actual frontier_i was immediate
+   above s in T and its local z has rank zero;
+3. any rank-zero vertex of a genuine q-complete
+   coordinate support equals its unique localRoot.
+
+So all final immediate children from retained parents
+are either old ambient T immediate children still
+retained, or the UNIQUE root projection replacing a
+cut-crossing ambient T immediate child. The remaining
+retained-vertex at-most-one-direction statement should
+follow from uniqueness of that original T successor
+per direction, with the selected projection replacing
+an outside child. The projected-parent uniqueness
+case will be treated separately.

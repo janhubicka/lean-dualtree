@@ -1085,6 +1085,63 @@ Still open: uniqueness of directional immediate successors,
 the complete-skew rank/length ordering, complete terminal
 height, and final f'/Q-span/Ramsey construction.
 
+### Full directional EXISTENCE throughout the exact final support (CI pending)
+
+The proposed `ForwardQFinalAllDirectionExistence` now
+combines the retained-vertex theorem with the selected
+projected-root theorem. For an M-budget-selected local
+root P_i(z), the exact intrinsic-final-rank formula
+and the two possible frontier ranks (m or m+1) convert
+the condition `height_(T'_M)(P_i(z))+1<M=m+q`
+to exactly the local-support inequalities already
+required by the checked projected full-direction lemmas.
+For a retained root the previously checked actual
+cut/frontier and local-dimension capacity arguments
+apply without added assumptions.
+
+Hence for EVERY vertex s of the true filtered T'_(m+q),
+if its ACTUAL final intrinsic rank r satisfies r+1<M,
+and for EVERY dir : Fin b, there exists a genuine
+IMMEDIATE T'_M support successor t in that exact
+ambient direction. Every branchWitnesses list is
+therefore nonempty. These statements do not assert
+uniqueness, and do not silently identify ambient
+edges with one-letter edges.
+
+Three new curated endpoints target 1,513 (CI pending).
+The remaining structural theorem must prove there is
+AT MOST ONE witness in each direction, then verify the
+global skew order/length axioms and last-level leaf
+condition. The ambient f' word, Q-span containment,
+reverse auxiliary-order text and Ramsey recursion
+remain separate work.
+
+### Converse classification of immediate children of retained vertices (CI pending)
+
+The forward Lemma 27 construction already gives immediate
+children in every required direction. To prove uniqueness,
+we must show that EVERY possible immediate final-support
+child arises from those constructions.
+
+The proposed `ForwardQFinalRetainedChildConverse`
+proves three inverse facts. First, any immediate T'_M
+edge whose endpoints are both retained was already
+immediate in the original ambient complete support T:
+an intermediate T vertex would survive the initial cut.
+Second, if an immediate final child of retained s
+is a selected projection P_i(z), the exact rank
+equations force frontier_i to be an immediate T child
+of s and the LOCAL intrinsic height of z to be zero.
+Third, a q-complete local support has a unique
+rank-zero root, so z is precisely the previously
+constructed `localRoot c f i`.
+
+This reduces uniqueness at a retained vertex to the
+known unique directional successor in T. Three new
+source-facing endpoints target 1,516 (CI pending).
+Uniqueness for projected parents and global skew
+order/length clauses remain open.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
