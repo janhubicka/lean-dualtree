@@ -448,3 +448,25 @@ classification in the retained/new proof. The next step
 is the sorted-frontier index lookup for every crossing
 ambient immediate edge and selecting z_i at rank m or m+1.
 Global M-complete skewness and final f' remain open.
+
+
+## Nineteenth pass: remove the sorted-frontier-index premise
+
+`ForwardQFinalRetainedCrossing` (CI pending) proves that
+an immediate ambient T-edge crossing from retained s
+to an outside-cut t lands at an ACTUAL sorted frontier
+index i, with t=frontierAt(i). No arbitrary index or
+relabeling of coordinate words is required. Under the
+natural early-retained bound height_T(s)+1<M=m+q,
+the q-complete component's genuine local root z_i is
+selected. In the upper rank-(m+1) case, the bound
+forces q>=2; in the lower rank-m case all local
+roots survive. The rank-gap gluing lemma therefore
+supplies an immediate T'_M edge s→P_i(z_i)
+in the original requested ambient direction.
+
+The retained-vertex full-direction EXISTENCE theorem
+now reduces to taking the actual directional immediate
+T-successor and splitting on whether it is retained.
+Full uniqueness, global skew order and the final f'
+construction are still open.
