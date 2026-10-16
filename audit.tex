@@ -8949,6 +8949,33 @@ remaining global complete-skew axioms are independent
 obligations.
 
 
+\paragraph{Deriving the ambient capacity bound from the mixed Ramsey word.} \todo
+The retained-direction proof was initially formulated with
+the explicit numerical assumption \(M=m_0+q\le k\).
+The proposed \lean{ForwardQFinalMixedCapacity} shows
+this is forced whenever the genuine \(q\)-complete
+mixed-variable word has at least one coordinate:
+its local component support lies in
+\(b^{<k-(m_0+1)}\).
+For any duplicate-free finite support \(S\) and ambient word
+\(z\), proper \(S\)-predecessors of \(z\) have distinct
+word lengths in \(\{0,\dots,|z|-1\}\), so
+\(h_S(z)\le|z|\). A \(q\)-complete component has a terminal
+node \(z\) of local rank \(q-1\); its bounded height gives
+\[
+ q=h_S(z)+1\le |z|+1\le k-(m_0+1),
+ \qquad\text{hence }m_0+q\le k.
+\]
+Three proposed kernel-audited lemmas (17 October,
+CI pending). If the sorted frontier family is empty, no
+component supplies this inequality: the use of the bound
+must be conditional on the existence of an actual
+frontier coordinate or derive one from the requested
+nontrivial ambient branching. Neither the full
+complete-skew property nor the original paper's
+parameter conversions are silently assumed.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

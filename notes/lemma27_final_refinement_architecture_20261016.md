@@ -494,3 +494,25 @@ in a given direction, ideally via meet-closure of T'_M
 The numerical capacity M<=k must be justified from the
 actual local q-complete word's ambient tail height before
 the manuscript uses this result without assumptions.
+
+
+## Seventeenth pass (17 October): actual q-complete input bounds the final height
+
+`ForwardQFinalMixedCapacity` (CI pending) derives the previously
+explicit m+q<=k capacity assumption from every ACTUAL mixed
+coordinate. A q-complete component has a terminal local
+root of rank q-1. The number of distinct strict support
+prefixes of any ambient word is at most its ambient length:
+their lengths are distinct and smaller than |z|. Since local
+variable roots live in bounded tails of height k-(m+1),
+the terminal's intrinsic level forces q<=k-(m+1)
+and thus m+q<=k.
+
+The coordinate premise cannot be dropped for an empty
+mixed product, where vector-completeness is vacuous.
+Discharging the retained-direction capacity in the global
+statement requires either a real sorted frontier index
+or an outgoing-branch witness that yields such an index.
+Afterwards the two completeness difficulties are
+uniqueness of same-direction immediate successors
+and the global skew order/length clauses.
