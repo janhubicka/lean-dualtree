@@ -599,6 +599,34 @@ obligation; `\todo` marks a remaining gap or proposed change.
   statement covering all l. Nine new endpoints target 1,380;
   the reverse-order paper model and Hall/Ramsey induction remain open.
 
+### Lemma 27 final-refinement architecture (16 October; CI pending)
+
+The original printed proof first applies Q to ordinary mixed-product ELEMENTS;
+only AFTER the mixed Ramsey step does it construct an ambient variable word f'
+whose new variable roots are the projected roots P_i(z) of the selected local
+component words f_i. All these new roots belong to the larger COMPLETE ambient
+support T, not to the l old source-interior variables in Q(w). Consequently
+injecting every independently tagged local variable into the old l roots via a
+Hall matching is generally too strong and is **not necessary for the initial
+constant-input Q construction** (see the existing verified
+`ForwardQAmbientFibreSpan`). The existing conditional Hall theorems remain
+valid and useful as separate combinatorial infrastructure, but must NOT be
+treated as a hidden Lemma 27 hypothesis.
+
+The new `ForwardQFinalRefinementRoots` module proves, subject to pending CI,
+that projections of tagged local addresses are globally injective across
+ALL D0/D2 frontier cones, that local prefixes are preserved, and that projected
+local variable roots form a finite subset of T disjoint from all original
+source roots. This is the first stage of reconstructing the paper's actual
+T' and f', rather than artificially matching all local variables to the
+fixed old source roots. Eleven source-facing endpoints, target **1,391**.
+
+See `notes/lemma27_final_refinement_architecture_20261016.md`. The next
+mathematical steps are COMPLETE-SKEW T' gluing, root-legal construction of f'
+on original f-fibres, explicit syntactic f' <= f, and the required inclusion
+`[S,f'] subset Q(span(f_i))`, followed by starred-domain correction and
+Ramsey iteration. These remain OPEN.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
