@@ -18,7 +18,7 @@ import DualTree.ForwardQMixedSpanEvaluation
 import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
-import DualTree.ForwardQModelDirectionalIso
+import DualTree.ForwardQModelSuccessor
 
 import DualTree.ForwardCanonicalPartialWalkUniqueness
 

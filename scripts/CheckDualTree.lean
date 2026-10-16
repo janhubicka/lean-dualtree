@@ -1591,3 +1591,11 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.ForwardCanonicalPartialWalkUniqueness.unique_on_definition24Boundary
 #print axioms DualTree.ForwardCanonicalPartialWalkUniqueness.unique_definition24_boundary_eq_support_walk
+
+#print axioms DualTree.ForwardQModelSuccessor.modelChild
+#print axioms DualTree.ForwardQModelSuccessor.modelChild_address
+#print axioms DualTree.ForwardQModelSuccessor.modelQ_child_prefix_iff
+#print axioms DualTree.ForwardQModelSuccessor.modelQ_child_first_direction
+#print axioms DualTree.ForwardQModelSuccessor.modelQ_parent_strict_child
+#print axioms DualTree.ForwardQModelSuccessor.modelQ_child_immediate
+#print axioms DualTree.ForwardQModelSuccessor.modelQ_next_eq_modelChild

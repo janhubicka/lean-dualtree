@@ -526,6 +526,16 @@ obligation; `\todo` marks a remaining gap or proposed change.
   imports following documentation or commands. Endpoint counts are
   not theorem-completion percentages.
 
+- **Actual Q local successor (draft for CI):** identify every immediate
+  first-l homogeneous model child as an interior-or-boundary model point,
+  then prove its realization is the finite-support immediate successor
+  in the corresponding outgoing direction of the corrected Q tree.
+  This would establish the actual support-walk local recursion without
+  confusing ambient adjacency with support adjacency. The new module
+  has seven registered endpoints (target 1,346), subject to the Lean
+  build and transitive axiom audit. The original arbitrary-U selector
+  and reverse-order starred domain remain independent.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
