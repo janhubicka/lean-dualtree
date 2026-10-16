@@ -1036,6 +1036,30 @@ UNIQUENESS, new projected vertices at all eligible
 levels, global skew ordering and complete-height
 boundary conditions, then the final ambient f'.
 
+### Mixed component completeness forces the needed ambient height budget (CI pending)
+
+The proposed `ForwardQFinalMixedCapacity` derives an important
+numerical parameter bound instead of postulating it. For every
+genuine coordinate i of a q-complete mixed-variable word f
+whose roots are BOUNDED at local height h=k-(m+1), we have
+`q≤h`, and therefore `m+q≤k`. A terminal local
+support root has intrinsic height q-1, and a duplicate-free
+support cannot have more proper support prefixes of a word
+than its actual word length. Its bounded local word length
+is <h, forcing the claimed inequality.
+
+The coordinate-index premise is significant: if the mixed
+product has no coordinates, `vectorCompleteB` is vacuous
+and cannot imply a bound on q. In the final branching
+application a real frontier index or an occupied outgoing
+direction must provide the needed coordinate. Three
+source-facing endpoints target 1,506 (CI pending).
+
+This closes the numerical capacity used by the preceding
+retained-direction existence proof whenever a genuine
+coordinate is available. Full M-complete skewness still
+requires uniqueness and the global ordering clauses.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

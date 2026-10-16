@@ -1781,3 +1781,7 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.ForwardQFinalRetainedFullDirections.retained_has_final_immediate_in_direction
 #print axioms DualTree.ForwardQFinalRetainedFullDirections.retained_branchWitnesses_nonempty
+
+#print axioms DualTree.ForwardQFinalMixedCapacity.heightAt_le_word_length
+#print axioms DualTree.ForwardQFinalMixedCapacity.local_dimension_le_common_tail_height
+#print axioms DualTree.ForwardQFinalMixedCapacity.local_dimension_implies_ambient_capacity
