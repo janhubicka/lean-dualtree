@@ -140,6 +140,8 @@ theorem local_dimension_implies_ambient_capacity
     (i : Index c) :
     m+q ≤ k := by
   have h := local_dimension_le_common_tail_height c f i
+  have hearly : m + 1 < k := by
+    simpa only [c.hm] using c.hearly
   omega
 
 end DualTree.ForwardQFinalMixedCapacity
