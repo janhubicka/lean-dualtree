@@ -1,16 +1,40 @@
 # lean-dualtree
 
-**Current verified status (15 October 2026).** The main branch through
-PR #302 has 1,322 registered transitive axiom-audit endpoints after removing four obsolete placeholder endpoints (previously 1,326), full
-model-to-genuine-Q prefix isomorphism for the corrected forward source,
-and conditional smooth-colouring transfer. The final theorem, printed
-reverse-order W_* compatibility, arbitrary-U Definition 24 canonical
-selector, and full mixed-word/Hall/Ramsey induction remain open.
+**Current verified status (16 October 2026; main through PR #314).**
+The full Lean build, finite regression suite, static source audit, and
+curated transitive-axiom audit pass. The latter checks **1,380 distinct
+selected endpoints** without `sorryAx`; it is not a count of every
+public declaration or a theorem-completion percentage.
+
+The corrected forward-`Q` construction now has a fully labelled
+first-`l` model-to-support isomorphism (including prefix order and
+all outgoing directions). Its model children are the true *finite-support*
+immediate successors, even when ambient edges are stretched. The entire
+model realization is the canonical rooted support walk; at the genuine
+`A_l` boundary it gives exactly the selected projected `D₂` terminal.
+The intrinsic root and canonical boundary walk are formalized for all
+semi-complete starred supports, including the special
+`A₀ = {empty address}` case.
+
+For this explicitly constructed intrinsic selector, full-ambient
+simple-colouring hypotheses yield a smooth corrected-`Q` pullback
+and a TOTAL smooth extension. For a proposed published Definition 24
+selector `I_U`, it is sufficient to verify its root and unique
+directional-successor laws **on actual `Q` images**; the rest follows
+by verified finite boundary rigidity.
+
+**Open proof obligations:** the printed semi-complete `I_U` convention
+and its reverse-order `W_*` starred-domain correspondence still
+require manuscript-level repair; the full occurrence-sensitive
+mixed-word span/Hall realization, final refinement, Ramsey induction,
+and the full dual-tree theorem remain unproved. These are substantial
+mathematical obligations, not merely Lean elaboration issues.
+
 Historical milestones below are cumulative: phrases such as
-"CI pending" record status *at the time of the note*, not current CI.
-The [adversarial library audit](notes/adversarial_library_audit_20261015.md)
-and `scripts/audit-lean-library.py` document trust coverage, obsolete-code
-candidates, and the import-graph cleanup.
+"CI pending" refer to the status *when the note was written*, not
+the current main branch. The [adversarial library audit](notes/adversarial_library_audit_20261015.md)
+and `scripts/audit-lean-library.py` document trust coverage,
+obsolete-code candidates, and the import-graph cleanup.
 
 Lean 4 verification and adversarial audit of Todorcevic--Tyros,
 *A Dual Ramsey Theorem for Trees* (arXiv:2207.14599v1).
