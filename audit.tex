@@ -8519,6 +8519,39 @@ level comparisons at arbitrary frontier order, and
 retained/new interface; no such conclusion is implicit here.
 
 
+\paragraph{The printed final \(T'\) uses a target-height-dependent rank filter.} \todo
+The formula in the printed Lemma~27 (p.~29) is
+\[
+ T'=\{t\in T:t\preccurlyeq t_0\}\ \cup\
+ \bigcup_i \{P_i(z):z\in\mathrm{ws}(f_i),\
+   h_{\mathrm{ws}(f_i)}(z)+h_T(t_i)<M\},
+\]
+where \(M\) is the final desired height. This is
+\emph{not} the Frame parameter \(m_0=h_T(t_0)\).
+The previously constructed
+\lean{ForwardQFinalSupportCut.candidateSupport} omits the
+inequality and is therefore a useful \emph{upper envelope}
+but not the exact set stated in the paper.
+In particular, truncation varies with the intrinsic rank
+of the selected frontier \(t_i\).
+
+The new proposed \lean{ForwardQFinalHeightBudget}
+implements precisely this target-rank filter on the
+ACTUAL post-Ramsey coordinate support roots, projects only
+the selected tags, and combines them with the retained
+inclusive initial cut. It proves the filtered support is
+contained in the unfiltered candidate, hence in \(T\);
+the original cut and source-variable roots are retained;
+new and retained roots are disjoint; every new root
+has a witness satisfying the printed inequality;
+and the result is monotone in \(M\).
+Fifteen source-facing endpoints (16 October, CI pending).
+These set-level facts are \emph{not} a proof of
+\(M\)-completeness or of the correct intrinsic level/rank
+function on \(T'\). The next adversarial task is
+to validate complete branching and the length/order
+clauses using this EXACT filtered support.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

@@ -158,3 +158,28 @@ sorted ambient frontier cones. It does NOT yet prove the
 assembled T' is complete skew, since that requires identifying
 its OWN intrinsic ranks and connecting its retained initial
 cut with the projected supports.
+
+
+## Essential source-text correction: final height rank budget
+
+The exact printed formula on p.29 selects only local roots z satisfying
+
+    h_ws(f_i)(z) + h_T(frontier_i) < M,
+
+with M the final desired complete-skew height (NOT the Frame
+parameter m = h_T(t0), which is the source cut rank m0).
+The unfiltered Candidate support formalized in
+`ForwardQFinalSupportCut` is an upper envelope, not exact T'.
+
+The proposed `ForwardQFinalHeightBudget` adds:
+  * `FitsTargetHeight c f M (i,z)`;
+  * `selectedLocalRoots c f M`, a filtered subset of the
+    genuinely occurring coordinate support root tags;
+  * `selectedProjectedRoots c f M`, the corresponding P_i images;
+  * `finalBudgetSupport c f M = retained(c) ∪ selectedProjectedRoots`.
+
+Selected roots satisfy the printed rank criterion by construction,
+are still disjoint from the retained old roots, and all lie in T.
+Changing M monotonically enlarges the selected support. The
+complete-skew proof must use this precise filtered set, not the
+unfiltered old candidate. Full CI and axiom validation are pending.
