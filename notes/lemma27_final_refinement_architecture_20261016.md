@@ -222,3 +222,21 @@ Those should correspond, via strict local prefix reflection
 and the hereditary M-budget filter, to the proper predecessors
 of z in the local component support. This bijection/cardinality
 step is still open, as is M-complete skewness.
+
+
+## Seventh pass: no extraneous new projected predecessors
+
+The proposed `ForwardQFinalSelectedPredecessors` (CI pending)
+makes the new predecessor set EXACT. Different frontier
+cones are prefix-incomparable, so any projected root
+strictly preceding P_i(z) is P_i(w) with w a strict local
+prefix of z, in that very same i-th coordinate. Once
+z is selected under the exact target-height bound M,
+the downward-closure theorem automatically selects
+every such local support predecessor w.
+
+Together with `ForwardQFinalRetainedRanks` this reduces
+the full intrinsic height equality for projected nodes
+to cardinality preservation of the injective projected
+local prefix set. Four selected Lean proof endpoints are
+registered, pending CI.

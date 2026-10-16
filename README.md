@@ -736,6 +736,26 @@ The latter still requires a disjoint predecessor decomposition,
 the cardinality of projected local strict predecessors, the
 branching axioms, and the final variable word f'.
 
+### Exact classification of selected new projected predecessors (16 October; CI pending)
+
+The proposed `ForwardQFinalSelectedPredecessors` proves
+that a selected projected vertex can lie strictly below
+P_i(z) only if it comes from the SAME sorted outside-cut
+frontier i. Its projected strict prefix relation reflects
+to a strict local support prefix w of z. If z itself
+passes the target-height M filter, then the hereditary
+budget theorem shows that w is selected automatically.
+Thus selected new strict predecessors of P_i(z) are
+**exactly the projections of proper local variable-support
+predecessors of z**, without an independent Hall matching.
+Four new source-facing endpoints target 1,448 (CI pending).
+
+The final arithmetic step is to count this set via
+injectivity of the canonical projection, combine it
+with the already checked retained count h_T(frontier_i),
+and conclude the intrinsic rank identity. No complete
+skewness or final f' has been claimed.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
