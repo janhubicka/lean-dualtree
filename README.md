@@ -501,6 +501,31 @@ obligation; `\todo` marks a remaining gap or proposed change.
   W_* transport, Hall/span and Ramsey iteration remain open.
   See `DualTree/ForwardQPaperSelectorReduction.lean`.
 
+- **Rigidity of the partial Definition 24 canonical walk (six endpoints, CI pending):**
+  explicitly separate A_0={[]} from the positive-l external-child
+  boundary. Prove that every nonroot first-l interior or
+  boundary address has an interior parent, and that two maps
+  with the same root and unique-successor step law at these
+  parents agree throughout the entire first-l model. The
+  genuine support walk is thus the UNIQUE possible local
+  canonical map once those two easily testable premises
+  are established. This is the next Q-local paper-selector
+  proof target; it is not yet discharged.
+  See `DualTree/ForwardCanonicalPartialWalkUniqueness.lean`.
+
+
+- **Complete Definition 24 boundary rigidity (CI pending):**
+  the positive-l interior/external-boundary uniqueness argument also
+  covers the exceptional A0 singleton root case; a direct support-walk
+  corollary is proved. Two further source-facing endpoints bring the
+  branch to 1,339 audited declarations. The published selector's Q-local
+  root/step laws, word span/Hall and Ramsey steps remain open.
+
+- **Independent proof coverage safeguards:** the source audit rejects
+  repeated or foreign transitive-axiom target names, and disallows Lean
+  imports following documentation or commands. Endpoint counts are
+  not theorem-completion percentages.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
