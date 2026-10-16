@@ -97,8 +97,7 @@ theorem retained_strictPrefix_projected_iff
     have hbefore : ForwardAux s c.cut :=
       (Finset.mem_filter.mp hs).2
     have hpBefore : ForwardAux (projected c u).1 c.cut := by
-      rw [← heq]
-      exact hbefore
+      simpa only [heq] using hbefore
     exact (projected_outside_cut c u) hpBefore
 
 /-- Every strict T predecessor of a corrected outside-cut
@@ -202,8 +201,8 @@ theorem selected_projected_predecessor_of_local_prefix
   have hp :
       IsPrefix (projected c ⟨i,w⟩).1
         (projected c ⟨i,z⟩).1 :=
-    ForwardQFinalProjectionOrder.projected_same_frontier_prefix_iff
-      c i w z |>.2 hwz.1
+    (ForwardQFinalProjectionOrder.projected_same_frontier_prefix_iff
+      c i w z).2 hwz.1
   refine ⟨hp, ?_⟩
   intro heq
   have hw_eq_z : w = z :=
