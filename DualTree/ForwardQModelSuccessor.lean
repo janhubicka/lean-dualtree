@@ -238,7 +238,11 @@ theorem modelQ_next_eq_modelChild
       have hmodel' : IsPrefix (modelAddress (modelChild c p i))
           (modelAddress v) := by
         simpa only [modelChild_address] using hmodel
-      simpa only [hv] using h hmodel'
+      have hq : IsPrefix (e (modelChild c p i)).1 (e v).1 :=
+        h hmodel'
+      change IsPrefix t (e v).1 at hq
+      rw [hv] at hq
+      exact hq
     by_contra hne
     have hno :=
       ((SkewBranchGeometry.immediateSuccB_iff T s u).1 huimm).2.2
