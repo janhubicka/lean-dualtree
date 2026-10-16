@@ -163,8 +163,12 @@ theorem selectedLocalRoots_prefix_closed_in_coordinate
     SupportHeightRanks.heightAt_lt_of_strictPrefix
       S hwSupport hwz
   have hwBudget : FitsTargetHeight c f M ⟨i,w⟩ := by
-    unfold FitsTargetHeight at *
-    dsimp at *
+    change SkewTree.heightAt
+      (f.vector.components i).toVariableWord.supportNodes w.1 <
+      SkewTree.heightAt
+        (f.vector.components i).toVariableWord.supportNodes z.1 at hlt
+    unfold FitsTargetHeight at hzBudget ⊢
+    dsimp only at hzBudget ⊢
     omega
   have hwTagged :
       (⟨i,w⟩ : LocalAddress c) ∈ taggedLocalRoots c f := by
