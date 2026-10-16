@@ -183,3 +183,22 @@ are still disjoint from the retained old roots, and all lie in T.
 Changing M monotonically enlarges the selected support. The
 complete-skew proof must use this precise filtered set, not the
 unfiltered old candidate. Full CI and axiom validation are pending.
+
+
+## Fifth pass: predecessor geometry for intrinsic rank
+
+The exact final budgeted support includes retained T-prefix roots
+and only local projected roots satisfying the target-height
+filter. The proposed `ForwardQFinalBudgetPredecessors` formalizes
+the fact that an old retained root precedes P_i(z) exactly
+when it precedes the minimal outside-cut frontier t_i;
+the predecessor contribution is independent of local z.
+Minimal frontier predecessors of T all lie in Retained.
+The filter on new roots is downward closed *within the
+actual local variable support* and projection preserves
+strict local prefixes. Five new audited endpoints, CI pending.
+
+The missing next theorem must COUNT these two disjoint
+predecessor families, giving the desired intrinsic rank
+height_(T'_M)(P_i(z)) = height_T(t_i)+height_(ws(f_i))(z).
+No completeness or global f' claim is being made until then.

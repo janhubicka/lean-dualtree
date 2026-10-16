@@ -8552,6 +8552,33 @@ function on \(T'\). The next adversarial task is
 to validate complete branching and the length/order
 clauses using this EXACT filtered support.
 
+\paragraph{Separating old and new predecessors in the exact final support.} \todo
+To calculate the intrinsic rank in
+\(T'_M=T_{\le t_0}\cup\{P_i(z): h_i(z)+h_T(t_i)<M\}\),
+the initial observations needed are that
+\[
+ s\in T_{\le t_0}\ \Longrightarrow\
+  [s\sqsubseteq P_i(z)\ \Longleftrightarrow\
+  s\sqsubseteq t_i],
+\]
+and every strict \(T\)-predecessor of a minimal outside-cut
+frontier \(t_i\) belongs to the retained initial portion.
+The first equivalence uses minimality of \(t_i\) and monotonicity
+of the corrected inclusive cut, not equality of ambient and
+intrinsic heights.
+Furthermore, the rank cutoff is hereditary under strict
+local variable-support prefixes: if
+\(z\in\mathrm{ws}(f_i)\) passes the bound and
+\(w\in\mathrm{ws}(f_i)\) is a strict prefix of \(z\), then
+\(w\) also passes, and \(P_i(w)\sqsubset P_i(z)\).
+The proposed \lean{ForwardQFinalBudgetPredecessors}
+checks these five source-facing statements (16 October,
+CI pending). The resulting full predecessor-set partition
+and cardinality identity
+\(h_{T'_M}(P_i(z))=h_T(t_i)+h_i(z)\) must be proved
+separately, before claiming \(M\)-completeness.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

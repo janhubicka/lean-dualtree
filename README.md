@@ -698,6 +698,24 @@ CI pending). This fixes the SET, not its full complete-skew
 structure. Intrinsic ranks in the assembled support, its
 complete branching and the actual f' word remain open.
 
+### First intrinsic-rank predecessor reductions (16 October; CI pending)
+
+`ForwardQFinalBudgetPredecessors` begins the actual `heightAt`
+calculation for the EXACT M-filtered final support. It proves that a
+retained old ambient-support vertex prefixes a new projected
+P_i(z) iff it prefixes the frontier t_i, so the old predecessor
+contribution depends only on the frontier, not the local address.
+Every strict T predecessor of t_i is retained. The selected-local-root
+budget is hereditary under strict prefixes inside each component
+support; those local prefixes stay strict after projection.
+Five checked endpoints are proposed (target 1,435), pending Lean CI.
+
+This is a necessary geometric predecessor decomposition, NOT yet a
+formula equating final-support intrinsic height with
+h_T(t_i)+h_ws(f_i)(z). The predecessor-set cardinality/counting
+lemma, all complete-skew axioms and the global final f' variable
+word remain separate outstanding obligations.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
