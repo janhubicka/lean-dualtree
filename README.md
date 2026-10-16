@@ -981,6 +981,34 @@ enumeration and checking selection of its local root
 under the two rank cases. The complete-skew length
 order and final variable word f' remain open.
 
+### Crossing retained T-edges now yield selected projected successors (CI pending)
+
+`ForwardQFinalRetainedCrossing` eliminates the artificial
+preselected-frontier-index hypothesis. Every immediate
+ambient T-edge s→t crossing from a retained s beyond the
+inclusive cut has t itself as a genuine member of the
+forward-SORTED frontier list. If s has room for another
+level in the final target M=m+q, the authentic local
+coordinate root z_i is selected above that frontier.
+
+At rank-m frontiers all local roots are selected. At
+rank-(m+1) frontiers, the immediate ambient T-rank
+increase and the available final height force q≥2,
+so the local height-zero root passes the shorter cutoff.
+
+The previously checked one-rank-gap gluing theorem now
+makes s→P_i(z_i) an actual immediate edge in the FULL
+T'_M in the same first ambient direction, without
+choosing the frontier index as a hypothesis.
+Three proposed source-facing endpoints target 1,501
+(CI pending).
+
+The next proof can case-split the original T directional
+successor of ANY early retained vertex into retained or
+outside-cut branches. Uniqueness of every full-support
+directional successor and the global skew-order clauses
+remain open, as does the final f' word.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

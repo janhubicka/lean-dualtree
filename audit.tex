@@ -8894,6 +8894,33 @@ local root under the two frontier rank budgets.
 Full M-completeness and the final \(f'\) are not yet proved.
 
 
+\paragraph{Selecting the replacement projected root without a frontier-index assumption.} \todo
+Let \(s\in T_{\le t_0}\) be retained, and let
+\(s\to t\) be a genuine immediate ambient \(T\)-edge
+whose endpoint lies outside the inclusive cut.
+The previously checked frontier-minimality lemma
+makes \(t\) a member of the actual sorted outside-cut
+frontier list. The finite membership/get equivalence
+supplies an explicit coordinate index \(i\) with
+\(t=t_i\).
+Assume \(h_T(s)+1<M=m_0+q\), so the retained parent
+still requires a successor. If \(h_T(t_i)=m_0\),
+the true local support root \(z_i\) is selected.
+If \(h_T(t_i)=m_0+1\), immediate rank increase gives
+\(h_T(s)+1=m_0+1\), hence \(q\ge2\) by the strict
+height hypothesis. The local height-zero root again
+passes the upper-frontier target selection.
+The proposed \lean{ForwardQFinalRetainedCrossing}
+combines this with the one-rank-gap gluing result:
+the original crossing edge \(s\to t_i\) is replaced
+by an immediate \(T'_M\)-edge
+\(s\to P_i(z_i)\) in exactly the same ambient direction,
+with no index choice remaining in the statement.
+Three selected Lean endpoints (16 October, CI pending).
+What remains is the old-vertex branching case distinction,
+then uniqueness and skew-order verification.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
