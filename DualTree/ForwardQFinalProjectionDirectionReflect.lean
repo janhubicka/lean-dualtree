@@ -63,7 +63,7 @@ theorem projected_childCone_iff
     obtain ⟨tail,htail⟩ := hlocal
     cases tail with
     | nil =>
-        have hEq : z = w := Subtype.ext (by simpa using htail)
+        have hEq : z = w := Subtype.ext (by simpa using htail.symm)
         subst w
         have hlen := prefix_length_le hcone
         simp only [List.length_append,List.length_singleton] at hlen
