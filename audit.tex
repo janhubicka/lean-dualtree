@@ -9072,6 +9072,36 @@ same-direction uniqueness corollary and the
 projected-parent converse are separate next steps.
 
 
+\paragraph{Converse classification of immediate children of projected final support vertices.} \todo
+Let \(P_i(z)\) be an \(M\)-selected projected local root
+in the EXACT final support \(T'_M\), and suppose
+\(P_i(z)\to t\) is any immediate support edge.
+The child \(t\) cannot be retained because \(P_i(z)\)
+is beyond the inclusive cut. It also cannot belong
+to any other frontier \(j\ne i\), since different
+frontier cones are prefix-incomparable. Therefore
+\(t=P_i(w)\) for a selected root \(w\) of the
+SAME local coordinate support, and
+\(z\sqsubset w\).
+The immediate-edge rank gap
+\(h_{T'_M}(P_i(w))=h_{T'_M}(P_i(z))+1\)
+and the checked formula
+\(h_{T'_M}(P_i(u))=h_T(t_i)+h_i(u)\)
+for \(u=z,w\) imply
+\(h_i(w)=h_i(z)+1\).
+Strict local prefix and consecutive local ranks force
+\(z\to w\) to be an actual immediate local support edge.
+The proposed
+\lean{ForwardQFinalProjectedChildConverse}
+formalizes these two converse statements
+(two selected Lean endpoints; 17 October, CI pending).
+The next uniqueness proof must show that two distinct
+local immediate successors cannot project to the
+same first ambient direction; the corrected labelled
+canonical projection theorem supplies the key
+direction-preservation implication.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
