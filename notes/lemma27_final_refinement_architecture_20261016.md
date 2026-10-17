@@ -745,3 +745,23 @@ Five selected audit endpoints are proposed.
 Cross retained/projected, projected/projected
 length inequalities and special skew clause IV
 still need independent proofs.
+
+
+## Eighteenth pass: retained/projected rank comparison
+
+The proposed `ForwardQFinalCrossRankLength` (CI pending)
+uses retained T-rank <= m and projected T-frontier rank
+in {m,m+1} to prove ambient rank monotonicity across the
+retained/projected parts. The original T skew length
+axioms then yield |retained|<=|projected| whenever
+the lex condition has that orientation.
+
+For SELECTED new roots, their final support rank is
+never below any retained support rank. If old/new
+final ranks are strictly ordered, ambient T ranks and
+hence actual word lengths are strictly ordered.
+The potential equality case at rank m is resolved by
+the elementary observation that a positive local
+intrinsic rank forces a nonempty local source address.
+The reversed equal-rank lex orientation and all new/new
+cases still require the precise frontier lex geometry.

@@ -9268,6 +9268,29 @@ final ambient word \(f'\) and its \(Q\)-span containment
 remain open.
 
 
+\paragraph{Cross retained/projected rank and length comparisons.} \todo
+For every old retained \(s\) and actual projected
+\(P_i(z)\), the complete ambient T-ranks satisfy
+\(h_T(s)\le h_T(P_i(z))\). If
+\(s\le_{\rm lex}P_i(z)\), the original ambient T
+skew length axioms yield \(|s|\le |P_i(z)|\).
+In the exact filtered final support every selected
+projection has final intrinsic rank at least that of
+every retained vertex. A STRICT final-rank inequality
+\(h_{T'_M}(s)<h_{T'_M}(P_i(z))\)
+forces \(h_T(s)<h_T(P_i(z))\), hence
+\(|s|<|P_i(z)|\). The only delicate numerical case
+has frontier T-rank \(m\), old rank \(m\), and positive
+local rank; a positive local rank cannot occur
+at the empty address, so the projection increases
+the ambient T-rank strictly.
+The proposed \lean{ForwardQFinalCrossRankLength}
+has five audited endpoints (17 October, CI pending).
+This covers final skew clause III for old/new pairs
+and the forward-lex old/new orientation of clause II,
+not yet new/new or the reverse equal-rank orientation.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
