@@ -93,9 +93,8 @@ theorem retained_lex_projected_length_le
       (List.all_eq_true.mp hrow) t (projected c ⟨i,z⟩).2
     change FinLexLE s t at hlex
     change s.length ≤ t.length
-    have hor : ¬ FinLexLE s t ∨ s.length ≤ t.length := by
-      simpa only [heq] using hcell
-    exact hor.resolve_left hlex
+    simp [heq, hlex] at hcell
+    exact hcell
   · have hlt : SkewTree.heightAt c.T s <
         SkewTree.heightAt c.T t := by omega
     exact Nat.le_of_lt
