@@ -1,6 +1,9 @@
 name = "dualtree"
 version = "0.1.0"
-defaultTargets = ["DualTree"]
+
+# Interactive development builds only the stable front-end. The full proof
+# and counterexample suite remains a named target and is mandatory in CI.
+defaultTargets = ["DualTreeCore"]
 
 [[require]]
 name = "mathlib"
@@ -19,3 +22,6 @@ rev = "1d3a69015c21315c4a0161c3ce38889d4dd5d68a"
 
 [[lean_lib]]
 name = "DualTree"
+
+[[lean_lib]]
+name = "DualTreeCore"

@@ -54,8 +54,11 @@ jobs:
       - name: Download Mathlib cache
         run: lake exe cache get
 
-      - name: Build
+      - name: Build fast core default target
         run: lake build
+
+      - name: Build full dual-tree audit umbrella
+        run: lake build DualTree
 
       - name: Regress finite skew meet closure
         run: python3 scripts/check-skew-meet.py
