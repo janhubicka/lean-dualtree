@@ -9268,6 +9268,29 @@ final ambient word \(f'\) and its \(Q\)-span containment
 remain open.
 
 
+\paragraph{Same-frontier new/new strict skew length inequality.} \todo
+Let \(P_i(z),P_i(w)\) be two selected projected
+vertices attached to one fixed frontier \(i\).
+The exact intrinsic rank formula implies
+\[
+ h_{T'_M}(P_i(z))<h_{T'_M}(P_i(w))
+ \quad\Longleftrightarrow\quad
+ h_{\mathrm{ws}(f_i)}(z)<h_{\mathrm{ws}(f_i)}(w).
+\]
+The actual \(q\)-complete support of \(f_i\) satisfies
+the forward skew length clause (iii), so \(|z|<|w|\).
+Since
+\(h_T(P_i(u))=h_T(t_i)+|u|\),
+the ambient T-ranks of the two projections are strictly
+ordered. The original T skew clause (iii) therefore
+gives \(|P_i(z)|<|P_i(w)|\).
+The proposed \lean{ForwardQFinalSameFrontierLength}
+(two audited endpoints; 17 October, CI pending) establishes
+this exact case of final skew clause (iii).
+It does not address different frontiers, equal-rank pairs
+or the special branching witness.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

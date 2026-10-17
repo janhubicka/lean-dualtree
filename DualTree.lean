@@ -21,7 +21,7 @@ import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
 import DualTree.ForwardQFinalLeafBranchClause
 import DualTree.ForwardQFinalMeetClosure
-import DualTree.ForwardQFinalRetainedSkewLength
+import DualTree.ForwardQFinalSameFrontierLength
 
 
 /-!

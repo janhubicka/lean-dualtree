@@ -1310,6 +1310,23 @@ This is NOT global skewB: retained/projected and
 projected/projected pairs, plus skew witness clause (iv),
 remain open, as do f' and the Ramsey inclusion.
 
+### Strict final skew length comparison within one projected frontier (CI pending)
+
+For any two genuinely selected new roots P_i(z), P_i(w)
+from the SAME sorted frontier i, strict inequality of their
+FINAL T'_M intrinsic ranks reduces to strict inequality
+of their local q-complete support ranks.
+The local forward skew clause (iii) makes their raw tail
+lengths strictly ordered, hence the certified canonical
+projection makes their ambient T-ranks strictly ordered.
+The original T skew clause (iii) yields
+|P_i(z)| < |P_i(w)|.
+
+Two proposed source-facing endpoints (target 1,540)
+cover the same-frontier projected/projected case of
+final skew length clause III. Different frontier indices,
+equal final ranks and special skew witness IV are still open.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

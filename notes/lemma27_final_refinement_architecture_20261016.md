@@ -745,3 +745,19 @@ Five selected audit endpoints are proposed.
 Cross retained/projected, projected/projected
 length inequalities and special skew clause IV
 still need independent proofs.
+
+
+## Twentieth pass: same-frontier projected length clause III
+
+`ForwardQFinalSameFrontierLength` (CI pending) proves
+two key facts for any fixed coordinate support:
+strict local intrinsic ranks imply strictly
+increasing local raw lengths (by its actual q-complete
+forward skew axiom); and two selected projections
+from the same frontier with strictly increasing
+FINAL support ranks have strictly increasing actual
+ambient word lengths. The argument passes through
+the certified projection T-rank formula and the
+ambient T skew clause III. Different-frontier
+comparisons and all same-rank projected cases are
+still outstanding.
