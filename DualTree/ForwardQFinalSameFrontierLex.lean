@@ -178,17 +178,33 @@ theorem projected_same_frontier_equal_local_rank_length_le
       simp only [SkewTree.completeB, Bool.and_eq_true] at hcomp
       have hparts := hcomp.1
       simp only [SkewTree.skewB, Bool.and_eq_true] at hparts
-      have hcore := hparts.2
-      simp [hnon, Bool.and_eq_true] at hcore
-      have hII : SkewTree.condIIB L = true := hcore.1.1.2
+      have hII : SkewTree.condIIB L = true := by
+        rcases hparts.2 with hone | hrest
+        · exact (hnon hone).elim
+        · exact hrest.1.1.2
       have hrow := (List.all_eq_true.mp hII) z.1 hzNode
       have hcell := (List.all_eq_true.mp hrow) w.1 hwNode
-      simpa [hrank, hlocalLex] using hcell
+      have htrigger :
+          SkewTree.heightAt L z.1 = SkewTree.heightAt L w.1 ∧
+            FinLexLE z.1 w.1 := ⟨hrank, hlocalLex⟩
+      change
+        (if SkewTree.heightAt L z.1 = SkewTree.heightAt L w.1 ∧
+            FinLexLE z.1 w.1
+         then decide (z.1.length ≤ w.1.length)
+         else true) = true at hcell
+      simpa [htrigger] using hcell
   have hTrank :
       SkewTree.heightAt c.T (projected c ⟨i,z⟩).1 ≤
       SkewTree.heightAt c.T (projected c ⟨i,w⟩).1 := by
     rw [ForwardQFinalProjectionOrder.projected_height c ⟨i,z⟩,
       ForwardQFinalProjectionOrder.projected_height c ⟨i,w⟩]
+    change
+      SkewTree.heightAt c.T
+        (ForwardOrderedProjections.frontierAt c.T c.cut i).1 +
+        z.1.length ≤
+      SkewTree.heightAt c.T
+        (ForwardOrderedProjections.frontierAt c.T c.cut i).1 +
+        w.1.length
     omega
   exact ambient_length_le_of_rank_le_and_lex
     c (projected c ⟨i,z⟩) (projected c ⟨i,w⟩) hTrank hlex
