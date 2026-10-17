@@ -124,7 +124,7 @@ theorem projected_T_rank_lt_of_final_rank_lt
             c f i z hzSupp
         have hlen : z.1.length ≤ w.1.length :=
           ForwardQFinalVectorOrdering.local_lengths_le_of_equal_level
-            c f i j ri hriq z w hzNode hwNode rfl heq.symm
+            c f i j hij ri hriq z w hzNode hwNode rfl heq.symm
         rw [hi, hj]
         omega
   · rcases hjBand with hj | hj
