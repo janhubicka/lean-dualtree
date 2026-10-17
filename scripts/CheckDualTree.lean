@@ -1848,3 +1848,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalOldNewEqualRank.old_new_equal_final_rank_lex_old_first
 #print axioms DualTree.ForwardQFinalOldNewEqualRank.old_new_equal_final_rank_not_lex_new_first
 #print axioms DualTree.ForwardQFinalOldNewEqualRank.old_new_equal_final_rank_length_le
+#print axioms DualTree.ForwardQFinalFrontierRankOrder.index_lt_of_frontier_rank_lt
+#print axioms DualTree.ForwardQFinalFrontierRankOrder.rank_m_index_lt_rank_succ
+#print axioms DualTree.ForwardQFinalFrontierRankOrder.projected_length_lt_of_rank_m_to_succ_same_local_rank
