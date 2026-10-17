@@ -1333,6 +1333,31 @@ retained/new ranks and one orientation of equal-rank
 skew clause II; the other equal-rank lex direction,
 new/new comparisons, and skew witness IV remain OPEN.
 
+### Final skew length comparison: two more cases (17 October; CI pending)
+
+The two independent research modules
+`ForwardQFinalFrontierLex` and `ForwardQFinalSameFrontierLength`
+are consolidated on current main to avoid stacked public API
+conflicts. First, the genuine forward length-first cut geometry
+places every retained T-rank-m vertex lex before the cut and
+every rank-m outside-cut frontier lex after it. Equal-rank
+retained and frontier vertices are incomparable, hence the
+retained vertex is lex before ALL projected descendants of
+the rank-m frontier.
+
+Second, two SELECTED projected vertices in the SAME frontier
+with strictly ordered final intrinsic ranks have strictly
+ordered ambient lengths: the local q-complete skew clause III
+separates their raw tail lengths, the canonical projection
+separates their ambient T-ranks, and T's skew clause III
+separates their actual node lengths.
+
+Eight source-facing axiom endpoints bring the proposed
+curated audit to 1,551 (CI pending). This does not prove
+the mixed-frontier projected/projected length comparisons,
+the reverse mixed rank-m/rank-(m+1) lex orientation, special
+skew witness IV, global M-complete skew or final f'.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
