@@ -28,6 +28,7 @@ jobs:
           key: lake-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.toml') }}-${{ github.sha }}
           restore-keys: |
             lake-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.toml') }}-
+            lake-${{ runner.os }}-${{ runner.arch }}-
 
       - name: Install elan
         run: |
