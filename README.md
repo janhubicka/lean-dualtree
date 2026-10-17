@@ -1310,6 +1310,29 @@ This is NOT global skewB: retained/projected and
 projected/projected pairs, plus skew witness clause (iv),
 remain open, as do f' and the Ramsey inclusion.
 
+### Cross retained/projected intrinsic ranks and ambient lengths (CI pending)
+
+The proposed `ForwardQFinalCrossRankLength` derives three
+cross-class facts from the genuine corrected rank formulas.
+Every retained vertex has ambient T-rank at most that of
+any projected P_i(z). In particular, if retained s is
+forward-lex before P_i(z), then |s| <= |P_i(z)|
+by the original T skew length clauses.
+
+Within the actual FINAL support, every selected P_i(z)
+has intrinsic rank at least that of every retained s.
+If this inequality is strict, then the AMBIENT word
+length inequality is also strict: |s| < |P_i(z)|.
+The proof uses the exact frontier rank band {m,m+1},
+and observes that positive local support rank forces
+a nonempty local address even with stretched edges.
+
+Five selected source-facing endpoints target 1,543
+(CI pending). This handles the strictly increasing
+retained/new ranks and one orientation of equal-rank
+skew clause II; the other equal-rank lex direction,
+new/new comparisons, and skew witness IV remain OPEN.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
