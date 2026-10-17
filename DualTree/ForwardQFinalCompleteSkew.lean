@@ -34,6 +34,7 @@ variable word f', its span inclusion, or the Ramsey iteration.
 namespace DualTree.ForwardQFinalCompleteSkew
 
 open ForwardSourceQTree
+open ForwardQFinalRefinementRoots
 open ForwardQFinalHeightBudget
 
 /-- The exact rank-filtered final support is genuinely skew for
