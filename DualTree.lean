@@ -19,8 +19,7 @@ import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
-import DualTree.ForwardQFinalSkewIV
-import DualTree.ForwardQFinalSkewII
+import DualTree.ForwardQFinalCompleteSkew
 import DualTree.ForwardQFinalSameFrontierLength
 
 
