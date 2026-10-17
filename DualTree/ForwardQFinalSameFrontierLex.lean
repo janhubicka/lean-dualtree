@@ -179,7 +179,9 @@ theorem projected_same_frontier_equal_local_rank_length_le
       have hparts := hcomp.1
       simp only [SkewTree.skewB, Bool.and_eq_true] at hparts
       have hII : SkewTree.condIIB L = true := by
-        rcases hparts.2 with hone | hrest
+        have hcore := hparts.2
+        simp [Bool.and_eq_true] at hcore
+        rcases hcore with hone | hrest
         · exact (hnon hone).elim
         · exact hrest.1.1.2
       have hrow := (List.all_eq_true.mp hII) z.1 hzNode
