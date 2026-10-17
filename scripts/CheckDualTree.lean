@@ -1870,3 +1870,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalSkewII.finalBudgetSupport_condIIB
 #print axioms DualTree.ForwardAuxFiniteMaximum.exists_maximal
 #print axioms DualTree.ForwardQFinalSkewIV.finalBudgetSupport_condIVB
+#print axioms DualTree.RootCompatibleRefinement.refine_span_subset
+#print axioms DualTree.RootCompatibleRefinement.refine_support_eq
+#print axioms DualTree.RootCompatibleRefinement.collapse_span_subset
