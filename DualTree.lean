@@ -22,7 +22,7 @@ import DualTree.ForwardSemiCompleteZeroRoot
 import DualTree.ForwardQFinalLeafBranchClause
 import DualTree.ForwardQFinalMeetClosure
 import DualTree.ForwardQFinalOldNewEqualRank
-import DualTree.ForwardQFinalProjectedStrictSkew
+import DualTree.ForwardQFinalSkewIII
 import DualTree.ForwardQFinalSameFrontierLength
 
 
