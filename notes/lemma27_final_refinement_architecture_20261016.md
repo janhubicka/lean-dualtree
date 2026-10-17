@@ -693,3 +693,19 @@ To claim M-complete skew still requires showing every
 last-level node is a leaf, establishing the global
 forward auxiliary-order length conditions (ii)/(iii)/(iv),
 and constructing the genuine ambient variable word f'.
+
+
+## Twenty-first pass: retained/retained skew order
+
+`ForwardQFinalRetainedSkewLength` (five proposed source-facing
+endpoints, CI pending) transfers the true forward-skew clauses
+(ii) and (iii) of the complete ambient T to the retained part
+of the final support T'_M, by the independently verified
+equality of final and ambient intrinsic ranks on retained
+vertices. Equal-rank forward-lex retained pairs have
+nondecreasing ambient lengths; strictly ranked pairs
+have strictly increasing lengths and hence are forward
+auxiliary ordered. Neither retained/projected nor
+projected/projected comparisons follow automatically:
+those require the sorted frontier vector-complete
+length inequalities with the rank-m/rank-(m+1) offsets.

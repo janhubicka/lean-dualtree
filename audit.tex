@@ -9204,6 +9204,29 @@ the global skew auxiliary rank/length ordering and
 the final ambient word \(f'\) remain independent gaps.
 
 
+\paragraph{Corrected global skew length conditions on old retained pairs.} \todo
+For \(s,t\in T_{\le t_0}\), the previously checked
+intrinsic rank preservation gives \(h_{T'_M}(s)=h_T(s)\)
+and \(h_{T'_M}(t)=h_T(t)\).
+The original ambient \(T\) is complete skew in the
+corrected forward order; therefore clause~(iii) of
+skewness yields
+\[
+ h_{T'_M}(s)<h_{T'_M}(t)\implies |s|<|t|.
+\]
+Similarly if their final intrinsic ranks are equal and
+\(s\le_{\mathrm{lex}}t\), the original clause~(ii)
+gives \(|s|\le|t|\). This proves the retained/retained
+cases of the final global skew length conditions,
+including the corresponding forward auxiliary-order
+comparison at unequal ranks. Five proposed Lean
+endpoints in \lean{ForwardQFinalRetainedSkewLength}
+(17 October, CI pending).
+For a complete skewness proof the retained/projected and
+projected/projected cases, and the special cut witness
+clause~(iv), still require independent verification.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

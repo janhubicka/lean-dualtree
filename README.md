@@ -1244,6 +1244,28 @@ The last-level leaf condition, global skew rank/ambient-length
 ordering, and the actual word f' with Q-span containment
 remain OPEN. The final theorem is not yet formalized.
 
+### Retained/retained cases of the global skew length axioms (17 October; CI pending)
+
+The proposed `ForwardQFinalRetainedSkewLength` starts
+the remaining global `skewB` proof for the exact T'_M
+without introducing an unjustified complete/skew hypothesis.
+The original complete T has corrected forward skewB and
+its same-rank ambient length condition II.
+
+All final-support retained vertices have the same intrinsic
+rank as in T. Hence for any TWO retained vertices of equal
+final rank ordered by forward lex, their ambient lengths
+are nondecreasing. If their final ranks are strictly
+ordered, their ambient lengths are strictly ordered by
+the original T's skew clause III, and thus the forward
+auxiliary order respects the final rank separation.
+
+Five proposed audited endpoints target **1,531** (CI pending).
+This addresses ONLY retained/retained comparisons. The
+retained/projected and projected/projected comparisons,
+the special skew witness, ambient f' and Q-span
+containment remain separate proof obligations.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

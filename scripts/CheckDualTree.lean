@@ -1813,3 +1813,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalExactBranching.final_atMostOneDirection
 #print axioms DualTree.ForwardQFinalExactBranching.final_uniqueBranchB_below_last_level
 #print axioms DualTree.ForwardQFinalExactBranching.final_immediateSuccs_length_eq_b_below_last
+
+#print axioms DualTree.ForwardQFinalRetainedSkewLength.ambient_forward_skew
+#print axioms DualTree.ForwardQFinalRetainedSkewLength.ambient_condIIB
+#print axioms DualTree.ForwardQFinalRetainedSkewLength.final_retained_equal_rank_lex_length_le
+#print axioms DualTree.ForwardQFinalRetainedSkewLength.final_retained_lower_rank_length_lt
+#print axioms DualTree.ForwardQFinalRetainedSkewLength.final_retained_lower_rank_forwardAux

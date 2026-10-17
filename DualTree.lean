@@ -20,6 +20,7 @@ import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
 import DualTree.ForwardQFinalExactBranching
+import DualTree.ForwardQFinalRetainedSkewLength
 
 
 /-!
