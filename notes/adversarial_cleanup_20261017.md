@@ -17,7 +17,7 @@ mathematically important negative certificates.
 
 ## Findings: proof trust and mathematical audit
 
-* The full Lean umbrella transitively reaches all 261 existing source
+* The full Lean umbrella transitively reaches all 308 existing source
   modules; there is **no unreachable file** certified safe to delete.
   The earlier root-import compaction removed redundant edges without
   dropping modules, and the earlier placeholder-word dead-scaffold
