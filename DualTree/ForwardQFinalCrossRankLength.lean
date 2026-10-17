@@ -91,7 +91,11 @@ theorem retained_lex_projected_length_le
         s (retained_subset_T c s hs)
     have hcell :=
       (List.all_eq_true.mp hrow) t (projected c ⟨i,z⟩).2
-    simpa [heq,hlex] using hcell
+    change FinLexLE s t at hlex
+    change s.length ≤ t.length
+    have hor : ¬ FinLexLE s t ∨ s.length ≤ t.length := by
+      simpa only [heq] using hcell
+    exact hor.resolve_left hlex
   · have hlt : SkewTree.heightAt c.T s <
         SkewTree.heightAt c.T t := by omega
     exact Nat.le_of_lt
@@ -194,7 +198,7 @@ theorem retained_lower_final_rank_projected_length_lt
       SkewTree.heightAt c.T (projected c ⟨i,z⟩).1 =
       frontierRank + z.1.length :=
     ForwardQFinalProjectionOrder.projected_height c ⟨i,z⟩
-  have hband :=
+  have hband : frontierRank = m ∨ frontierRank = m + 1 :=
     ForwardQFinalTwoFrontierBudget.frontier_rank_cut_or_succ c i
   have hambientStrict :
       SkewTree.heightAt c.T s <
