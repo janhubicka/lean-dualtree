@@ -84,7 +84,7 @@ theorem selected_final_immediate_child_same_frontier
       by_contra hne
       exact
         (projected_incomparable_of_distinct_frontiers
-          c ⟨i,z⟩ ⟨j,w⟩ hne.symm).1 hproj.1
+          c ⟨i,z⟩ ⟨j,w⟩ (Ne.symm hne)).1 hproj.1
     subst j
     have hlocalPre : IsPrefix z.1 w.1 :=
       (ForwardQFinalProjectionOrder.projected_same_frontier_prefix_iff
