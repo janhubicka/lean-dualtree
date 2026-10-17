@@ -9227,6 +9227,27 @@ not an implicit hypothesis.
 Three proposed Lean endpoints (17 October, CI pending).
 
 
+\paragraph{Rootedness and genuine ambient meet closure of the finished support.} \todo
+Let \(r\) be the actual canonical root of the
+forward-complete ambient tree \(T\). It prefixes
+the original cut \(t_0\), hence belongs to the
+retained forward initial part of \(T'_M\).
+Every selected projected root also belongs to \(T\),
+so \(r\) prefixes all of \(T'_M\); this proves its
+actual Boolean rootedB predicate.
+By the separately verified all-parent
+AtMostOneDirection theorem, rootedness implies
+ambient meet closure of the final support, using
+\lean{MeetClosedFromBranching.meetClosed\_of\_rooted\_uniqueDirections}.
+The proposed \lean{ForwardQFinalMeetClosure}
+proves these facts by four Lean statements (17 October,
+rebased CI pending), without presupposing complete skewness.
+The Boolean branch/leaf completeness clause was already
+verified independently. The remaining global skewness
+conditions II/III/IV (ambient length order and special
+witness), and the final word \(f'\), remain OPEN.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

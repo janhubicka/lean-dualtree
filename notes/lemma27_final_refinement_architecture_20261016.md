@@ -715,3 +715,18 @@ This is not a proof of skewB. Its rank-versus-ambient
 length clauses and special witness condition still
 need formalization; the final ambient f' word and
 Q-span containment remain open.
+
+
+## Root and meet closure after checked complete branch/leaf clause
+
+`ForwardQFinalMeetClosure` (four selected endpoints, rebased
+PR #349, CI pending) proves the canonical root r of the original
+complete T is retained in the inclusive initial cut and prefixes
+every final T'_M node because all final nodes belong to T.
+Therefore rootedB holds for T'_M. Independently checked
+AtMostOneDirection of final T'_(m+q) plus generic rooted
+unique-direction meet-closure gives actual ambient
+MeetGeometry.MeetClosed for T'_(m+q), without assuming
+skewness. The Boolean branch/leaf clause from merged #348
+is checked separately; only global skew II/III/IV and
+the actual ambient f' remain.
