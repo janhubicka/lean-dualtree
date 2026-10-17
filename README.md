@@ -1244,6 +1244,32 @@ The last-level leaf condition, global skew rank/ambient-length
 ordering, and the actual word f' with Q-span containment
 remain OPEN. The final theorem is not yet formalized.
 
+### Exact final leaf-or-b-branching clause (17 October; CI pending)
+
+The proposed `ForwardQFinalLeafBranchClause` checks the
+remaining LAST-LEVEL case for the exact rank-filtered
+support T'_M. Every selected vertex has actual intrinsic
+rank <M; if one at rank M-1 possessed an immediate
+successor, the generic support-rank increment theorem
+would produce a vertex of rank M, contradiction. Thus
+last-level vertices are leaves.
+
+For positive b and q, all earlier vertices have exactly
+b>0 immediate support successors by the separately
+verified existence/uniqueness chain, while final-level
+vertices have none. This proves the ENTIRE executable
+Boolean complete-branching clause of T'_(m+q).
+
+The clean reduction states:
+`completeB forwardAuxB (m+q) T'_M = true`
+if and only if
+`skewB forwardAuxB T'_M = true`.
+The skew condition itself is NOT proved by this
+equivalence. Three selected endpoints target **1,529**
+(CI pending); global skew length/auxiliary ordering,
+final word f', Q-span containment and Ramsey induction
+remain open.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

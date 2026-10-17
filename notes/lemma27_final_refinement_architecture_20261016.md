@@ -693,3 +693,25 @@ To claim M-complete skew still requires showing every
 last-level node is a leaf, establishing the global
 forward auxiliary-order length conditions (ii)/(iii)/(iv),
 and constructing the genuine ambient variable word f'.
+
+
+## Nineteenth pass: all leaf/branch count clauses
+
+`ForwardQFinalLeafBranchClause` (three selected endpoints,
+stacked PR, CI pending) proves a vertex at final
+intrinsic level M-1 cannot have an immediate successor:
+the successor would have height M, contradicting
+the exact all-vertex rank bound in T'_M. Conversely
+the full existence + uniqueness chain proves
+each earlier vertex has exactly b immediate successors.
+For positive branching b and positive new depth q,
+the completeB branch/leaf Boolean conjunct is
+therefore verified. The module exports the conditional
+equivalence between M-completeness of T'_M and the
+independent remaining skewB predicate (corrected
+forward auxiliary order).
+
+This is not a proof of skewB. Its rank-versus-ambient
+length clauses and special witness condition still
+need formalization; the final ambient f' word and
+Q-span containment remain open.
