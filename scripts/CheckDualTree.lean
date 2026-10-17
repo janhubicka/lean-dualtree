@@ -1855,3 +1855,5 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardCompleteRankPredecessor.exists_strict_predecessor_at_rank
 #print axioms DualTree.ForwardQFinalLocalRankGaps.local_length_add_two_le_of_rank_gap_two
 #print axioms DualTree.ForwardQFinalLocalRankGaps.local_length_lt_of_rank_lt
+#print axioms DualTree.ForwardQFinalProjectedStrictSkew.projected_T_rank_lt_of_final_rank_lt
+#print axioms DualTree.ForwardQFinalProjectedStrictSkew.selected_projected_final_rank_lt_length_lt
