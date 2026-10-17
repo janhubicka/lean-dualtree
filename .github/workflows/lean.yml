@@ -28,6 +28,7 @@ jobs:
           key: lake-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.toml') }}-${{ github.sha }}
           restore-keys: |
             lake-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.toml') }}-
+            lake-${{ runner.os }}-${{ runner.arch }}-
 
       - name: Install elan
         run: |
@@ -54,8 +55,11 @@ jobs:
       - name: Download Mathlib cache
         run: lake exe cache get
 
-      - name: Build
+      - name: Build fast core default target
         run: lake build
+
+      - name: Build full dual-tree audit umbrella
+        run: lake build DualTree
 
       - name: Regress finite skew meet closure
         run: python3 scripts/check-skew-meet.py
