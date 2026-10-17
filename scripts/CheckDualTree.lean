@@ -1858,3 +1858,5 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalProjectedStrictSkew.projected_T_rank_lt_of_final_rank_lt
 #print axioms DualTree.ForwardQFinalProjectedStrictSkew.selected_projected_final_rank_lt_length_lt
 #print axioms DualTree.ForwardQFinalSkewIII.finalBudgetSupport_condIIIB
+#print axioms DualTree.ForwardQFinalCrossBandLex.projected_lex_of_same_frontier_rank_index_lt
+#print axioms DualTree.ForwardQFinalCrossBandLex.projected_rank_succ_lex_before_rank_m

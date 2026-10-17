@@ -23,6 +23,7 @@ import DualTree.ForwardQFinalLeafBranchClause
 import DualTree.ForwardQFinalMeetClosure
 import DualTree.ForwardQFinalOldNewEqualRank
 import DualTree.ForwardQFinalSkewIII
+import DualTree.ForwardQFinalCrossBandLex
 import DualTree.ForwardQFinalSameFrontierLength
 
 
