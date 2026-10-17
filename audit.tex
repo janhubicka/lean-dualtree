@@ -9291,6 +9291,36 @@ and the forward-lex old/new orientation of clause II,
 not yet new/new or the reverse equal-rank orientation.
 
 
+\paragraph{Frontier lex orientation and same-frontier projected skew length.} \todo
+For the corrected rank-\(m_0\) frontiers, the actual
+length-first cut ordering together with the ambient skew
+same-rank length axiom implies
+\[
+ s\in T_{\le t_0},\ h_T(s)=m_0
+ \quad\Longrightarrow\quad
+ s\le_{\rm lex}t_0\le_{\rm lex}t_i
+ \le_{\rm lex}P_i(z)
+\]
+whenever \(t_i\) is a minimal outside-cut frontier of
+the same \(T\)-rank \(m_0\). The last comparison uses
+prefix-incomparability of retained versus outside-cut
+equal-rank vertices and the canonical projection cone.
+This is a special theorem, not a general claim that
+the length-first sorted frontier list is lex ordered.
+
+Separately, if \(P_i(z),P_i(w)\) are selected new
+vertices in the SAME frontier and have strictly ordered
+final intrinsic ranks, the corresponding LOCAL \(q\)-complete
+support ranks are strictly ordered. Its genuine skew
+clause III forces \(|z|<|w|\), hence the certified projection
+\(T\)-ranks and actual node lengths strictly increase.
+The consolidated \lean{ForwardQFinalFrontierLex} and
+\lean{ForwardQFinalSameFrontierLength} register eight
+source-facing proof endpoints (17 October, CI pending).
+All different-frontier comparisons and special witness
+clause IV remain separate.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

@@ -765,3 +765,22 @@ the elementary observation that a positive local
 intrinsic rank forces a nonempty local source address.
 The reversed equal-rank lex orientation and all new/new
 cases still require the precise frontier lex geometry.
+
+
+## Skew-length comparison integration, 17 October
+
+Two modules independently developed after the checked
+retained/projected rank inequality are being integrated:
+* `ForwardQFinalFrontierLex` proves an equal-rank
+  retained T vertex lies lex before every projected
+  descendant of an outside-cut rank-m frontier, using
+  actual cut geometry (not naive sorted-frontier lex).
+* `ForwardQFinalSameFrontierLength` proves that strict
+  final intrinsic rank order for two projected roots of
+  the SAME frontier forces strict ambient node length
+  order via local skew III and original ambient T skew III.
+
+There are eight additional proof endpoints (CI pending).
+Different-frontier new/new comparisons and the skew
+cut witness remain the main structural gaps before
+complete-skew certification, final f', and the Ramsey step.
