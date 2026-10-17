@@ -76,6 +76,7 @@ theorem final_last_level_is_leaf
         ForwardQFinalRankBound.finalBudgetSupport_all_heights_lt_target
           c f (m+q) (by omega) t
             (Finset.mem_toList.mp htMember)
+      change SkewTree.heightAt S s + 1 = m+q at hlast
       omega
 
 /-- The entire COMPUTABLE complete-branching condition
@@ -115,14 +116,12 @@ theorem final_complete_branch_clause
         (SkewTree.immediateSuccs S s).length = b :=
       final_immediateSuccs_length_eq_b_below_last
         c f s hs hroom
-    have hnonzero :
-        (SkewTree.immediateSuccs S s).length ≠ 0 := by
-      omega
+    have hbne : b ≠ 0 := Nat.ne_of_gt hb
     change
       (if (SkewTree.immediateSuccs S s).length = 0
        then decide (SkewTree.heightAt S s + 1 = m+q)
        else decide ((SkewTree.immediateSuccs S s).length = b)) = true
-    simp [hnonzero,hcount]
+    simp [hcount,hbne]
   · have hlast : SkewTree.heightAt S s + 1 = m+q := by
       omega
     have hzero : (SkewTree.immediateSuccs S s).length = 0 :=
