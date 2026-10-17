@@ -128,6 +128,13 @@ theorem selected_same_frontier_final_rank_lt_length_lt
       SkewTree.heightAt c.T (projected c ⟨i,w⟩).1 := by
     rw [ForwardQFinalProjectionOrder.projected_height c ⟨i,z⟩,
       ForwardQFinalProjectionOrder.projected_height c ⟨i,w⟩]
+    change
+      SkewTree.heightAt c.T
+        (ForwardOrderedProjections.frontierAt c.T c.cut i).1 +
+        z.1.length <
+      SkewTree.heightAt c.T
+        (ForwardOrderedProjections.frontierAt c.T c.cut i).1 +
+        w.1.length
     omega
   exact SkewLevelOrder.length_lt_of_height_lt
     c.T SkewTree.forwardAuxB
