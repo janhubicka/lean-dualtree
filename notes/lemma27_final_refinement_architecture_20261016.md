@@ -608,3 +608,21 @@ uniqueness at selected projected vertices from
 the local q-complete support's unique directions.
 The retained-parent case uses the separate converse
 classification of retained children.
+
+
+## Twenty-second pass (17 October): projected first direction is an equivalence
+
+The proposed `ForwardQFinalProjectionDirectionReflect`
+(CI pending) proves the exact labelled first-direction
+equivalence z++[j] prefix w iff P_i(z)++[j] prefix
+P_i(w). Prefix reflection extracts the local suffix;
+the suffix is nonempty when the projected first-child
+cone is strict, and its initial local direction is
+carried unchanged by the previously verified projected
+direction-preserving theorem. Equal-length uniqueness
+forces the local and projected first directions to agree.
+
+This prepares direct reuse of local q-complete
+uniqueBranchB to prove at-most-one projected immediate
+child per ambient direction in the WHOLE selected
+T'_M support, using the projected-child converse.

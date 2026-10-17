@@ -1801,3 +1801,5 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.ForwardQFinalProjectedChildConverse.selected_final_immediate_child_same_frontier
 #print axioms DualTree.ForwardQFinalProjectedChildConverse.selected_final_immediate_child_is_local_immediate
+
+#print axioms DualTree.ForwardQFinalProjectionDirectionReflect.projected_childCone_iff
