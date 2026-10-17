@@ -21,9 +21,8 @@ import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
 import DualTree.ForwardQFinalLeafBranchClause
 import DualTree.ForwardQFinalMeetClosure
-import DualTree.ForwardQFinalOldNewEqualRank
 import DualTree.ForwardQFinalSkewIII
-import DualTree.ForwardQFinalProjectedEqualRank
+import DualTree.ForwardQFinalSkewII
 import DualTree.ForwardQFinalSameFrontierLength
 
 
