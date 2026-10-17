@@ -9204,6 +9204,29 @@ the global skew auxiliary rank/length ordering and
 the final ambient word \(f'\) remain independent gaps.
 
 
+\paragraph{The final leaf-or-\(b\)-branching clause reduces completeness to skewness.} \todo
+From the checked all-vertex rank bound each \(s\in T'_M\)
+has \(h_{T'_M}(s)<M\), for \(M=m_0+q\) and \(q>0\).
+If \(h_{T'_M}(s)+1=M\) and \(s\) had an immediate
+support successor \(t\), the checked rank-increment
+lemma would yield \(h_{T'_M}(t)=M\), impossible.
+Hence all last-level vertices are leaves.
+For \(b,q>0\), the independent all-parent
+directional existence and uniqueness results
+give exactly \(b>0\) immediate support successors
+at every \(s\) of rank \(r\) with \(r+1<M\).
+Consequently the full numerical Boolean branching
+conjunct of \(\mathrm{completeB}\) holds.
+The proposed
+\lean{ForwardQFinalLeafBranchClause.final\_complete\_iff\_skew}
+states that \(T'_M\) is \(M\)-complete in the corrected
+forward auxiliary order if and only if it satisfies
+the remaining global \(\mathrm{skewB}\) predicate.
+This last condition is still a genuine proof obligation,
+not an implicit hypothesis.
+Three proposed Lean endpoints (17 October, CI pending).
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
