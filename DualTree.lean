@@ -20,6 +20,7 @@ import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
 import DualTree.ForwardQFinalProjectedDirectionUniqueness
+import DualTree.ForwardQFinalRetainedDirectionUniqueness
 
 
 /-!

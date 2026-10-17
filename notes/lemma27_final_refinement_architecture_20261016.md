@@ -649,3 +649,24 @@ each final immediate child then determines a genuine
 immediate original T child, either retained unchanged
 or replaced by the actual selected frontier root.
 Uniqueness in original T should finish that case.
+
+
+## Retained-parent uniqueness rebase after projected-parent audit
+
+`ForwardQFinalRetainedDirectionUniqueness` (two selected
+endpoints, refreshed PR #346, CI pending) reduces EVERY
+immediate successor of a retained final vertex to the
+corresponding actual T-immediate edge in the same first
+ambient direction. This uses the retained-child converse:
+the final child was either unchanged retained, or a projected
+local root replacing a minimal outside-cut frontier. Unique
+ambient directions follow from meet closure of original
+complete T; mixed retained/projected cases contradict the
+inclusive cut, while two projected cases share the same
+sorted frontier and the canonical localRoot choice.
+
+The projected-parent at-most-one-direction theorem is
+now verified on main through #345. This retained theorem
+would finish all-parent at-most-one-direction. It does
+not by itself establish complete-skew length order,
+the last-leaf rank condition or the final ambient word.

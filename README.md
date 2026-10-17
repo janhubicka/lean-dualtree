@@ -1,40 +1,25 @@
 # lean-dualtree
 
-**Current verified status (16 October 2026; main through PR #314).**
-The full Lean build, finite regression suite, static source audit, and
-curated transitive-axiom audit pass. The latter checks **1,380 distinct
-selected endpoints** without `sorryAx`; it is not a count of every
-public declaration or a theorem-completion percentage.
+**Current verified status (17 October 2026; main through PR #345).**
+The full Lean build, finite regression suite, static source audit, and curated
+transitive-axiom audit pass on main with **1,520 distinct selected endpoints**
+and no `sorryAx`. This endpoint count is not a theorem-completion percentage.
 
-The corrected forward-`Q` construction now has a fully labelled
-first-`l` model-to-support isomorphism (including prefix order and
-all outgoing directions). Its model children are the true *finite-support*
-immediate successors, even when ambient edges are stretched. The entire
-model realization is the canonical rooted support walk; at the genuine
-`A_l` boundary it gives exactly the selected projected `D₂` terminal.
-The intrinsic root and canonical boundary walk are formalized for all
-semi-complete starred supports, including the special
-`A₀ = {empty address}` case.
+The corrected Q construction, the full first-l model geometry and canonical
+selector on actual Q outputs, the exact final rank-budgeted support T'_M,
+the intrinsic rank formula, and all-vertex directional EXISTENCE are validated.
+Projected immediate-child classification, direction reflection, and projected
+parent AT-MOST-ONE direction are now checked. Retained-parent uniqueness is
+the new PR #346 and remains CI-pending on its refreshed head.
 
-For this explicitly constructed intrinsic selector, full-ambient
-simple-colouring hypotheses yield a smooth corrected-`Q` pullback
-and a TOTAL smooth extension. For a proposed published Definition 24
-selector `I_U`, it is sufficient to verify its root and unique
-directional-successor laws **on actual `Q` images**; the rest follows
-by verified finite boundary rigidity.
+The published semi-complete I_U/reverse auxiliary W_* alignment, complete
+skew ordering and leaf-height clauses of T'_M, the global ambient word f',
+its Q-span containment, and the final Ramsey induction remain OPEN.
+These are mathematical proof obligations, not merely elaboration errors.
 
-**Open proof obligations:** the printed semi-complete `I_U` convention
-and its reverse-order `W_*` starred-domain correspondence still
-require manuscript-level repair; the full occurrence-sensitive
-mixed-word span/Hall realization, final refinement, Ramsey induction,
-and the full dual-tree theorem remain unproved. These are substantial
-mathematical obligations, not merely Lean elaboration issues.
-
-Historical milestones below are cumulative: phrases such as
-"CI pending" refer to the status *when the note was written*, not
-the current main branch. The [adversarial library audit](notes/adversarial_library_audit_20261015.md)
-and `scripts/audit-lean-library.py` document trust coverage,
-obsolete-code candidates, and the import-graph cleanup.
+Historic notes below record the status at their time; earlier "CI pending"
+markers remain historical. The [adversarial library audit](notes/adversarial_library_audit_20261015.md)
+and `scripts/audit-lean-library.py` document trust and import-graph coverage.
 
 Lean 4 verification and adversarial audit of Todorcevic--Tyros,
 *A Dual Ramsey Theorem for Trees* (arXiv:2207.14599v1).
@@ -1214,6 +1199,26 @@ settle the branching count at selected NEW vertices.
 Retained same-direction uniqueness, global forward
 skew ordering, complete boundary ranks, final f'
 and Q-span/Ramsey remain open.
+
+### Retained-parent immediate-child directional uniqueness (17 October; CI pending)
+
+`ForwardQFinalRetainedDirectionUniqueness` proves that every final
+immediate child of a retained parent corresponds to a unique
+genuine immediate ambient T child in the SAME first direction.
+The final child either survived the corrected cut unchanged
+or is the projected canonical local root at an outside-cut
+frontier. Since original complete T is meet-closed, the
+ambient immediate child is unique in each direction. A
+retained vertex cannot equal an outside-cut frontier, and
+two projected children with the same frontier share the
+same canonical local-root image. Therefore retained final
+parents have AT MOST ONE child per direction without
+assuming T'_M is already complete skew.
+
+Two new selected endpoints target 1,522 (CI pending).
+Together with verified projected-parent uniqueness, this
+will finish the per-direction uniqueness assertion for
+all final support vertices, once CI succeeds.
 
 ## Verified foundations
 
