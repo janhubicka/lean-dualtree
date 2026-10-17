@@ -784,3 +784,23 @@ There are eight additional proof endpoints (CI pending).
 Different-frontier new/new comparisons and the skew
 cut witness remain the main structural gaps before
 complete-skew certification, final f', and the Ramsey step.
+
+
+## Twenty-first pass: old/new equal final-rank lex case
+
+The proposed `ForwardQFinalOldNewEqualRank` uses the
+checked rank band m/m+1 and intrinsic rank formula
+to prove equal final rank across retained versus
+selected projected nodes forces both old support
+and frontier T rank m, and local coordinate rank zero.
+The rank-m frontier lex lemma forces the OLD retained
+node lex before its projected new counterpart. Reverse
+lex comparison would identify a retained and an
+outside-cut node, impossible. The ambient T skew
+length property then yields nondecreasing lengths.
+
+Together with the strict old/new comparison theorem,
+this closes final skew length clauses II/III for ALL
+cross retained/projected pairs. The remaining cases
+are new/new pairs from distinct frontiers and the
+special skew cut witness IV.

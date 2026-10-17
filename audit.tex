@@ -9321,6 +9321,31 @@ All different-frontier comparisons and special witness
 clause IV remain separate.
 
 
+\paragraph{The retained/new equal-intrinsic-rank case has only one lex orientation.} \todo
+The previously checked rank formula shows a selected
+projected \(P_i(z)\) never has smaller final intrinsic
+rank than a retained \(s\). Under equal final rank,
+all three constraints follow:
+\[
+ h_T(s)=m_0,\qquad h_T(t_i)=m_0,\qquad
+ h_{\mathrm{ws}(f_i)}(z)=0.
+\]
+The genuine frontier lex geometry then gives
+\(s\le_{\rm lex}P_i(z)\). If the reverse
+\(P_i(z)\le_{\rm lex}s\) held, antisymmetry would
+identify the two distinct nodes across the corrected
+inclusive cut, a contradiction. The checked ambient
+T length comparison in the forward lex orientation
+gives \(|s|\le|P_i(z)|\).
+The proposed \lean{ForwardQFinalOldNewEqualRank}
+contains four new source-facing endpoints (17 October,
+CI pending); combining it with the strict-rank cross
+comparison settles the retained/projected cases of
+global skew clauses (ii)--(iii).
+Different-frontier new/new pairs and skew witness
+(iv) remain open.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

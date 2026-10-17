@@ -1358,6 +1358,25 @@ the mixed-frontier projected/projected length comparisons,
 the reverse mixed rank-m/rank-(m+1) lex orientation, special
 skew witness IV, global M-complete skew or final f'.
 
+### Full retained/projected equal-final-rank skew comparison (17 October; CI pending)
+
+With the verified cross-class intrinsic rank inequality and rank-m
+frontier lex geometry, equal final rank for a retained s and a
+selected new projected P_i(z) forces:
+`height_T(s)=height_T(frontier_i)=m`, while the LOCAL
+root z has height zero. Hence s is lex BEFORE P_i(z).
+The reverse lex orientation is impossible: lex antisymmetry
+would identify nodes on opposite sides of the inclusive cut.
+
+The ambient T skew length comparison therefore gives
+`|s|<=|P_i(z)|` in the only possible lex orientation.
+This completes the old/new equal-rank contribution to
+final skew clause II, while the separate cross-class
+strict-rank theorem already covers clause III.
+Four additional curated endpoints target 1,555;
+full CI pending. Different-frontier new/new pairs
+and the special skew witness are still open.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
