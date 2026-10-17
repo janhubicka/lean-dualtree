@@ -9157,6 +9157,28 @@ should supply the uniqueness after the checked
 retained-child converse classification.
 
 
+\paragraph{Retained-parent directional uniqueness (17 October).} \todo
+Every immediate final-support child \(x\) of retained
+\(s\in T_{\le t_0}\) corresponds to a genuine immediate
+ambient-\(T\) child \(t\) in the same first direction:
+either \(x=t\) survives the cut, or \(t\) is a minimal
+outside-cut frontier \(t_i\) and \(x=P_i(z_i)\) is the
+projected root of its local coordinate support. The first
+direction is unchanged since \(s\sqsubset t_i\sqsubseteq x\).
+The original complete \(T\) is meet-closed and has at most
+one immediate child in each first direction, so competing
+final children yield the same \(t\). The retained/projected
+mixed case would make an outside-cut frontier retained;
+two projected cases with equal \(t_i\) have equal sorted
+index \(i\) and hence the same selected local root.
+\lean{ForwardQFinalRetainedDirectionUniqueness}
+checks these steps without presupposing complete skewness
+of the joined \(T'_M\) (two selected endpoints, rebased
+17 October, CI pending). Full final-support directional
+uniqueness follows by combining this with the separately
+validated projected-parent converse and uniqueness.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
