@@ -730,3 +730,18 @@ MeetGeometry.MeetClosed for T'_(m+q), without assuming
 skewness. The Boolean branch/leaf clause from merged #348
 is checked separately; only global skew II/III/IV and
 the actual ambient f' remain.
+
+
+## Sixteenth pass: retained/retained global length axioms
+
+The selected `ForwardQFinalRetainedSkewLength`
+module (CI pending) proves the final-support rank
+on each retained vertex equals its old T rank.
+It then transfers skew clauses II/III from the
+complete ambient T to any pair of retained vertices.
+It also concludes corrected forward auxiliary
+monotonicity of strictly increasing retained ranks.
+Five selected audit endpoints are proposed.
+Cross retained/projected, projected/projected
+length inequalities and special skew clause IV
+still need independent proofs.

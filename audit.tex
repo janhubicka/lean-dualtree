@@ -9248,6 +9248,26 @@ conditions II/III/IV (ambient length order and special
 witness), and the final word \(f'\), remain OPEN.
 
 
+\paragraph{Forward-skew length inequalities for retained/retained pairs.} \todo
+For retained old vertices \(s,t\in T_{\le t_0}\),
+the actual final-support intrinsic ranks satisfy
+\(h_{T'_M}(s)=h_T(s)\) and \(h_{T'_M}(t)=h_T(t)\).
+Consequently skew clause (ii) for equal ranks
+and increasing forward lex follows from the original
+forward-complete ambient support \(T\).
+For increasing final intrinsic ranks, clause (iii)
+and hence the forward auxiliary length comparison
+transfer directly from \(T\).
+The proposed module
+\lean{ForwardQFinalRetainedSkewLength}
+records five selected source-facing endpoints
+(17 October; Lean CI pending).
+This covers only old/old pairs; old/new and new/new
+length comparisons, the special skew witness (iv),
+final ambient word \(f'\) and its \(Q\)-span containment
+remain open.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
