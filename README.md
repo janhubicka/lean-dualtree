@@ -1270,6 +1270,29 @@ equivalence. Three selected endpoints target **1,529**
 final word f', Q-span containment and Ramsey induction
 remain open.
 
+### Actual final-support rootedness and meet closure (17 October; CI pending)
+
+The ambient forward-complete support T has a canonical
+root r that lies at/before the corrected inclusive cut.
+The exact final target-filtered support T'_M is a subset
+of T and retains that initial segment. Hence r belongs
+to T'_M and prefixes every final-support vertex; its
+Boolean rootedB predicate is true for every target height.
+
+For M=m+q, the independently verified all-parent
+AtMostOneDirection theorem and the generic
+rooted+unique-directions result establish ambient
+MEET CLOSURE of the actual final T'_M support.
+This does not assume final skewness, and is independent
+of the already verified Boolean complete branch/leaf
+clause. Together these reduce M-completeness to the
+remaining global forward skew auxiliary length/order
+and special witness conditions.
+
+Four new curated endpoints target 1,533 (CI pending).
+Full skewB and the final ambient word f' with
+Q-span containment remain OPEN.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

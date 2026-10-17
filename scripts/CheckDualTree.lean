@@ -1817,3 +1817,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalLeafBranchClause.final_last_level_is_leaf
 #print axioms DualTree.ForwardQFinalLeafBranchClause.final_complete_branch_clause
 #print axioms DualTree.ForwardQFinalLeafBranchClause.final_complete_iff_skew
+
+#print axioms DualTree.ForwardQFinalMeetClosure.ambient_root_mem_final
+#print axioms DualTree.ForwardQFinalMeetClosure.ambient_root_prefix_final
+#print axioms DualTree.ForwardQFinalMeetClosure.final_rootedB
+#print axioms DualTree.ForwardQFinalMeetClosure.final_meetClosed
