@@ -84,9 +84,12 @@ theorem finalBudgetSupport_condIIIB
         rcases u with ⟨i,z⟩
         rcases Finset.mem_union.mp htFinal with htRet | htNew
         · rw [huEq] at hRanks
-          have hImpossible :=
-            ForwardQFinalCrossRankLength.selected_final_rank_retained_le_projected
-              c f t htRet i z huSelected
+          have hImpossible :
+              SkewTree.heightAt S t ≤
+                SkewTree.heightAt S (projected c ⟨i,z⟩).1 := by
+            simpa only [S] using
+              (ForwardQFinalCrossRankLength.selected_final_rank_retained_le_projected
+                c f t htRet i z huSelected)
           omega
         · obtain ⟨v, hvTag, hvEq, hvBudget⟩ :=
             selectedProjectedRoots_budget_witness c f M t htNew
