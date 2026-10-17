@@ -1220,6 +1220,30 @@ Together with verified projected-parent uniqueness, this
 will finish the per-direction uniqueness assertion for
 all final support vertices, once CI succeeds.
 
+### Exact branching below the final level of T'_M (17 October; CI pending)
+
+The proposed `ForwardQFinalExactBranching` first proves a
+general reusable finite-support lemma: for duplicate-free S,
+at-most-one immediate successor per direction together with a
+nonempty direction witness gives `uniqueBranchB`.
+Its full final-support `AtMostOneDirection` theorem combines
+independent checked projected-parent uniqueness with the
+retained-parent uniqueness bridge (currently in PR #346).
+
+Using the previously proved existence of an immediate
+T'_M successor in every direction whenever
+`height_(T'_M)(s)+1 < m+q`, it proves that each such
+vertex has EXACTLY ONE successor per direction, hence
+exactly b immediate SUPPORT successors overall. This
+is the complete branching-count clause below the last
+intrinsic level, including stretched ambient support
+edges and both cut-rank classes.
+
+Four further curated endpoints target **1,526** (CI pending).
+The last-level leaf condition, global skew rank/ambient-length
+ordering, and the actual word f' with Q-span containment
+remain OPEN. The final theorem is not yet formalized.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
