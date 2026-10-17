@@ -1310,6 +1310,26 @@ This is NOT global skewB: retained/projected and
 projected/projected pairs, plus skew witness clause (iv),
 remain open, as do f' and the Ramsey inclusion.
 
+### Exact rank-m frontier lex position relative to retained vertices (CI pending)
+
+A length-first forward-sorted frontier is NOT automatically
+forward-lex ordered. The proposed
+`ForwardQFinalFrontierLex` proves the relevant special
+case instead: a retained T vertex of intrinsic rank m
+lies lex before the cut, while every outside-cut frontier
+of T-rank m lies lex after the cut. Distinct equal-rank
+support vertices are prefix-incomparable, so every
+descendant P_i(z) of such a rank-m frontier also lies
+lex AFTER the retained rank-m vertices, even for
+stretched support edges.
+
+Six source-facing endpoints (including custom finite
+lex transitivity) target 1,544, CI pending. This should
+eliminate the would-be reversed lex orientation in the
+retained/projected equal-final-rank skew clause II.
+The mixed rank-m/rank-(m+1) projected comparisons
+still need their distinct lexical geometry.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable

@@ -1828,3 +1828,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalRetainedSkewLength.final_retained_equal_rank_lex_length_le
 #print axioms DualTree.ForwardQFinalRetainedSkewLength.final_retained_lower_rank_length_lt
 #print axioms DualTree.ForwardQFinalRetainedSkewLength.final_retained_lower_rank_forwardAux
+
+#print axioms DualTree.ForwardQFinalFrontierLex.finLexLE_trans
+#print axioms DualTree.ForwardQFinalFrontierLex.retained_rank_m_lex_before_cut
+#print axioms DualTree.ForwardQFinalFrontierLex.frontier_rank_m_lex_after_cut
+#print axioms DualTree.ForwardQFinalFrontierLex.retained_rank_m_lex_before_frontier_rank_m
+#print axioms DualTree.ForwardQFinalFrontierLex.retained_rank_m_incomparable_frontier_rank_m
+#print axioms DualTree.ForwardQFinalFrontierLex.retained_rank_m_lex_before_projected_rank_m

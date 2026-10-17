@@ -745,3 +745,24 @@ Five selected audit endpoints are proposed.
 Cross retained/projected, projected/projected
 length inequalities and special skew clause IV
 still need independent proofs.
+
+
+## Nineteenth pass: rank-m frontier lex position
+
+The proposed `ForwardQFinalFrontierLex` proves that
+rank-m retained support vertices occur no later than
+the cut t0 in the original forward lex order, whereas
+rank-m minimal outside-cut frontiers occur no earlier
+than t0. This is not a generic assertion about the
+length-first sorted frontier list. Equal-rank support
+vertices on different sides of the cut are
+prefix-incomparable; therefore each full projected
+descendant P_i(z) of a rank-m frontier remains lex
+later than every retained rank-m node.
+The generic custom finite FinLexLE transitivity is
+also proved and registered. Six Lean endpoints, pending CI.
+
+This should close the reversed-lex alternative in
+the old/new equal-final-rank case once combined with
+`ForwardQFinalCrossRankLength`. Mixed frontier-rank
+new/new comparisons are a separate next obstacle.

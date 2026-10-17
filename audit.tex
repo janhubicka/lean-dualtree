@@ -9268,6 +9268,31 @@ final ambient word \(f'\) and its \(Q\)-span containment
 remain open.
 
 
+\paragraph{Rank-\(m_0\) outside-cut frontiers are lex after retained rank-\(m_0\) nodes.} \todo
+The forward-sorted minimal outside-cut frontier list is
+sorted length-first, not simply in lexicographic order.
+One must therefore justify separately the forward-lex
+orientation needed by the final skew clause (ii).
+For a retained \(s\in T_{\le t_0}\) of \(T\)-rank \(m_0\),
+the cut comparison and the ambient \(T\) same-rank
+length axiom force \(s\le_{\rm lex} t_0\).
+An outside-cut frontier \(t_i\) of rank \(m_0\)
+satisfies \(t_0\le_{\rm lex}t_i\), or else
+the same ambient length axiom would put \(t_i\)
+before the cut, a contradiction. Thus \(s\le_{\rm lex}t_i\).
+Since \(s,t_i\) have equal \(T\)-rank and \(t_i\) lies
+outside the cut, they are prefix-incomparable.
+Canonical projections extend \(t_i\), preserving their
+strict lex comparison with \(s\), hence
+\(s\le_{\rm lex}P_i(z)\) for every local tail \(z\).
+The proposed \lean{ForwardQFinalFrontierLex} (six endpoints,
+17 October, CI pending) formalizes these lemmas and the
+custom \(\le_{\rm lex}\) transitivity proof.
+This addresses precisely rank-\(m_0\) retained/new
+equal-height comparisons; different-rank frontiers
+and new/new length inequalities remain open.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
