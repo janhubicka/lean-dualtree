@@ -1,25 +1,52 @@
 # lean-dualtree
 
-**Current verified status (17 October 2026; main through PR #345).**
-The full Lean build, finite regression suite, static source audit, and curated
-transitive-axiom audit pass on main with **1,520 distinct selected endpoints**
-and no `sorryAx`. This endpoint count is not a theorem-completion percentage.
+**Current checked status (17 October 2026; through merged PR #358).**
+The #358 branch passed the complete Lean build, finite regression suite,
+static import-graph audit and **1,558 distinct source-facing transitive
+axiom reports**, with no `sorryAx` or nonstandard proof axioms.
+The full theorem is NOT formalized. A passing endpoint count is not a
+percentage of theorem completion. The post-merge main-branch checks
+also run automatically.
 
-The corrected Q construction, the full first-l model geometry and canonical
-selector on actual Q outputs, the exact final rank-budgeted support T'_M,
-the intrinsic rank formula, and all-vertex directional EXISTENCE are validated.
-Projected immediate-child classification, direction reflection, and projected
-parent AT-MOST-ONE direction are now checked. Retained-parent uniqueness is
-the new PR #346 and remains CI-pending on its refreshed head.
+The corrected forward-Q construction, the full first-l model geometry
+and canonical selector on actual Q outputs, exact rank-budgeted
+final support T'_M, its intrinsic-height formula, and major
+branching/direction lemmas have been checked. Final skew length
+conditions are proved for retained/retained and retained/projected
+pairs, strict projected/projected pairs within one frontier, and
+the increasing-frontier-rank/equal-local-rank subcase. These are
+**partial cases**, not a full skewB or completeB proof for T'_M.
 
-The published semi-complete I_U/reverse auxiliary W_* alignment, complete
-skew ordering and leaf-height clauses of T'_M, the global ambient word f',
-its Q-span containment, and the final Ramsey induction remain OPEN.
-These are mathematical proof obligations, not merely elaboration errors.
+The published semi-complete I_U versus the corrected forward Q,
+the reversed starred W_* domain, the remaining cross-frontier
+projected skew comparisons and final skew witness (iv), the
+stitched ambient word f', its span containment, Lemma 28/25 and
+the concluding dual-tree Ramsey induction remain **OPEN**.
+The assumption that the ambient T is forward-order complete
+is an explicit repair, not a derivation of the original published
+hypothesis.
 
-Historic notes below record the status at their time; earlier "CI pending"
-markers remain historical. The [adversarial library audit](notes/adversarial_library_audit_20261015.md)
-and `scripts/audit-lean-library.py` document trust and import-graph coverage.
+## Build and validation commands
+
+- `lake build` — **small development target only** (`DualTreeCore`);
+  does **NOT** validate the theorem or every source file.
+- `lake build DualTree` — full proof/counterexample umbrella and all
+  its transitive source imports.
+- `lake build DualTree.ModuleName` — focused development module;
+  replace `ModuleName` with an actual source module.
+- `python3 scripts/audit-lean-library.py --verify-root-minimal` —
+  standalone import-graph and lexical diagnostic; CI additionally
+  runs all finite regressions and the selected `#print axioms` reports.
+
+The corrected source construction and mathematical case analysis
+are documented in
+[notes/lemma27_two_frontier_skew_20261017.md](notes/lemma27_two_frontier_skew_20261017.md).
+The latest
+[adversarial cleanup audit](notes/adversarial_cleanup_20261017.md)
+also records cache-transfer timings and the decision to retain
+mathematically useful counterexample fixtures. Historic notes below
+record their original status; older "CI pending" statements are not
+current status.
 
 Lean 4 verification and adversarial audit of Todorcevic--Tyros,
 *A Dual Ramsey Theorem for Trees* (arXiv:2207.14599v1).
