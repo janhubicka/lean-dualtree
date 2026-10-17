@@ -626,3 +626,26 @@ This prepares direct reuse of local q-complete
 uniqueBranchB to prove at-most-one projected immediate
 child per ambient direction in the WHOLE selected
 T'_M support, using the projected-child converse.
+
+
+## Twenty-third pass (17 October): unique directions at every selected projected parent
+
+The proposed `ForwardQFinalProjectedDirectionUniqueness`
+(CI pending) establishes the at-most-one-direction
+property for immediate final children of ANY selected
+projected P_i(z), independent of its final height.
+All such children are images of local immediate
+support edges in the SAME coordinate i (checked
+converse). Their actual first direction j is
+reflected by the corrected projection back to
+the local support. The q-complete local support is
+meet-closed when nonsingleton, and the generic
+meetClosed=>AtMostOneDirection theorem prohibits
+two distinct local immediate children in j.
+Therefore the final children coincide.
+
+The remaining uniqueness case has a RETAINED parent:
+each final immediate child then determines a genuine
+immediate original T child, either retained unchanged
+or replaced by the actual selected frontier root.
+Uniqueness in original T should finish that case.

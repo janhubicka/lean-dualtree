@@ -9129,6 +9129,34 @@ argument, independent of the global complete-skew
 theorem for the final support.
 
 
+\paragraph{At-most-one-direction for immediate children of selected projected vertices.} \todo
+Suppose \(P_i(z)\in T'_M\) is selected and two
+distinct immediate support children \(x,y\) both
+belong to the same ambient first direction \(j\).
+The checked projected-child converse supplies
+\(x=P_i(w)\), \(y=P_i(v)\) for genuine immediate
+local support children \(w,v\) of \(z\) in the
+same component \(f_i\). Exact reflection of labelled
+first directions by \(P_i\) puts both \(w,v\)
+in the local \(j\)-cone above \(z\).
+Since the local support is \(q\)-complete and
+nonsingleton whenever \(z\) has a child, it is
+ambient meet-closed and satisfies the checked
+at-most-one-direction consequence of meet closure.
+Thus \(w=v\) and \(x=y\).
+The proposed
+\lean{ForwardQFinalProjectedDirectionUniqueness.selected\_projected\_atMostOneDirection}
+formalizes this direct non-global uniqueness
+argument (one selected endpoint; 17 October,
+CI pending). No complete-skewness hypothesis is
+made on the joined \(T'_M\).
+The remaining at-most-one-direction case is when
+the parent is a RETAINED vertex; then the
+ambient original \(k\)-complete support \(T\)
+should supply the uniqueness after the checked
+retained-child converse classification.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
