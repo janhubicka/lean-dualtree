@@ -1822,3 +1822,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalMeetClosure.ambient_root_prefix_final
 #print axioms DualTree.ForwardQFinalMeetClosure.final_rootedB
 #print axioms DualTree.ForwardQFinalMeetClosure.final_meetClosed
+
+#print axioms DualTree.ForwardQFinalRetainedSkewLength.ambient_forward_skew
+#print axioms DualTree.ForwardQFinalRetainedSkewLength.ambient_condIIB
+#print axioms DualTree.ForwardQFinalRetainedSkewLength.final_retained_equal_rank_lex_length_le
+#print axioms DualTree.ForwardQFinalRetainedSkewLength.final_retained_lower_rank_length_lt
+#print axioms DualTree.ForwardQFinalRetainedSkewLength.final_retained_lower_rank_forwardAux

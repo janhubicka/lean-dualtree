@@ -1293,6 +1293,23 @@ Four new curated endpoints target 1,533 (CI pending).
 Full skewB and the final ambient word f' with
 Q-span containment remain OPEN.
 
+### Retained/retained global forward-skew length clauses (CI pending)
+
+The checked intrinsic rank preservation for retained vertices,
+together with the source's genuinely forward-complete skew
+axioms, gives clauses (ii) and (iii) of the final-support
+skew definition for **pairs of retained vertices**:
+equal intrinsic ranks ordered by forward lex have
+nondecreasing ambient lengths; strictly increasing
+ranks imply strictly increasing lengths. The latter
+also yields corrected forward auxiliary monotonicity.
+Five new registered endpoints bring the proposed curated
+axiom audit to 1,538. Full CI pending.
+
+This is NOT global skewB: retained/projected and
+projected/projected pairs, plus skew witness clause (iv),
+remain open, as do f' and the Ramsey inclusion.
+
 ## Verified foundations
 
 - Finite homogeneous trees, prefix order, the paper's executable
