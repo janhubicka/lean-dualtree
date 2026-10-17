@@ -670,3 +670,26 @@ now verified on main through #345. This retained theorem
 would finish all-parent at-most-one-direction. It does
 not by itself establish complete-skew length order,
 the last-leaf rank condition or the final ambient word.
+
+
+## Eighteenth pass: exact early branching in final T'_M
+
+The proposed `ForwardQFinalExactBranching` (four
+selected endpoints; stacked after retained-direction
+uniqueness PR #346; CI pending) constructs a global
+AtMostOneDirection theorem by cases on the *actual*
+retained/projected decomposition of the final support.
+A generic duplicate-free finite-list lemma converts
+nonempty branchWitnesses plus AtMostOneDirection to
+uniqueBranchB. The checked all-vertex existence theorem
+therefore gives uniqueBranchB in every direction at
+all ranks satisfying h_(T'_M)(s)+1<M; the previously
+verified direction-count equivalence then yields
+exactly b immediate support successors at every such
+vertex.
+
+This is the full EARLY-BRANCHING numerical clause.
+To claim M-complete skew still requires showing every
+last-level node is a leaf, establishing the global
+forward auxiliary-order length conditions (ii)/(iii)/(iv),
+and constructing the genuine ambient variable word f'.

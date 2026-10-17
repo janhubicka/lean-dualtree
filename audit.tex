@@ -9179,6 +9179,31 @@ uniqueness follows by combining this with the separately
 validated projected-parent converse and uniqueness.
 
 
+\paragraph{Exactly \(b\) immediate successors below the last level.} \todo
+Combining independently proved uniqueness at retained and
+projected parents gives \emph{at most one} final immediate
+support successor in each ambient first direction, without
+a cyclic assumption that the assembled support \(T'_M\)
+is already meet-closed or skew. On a duplicate-free support,
+this at-most-one assertion plus nonempty branch witnesses
+implies the executable predicate \(\mathrm{uniqueBranchB}\)
+in that direction.
+The already checked existence theorem supplies an actual
+immediate successor in every direction from each \(s\in T'_M\)
+satisfying \(h_{T'_M}(s)+1<M\), with \(M=m_0+q\).
+Thus \(\mathrm{uniqueBranchB}(T'_M,s,j)\) holds for
+every \(j<b\), and the established
+\lean{Lemma27QBranchCount.immediateSuccs\_length\_eq\_of\_full\_directions}
+counts exactly \(b\) immediate \emph{support} successors
+at such \(s\). The proposed
+\lean{ForwardQFinalExactBranching} packages these four
+theorems (17 October, CI pending).
+The Boolean \(M\)-complete branch clause also requires
+the leaf-height condition at the final level, while
+the global skew auxiliary rank/length ordering and
+the final ambient word \(f'\) remain independent gaps.
+
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

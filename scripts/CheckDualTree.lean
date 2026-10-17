@@ -1808,3 +1808,8 @@ Transitive axiom audit for the first source-facing validation facts.
 
 #print axioms DualTree.ForwardQFinalRetainedDirectionUniqueness.retained_final_child_has_ambient_witness
 #print axioms DualTree.ForwardQFinalRetainedDirectionUniqueness.retained_atMostOneDirection
+
+#print axioms DualTree.ForwardQFinalExactBranching.uniqueBranchB_of_nonempty_atMostOne
+#print axioms DualTree.ForwardQFinalExactBranching.final_atMostOneDirection
+#print axioms DualTree.ForwardQFinalExactBranching.final_uniqueBranchB_below_last_level
+#print axioms DualTree.ForwardQFinalExactBranching.final_immediateSuccs_length_eq_b_below_last
