@@ -1875,3 +1875,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.RootCompatibleRefinement.refine_span_subset
 #print axioms DualTree.RootCompatibleRefinement.refine_support_eq
 #print axioms DualTree.RootCompatibleRefinement.collapse_span_subset
+#print axioms DualTree.ForwardQFinalAmbientRootLift.mem_boundedFinalSet_iff
+#print axioms DualTree.ForwardQFinalAmbientRootLift.boundedFinalRoots_nodup
+#print axioms DualTree.ForwardQFinalAmbientRootLift.mem_boundedFinalRoots_iff
+#print axioms DualTree.ForwardQFinalAmbientRootLift.boundedFinalRoots_subset_original
+#print axioms DualTree.ForwardQFinalAmbientRootLift.finalRoot_prefix_original
+#print axioms DualTree.ForwardQFinalAmbientRootLift.coarseFinalWord_support_iff
+#print axioms DualTree.ForwardQFinalAmbientRootLift.coarseFinalWord_span_subset
