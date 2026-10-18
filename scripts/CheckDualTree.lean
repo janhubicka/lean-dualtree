@@ -1902,3 +1902,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalGlobalFibreSubstitution.interpolatedFinalWord_support_iff
 #print axioms DualTree.ForwardQFinalGlobalFibreSubstitution.interpolatedFinalWord_span_subset
 #print axioms DualTree.ForwardQFinalGlobalFibreSubstitution.globalRootSymbol_projected
+#print axioms DualTree.ForwardQFinalFibreEvaluation.localSymbol_eval
+#print axioms DualTree.ForwardQFinalFibreEvaluation.interpolatedFinalWord_fibre_symbol
+#print axioms DualTree.ForwardQFinalFibreEvaluation.interpolatedFinalWord_projected_root_symbol
+#print axioms DualTree.ForwardQFinalFibreEvaluation.interpolatedFinalWord_fibre_eval

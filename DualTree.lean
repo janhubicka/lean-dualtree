@@ -19,7 +19,7 @@ import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
-import DualTree.ForwardQFinalGlobalFibreSubstitution
+import DualTree.ForwardQFinalFibreEvaluation
 import DualTree.ForwardQFinalSameFrontierLength
 
 
