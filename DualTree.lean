@@ -14,12 +14,11 @@ import DualTree.QTernaryOrderAudit
 import DualTree.ForwardQStarredOrderReindexObstruction
 import DualTree.ForwardQThreeWayEvaluation
 import DualTree.ForwardQNormalizationObstruction
-import DualTree.ForwardQMixedSpanEvaluation
 import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
-import DualTree.ForwardQFinalFibreEvaluation
+import DualTree.ForwardQFinalCorrectedQEvaluation
 import DualTree.ForwardQFinalSameFrontierLength
 
 
