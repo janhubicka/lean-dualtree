@@ -19,13 +19,14 @@ import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
+import DualTree.RootCompatibleRefinement
 import DualTree.ForwardQFinalCompleteSkew
 import DualTree.ForwardQFinalSameFrontierLength
 
 
 /-!
 Public umbrella import for the dual-tree verification library.
-The imports below are a minimal transitive covering of the 261 source
+The imports below are a minimal transitive covering of all source
 modules in this library. Independent research modules and audited
 counterexample fixtures remain available via their individual imports.
 Run scripts/audit-lean-library.py --verify-root-minimal to check that
