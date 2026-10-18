@@ -1892,3 +1892,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalLocalSymbolTransport.localSymbol_excluded_variable
 #print axioms DualTree.ForwardQFinalLocalSymbolTransport.localSymbol_at_selected_root
 #print axioms DualTree.ForwardQFinalLocalSymbolTransport.localSymbol_variable_below
+#print axioms DualTree.ForwardQFinalSafeAddressLookup.safeAddress_spec
+#print axioms DualTree.ForwardQFinalSafeAddressLookup.safeAddress_projected
+#print axioms DualTree.ForwardQFinalSafeAddressLookup.safeAddress_eq_some_iff
+#print axioms DualTree.ForwardQFinalSafeAddressLookup.safeAddress_retained_none
