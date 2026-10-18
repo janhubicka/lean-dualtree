@@ -1927,3 +1927,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalUnsafeFibreFallback.globalRootSymbol_late_no_safe
 #print axioms DualTree.ForwardQFinalUnsafeFibreFallback.inducedFibreQ_symbol_late_no_safe
 #print axioms DualTree.ForwardQFinalUnsafeFibreFallback.inducedFibreQ_eval_late_no_safe
+#print axioms DualTree.ForwardQFinalWholeDomainEvaluation.inducedFibreQ_eval_eq_final_eval_at
+#print axioms DualTree.ForwardQFinalWholeDomainEvaluation.inducedFibreQ_eval_eq_final_eval
+#print axioms DualTree.ForwardQFinalWholeDomainEvaluation.inducedFibreQ_eval_mem_final_span
