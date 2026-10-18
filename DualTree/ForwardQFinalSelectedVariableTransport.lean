@@ -29,6 +29,7 @@ namespace DualTree.ForwardQFinalSelectedVariableTransport
 
 open ForwardSourceQTree
 open ForwardQFinalRefinementRoots
+open ForwardQFinalSupportCut
 open ForwardQFinalHeightBudget
 open ForwardQFinalAmbientRootLift
 
@@ -131,11 +132,12 @@ theorem selectedAmbientRoot_injective
     Function.Injective (selectedAmbientRoot g f) := by
   intro u v heq
   have hBounded :
-      selectedBoundedRoot g f u =
-        selectedBoundedRoot g f v := by
-    apply Subtype.ext
+      (selectedBoundedRoot g f u).1 =
+        (selectedBoundedRoot g f v).1 := by
+    change (selectedAmbientRoot g f u).1 =
+      (selectedAmbientRoot g f v).1
     exact congrArg Subtype.val heq
-  exact selectedBoundedRoot_injective g f hBounded
+  exact selectedBoundedRoot_injective g f (Subtype.ext hBounded)
 
 /-- The original ambient word really emits its own variable
 at the selected local root's projected position. -/
