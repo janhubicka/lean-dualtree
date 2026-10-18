@@ -1888,3 +1888,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalSelectedVariableTransport.selectedAmbientRoot_injective
 #print axioms DualTree.ForwardQFinalSelectedVariableTransport.selectedAmbientRoot_atRoot
 #print axioms DualTree.ForwardQFinalSelectedVariableTransport.selected_local_variable_prefix_projected
+#print axioms DualTree.ForwardQFinalLocalSymbolTransport.localSymbol_constant
+#print axioms DualTree.ForwardQFinalLocalSymbolTransport.localSymbol_excluded_variable
+#print axioms DualTree.ForwardQFinalLocalSymbolTransport.localSymbol_at_selected_root
+#print axioms DualTree.ForwardQFinalLocalSymbolTransport.localSymbol_variable_below
