@@ -1,30 +1,66 @@
 # lean-dualtree
 
-**Current checked status (17 October 2026; through merged PR #358).**
-The #358 branch passed the complete Lean build, finite regression suite,
-static import-graph audit and **1,558 distinct source-facing transitive
-axiom reports**, with no `sorryAx` or nonstandard proof axioms.
-The full theorem is NOT formalized. A passing endpoint count is not a
-percentage of theorem completion. The post-merge main-branch checks
-also run automatically.
+**Current verified status — 18 October 2026 (main through merged PR #382).**
+The complete Lean umbrella, finite Q/counterexample regressions and source
+audits have passed, with **1,638 distinct registered source-facing
+transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
+The endpoint count is *not* a theorem-completion percentage.
 
-The corrected forward-Q construction, the full first-l model geometry
-and canonical selector on actual Q outputs, exact rank-budgeted
-final support T'_M, its intrinsic-height formula, and major
-branching/direction lemmas have been checked. Final skew length
-conditions are proved for retained/retained and retained/projected
-pairs, strict projected/projected pairs within one frontier, and
-the increasing-frontier-rank/equal-local-rank subcase. These are
-**partial cases**, not a full skewB or completeB proof for T'_M.
+The corrected **forward-auxiliary-order** Lemma 27 construction now has
+a genuine rank-budgeted final support proved `(m+q)`-complete skew
+(for positive branching and q), including rootedness, skew clauses
+II/III/IV and all support branching/leaf conditions. A legitimate
+ambient variable word `f'` has precisely this support and is a
+syntactic/evaluated-span refinement of the original ambient word
+`f`. Its new variables are the ACTUAL independently tagged
+projections `P_i(v)`, not names allocated to the smaller old
+starred source-variable set.
 
-The published semi-complete I_U versus the corrected forward Q,
-the reversed starred W_* domain, the remaining cross-frontier
-projected skew comparisons and final skew witness (iv), the
-stitched ambient word f', its span containment, Lemma 28/25 and
-the concluding dual-tree Ramsey induction remain **OPEN**.
-The assumption that the ambient T is forward-order complete
-is an explicit repair, not a derivation of the original published
-hypothesis.
+For **every assignment to old source roots and every base assignment
+to final roots**, the formalization fixes only the retained early
+root values to the source refinement `g'=f[rho]`, preserving all
+new projected values. It constructs an actual corrected starred
+mixed-product point in the post-Ramsey mixed-word span and proves
+the **whole ambient-domain equality of evaluated words**
+`eval(Q(x_sigma),tau)=eval(f',sigma)` for this ANCHORED sigma.
+The four checked cases are original f-constants, early f-fibres,
+safe late projected f-fibres, and late unsafe/no-address f-fibres.
+
+**This is not a formalization of Lemma 27 or the Dual Ramsey Theorem
+as published.** The corrected Q uses a forward-lex convention
+different from the printed reverse-lex auxiliary order; a verified
+counterexample invalidates the latter's displayed Q well-definedness
+step. Moreover the whole-domain equality establishes actual
+Q-evaluations *inside* the f' span for anchored assignments. The
+reverse coverage `[S,f'] ⊆ Q(span(f_i))` suggested by the
+manuscript does **not** follow. The arbitrary retained-root
+assignments in f' need not be attainable from the fixed source
+refinement g'. Merged PR #382 gives a **kernel-checked conditional two-letter
+obstruction** to such reverse evaluated-span coverage: if the source
+substitution identifies two distinct retained original variables, the
+resulting f' span contains an evaluation not obtainable from ANY
+actual fibrewise Q input. This does **not** refute Lemma 27 or imply
+that such a collapsed pair occurs in every Frame.
+
+The principal remaining mathematical tasks are: verify the
+precise domain/containment direction required by the Ramsey
+refinement; bridge the published Definition 24 canonical selector
+and source-simple/smooth colour pullback in the actual Q picture;
+reconcile printed W_* with the corrected forward W_* (or provide
+a separate corrected theorem statement); and formalize the mixed
+Ramsey iteration, Lemmas 27–28, Theorem 25 and Theorem 3.
+No proof of those final steps is claimed.
+
+The newest relevant audit notes are
+[the final complete-skew support](notes/lemma27_final_complete_skew_20261017.md),
+[the whole-domain Q/f' evaluation](notes/lemma27_whole_domain_eval_20261018.md),
+[the early-assignment compatibility](notes/lemma27_early_fibre_anchoring_20261018.md),
+[the late-fibre fallback](notes/lemma27_unsafe_fibre_fallback_20261018.md),
+[the conditional reverse-span obstruction](notes/lemma27_early_span_obstruction_20261018.md),
+and the [printed Q counterexample](notes/lemma27_Q_counterexample.tex).
+The historical milestones further below are retained as a progress
+record; their older "CI pending" and "open" labels must not be
+interpreted as current status.
 
 ## Build and validation commands
 
