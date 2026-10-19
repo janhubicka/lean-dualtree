@@ -111,14 +111,16 @@ theorem anchored_eq_of_early_compatible
           g f (fun a : α => a) fallback).word r.1 = Sum.inr r :=
       (interpolatedFinalWord
         g f (fun a : α => a) fallback).atRoot r
-    have heval : σ r = ψ r.1 := by
-      calc
-        σ r = SpanAudit.evalSymbol σ (Sum.inr r) := rfl
-        _ = ((interpolatedFinalWord
-            g f (fun a : α => a) fallback).eval σ) r.1 := by
-              rw [hfroot]
-              rfl
-        _ = ψ r.1 := congrFun hψ r.1
+    have hrootval :
+        ((interpolatedFinalWord
+          g f (fun a : α => a) fallback).eval σ) r.1 = σ r := by
+      change SpanAudit.evalSymbol σ
+        ((interpolatedFinalWord
+          g f (fun a : α => a) fallback).word r.1) = σ r
+      rw [hfroot]
+      rfl
+    have heval : σ r = ψ r.1 :=
+      hrootval.symm.trans (congrFun hψ r.1)
     change (if h : ForwardAux r.1.1 g.core.cut then
       SpanAudit.evalSymbol τ (g.substitution u)
       else σ r) = σ r
