@@ -80,9 +80,14 @@ noncomputable def targetMarkerEquiv
   let hr := literalR_eq_of_same_literal_signature hb g O H
   refine {
     toFun := fun r => ⟨r.1, by
+      change r.1 ∈ ForwardStarredSignature.literalR
+        g.core.source g.core.cut g.core.hout
       rw [← hr]
       exact r.2⟩
     invFun := fun r => ⟨r.1, by
+      change r.1 ∈ ForwardStarredSignature.literalR O g.core.cut
+        (ForwardStarredSignature.exceptionalLeaves_not_before_of_maxInterior
+          hb O g.core.cut H.cutInterior H.cutMaximal)
       rw [hr]
       exact r.2⟩
     left_inv := by
