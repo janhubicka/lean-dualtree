@@ -49,7 +49,7 @@ theorem unsafe_late_root_not_final_support
     have hsome :
         ForwardQFinalSafeAddressLookup.safeAddress
           g.core u.1.1 = some a := by
-      rw [hroot]
+      rw [← hroot]
       exact ForwardQFinalSafeAddressLookup.safeAddress_projected g.core a
     rw [hunsafe] at hsome
     cases hsome
@@ -77,8 +77,8 @@ theorem unsafe_late_interpolated_word_constant
   change SpanAudit.substitute g.ambient.word
       (globalRootSymbol g f decode fallback) u.1 =
         Sum.inl fallback
-  rw [g.ambient.atRoot u]
-  simp [SpanAudit.substitute, globalRootSymbol, hunsafe, hnotRoot]
+  simp [SpanAudit.substitute, g.ambient.atRoot u,
+    globalRootSymbol, hunsafe, hnotRoot]
 
 /-- Over an alphabet containing two distinct letters, evaluated
 span inclusion forces the starred output to retain that literal
