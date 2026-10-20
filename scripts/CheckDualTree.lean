@@ -1991,3 +1991,5 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalOutputProjectedEncoder.reletterInput_bulletPoint_eq
 #print axioms DualTree.ForwardQFinalOutputProjectedEncoder.reletterInput_preserves_IsStarred
 #print axioms DualTree.ForwardQFinalOutputProjectedEncoder.reletterInput_Q_matches_output_at_projected
+#print axioms DualTree.ForwardQFinalSafeRootAgreement.reletter_Q_matches_output_at_safe_root
+#print axioms DualTree.ForwardQFinalSafeRootAgreement.reletter_Q_word_eq_of_unsafe_late_root_agreement
