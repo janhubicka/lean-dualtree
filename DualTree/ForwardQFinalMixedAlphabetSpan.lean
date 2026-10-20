@@ -137,6 +137,13 @@ theorem inputOfComponentChoices_mem_span
       (mapMixedWordConstants f φ).span := by
   refine ⟨?_, ?_, ?_⟩
   · intro i
+    change
+      (fun s : BoundedNode b n =>
+        match (f.vector.components i).word s with
+        | Sum.inl a => φ a
+        | Sum.inr v => choices i v) ∈
+        (mapVariableWordConstants
+          (f.vector.components i).toVariableWord φ).span
     exact mapVariableWordConstants_evaluation_mem_span
       (f.vector.components i).toVariableWord φ (choices i)
   · exact hbase.2.1
