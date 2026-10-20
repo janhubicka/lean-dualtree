@@ -2019,3 +2019,5 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalCoherentLocalInput.coherentInput_mem_mixed_span
 #print axioms DualTree.ForwardQFinalCoherentLocalInput.coherentInput_preserves_starred
 #print axioms DualTree.ForwardQFinalCoherentLocalInput.coherentInput_Q_matches_output_at_projected
+#print axioms DualTree.ForwardQFinalCoherentWordPreimage.coherentInput_matches_full_Q_word
+#print axioms DualTree.ForwardQFinalCoherentWordPreimage.exists_coherent_enlarged_starred_word_preimage
