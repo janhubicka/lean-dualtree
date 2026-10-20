@@ -2034,3 +2034,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalSignatureMarkerTransport.literalR_eq_of_same_literal_signature
 #print axioms DualTree.ForwardQFinalSignatureMarkerTransport.targetMarkerEquiv
 #print axioms DualTree.ForwardQFinalSignatureMarkerTransport.targetMarkerEquiv_root
+#print axioms DualTree.ForwardQFinalTargetTerminalMarker.targetFrame
+#print axioms DualTree.ForwardQFinalTargetTerminalMarker.target_terminal_has_source_marker
+#print axioms DualTree.ForwardQFinalTargetTerminalMarker.supported_target_terminal_has_source_marker
