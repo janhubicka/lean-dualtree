@@ -139,7 +139,7 @@ theorem complete_signature_forces_same_cut
   let outCut : BoundedNode b n :=
     ⟨cutO, O.tree_bounded cutO hcutOtree⟩
   let oldCut : BoundedNode b n :=
-    ⟨g.core.cut, g.core.T_bounded g.core.cut g.core.hcutT⟩
+    ⟨g.core.cut, g.T_bounded g.core.cut g.core.hcutT⟩
   have hEq :
       outCut = oldCut :=
     ForwardSignatureCutDomainRigidity.bounded_cut_eq_of_beforeCut_iff
