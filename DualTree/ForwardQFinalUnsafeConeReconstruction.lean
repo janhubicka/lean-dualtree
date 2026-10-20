@@ -51,8 +51,7 @@ theorem projected_eq_of_short_inverse_tail
   have hdrop :
       ForwardQActualCoordinateWord.tailOfTNode c i t = tail := by
     change y.1.drop x.1.length = tail
-    rw [htail]
-    simp
+    simpa only [List.drop_append_length] using congrArg (fun v : Node b => v.drop x.1.length) htail
   have hinv :
       (ForwardCompleteBijection.inverseAddress c.T c.hcomplete c.hnon
         (ForwardQActualCoordinateWord.projectLocal c i z)).1 =
