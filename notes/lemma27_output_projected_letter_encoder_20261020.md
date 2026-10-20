@@ -23,3 +23,24 @@ unchanged.
 check the corrected W_* condition and full Q geometry; use the pointwise
 decoder with exact-word reduction; establish the complete Lemma 27 image
 and span inclusion. These steps are not implicit in the current lemma.
+
+## Relettering with certified D2 points
+
+A follow-up Lean theorem retains the **exact** up- and bullet-point
+data of any already-legal enlarged mixed-product input, replacing only
+its ordinary coordinate words by the selected encodings above. Since
+the corrected IsStarred predicate is a condition solely on the actual
+D2 bullet markers, it is preserved literally.
+
+The actual fibrewise Q formula at P_i(z), rather than an invented
+positionwise patch, then recovers the requested starred-output
+dependent word symbol after the canonical root equivalence.
+
+**Essential remaining obstacle:** The selected local letters are
+chosen separately at each coordinate. Their existence alone does NOT
+assert that the local input is in the mixed-product span of the
+post-Ramsey local variable word f_i; that requires a consistent choice
+on each f_i-variable fibre, derived from O.span subset f'.span.
+Likewise an arbitrary already-legal D2 marker selection does not
+guarantee equality of the resulting Q tree with O.tree. The new lemma
+proves local Q-symbol equality, not full Lemma 27 or the Ramsey theorem.
