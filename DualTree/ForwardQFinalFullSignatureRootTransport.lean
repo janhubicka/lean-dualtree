@@ -193,6 +193,6 @@ theorem strict_prefix_reindexed_word_eq
           have hvar : e v = w := by
             apply Subtype.ext
             exact (sourceOutputVarsEquiv_root hb g O cutO H v).trans hroot
-          simp [hS,hO,hvar]
+          exact hvar
 
 end DualTree.ForwardQFinalFullSignatureRootTransport
