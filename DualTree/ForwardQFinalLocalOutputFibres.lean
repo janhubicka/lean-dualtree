@@ -103,8 +103,10 @@ theorem interpolatedFinalWord_constant_on_local_variable_fibre
     _ = localSymbol g f (fun a : α => a) fallback i v.1 :=
       localSymbol_constant_on_component_variable_fibre
         g f fallback i v z hz
-    _ = _ := (interpolatedFinalWord_at_projected
-      g f fallback i v.1).symm
+    _ = (interpolatedFinalWord g f (fun a : α => a) fallback).word
+          (ForwardQActualCoordinateWord.projectedBounded
+            g.core g.T_bounded i v.1) :=
+      (interpolatedFinalWord_at_projected g f fallback i v.1).symm
 
 /-- If O's evaluated span refines the real interpolated f' span
 over two letters, O's own dependent word symbols are forced to
