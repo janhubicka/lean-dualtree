@@ -1996,3 +1996,5 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalUnsafeOutputConstant.unsafe_late_root_not_final_support
 #print axioms DualTree.ForwardQFinalUnsafeOutputConstant.unsafe_late_interpolated_word_constant
 #print axioms DualTree.ForwardQFinalUnsafeOutputConstant.unsafe_late_output_word_constant
+#print axioms DualTree.ForwardQFinalUnsafeSamplerGeometry.admissible_append
+#print axioms DualTree.ForwardQFinalUnsafeSamplerGeometry.inverseAddress_preserves_prefix
