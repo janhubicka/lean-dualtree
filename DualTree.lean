@@ -19,6 +19,7 @@ import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
 import DualTree.ForwardQFinalFullSignatureRootTransport
+import DualTree.ForwardQFinalProjectedOldVariableVisible
 import DualTree.ForwardQFinalSameFrontierLength
 
 
