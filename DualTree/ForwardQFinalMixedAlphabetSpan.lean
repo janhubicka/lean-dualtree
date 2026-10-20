@@ -144,8 +144,9 @@ theorem inputOfComponentChoices_mem_span
         | Sum.inr v => choices i v) ∈
         (mapVariableWordConstants
           (f.vector.components i).toVariableWord φ).span
-    exact mapVariableWordConstants_evaluation_mem_span
-      (f.vector.components i).toVariableWord φ (choices i)
+    simpa only [KVariableWord.word] using
+      (mapVariableWordConstants_evaluation_mem_span
+        (f.vector.components i).toVariableWord φ (choices i))
   · exact hbase.2.1
   · exact hbase.2.2
 
