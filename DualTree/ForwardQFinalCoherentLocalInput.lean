@@ -163,7 +163,11 @@ theorem coherentInput_Q_matches_output_at_projected
       have hO : O.word.word p = Sum.inl a :=
         ForwardQFinalLocalOutputFibres.output_preserves_local_component_constant
           g f fallback O hα hspan i z a hz
-      simpa [hsymbol, hO]
+      change Sum.map id e
+        (ForwardQAmbientFibreSymbol.fibreQSymbol g fallback w p) =
+          O.word.word p
+      rw [hsymbol, hO]
+      rfl
   | inr v =>
       have hw :
           w.words i z =
