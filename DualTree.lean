@@ -18,8 +18,7 @@ import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
-import DualTree.ForwardSignatureCutDomainRigidity
-import DualTree.ForwardQFinalLiteralSignatureTree
+import DualTree.ForwardQFinalFullSignature
 import DualTree.ForwardQFinalSameFrontierLength
 
 

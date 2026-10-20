@@ -1965,3 +1965,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSignatureCutDomainRigidity.cut_eq_of_strictDomain_eq
 #print axioms DualTree.ForwardSignatureCutDomainRigidity.cut_eq_of_all_beforeCut_iff
 #print axioms DualTree.ForwardSignatureCutDomainRigidity.bounded_cut_eq_of_beforeCut_iff
+#print axioms DualTree.ForwardQFinalFullSignature.strictPartialWord_ne_none_iff
+#print axioms DualTree.ForwardQFinalFullSignature.complete_signature_forces_same_cut
+#print axioms DualTree.ForwardQFinalFullSignature.complete_signature_implies_literal
+#print axioms DualTree.ForwardQFinalFullSignature.complete_signature_refinement_evaluations_covered
