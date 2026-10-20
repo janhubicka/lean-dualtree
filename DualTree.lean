@@ -18,8 +18,7 @@ import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
-import DualTree.ForwardQFinalOutputProjectedEncoder
-import DualTree.ForwardQFinalExactWordReduction
+import DualTree.ForwardQFinalSafeRootAgreement
 import DualTree.ForwardQFinalSameFrontierLength
 
 
