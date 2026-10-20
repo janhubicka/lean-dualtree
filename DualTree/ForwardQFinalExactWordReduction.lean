@@ -137,7 +137,7 @@ theorem actual_Q_word_eq_of_original_f_root_agreement
           g fallback w s a hs
       have hO : O.word.word s = Sum.inl a :=
         SpanAudit.constant_preserved_of_span_subset
-          hα g.ambient.word O.word hOrig hs
+          hα g.ambient.word O.word.word hOrig hs
       simp [hQ,hO]
   | inr u =>
       have hQ :
@@ -149,7 +149,7 @@ theorem actual_Q_word_eq_of_original_f_root_agreement
           g fallback w u s u.1 hs (g.ambient.atRoot u)
       have hO : O.word.word s = O.word.word u.1 :=
         SpanAudit.fibre_uniform_of_span_subset
-          hα g.ambient.word O.word hOrig hs (g.ambient.atRoot u)
+          hα g.ambient.word O.word.word hOrig hs (g.ambient.atRoot u)
       calc
         Sum.map id e
           (ForwardQAmbientFibreSymbol.fibreQSymbol
@@ -198,6 +198,5 @@ theorem actual_Q_word_eq_of_late_root_agreement
     · exact actual_Q_matches_output_on_early_root
         hb g O cutO H fallback w u hu
     · exact hlate u hu
-  · exact s
 
 end DualTree.ForwardQFinalExactWordReduction
