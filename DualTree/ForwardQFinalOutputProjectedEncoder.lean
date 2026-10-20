@@ -61,7 +61,10 @@ theorem output_variable_strictly_visible_at_projected
         g.core ⟨i, z⟩).1 := by
     change IsPrefix u.1.1
       (ForwardQActualCoordinateWord.projectLocal g.core i z).1
-    simpa only [hroot] using hbelow
+    change IsPrefix v.1.1
+      (ForwardQActualCoordinateWord.projectLocal g.core i z).1 at hbelow
+    rw [hroot]
+    exact hbelow
   exact ForwardQFinalProjectedOldVariableVisible.old_variable_prefix_frontier_of_projected
     g.core i z u hpre
 
@@ -95,7 +98,7 @@ theorem exists_encoded_projected_output_symbol
   cases hv : O.word.word p with
   | inl a =>
       refine ⟨Sum.inl a, ?_⟩
-      simpa only [Sum.map_inl] using hv.symm
+      rfl
   | inr v =>
       let u : g.core.source.word.Vars := e.symm v
       have hstrict : IsStrictPrefix u.1.1
@@ -109,7 +112,7 @@ theorem exists_encoded_projected_output_symbol
       refine ⟨Sum.inr j, ?_⟩
       change Sum.map id e
         (ForwardQVisibleAncestorDecoder.decodeAux
-          g.core fallback i j) = O.word.word p
+          g.core fallback i j) = Sum.inr v
       calc
         Sum.map id e
           (ForwardQVisibleAncestorDecoder.decodeAux
@@ -119,7 +122,6 @@ theorem exists_encoded_projected_output_symbol
           simpa only [Sum.map_inr] using
             congrArg (Sum.inr : O.word.Vars → Sum α O.word.Vars)
               (e.apply_symm_apply v)
-        _ = O.word.word p := hv.symm
 
 /-- Choose a local enlarged letter realizing the output symbol at
 the genuine projected coordinate.  The decoder certification below
