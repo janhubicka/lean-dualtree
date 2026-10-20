@@ -2026,3 +2026,5 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalTerminalSafety.Q_terminal_has_safe_address
 #print axioms DualTree.ForwardQFinalTerminalSafety.Q_vertex_without_safe_address_is_interior
 #print axioms DualTree.ForwardQFinalTerminalSafety.exact_Q_tree_forces_output_terminals_safe
+#print axioms DualTree.ForwardQFinalPositiveQWordPreimage.exists_starred_base_in_mixed_span
+#print axioms DualTree.ForwardQFinalPositiveQWordPreimage.exists_positive_q_coherent_word_preimage
