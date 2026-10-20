@@ -24,6 +24,7 @@ or membership in the mixed-product Ramsey span.
 namespace DualTree.ForwardQFinalSafeRootAgreement
 
 open ForwardSourceQTree
+open ForwardQFinalRefinementRoots
 open ForwardQFinalFullSignature
 open ForwardQFinalFullSignatureRootTransport
 open ForwardQFinalOutputProjectedEncoder
