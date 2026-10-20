@@ -142,11 +142,15 @@ theorem inputOfComponentChoices_mem_span
         match (f.vector.components i).word s with
         | Sum.inl a => φ a
         | Sum.inr v => choices i v) ∈
-        (mapVariableWordConstants
-          (f.vector.components i).toVariableWord φ).span
-    simpa only [KVariableWord.word] using
-      (mapVariableWordConstants_evaluation_mem_span
-        (f.vector.components i).toVariableWord φ (choices i))
+        SpanAudit.span (fun s : BoundedNode b n =>
+          Sum.map φ id ((f.vector.components i).word s))
+    refine ⟨choices i, ?_⟩
+    funext s
+    cases hs : (f.vector.components i).word s with
+    | inl a =>
+        simp [SpanAudit.eval, SpanAudit.evalSymbol, hs]
+    | inr v =>
+        simp [SpanAudit.eval, SpanAudit.evalSymbol, hs]
   · exact hbase.2.1
   · exact hbase.2.2
 
