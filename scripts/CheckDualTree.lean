@@ -2052,3 +2052,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalTargetD2Point.targetD2LocalPoint
 #print axioms DualTree.ForwardQFinalTargetD2Point.targetD2LocalPoint_projection
 #print axioms DualTree.ForwardQFinalTargetD2Point.targetD2LocalPoint_mem_component_support
+#print axioms DualTree.ForwardQFinalTargetD2MixedPoint.targetBulletPoint
+#print axioms DualTree.ForwardQFinalTargetD2MixedPoint.targetBulletPoint_mem_component_support
+#print axioms DualTree.ForwardQFinalTargetD2MixedPoint.targetMixedPoint_mem_span
+#print axioms DualTree.ForwardQFinalTargetD2MixedPoint.targetMixedPoint_markedProjection_eq_targetLeaf
+#print axioms DualTree.ForwardQFinalTargetD2MixedPoint.targetMixedPoint_starred_of_bullet_order
