@@ -18,7 +18,7 @@ import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
-import DualTree.ForwardQFinalUniqueTargetTerminals
+import DualTree.ForwardQFinalTargetD2Point
 import DualTree.ForwardQFinalSameFrontierLength
 
 
