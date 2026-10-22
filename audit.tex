@@ -10848,6 +10848,68 @@ published \(I_U\) or the corrected Q realisation
 already satisfies the stated local recursion.
 
 
+\paragraph{Exact raw target \(Q\)-preimage (22 October 2026).} \ok
+For a genuine forward-corrected source frame, a target starred
+word \(\mathcal O\) with the same \emph{complete} corrected signature,
+support inside the actual final height-budgeted support
+\(T'_{m+q}\), and the stated two-letter/evaluated-span
+hypotheses, the exact target \(D_2\) points can be selected in
+their original source frontier components. They belong to the
+local Ramsey word's genuine component-variable supports.
+Coherent relettering therefore produces an enlarged mixed-word
+span point whose corrected \(Q\) has precisely
+\(\mathcal O\)'s \emph{finite node set} and whose full dependent
+word agrees with \(\mathcal O\)'s word under the canonical
+variable-root identification at \emph{all} bounded positions.
+No starred-order assumption is used in this \emph{raw}
+reconstruction. This is registered in
+\lean{ForwardQFinalTargetRankGap.exists_coherent_raw_target_Q_preimage}.
+It is not yet a starred-\(Q\) reverse-coverage theorem, and set
+equality is not silently changed into list-enumeration equality.
+
+\paragraph{Exact two-band obstruction to corrected \(D_2\) admissibility.} \ok
+Write \(f_i\) for the original sorted complete-\(T\) frontier,
+\(z_i\) for the selected local target point and
+\(t_i=P_i(z_i)\) for the unique requested target terminal.
+Set \(F_i=h_T(f_i)\) and \(A_i=h_T(t_i)\). The verified
+cone equation yields \(A_i=F_i+|z_i|\), so the corrected
+vector-one condition \(|z_i|\le |z_j|\), for all \(i<j\),
+is \emph{equivalent} to
+\[
+ A_i+F_j\le A_j+F_i.
+\]
+The genuine sorted frontiers satisfy
+\(F_i\le F_j\) and \(F_i,F_j\in\{m,m+1\}\).
+Thus the same condition is exactly
+\[
+ A_i\le A_j,\qquad
+ F_i<F_j\Longrightarrow A_i<A_j
+ \quad(i<j).
+\]
+In particular equality of the two frontier ranks must
+\emph{not} be assumed: across a frontier jump from \(m\) to
+\(m+1\), the target terminal ranks must increase strictly.
+This exact equivalence is Lean-verified in
+\lean{ForwardQFinalTargetRankBands.target_rank_gaps_iff_terminal_rank_jump_order}
+and the starred-domain equivalence is checked in
+\lean{ForwardQFinalTargetRankGap.targetMixedPoint_starred_iff_target_rank_gaps}.
+Conditional on these inequalities, the full starred-\(Q\)
+span preimage is established by
+\lean{ForwardQFinalTargetRankGap.exists_coherent_starred_target_Q_preimage_of_rank_gaps}.
+
+\paragraph{Remaining admissibility question.} \todo
+It has \emph{not} been shown that all same-signature supported
+targets \(\mathcal O\) satisfy the weak/strict target terminal
+rank conditions above. The cross-frontier strict-jump case is
+the most focused proof or finite counterexample target.
+Relettering alone cannot correct a violation, because it
+does not change the selected \(D_2\) points. Nor does this
+reconcile the printed reverse-lex \(W_*\) with the repaired
+forward-lex starred domain. The corrected construction,
+colouring and induction therefore remain incomplete.
+A self-contained account is in
+\texttt{notes/lemma27\_target\_rank\_gap\_20261022.md}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
