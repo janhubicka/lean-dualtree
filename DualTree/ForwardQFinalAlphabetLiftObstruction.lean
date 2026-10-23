@@ -119,7 +119,7 @@ theorem auxiliary_constant_blocks_original_lifted_word_span
   have hw : w ∈
       (mapVariableWordConstants f
         (fun a : α => (Sum.inl a : Sum α (Fin t)))).span := by
-    simpa only [w] using
+    exact
       (mapVariableWordConstants_evaluation_mem_span
         f (fun a : α => (Sum.inl a : Sum α (Fin t)))
         (fun _ => (Sum.inl fallback : Sum α (Fin t))))
