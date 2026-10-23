@@ -6,7 +6,8 @@ axiom audit. The work was merged in
 [#423](https://github.com/janhubicka/lean-dualtree/pull/423),
 [#424](https://github.com/janhubicka/lean-dualtree/pull/424),
 [#425](https://github.com/janhubicka/lean-dualtree/pull/425), and
-[#426](https://github.com/janhubicka/lean-dualtree/pull/426).
+[#426](https://github.com/janhubicka/lean-dualtree/pull/426), and
+[#428](https://github.com/janhubicka/lean-dualtree/pull/428).
 This is a theorem in the **globally forward-corrected** construction.
 It does **not** by itself validate the printed reverse-lex formulation
 of Lemma 27, the subsequent Ramsey iteration, or Theorem 3.
@@ -109,6 +110,20 @@ O.tree.toFinset and every symbol of its dependent variable word
 equals O's symbol under the verified source/target variable-root
 equivalence, at every bounded ambient position.
 
+**5. Representation-independent tree-list equality (PR #428).**
+The target and actual typed Q starred supports are both duplicate-free
+lists, as proved directly from their semi-complete-skew certificates.
+Together with their exact finite node-set equality, Mathlib's
+permutation theorem yields
+
+    (fibreQStarredWord ... w).tree.Perm O.tree.
+
+This is a stronger, accurate replacement for the previously open
+tree-list comparison; it avoids the false requirement that arbitrary
+enumerations be literally identical. The entire rooted dependent
+word equality and lifted local mixed-span membership are unchanged.
+See DualTree.ForwardQFinalTypedTargetTreePerm.exists_typed_corrected_Q_target_tree_perm.
+
 ## Kernel-checked interfaces
 
 - DualTree.ForwardQFinalTargetIntrinsicBands.target_heightAt_eq_actual_Q
@@ -120,6 +135,7 @@ equivalence, at every bounded ambient position.
 - DualTree.ForwardQFinalTargetOrderFromSkew.targetMixedPoint_isStarred
 - DualTree.ForwardQFinalTargetOrderFromSkew.exists_coherent_starred_target_Q_preimage
 - DualTree.ForwardQFinalTypedTargetPreimage.exists_typed_corrected_Q_starred_target_preimage
+- DualTree.ForwardQFinalTypedTargetTreePerm.exists_typed_corrected_Q_target_tree_perm
 
 The full target Q theorem is conditional only on the explicitly
 stated legitimate signature, support, two-letter, span, and frame
@@ -145,10 +161,10 @@ inequality.
   extension in ForwardSemiCompleteCanonicalRoot. Matching the
   *published* Definition 24 selector, the required Ramsey iteration,
   and the recursive numerical parameter bounds remain separate.
-- **Representation.** Finite support *sets* and whole dependent
-  rooted words have been identified. No claim of equality of
-  arbitrary list enumerations is made or required for the
-  isomorphism-invariant statement.
+- **Representation.** Finite support *sets*, whole dependent rooted words, and the
+  actual support-tree lists **up to permutation** have now been
+  identified. No claim of literal equality of arbitrary list
+  enumerations is made or needed.
 
 In particular the 22 October target-rank-gap note was an accurate
 intermediate diagnosis; its final *open ordering* paragraph is
