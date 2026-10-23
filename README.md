@@ -1,27 +1,31 @@
 # lean-dualtree
 
-**Current verified status — 22 October 2026 (main through merged PR #421).**
+**Current verified status — 23 October 2026 (main through merged PR #426).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,784 distinct registered source-facing
+audits have passed, with **1,803 distinct registered source-facing
 transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
 
 
-**Latest exact target reconstruction (merged #420–421):** For a target
-starred word with the same *complete corrected signature*, contained
-in the actual final rank-filtered support and satisfying the
-two-letter/evaluated-span hypotheses, a genuine enlarged mixed-span
-input has an **exact target Q node set and entire dependent output
-word**. This raw preimage needs **no selected D₂ ordering premise**.
-To promote it to the corrected starred Q-input subtype, the
-target-selected terminal T-ranks must be nondecreasing across sorted
-D₂ indices, and **strictly increase across any source frontier
-T-rank jump** from m to m+1. The exact equivalence is Lean-verified,
-but those inequalities have *not* been deduced for every target.
-See [the 22 October target rank-gap audit](notes/lemma27_target_rank_gap_20261022.md).
-This does not equate the corrected W_* with the printed W_* or
-close Lemma 27's reverse starred-span coverage.
-
+**Latest exact corrected target Q preimage (merged #423–426):** The
+previously isolated selected D₂-starred ordering obstruction is now
+**discharged in Lean**, not assumed. Equality of the target node set
+transfers its intrinsic terminal ranks to the actual corrected Q
+support. The target's own skew II/III, together with the two
+frontier-rank bands and opposite cross-band ordinary lex order,
+forces precisely the weak/strict ambient T terminal-rank inequalities.
+Consequently the exact target-selected local mixed-span point is a
+**genuine corrected starred input**. Coherent local relettering
+produces an actual full-fibrewise **StarredWord Q output** whose
+finite tree node set and entire dependent rooted word match a
+supported, same-complete-signature target O, under the previously
+stated two-letter and evaluated-span assumptions. See the
+[23 October proof note](notes/lemma27_target_D2_starred_from_skew_20261023.md)
+and `ForwardQFinalTypedTargetPreimage`. The original printed
+reverse-lex W_* domain and its inductive Ramsey argument are
+still not verified. There is also a distinct, verified obstruction
+to unrestricted reverse coverage of the current final f' span
+when extra retained ambient roots remain free.
 
 The corrected **forward-auxiliary-order** Lemma 27 construction now has
 a genuine rank-budgeted final support proved `(m+q)`-complete skew
