@@ -10964,6 +10964,21 @@ with the target under the verified source/target
 root equivalence. Arbitrary tree-list enumerations
 are not spuriously equated.
 
+\paragraph{Permutation-invariant exact target tree representation.} \ok
+The finite node-set equality of the actual
+fibrewise \(Q\)-starred output and \(\mathcal O\)
+also upgrades to a genuine permutation of their
+tree \emph{lists}. Both are duplicate-free,
+since the corresponding source-facing Lean
+objects carry true semi-complete-skew certificates.
+The exact registered theorem
+\lean{ForwardQFinalTypedTargetTreePerm.exists_typed_corrected_Q_target_tree_perm}
+applies Mathlib's finite-list permutation criterion
+to the already verified set equality, without
+asserting that arbitrary list enumerations
+are identical. The full dependent rooted-word
+equality and mixed-span membership are preserved.
+
 \paragraph{What remains outside the corrected local theorem.} \todo
 This discharges the selected target \(D_2\)-ordering
 obligation of the \emph{forward-corrected} local
