@@ -2096,3 +2096,4 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalTargetOrderFromSkew.targetMixedPoint_isStarred
 #print axioms DualTree.ForwardQFinalTargetOrderFromSkew.exists_coherent_starred_target_Q_preimage
 #print axioms DualTree.ForwardQFinalTypedTargetPreimage.exists_typed_corrected_Q_starred_target_preimage
+#print axioms DualTree.ForwardQFinalTypedTargetTreePerm.exists_typed_corrected_Q_target_tree_perm
