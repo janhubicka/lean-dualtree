@@ -96,6 +96,7 @@ theorem target_T_rank_mono_same_frontier_band
   let tj := targetTerminalAtBullet hb g f O L hSupport j
   have hlen := target_terminal_length_le_same_frontier_rank
     hb g f O L hSupport fallback σ i j hij hfront
+  change ti.length ≤ tj.length at hlen
   have hTi := target_terminal_mem_ambient_T
     hb g f O L hSupport fallback σ i
   have hTj := target_terminal_mem_ambient_T
