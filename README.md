@@ -1,8 +1,8 @@
 # lean-dualtree
 
-**Current verified status — 23 October 2026 (main through merged PR #426).**
+**Current verified status — 23 October 2026 (main through merged PR #428).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,803 distinct registered source-facing
+audits have passed, with **1,804 distinct registered source-facing
 transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
 
@@ -23,7 +23,12 @@ stated two-letter and evaluated-span assumptions. See the
 [23 October proof note](notes/lemma27_target_D2_starred_from_skew_20261023.md)
 and `ForwardQFinalTypedTargetPreimage`. The original printed
 reverse-lex W_* domain and its inductive Ramsey argument are
-still not verified. There is also a distinct, verified obstruction
+still not verified. Merged PR #428 further proves that the actual typed corrected
+Q output tree list is a **permutation** of the target O.tree list,
+not merely equal as a Finset; literal equality of arbitrary
+list enumerations is unnecessary. See
+`ForwardQFinalTypedTargetTreePerm`.
+There is also a distinct, verified obstruction
 to unrestricted reverse coverage of the current final f' span
 when extra retained ambient roots remain free.
 
