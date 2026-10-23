@@ -11,8 +11,8 @@ list enumeration and dependent variable-name subtype proofs.
 
 A smooth colouring of the total enlarged mixed product can therefore
 be transported back to ALL supported same-signature targets provided
-a local mixed Ramsey variable word f is monochromatic for that
-colouring. The proof applies the exact target preimage, not a
+the STARRED portion of a local mixed Ramsey word f is monochromatic
+for that colouring, as in the paper's Corollary 22. The proof applies the exact target preimage, not a
 fictional coverage of all unrestricted evaluations in span(f').
 
 This module also combines the already checked intrinsic-root
@@ -37,7 +37,7 @@ open ForwardQModelBoundaryTransport
 
 /-- A total enlarged mixed-product colouring that agrees with the
 observed corrected Q colouring on starred inputs, and is constant
-on the ENTIRE real lifted span of a chosen local mixed word f,
+on the genuine STARRED part of a chosen lifted local mixed span,
 is constant on all supported same-complete-signature targets in
 the constructed final support/refinement span.
 
@@ -62,10 +62,11 @@ theorem target_monochromatic_of_homogeneous_lifted_span
             (ForwardQAmbientFibreLegalWord.fibreQStarredWord
               hb g fallback w)))
     (hmono :
-      ∀ x : ForwardQEnlargedConstantWords.EnlargedInput g.core,
-        x ∈ (ForwardQFinalMixedAlphabetSpan.mapMixedWordConstants f
+      ∀ x : ForwardQEnlargedConstantWords.EnlargedStarredInput
+          g.core fallback,
+        x.1 ∈ (ForwardQFinalMixedAlphabetSpan.mapMixedWordConstants f
           (fun a : α => (Sum.inl a : Sum α (Fin (m + 1))))).span →
-        total x = κ)
+        total x.1 = κ)
     (O : StarredSignature.StarredWord b n l α
       (SkewTree.forwardAuxB (b := b)))
     (cutO : Node b)
@@ -89,7 +90,7 @@ theorem target_monochromatic_of_homogeneous_lifted_span
           (ForwardQAmbientFibreLegalWord.fibreQStarredWord
             hb g fallback w)) := congrArg color hobs.symm
     _ = total w.1 := (hagree w).symm
-    _ = κ := hmono w.1 hwspan
+    _ = κ := hmono w hwspan
 
 /-- The already verified intrinsic canonical selector produces
 a TOTAL smooth enlarged mixed-product colouring from the
@@ -131,11 +132,11 @@ theorem exists_total_smooth_with_conditional_target_transfer
             g.core (markerB2OfModelA hb g.core B2)) x y →
         total x = total y) ∧
       (∀ (q : Nat) (f : LocalMixedWord g.core q α) (κ : γ),
-        (∀ x : ForwardQEnlargedConstantWords.EnlargedInput
-            g.core,
-          x ∈ (ForwardQFinalMixedAlphabetSpan.mapMixedWordConstants f
+        (∀ x : ForwardQEnlargedConstantWords.EnlargedStarredInput
+            g.core fallback,
+          x.1 ∈ (ForwardQFinalMixedAlphabetSpan.mapMixedWordConstants f
             (fun a : α => (Sum.inl a : Sum α (Fin (m + 1))))).span →
-          total x = κ) →
+          total x.1 = κ) →
         ∀ (O : StarredSignature.StarredWord b n l α
               (SkewTree.forwardAuxB (b := b)))
           (cutO : Node b)
