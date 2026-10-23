@@ -10897,18 +10897,95 @@ Conditional on these inequalities, the full starred-\(Q\)
 span preimage is established by
 \lean{ForwardQFinalTargetRankGap.exists_coherent_starred_target_Q_preimage_of_rank_gaps}.
 
-\paragraph{Remaining admissibility question.} \todo
-It has \emph{not} been shown that all same-signature supported
-targets \(\mathcal O\) satisfy the weak/strict target terminal
-rank conditions above. The cross-frontier strict-jump case is
-the most focused proof or finite counterexample target.
-Relettering alone cannot correct a violation, because it
-does not change the selected \(D_2\) points. Nor does this
-reconcile the printed reverse-lex \(W_*\) with the repaired
-forward-lex starred domain. The corrected construction,
-colouring and induction therefore remain incomplete.
-A self-contained account is in
-\texttt{notes/lemma27\_target\_rank\_gap\_20261022.md}.
+\paragraph{Corrected target \(D_2\) admissibility now follows from skewness.} \ok
+The missing rank inequalities for the exact target-selected
+\(D_2\) points are now kernel-verified, without any new
+\(\mathrm{BulletLengthsOrdered}\) hypothesis.
+The target node-set equality gives equality of genuine intrinsic
+predecessor ranks for \(\mathcal O\) and the corrected \(Q\):
+\lean{ForwardQFinalTargetIntrinsicBands.target_heightAt_eq_actual_Q}.
+The checked \(Q\)/frontier rank-band theorem consequently
+identifies the rank of each target terminal \(t_i\)
+with \(h_{\mathcal O}(t_0)\) or \(h_{\mathcal O}(t_0)+1\)
+according as its selected complete-\(T\) frontier rank
+\(F_i\) is \(m\) or \(m+1\).
+
+For two selected source \(D_2\) indices \(i<j\) with
+\(F_i=F_j\), ordinary lex order of the two target
+terminals follows the sorted frontier index order.
+Their target-intrinsic ranks coincide, and the true
+skew clause~(ii) of \(\mathcal O\) yields
+\(|t_i|\le|t_j|\).
+If their ambient complete-\(T\) ranks instead
+satisfied \(A_j<A_i\), clause~(iii) of \(T\) would
+give \(|t_j|<|t_i|\), a contradiction.
+Therefore \(A_i\le A_j\).
+
+When \(F_i=m<F_j=m+1\), the target-intrinsic
+ranks strictly increase, so clause~(iii) of
+\(\mathcal O\) forces \(|t_i|<|t_j|\).
+But the higher-rank frontier cone is
+\emph{earlier} in ordinary lex than the lower
+frontier cone. If \(A_j<A_i\), the strict
+length separation of complete \(T\) contradicts
+this inequality; if \(A_j=A_i\), skew clause~(ii)
+of \(T\), applied in the reversed lex orientation,
+forces \(|t_j|\le|t_i|\), again a contradiction.
+Thus \(A_i<A_j\), proving exactly the
+two-band criterion from the preceding paragraph.
+
+The verified theorems
+\lean{ForwardQFinalTargetSkewLengths.target_terminal_length_le_same_frontier_rank},
+\lean{ForwardQFinalTargetSkewLengths.target_terminal_length_lt_frontier_jump},
+\lean{ForwardQFinalTargetOrderFromSkew.target_T_rank_mono_same_frontier_band}
+and
+\lean{ForwardQFinalTargetOrderFromSkew.target_T_rank_strict_frontier_jump}
+establish those steps on the \emph{actual} source and target.
+In particular
+\lean{ForwardQFinalTargetOrderFromSkew.targetMixedPoint_isStarred}
+proves the corrected global vector-one \(D_2\)-starred
+condition for the selected target tuple.
+
+\paragraph{Genuine typed corrected \(Q\)-starred target preimage.} \ok
+Using the exact same-complete-signature, actual
+rank-filtered target support, two-letter alphabet,
+and evaluated-span inclusion hypotheses, the
+coherent enlarged input is therefore a true member
+of the corrected \emph{starred} input subtype, and
+lies in the lifted local mixed-word span:
+\lean{ForwardQFinalTargetOrderFromSkew.exists_coherent_starred_target_Q_preimage}.
+The further
+\lean{ForwardQFinalTypedTargetPreimage.exists_typed_corrected_Q_starred_target_preimage}
+packages its full fibrewise \(Q\) into an
+\emph{actual starred word}, whose support node
+\emph{set} equals \(\mathcal O\)'s node set and whose
+complete dependent rooted symbol function agrees
+with the target under the verified source/target
+root equivalence. Arbitrary tree-list enumerations
+are not spuriously equated.
+
+\paragraph{What remains outside the corrected local theorem.} \todo
+This discharges the selected target \(D_2\)-ordering
+obligation of the \emph{forward-corrected} local
+construction, not the entire original Lemma~27.
+In particular the printed reverse-lex \(W_*\)
+input domain fails naive transport to the
+corrected forward-lex \(W_*\) (as witnessed by
+the earlier verified example). The current
+full final \(f'\) span also has a separate
+extra-retained-variable obstruction to
+\emph{unrestricted} reverse coverage; the
+corrected target theorem is conditional on
+the target's actual final-support membership
+and evaluated-span inclusion, and does not
+erase that distinction. For the corrected
+intrinsic canonical selector, the total smooth
+colouring extension is already verified, but
+agreement with the \emph{published} Definition~24
+selector, the global recursive construction,
+Lemma~28 and Theorems~25 and~3 are still open.
+A standalone account is in
+\texttt{notes/lemma27\_target\_D2\_starred\_from\_skew\_20261023.md}.
 
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
