@@ -6,7 +6,7 @@ import DualTree.ForwardQFinalFullSignatureRootTransport
 
 The earlier exact starred target Q preimage used a local Ramsey word
 over the original alphabet. The genuine Corollary-22 local word may
-instead contain FIXED auxiliary symbols in α ⊕ Fin(m+1). These are
+instead contain FIXED auxiliary symbols in α ⊕ Fin (m+1). These are
 decoded through R_i into genuine retained OLD final variable roots.
 
 Under the actual two-letter evaluated-span refinement O.word.span ⊆
@@ -151,7 +151,7 @@ target O, under the required evaluated-span refinement. -/
 theorem output_preserves_original_local_constant
     {b n l k m q : Nat} {α : Type*}
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
-    (f : LocalMixedWord g.core q (Sum α (Fin(m+1))))
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
     (fallback : α)
     (O : StarredSignature.StarredWord b n l α
       (SkewTree.forwardAuxB (b := b)))
@@ -189,7 +189,7 @@ theorem output_preserves_aux_local_constant
     {b n l k m q : Nat} {α : Type*}
     (hb : 0 < b)
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
-    (f : LocalMixedWord g.core q (Sum α (Fin(m+1))))
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
     (fallback : α)
     (O : StarredSignature.StarredWord b n l α
       (SkewTree.forwardAuxB (b := b)))
@@ -201,7 +201,7 @@ theorem output_preserves_aux_local_constant
       (enlargedInterpolatedFinalWord g f fallback).span)
     (i : Index g.core)
     (z : BoundedNode b (k-(m+1)))
-    (j : Fin(m+1))
+    (j : Fin (m+1))
     (hz : (f.vector.components i).word z =
       Sum.inl (Sum.inr j)) :
     O.word.word
