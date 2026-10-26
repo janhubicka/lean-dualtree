@@ -5,7 +5,7 @@ import DualTree.ForwardQFinalInducedStarredPoint
 # Full enlarged-alphabet mixed input induced by a final-root assignment
 
 For the TRUE post-Corollary-22 mixed variable word over
-α ⊕ Fin(m+1), each selected local variable represents a NEW final
+α ⊕ Fin (m+1), each selected local variable represents a NEW final
 ambient root, and its value in a desired final evaluation is an α
 letter. Auxiliary fixed constants must remain fixed auxiliary
 letters in the generated mixed input, to be decoded by Q through
@@ -38,6 +38,7 @@ open ForwardQFinalAmbientRootLift
 open ForwardQFinalGlobalFibreSubstitution
 open ForwardQFinalGlobalEnlargedWord
 open ForwardQFinalEnlargedLocalSymbols
+open ForwardQFinalHeightBudget
 
 /-- The necessary agreement on original source roots retained in
 the final support. It does not freeze any genuinely new projected
@@ -148,7 +149,7 @@ irrelevant to the singleton starred order. -/
 theorem enlargedInducedInput_bullet_lengths_ordered
     {b n l k m q : Nat} {α : Type*}
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
-    (f : LocalMixedWord g.core q (Sum α (Fin(m+1))))
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
     (fallback : α)
     (σ : FinalRoot g f → α)
     (hq : 0 < q) :
@@ -201,7 +202,7 @@ mixed Ramsey span with no hidden constant-lift restriction. -/
 theorem enlargedInducedStarredInput_mem_span
     {b n l k m q : Nat} {α : Type*}
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
-    (f : LocalMixedWord g.core q (Sum α (Fin(m+1))))
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
     (fallback : α)
     (σ : FinalRoot g f → α)
     (hq : 0 < q) :
