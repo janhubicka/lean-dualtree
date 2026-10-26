@@ -111,7 +111,12 @@ theorem coherent_target_Q_matches_at_original_f_root
         have hO : O.word.word u.1 = Sum.inl fallback :=
           output_unsafe_late_fallback
             g f fallback O hα hspan u hbefore hsafe
-        simp [hQ,hO]
+        change Sum.map id
+          (sourceOutputVarsEquiv hb g O cutO H)
+          (ForwardQAmbientFibreSymbol.fibreQSymbol g fallback
+            w u.1) = O.word.word u.1
+        rw [hQ,hO]
+        rfl
     | some addr =>
         rcases addr with ⟨i,z⟩
         have hpoint :
@@ -168,7 +173,11 @@ theorem coherent_target_Q_matches_full_word
       have hO : O.word.word s = Sum.inl a :=
         SpanAudit.constant_preserved_of_span_subset
           hα g.ambient.word O.word.word hOrig hs
-      simp [hQ,hO]
+      change Sum.map id e
+        (ForwardQAmbientFibreSymbol.fibreQSymbol g fallback w s) =
+        O.word.word s
+      rw [hQ,hO]
+      rfl
   | inr u =>
       have hQ :
           ForwardQAmbientFibreSymbol.fibreQSymbol
