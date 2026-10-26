@@ -1,10 +1,36 @@
 # lean-dualtree
 
-**Current verified status — 23 October 2026 (main through merged PR #428).**
+**Current verified status — 26 October 2026 (main through merged PR #440).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,804 distinct registered source-facing
+audits have passed, with **1,863 distinct registered source-facing
 transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
+
+**Genuine enlarged-alphabet Lemma 27 advance (merged #433–439):**
+the paper's mixed Ramsey word has local constant alphabet
+\(\alpha\sqcup\mathrm{Fin}(m+1)\), NOT just the original alphabet.
+The failure of the naive original-alphabet constant lift is now
+proved in Lean (#433), and the repaired local decoder (#434) sends
+genuine auxiliary constants through \(R_i\) into retained old
+final roots. An actual globally root-compatible complete-skew
+final ambient word is constructed from the enlarged local words
+(#435), with exact final support and evaluated-span inclusion.
+Original source marker / target D2 coordinate geometry is
+verified for arbitrary local alphabets (#436).
+The genuine enlarged local mixed-word input has certified
+starred D2 ordering and span membership (#437), and its
+corrected fibrewise \(Q\) evaluation agrees with this enlarged
+final word at all safe projected original-variable fibres
+(#438). The old-root compatibility condition is supplied
+by the canonical anchoring map without an extra premise
+(#439). See the [26 October enlarged-alphabet validation note](notes/lemma27_enlarged_handoff_20261026.md).
+**The whole-domain anchored enlarged-alphabet Q/f' evaluation
+comparison passed full Lean CI and was merged in #440.**
+It proves equality of evaluated tree words at all bounded positions,
+with a genuine starred mixed-span input and explicit old-root anchoring.
+The enlarged target reverse preimage, actual quantitative Ramsey
+witness and printed-order Ramsey iteration are NOT yet established.
+
 
 
 **Latest exact corrected target Q preimage (merged #423–426):** The

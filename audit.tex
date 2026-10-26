@@ -11002,6 +11002,96 @@ Lemma~28 and Theorems~25 and~3 are still open.
 A standalone account is in
 \texttt{notes/lemma27\_target\_D2\_starred\_from\_skew\_20261023.md}.
 
+\paragraph{Genuine enlarged-alphabet Lemma 27 handoff (26 October 2026).} \ok
+The corrected mixed Ramsey step must operate with the enlarged
+constant alphabet \(\Lambda\sqcup\{0,\ldots,m\}\), rather than
+a local word over \(\Lambda\) with its constants subsequently
+injected. Fixed auxiliary local constants cannot occur in
+such a literal original-alphabet lift. The precise typed
+obstruction, including a corresponding span non-inclusion,
+is checked in
+\lean{ForwardQFinalAlphabetLiftObstruction.enlarged_aux_constant_not_lifted_mixed_word}
+and
+\lean{ForwardQFinalAlphabetLiftObstruction.auxiliary_constant_blocks_original_lifted_word_span}.
+This does not refute the mixed Ramsey theorem; it requires
+using the genuine enlarged local word in the interpolation.
+
+The repaired local decoder sends an original constant
+to itself, sends a fixed auxiliary letter \(j\) through
+the actual \(R_i(j)\) to either an original constant or a
+retained old final variable root, and sends selected local
+variables to their own distinct projected final roots.
+The resulting final variable is always an ambient prefix
+of \(P_i(z)\), including the auxiliary-constant case.
+These are verified in
+\lean{ForwardQFinalEnlargedLocalSymbols.enlargedLocalSymbol_variable_below}
+and its local symbol cases.
+
+\paragraph{Complete support and span of the genuinely enlarged final word.} \ok
+The total root-compatible substitution obtained from these
+genuine enlarged component symbols fixes every selected
+final root and yields an actual ambient \(\Lambda\)-variable
+word with precisely the rank-filtered \((m+q)\)-complete-skew
+support and evaluated span inside the original ambient
+word's span. The checked statements are
+\lean{ForwardQFinalGlobalEnlargedWord.enlargedGlobalRootSymbol_fixes_final_root},
+\lean{ForwardQFinalGlobalEnlargedWord.enlargedGlobalRootSymbol_below},
+\lean{ForwardQFinalGlobalEnlargedWord.enlargedInterpolatedFinalWord_support_iff}
+and
+\lean{ForwardQFinalGlobalEnlargedWord.enlargedInterpolatedFinalWord_span_subset}.
+The original source-marker/target-\(D_2\) inverse geometry
+also works with an independently enlarged local alphabet,
+via
+\lean{ForwardQFinalPolymorphicTargetD2.exists_target_D2_local_point_for_marker}.
+
+\paragraph{Actual enlarged starred mixed input and safe-fibre comparison.} \ok
+The genuine local enlarged variable words admit an actual
+mixed-span evaluation point for any selected final assignment,
+retaining their fixed auxiliary constants. Its canonical
+rank-zero \(D_2\) marked coordinates satisfy the corrected
+starred singleton-vector condition for positive \(q\), so it
+is an actual enlarged starred mixed input:
+\lean{ForwardQFinalEnlargedInducedEvaluation.enlargedInducedStarredInput_mem_span}.
+On the entire original ambient variable fibre of any safe
+projected \(P_i(z)\), its genuine \(Q\) evaluation equals
+the enlarged final ambient word's evaluation, provided the
+old source roots are valued consistently:
+\lean{ForwardQFinalEnlargedProjectedEval.enlarged_Q_projected_fibre_eval_eq_final}.
+The canonical anchored assignment proves this compatibility
+automatically while leaving new projected final roots free:
+\lean{ForwardQFinalEnlargedAnchoredEvaluation.enlarged_Q_projected_fibre_eval_anchored}.
+
+\paragraph{Whole-domain genuinely enlarged \(Q/f'\) evaluation.} \ok
+The four original ambient-fibre cases have now been assembled
+and verified for the REAL enlarged local alphabet: original
+ambient constants, early old-source-root fibres, genuinely safe
+projected fibres (including decoded auxiliary letters), and
+late unsafe/no-projection fibres. For any old-source assignment
+and arbitrary base final-root assignment, the canonical anchoring
+map fixes exactly the required early values without freezing
+independent projected variables. The actual evaluated corrected
+\(Q\) word and the enlarged final \(f'\) word agree at every
+bounded ambient position:
+\lean{ForwardQFinalEnlargedWholeDomainEvaluation.enlarged_Q_eval_eq_final_eval}.
+A legal corrected starred mixed input in the genuine enlarged
+local Ramsey span yields an actual \(Q\) evaluation in the
+final word's span:
+\lean{ForwardQFinalEnlargedWholeDomainEvaluation.enlarged_starred_Q_eval_mem_final_span}.
+
+\paragraph{Remaining published-domain and reverse-target obligations.} \todo
+The new genuinely enlarged final word still needs its OWN
+complete starred-target reverse preimage and transfer to a
+quantitative mixed Ramsey witness.
+Earlier target preimages were proved for the
+original-alphabet-only interpolated word; they cannot be
+silently substituted for the new enlarged word.
+The separate obstruction to unrestricted independent
+retained-root span coverage and the printed
+reverse-lex \(W_*\) versus corrected forward-lex domain
+are unchanged. Thus Lemmas~27--28 and Theorems~25 and~3
+are not yet verified. Details appear in
+\texttt{notes/lemma27\_enlarged\_handoff\_20261026.md}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
