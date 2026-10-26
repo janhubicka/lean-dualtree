@@ -135,7 +135,7 @@ theorem Q_node_set_eq_target_of_marker_eq
   ext t
   constructor
   · intro ht
-    change t ∈ (ForwardQFixedBase.oldBase g.core).toFinset ∪
+    change t ∈ (oldBase g.core).toFinset ∪
       (Finset.univ :
         Finset (MixedProduct.BulletIndex (kind g.core))).image
         (fun i => (markedProjection g.core x i).1) at ht
@@ -159,10 +159,10 @@ theorem Q_node_set_eq_target_of_marker_eq
     · have hSource : t ∈ SkewTree.interior g.core.source.tree :=
         (ForwardQFinalLiteralSignatureTree.literal_signature_trees_force_same_interior
           hb g O L t).1 hinterior
-      have hOld : t ∈ ForwardQFixedBase.oldBase g.core :=
+      have hOld : t ∈ oldBase g.core :=
         (ForwardQFixedBase.oldBase_mem_iff_original_interior
           g.core t).2 hSource
-      change t ∈ (ForwardQFixedBase.oldBase g.core).toFinset ∪
+      change t ∈ (oldBase g.core).toFinset ∪
         (Finset.univ :
           Finset (MixedProduct.BulletIndex (kind g.core))).image
           (fun i => (markedProjection g.core x i).1)
@@ -171,7 +171,7 @@ theorem Q_node_set_eq_target_of_marker_eq
     · obtain ⟨i,hi⟩ :=
         target_terminal_covered_of_marker_eq
           hb g O L hT x hmarkers t htO hinterior
-      change t ∈ (ForwardQFixedBase.oldBase g.core).toFinset ∪
+      change t ∈ (oldBase g.core).toFinset ∪
         (Finset.univ :
           Finset (MixedProduct.BulletIndex (kind g.core))).image
           (fun i => (markedProjection g.core x i).1)
