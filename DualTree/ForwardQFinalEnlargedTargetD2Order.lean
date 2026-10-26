@@ -194,10 +194,11 @@ theorem targetD2Ordered_of_target_skew
     hb g f fallback O cutO H hSupport i
   have hj := target_bullet_points_eq_forgotten
     hb g f fallback O cutO H hSupport j
-  change (ForwardQEnlargedConstantWords.eraseAux g.core fallback
-      (coherentTargetInput hb g f fallback O cutO H hSupport)).bulletPoint i |>.1.length ≤
-    (ForwardQEnlargedConstantWords.eraseAux g.core fallback
-      (coherentTargetInput hb g f fallback O cutO H hSupport)).bulletPoint j |>.1.length
+  change
+    ((ForwardQEnlargedConstantWords.eraseAux g.core fallback
+      (coherentTargetInput hb g f fallback O cutO H hSupport)).bulletPoint i).1.length ≤
+    ((ForwardQEnlargedConstantWords.eraseAux g.core fallback
+      (coherentTargetInput hb g f fallback O cutO H hSupport)).bulletPoint j).1.length
   rw [← hi, ← hj]
   exact hOrder0 i j hij
 
