@@ -20,7 +20,7 @@ import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
 import DualTree.ForwardQFinalPairwiseTransfer
 import DualTree.ForwardQFinalAlphabetLiftObstruction
-import DualTree.ForwardQFinalEnlargedAnchoredEvaluation
+import DualTree.ForwardQFinalEnlargedWholeDomainEvaluation
 import DualTree.ForwardQFinalSameFrontierLength
 
 
