@@ -87,17 +87,9 @@ theorem final_word_constant_on_local_variable_fibre
       enlargedLocalSymbol g f fallback i z =
       enlargedLocalSymbol g f fallback i v.1 := by
     simp [enlargedLocalSymbol, hz, hroot]
-  calc
-    (enlargedInterpolatedFinalWord g f fallback).word
-        (ForwardQActualCoordinateWord.projectedBounded
-          g.core g.T_bounded i z) =
-      enlargedLocalSymbol g f fallback i z :=
-        final_word_at_projected g f fallback i z
-    _ = enlargedLocalSymbol g f fallback i v.1 := hlocal
-    _ = (enlargedInterpolatedFinalWord g f fallback).word
-        (ForwardQActualCoordinateWord.projectedBounded
-          g.core g.T_bounded i v.1) :=
-        (final_word_at_projected g f fallback i v.1).symm
+  have hzFinal := final_word_at_projected g f fallback i z
+  have hvFinal := final_word_at_projected g f fallback i v.1
+  exact hzFinal.trans (hlocal.trans hvFinal.symm)
 
 /-- A target refining the genuinely enlarged final word cannot
 vary its *actual dependent variable-word symbol* along one local
@@ -172,6 +164,7 @@ theorem output_preserves_original_local_constant
           g.core g.T_bounded i z) = Sum.inl a := by
     rw [final_word_at_projected]
     simp [enlargedLocalSymbol, hz]
+    rfl
   exact SpanAudit.constant_preserved_of_span_subset hα
     (enlargedInterpolatedFinalWord g f fallback).word
     O.word.word hspan hf
@@ -228,7 +221,10 @@ theorem output_preserves_aux_local_constant
           (enlargedInterpolatedFinalWord g f fallback).word
             (ForwardQActualCoordinateWord.projectedBounded
               g.core g.T_bounded i z) = Sum.inl a := by
-        simpa [decodeAuxIntoFinal, hd] using hfinal
+        have hAux :
+            decodeAuxIntoFinal g f fallback i j = Sum.inl a := by
+          simp [decodeAuxIntoFinal, hd]
+        exact hfinal.trans hAux
       have ho := SpanAudit.constant_preserved_of_span_subset hα
         (enlargedInterpolatedFinalWord g f fallback).word
         O.word.word hspan hf
@@ -240,7 +236,10 @@ theorem output_preserves_aux_local_constant
           (enlargedInterpolatedFinalWord g f fallback).word
             (ForwardQActualCoordinateWord.projectedBounded
               g.core g.T_bounded i z) = Sum.inr rv := by
-        simpa [decodeAuxIntoFinal, hd, rv] using hfinal
+        have hAux :
+            decodeAuxIntoFinal g f fallback i j = Sum.inr rv := by
+          simp [decodeAuxIntoFinal, hd, rv]
+        exact hfinal.trans hAux
       have hr :
           (enlargedInterpolatedFinalWord g f fallback).word
             rv.1 = Sum.inr rv :=
@@ -270,6 +269,8 @@ theorem output_preserves_aux_local_constant
         _ = Sum.inr (e v) := hOroot
         _ = Sum.map id e
           (ForwardQVisibleAncestorDecoder.decodeAux
-            g.core fallback i j) := by simp [hd]
+            g.core fallback i j) := by
+              rw [hd]
+              rfl
 
 end DualTree.ForwardQFinalEnlargedTargetLocalFibres
