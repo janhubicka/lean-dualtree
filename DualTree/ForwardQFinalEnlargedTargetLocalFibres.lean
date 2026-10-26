@@ -261,16 +261,18 @@ theorem output_preserves_aux_local_constant
       have hOroot : O.word.word rv.1 = Sum.inr (e v) := by
         rw [hrv]
         exact O.word.atRoot (e v)
-      calc
-        O.word.word
-          (ForwardQActualCoordinateWord.projectedBounded
-            g.core g.T_bounded i z) =
-          O.word.word rv.1 := ho
-        _ = Sum.inr (e v) := hOroot
-        _ = Sum.map id e
-          (ForwardQVisibleAncestorDecoder.decodeAux
-            g.core fallback i j) := by
-              rw [hd]
-              rfl
+      have hdecode :
+          Sum.map id e
+            (ForwardQVisibleAncestorDecoder.decodeAux
+              g.core fallback i j) = Sum.inr (e v) := by
+        rw [hd]
+        rfl
+      change O.word.word
+        (ForwardQActualCoordinateWord.projectedBounded
+          g.core g.T_bounded i z) =
+          Sum.map id e
+            (ForwardQVisibleAncestorDecoder.decodeAux
+              g.core fallback i j)
+      exact ho.trans (hOroot.trans hdecode.symm)
 
 end DualTree.ForwardQFinalEnlargedTargetLocalFibres
