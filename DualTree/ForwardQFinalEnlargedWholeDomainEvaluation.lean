@@ -5,7 +5,7 @@ import DualTree.ForwardQFinalUnsafeFibreFallback
 # Whole-domain corrected Q/f' evaluation for GENUINE enlarged Ramsey words
 
 The actual post-Corollary-22 local Ramsey word has alphabet
-α ⊕ Fin(m+1). The enlarged final ambient word must decode fixed
+α ⊕ Fin (m+1). The enlarged final ambient word must decode fixed
 auxiliary letters to genuine retained old roots rather than replace
 them by original constants. This has now been done, including actual
 starred mixed input construction and whole projected-fibre comparison.
@@ -139,7 +139,7 @@ specified original fallback constant. -/
 theorem enlargedGlobalRootSymbol_late_no_safe
     {b n l k m q : Nat} {α : Type*}
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
-    (f : LocalMixedWord g.core q (Sum α (Fin(m+1))))
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
     (fallback : α)
     (u : g.ambient.Vars)
     (hafter : ¬ ForwardAux u.1.1 g.core.cut)
@@ -199,7 +199,7 @@ word have identical evaluations, both equal to fallback. -/
 theorem enlarged_Q_eval_late_no_safe
     {b n l k m q : Nat} {α : Type*}
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
-    (f : LocalMixedWord g.core q (Sum α (Fin(m+1))))
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
     (fallback : α)
     (σ : FinalRoot g f → α)
     (τ : g.core.source.word.Vars → α)
@@ -240,7 +240,7 @@ source and independently selected final roots. -/
 theorem enlarged_Q_eval_on_ambient_constant
     {b n l k m q : Nat} {α : Type*}
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
-    (f : LocalMixedWord g.core q (Sum α (Fin(m+1))))
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
     (fallback : α)
     (σ : FinalRoot g f → α)
     (τ : g.core.source.word.Vars → α)
@@ -274,7 +274,7 @@ D₂-order, auxiliary decoding, or Hall requirement. -/
 theorem enlarged_Q_eval_eq_final_at
     {b n l k m q : Nat} {α : Type*}
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
-    (f : LocalMixedWord g.core q (Sum α (Fin(m+1))))
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
     (fallback : α)
     (τ : g.core.source.word.Vars → α)
     (σ₀ : FinalRoot g f → α)
@@ -332,7 +332,7 @@ input is an actual evaluation of the complete-skew final f'. -/
 theorem enlarged_Q_eval_eq_final_eval
     {b n l k m q : Nat} {α : Type*}
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
-    (f : LocalMixedWord g.core q (Sum α (Fin(m+1))))
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
     (fallback : α)
     (τ : g.core.source.word.Vars → α)
     (σ₀ : FinalRoot g f → α) :
@@ -356,7 +356,7 @@ theorem enlarged_starred_Q_eval_mem_final_span
     {b n l k m q : Nat} {α : Type*}
     (hb : 0 < b)
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
-    (f : LocalMixedWord g.core q (Sum α (Fin(m+1))))
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
     (fallback : α)
     (τ : g.core.source.word.Vars → α)
     (σ₀ : FinalRoot g f → α)
