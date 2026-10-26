@@ -152,4 +152,71 @@ theorem enlargedFinalWord_projected_fibre_symbol
     enlargedLocalSymbol g f fallback i z
   simp [SpanAudit.substitute, hs, enlargedGlobalRootSymbol, hsafe]
 
+
+/-- The same genuine Q/f' evaluation equality holds on EVERY
+occurrence of an original ambient f-variable whose root is a
+safe projected point P_i(z), not merely at that root.
+
+Both sides are constant on the whole original f-fibre: the Q
+decoder is fibrewise on the original f root, while the final
+word is a syntactic substitution of f with the exactly
+decoded enlarged local symbol. -/
+theorem enlarged_Q_projected_fibre_eval_eq_final
+    {b n l k m q : Nat} {α : Type*}
+    (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
+    (fallback : α)
+    (σ : FinalRoot g f → α)
+    (τ : g.core.source.word.Vars → α)
+    (hcompat : OldRootAssignmentCompatible g f σ τ)
+    (i : Index g.core)
+    (z : BoundedNode b (k-(m+1)))
+    (s : BoundedNode b n)
+    (hs : g.ambient.word s =
+      Sum.inr (ForwardQAmbientFibreFrame.ambientAtTRoot g
+        (projected g.core ⟨i,z⟩).1
+        (projected g.core ⟨i,z⟩).2)) :
+    SpanAudit.evalSymbol τ
+      (ForwardQAmbientFibreSymbol.fibreQSymbol g fallback
+        (enlargedInducedInput g f fallback σ) s) =
+    SpanAudit.evalSymbol σ
+      ((enlargedInterpolatedFinalWord g f fallback).word s) := by
+  let u := ForwardQAmbientFibreFrame.ambientAtTRoot g
+    (projected g.core ⟨i,z⟩).1
+    (projected g.core ⟨i,z⟩).2
+  have hQ :
+      ForwardQAmbientFibreSymbol.fibreQSymbol g fallback
+        (enlargedInducedInput g f fallback σ) s =
+      ForwardQAmbientFibreSymbol.fibreQSymbol g fallback
+        (enlargedInducedInput g f fallback σ) u.1 :=
+    ForwardQAmbientFibreSymbol.fibreQ_constant_on_ambient_fibre
+      g fallback (enlargedInducedInput g f fallback σ)
+      u s u.1 hs (g.ambient.atRoot u)
+  have hFinal :
+      (enlargedInterpolatedFinalWord g f fallback).word s =
+      (enlargedInterpolatedFinalWord g f fallback).word u.1 := by
+    calc
+      (enlargedInterpolatedFinalWord g f fallback).word s =
+        enlargedLocalSymbol g f fallback i z :=
+        enlargedFinalWord_projected_fibre_symbol
+          g f fallback u s hs i z rfl
+      _ = (enlargedInterpolatedFinalWord g f fallback).word u.1 :=
+        (enlargedFinalWord_projected_root_symbol
+          g f fallback i z).symm
+  calc
+    SpanAudit.evalSymbol τ
+        (ForwardQAmbientFibreSymbol.fibreQSymbol g fallback
+          (enlargedInducedInput g f fallback σ) s) =
+      SpanAudit.evalSymbol τ
+        (ForwardQAmbientFibreSymbol.fibreQSymbol g fallback
+          (enlargedInducedInput g f fallback σ) u.1) :=
+      congrArg (SpanAudit.evalSymbol τ) hQ
+    _ = SpanAudit.evalSymbol σ
+        ((enlargedInterpolatedFinalWord g f fallback).word u.1) :=
+      enlarged_Q_projected_eval_eq_final
+        g f fallback σ τ hcompat i z
+    _ = SpanAudit.evalSymbol σ
+        ((enlargedInterpolatedFinalWord g f fallback).word s) :=
+      congrArg (SpanAudit.evalSymbol σ) hFinal.symm
+
 end DualTree.ForwardQFinalEnlargedProjectedEval
