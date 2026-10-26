@@ -372,10 +372,10 @@ theorem enlarged_starred_Q_eval_mem_final_span
   refine ⟨σ, ?_⟩
   have hword := enlarged_Q_eval_eq_final_eval
     g f fallback τ σ₀
-  change SpanAudit.eval
-      (ForwardQAmbientFibreSymbol.fibreQSymbol g fallback
-        (enlargedInducedInput g f fallback σ)) τ =
-      (enlargedInterpolatedFinalWord g f fallback).eval σ
-  exact hword
+  change (enlargedInterpolatedFinalWord g f fallback).eval σ =
+      SpanAudit.eval
+        (ForwardQAmbientFibreSymbol.fibreQSymbol g fallback
+          (enlargedInducedInput g f fallback σ)) τ
+  exact hword.symm
 
 end DualTree.ForwardQFinalEnlargedWholeDomainEvaluation
