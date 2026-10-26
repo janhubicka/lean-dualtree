@@ -2171,3 +2171,4 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalGenericTargetNodeSet.target_terminal_covered_of_marker_eq
 #print axioms DualTree.ForwardQFinalGenericTargetNodeSet.Q_node_set_eq_target_of_marker_eq
 #print axioms DualTree.ForwardQFinalGenericTargetNodeSet.coherent_enlarged_target_Q_node_set_eq
+#print axioms DualTree.ForwardQFinalEnlargedTargetProjectedWord.coherent_target_Q_matches_at_projected
