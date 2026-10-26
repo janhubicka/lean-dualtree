@@ -103,6 +103,14 @@ theorem enlarged_Q_projected_eval_eq_final
   have hQ :=
     ForwardQAmbientFibreSymbol.fibreQ_projected_root
       g fallback (enlargedInducedInput g f fallback σ) i z
+  have hnode :
+      (ForwardQAmbientFibreFrame.ambientAtTRoot g
+        (ForwardQActualCoordinateWord.projectLocal g.core i z).1
+        (ForwardQActualCoordinateWord.projectLocal g.core i z).2).1 =
+      (ForwardQAmbientFibreFrame.ambientAtTRoot g
+        (projected g.core ⟨i,z⟩).1
+        (projected g.core ⟨i,z⟩).2).1 := rfl
+  rw [hnode] at hQ
   have hW :=
     enlargedInducedInput_word_at g f fallback σ i z
   have hF := enlargedFinalWord_projected_root_symbol
