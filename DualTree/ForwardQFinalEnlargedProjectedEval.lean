@@ -36,6 +36,7 @@ open ForwardQFinalGlobalFibreSubstitution
 open ForwardQFinalGlobalEnlargedWord
 open ForwardQFinalEnlargedLocalSymbols
 open ForwardQFinalEnlargedInducedEvaluation
+open ForwardQFinalHeightBudget
 
 /-- At every actual safely projected ambient T root, the genuine
 FINAL variable word (whose local constants are truly enlarged)
@@ -44,7 +45,7 @@ constants interpreted as retained OLD roots. -/
 theorem enlargedFinalWord_projected_root_symbol
     {b n l k m q : Nat} {α : Type*}
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
-    (f : LocalMixedWord g.core q (Sum α (Fin(m+1))))
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
     (fallback : α)
     (i : Index g.core)
     (z : BoundedNode b (k-(m+1))) :
@@ -81,7 +82,7 @@ starred input used is precisely the verified member of f.span. -/
 theorem enlarged_Q_projected_eval_eq_final
     {b n l k m q : Nat} {α : Type*}
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
-    (f : LocalMixedWord g.core q (Sum α (Fin(m+1))))
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
     (fallback : α)
     (σ : FinalRoot g f → α)
     (τ : g.core.source.word.Vars → α)
@@ -131,7 +132,7 @@ rooted at P_i(z), not only through its root occurrence. -/
 theorem enlargedFinalWord_projected_fibre_symbol
     {b n l k m q : Nat} {α : Type*}
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
-    (f : LocalMixedWord g.core q (Sum α (Fin(m+1))))
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
     (fallback : α)
     (u : g.ambient.Vars)
     (s : BoundedNode b n)
