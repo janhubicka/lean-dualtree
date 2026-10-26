@@ -200,17 +200,25 @@ theorem enlarged_Q_projected_fibre_eval_eq_final
     ForwardQAmbientFibreSymbol.fibreQ_constant_on_ambient_fibre
       g fallback (enlargedInducedInput g f fallback σ)
       u s u.1 hs (g.ambient.atRoot u)
-  have hFinal :
-      (enlargedInterpolatedFinalWord g f fallback).word s =
-      (enlargedInterpolatedFinalWord g f fallback).word u.1 := by
-    calc
+  have hFibre :
       (enlargedInterpolatedFinalWord g f fallback).word s =
         enlargedLocalSymbol g f fallback i z :=
-        enlargedFinalWord_projected_fibre_symbol
-          g f fallback u s hs i z rfl
-      _ = (enlargedInterpolatedFinalWord g f fallback).word u.1 :=
-        (enlargedFinalWord_projected_root_symbol
-          g f fallback i z).symm
+    enlargedFinalWord_projected_fibre_symbol
+      g f fallback u s hs i z rfl
+  have hRoot :
+      (enlargedInterpolatedFinalWord g f fallback).word u.1 =
+        enlargedLocalSymbol g f fallback i z := by
+    change
+      (enlargedInterpolatedFinalWord g f fallback).word
+        (ForwardQAmbientFibreFrame.ambientAtTRoot g
+          (projected g.core ⟨i,z⟩).1
+          (projected g.core ⟨i,z⟩).2).1 =
+        enlargedLocalSymbol g f fallback i z
+    exact enlargedFinalWord_projected_root_symbol g f fallback i z
+  have hFinal :
+      (enlargedInterpolatedFinalWord g f fallback).word s =
+      (enlargedInterpolatedFinalWord g f fallback).word u.1 :=
+    hFibre.trans hRoot.symm
   calc
     SpanAudit.evalSymbol τ
         (ForwardQAmbientFibreSymbol.fibreQSymbol g fallback
