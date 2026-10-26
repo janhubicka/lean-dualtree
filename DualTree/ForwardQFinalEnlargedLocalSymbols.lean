@@ -122,12 +122,6 @@ theorem oldSourceFinalRoot_underlying
     (v : g.core.source.word.Vars) :
     (ForwardQFinalReverseCoverageCriterion.oldSourceFinalRoot
       g f v).1.1 = v.1.1 := by
-  change
-    (ForwardQFinalEarlyFibreAssignment.earlyFinalRoot g f
-      (ForwardQAmbientFibreFrame.ambientAtSourceRoot g v)
-      (ForwardQAmbientFibreFrame.source_root_before_cut g v)).1.1 =
-      v.1.1
-  rw [ForwardQFinalEarlyFibreAssignment.earlyFinalRoot_val]
   rfl
 
 /-- The enlarged decoder's most important safety property:
