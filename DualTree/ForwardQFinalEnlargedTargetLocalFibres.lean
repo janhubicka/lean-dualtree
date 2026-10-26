@@ -261,18 +261,8 @@ theorem output_preserves_aux_local_constant
       have hOroot : O.word.word rv.1 = Sum.inr (e v) := by
         rw [hrv]
         exact O.word.atRoot (e v)
-      have hdecode :
-          Sum.map id e
-            (ForwardQVisibleAncestorDecoder.decodeAux
-              g.core fallback i j) = Sum.inr (e v) := by
-        rw [hd]
-        rfl
-      change O.word.word
-        (ForwardQActualCoordinateWord.projectedBounded
-          g.core g.T_bounded i z) =
-          Sum.map id e
-            (ForwardQVisibleAncestorDecoder.decodeAux
-              g.core fallback i j)
-      exact ho.trans (hOroot.trans hdecode.symm)
+      -- The preceding case split has already rewritten R_i(j)
+      -- to Sum.inr v in the GOAL; do not try to rewrite it twice.
+      simpa only [Sum.map_inr] using ho.trans hOroot
 
 end DualTree.ForwardQFinalEnlargedTargetLocalFibres
