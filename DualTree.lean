@@ -21,6 +21,7 @@ import DualTree.ForwardSemiCompleteZeroRoot
 import DualTree.ForwardQFinalPairwiseTransfer
 import DualTree.ForwardQFinalAlphabetLiftObstruction
 import DualTree.ForwardQFinalEnlargedTargetD2Order
+import DualTree.MixedGoodStarredSpanObstruction
 import DualTree.ForwardQFinalSameFrontierLength
 
 
