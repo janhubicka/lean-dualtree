@@ -11078,19 +11078,88 @@ local Ramsey span yields an actual \(Q\) evaluation in the
 final word's span:
 \lean{ForwardQFinalEnlargedWholeDomainEvaluation.enlarged_starred_Q_eval_mem_final_span}.
 
-\paragraph{Remaining published-domain and reverse-target obligations.} \todo
-The new genuinely enlarged final word still needs its OWN
-complete starred-target reverse preimage and transfer to a
-quantitative mixed Ramsey witness.
-Earlier target preimages were proved for the
-original-alphabet-only interpolated word; they cannot be
-silently substituted for the new enlarged word.
-The separate obstruction to unrestricted independent
-retained-root span coverage and the printed
-reverse-lex \(W_*\) versus corrected forward-lex domain
-are unchanged. Thus Lemmas~27--28 and Theorems~25 and~3
-are not yet verified. Details appear in
-\texttt{notes/lemma27\_enlarged\_handoff\_20261026.md}.
+\paragraph{Genuine enlarged target symbolic reconstruction and exact \(Q\) node set.} \ok
+For a genuinely enlarged local mixed Ramsey word over
+\(\Lambda\sqcup\{0,\ldots,m\}\), the source-facing symbolic
+rigidity of target variable fibres has now been verified:
+all occurrences of each local variable have the same target
+dependent symbol, fixed original letters are preserved,
+and a fixed auxiliary letter \(j\) forces the exact
+corresponding old variable or constant \(R_i(j)\):
+\lean{ForwardQFinalEnlargedTargetLocalFibres.output_constant_on_local_variable_fibre}
+and
+\lean{ForwardQFinalEnlargedTargetLocalFibres.output_preserves_aux_local_constant}.
+The coherent mixed-span input uses a SINGLE enlarged letter per
+actual local variable and keeps every auxiliary fixed letter
+unaltered. Its \(D_2\) points project to precisely the
+unique target terminals above the original literal source
+markers. The generic Q node-set theorem gives the exact
+finite target vertex set:
+\lean{ForwardQFinalGenericTargetNodeSet.coherent_enlarged_target_Q_node_set_eq}.
+The same actual coherent input reproduces the ENTIRE
+dependent target word after canonical old/target-root transport,
+not merely an evaluated word:
+\lean{ForwardQFinalEnlargedTargetWholeWord.exists_raw_enlarged_target_Q_preimage}.
+
+\paragraph{Genuine enlarged \(D_2\) starred order and typed target preimage.} \ok
+The final corrected \(D_2\) vector-one order on this
+particular target-selected enlarged tuple is also kernel-verified,
+with NO new bullet-order assumption. Forgetting only the
+enlarged fixed letters temporarily produces an original-alphabet
+local word with identical variable supports and height budgets.
+At every original literal marker, its chosen \(D_2\) point
+and the genuine enlarged chosen \(D_2\) point project to
+the SAME target terminal; injectivity of the true complete-\(T\)
+local projection therefore identifies the selected marked
+local roots. The earlier target skew-length theorem yields
+the required order on the temporarily constant-forgotten word,
+which is transported to the genuine enlarged input:
+\lean{ForwardQFinalEnlargedTargetD2Order.targetD2Ordered_of_target_skew}.
+No actual auxiliary constants are erased in the real Q witness.
+The actual typed starred \(Q\) output, with finite target
+tree and full rooted dependent word agreeing as a
+representation-independent observation, is obtained in
+\lean{ForwardQFinalEnlargedTargetD2Order.exists_typed_enlarged_target_observation_preimage}.
+This holds for targets satisfying the complete corrected
+signature, rank-filtered support and two-letter evaluated-span
+hypotheses; no unrestricted reverse span inclusion is asserted.
+
+\paragraph{Pairwise colour transfer on the GENUINE enlarged starred span.} \ok
+The verified intrinsic-root canonical-selector simplicity
+criterion yields a TOTAL SMOOTH colouring of the genuine
+enlarged mixed-product element domain. Assuming a local
+enlarged mixed word \(f\) whose ACTUAL corrected starred-span
+subset is pairwise monochromatic for this total colouring,
+all eligible same-complete-signature supported starred
+targets refining the genuine enlarged \(f'\) have the same
+colour, because every such target admits the precise
+certified starred Q observation preimage:
+\lean{ForwardQFinalEnlargedPairwiseTransfer.eligible_enlarged_targets_pairwise_monochromatic}
+and
+\lean{ForwardQFinalEnlargedPairwiseTransfer.exists_total_smooth_with_enlarged_pairwise_target_transfer}.
+This conditional handoff uses no original-alphabet literal
+lift, chosen common colour or homogeneous FULL unstarred span.
+
+\paragraph{Remaining published Corollary~22, domain and induction obstructions.} \todo
+The preceding theorem is CONDITIONAL: existence of a suitable
+genuinely enlarged mixed-product word with the stated
+pairwise starred-span monochromaticity and quantitative
+bounds has not been verified. Moreover
+\lean{Corollary22Audit.no_monochromatic_complete_candidate}
+provides a verified smooth height-one Boolean
+counterexample to the printed Corollary~22 bound.
+Definition~11's \(c\)-goodness canonizes by the \(D_2\)
+marked point AND the observed letter; it cannot be
+silently strengthened to full starred-span monochromaticity.
+The printed reverse-lex \(W_*\) differs from the repaired
+forward-lex starred domain, with an independent checked
+counterexample to naive coordinate reindexing. The
+printed Definition~24 canonical selector has not been
+identified with the corrected intrinsic-root extension,
+nor have Lemma~28, Theorem~25 or Theorem~3 been proved.
+Unrestricted reverse coverage of independently valued
+retained old roots remains obstructed. See
+\texttt{notes/lemma27\_enlarged\_corrected\_preimage\_20261027.md}.
 
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a

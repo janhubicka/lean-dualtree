@@ -1,10 +1,36 @@
 # lean-dualtree
 
-**Current verified status — 26 October 2026 (main through merged PR #440).**
+**Current verified status — 27 October 2026 (main through merged PR #446).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,863 distinct registered source-facing
+audits have passed, with **1,895 distinct registered source-facing
 transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
+
+**Corrected enlarged Lemma 27 preimage and conditional colouring (merged #441–446):**
+For the TRUE β=α⊕Fin(m+1) local mixed Ramsey word, the
+target's complete dependent word and exact Q support have
+been reconstructed in the real mixed span (#441–444).
+The (D_2) starred-order condition follows automatically
+by transporting the earlier checked skew rank argument across
+a temporary constant-forgetting word with the SAME variable
+supports and selected target terminals (#445).
+The result is an ACTUAL typed corrected starred Q preimage
+whose full representation-independent observation matches
+the eligible target. Using it, pairwise monochromaticity of
+the **starred portion of the genuine enlarged mixed span**
+transfers to all eligible supported same-complete-signature
+targets (#446), and the intrinsic canonical selector supplies
+the checked total smooth colouring extension.
+
+This conditional transfer is NOT the missing local Ramsey
+existence theorem. The printed Corollary 22 has a separately
+Lean-checked height-one smooth-colouring counterexample;
+Definition 11's c-goodness cannot simply be substituted for
+full starred-span monochromaticity. The paper's original
+reverse-lex W_* domain, numerical bounds and Lemmas 28/
+Theorems 25/3 induction remain open. See the
+[27 October detailed proof note](notes/lemma27_enlarged_corrected_preimage_20261027.md).
+
 
 **Genuine enlarged-alphabet Lemma 27 advance (merged #433–439):**
 the paper's mixed Ramsey word has local constant alphabet
@@ -28,8 +54,12 @@ by the canonical anchoring map without an extra premise
 comparison passed full Lean CI and was merged in #440.**
 It proves equality of evaluated tree words at all bounded positions,
 with a genuine starred mixed-span input and explicit old-root anchoring.
-The enlarged target reverse preimage, actual quantitative Ramsey
-witness and printed-order Ramsey iteration are NOT yet established.
+The full **corrected** enlarged target starred Q preimage has
+subsequently been Lean-verified and merged in #441–445,
+and the genuine enlarged conditional starred-span pairwise
+colouring transfer in #446. The actual quantitative smooth
+Ramsey witness, source Corollary-22 issue and printed-order
+Ramsey iteration are NOT yet established.
 
 
 
