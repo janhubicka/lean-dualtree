@@ -18,7 +18,6 @@ import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
-import DualTree.ForwardQFinalPairwiseTransfer
 import DualTree.ForwardQFinalAlphabetLiftObstruction
 import DualTree.ForwardQFinalEnlargedPairwiseTransfer
 import DualTree.ForwardQFinalSameFrontierLength
