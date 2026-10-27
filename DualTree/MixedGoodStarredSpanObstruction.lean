@@ -102,11 +102,12 @@ theorem recolorBullet_mem_span
   refine ⟨?_, hx.2.1, hx.2.2⟩
   intro j
   by_cases hj : j = i.1
-  · have hmem :
-        (f.vector.components j).toVariableWord.eval
-          (fun _ => a) ∈ (f.vector.components j).span :=
+  · subst j
+    have hmem :
+        (f.vector.components i.1).toVariableWord.eval
+          (fun _ => a) ∈ (f.vector.components i.1).span :=
       ⟨fun _ => a, rfl⟩
-    simpa [recolorBullet, hj] using hmem
+    simpa [recolorBullet] using hmem
   · simpa [recolorBullet, hj] using hx.1 j
 
 /-- The marked point at the chosen coordinate is an actual
