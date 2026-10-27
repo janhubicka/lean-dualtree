@@ -57,7 +57,7 @@ theorem colorAtBullet_good
     {b n d k : Nat} {β : Type*}
     {aux : Node b → Node b → Bool}
     {kind : Fin d → CoordKind}
-    (f : VariableWord b n d k β aux kind)
+    (f : MixedProduct.VariableWord b n d k β aux kind)
     (i : BulletIndex kind) :
     Good (colorAtBullet i) f := by
   intro x y hx hy hmarks hletters
@@ -71,7 +71,7 @@ noncomputable def recolorBullet
     {b n d k : Nat} {β : Type*}
     {aux : Node b → Node b → Bool}
     {kind : Fin d → CoordKind}
-    (f : VariableWord b n d k β aux kind)
+    (f : MixedProduct.VariableWord b n d k β aux kind)
     (x : Element b n d β kind)
     (i : BulletIndex kind)
     (a : β) : Element b n d β kind := by
@@ -92,7 +92,7 @@ theorem recolorBullet_mem_span
     {b n d k : Nat} {β : Type*}
     {aux : Node b → Node b → Bool}
     {kind : Fin d → CoordKind}
-    (f : VariableWord b n d k β aux kind)
+    (f : MixedProduct.VariableWord b n d k β aux kind)
     (x : Element b n d β kind)
     (hx : x ∈ f.span)
     (i : BulletIndex kind)
@@ -117,7 +117,7 @@ theorem colorAtBullet_recolor
     {b n d k : Nat} {β : Type*}
     {aux : Node b → Node b → Bool}
     {kind : Fin d → CoordKind}
-    (f : VariableWord b n d k β aux kind)
+    (f : MixedProduct.VariableWord b n d k β aux kind)
     (x : Element b n d β kind)
     (hx : x ∈ f.span)
     (i : BulletIndex kind)
@@ -139,7 +139,7 @@ theorem recolorBullet_points
     {b n d k : Nat} {β : Type*}
     {aux : Node b → Node b → Bool}
     {kind : Fin d → CoordKind}
-    (f : VariableWord b n d k β aux kind)
+    (f : MixedProduct.VariableWord b n d k β aux kind)
     (x : Element b n d β kind)
     (i j : BulletIndex kind)
     (a : β) :
@@ -169,7 +169,10 @@ theorem enlarged_starred_preserved_by_bullet_points
     c _).2
   intro i j hij
   have h := hordered i j hij
-  change (y.bulletPoint i).1.length ≤ (y.bulletPoint j).1.length
+  change (x.bulletPoint i).1.length ≤
+    (x.bulletPoint j).1.length at h
+  change (y.bulletPoint i).1.length ≤
+    (y.bulletPoint j).1.length
   simpa only [hpoints i, hpoints j] using h
 
 /-- A correction of Definition 11 to full starred-span
@@ -214,7 +217,8 @@ theorem colorAtBullet_not_monochromatic_starred_span
   have hcolB := colorAtBullet_recolor f x.1 hx i b
   change colorAtBullet i ya = colorAtBullet i yb at heq
   rw [hcolA, hcolB] at heq
-  cases heq
+  have hab : a ≠ b := by simp [a, b]
+  exact hab heq
 
 /-- In the source-facing corrected Lemma-27 frame, positive
 local dimension q itself gives a genuine starred mixed-span
