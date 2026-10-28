@@ -2194,3 +2194,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalEnlargedGoodTransfer.targetBulletRecord
 #print axioms DualTree.ForwardQFinalEnlargedGoodTransfer.eligible_enlarged_target_colors_eq_of_good_record
 #print axioms DualTree.ForwardQFinalEnlargedGoodTransfer.exists_total_smooth_with_enlarged_good_record_transfer
+#print axioms DualTree.MixedProduct.reassignMarkedLetter
+#print axioms DualTree.MixedProduct.reassignMarkedLetter_mem_span
+#print axioms DualTree.MixedProduct.reassignMarkedLetter_bulletPoint
+#print axioms DualTree.MixedProduct.reassignMarkedLetter_at_mark
+#print axioms DualTree.MixedProduct.reassignMarkedLetter_other_words
+#print axioms DualTree.MixedProduct.reassignMarkedLetter_outside_cone
+#print axioms DualTree.MixedProduct.reassignMarkedLetter_smooth_gamma2
+#print axioms DualTree.MixedProduct.good_smooth_erase_one_gamma2_letter
