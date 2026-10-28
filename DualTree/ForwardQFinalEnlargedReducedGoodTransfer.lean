@@ -128,7 +128,7 @@ theorem eligible_target_colors_eq_of_reduced_record
     exact hvalue
   have hxy : total x.1 = total y.1 :=
     MixedProduct.good_smooth_color_eq_of_reduced_bullet_record
-      f total gamma1 hgood hsmooth fallback
+      f total gamma1 hgood hsmooth (Sum.inl fallback)
       x.1 y.1 hx hy hpoints hgamma1
   calc
     color (observe O) =
