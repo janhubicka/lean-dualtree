@@ -11246,6 +11246,53 @@ Unrestricted reverse coverage of independently valued
 retained old roots remains obstructed. See
 \texttt{notes/lemma27\_enlarged\_corrected\_preimage\_20261027.md}.
 
+
+\subsubsection{Canonical terminal residual record and refinement invariance (28 October 2026)}
+\paragraph{Lean status.} \ok
+Merged PRs 454, 456, 457 and 458 establish the explicit canonical
+target reduced record, its source-word independence, projection to genuine
+target terminal nodes, and invariance across local refinements and cut
+witnesses. The cumulative repository audit now checks 1{,}944 distinct
+source-facing transitive-axiom endpoints.
+
+At every original $D_2$ marker, the projected local point is exactly the
+unique leaf of the actual target tree above that marker. The fixed
+cone projection is injective. Thus the output-facing record has the form
+\[
+ i\longmapsto (P_i(z_i),L_i),\qquad
+ L_i=\begin{cases}
+ \operatorname{some}(a_i),&i\in\Gamma_1,\\
+ \operatorname{none},&i\in\Gamma_2,
+ \end{cases}
+\]
+where $a_i$ is the canonically encoded enlarged letter of the target
+at its genuine marked coordinate. Equality of these target-terminal
+records is equivalent to equality of the local reduced $D_2$ records.
+Provided there is an actual local $\mathrm{c}$-good mixed variable word
+and a total smooth $Q$ pullback, equality of the records implies
+equality of eligible target colours.
+
+\paragraph{New verified Lean endpoints.}
+\texttt{\detokenize{ForwardQFinalCanonicalTerminalRecord.terminalReducedTargetRecord_marker_eq_targetLeaf}},
+\texttt{\detokenize{ForwardQFinalCanonicalTerminalRecord.terminalReducedRecord_eq_iff_localRecord_eq}},
+and
+\texttt{\detokenize{ForwardQFinalCanonicalTerminalRecord.eligible_targets_color_eq_of_terminal_reduced_record}}.
+Independence across local words of different dimensions, cut witnesses
+and both simultaneously is verified by
+\texttt{\detokenize{ForwardQFinalCanonicalTerminalInvariance.terminalReducedTargetRecord_eq_across_words_and_cuts}},
+using the previously checked local reduced-record invariance.
+
+\paragraph{Remaining gap.} \todo
+These facts give invariance for the \emph{same} supported target under
+different local Ramsey refinements; they do not make the record constant
+among \emph{different} targets with one corrected signature.
+Neither the false printed Corollary~22 bound nor the reverse-lexicographic
+$W_*$ correspondence has been repaired. The genuine remaining task is
+a Ramsey-usable statement controlling residual target terminals and
+$\Gamma_1$ letters across distinct eligible targets, followed by the
+Definition~24 selector comparison and Lemma~27/28 induction.
+See \texttt{\detokenize{notes/lemma27_terminal_record_20261028.md}}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
