@@ -2217,3 +2217,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedProduct.normalizeGamma2Letters_at_bullet
 #print axioms DualTree.MixedProduct.normalizeGamma2Letters_smooth
 #print axioms DualTree.MixedProduct.good_smooth_color_eq_of_reduced_bullet_record
+#print axioms DualTree.ForwardQFinalEnlargedReducedGoodTransfer.reducedTargetBulletRecord
+#print axioms DualTree.ForwardQFinalEnlargedReducedGoodTransfer.eligible_target_colors_eq_of_reduced_record
+#print axioms DualTree.ForwardQFinalEnlargedReducedGoodTransfer.exists_total_smooth_with_reduced_good_target_transfer
