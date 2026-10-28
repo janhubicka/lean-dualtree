@@ -11140,6 +11140,61 @@ and
 This conditional handoff uses no original-alphabet literal
 lift, chosen common colour or homogeneous FULL unstarred span.
 
+\paragraph{Transfer of the actual Definition~11 \(c\)-good invariant.} \ok
+The relevant mixed Ramsey conclusion should not be conflated with
+monochromaticity of the entire starred span. Definition~11 permits
+the colour to depend on the actual selected \(D_2\) marker points
+\emph{and their observed enlarged alphabet letters}.
+For the true local alphabet \(\Lambda\sqcup\{0,\ldots,m\}\),
+the exact certified starred \(Q\)-preimage gives a target
+bullet record chosen inside the genuine mixed-word span.
+Whenever two eligible supported, same-complete-signature
+targets have equal chosen records, a \(c\)-good total
+pullback has equal target colours:
+\lean{ForwardQFinalEnlargedGoodTransfer.eligible_enlarged_target_colors_eq_of_good_record}.
+The earlier intrinsic-root all-\(U\) simplicity theorem
+also supplies a total smooth pullback with this conditional
+record factorization:
+\lean{ForwardQFinalEnlargedGoodTransfer.exists_total_smooth_with_enlarged_good_record_transfer}.
+No constancy of the bullet record follows from these statements.
+
+\paragraph{General distinction between \(c\)-goodness and starred-span homogeneity.} \ok
+For any genuine mixed variable word with a selected \(D_2\)
+coordinate, the colouring given by the enlarged letter
+observed at that marked point is \(c\)-good in the
+Definition~11 sense:
+\lean{MixedGoodStarredSpanObstruction.colorAtBullet_good}.
+Re-evaluating its genuine marked component variable with
+different letters preserves the mixed span, all selected
+marked points and the corrected starred condition,
+but changes the observed colour. When a genuine corrected
+starred span point exists, this prevents full
+starred-span monochromaticity:
+\lean{MixedGoodStarredSpanObstruction.colorAtBullet_not_monochromatic_starred_span}.
+Positive local dimension guarantees such a point for
+the genuine corrected enlarged construction:
+\lean{MixedGoodStarredSpanObstruction.no_full_starred_monochromaticity_from_good}.
+The counterexample is \emph{not claimed smooth} for every
+partition \(\Gamma_1\sqcup\Gamma_2\); the independently
+verified smooth height-one counterexample to the
+\emph{printed} Corollary~22 remains the stronger,
+separate objection.
+
+\paragraph{Further smooth/c-good reduction.} \todo
+A \(\Gamma_2\) smooth comparison permits variation of a
+coordinate's observed marked letter inside its inclusive
+successor cone, while preserving the marked point and
+outside-cone letters. A candidate proof changes only the
+actual marked local variable assignment, remains inside the
+genuine mixed-word span, and combines Definition~21
+smoothness with Definition~11 \(c\)-goodness to erase
+one \(\Gamma_2\) observed letter when the other marker
+record entries agree. This proposed reduction is not
+marked verified before its full Lean CI passes.
+Further canonicity and induction must still eliminate
+the remaining admissible \(D_2\) record information;
+see \texttt{notes/lemma27\_cgood\_vs\_starred\_20261028.md}.
+
 \paragraph{Remaining published Corollary~22, domain and induction obstructions.} \todo
 The preceding theorem is CONDITIONAL: existence of a suitable
 genuinely enlarged mixed-product word with the stated
