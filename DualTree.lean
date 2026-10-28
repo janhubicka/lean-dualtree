@@ -19,9 +19,8 @@ import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
 import DualTree.ForwardQFinalAlphabetLiftObstruction
-import DualTree.ForwardQFinalEnlargedGoodTransfer
 import DualTree.MixedGoodStarredSpanObstruction
-import DualTree.MixedGoodSmoothReducedRecord
+import DualTree.ForwardQFinalEnlargedReducedGoodTransfer
 import DualTree.ForwardQFinalSameFrontierLength
 
 
