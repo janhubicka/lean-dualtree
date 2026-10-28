@@ -197,8 +197,8 @@ theorem canonicalStarredTargetInput_bullet_letter
     ((canonicalStarredTargetInput
       hb g f fallback O cutO H hSupport).1).words
         i.1
-        ((canonicalStarredTargetInput
-          hb g f fallback O cutO H hSupport).1).bulletPoint i =
+        (((canonicalStarredTargetInput
+          hb g f fallback O cutO H hSupport).1).bulletPoint i) =
       ForwardQFinalOutputProjectedEncoder.encodeProjectedOutputSymbol
         hb g O cutO H fallback i.1
           (targetBulletPoint hb g f O
