@@ -1,8 +1,8 @@
 # Lemma 27: c-goodness, smoothness, and starred-span monochromaticity
 
 **Status: 28 October 2026.** The results below are kernel-checked and
-merged in #448–449, with full Lean umbrella compilation, finite
-regressions and transitive axiom audit (1,910 source-facing endpoints).
+merged through #453, with full Lean umbrella compilation, finite
+regressions and transitive axiom audit (1,927 source-facing endpoints).
 They do NOT prove printed Corollary 22, Lemma 27, or Theorem 3.
 
 ## What the available Ramsey invariant actually says
@@ -79,31 +79,68 @@ by either the corrected Q construction or by changing the
 alphabet of the mixed Ramsey word. A statement strong enough
 for the actual induction must be formulated and proved.
 
-## Positive next step: combine c-goodness with smoothness
+## Verified: smoothness erases every Gamma2 marked letter
 
-The smooth relation has additional structure beyond c-goodness:
+Merged PR #451 constructs an actual single-variable reassignment at
+a selected Gamma2 bullet marker. It changes only the local
+component variable rooted at the original marked D2 point, so
+it remains in the genuine mixed span and agrees with the original
+word outside that point's inclusive successor cone. The two
+inputs are consequently Definition-21 smooth-related.
 
-- at a Gamma1 bullet coordinate it fixes the entire local word
-  but may vary the marked point;
-- at a Gamma2 bullet coordinate it fixes the marked point and
-  the letters outside its inclusive successor cone, but may
-  change inside-cone letters, including the observed marked letter.
+PR #452 simultaneously normalizes the observed marked letter
+at ALL Gamma2 indices to one chosen fallback alphabet letter.
+The resulting mixed input is still in the genuine span, its
+marked points have not moved, its Gamma1 word coordinates are
+unchanged, and it remains smooth-related to the original.
+Combining the actual Definition-11 c-goodness and
+Definition-21 smoothness gives the verified theorem
 
-This suggests reducing the c-good record in stages, rather than
-asserting full monochromaticity. The first useful local lemma
-is to change one actual component variable at a Gamma2 marker.
-The source variable-word below-root law ensures this changes
-no letter outside the permitted cone; the element remains in
-the genuine local f.span. If the total colouring is both smooth
-and c-good, it is insensitive to that ONE Gamma2 observed letter
-when all other D2 record data agree.
+    MixedProduct.good_smooth_color_eq_of_reduced_bullet_record
 
-A candidate Lean implementation is in the separate
-mixed-good-smooth-gamma2-letter-erasure branch. Its status is
-UNVERIFIED until the full CI passes. A further finite
-coordinate normalization may then remove all Gamma2 letters,
-leaving only the residual Gamma1 observed letters and Gamma2
-marked points that must be addressed by the later induction.
+whose premise on two span points is EXACTLY
+
+    same D2 marked points at every coordinate
+    + same observed letter at Gamma1 marked points
+    ==> same colour.
+
+Importantly, NO equality of the Gamma2 observed letters,
+full unstarred span constancy, or starred-domain
+monochromaticity is used. The proof neither assumes nor
+produces an additional Ramsey word.
+
+PR #453 transfers that result through the verified genuinely
+enlarged corrected starred Q preimage. It defines a reduced
+target D2 record that retains every selected local marked point
+and only Gamma1 observed letters, and proves
+
+    ForwardQFinalEnlargedReducedGoodTransfer.
+      eligible_target_colors_eq_of_reduced_record
+
+for any supported, same-complete-signature target pair refining
+the actual enlarged final word. The intrinsic-root simplicity
+interface supplies the smooth total colouring; a local c-good
+mixed word is the remaining genuine Ramsey hypothesis.
+
+### Why the reduction matters, and what is still not implied
+
+Definition 11 on its own retains both marked points and observed
+letters at ALL D2 indices. Smoothness permits removing only the
+Gamma2 letter information. Gamma1 components remain entirely
+word-fixed by smooth comparisons, so their observed letters
+can remain colour-relevant. Gamma2 marked points themselves
+are unchanged under smooth comparisons, so their positions
+can also remain colour-relevant. The theorem therefore cannot
+be strengthened to full starred monochromaticity by the
+arguments so far.
+
+The remaining induction has to canonize the residual record,
+or prove that the relevant target class has a fixed record.
+The target record in PR #453 was first expressed using a
+certified existential Q preimage. An explicit target-derived
+record and its independence of the Ramsey-word support choice
+are being checked separately, and must not be marked verified
+until their full Lean audits pass.
 
 ## Remaining blockers
 
