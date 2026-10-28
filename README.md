@@ -1,8 +1,8 @@
 # lean-dualtree
 
-**Current verified status — 28 October 2026 (main through merged PR #449).**
+**Current verified status — 28 October 2026 (main through merged PR #453).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,910 distinct registered source-facing
+audits have passed, with **1,927 distinct registered source-facing
 transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
 
@@ -21,9 +21,21 @@ separates the two evaluations (#449).
 That generic colouring need not be Definition-21 smooth;
 the independently verified height-one smooth Corollary-22
 counterexample remains separately documented.
-The next geometric step is to combine smoothness with c-goodness
-to erase Γ₂ marked letters one at a time. See the
-[28 October audit note](notes/lemma27_cgood_vs_starred_20261028.md).
+**Γ₂-letter reduction is now Lean-verified (merged #451–453).**
+On the actual mixed-variable span, Definition-21 smoothness
+permits changing exactly one marked Γ₂ variable value while
+holding all other data and every word letter outside the
+marked successor cone fixed (#451). All Γ₂ marked letters can
+then be normalized SIMULTANEOUSLY, with span membership and
+smoothness preserved, proving that smooth c-good colours factor
+through all selected D₂ marked points and ONLY the Γ₁ observed
+letters (#452). This exact REDUCED RECORD transfers to the
+eligible corrected genuine-enlarged Lemma-27 target class
+through the certified starred Q preimage (#453).
+**Neither c-goodness nor smoothness alone makes the residual
+Γ₁ letters and Γ₂ points constant.** Their further
+canonization and the actual finite Ramsey bounds remain open.
+See the [28 October audit note](notes/lemma27_cgood_vs_starred_20261028.md).
 
 
 **Corrected enlarged Lemma 27 preimage and conditional colouring (merged #441–446):**
