@@ -1,10 +1,30 @@
 # lean-dualtree
 
-**Current verified status — 27 October 2026 (main through merged PR #446).**
+**Current verified status — 28 October 2026 (main through merged PR #449).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,895 distinct registered source-facing
+audits have passed, with **1,910 distinct registered source-facing
 transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
+
+**Precise Definition-11 c-good Ramsey interface (merged #448–449):**
+A total smooth Q-pullback on the genuine enlarged mixed span,
+when c-good on a local word, factors the eligible corrected
+target colours through the actual selected (D_2) bullet record
+(marked points AND their observed enlarged letters). This is a
+verified colour-canonization statement, not a starred-span
+monochromaticity theorem (#448).
+A general Lean-verified example demonstrates why: re-evaluating
+one actual marked-variable component with two distinct letters
+preserves the local mixed span, all D₂ points and the corrected
+starred condition, while a c-good marked-letter colouring
+separates the two evaluations (#449).
+That generic colouring need not be Definition-21 smooth;
+the independently verified height-one smooth Corollary-22
+counterexample remains separately documented.
+The next geometric step is to combine smoothness with c-goodness
+to erase Γ₂ marked letters one at a time. See the
+[28 October audit note](notes/lemma27_cgood_vs_starred_20261028.md).
+
 
 **Corrected enlarged Lemma 27 preimage and conditional colouring (merged #441–446):**
 For the TRUE β=α⊕Fin(m+1) local mixed Ramsey word, the
