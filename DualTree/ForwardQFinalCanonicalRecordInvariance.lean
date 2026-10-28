@@ -140,4 +140,41 @@ theorem canonicalReducedTargetRecord_eq_across_local_words
   dsimp [canonicalReducedTargetRecord]
   rw [hpoint]
 
+
+/-- Even the apparent choice of target cut in the explicit
+Γ₁ reduced record is not a genuine ambiguity: the COMPLETE
+corrected signature forces that cut to equal the source cut.
+Thus the reduced record does not depend on the signature
+proof or on a separate maximal-interior-cut witness. -/
+theorem canonicalReducedTargetRecord_cut_independent
+    {b n l k m q : Nat} {α : Type*}
+    (hb : 0 < b)
+    (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
+    (f : LocalMixedWord g.core q (Sum α (Fin (m + 1))))
+    (fallback : α)
+    (O : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)))
+    (cutO cutP : Node b)
+    (HO : ForwardQFinalFullSignature.SameCompleteForwardSignature
+      hb g O cutO)
+    (HP : ForwardQFinalFullSignature.SameCompleteForwardSignature
+      hb g O cutP)
+    (hSupport : ∀ t : Node b, t ∈ O.tree →
+      t ∈ ForwardQFinalHeightBudget.finalBudgetSupport
+        g.core f (m + q))
+    (gamma1 : MixedProduct.BulletIndex (kind g.core) → Bool) :
+    canonicalReducedTargetRecord hb g f fallback O cutO HO
+      hSupport gamma1 =
+    canonicalReducedTargetRecord hb g f fallback O cutP HP
+      hSupport gamma1 := by
+  have hcutO :=
+    ForwardQFinalFullSignature.complete_signature_forces_same_cut
+      hb g O cutO HO
+  have hcutP :=
+    ForwardQFinalFullSignature.complete_signature_forces_same_cut
+      hb g O cutP HP
+  subst cutO
+  subst cutP
+  rfl
+
 end DualTree.ForwardQFinalCanonicalRecordInvariance
