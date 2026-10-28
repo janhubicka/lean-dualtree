@@ -151,7 +151,8 @@ theorem terminalReducedRecord_eq_iff_localRecord_eq
       apply Subtype.ext
       exact hproj
     have hletter : rO.2 = rP.2 :=
-      congrArg Prod.snd hi
+      congrArg
+        (fun p : Node b × Option (Sum α (Fin (m + 1))) => p.2) hi
     exact Prod.ext hlocal hletter
   · intro hlocal
     funext i
