@@ -218,7 +218,7 @@ theorem canonicalStarredTargetInput_bullet_letter
   change (coherentTargetInput hb g f fallback O cutO H hSupport).words i.1 p =
     ForwardQFinalOutputProjectedEncoder.encodeProjectedOutputSymbol
       hb g O cutO H fallback i.1 p
-  simp [coherentTargetInput, hroot]
+  simpa [coherentTargetInput, hroot, v]
 
 /-- The explicit reduced record is EXACTLY the reduced
 bullet record of the concrete corrected starred input. This
