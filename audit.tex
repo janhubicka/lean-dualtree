@@ -11180,20 +11180,50 @@ verified smooth height-one counterexample to the
 \emph{printed} Corollary~22 remains the stronger,
 separate objection.
 
-\paragraph{Further smooth/c-good reduction.} \todo
-A \(\Gamma_2\) smooth comparison permits variation of a
-coordinate's observed marked letter inside its inclusive
-successor cone, while preserving the marked point and
-outside-cone letters. A candidate proof changes only the
-actual marked local variable assignment, remains inside the
-genuine mixed-word span, and combines Definition~21
-smoothness with Definition~11 \(c\)-goodness to erase
-one \(\Gamma_2\) observed letter when the other marker
-record entries agree. This proposed reduction is not
-marked verified before its full Lean CI passes.
-Further canonicity and induction must still eliminate
-the remaining admissible \(D_2\) record information;
-see \texttt{notes/lemma27\_cgood\_vs\_starred\_20261028.md}.
+\paragraph{Smooth \(c\)-good reduction to the actual \(\Gamma_1\) target record.} \ok
+The proposed \(\Gamma_2\) marked-letter erasure is now proved,
+not merely conjectured. At a selected \(\Gamma_2\) bullet
+coordinate, reassigning the local variable rooted at its actual
+marked point changes no exterior letter outside that point's
+inclusive successor cone. It leaves all other coordinates,
+all selected marker positions, and genuine mixed-span membership
+unchanged. Hence this change is Definition~21 smooth-related
+to the original element:
+\lean{MixedProduct.reassignMarkedLetter_smooth_gamma2}.
+The simultaneously normalized word changes EVERY
+\(\Gamma_2\) observed marked letter to the SAME chosen fallback,
+remains in the true mixed-variable span and smooth-related
+to its input:
+\lean{MixedProduct.normalizeGamma2Letters_mem_span}
+and
+\lean{MixedProduct.normalizeGamma2Letters_smooth}.
+
+Consequently, for a total colouring that is \(c\)-good on
+the local mixed-word span and smooth for the actual
+\(\Gamma_1/\Gamma_2\) partition, two span elements have
+the same colour whenever their selected \(D_2\)
+marked points agree and the observed marked letters
+agree only on \(\Gamma_1\):
+\lean{MixedProduct.good_smooth_color_eq_of_reduced_bullet_record}.
+There is NO requirement that \(\Gamma_2\) marked
+letters agree and NO assertion of full starred-span
+monochromaticity.
+
+The genuine enlarged-alphabet corrected Lemma~27 Q
+reverse-preimage now transfers exactly this record
+factorization to the supported, same-complete-signature
+target class. The target record consists of every
+genuine selected local \(D_2\) root and the enlarged
+observed letter only at its \(\Gamma_1\) markers:
+\lean{ForwardQFinalEnlargedReducedGoodTransfer.eligible_target_colors_eq_of_reduced_record}.
+The verified intrinsic-root all-\(U\) simplicity
+property provides the requisite total smooth
+Q-pullback:
+\lean{ForwardQFinalEnlargedReducedGoodTransfer.exists_total_smooth_with_reduced_good_target_transfer}.
+The actual existence of a suitable \(c\)-good
+Ramsey word and canonization of the residual
+\(\Gamma_1\) letters and \(\Gamma_2\) positions
+remain separate mathematical obligations.
 
 \paragraph{Remaining published Corollary~22, domain and induction obstructions.} \todo
 The preceding theorem is CONDITIONAL: existence of a suitable
