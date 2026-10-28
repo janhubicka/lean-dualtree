@@ -193,7 +193,7 @@ theorem reassignMarkedLetter_smooth_gamma2
         (reassignMarkedLetter_other_words f x hx i a j.1 hji).symm
       cases hg : gamma1 j with
       | true =>
-          simpa only [hg] using hw
+          simpa [hg] using hw
       | false =>
           change x.bulletPoint j =
             (reassignMarkedLetter f x hx i a).bulletPoint j ∧
