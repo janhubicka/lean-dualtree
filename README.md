@@ -1,10 +1,31 @@
 # lean-dualtree
 
-**Current verified status — 28 October 2026 (main through merged PR #453).**
+**Current verified status — 28 October 2026 (main through merged PR #458).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,927 distinct registered source-facing
+audits have passed, with **1,944 distinct registered source-facing
 transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
+
+**Newest validated Lemma-27 target-terminal interface (merged #454–458):**
+An explicit genuinely enlarged starred Q preimage supplies an eligible
+target's reduced D₂ record *without choosing an arbitrary preimage*
+(#454). The record is invariant when the same target is supported by
+different local Ramsey words or cut witnesses (#456). Projection to the
+actual target-tree leaves gives a record with one unique target terminal
+at each original literal marker and encoded letters only on Γ₁.
+Equality of these output-facing records is equivalent to equality of
+the earlier local D₂ reduced records, and under actual c-goodness and
+smoothness transfers equality of eligible target colours (#457).
+The whole output-facing record is independent of changes in the local
+Ramsey word (even its dimension and auxiliary constants), cut certificate,
+or both simultaneously (#458). Three new theorems give **1,944**
+source-facing transitive axiom reports. The full Lean build, finite
+regressions and source audits are green. See the
+[28 October terminal-record proof note](notes/lemma27_terminal_record_20261028.md).
+**This does not make the record constant across different targets,**
+repair the false printed Corollary 22 bound, or prove Lemma 27.
+The actual finite mixed Ramsey witness, Definition 24 selector alignment
+and Lemma 28/Theorems 25/3 iteration remain open.
 
 **Precise Definition-11 c-good Ramsey interface (merged #448–449):**
 A total smooth Q-pullback on the genuine enlarged mixed span,
