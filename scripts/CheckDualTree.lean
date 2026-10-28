@@ -2211,3 +2211,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedProduct.reassignMarkedLetter_outside_cone
 #print axioms DualTree.MixedProduct.reassignMarkedLetter_smooth_gamma2
 #print axioms DualTree.MixedProduct.good_smooth_erase_one_gamma2_letter
+#print axioms DualTree.MixedProduct.normalizeGamma2Letters
+#print axioms DualTree.MixedProduct.normalizeGamma2Letters_mem_span
+#print axioms DualTree.MixedProduct.normalizeGamma2Letters_bulletPoint
+#print axioms DualTree.MixedProduct.normalizeGamma2Letters_at_bullet
+#print axioms DualTree.MixedProduct.normalizeGamma2Letters_smooth
+#print axioms DualTree.MixedProduct.good_smooth_color_eq_of_reduced_bullet_record
