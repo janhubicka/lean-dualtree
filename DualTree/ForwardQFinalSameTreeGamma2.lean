@@ -28,7 +28,7 @@ open ForwardQFinalCanonicalTerminalRecord
 /-- The uniquely selected terminal above an original literal source
 marker is an intrinsic property of the TARGET TREE. It is independent
 of the word labels, the signature proof and the support witness,
-provided the two targets have identical tree lists. -/
+provided the two targets have equal finite node sets. -/
 theorem targetLeaf_eq_of_same_tree
     {b n l k m : Nat} {α : Type*}
     (hb : 0 < b)
@@ -39,7 +39,7 @@ theorem targetLeaf_eq_of_same_tree
     (LP : ForwardQFinalLiteralSignatureTree.SameLiteralForwardSignature hb g P)
     (hTO : ∀ t : Node b, t ∈ O.tree → t ∈ g.core.T)
     (hTP : ∀ t : Node b, t ∈ P.tree → t ∈ g.core.T)
-    (hTree : O.tree = P.tree)
+    (hTree : O.tree.toFinset = P.tree.toFinset)
     (r : ForwardSortedMixedProduct.Marker
       g.core.source g.core.cut g.core.hout) :
     (targetLeafForSourceMarker hb g O LO hTO r).1 =
@@ -48,11 +48,17 @@ theorem targetLeaf_eq_of_same_tree
   let leafO := targetLeafForSourceMarker hb g O LO hTO r
   let leafP := targetLeafForSourceMarker hb g P LP hTP r
   have hMemP : leafO.1 ∈ P.tree := by
+    apply List.mem_toFinset.mp
     rw [← hTree]
-    exact leafO.2.1
+    exact List.mem_toFinset.mpr leafO.2.1
   have hNotP : leafO.1 ∉ SkewTree.interior P.tree := by
-    rw [← hTree]
+    intro hInteriorP
+    have hSource :=
+      (ForwardQFinalLiteralSignatureTree.literal_signature_trees_force_same_interior
+        hb g P LP leafO.1).1 hInteriorP
     exact leafO.2.2
+      ((ForwardQFinalLiteralSignatureTree.literal_signature_trees_force_same_interior
+        hb g O LO leafO.1).2 hSource)
   let leafOasP :
       {t : Node b // t ∈ P.tree ∧ t ∉ SkewTree.interior P.tree} :=
     ⟨leafO.1, hMemP, hNotP⟩
@@ -88,7 +94,7 @@ theorem terminalReducedTargetRecord_fst_eq_of_same_tree
       t ∈ ForwardQFinalHeightBudget.finalBudgetSupport
         g.core f (m + q))
     (gamma1 : MixedProduct.BulletIndex (kind g.core) → Bool)
-    (hTree : O.tree = P.tree)
+    (hTree : O.tree.toFinset = P.tree.toFinset)
     (i : MixedProduct.BulletIndex (kind g.core)) :
     (terminalReducedTargetRecord hb g f fallback O cutO HO hSO gamma1 i).1 =
       (terminalReducedTargetRecord hb g f fallback P cutP HP hSP gamma1 i).1 := by
@@ -144,7 +150,7 @@ theorem terminalReducedTargetRecord_eq_of_same_tree_gamma2_only
     (hSP : ∀ t : Node b, t ∈ P.tree →
       t ∈ ForwardQFinalHeightBudget.finalBudgetSupport
         g.core f (m + q))
-    (hTree : O.tree = P.tree) :
+    (hTree : O.tree.toFinset = P.tree.toFinset) :
     terminalReducedTargetRecord hb g f fallback O cutO HO hSO
       (fun _ => false) =
     terminalReducedTargetRecord hb g f fallback P cutP HP hSP
@@ -201,7 +207,7 @@ theorem eligible_targets_color_eq_of_same_tree_gamma2_only
     (hSP : ∀ t : Node b, t ∈ P.tree →
       t ∈ ForwardQFinalHeightBudget.finalBudgetSupport
         g.core f (m + q))
-    (hTree : O.tree = P.tree) :
+    (hTree : O.tree.toFinset = P.tree.toFinset) :
     color (ForwardQFinalTargetObservation.observe O) =
       color (ForwardQFinalTargetObservation.observe P) := by
   apply eligible_targets_color_eq_of_terminal_reduced_record
