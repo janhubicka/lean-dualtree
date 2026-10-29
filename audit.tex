@@ -11293,6 +11293,46 @@ $\Gamma_1$ letters across distinct eligible targets, followed by the
 Definition~24 selector comparison and Lemma~27/28 induction.
 See \texttt{\detokenize{notes/lemma27_terminal_record_20261028.md}}.
 
+
+\subsubsection{Adversarial cross-target audit and CI source gate (29 October 2026)}
+\paragraph{Structural audit.} \ok
+Full Lean compilation, fixed finite regressions and the transitive axiom
+audit passed after merged PRs~460--461. The umbrella covers all 404 local
+source modules, and 1{,}948 distinct registered source-facing declarations
+depend only on standard Lean axioms. PR~460 makes CI reject unimported
+modules and lexical forbidden proof shortcuts, with negative regression
+tests. This is not a proof that all printed theorem statements are sound.
+
+\paragraph{New different-target statement.} \ok
+\texttt{\detokenize{ForwardQFinalSameTreeGamma2.targetLeaf_eq_of_same_tree}}
+shows that two eligible same-literal-signature target words with the same
+\emph{finite tree node set} (not necessarily identical list enumerations)
+have the same actual terminal above each literal source marker.
+The terminal components of their reduced records therefore coincide
+for every $\Gamma_1/\Gamma_2$ split. If $\Gamma_1=\varnothing$,
+the optional letter components also coincide; hence
+\texttt{\detokenize{ForwardQFinalSameTreeGamma2.eligible_targets_color_eq_of_same_tree_gamma2_only}}
+gives equal target colours under genuine local $\mathrm{c}$-goodness and
+a smooth total corrected $Q$ pullback. It does \emph{not} make different
+target node sets equal or provide the assumed $\mathrm{c}$-good word.
+
+\paragraph{Remaining numerical qualification.} \todo
+The height-one smooth colour obstruction and its specialized
+$\mathrm{c}$-good witness are Lean-checked in
+\texttt{\detokenize{Corollary22Audit}}. The global
+$\operatorname{MTHJ}/\operatorname{CT}$ numerical-wrapper assertion
+needed to refute the \emph{full} displayed threshold is not a single
+kernel-checked theorem in the current library. This distinction should
+be preserved when citing the printed Corollary~22 issue.
+
+\paragraph{Remaining canonicity issue.} \todo
+Although the chosen enlarged symbol decodes to the required output
+symbol, extensional equality of the actual \emph{chosen} auxiliary
+encodings at $\Gamma_1$ markers for different but observationally
+equivalent targets is not proved. The published Definition~24
+selector still needs its genuine root/successor characterization.
+See \texttt{\detokenize{notes/adversarial_full_audit_20261029.md}}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
