@@ -82,6 +82,9 @@ jobs:
       - name: Check TeX ledger encoding
         run: python3 scripts/check-audit-tex.py
 
+      - name: Regression-test source audit failure handling
+        run: python3 scripts/test-audit-lean-library.py
+
       - name: Audit source graph and reject redundant umbrella imports
         run: python3 scripts/audit-lean-library.py --verify-root-minimal
 
