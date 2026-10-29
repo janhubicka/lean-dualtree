@@ -161,16 +161,16 @@ def main() -> int:
     # Leading modifiers are not a licence to bypass the source gate.
     # This is a conservative lexical screen after comments/strings are
     # removed; fully parsed Lean and transitive axiom checks remain mandatory.
-    modifiers = r"(?:(?:private|protected|noncomputable|scoped|local)\\s+)*"
+    modifiers = r"(?:(?:private|protected|noncomputable|scoped|local)\s+)*"
     patterns = {
-        "sorry": r"\\bsorry\\b",
-        "admit": r"\\badmit\\b",
-        "axiom": rf"(?m)^\\s*{modifiers}axiom\\b",
-        "constant": rf"(?m)^\\s*{modifiers}constant\\b",
-        "partial": rf"(?m)^\\s*{modifiers}partial\\s+(?:def|theorem)\\b",
-        "opaque": rf"(?m)^\\s*{modifiers}opaque\\b",
-        "unsafe": r"\\bunsafe\\b",
-        "native_decide": r"\\bnative_decide\\b",
+        "sorry": r"\bsorry\b",
+        "admit": r"\badmit\b",
+        "axiom": rf"(?m)^\s*{modifiers}axiom\b",
+        "constant": rf"(?m)^\s*{modifiers}constant\b",
+        "partial": rf"(?m)^\s*{modifiers}partial\s+(?:def|theorem)\b",
+        "opaque": rf"(?m)^\s*{modifiers}opaque\b",
+        "unsafe": r"\bunsafe\b",
+        "native_decide": r"\bnative_decide\b",
     }
     for label, pattern in patterns.items():
         matches = [mod for mod, text in texts.items()
