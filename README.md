@@ -1,9 +1,9 @@
 # lean-dualtree
 
-**Current proof status — 29 October 2026 (PRs #468–470; CI-gated).**
+**Current verified status — 29 October 2026 (main through merged PR #470).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,969 registered source-facing
-transitive-axiom reports through #470 when its full CI passes**, no `sorryAx` or nonstandard proof axioms.
+audits have passed, with **1,969 distinct registered source-facing
+transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
 
 **Direct target-leaf Γ₁ record and exact componentwise criterion (#468–470):**
