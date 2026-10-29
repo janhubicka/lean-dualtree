@@ -11329,7 +11329,11 @@ be preserved when citing the printed Corollary~22 issue.
 Although the chosen enlarged symbol decodes to the required output
 symbol, extensional equality of the actual \emph{chosen} auxiliary
 encodings at $\Gamma_1$ markers for different but observationally
-equivalent targets is not proved. The published Definition~24
+equivalent targets is not proved. In particular, the auxiliary
+\texttt{\detokenize{ConeLocalDecoder.indexMap}} is merely surjective;
+when its domain is strictly larger than the visible-root set it is
+necessarily noninjective. Equal decoded symbols do not automatically
+give equal chosen auxiliary labels. The published Definition~24
 selector still needs its genuine root/successor characterization.
 See \texttt{\detokenize{notes/adversarial_full_audit_20261029.md}}.
 
