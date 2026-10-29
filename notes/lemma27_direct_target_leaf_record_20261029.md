@@ -111,5 +111,5 @@ affect the record.
 
 The complete umbrella, finite regressions, source gate and registered
 transitive axiom checks are required before each PR is considered
-verified. **1,969** is the expected source-facing endpoint count
-through #470, not a theorem-completion percentage.
+verified. **1,969** is the CI-verified source-facing endpoint count
+through merged #470, not a theorem-completion percentage.
