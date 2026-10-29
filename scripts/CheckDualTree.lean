@@ -2243,6 +2243,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalSameTreeGamma2.eligible_targets_color_eq_of_same_tree_gamma2_only
 #print axioms DualTree.ForwardQFinalEncoderExtensional.rootedSymbol_injective
 #print axioms DualTree.ForwardQFinalEncoderExtensional.rootedSymbol_sourceOutputVarsEquiv
+#print axioms DualTree.ForwardQFinalEncoderExtensional.rootedSymbol_targetWord_eq_rootLabel
 #print axioms DualTree.ForwardQFinalEncoderExtensional.choose_eq_of_iff
 #print axioms DualTree.ForwardQFinalEncoderExtensional.projected_encoded_predicate_iff
 #print axioms DualTree.ForwardQFinalEncoderExtensional.encodeProjectedOutputSymbol_eq_of_rootLabel
