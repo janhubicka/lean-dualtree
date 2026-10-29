@@ -20,7 +20,7 @@ import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
 import DualTree.ForwardQFinalAlphabetLiftObstruction
 import DualTree.MixedGoodStarredSpanObstruction
-import DualTree.ForwardQFinalIntrinsicRootedTerminal
+import DualTree.ForwardQFinalTargetLeafIntrinsicRecord
 import DualTree.ForwardQFinalSameFrontierLength
 
 
