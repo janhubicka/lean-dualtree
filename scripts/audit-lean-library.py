@@ -162,6 +162,8 @@ def main() -> int:
         "sorry": r"\bsorry\b",
         "admit": r"\badmit\b",
         "axiom": r"(?m)^\s*(?:private\s+)?axiom\b",
+        "constant": r"(?m)^\s*(?:private\s+)?constant\b",
+        "partial": r"(?m)^\s*(?:private\s+)?partial\s+(?:def|theorem)\b",
         "opaque": r"(?m)^\s*(?:private\s+)?opaque\b",
         "unsafe": r"(?m)^\s*(?:private\s+)?unsafe\b",
         "native_decide": r"\bnative_decide\b",
@@ -274,6 +276,19 @@ def main() -> int:
         )
         ROOT.write_text(compact, encoding="utf-8")
         print(f"AUDIT_COMPACT_ROOT_SAVED {ROOT}")
+    # A green CI audit must not merely print these findings.  Otherwise a
+    # newly added, unimported or admitted theorem can silently evade both
+    # full-umbrella compilation and the registered transitive axiom checks.
+    if args.verify_root_minimal and missed:
+        print("FAIL: source modules excluded from full Lean umbrella: "
+              + " ".join(missed), file=sys.stderr)
+        return 1
+    if args.verify_root_minimal and any(prohibited.values()):
+        for label, matches in prohibited.items():
+            if matches:
+                print(f"FAIL: forbidden {label} in " + " ".join(matches),
+                      file=sys.stderr)
+        return 1
     if args.verify_root_minimal and redundant:
         print("FAIL: transitive duplicate root imports", file=sys.stderr)
         return 1
