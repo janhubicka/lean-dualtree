@@ -114,8 +114,14 @@ It is **not** an independent line-by-line mathematical reproof of all
    is not yet proved**. In particular, the label 'canonical'
    in the reduced Γ₁ record must not be read as an unproved
    representation-independent normalization of all auxiliary
-   preimages. A deterministic encoder or an extensionality
-   theorem is a natural next lemma.
+   preimages. In fact, `ConeLocalDecoder.indexMap` is specified
+   only as a surjection `Fin (m+1) → Fin k`; when `0 < k < m+1`,
+   such a map necessarily repeats some variable labels. Equality
+   after decoding cannot be inverted to equality of the raw
+   chosen auxiliary letters. A fixed deterministic section of
+   this decoder, plus an explicit extensionality theorem for
+   that section, or a different colour-factorization argument,
+   is needed for the general Γ₁ comparison.
 
 ### E. Q coverage, canonical selector, and the final induction
 
