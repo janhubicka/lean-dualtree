@@ -11394,6 +11394,56 @@ reverse-lexicographic $W_*$ domain and corrected quantitative
 smooth mixed Ramsey theorem remain open.
 See \texttt{\detokenize{notes/lemma27_intrinsic_rooted_record_20261029.md}}.
 
+
+\subsubsection{Genuine target-leaf record and componentwise Ramsey criterion (29 October 2026)}
+\paragraph{Lean status.} \ok
+PR~468 defines the intrinsic residual \(\Gamma_1\) record directly
+from the unique terminal above each original source \(D_2\) marker.
+Its definition takes the corrected source frame, target starred word,
+literal-signature evidence, ambient-\(T\) inclusion and the
+\(\Gamma_1/\Gamma_2\) partition. It takes \emph{no} local Ramsey word
+\(f\), local dimension \(q\), fallback letter, final-support
+certificate or chosen \(Q\) preimage. The target's own boundedness
+certifies that its rooted word symbol is defined at each leaf.
+The Lean theorem
+\texttt{\detokenize{intrinsicRootedTargetRecord_eq_targetLeafRootedRecord}}
+proves exact equality with the previously verified local-word-based
+intrinsic record on every genuinely supported eligible target.
+Thus the conditional corrected target-colour transfer can be
+stated using this direct record.
+
+PR~469 proves that the direct record cannot change with the
+propositional literal-signature or ambient-\(T\) certificates.
+In particular the earlier local-word record is independent
+of the local word's dimension, fallback original-alphabet letter,
+complete-signature cut or final-support witness, for the same target.
+
+PR~470 isolates the \emph{exact} pairwise hypotheses for equality
+of the direct records of two potentially different eligible
+targets \(O,P\):
+\[
+ \forall i\in D_2,\quad t_i(O)=t_i(P),
+ \qquad
+ \forall i\in\Gamma_1,\quad
+ \lambda_O(t_i(O))=\lambda_P(t_i(P)).
+\]
+Here \(t_i\) is the \emph{unique actual target terminal}, and
+\(\lambda_O\) is its root-labelled word symbol. There is no
+assumption of equal target tree sets, full rooted words or
+\(\Gamma_2\) letters. These componentwise hypotheses suffice
+for equal target colours under a genuine Definition-11
+\(\mathrm{c}\)-good local word and the corrected Definition-21
+smooth \(Q\) pullback.
+
+\paragraph{Remaining gap.} \todo
+The substantive corrected mixed Ramsey \emph{existence} theorem
+must still construct a suitable local word and control these
+componentwise observables among the eligible target trees.
+Neither the false printed Corollary~22 bound nor the published
+Definition~24 selector correspondence and final Lemma~27/28
+induction are thereby established.
+See \texttt{\detokenize{notes/lemma27_direct_target_leaf_record_20261029.md}}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
