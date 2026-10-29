@@ -1,10 +1,28 @@
 # lean-dualtree
 
-**Current verified status — 28 October 2026 (main through merged PR #458).**
+**Current verified status — 29 October 2026 (main through merged PR #461).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,944 distinct registered source-facing
+audits have passed, with **1,948 distinct registered source-facing
 transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
+
+**29 October adversarial audit and same-node-set target advance (#460–461).**
+CI now fails on any unimported local Lean source or forbidden proof
+construct reported by the source scanner, rather than merely printing
+diagnostics (#460); negative fixture tests cover the failure cases.
+For TWO eligible same-complete-signature targets with EQUAL finite
+tree node sets (no common list ordering assumed), their unique
+D₂ target terminal positions agree. In the Γ₁-empty / all-Γ₂
+partition this makes the entire residual record equal, and a
+genuine smooth c-good Q pullback gives equal target colours (#461).
+Four source-facing declarations bring the total to **1,948**.
+This is conditional colour equality on a *fixed tree node set*,
+not an existence theorem producing the local c-good word or
+equalizing different target trees. See the
+[adversarial 29 October audit](notes/adversarial_full_audit_20261029.md).
+The global numerical MTHJ/CT wrapper for the printed Corollary-22
+counterexample is not itself assembled as a Lean theorem; the
+height-one smooth separation and local c-good witness are checked.
 
 **Newest validated Lemma-27 target-terminal interface (merged #454–458):**
 An explicit genuinely enlarged starred Q preimage supplies an eligible
