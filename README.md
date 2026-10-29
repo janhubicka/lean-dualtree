@@ -1,10 +1,33 @@
 # lean-dualtree
 
-**Current verified status — 29 October 2026 (main through merged PR #461).**
+**Current verified status — 29 October 2026 (main through merged PR #466).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,948 distinct registered source-facing
+audits have passed, with **1,959 distinct registered source-facing
 transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
+
+**New intrinsic target-record factorization (merged #464–466).**
+The existing enlarged Γ₁ encoder is now Lean-verified to be
+EXTENSIONAL in the genuine root-labelled target symbol at each fixed
+projected position (#464). Although the auxiliary decoder is
+noninjective, its chosen full-fibre preimage is consistent when the
+target rooted symbols agree; this follows from the equality of the
+choice predicates, not from a false decoder-injectivity assumption.
+The conditional colour comparison now covers arbitrary Γ₁/Γ₂ splits
+for eligible same-node-set targets with equal rooted Γ₁ marker
+symbols (#465), and more generally **arbitrary different eligible
+target trees** with the same intrinsic record of selected target
+terminals and optional Γ₁ rooted symbols (#466).
+The intrinsic record has no auxiliary raw letters or dependent
+variable-name subtype proofs. Under the genuine local c-good word,
+smooth total Q-pullback and eligibility hypotheses, equality of
+this record forces equal target colours. Full umbrella compilation,
+regressions and 1,959 registered transitive axiom checks passed.
+See the [29 October rooted-record proof note](notes/lemma27_intrinsic_rooted_record_20261029.md).
+**This is still conditional target-colour factorization, not the
+missing smooth mixed Ramsey word existence/canonization theorem.**
+The printed selector, Corollary 22 correction and global induction
+remain open.
 
 **29 October adversarial audit and same-node-set target advance (#460–461).**
 CI now fails on any unimported local Lean source or forbidden proof

@@ -11337,6 +11337,63 @@ give equal chosen auxiliary labels. The published Definition~24
 selector still needs its genuine root/successor characterization.
 See \texttt{\detokenize{notes/adversarial_full_audit_20261029.md}}.
 
+
+\subsubsection{Extensional enlarged $\Gamma_1$ encoder and intrinsic rooted terminal record (29 October 2026)}
+\paragraph{Lean status.} \ok
+Merged PRs~464--466 establish eleven additional registered source-facing
+axiom checks (1{,}959 in total). In the corrected enlarged alphabet
+$\alpha\sqcup\operatorname{Fin}(m+1)$, the decoder is generally only
+surjective, not injective. Nevertheless the \emph{actual existing}
+\texttt{\detokenize{encodeProjectedOutputSymbol}} chooses a preimage
+from the whole decoder fibre. PR~464 proves that the defining
+preimage predicate depends only on the target's root-labelled output
+symbol at the same projected coordinate. Equal rooted symbols
+yield equal choice predicates and hence equal chosen enlarged letters
+by propositional extensionality and proof irrelevance, without
+postulating injectivity of the decoder.
+
+PR~465 gives target-colour comparison for equal finite tree node sets
+and arbitrary $\Gamma_1/\Gamma_2$ partitions if the rooted output
+symbols agree at the selected $\Gamma_1$ terminal coordinates.
+PR~466 removes the equal-tree-node-set requirement. It defines
+the residual intrinsic record
+\[
+ i\longmapsto
+ \left(t_i,\;
+ \begin{cases}
+  \operatorname{some}(\lambda_i),&i\in\Gamma_1,\\
+  \operatorname{none},&i\in\Gamma_2,
+ \end{cases}\right),
+\]
+where $t_i$ is an actual target terminal node and $\lambda_i$
+is its rooted output word symbol (a constant or a true bounded
+variable root). Equality of this record for \emph{arbitrary two
+eligible targets}, even with distinct tree node sets, implies
+equality of their concrete enlarged terminal records by the
+verified cone projection injectivity and encoder extensionality.
+The already checked Definition-11 $\mathrm{c}$-goodness and
+Definition-21 smoothness therefore imply equality of their
+target colours.
+
+\paragraph{Lean anchors.}
+\texttt{\detokenize{ForwardQFinalEncoderExtensional.encodeProjectedOutputSymbol_eq_of_rootLabel}},
+\texttt{\detokenize{ForwardQFinalSameTreeGamma1.eligible_targets_color_eq_of_same_tree_gamma1_symbols}},
+\texttt{\detokenize{ForwardQFinalIntrinsicRootedTerminal.intrinsicRootedRecord_eq_implies_terminalReducedRecord_eq}},
+and
+\texttt{\detokenize{ForwardQFinalIntrinsicRootedTerminal.eligible_targets_color_eq_of_intrinsic_rooted_record}}.
+
+\paragraph{Still unproved.} \todo
+These results do \emph{not} construct the local $\mathrm{c}$-good
+Ramsey word, guarantee a refinement on which distinct eligible target
+records agree, or prove the printed Lemma~27. The intrinsic record
+is still implemented using a supported local word to locate the
+selected terminal; a direct target-leaf definition and
+proof of its independence of those witnesses would simplify
+the final induction. The printed Definition~24 selector,
+reverse-lexicographic $W_*$ domain and corrected quantitative
+smooth mixed Ramsey theorem remain open.
+See \texttt{\detokenize{notes/lemma27_intrinsic_rooted_record_20261029.md}}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
