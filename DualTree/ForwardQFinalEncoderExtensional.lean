@@ -78,6 +78,19 @@ theorem rootedSymbol_sourceOutputVarsEquiv
       Sum.inr v.1
     rw [sourceOutputVarsEquiv_root]
 
+/-- Erasing a target's dependent variable subtype is precisely its
+existing representation-independent rooted word symbol. -/
+theorem rootedSymbol_targetWord_eq_rootLabel
+    {b n l : Nat} {α : Type*}
+    (O : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)))
+    (p : BoundedNode b n) :
+    rootedSymbol (fun v : O.word.Vars => v.1) (O.word.word p) =
+      ForwardQSimpleLetterSmooth.rootLabel O p := by
+  cases hw : O.word.word p with
+  | inl a => simp [rootedSymbol, ForwardQSimpleLetterSmooth.rootLabel, hw]
+  | inr v => simp [rootedSymbol, ForwardQSimpleLetterSmooth.rootLabel, hw]
+
 /-- Choice from equivalent predicates is identical, even if their
 existence witnesses were proved by unrelated arguments. This uses
 proof irrelevance, NOT injectivity of the decoder. -/
@@ -152,28 +165,34 @@ theorem projected_encoded_predicate_iff
   constructor
   · intro h
     apply hinjP
-    change rootedSymbol (fun v : P.word.Vars => v.1)
-        (Sum.map id (sourceOutputVarsEquiv hb g P cutP HP) d) =
-      ForwardQSimpleLetterSmooth.rootLabel P p
     calc
-      _ = rootedSymbol (fun v : g.core.source.word.Vars => v.1) d := hP
+      rootedSymbol (fun v : P.word.Vars => v.1)
+          (Sum.map id (sourceOutputVarsEquiv hb g P cutP HP) d) =
+        rootedSymbol (fun v : g.core.source.word.Vars => v.1) d := hP
       _ = rootedSymbol (fun v : O.word.Vars => v.1)
           (Sum.map id (sourceOutputVarsEquiv hb g O cutO HO) d) := hO.symm
-      _ = ForwardQSimpleLetterSmooth.rootLabel O p :=
+      _ = rootedSymbol (fun v : O.word.Vars => v.1) (O.word.word p) :=
         congrArg (rootedSymbol (fun v : O.word.Vars => v.1)) h
+      _ = ForwardQSimpleLetterSmooth.rootLabel O p :=
+        rootedSymbol_targetWord_eq_rootLabel O p
       _ = ForwardQSimpleLetterSmooth.rootLabel P p := hobs
+      _ = rootedSymbol (fun v : P.word.Vars => v.1) (P.word.word p) :=
+        (rootedSymbol_targetWord_eq_rootLabel P p).symm
   · intro h
     apply hinjO
-    change rootedSymbol (fun v : O.word.Vars => v.1)
-        (Sum.map id (sourceOutputVarsEquiv hb g O cutO HO) d) =
-      ForwardQSimpleLetterSmooth.rootLabel O p
     calc
-      _ = rootedSymbol (fun v : g.core.source.word.Vars => v.1) d := hO
+      rootedSymbol (fun v : O.word.Vars => v.1)
+          (Sum.map id (sourceOutputVarsEquiv hb g O cutO HO) d) =
+        rootedSymbol (fun v : g.core.source.word.Vars => v.1) d := hO
       _ = rootedSymbol (fun v : P.word.Vars => v.1)
           (Sum.map id (sourceOutputVarsEquiv hb g P cutP HP) d) := hP.symm
-      _ = ForwardQSimpleLetterSmooth.rootLabel P p :=
+      _ = rootedSymbol (fun v : P.word.Vars => v.1) (P.word.word p) :=
         congrArg (rootedSymbol (fun v : P.word.Vars => v.1)) h
+      _ = ForwardQSimpleLetterSmooth.rootLabel P p :=
+        rootedSymbol_targetWord_eq_rootLabel P p
       _ = ForwardQSimpleLetterSmooth.rootLabel O p := hobs.symm
+      _ = rootedSymbol (fun v : O.word.Vars => v.1) (O.word.word p) :=
+        (rootedSymbol_targetWord_eq_rootLabel O p).symm
 
 /-- Extensionality of the ACTUAL existing encoder, not a proposed
 replacement: equal representation-independent rooted target
