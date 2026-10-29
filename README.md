@@ -1,10 +1,31 @@
 # lean-dualtree
 
-**Current verified status — 29 October 2026 (main through merged PR #466).**
+**Current proof status — 29 October 2026 (PRs #468–470; CI-gated).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,959 distinct registered source-facing
-transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
+audits have passed, with **1,969 registered source-facing
+transitive-axiom reports through #470 when its full CI passes**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
+
+**Direct target-leaf Γ₁ record and exact componentwise criterion (#468–470):**
+The intrinsic residual record is now defined directly from each
+eligible target O, its unique terminal over every original D₂ marker,
+and O's true rooted word symbol only at Γ₁ markers. The definition
+has NO local Ramsey word, dimension, fallback letter, Q preimage or
+final-support certificate (#468). The earlier supported record is
+proved equal to it, transferring genuine conditional c-good/smooth
+colour equality. The direct record does not depend on which literal
+signature/T-containment proof was supplied, and the earlier record
+is invariant across arbitrary supported local words, dimensions,
+fallback constants and cut witnesses for ONE FIXED target (#469).
+Its equality across TWO targets is equivalent to equality of their
+selected target terminals at all D₂ markers and rooted symbols at
+Γ₁ only (#470). These exact componentwise conditions imply equality
+of eligible target colours under the existing c-good/smooth assumptions.
+See the [direct target-leaf proof note](notes/lemma27_direct_target_leaf_record_20261029.md).
+**None of this proves existence of the required smooth c-good Ramsey
+word or that a refinement makes different target records agree.**
+The published selector, quantitative Corollary 22 repair and global
+induction remain open.
 
 **New intrinsic target-record factorization (merged #464–466).**
 The existing enlarged Γ₁ encoder is now Lean-verified to be
