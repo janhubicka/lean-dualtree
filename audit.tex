@@ -11444,6 +11444,66 @@ Definition~24 selector correspondence and final Lemma~27/28
 induction are thereby established.
 See \texttt{\detokenize{notes/lemma27_direct_target_leaf_record_20261029.md}}.
 
+
+\subsubsection{Adversarial no-go: full $\Gamma_1$ residual-record constancy (30 October 2026)}
+\paragraph{Lean status.} \ok
+Merged PR~472 gives the \emph{exact} reduced source-side
+$\Gamma_1/D_2$ bullet record: all genuine $D_2$ marked points,
+and the observed letters only at indices in $\Gamma_1$.
+It formalizes the same-record equality criterion and the
+valid Definition-11 $\mathrm{c}$-good plus Definition-21 smooth
+colour factorization through this record.
+
+More importantly, if a genuine positive-dimensional
+enlarged-alphabet local mixed word has a nonempty $\Gamma_1$,
+its reduced record is \emph{not constant} on the complete
+corrected starred portion of its mixed span. At one actual
+$\Gamma_1$ marked variable, change the evaluation from
+$\operatorname{inl}(\mathrm{fallback})$ to
+$\operatorname{inr}(0)\in\alpha\sqcup\operatorname{Fin}(m+1)$.
+The two mixed elements remain in the same genuine span,
+and the corrected starred predicate is preserved because
+every marked point stays fixed. Yet their retained
+$\Gamma_1$ record entries differ. The theorem
+\texttt{\detokenize{MixedGoodSmoothRecordObstruction.no_constant_reduced_record_on_enlarged_starred_span}}
+is kernel-checked. The observed-letter colouring in the
+corresponding example is also $\mathrm{c}$-good on every local
+word, but is \emph{not} claimed globally smooth for every
+$\Gamma_1/\Gamma_2$ partition. The independent smooth
+height-one Corollary~22 obstruction remains distinct.
+
+\paragraph{Positive replacement.} \ok
+Merged PR~473 constructs an \emph{actual} partial colouring
+of the reduced-record space into $\operatorname{Option}(\gamma)$.
+On every realized record of a globally smooth,
+$\mathrm{c}$-good mixed subspace it is exactly the original
+colour, and it is independent of the chosen representative.
+Unrealized records map to $\operatorname{none}$; no
+nonemptiness premise on the colour type is needed.
+These are the verified endpoints
+\texttt{\detokenize{MixedProduct.colorOnReducedRecords_exact_on_span}}
+and
+\texttt{\detokenize{MixedProduct.colorOnReducedRecords_unique_on_realized}}.
+PR~474 supplies an explicitly default-filled total
+$\gamma$-colouring of all records, equal to the original
+colour on every genuine span element. \ok This endpoint
+has passed the full Lean/source/axiom CI checks.
+
+\paragraph{Corrected Ramsey goal.} \todo
+A future mixed Ramsey step may canonize \emph{colours
+conditional on residual record data}, but it cannot require
+the reduced $\Gamma_1$ record to be constant across the
+entire local starred span when $\Gamma_1\ne\varnothing$.
+This is only a no-go for that overly strong local
+statement, not a counterexample to the full dual-tree
+Ramsey phenomenon or a proof of the missing existence
+theorem. The target family for Lemma~27 is constrained
+by exact signature and span eligibility; additional
+arguments are required to transfer this local obstruction
+or the positive factorization to that target family.
+See
+\texttt{\detokenize{notes/lemma27_gamma1_record_no_constancy_20261030.md}}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
