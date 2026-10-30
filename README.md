@@ -1,10 +1,34 @@
 # lean-dualtree
 
-**Current verified status — 29 October 2026 (main through merged PR #470).**
+**Current verified status — 30 October 2026 (main through merged PR #473).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,969 distinct registered source-facing
-transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
+audits have passed, with **1,980 distinct registered source-facing
+transitive-axiom reports** (PR #474 proposes two further endpoints), no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
+
+**Adversarial Γ₁ record obstruction and corrected colour-factorization (#472–474):**
+PR #472 now proves, on ACTUAL positive-dimensional enlarged
+starred mixed spans, that if Γ₁ contains a D₂ index, the
+residual D₂/Γ₁ record itself can NEVER be constant: one real
+marked variable can be evaluated with two distinct enlarged
+letters, preserving the complete mixed span and starred
+marked-point order. The marked-letter colouring is nevertheless
+Definition-11 c-good; it is not claimed globally smooth for
+arbitrary Γ partitions. This refutes record CONSTANCY on the
+entire starred mixed span, not the intended dual-tree theorem
+or the existence of a weaker c-good Ramsey word.
+
+PR #473 constructs an actual Option-valued colour function on
+REDUCED records: every realized record is assigned the original
+colour, and unrealized records remain undefined. Under global
+smoothness plus c-goodness it is exact and unique on realized
+records. PR #474 adds a total γ-colouring using an explicitly
+supplied default colour on unrealized tuples (CI pending).
+The next Ramsey step must canonize COLOURS RELATIVE TO records,
+not demand that all records coincide. See the
+[30 October audit note](notes/lemma27_gamma1_record_no_constancy_20261030.md).
+The genuinely new finite smooth mixed Ramsey existence theorem,
+printed selector and subsequent induction are still open.
 
 **Direct target-leaf Γ₁ record and exact componentwise criterion (#468–470):**
 The intrinsic residual record is now defined directly from each
