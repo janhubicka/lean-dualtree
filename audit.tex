@@ -11504,6 +11504,62 @@ or the positive factorization to that target family.
 See
 \texttt{\detokenize{notes/lemma27_gamma1_record_no_constancy_20261030.md}}.
 
+
+\subsubsection{Finite multidimensional Hales--Jewett: verified flat existence input (30 October 2026)}
+\paragraph{Lean status.} \ok
+Merged PRs~476--477 import Mathlib's genuine finite
+multidimensional Hales--Jewett theorem into the precise
+constant/variable-word interface of this repository.
+The theorem
+\texttt{\detokenize{FlatHalesJewett.subspace_eval_eq}}
+identifies the source \texttt{\detokenize{SpanAudit.eval}}
+with Mathlib's genuine combinatorial-subspace evaluation.
+The corresponding \texttt{\detokenize{subspace_span_eq_range}}
+gives exact equality of the evaluated spans, not just
+an informal analogy or a one-way inclusion.
+
+For every finite alphabet $\beta$, finite colour type $\gamma$
+and prescribed $k$, the verified
+\texttt{\detokenize{FlatHalesJewett.exists_monochromatic_flat_span}}
+produces a finite length $N$ such that every
+$\gamma$-colouring of $\beta^N$ has a monochromatic
+$k$-variable word whose \emph{every variable actually occurs}.
+No monochromaticity or c-good witness is assumed as a premise:
+this is an actual finite Ramsey \emph{existence} theorem,
+with an existential but not explicit numerical bound.
+
+PR~477 applies the theorem to the product alphabet
+$(\operatorname{Fin} d\to\beta)$.
+The resulting coordinate words share all variable positions,
+but allow \emph{independent} evaluations at every variable
+in each of the $d$ coordinates. The theorem
+\texttt{\detokenize{FlatVectorHalesJewett.exists_monochromatic_flat_vector}}
+proves that the whole flat vector subspace is monochromatic.
+This is stronger than a diagonal one-parameter line.
+
+\paragraph{Essential remaining obstruction.} \todo
+The result is a \emph{flat} Ramsey theorem on
+$\operatorname{Fin}N$ positions. It does not ensure that the
+variable-root sets are $k$-complete skew trees, that a
+vector of supports satisfies vector skew completeness,
+or that mixed-product $D_1$ leaf sets and $D_2$ marked
+roots satisfy their required constraints. The at-root and
+below-root laws of tree variable words and the smooth
+mixed-product c-good Ramsey witness of Theorem~13 and
+Corollary~22 remain to be supplied by a genuine
+tree-compatible block/partite construction.
+
+In particular, ordinary Hales--Jewett cannot be substituted
+for the false full starred-span monochromaticity statement
+and cannot force a nonempty $\Gamma_1$ residual record
+to become constant; the separate checked obstruction
+in PR~472 applies. The proper next task is to lift the
+flat finite colour-canonization machinery while preserving
+the complete-skew and marked-coordinate geometry, then
+use the verified record-dependent colour-transfer interface.
+See
+\texttt{\detokenize{notes/flat_hales_jewett_bridge_20261030.md}}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
