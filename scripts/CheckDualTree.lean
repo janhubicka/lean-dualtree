@@ -2273,3 +2273,5 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedProduct.colorOnReducedRecords_eq_none_iff
 #print axioms DualTree.MixedProduct.colorOnReducedRecords_unique_on_realized
 #print axioms DualTree.MixedProduct.color_eq_of_factor_through_reducedBulletRecord
+#print axioms DualTree.MixedProduct.totalColorOnReducedRecords
+#print axioms DualTree.MixedProduct.totalColorOnReducedRecords_exact_on_span
