@@ -34,15 +34,14 @@ theorem zeroRay_prefix {b : Nat} (hb : 0 < b)
   change zeroRay hb j = zeroRay hb i ++ zeroRay hb (j - i)
   have hj : j = i + (j - i) := by omega
   rw [hj]
-  simp [zeroRay, List.replicate_add]
+  simp only [zeroRay, List.replicate_add]
 
 /-- The N flat word slots, at distinct consecutive levels
 0, ..., N-1 on one ray inside b^{<N+1}. -/
 def rayPos {b N : Nat} (hb : 0 < b) (j : Fin N) :
     BoundedNode b (N + 1) :=
   ⟨zeroRay hb j.val, by
-    simp [InHomTree, zeroRay]
-    omega⟩
+    simp [InHomTree, zeroRay]⟩
 
 /-- Recognize exactly the N ray positions, and recover their
 finite coordinate index. The extra top level N remains fixed. -/
@@ -72,7 +71,6 @@ theorem rayIndex_some {b N : Nat} (hb : 0 < b)
     calc
       t.1 = zeroRay hb t.1.length := ht.1
       _ = zeroRay hb j.val := by rw [hl]
-  · cases h
 
 /-- A root name for the singleton support at ray position r. -/
 def rootVar {b N : Nat} (hb : 0 < b) (r : Fin N) :
@@ -157,6 +155,7 @@ noncomputable def rayVariableWord {b N : Nat} {β : Type*}
     intro v
     have hname : v = rootVar hb r := by
       apply Subtype.ext
+      change v.1 = rayPos hb r
       simpa using v.2
     subst v
     exact raySymbol_at_root hb w fallback r hroot
@@ -288,7 +287,8 @@ theorem exists_monochromatic_one_root_tree_word
     hb w fallback r hroot hfirst σ
   have hc := hmono (fun _ => σ (rootVar hb r))
   calc
-    c u = c (f.toVariableWord.eval σ) := by rw [hσ]
+    c u = c (f.toVariableWord.eval σ) := by
+      exact congrArg c hσ.symm
     _ = C (SpanAudit.eval w (fun _ => σ (rootVar hb r))) := by
       exact congrArg c heval
     _ = col := hc
