@@ -2279,3 +2279,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.FlatHalesJewett.subspace_span_eq_range
 #print axioms DualTree.FlatHalesJewett.exists_monochromatic_flat_word
 #print axioms DualTree.FlatHalesJewett.exists_monochromatic_flat_span
+#print axioms DualTree.FlatVectorHalesJewett.coordinate_eval
+#print axioms DualTree.FlatVectorHalesJewett.coordinate_occurs_of_proper
+#print axioms DualTree.FlatVectorHalesJewett.exists_monochromatic_flat_vector
