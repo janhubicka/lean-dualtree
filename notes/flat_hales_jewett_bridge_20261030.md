@@ -37,6 +37,11 @@ This is **actual finite Ramsey existence** deduced from a
 proved theorem, not an assumed `hgood` or `hmono` about
 an arbitrarily chosen local word. No implicit numerical
 bounds are claimed: Mathlib provides an existential `N`.
+For substantive colourings the finite alphabet and colour type
+must of course be nonempty; with empty types the universal
+colouring statement can be vacuous. Moreover syntactic
+properness DOES NOT repair the unary-alphabet evaluated-span
+collapse already refuted in `UnaryMainAudit`.
 
 ## A synchronized flat vector theorem (#477)
 
