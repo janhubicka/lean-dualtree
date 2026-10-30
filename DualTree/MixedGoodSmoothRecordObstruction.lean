@@ -152,9 +152,11 @@ theorem exists_distinct_reduced_records_in_span
         some (colorAtBullet i y) else none) =
       (if gamma1 i then
         some (colorAtBullet i z) else none) at hi
-    simpa only [hgamma, ite_true,
-      colorAtBullet_recolor f x hx i a,
-      colorAtBullet_recolor f x hx i b'] using hi
+    have hya : colorAtBullet i y = a :=
+      colorAtBullet_recolor f x hx i a
+    have hzb : colorAtBullet i z = b' :=
+      colorAtBullet_recolor f x hx i b'
+    simpa only [hgamma, ite_true, hya, hzb] using hi
   exact hab (Option.some.inj hletters)
 
 /-- No genuine positive-dimensional enlarged local mixed word can
