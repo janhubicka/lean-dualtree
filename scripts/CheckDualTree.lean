@@ -2275,3 +2275,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedProduct.color_eq_of_factor_through_reducedBulletRecord
 #print axioms DualTree.MixedProduct.totalColorOnReducedRecords
 #print axioms DualTree.MixedProduct.totalColorOnReducedRecords_exact_on_span
+#print axioms DualTree.FlatHalesJewett.subspace_eval_eq
+#print axioms DualTree.FlatHalesJewett.subspace_span_eq_range
+#print axioms DualTree.FlatHalesJewett.exists_monochromatic_flat_word
+#print axioms DualTree.FlatHalesJewett.exists_monochromatic_flat_span
