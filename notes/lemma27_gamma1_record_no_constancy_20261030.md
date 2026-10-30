@@ -1,8 +1,8 @@
 # Adversarial Lemma-27 audit: Γ₁ records cannot be made constant on a full starred mixed span
 
 **30 October 2026.** PRs #472–473 have passed full Lean, source and
-transitive axiom audits and are merged. PR #474 adds an optional
-explicit total-colour extension and requires its own fresh CI checks.
+transitive axiom audits and are merged. PR #474 adds the explicitly default-filled total colour
+and has also passed the complete Lean/source/axiom audits.
 The full dual-tree theorem is still open.
 
 ## The distinction that matters
@@ -97,7 +97,7 @@ total colour is exactly the original colour. The default is used
 only outside the realized record set. Unlike the false record
 constancy goal, this produces an actual colour map on the residual
 observation space for later Ramsey steps. This extra statement
-remains CI-pending until PR #474 passes.
+was kernel-checked and merged in PR #474.
 
 ## Corrected next steps
 
