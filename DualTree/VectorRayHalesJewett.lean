@@ -192,10 +192,11 @@ theorem exists_monochromatic_vector_one_root_tree_word
           (fun j => (SpanAudit.eval w
             (fun v i => σ i v) j) i) := by
         funext t
-        simp only [embedRay]
-        split
-        · rfl
-        · exact coordinate_eval w σ i _
+        cases ht : rayIndex hb t with
+        | none => simp [embedRay, ht]
+        | some j =>
+            simpa only [embedRay, ht] using
+              (coordinate_eval w σ i j)
   have hc := hmono (fun v i => σ i v)
   change C (fun i => embedRay hb fallback
       (fun j => (SpanAudit.eval w
