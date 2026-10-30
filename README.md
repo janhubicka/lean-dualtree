@@ -1,10 +1,29 @@
 # lean-dualtree
 
-**Current verified status — 30 October 2026 (main through merged PR #474).**
+**Current verified status — 30 October 2026 (main through merged PR #477).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,982 distinct registered source-facing
+audits have passed, with **1,989 distinct registered source-facing
 transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
+
+**Genuine finite Hales–Jewett existence in DualTree's API (#476–477).**
+Mathlib's proved MULTIDIMENSIONAL Hales–Jewett theorem has now been
+imported into the ACTUAL `SpanAudit.eval` and `SpanAudit.span`
+semantics (#476). For finite alphabet β and finite colour set γ
+and any prescribed number k, some finite N guarantees that
+EVERY colouring of (Fin N → β) is monochromatic on a genuine
+k-variable word's evaluated span, with every variable occurring.
+This is a true existence theorem, not a conditional `hgood`.
+The synchronized flat VECTOR version (#477) treats d coordinates
+by the finite product alphabet (Fin d → β), preserving shared
+variable positions but allowing all coordinate-variable values
+to be substituted INDEPENDENTLY. Both branches passed complete
+Lean compilation, finite Q regressions and source/axiom audits.
+See the [30 October Hales–Jewett bridge note](notes/flat_hales_jewett_bridge_20261030.md).
+**These are FLAT Ramsey theorems. They do NOT yet construct
+k-complete skew tree supports, D₁ leaves, D₂ markers, the required
+smooth mixed-product c-good witness or quantitative Corollary-22
+parameters.** Those geometric/inductive obligations remain open.
 
 **Adversarial Γ₁ record obstruction and corrected colour-factorization (#472–474):**
 PR #472 now proves, on ACTUAL positive-dimensional enlarged
