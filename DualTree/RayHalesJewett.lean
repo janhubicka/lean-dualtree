@@ -33,8 +33,11 @@ theorem zeroRay_prefix {b : Nat} (hb : 0 < b)
   refine ⟨zeroRay hb (j - i), ?_⟩
   change zeroRay hb j = zeroRay hb i ++ zeroRay hb (j - i)
   have hj : j = i + (j - i) := by omega
-  rw [hj]
-  simp only [zeroRay, List.replicate_add]
+  calc
+    zeroRay hb j = zeroRay hb (i + (j - i)) :=
+      congrArg (zeroRay hb) hj
+    _ = zeroRay hb i ++ zeroRay hb (j - i) := by
+      simp only [zeroRay, List.replicate_add]
 
 /-- The N flat word slots, at distinct consecutive levels
 0, ..., N-1 on one ray inside b^{<N+1}. -/
