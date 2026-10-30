@@ -2292,3 +2292,4 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.RayHalesJewett.rayVariableWord_eval
 #print axioms DualTree.RayHalesJewett.exists_first_variable_index
 #print axioms DualTree.RayHalesJewett.exists_monochromatic_one_root_tree_word
+#print axioms DualTree.VectorSkew.identical_singletons_vectorComplete_one
