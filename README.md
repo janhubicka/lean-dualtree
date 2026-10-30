@@ -1,9 +1,9 @@
 # lean-dualtree
 
-**Current verified status — 30 October 2026 (main through merged PR #473).**
+**Current verified status — 30 October 2026 (main through merged PR #474).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,980 distinct registered source-facing
-transitive-axiom reports** (PR #474 proposes two further endpoints), no `sorryAx` or nonstandard proof axioms.
+audits have passed, with **1,982 distinct registered source-facing
+transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
 
 **Adversarial Γ₁ record obstruction and corrected colour-factorization (#472–474):**
@@ -23,7 +23,7 @@ REDUCED records: every realized record is assigned the original
 colour, and unrealized records remain undefined. Under global
 smoothness plus c-goodness it is exact and unique on realized
 records. PR #474 adds a total γ-colouring using an explicitly
-supplied default colour on unrealized tuples (CI pending).
+supplied default colour on unrealized tuples (CI verified).
 The next Ramsey step must canonize COLOURS RELATIVE TO records,
 not demand that all records coincide. See the
 [30 October audit note](notes/lemma27_gamma1_record_no_constancy_20261030.md).
