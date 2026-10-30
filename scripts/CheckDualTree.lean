@@ -2268,3 +2268,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedGoodSmoothRecordObstruction.exists_distinct_reduced_records_in_span
 #print axioms DualTree.MixedGoodSmoothRecordObstruction.no_constant_reduced_record_on_enlarged_starred_span
 #print axioms DualTree.MixedGoodSmoothRecordObstruction.good_color_with_nonconstant_reduced_record
+#print axioms DualTree.MixedProduct.colorOnReducedRecords
+#print axioms DualTree.MixedProduct.colorOnReducedRecords_exact_on_span
+#print axioms DualTree.MixedProduct.colorOnReducedRecords_eq_none_iff
+#print axioms DualTree.MixedProduct.colorOnReducedRecords_unique_on_realized
+#print axioms DualTree.MixedProduct.color_eq_of_factor_through_reducedBulletRecord
