@@ -34,12 +34,14 @@ noncomputable def colorOnReducedRecords
     (c : Element b n d β kind → γ)
     (gamma1 : BulletIndex kind → Bool) :
     (BulletIndex kind → (BoundedNode b n × Option β)) → Option γ :=
-  fun record =>
-    if h : ∃ x : Element b n d β kind,
-        x ∈ f.span ∧ reducedBulletRecord gamma1 x = record then
-      some (c (Classical.choose h))
-    else
-      none
+  by
+    classical
+    exact fun record =>
+      if h : ∃ x : Element b n d β kind,
+          x ∈ f.span ∧ reducedBulletRecord gamma1 x = record then
+        some (c (Classical.choose h))
+      else
+        none
 
 /-- Every record occurring in the actual mixed span receives
 exactly the original colour, provided c is c-good on f and
@@ -88,7 +90,8 @@ theorem colorOnReducedRecords_eq_none_iff
         x ∈ f.span ∧ reducedBulletRecord gamma1 x = record := by
   classical
   unfold colorOnReducedRecords
-  split_ifs with h
+  by_cases h : ∃ x : Element b n d β kind,
+      x ∈ f.span ∧ reducedBulletRecord gamma1 x = record
   · simp [h]
   · simp [h]
 
