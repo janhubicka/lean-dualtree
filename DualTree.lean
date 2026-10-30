@@ -19,7 +19,7 @@ import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
 import DualTree.ForwardSemiCompleteZeroRoot
 import DualTree.ForwardQFinalAlphabetLiftObstruction
-import DualTree.MixedGoodSmoothRecordFactorization
+import DualTree.MixedGoodSmoothRecordTotalColor
 import DualTree.ForwardQFinalTargetLeafComponentwise
 import DualTree.ForwardQFinalSameFrontierLength
 
