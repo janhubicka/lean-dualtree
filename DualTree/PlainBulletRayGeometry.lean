@@ -33,58 +33,69 @@ def kind : Fin 2 → CoordKind :=
 
 /-- The actual D₁ index type is empty. -/
 theorem noUp (i : UpIndex kind) : False := by
-  fin_cases i.1
-  · simp [kind] at i.2
-  · simp [kind] at i.2
+  by_cases h : i.1 = (0 : Fin 2)
+  · have hi := i.2
+    simp [kind, h] at hi
+  · have hi := i.2
+    simp [kind, h] at hi
 
 /-- There is only one D₂ index, the second coordinate. -/
 theorem bulletIndex_one (i : BulletIndex kind) :
     i.1 = (1 : Fin 2) := by
-  fin_cases i.1
-  · simp [kind] at i.2
-  · rfl
+  have hne : i.1 ≠ (0 : Fin 2) := by
+    intro h
+    have hi := i.2
+    simp [kind, h] at hi
+  apply Fin.ext
+  have hlt : i.1.val < 2 := i.1.isLt
+  have hpos : i.1.val ≠ 0 := by
+    intro hz
+    apply hne
+    apply Fin.ext
+    exact hz
+  omega
 
 /-- The additional last ray node of length N is still
 inside the finite homogeneous tree of height N+1. -/
-def endRoot {b N : Nat} (hb : 0 < b) :
+def endRoot {b : Nat} (hb : 0 < b) (N : Nat) :
     BoundedNode b (N + 1) :=
   ⟨zeroRay hb N, by
     simp [InHomTree, zeroRay]⟩
 
 /-- The genuine singleton variable name at the D₂ marker. -/
-def endVar {b N : Nat} (hb : 0 < b) :
-    {t : BoundedNode b (N + 1) // t ∈ [endRoot hb]} :=
-  ⟨endRoot hb, by simp⟩
+def endVar {b : Nat} (hb : 0 < b) (N : Nat) :
+    {t : BoundedNode b (N + 1) // t ∈ [endRoot hb N]} :=
+  ⟨endRoot hb N, by simp⟩
 
 /-- An actual D₂ tree variable word. Its ONLY variable
 occurrence is at endRoot; all other positions carry the
 old-alphabet fallback constant. This ensures D₂ word
 evaluations depend solely on their observed root letter. -/
 noncomputable def endVariableWord
-    {b N : Nat} {β : Type*}
-    (hb : 0 < b) (fallback : β) :
+    {b : Nat} {β : Type*}
+    (hb : 0 < b) (N : Nat) (fallback : β) :
     DualTree.VariableWord b (N + 1) β := by
   classical
   exact {
-    support := [endRoot hb]
+    support := [endRoot hb N]
     support_nodup := by simp
     word := fun t =>
-      if t = endRoot hb then Sum.inr (endVar hb)
+      if t = endRoot hb N then Sum.inr (endVar hb N)
       else Sum.inl fallback
     atRoot := by
       intro v
-      have hv : v = endVar hb := by
+      have hv : v = endVar hb N := by
         apply Subtype.ext
-        change v.1 = endRoot hb
+        change v.1 = endRoot hb N
         simpa using v.2
       subst v
-      simp
+      simp [endVar]
     below := by
       intro v t hvar
-      have ht : t = endRoot hb := by
+      have ht : t = endRoot hb N := by
         by_contra hne
         simp [hne] at hvar
-      have hv : v.1 = endRoot hb := by
+      have hv : v.1 = endRoot hb N := by
         simpa using v.2
       rw [ht, hv]
       exact isPrefix_refl _
@@ -93,11 +104,11 @@ noncomputable def endVariableWord
 /-- A genuine 1-complete skew D₂ coordinate word, not a
 fictitious marked point without a variable root. -/
 noncomputable def endKVariableWord
-    {b N : Nat} {β : Type*}
-    (hb : 0 < b) (fallback : β) :
+    {b : Nat} {β : Type*}
+    (hb : 0 < b) (N : Nat) (fallback : β) :
     KVariableWord b (N + 1) 1 β
       (SkewTree.forwardAuxB (b := b)) where
-  toVariableWord := endVariableWord hb fallback
+  toVariableWord := endVariableWord hb N fallback
   complete_support := by
     change SkewTree.completeB SkewTree.forwardAuxB 1
       [zeroRay hb N] = true
@@ -106,15 +117,15 @@ noncomputable def endKVariableWord
 /-- The D₂ evaluation at a chosen letter a: fixed fallback
 everywhere except the unique marked root. -/
 noncomputable def endWordValue
-    {b N : Nat} {β : Type*}
-    (hb : 0 < b) (fallback a : β) :
+    {b : Nat} {β : Type*}
+    (hb : 0 < b) (N : Nat) (fallback a : β) :
     TreeWord b (N + 1) β :=
-  fun t => if t = endRoot hb then a else fallback
+  fun t => if t = endRoot hb N then a else fallback
 
 theorem endWordValue_at_root
     {b N : Nat} {β : Type*}
     (hb : 0 < b) (fallback a : β) :
-    endWordValue hb fallback a (endRoot hb) = a := by
+    endWordValue hb N fallback a (endRoot hb N) = a := by
   simp [endWordValue]
 
 /-- Exact evaluation of the D₂ variable word, including its
@@ -123,12 +134,12 @@ the ENTIRE D₂ word inside this generated span. -/
 theorem endVariableWord_eval
     {b N : Nat} {β : Type*}
     (hb : 0 < b) (fallback : β)
-    (σ : (endVariableWord hb fallback).Vars → β) :
-    (endVariableWord hb fallback).eval σ =
-      endWordValue hb fallback (σ (endVar hb)) := by
+    (σ : (endVariableWord hb N fallback).Vars → β) :
+    (endVariableWord hb N fallback).eval σ =
+      endWordValue hb N fallback (σ (endVar hb N)) := by
   classical
   funext t
-  by_cases ht : t = endRoot hb
+  by_cases ht : t = endRoot hb N
   · simp [DualTree.VariableWord.eval, SpanAudit.eval,
       SpanAudit.evalSymbol, endVariableWord,
       endWordValue, ht]
@@ -153,7 +164,7 @@ noncomputable def twoRootVectorWord
   components := fun i =>
     if i = 0 then
       rayKVariableWord hb w fallback r hroot hfirst
-    else endKVariableWord hb fallback
+    else endKVariableWord hb N fallback
   vector_complete := by
     change VectorSkew.vectorCompleteB
       SkewTree.forwardAuxB 1
@@ -175,7 +186,7 @@ noncomputable def twoRootMixedWord
     (hroot : w r = Sum.inr 0)
     (hfirst : ∀ j : Fin N, ∀ v : Fin 1,
       w j = Sum.inr v → r ≤ j) :
-    VariableWord b (N + 1) 2 1 β
+    MixedProduct.VariableWord b (N + 1) 2 1 β
       (SkewTree.forwardAuxB (b := b)) kind where
   vector := twoRootVectorWord hb w fallback r hroot hfirst
   upLeaves := fun i => False.elim (noUp i)
@@ -198,10 +209,10 @@ theorem bulletPoint_eq_endRoot
     (x : Element b (N + 1) 2 β kind)
     (hx : x ∈ (twoRootMixedWord hb w fallback r hroot hfirst).span)
     (i : BulletIndex kind) :
-    x.bulletPoint i = endRoot hb := by
+    x.bulletPoint i = endRoot hb N := by
   have h := hx.2.2 i
   rw [bulletIndex_one i] at h
-  change x.bulletPoint i ∈ [endRoot hb] at h
+  change x.bulletPoint i ∈ [endRoot hb N] at h
   simpa using h
 
 end DualTree.PlainBulletRay
