@@ -71,7 +71,6 @@ theorem bulletCoordinate_bulletIndex
     bulletCoordinate (bulletIndex q j) = j := by
   apply Fin.ext
   simp [bulletCoordinate, bulletIndex, Fin.succ]
-  omega
 
 /-- First coordinate support is the Hales–Jewett root at
 ray level r, while ALL later D₂ supports are at level N. -/
@@ -97,7 +96,6 @@ theorem supportRoot_lengths_monotone
       have hz : j.val = 0 := congrArg Fin.val hzero
       omega
     simp [supportRoot, hi, hj, zeroRay]
-    exact Nat.le_of_lt r.isLt
   · have hj : j ≠ 0 := by
       intro hzero
       have hz : j.val = 0 := congrArg Fin.val hzero
@@ -125,20 +123,25 @@ noncomputable def vectorWord
       rayKVariableWord hb w fallback r hroot hfirst
     else endKVariableWord hb N fallback
   vector_complete := by
-    change VectorSkew.vectorCompleteB
-      SkewTree.forwardAuxB 1
-      (fun i : Fin (q + 1) =>
-        if i = 0 then [zeroRay hb r.val]
-        else [zeroRay hb N]) = true
     have hs :
         (fun i : Fin (q + 1) =>
-          if i = 0 then [zeroRay hb r.val]
-          else [zeroRay hb N]) =
+          (if i = 0 then
+            rayKVariableWord hb w fallback r hroot hfirst
+           else endKVariableWord hb N fallback).toVariableWord.supportNodes) =
         (fun i => [supportRoot hb r q i]) := by
       funext i
       by_cases hi : i = 0
-      · simp [supportRoot, hi]
-      · simp [supportRoot, hi]
+      · simp [hi, supportRoot,
+          rayKVariableWord, rayVariableWord,
+          DualTree.VariableWord.supportNodes]
+      · simp [hi, supportRoot,
+          endKVariableWord, endVariableWord,
+          DualTree.VariableWord.supportNodes]
+    change VectorSkew.vectorCompleteB SkewTree.forwardAuxB 1
+      (fun i : Fin (q + 1) =>
+        (if i = 0 then
+          rayKVariableWord hb w fallback r hroot hfirst
+         else endKVariableWord hb N fallback).toVariableWord.supportNodes) = true
     rw [hs]
     exact VectorSkew.monotone_singletons_vectorComplete_one
       _ (supportRoot hb r q)
