@@ -11597,10 +11597,11 @@ and 2{,}025 registered transitive-axiom checks passed; the
 explicit all-$D_2$ existence statement is verified.
 
 \paragraph{Remaining mixed-product bottleneck.} \todo
-Neither extreme case gives a valid mixed $D_0\cup D_2$
-Ramsey theorem: one must refine ordinary words
-simultaneously for every retained $D_2$ marker/letter
-parameter. $D_1$ coordinates add the genuine
+The two previously verified extreme cases \emph{alone} do not
+yield a simultaneous mixed $D_0\cup D_2$ Ramsey theorem;
+the first genuine two-coordinate height-one instance has
+since been proved in merged PR~490 (see the next subsection).
+$D_1$ coordinates add the genuine
 $\operatorname{up\_support\_skew}$ constraint, and
 higher intrinsic heights require complete branching
 supports across all components. The full mixed Theorem~13,
@@ -11609,6 +11610,73 @@ remain unverified. The nonconstancy obstruction for
 nonempty $\Gamma_1$ from PR~472 must be respected.
 See
 \texttt{\detokenize{notes/mixed_extreme_height_one_20261031.md}}.
+
+
+\subsubsection{First genuinely simultaneous $D_0/D_2$ mixed Ramsey theorem (31 October 2026)}
+\paragraph{Kernel-verified mathematical result.} \ok
+Merged PRs~486--490 establish an unconditional finite
+Definition-11 $\mathrm{c}$-good existence theorem for the ACTUAL
+mixed-product structure with precisely two coordinates,
+the first in $D_0$, the second in $D_2$, no $D_1$ indices,
+and intrinsic complete-skew dimension one.
+For every $b>0$, finite alphabet $\beta$, finite colour
+type $\gamma$, and an explicitly chosen fallback letter
+in $\beta$, there exists an ambient height $n$ such
+that every $\gamma$-colouring of the entire corresponding
+mixed-product element space admits an actual
+\texttt{\detokenize{MixedProduct.VariableWord}}
+with full vector 1-complete-skew support and
+\texttt{\detokenize{MixedProduct.Good}}.
+This is an \emph{existence} theorem, not a conditional
+statement assuming a preselected $\mathrm{c}$-good word.
+
+The proof uses the \emph{true} finite-parameter
+Hales--Jewett theorem from PR~486: take as new
+colour type the function space $\beta\to\gamma$.
+A single one-variable ordinary word is then
+monochromatic for every fixed $D_2$ letter,
+although the colours for distinct $D_2$ letters
+may be different. PR~487 verifies the exact
+cross-coordinate length ordering of distinct
+singleton support roots under the full
+\texttt{\detokenize{VectorSkew.vectorCompleteB}} predicate.
+PR~488 constructs a genuine root-aligned $D_0$
+variable word on the first $N$ ray slots and
+a separate $D_2$ variable/marker only at the
+later ray node of length $N$; it checks
+the full mixed variable-word geometry.
+PR~489 proves that every point of this
+actual mixed-variable span has precisely the
+form of an independently chosen $D_0$
+Hales--Jewett evaluation and a retained
+$D_2$ marked letter. PR~490 transports
+parametric colour constancy to Definition-11
+$\mathrm{c}$-goodness; the audited Lean endpoint is
+\texttt{\detokenize{PlainBulletRay.exists_good_plainBullet_height_one}}.
+
+\paragraph{Nonvacuity and completeness.} \todo
+PR~491 separately proves the converse parametric
+coverage and nonemptiness of the actual mixed span,
+ensuring that the permitted $D_2$ letter variations
+are genuinely realized. It must pass its own
+complete Lean and axiom audits before this
+additional claim is marked verified.
+
+\paragraph{Exact remaining limits.} \todo
+The theorem covers only the two-coordinate $(D_0,D_2)$
+mixed product with intrinsic dimension one.
+Arbitrary finite $D_0/D_2$ patterns, genuine
+$D_1$ up-leaf conditions, complete-skew dimensions
+larger than one, relative refinement within
+arbitrary prescribed source supports, and the
+corrected quantitative Corollary~22 / Lemma~27
+induction are all still open. The verified
+nonconstancy of residual $\Gamma_1$ records
+from PR~472 is respected: colour constancy
+is proved \emph{within each fixed $D_2$
+letter parameter}, not across parameter
+values. See
+\texttt{\detokenize{notes/first_genuine_mixed_plain_bullet_20261031.md}}.
 
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
