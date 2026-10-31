@@ -2318,3 +2318,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedProduct.AllBulletRamsey.eq_of_equal_marked_letters
 #print axioms DualTree.MixedProduct.AllBulletRamsey.good_allBullet_at_height_one
 #print axioms DualTree.MixedProduct.AllBulletRamsey.exists_good_allBullet_height_one
+#print axioms DualTree.ParameterHalesJewett.exists_uniform_flat_word
+#print axioms DualTree.ParameterHalesJewett.exists_uniform_flat_fibre_constancy
+#print axioms DualTree.ParameterHalesJewett.exists_one_variable_uniform_in_bullet_letter
