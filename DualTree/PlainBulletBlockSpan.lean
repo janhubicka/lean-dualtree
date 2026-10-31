@@ -159,10 +159,10 @@ theorem span_element_eq_parameterElement
           (SpanAudit.eval w (fun _ => τ (rootVar hb r))) :=
         rayVariableWord_eval hb w fallback r hroot hfirst τ
       _ = embedRay hb fallback (SpanAudit.eval w σ) := rfl
-  have hother : ∀ i : Fin (q + 1), i ≠ 0 →
+  have hother : ∀ (i : Fin (q + 1)) (hi : i ≠ 0),
       x.words i = endWordValue hb N fallback
         (a (bulletCoordinate
-          ⟨i, by simp [kind, ‹i ≠ 0›]⟩)) := by
+          ⟨i, by simp [kind, hi]⟩)) := by
     intro i hi
     have hm : x.words i ∈
         (endKVariableWord hb N fallback).span := by
