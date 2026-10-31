@@ -95,7 +95,7 @@ jobs:
             cat proof-audit/dualtree-axioms.log
             exit 1
           }
-          python3 scripts/check-axiom-log.py proof-audit/dualtree-axioms.log 2051 || {
+          python3 scripts/check-axiom-log.py proof-audit/dualtree-axioms.log 2055 || {
             cat proof-audit/dualtree-axioms.log
             exit 1
           }
