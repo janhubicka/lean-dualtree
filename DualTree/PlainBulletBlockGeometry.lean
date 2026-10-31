@@ -132,10 +132,10 @@ noncomputable def vectorWord
       funext i
       by_cases hi : i = 0
       · simp [hi, supportRoot,
-          rayKVariableWord, rayVariableWord,
+          rayKVariableWord, rayVariableWord, rayPos,
           DualTree.VariableWord.supportNodes]
       · simp [hi, supportRoot,
-          endKVariableWord, endVariableWord,
+          endKVariableWord, endVariableWord, endRoot,
           DualTree.VariableWord.supportNodes]
     change VectorSkew.vectorCompleteB SkewTree.forwardAuxB 1
       (fun i : Fin (q + 1) =>
