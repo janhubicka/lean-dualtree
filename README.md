@@ -1,9 +1,9 @@
 # lean-dualtree
 
-**Current verified status — 31 October 2026 (main through merged PR #490; #491 under audit).**
+**Current verified status — 31 October 2026 (main through merged PR #491).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **2,055 distinct registered source-facing
-transitive-axiom reports** (2,058 proposed through #491), no `sorryAx` or nonstandard proof axioms.
+audits have passed, with **2,058 distinct registered source-facing
+transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
 
 **First simultaneous D₀+D₂ mixed Ramsey existence (#486–490).**
@@ -22,8 +22,9 @@ Two DISTINCT root supports are essential: the D₀ variable
 lies in earlier ray slots, and the D₂ marked variable at a
 later ray node, with full vector 1-complete-skew geometry
 proved in #487–488. Every genuine span element has the
-correct two-parameter representation (#489). The optional
-converse/full-span nonvacuity audit is PR #491 (CI pending).
+correct two-parameter representation (#489). The converse/full-span nonvacuity theorem also passed CI
+and was merged as #491; every D₀ assignment and D₂ letter
+is genuinely realized.
 See [the detailed proof note](notes/first_genuine_mixed_plain_bullet_20261031.md).
 This is positive existence beyond the all-D₀/all-D₂ extremes,
 but it does NOT establish arbitrary finite coordinate kinds,
