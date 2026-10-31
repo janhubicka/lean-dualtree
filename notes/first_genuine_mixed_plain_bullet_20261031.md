@@ -1,8 +1,8 @@
 # The first genuinely mixed D₀/D₂ Ramsey theorem in Lean
 
 **31 October 2026.** PRs #486–490 are merged and full CI-verified.
-PR #491 adds the converse span coverage / nonvacuity check and
-remains CI-pending until its own Lean and transitive-axiom audits pass.
+PR #491 proves the converse span coverage and nonvacuity;
+it passed the full Lean/source/transitive-axiom CI and is merged.
 
 ## Precisely what is proved
 
@@ -89,11 +89,10 @@ residual-record nonconstancy obstruction is respected.
 PR #490 packages this as a genuine `Good color f`
 theorem for the source-facing mixed product.
 
-PR #491 proposes the additional converse: every pair
+Merged PR #491 establishes the additional converse: every pair
 of D₀-variable assignment and D₂ letter is realized
 by an ACTUAL span element, and the span equals the
-whole parametrized family. Once its own CI is green,
-it will rule out any vacuity/coverage concern.
+whole parametrized family. Its green CI eliminates the vacuity/coverage concern.
 
 ## Remaining mathematical gaps
 
