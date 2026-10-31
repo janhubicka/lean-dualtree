@@ -2321,3 +2321,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ParameterHalesJewett.exists_uniform_flat_word
 #print axioms DualTree.ParameterHalesJewett.exists_uniform_flat_fibre_constancy
 #print axioms DualTree.ParameterHalesJewett.exists_one_variable_uniform_in_bullet_letter
+#print axioms DualTree.VectorSkew.orderedSingletonPair
+#print axioms DualTree.VectorSkew.orderedSingletonPair_zero
+#print axioms DualTree.VectorSkew.orderedSingletonPair_one
+#print axioms DualTree.VectorSkew.orderedSingletonPair_sameLevel
+#print axioms DualTree.VectorSkew.orderedSingletonPair_vectorComplete_one
