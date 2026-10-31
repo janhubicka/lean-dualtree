@@ -113,7 +113,7 @@ theorem span_element_eq_parameterElement
       x.words 1 = (endKVariableWord hb N fallback).toVariableWord.eval σ₁ :=
         hσ₁.symm
       _ = endWordValue hb N fallback (σ₁ (endVar hb N)) :=
-        endVariableWord_eval hb N fallback σ₁
+        endVariableWord_eval hb fallback σ₁
       _ = endWordValue hb N fallback a := rfl
   have hwords : x.words =
       (parameterElement hb fallback (SpanAudit.eval w σ) a).words := by
@@ -130,7 +130,7 @@ theorem span_element_eq_parameterElement
   have hbullet : x.bulletPoint =
       (parameterElement hb fallback (SpanAudit.eval w σ) a).bulletPoint := by
     funext i
-    exact bulletPoint_eq_endRoot hb N w fallback r hroot hfirst
+    exact bulletPoint_eq_endRoot hb w fallback r hroot hfirst
       x hx i
   refine ⟨σ, a, ?_⟩
   cases x with
