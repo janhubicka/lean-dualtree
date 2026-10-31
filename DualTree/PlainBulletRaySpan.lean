@@ -35,9 +35,9 @@ noncomputable def parameterElement
     Element b (N + 1) 2 β kind where
   words := fun i =>
     if i = 0 then embedRay hb fallback u
-    else endWordValue hb fallback a
+    else endWordValue hb N fallback a
   upPoint := fun i => False.elim (noUp i)
-  bulletPoint := fun _ => endRoot hb
+  bulletPoint := fun _ => endRoot hb N
 
 theorem parameterElement_zero
     {b N : Nat} {β : Type*}
@@ -52,7 +52,7 @@ theorem parameterElement_one
     (hb : 0 < b) (fallback : β)
     (u : Fin N → β) (a : β) :
     (parameterElement hb fallback u a).words 1 =
-      endWordValue hb fallback a := by
+      endWordValue hb N fallback a := by
   simp [parameterElement]
 
 /-- The retained D₂ observed letter of a parameter element
@@ -92,12 +92,12 @@ theorem span_element_eq_parameterElement
         (rayKVariableWord hb w fallback r hroot hfirst).span :=
     hx.1 0
   have h1 :
-      x.words 1 ∈ (endKVariableWord hb fallback).span :=
+      x.words 1 ∈ (endKVariableWord hb N fallback).span :=
     hx.1 1
   obtain ⟨σ₀,hσ₀⟩ := h0
   obtain ⟨σ₁,hσ₁⟩ := h1
   let σ : Fin 1 → β := fun _ => σ₀ (rootVar hb r)
-  let a : β := σ₁ (endVar hb)
+  let a : β := σ₁ (endVar hb N)
   have hw0 : x.words 0 =
       embedRay hb fallback (SpanAudit.eval w σ) := by
     calc
@@ -108,13 +108,13 @@ theorem span_element_eq_parameterElement
           (SpanAudit.eval w (fun _ => σ₀ (rootVar hb r))) :=
         rayVariableWord_eval hb w fallback r hroot hfirst σ₀
       _ = embedRay hb fallback (SpanAudit.eval w σ) := rfl
-  have hw1 : x.words 1 = endWordValue hb fallback a := by
+  have hw1 : x.words 1 = endWordValue hb N fallback a := by
     calc
-      x.words 1 = (endKVariableWord hb fallback).toVariableWord.eval σ₁ :=
+      x.words 1 = (endKVariableWord hb N fallback).toVariableWord.eval σ₁ :=
         hσ₁.symm
-      _ = endWordValue hb fallback (σ₁ (endVar hb)) :=
-        endVariableWord_eval hb fallback σ₁
-      _ = endWordValue hb fallback a := rfl
+      _ = endWordValue hb N fallback (σ₁ (endVar hb N)) :=
+        endVariableWord_eval hb N fallback σ₁
+      _ = endWordValue hb N fallback a := rfl
   have hwords : x.words =
       (parameterElement hb fallback (SpanAudit.eval w σ) a).words := by
     funext i
@@ -130,7 +130,7 @@ theorem span_element_eq_parameterElement
   have hbullet : x.bulletPoint =
       (parameterElement hb fallback (SpanAudit.eval w σ) a).bulletPoint := by
     funext i
-    exact bulletPoint_eq_endRoot hb w fallback r hroot hfirst
+    exact bulletPoint_eq_endRoot hb N w fallback r hroot hfirst
       x hx i
   refine ⟨σ, a, ?_⟩
   cases x with
