@@ -2307,3 +2307,14 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.MixedProduct.allPlainVariableWord_mem_span_iff
 #print axioms DualTree.MixedProduct.exists_monochromatic_allPlain_height_one
 #print axioms DualTree.MixedProduct.exists_good_allPlain_height_one
+#print axioms DualTree.MixedProduct.AllBulletRamsey.allBulletKind
+#print axioms DualTree.MixedProduct.AllBulletRamsey.root
+#print axioms DualTree.MixedProduct.AllBulletRamsey.node_eq_root
+#print axioms DualTree.MixedProduct.AllBulletRamsey.rootVar
+#print axioms DualTree.MixedProduct.AllBulletRamsey.oneRootVariableWord
+#print axioms DualTree.MixedProduct.AllBulletRamsey.oneRootKVariableWord
+#print axioms DualTree.MixedProduct.AllBulletRamsey.oneRootVectorWord
+#print axioms DualTree.MixedProduct.AllBulletRamsey.oneRootAllBulletMixedWord
+#print axioms DualTree.MixedProduct.AllBulletRamsey.eq_of_equal_marked_letters
+#print axioms DualTree.MixedProduct.AllBulletRamsey.good_allBullet_at_height_one
+#print axioms DualTree.MixedProduct.AllBulletRamsey.exists_good_allBullet_height_one
