@@ -1,10 +1,35 @@
 # lean-dualtree
 
-**Current verified status — 31 October 2026 (main through merged PR #484).**
+**Current verified status — 31 October 2026 (main through merged PR #491).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **2,025 distinct registered source-facing
+audits have passed, with **2,058 distinct registered source-facing
 transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
+
+**First simultaneous D₀+D₂ mixed Ramsey existence (#486–490).**
+The actual Definition-11 mixed-product theorem has now been
+proved for two coordinates in the order (D₀,D₂), no D₁
+coordinates and intrinsic complete-skew height ONE (#490).
+For arbitrary finite alphabet β, finite colours γ,
+branching b>0 and supplied fallback letter, a finite ambient
+height guarantees a genuinely c-good mixed variable word
+for EVERY γ-colouring, with no hgood assumption.
+
+The proof uses uniform finite-parameter Hales–Jewett (#486):
+one D₀ line works simultaneously for all possible observed D₂
+letters, but colours may still depend on that letter.
+Two DISTINCT root supports are essential: the D₀ variable
+lies in earlier ray slots, and the D₂ marked variable at a
+later ray node, with full vector 1-complete-skew geometry
+proved in #487–488. Every genuine span element has the
+correct two-parameter representation (#489). The converse/full-span nonvacuity theorem also passed CI
+and was merged as #491; every D₀ assignment and D₂ letter
+is genuinely realized.
+See [the detailed proof note](notes/first_genuine_mixed_plain_bullet_20261031.md).
+This is positive existence beyond the all-D₀/all-D₂ extremes,
+but it does NOT establish arbitrary finite coordinate kinds,
+D₁ leaf sets, k>1 complete-skew supports or the full
+quantitative Corollary 22 and Lemma-27/28 induction.
 
 **True mixed-product c-good height-one base cases (#483–484).**
 Merged #483 converts the verified vector 1-complete-skew
