@@ -5,7 +5,7 @@ import DualTree.Theorem3Audit
 import DualTree.AllBulletMixedRamsey
 import DualTree.PlainBulletRayExactSpan
 import DualTree.ParameterVectorHalesJewett
-import DualTree.PlainBulletBlockGeometry
+import DualTree.PlainBulletBlockSpan
 import DualTree.UnaryMainAudit
 import DualTree.Corollary22Audit
 import DualTree.GluingAudit
