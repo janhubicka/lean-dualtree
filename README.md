@@ -1,10 +1,33 @@
 # lean-dualtree
 
-**Current verified status — 30 October 2026 (main through merged PR #477).**
+**Current verified status — 31 October 2026 (main through merged PR #483; #484 CI pending).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **1,989 distinct registered source-facing
-transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
+audits have passed, with **2,014 distinct registered source-facing
+transitive-axiom reports** (2,025 proposed after #484 passes), no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
+
+**True mixed-product c-good height-one base cases (#483–484).**
+Merged #483 converts the verified vector 1-complete-skew
+Hales–Jewett existence theorem into the ACTUAL
+`MixedProduct.VariableWord` / `Element` API with all
+coordinates in D₀. The extra D₁ and D₂ index types are EMPTY,
+and the entire mixed evaluated span is provably identical to
+the underlying vector span. Thus EVERY finite colouring of a
+sufficiently tall b-ary tree has a genuine k=1 all-D₀ mixed
+word on which it is monochromatic, hence Definition-11 c-good.
+This is unconditional existence, not a supplied hgood premise.
+
+PR #484 proposes the opposite all-D₂ case at ambient height
+one: all D₂ markers must be the unique root, so their
+observed letters determine the whole mixed point and
+Definition-11 c-goodness is automatic, although
+monochromaticity is NOT asserted. The explicit support
+witness uses a real 1-complete-skew singleton vector.
+This remains CI-pending. See the
+[mixed height-one base-case note](notes/mixed_extreme_height_one_20261031.md).
+Neither extreme case proves the simultaneous D₀/D₂ theorem,
+D₁ leaf-set selection, k>1 complete-skew recursion, or the
+corrected Corollary-22 / Lemma-27 induction.
 
 **Genuine finite Hales–Jewett existence in DualTree's API (#476–477).**
 Mathlib's proved MULTIDIMENSIONAL Hales–Jewett theorem has now been
