@@ -26,6 +26,29 @@ open DualTree.MixedProduct
 open DualTree.RayHalesJewett
 open DualTree.PlainBulletRay
 
+/-- Extensionality for the ACTUAL mixed-product element: equality of
+all three structure fields gives equality of elements, without
+dependent elimination of the parameter representation used below. -/
+theorem element_eq_of_fields
+    {b n d : Nat} {β : Type*}
+    {k : Fin d → CoordKind}
+    (x y : Element b n d β k)
+    (hw : x.words = y.words)
+    (hu : x.upPoint = y.upPoint)
+    (hb : x.bulletPoint = y.bulletPoint) :
+    x = y := by
+  cases x with
+  | mk wx ux bx =>
+    cases y with
+    | mk wy uy byy =>
+      change wx = wy at hw
+      change ux = uy at hu
+      change bx = byy at hb
+      cases hw
+      cases hu
+      cases hb
+      rfl
+
 /-- Every genuine D₂ coordinate is the successor of its
 own Fin q marker index. -/
 theorem succ_bulletCoordinate
@@ -118,11 +141,10 @@ theorem bulletPoint_eq_endRoot
     x.bulletPoint i = endRoot hb N := by
   have hi := bullet_ne_zero i
   have h := hx.2.2 i
-  change x.bulletPoint i ∈
-    (if i.1 = 0 then
-      (rayKVariableWord hb w fallback r hroot hfirst).support
-    else (endKVariableWord hb N fallback).support) at h
-  simpa [hi, endKVariableWord, endVariableWord] using h
+  have hmem :
+      x.bulletPoint i ∈ (endKVariableWord hb N fallback).support := by
+    simpa [mixedWord, vectorWord, hi] using h
+  simpa [endKVariableWord, endVariableWord] using hmem
 
 /-- A genuine point of the mixed span has an ordinary D₀
 HJ evaluation and an independent q-tuple of D₂ letters.
@@ -167,11 +189,7 @@ theorem span_element_eq_parameterElement
     have hm : x.words i ∈
         (endKVariableWord hb N fallback).span := by
       have h := hx.1 i
-      change x.words i ∈
-        (if i = 0 then
-          (rayKVariableWord hb w fallback r hroot hfirst).span
-        else (endKVariableWord hb N fallback).span) at h
-      simpa [hi] using h
+      simpa [mixedWord, vectorWord, hi] using h
     have heval := endK_span_word_eq hb fallback (x.words i) hm
     let bi : BulletIndex (kind q) := ⟨i, by simp [kind, hi]⟩
     have hidx : Fin.succ (bulletCoordinate bi) = i :=
@@ -203,15 +221,9 @@ theorem span_element_eq_parameterElement
       (parameterElement hb fallback (SpanAudit.eval w σ) a).bulletPoint := by
     funext i
     exact bulletPoint_eq_endRoot hb w fallback r hroot hfirst x hx i
-  refine ⟨σ, a, ?_⟩
-  cases x with
-  | mk words up bullet =>
-    change words = _ at hwords
-    change up = _ at hup
-    change bullet = _ at hbullet
-    cases hwords
-    cases hup
-    cases hbullet
-    rfl
+  exact ⟨σ, a,
+    element_eq_of_fields x
+      (parameterElement hb fallback (SpanAudit.eval w σ) a)
+      hwords hup hbullet⟩
 
 end DualTree.PlainBulletBlock
