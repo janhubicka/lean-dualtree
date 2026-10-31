@@ -21,7 +21,9 @@ Fin q → β, rather than incorrectly claiming D₂ letters or
 representation converts parameter-uniformity to Definition-11
 c-goodness in the ACTUAL MixedProduct.VariableWord API.
 
-No selected c-good mixed word is assumed. D₁ up-leaf selection,
+No selected c-good mixed word is assumed. For q=0 the same
+construction specializes to the one-ordinary-coordinate case.
+D₁ up-leaf selection,
 multiple ordinary coordinates, higher intrinsic heights, and
 the quantitative Corollary 22 remain open.
 -/
