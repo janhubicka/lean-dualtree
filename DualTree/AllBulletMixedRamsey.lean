@@ -59,6 +59,7 @@ def oneRootVariableWord (b : Nat) (β : Type*) :
     intro v
     have hv : v = rootVar b := by
       apply Subtype.ext
+      change v.1 = root b
       simpa using v.2
     subst v
     rfl
