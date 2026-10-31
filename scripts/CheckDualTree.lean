@@ -2299,3 +2299,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.VectorRayHalesJewett.synchronizedRayVectorWord
 #print axioms DualTree.VectorRayHalesJewett.coordinateRayWord_eval
 #print axioms DualTree.VectorRayHalesJewett.exists_monochromatic_vector_one_root_tree_word
+#print axioms DualTree.MixedProduct.allPlainKind
+#print axioms DualTree.MixedProduct.allPlain_noBullet
+#print axioms DualTree.MixedProduct.allPlainElement
+#print axioms DualTree.MixedProduct.allPlainElement_words
+#print axioms DualTree.MixedProduct.allPlainVariableWord
+#print axioms DualTree.MixedProduct.allPlainVariableWord_mem_span_iff
+#print axioms DualTree.MixedProduct.exists_monochromatic_allPlain_height_one
+#print axioms DualTree.MixedProduct.exists_good_allPlain_height_one

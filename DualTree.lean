@@ -2,7 +2,7 @@ import DualTree.Insensitivity
 import DualTree.Remark1Audit
 import DualTree.StarInsensitivity
 import DualTree.Theorem3Audit
-import DualTree.VectorRayHalesJewett
+import DualTree.AllPlainMixedRamsey
 import DualTree.UnaryMainAudit
 import DualTree.Corollary22Audit
 import DualTree.GluingAudit
