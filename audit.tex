@@ -11582,8 +11582,8 @@ the resulting mixed word is truly $\mathrm{c}$-good.
 This is a kernel-checked unconditional existence
 statement, not a conditional colour transfer.
 
-\paragraph{All marked coordinates $D_2$.} \todo
-PR~484 proposes the opposite height-one base. In the actual
+\paragraph{All marked coordinates $D_2$.} \ok
+Merged PR~484 verifies the opposite height-one base. In the actual
 homogeneous tree $b^{<1}$, the empty root is the only
 bounded node; all $D_2$ markers therefore equal this root,
 and equality of their observed letters determines
@@ -11592,8 +11592,9 @@ is automatic, without a monochromaticity claim.
 The proposed explicit mixed word has singleton root
 variable support, satisfies the vector 1-complete-skew
 conditions, and has no artificial $D_1$ leaf data.
-Its full Lean CI must pass before these additional facts
-can be marked validated.
+The complete Lean build, source audit, finite regressions
+and 2{,}025 registered transitive-axiom checks passed; the
+explicit all-$D_2$ existence statement is verified.
 
 \paragraph{Remaining mixed-product bottleneck.} \todo
 Neither extreme case gives a valid mixed $D_0\cup D_2$
