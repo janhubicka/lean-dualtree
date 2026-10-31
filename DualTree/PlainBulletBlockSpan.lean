@@ -144,7 +144,8 @@ theorem bulletPoint_eq_endRoot
   have hmem :
       x.bulletPoint i ∈ (endKVariableWord hb N fallback).support := by
     simpa [mixedWord, vectorWord, hi] using h
-  simpa [endKVariableWord, endVariableWord] using hmem
+  change x.bulletPoint i ∈ [endRoot hb N] at hmem
+  simpa using hmem
 
 /-- A genuine point of the mixed span has an ordinary D₀
 HJ evaluation and an independent q-tuple of D₂ letters.
