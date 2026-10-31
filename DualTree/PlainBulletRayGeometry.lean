@@ -160,8 +160,8 @@ noncomputable def twoRootVectorWord
       (VectorSkew.orderedSingletonPair
         (zeroRay hb r.val) (zeroRay hb N)) = true
     apply VectorSkew.orderedSingletonPair_vectorComplete_one
-    simp [zeroRay]
-    exact Nat.le_of_lt r.isLt
+    simpa only [zeroRay, List.length_replicate]
+      using (Nat.le_of_lt r.isLt)
 
 /-- An ACTUAL mixed-product variable word with D₀ and D₂
 both nonempty and D₁ empty. Its vector satisfies the
