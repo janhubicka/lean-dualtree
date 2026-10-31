@@ -1,8 +1,7 @@
 # Mixed-product Ramsey verification: the two height-one extreme partitions
 
-**31 October 2026.** This note distinguishes the genuinely verified
-all-`D₀` case (merged PR #483) from the proposed all-`D₂` case
-(PR #484, awaiting the full Lean build at the time of writing).
+**31 October 2026.** Both extreme cases are now fully Lean-verified:
+all-`D₀` (merged #483) and all-`D₂` (merged #484).
 
 ## All-D₀: a genuine positive Ramsey theorem
 
@@ -41,13 +40,13 @@ the indicated type. This does **not** say the span is
 monochromatic: the colour may distinguish evaluations of
 the marked D₂ root variables.
 
-The proposed `AllBulletMixedRamsey.lean` supplies an
-explicit nonvacuous witness: one genuine root variable in
+The verified `AllBulletMixedRamsey.lean` supplies an
+explicit support witness: one genuine root variable in
 each component, full vector 1-complete skew support, and
 genuinely empty D₁ leaf-index data. Its existence and
 Good statements require no finite-colour hypothesis.
-They must pass the full Lean and axiom checks before
-being marked validated.
+Both the full Lean build and the registered transitive-axiom
+and source audits passed for #484.
 
 ## Why the full theorem does not follow
 
