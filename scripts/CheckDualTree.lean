@@ -2351,3 +2351,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.PlainBulletRay.parameterElement_mem_span
 #print axioms DualTree.PlainBulletRay.twoRootMixedWord_span_eq_parameter_range
 #print axioms DualTree.PlainBulletRay.twoRootMixedWord_span_nonempty
+#print axioms DualTree.ParameterVectorHalesJewett.exists_uniform_flat_vector_word
+#print axioms DualTree.ParameterVectorHalesJewett.exists_uniform_flat_vector_fibre_constancy
+#print axioms DualTree.ParameterVectorHalesJewett.exists_uniform_flat_vector_for_bullet_letters
