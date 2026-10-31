@@ -2326,3 +2326,16 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.VectorSkew.orderedSingletonPair_one
 #print axioms DualTree.VectorSkew.orderedSingletonPair_sameLevel
 #print axioms DualTree.VectorSkew.orderedSingletonPair_vectorComplete_one
+#print axioms DualTree.PlainBulletRay.kind
+#print axioms DualTree.PlainBulletRay.noUp
+#print axioms DualTree.PlainBulletRay.bulletIndex_one
+#print axioms DualTree.PlainBulletRay.endRoot
+#print axioms DualTree.PlainBulletRay.endVar
+#print axioms DualTree.PlainBulletRay.endVariableWord
+#print axioms DualTree.PlainBulletRay.endKVariableWord
+#print axioms DualTree.PlainBulletRay.endWordValue
+#print axioms DualTree.PlainBulletRay.endWordValue_at_root
+#print axioms DualTree.PlainBulletRay.endVariableWord_eval
+#print axioms DualTree.PlainBulletRay.twoRootVectorWord
+#print axioms DualTree.PlainBulletRay.twoRootMixedWord
+#print axioms DualTree.PlainBulletRay.bulletPoint_eq_endRoot
