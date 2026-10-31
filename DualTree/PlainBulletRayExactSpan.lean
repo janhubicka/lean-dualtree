@@ -48,6 +48,8 @@ theorem parameterElement_mem_span
       have hi : i = 0 := Fin.eq_zero i
       subst i
       rfl
+    change (rayVariableWord hb w fallback r hroot hfirst).eval τ₀ =
+      embedRay hb fallback (SpanAudit.eval w σ)
     simpa only [hσ] using h
   let τ₁ : (endKVariableWord hb N fallback).Vars → β :=
     fun _ => a
@@ -55,7 +57,9 @@ theorem parameterElement_mem_span
       (endKVariableWord hb N fallback).toVariableWord.eval τ₁ =
         endWordValue hb N fallback a := by
     have h := endVariableWord_eval (N := N) hb fallback τ₁
-    simpa only using h
+    change (endVariableWord hb N fallback).eval τ₁ =
+      endWordValue hb N fallback a
+    simpa [τ₁] using h
   refine ⟨?_, ?_, ?_⟩
   · intro i
     by_cases hi : i = (0 : Fin 2)
