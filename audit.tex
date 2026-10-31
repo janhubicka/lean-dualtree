@@ -11560,6 +11560,55 @@ use the verified record-dependent colour-transfer interface.
 See
 \texttt{\detokenize{notes/flat_hales_jewett_bridge_20261030.md}}.
 
+
+\subsubsection{Genuine height-one mixed-product Ramsey base cases (31 October 2026)}
+\paragraph{All ordinary coordinates $D_0$.} \ok
+Merged PR~483 proves a positive \emph{existence} theorem for
+the genuine Definition-11 mixed-product variable-word API
+when every coordinate is in $D_0$, $D_1=D_2=\varnothing$
+and intrinsic complete-skew dimension is one.
+\texttt{\detokenize{MixedProduct.allPlainVariableWord}}
+transports a genuine vector 1-complete-skew word into the
+actual mixed type, eliminating the up- and bullet-index
+data because their types are empty. The theorem
+\texttt{\detokenize{MixedProduct.allPlainVariableWord_mem_span_iff}}
+proves exact equality of the true mixed and vector evaluated
+spans. Mathlib's multidimensional Hales--Jewett theorem,
+after the verified ray-tree and vector support lifts,
+provides a monochromatic word for \emph{every} finite
+colouring of the mixed space at some finite ambient height.
+By \texttt{\detokenize{GoodNoBullet.good_of_constant_on_span_of_noBullet}},
+the resulting mixed word is truly $\mathrm{c}$-good.
+This is a kernel-checked unconditional existence
+statement, not a conditional colour transfer.
+
+\paragraph{All marked coordinates $D_2$.} \todo
+PR~484 proposes the opposite height-one base. In the actual
+homogeneous tree $b^{<1}$, the empty root is the only
+bounded node; all $D_2$ markers therefore equal this root,
+and equality of their observed letters determines
+the full mixed element. Definition-11 $\mathrm{c}$-goodness
+is automatic, without a monochromaticity claim.
+The proposed explicit mixed word has singleton root
+variable support, satisfies the vector 1-complete-skew
+conditions, and has no artificial $D_1$ leaf data.
+Its full Lean CI must pass before these additional facts
+can be marked validated.
+
+\paragraph{Remaining mixed-product bottleneck.} \todo
+Neither extreme case gives a valid mixed $D_0\cup D_2$
+Ramsey theorem: one must refine ordinary words
+simultaneously for every retained $D_2$ marker/letter
+parameter. $D_1$ coordinates add the genuine
+$\operatorname{up\_support\_skew}$ constraint, and
+higher intrinsic heights require complete branching
+supports across all components. The full mixed Theorem~13,
+the corrected Corollary~22 and Lemma~27/28 induction
+remain unverified. The nonconstancy obstruction for
+nonempty $\Gamma_1$ from PR~472 must be respected.
+See
+\texttt{\detokenize{notes/mixed_extreme_height_one_20261031.md}}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
