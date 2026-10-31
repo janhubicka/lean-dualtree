@@ -50,6 +50,8 @@ theorem parameterElement_mem_span
       have hj : j = 0 := Fin.eq_zero j
       subst j
       rfl
+    change (rayVariableWord hb w fallback r hroot hfirst).eval τ₀ =
+      embedRay hb fallback (SpanAudit.eval w σ)
     simpa only [hσ] using h
   refine ⟨?_, ?_, ?_⟩
   · intro i
