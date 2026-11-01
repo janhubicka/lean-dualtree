@@ -69,6 +69,8 @@ theorem parameterElement_mem_span
           (endKVariableWord hb N fallback).toVariableWord.eval τ =
             endWordValue hb N fallback (a (bulletCoordinate bi)) := by
         have h := endVariableWord_eval (N := N) hb fallback τ
+        change (endVariableWord hb N fallback).eval τ =
+          endWordValue hb N fallback (a (bulletCoordinate bi))
         simpa [τ] using h
       have hmem :
           endWordValue hb N fallback (a (bulletCoordinate bi)) ∈
