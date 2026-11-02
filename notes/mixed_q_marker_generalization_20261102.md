@@ -1,8 +1,8 @@
 # Verified one-D₀ / arbitrary-q-D₂ mixed Ramsey existence, and the next geometry
 
 **2 November 2026.** The source-faithful q-marker c-good theorem is
-merged and Lean-verified through PR #498. Its converse exact-span
-coverage remains in PR #499, currently CI-gated. The genuinely new
+merged and Lean-verified through PR #499. The full converse
+exact-span coverage and nonvacuity check also passed full CI. The genuinely new
 multiple-D₀ generalization is being developed in stacked PRs #500–503
 and is not marked verified here.
 
@@ -60,12 +60,12 @@ equality of colours for different marked-letter tuples.
   Hales–Jewett word and a q-tuple of observed letters.
 - #498: unconditional Definition-11 c-good existence for every q,
   subsuming the q=1 theorem #490.
-- #499: **pending** converse, asserting that every pair of D₀
+- #499: **verified** converse, asserting that every pair of D₀
   assignment and D₂ letter tuple is actually realized, with
   exact equality of the mixed span and parameter family.
 
-Merged #498 contains **2,084** registered source-facing transitive
-axiom reports overall. Those reports are declaration-level proof
+Merged #499 brings the library to **2,087** registered source-facing
+transitive axiom reports overall. Those reports are declaration-level proof
 checks, not a completion percentage for the published theorem.
 
 ## Generalization under review — *not yet verified*
