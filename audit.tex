@@ -11710,13 +11710,18 @@ same parameter. No equality of colours for
 This respects the previously checked $\Gamma_1$
 residual-record nonconstancy obstruction.
 
-\paragraph{Exact-span converse.} \todo
-PR~499 proposes the converse: for every ordinary
+\paragraph{Exact-span converse.} \ok
+Merged PR~499 proves the converse: for every ordinary
 Hales--Jewett assignment and independent $q$-tuple
 of marked letters, there is a real point in the
-source-facing mixed span. That stronger nonvacuity
-statement is not marked verified until its own
-full Lean, source and transitive-axiom CI passes.
+source-facing mixed span. The actual mixed span is
+therefore exactly the full parameter family, not a
+possibly restricted subset, and is nonempty for
+every $q$ when the fallback letter is supplied.
+This stronger nonvacuity statement passed the
+complete Lean build, source and transitive-axiom
+checks. The current library registers 2{,}087
+source-facing transitive-axiom reports.
 
 \paragraph{Multiple ordinary coordinates.} \todo
 The proposed follow-up PRs~500--503 combine an
