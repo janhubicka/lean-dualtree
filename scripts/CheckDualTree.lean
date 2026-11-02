@@ -2377,6 +2377,16 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.PlainBulletBlock.span_element_eq_parameterElement
 #print axioms DualTree.PlainBulletBlock.mixedWord_good_of_uniform_flat
 #print axioms DualTree.PlainBulletBlock.exists_good_plainBulletBlock_height_one
+#print axioms DualTree.PlainBlockBulletBlock.kind
+#print axioms DualTree.PlainBlockBulletBlock.noUp
+#print axioms DualTree.PlainBlockBulletBlock.bullet_ge_plain
+#print axioms DualTree.PlainBlockBulletBlock.bulletCoordinate
+#print axioms DualTree.PlainBlockBulletBlock.bulletIndex
+#print axioms DualTree.PlainBlockBulletBlock.bulletCoordinate_bulletIndex
+#print axioms DualTree.PlainBlockBulletBlock.supportRoot
+#print axioms DualTree.PlainBlockBulletBlock.supportRoot_lengths_monotone
+#print axioms DualTree.PlainBlockBulletBlock.vectorWord
+#print axioms DualTree.PlainBlockBulletBlock.mixedWord
 #print axioms DualTree.PlainBulletBlock.parameterElement_mem_span
 #print axioms DualTree.PlainBulletBlock.mixedWord_span_eq_parameter_range
 #print axioms DualTree.PlainBulletBlock.mixedWord_span_nonempty
