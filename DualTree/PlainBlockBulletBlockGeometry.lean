@@ -65,8 +65,7 @@ coordinate array, without introducing a fake bullet index. -/
 def bulletIndex (p q : Nat) (j : Fin q) :
     BulletIndex (kind p q) :=
   ⟨⟨p + j.val, by omega⟩, by
-    simp [kind]
-    omega⟩
+    simp [kind]⟩
 
 theorem bulletCoordinate_bulletIndex
     (p q : Nat) (j : Fin q) :
@@ -95,8 +94,7 @@ theorem supportRoot_lengths_monotone
   by_cases hi : i.val < p
   · by_cases hj : j.val < p
     · simp [supportRoot, hi, hj]
-    · simpa only [supportRoot, hi, hj,
-          zeroRay, List.length_replicate] using
+    · simpa [supportRoot, hi, hj, zeroRay] using
         (Nat.le_of_lt r.isLt)
   · have hj : ¬ j.val < p := by omega
     simp [supportRoot, hi, hj]
