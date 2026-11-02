@@ -2395,3 +2395,4 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.PlainBlockBulletBlock.parameterElement_plain
 #print axioms DualTree.PlainBlockBulletBlock.parameterElement_bullet_letter
 #print axioms DualTree.PlainBlockBulletBlock.bulletPoint_eq_endRoot
+#print axioms DualTree.PlainBlockBulletBlock.span_element_eq_parameterElement
