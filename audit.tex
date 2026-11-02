@@ -11678,6 +11678,72 @@ letter parameter}, not across parameter
 values. See
 \texttt{\detokenize{notes/first_genuine_mixed_plain_bullet_20261031.md}}.
 
+
+\subsubsection{One ordinary coordinate with arbitrarily many marked $D_2$ coordinates (2 November 2026)}
+\paragraph{Unconditional Ramsey existence.} \ok
+Merged PRs~493--498 generalize the two-coordinate
+$(D_0,D_2)$ height-one mixed-product theorem to
+one ordinary $D_0$ coordinate followed by \emph{any}
+finite block of $q$ independently marked $D_2$
+coordinates, with no $D_1$ and intrinsic complete-skew
+dimension $k=1$. For every $b>0$, finite alphabet
+$\beta$ with an explicitly chosen fallback letter,
+finite colour type $\gamma$, and $q\in\mathbb N$,
+the kernel-checked theorem
+\texttt{\detokenize{PlainBulletBlock.exists_good_plainBulletBlock_height_one}}
+produces a finite ambient height at which \emph{every}
+colouring of the actual source-facing mixed product
+has a genuine $\mathrm{c}$-good variable word.
+
+The argument applies the proved parameter-uniform finite
+Hales--Jewett theorem with parameter type
+$(\operatorname{Fin}q\to\beta)$. The source-facing
+mixed variable word contains an earlier genuine
+$D_0$ ray variable and $q$ independent $D_2$
+variable words at a \emph{later} common geometric
+root, satisfying the full vector 1-complete-skew
+length ordering. The checked span representation
+identifies the observed marked letters with the
+$q$-tuple, so equal marked observations imply the
+same parameter. No equality of colours for
+\emph{different} retained tuples is asserted.
+This respects the previously checked $\Gamma_1$
+residual-record nonconstancy obstruction.
+
+\paragraph{Exact-span converse.} \ok
+Merged PR~499 proves the converse: for every ordinary
+Hales--Jewett assignment and independent $q$-tuple
+of marked letters, there is a real point in the
+source-facing mixed span. The actual mixed span is
+therefore exactly the full parameter family, not a
+possibly restricted subset, and is nonempty for
+every $q$ when the fallback letter is supplied.
+This stronger nonvacuity statement passed the
+complete Lean build, source and transitive-axiom
+checks. The current library registers 2{,}087
+source-facing transitive-axiom reports.
+
+\paragraph{Multiple ordinary coordinates.} \todo
+The proposed follow-up PRs~500--503 combine an
+arbitrary block of $p$ ordinary $D_0$ coordinates
+with a block of $q$ marked $D_2$ coordinates at
+intrinsic height one. They address, respectively,
+complete-skew geometry, genuine parameter elements,
+span representation and unconditional c-good
+existence using the checked parameter-uniform
+\emph{vector} Hales--Jewett theorem. Their claims
+remain CI-gated, not proof-validated as of this note.
+
+\paragraph{Full-theorem limits.} \todo
+This partial Ramsey theorem does not supply
+$D_1$ up-leaf sets, complete-skew heights $k>1$,
+the relative-refinement conclusion from an arbitrary
+initial source word, all source coordinate orderings,
+the corrected quantitative Corollary~22 or the
+Definition~24 and Lemma~27--28 induction.
+See
+\texttt{\detokenize{notes/mixed_q_marker_generalization_20261102.md}}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the

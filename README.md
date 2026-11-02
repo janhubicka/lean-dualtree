@@ -1,10 +1,35 @@
 # lean-dualtree
 
-**Current verified status — 31 October 2026 (main through merged PR #491).**
+**Current verified status — 2 November 2026 (main through merged PR #499).**
 The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **2,058 distinct registered source-facing
+audits have passed, with **2,087 distinct registered source-facing
 transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
 The endpoint count is *not* a theorem-completion percentage.
+
+**Unconditional mixed c-good existence: one D₀ and arbitrary q D₂ (#493–498).**
+The first genuinely mixed 2-coordinate result has been extended
+to ANY finite block of q independently marked D₂ coordinates
+following one ordinary D₀ coordinate, still at intrinsic
+complete-skew height one. This is a fully checked Definition-11
+`Good` existence theorem, with no assumed c-good word.
+One parameter-uniform Hales–Jewett variable line works
+simultaneously for ALL q-tuples of observed D₂ letters;
+the colour may still depend on the retained tuple.
+Every marked component has its own variable evaluation
+at the common LATER ray root, and the full vector 1-skew
+geometry is verified. Merged #498 brings the count to 2,084.
+The independent q-letter converse/full-span coverage in
+[#499](https://github.com/janhubicka/lean-dualtree/pull/499)
+is now Lean-verified and merged. Every Hales–Jewett assignment
+and D₂ letter tuple is realized in the genuine mixed span.
+
+A broader p-D₀/q-D₂ vector-height-one generalization
+is being checked in PRs #500–503; those are NOT yet
+verified results. See the
+[2 November technical status note](notes/mixed_q_marker_generalization_20261102.md).
+D₁ up-leaf data, k>1 complete-skew recursion, arbitrary
+kind permutations, relative refinement and the complete
+dual-tree proof all remain open.
 
 **First simultaneous D₀+D₂ mixed Ramsey existence (#486–490).**
 The actual Definition-11 mixed-product theorem has now been
