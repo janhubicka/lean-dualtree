@@ -1,5 +1,4 @@
 import DualTree.PlainBlockBulletBlockRamsey
-import DualTree.PlainBulletBlockExactSpan
 
 /-!
 # Converse span and nonvacuity for p ordinary / q marked coordinates
