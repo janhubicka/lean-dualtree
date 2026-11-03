@@ -1,10 +1,41 @@
 # lean-dualtree
 
-**Current verified status — 31 October 2026 (main through merged PR #491).**
-The complete Lean umbrella, finite Q/counterexample regressions and source
-audits have passed, with **2,058 distinct registered source-facing
-transitive-axiom reports**, no `sorryAx` or nonstandard proof axioms.
-The endpoint count is *not* a theorem-completion percentage.
+**Current proof status — 3 November 2026 (main through merged PR #505).**
+All of PRs #500–503 and #505 passed full Lean and source/axiom CI
+at their final reviewed heads; they were merged in dependency order.
+The merged development has **2,111 registered source-facing transitive-axiom
+reports**, without `sorryAx` or nonstandard proof axioms in those checks.
+The post-merge main-branch CI is independently tracked. The number of
+endpoints is NOT a percentage of the published theorem.
+
+**Genuine mixed c-good existence: arbitrary p D₀ followed by q D₂ (#500–505).**
+For every b>0, finite alphabet β with a fallback letter,
+finite colour type γ, and numbers p,q≥0, a finite ambient height
+works for EVERY colouring of the actual p+q-coordinate mixed product.
+The first p coordinates are ordinary D₀, the last q are independently
+marked D₂; D₁ is empty and the intrinsic complete-skew height is k=1.
+The witness is an ACTUAL Definition-11 `Good` mixed variable word,
+with p independently substituted Hales–Jewett word coordinates and
+independent q marked-letter parameters. Merged #500 verifies the
+full ordered-root geometry; #501 constructs actual parameter elements;
+#502 identifies all genuine mixed span points; #503 proves unconditional
+c-good existence, not from a supplied c-goodness hypothesis; #505
+establishes exact converse span coverage and nonvacuity. Colours need
+not agree across DIFFERENT q-tuples. See
+[the 2–3 November proof note](notes/mixed_q_marker_generalization_20261102.md)
+and [the nonvacuity audit](notes/pq_mixed_span_adversarial_audit_20261103.md).
+
+**Remaining:** arbitrary D₀/D₂ interleavings, genuine D₁ leaf selection,
+higher intrinsic heights, relative refinement of prescribed source words,
+the corrected quantitative Corollary 22, and the Definition 24 /
+Lemma 27–28 induction remain OPEN. Proposed #506 seeks exact and unique
+colour factorization through the q observed marked letters; it is NOT
+counted as merged or checked here.
+
+**Earlier one-D₀ / arbitrary-q-D₂ milestone (#493–499).**
+Before the p/q extension, the same unconditional result was proved
+for p=1 and arbitrary q, including exact span coverage and nonvacuity.
+The q-marker proof remains useful as a smaller reference construction.
 
 **First simultaneous D₀+D₂ mixed Ramsey existence (#486–490).**
 The actual Definition-11 mixed-product theorem has now been
