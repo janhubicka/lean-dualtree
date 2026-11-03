@@ -4,7 +4,7 @@ import DualTree.StarInsensitivity
 import DualTree.Theorem3Audit
 import DualTree.AllBulletMixedRamsey
 import DualTree.PlainBulletRayExactSpan
-import DualTree.ParameterVectorHalesJewett
+import DualTree.PlainBlockBulletBlockGeometry
 import DualTree.PlainBulletBlockExactSpan
 import DualTree.UnaryMainAudit
 import DualTree.Corollary22Audit
