@@ -2434,3 +2434,13 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.FixedRootMarkerWord.valueWord_mem_span
 #print axioms DualTree.FixedRootMarkerWord.span_eq_range
 #print axioms DualTree.FixedRootMarkerWord.span_nonempty
+#print axioms DualTree.ShiftedRaySlots.ambient
+#print axioms DualTree.ShiftedRaySlots.slotPos
+#print axioms DualTree.ShiftedRaySlots.rootPos
+#print axioms DualTree.ShiftedRaySlots.slotPos_length
+#print axioms DualTree.ShiftedRaySlots.slotIndex
+#print axioms DualTree.ShiftedRaySlots.slotIndex_slotPos
+#print axioms DualTree.ShiftedRaySlots.slotIndex_some
+#print axioms DualTree.ShiftedRaySlots.rootPos_plain_eq_slotPos
+#print axioms DualTree.ShiftedRaySlots.rootPos_bullet_independent
+#print axioms DualTree.ShiftedRaySlots.slotIndex_plain_root
