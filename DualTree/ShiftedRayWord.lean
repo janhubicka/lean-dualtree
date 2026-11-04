@@ -1,5 +1,4 @@
 import DualTree.ShiftedRaySlots
-import DualTree.RayHalesJewett
 
 /-!
 # A genuine shifted one-root Hales–Jewett tree variable word
