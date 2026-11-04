@@ -67,7 +67,7 @@ theorem markerPos_eq_supportRoot
     {b N d : Nat} (hb : 0 < b)
     (r : Fin N) (kind : Fin d → CoordKind)
     (i : Fin d) (hi : kind i = CoordKind.bullet) :
-    (markerPos hb i).1 = supportRoot hb r kind i := by
+    (markerPos (N := N) hb i).1 = supportRoot hb r kind i := by
   exact (supportRoot_bullet_fixed hb r kind i hi).symm
 
 /-- Each ordinary-coordinate projection gives a true shifted
