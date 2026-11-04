@@ -2444,3 +2444,14 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ShiftedRaySlots.rootPos_plain_eq_slotPos
 #print axioms DualTree.ShiftedRaySlots.rootPos_bullet_independent
 #print axioms DualTree.ShiftedRaySlots.slotIndex_plain_root
+#print axioms DualTree.ShiftedRayWord.rootVar
+#print axioms DualTree.ShiftedRayWord.symbol
+#print axioms DualTree.ShiftedRayWord.symbol_at_root
+#print axioms DualTree.ShiftedRayWord.symbol_below
+#print axioms DualTree.ShiftedRayWord.variableWord
+#print axioms DualTree.ShiftedRayWord.kWord
+#print axioms DualTree.ShiftedRayWord.embed
+#print axioms DualTree.ShiftedRayWord.variableWord_eval
+#print axioms DualTree.ShiftedRayWord.kWord_supportNodes
+#print axioms DualTree.ShiftedRayWord.kWord_span_eq_flat_range
+#print axioms DualTree.ShiftedRayWord.kWord_span_nonempty
