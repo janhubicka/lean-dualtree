@@ -2425,3 +2425,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InterleavedHeightOne.slotNode
 #print axioms DualTree.InterleavedHeightOne.slotNode_bounded
 #print axioms DualTree.InterleavedHeightOne.supportRoot_plain_eq_slot
+#print axioms DualTree.FixedRootMarkerWord.rootVar
+#print axioms DualTree.FixedRootMarkerWord.variableWord
+#print axioms DualTree.FixedRootMarkerWord.kWord
+#print axioms DualTree.FixedRootMarkerWord.valueWord
+#print axioms DualTree.FixedRootMarkerWord.valueWord_at_root
+#print axioms DualTree.FixedRootMarkerWord.variableWord_eval
+#print axioms DualTree.FixedRootMarkerWord.valueWord_mem_span
+#print axioms DualTree.FixedRootMarkerWord.span_eq_range
+#print axioms DualTree.FixedRootMarkerWord.span_nonempty
