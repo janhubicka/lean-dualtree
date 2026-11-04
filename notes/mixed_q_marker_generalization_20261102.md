@@ -1,9 +1,9 @@
 # Verified one-D₀ / arbitrary-q-D₂ and p-D₀/q-D₂ height-one mixed Ramsey existence
 
-**3 November 2026.** The entire p/q height-one extension through merged
-PR #505 has now passed the full Lean and source/axiom CI at the reviewed
+**4 November 2026.** The entire p/q height-one extension through merged
+PR #506 has now passed the full Lean and source/axiom CI at the reviewed
 PR heads. The original p=1/q-arbitrary theorem was merged through #499.
-The merged code registers **2,111 distinct source-facing axiom reports**;
+The merged code registers **2,116 distinct source-facing axiom reports**;
 that count is not a theorem-completion percentage. The merged-main push
 CI is a separate verification step.
 
@@ -42,10 +42,11 @@ subset of the parameter family. There is no asserted constancy between
 distinct retained q-letter tuples. In particular the Γ₁
 residual-record nonconstancy counterexample remains respected.
 
-Draft PR #506 proposes a further exact characterization:
-`Good color f` if and only if colours on the actual span factor
-uniquely through the observed q-letter tuple. This is explicitly
-pending CI and is NOT included in the 2,111 merged report count.
+Merged PR #506 proves the exact characterization:
+`Good color f` if and only if the colour on the actual span factors
+uniquely through the independently observed q-letter tuple.
+The full Lean/source/axiom CI passed at the reviewed PR head;
+this adds five audited endpoints, for 2,116 registered reports.
 
 ## What remains open
 

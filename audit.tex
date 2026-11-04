@@ -11749,13 +11749,18 @@ PR heads passed full Lean, source, finite regression and
 transitive-axiom checks, bringing the merged count to
 2{,}111 distinct registered reports.
 
-\paragraph{Exact record factorization under review.} \todo
-Draft PR~506 proposes the converse to the uniform-colour
-criterion: Definition-11 c-goodness on this actual mixed span
-is equivalent to factorization through the tuple of observed
-$D_2$ letters, with uniqueness by full span coverage. This
-strengthens the local induction interface but is NOT yet a
-proof of the higher-dimensional mixed Ramsey theorem.
+\paragraph{Exact record factorization (3 November).} \ok
+Merged PR~506 proves the converse of the uniform-colour
+criterion for the genuine height-one $pD_0/qD_2$ construction:
+Definition-11 c-goodness is equivalent to the existence of
+a total colouring $F:\beta^q\to\gamma$ factoring the
+original colour on the entire actual mixed span through
+the tuple of observed marked letters. The factor is UNIQUE,
+because every $q$-tuple is realized by the exact-span theorem.
+All five new registered source-facing endpoints passed full
+Lean, source and transitive-axiom CI, raising the cumulative
+registered count through PR~506 to 2{,}116. This is not a
+higher-dimensional or arbitrary-kind Ramsey result.
 
 \paragraph{Full-theorem limits.} \todo
 This partial Ramsey theorem does not supply

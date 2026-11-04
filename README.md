@@ -1,9 +1,9 @@
 # lean-dualtree
 
-**Current proof status — 3 November 2026 (main through merged PR #505).**
+**Current proof status — 3 November 2026 (main through merged PR #506).**
 All of PRs #500–503 and #505 passed full Lean and source/axiom CI
 at their final reviewed heads; they were merged in dependency order.
-The merged development has **2,111 registered source-facing transitive-axiom
+The merged development has **2,116 registered source-facing transitive-axiom
 reports**, without `sorryAx` or nonstandard proof axioms in those checks.
 The post-merge main-branch CI is independently tracked. The number of
 endpoints is NOT a percentage of the published theorem.
@@ -28,9 +28,9 @@ and [the nonvacuity audit](notes/pq_mixed_span_adversarial_audit_20261103.md).
 **Remaining:** arbitrary D₀/D₂ interleavings, genuine D₁ leaf selection,
 higher intrinsic heights, relative refinement of prescribed source words,
 the corrected quantitative Corollary 22, and the Definition 24 /
-Lemma 27–28 induction remain OPEN. Proposed #506 seeks exact and unique
-colour factorization through the q observed marked letters; it is NOT
-counted as merged or checked here.
+Lemma 27–28 induction remain OPEN. Merged #506 additionally proves exact and unique colour factorization
+through the q observed marked letters; its PR-head Lean/source CI passed.
+This does not extend the scope beyond the height-one ordered D₀/D₂ case.
 
 **Earlier one-D₀ / arbitrary-q-D₂ milestone (#493–499).**
 Before the p/q extension, the same unconditional result was proved
