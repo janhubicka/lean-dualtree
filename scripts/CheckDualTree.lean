@@ -2455,3 +2455,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ShiftedRayWord.kWord_supportNodes
 #print axioms DualTree.ShiftedRayWord.kWord_span_eq_flat_range
 #print axioms DualTree.ShiftedRayWord.kWord_span_nonempty
+#print axioms DualTree.InterleavedFlatHalesJewett.PlainIndex
+#print axioms DualTree.InterleavedFlatHalesJewett.project
+#print axioms DualTree.InterleavedFlatHalesJewett.project_root
+#print axioms DualTree.InterleavedFlatHalesJewett.project_after_root
+#print axioms DualTree.InterleavedFlatHalesJewett.project_eval
+#print axioms DualTree.InterleavedFlatHalesJewett.exists_uniform_flat_for_kind
