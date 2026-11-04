@@ -11678,6 +11678,100 @@ letter parameter}, not across parameter
 values. See
 \texttt{\detokenize{notes/first_genuine_mixed_plain_bullet_20261031.md}}.
 
+
+\subsubsection{One ordinary coordinate with arbitrarily many marked $D_2$ coordinates (2 November 2026)}
+\paragraph{Unconditional Ramsey existence.} \ok
+Merged PRs~493--498 generalize the two-coordinate
+$(D_0,D_2)$ height-one mixed-product theorem to
+one ordinary $D_0$ coordinate followed by \emph{any}
+finite block of $q$ independently marked $D_2$
+coordinates, with no $D_1$ and intrinsic complete-skew
+dimension $k=1$. For every $b>0$, finite alphabet
+$\beta$ with an explicitly chosen fallback letter,
+finite colour type $\gamma$, and $q\in\mathbb N$,
+the kernel-checked theorem
+\texttt{\detokenize{PlainBulletBlock.exists_good_plainBulletBlock_height_one}}
+produces a finite ambient height at which \emph{every}
+colouring of the actual source-facing mixed product
+has a genuine $\mathrm{c}$-good variable word.
+
+The argument applies the proved parameter-uniform finite
+Hales--Jewett theorem with parameter type
+$(\operatorname{Fin}q\to\beta)$. The source-facing
+mixed variable word contains an earlier genuine
+$D_0$ ray variable and $q$ independent $D_2$
+variable words at a \emph{later} common geometric
+root, satisfying the full vector 1-complete-skew
+length ordering. The checked span representation
+identifies the observed marked letters with the
+$q$-tuple, so equal marked observations imply the
+same parameter. No equality of colours for
+\emph{different} retained tuples is asserted.
+This respects the previously checked $\Gamma_1$
+residual-record nonconstancy obstruction.
+
+\paragraph{Exact-span converse.} \ok
+Merged PR~499 proves the converse: for every ordinary
+Hales--Jewett assignment and independent $q$-tuple
+of marked letters, there is a real point in the
+source-facing mixed span. The actual mixed span is
+therefore exactly the full parameter family, not a
+possibly restricted subset, and is nonempty for
+every $q$ when the fallback letter is supplied.
+This stronger nonvacuity statement passed the
+complete Lean build, source and transitive-axiom
+checks. At that earlier PR~499 milestone the library registered 2{,}087
+source-facing transitive-axiom reports.
+
+\paragraph{Multiple ordinary coordinates and exact span (3 November).} \ok
+Merged PRs~500--503 and~505 extend the verified
+height-one mixed c-good Ramsey existence to any
+$p,q\in\mathbb N$, with the $p$ ordinary $D_0$
+coordinates ordered first, followed by $q$ marked
+$D_2$ coordinates and no $D_1$ coordinates.
+The theorem
+\texttt{\detokenize{PlainBlockBulletBlock.exists_good_plainBlockBulletBlock_height_one}}
+quantifies over every finite colouring and constructs
+an actual Definition-11 c-good mixed word using the
+parameter-uniform finite \emph{vector} Hales--Jewett
+theorem. Each $D_0$ coordinate has its own substitution
+into the synchronized line, while $D_2$ observations
+retain a separate $q$-letter parameter.
+
+The verified
+\texttt{\detokenize{PlainBlockBulletBlock.mixedWord_span_eq_parameter_range}}
+and
+\texttt{\detokenize{PlainBlockBulletBlock.mixedWord_span_nonempty}}
+assert that the genuine mixed span is exactly the full
+independent parameter family and is nonempty. These
+converse theorems rule out a vacuous c-goodness argument.
+PR heads passed full Lean, source, finite regression and
+transitive-axiom checks, bringing the merged count to
+2{,}111 distinct registered reports.
+
+\paragraph{Exact record factorization (3 November).} \ok
+Merged PR~506 proves the converse of the uniform-colour
+criterion for the genuine height-one $pD_0/qD_2$ construction:
+Definition-11 c-goodness is equivalent to the existence of
+a total colouring $F:\beta^q\to\gamma$ factoring the
+original colour on the entire actual mixed span through
+the tuple of observed marked letters. The factor is UNIQUE,
+because every $q$-tuple is realized by the exact-span theorem.
+All five new registered source-facing endpoints passed full
+Lean, source and transitive-axiom CI, raising the cumulative
+registered count through PR~506 to 2{,}116. This is not a
+higher-dimensional or arbitrary-kind Ramsey result.
+
+\paragraph{Full-theorem limits.} \todo
+This partial Ramsey theorem does not supply
+$D_1$ up-leaf sets, complete-skew heights $k>1$,
+the relative-refinement conclusion from an arbitrary
+initial source word, all source coordinate orderings,
+the corrected quantitative Corollary~22 or the
+Definition~24 and Lemma~27--28 induction.
+See
+\texttt{\detokenize{notes/mixed_q_marker_generalization_20261102.md}}.
+
 \subsection{Lemma 28 and Theorem 25}
 Lemma 28 iterates Lemma 27 and additionally needs explicit transport between a
 model signature in $b^{<m}$ and the corresponding signature observable in the
