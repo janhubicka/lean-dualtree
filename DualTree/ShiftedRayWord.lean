@@ -213,6 +213,8 @@ theorem kWord_span_eq_flat_range
     let σ : (variableWord hb i w fallback r hroot hfirst).Vars → β :=
       fun _ => a
     refine ⟨σ, ?_⟩
+    change (variableWord hb i w fallback r hroot hfirst).eval σ =
+      embed hb i fallback (SpanAudit.eval w (fun _ : Fin 1 => a))
     simpa [σ] using variableWord_eval hb i w fallback r hroot hfirst σ
 
 /-- There is always a real evaluated tree word in the span,
