@@ -2461,3 +2461,13 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InterleavedFlatHalesJewett.project_after_root
 #print axioms DualTree.InterleavedFlatHalesJewett.project_eval
 #print axioms DualTree.InterleavedFlatHalesJewett.exists_uniform_flat_for_kind
+#print axioms DualTree.InterleavedMixedWord.NoUp
+#print axioms DualTree.InterleavedMixedWord.bullet_of_not_plain
+#print axioms DualTree.InterleavedMixedWord.markerPos
+#print axioms DualTree.InterleavedMixedWord.markerPos_eq_supportRoot
+#print axioms DualTree.InterleavedMixedWord.plainComponent
+#print axioms DualTree.InterleavedMixedWord.plainComponent_supportNodes
+#print axioms DualTree.InterleavedMixedWord.component
+#print axioms DualTree.InterleavedMixedWord.component_supportNodes
+#print axioms DualTree.InterleavedMixedWord.vectorWord
+#print axioms DualTree.InterleavedMixedWord.mixedWord
