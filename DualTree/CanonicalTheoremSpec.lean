@@ -54,8 +54,10 @@ theorem sourceSimpleWithin_of_simpleWith
   intro U V _ _ hInterior hPoints hWord
   apply hsimple U V hInterior hPoints
   intro s hs
-  simpa only [ForwardQSimpleLetterSmooth.rootLabel,
-    CutPreservation.underlyingSymbol] using hWord s hs
+  have h := hWord s hs
+  cases hU : U.word.word s <;> cases hV : V.word.word s <;>
+    simpa only [ForwardQSimpleLetterSmooth.rootLabel,
+      CutPreservation.underlyingSymbol, hU, hV] using h
 
 theorem sourceSimple_of_simple
     {b n l : Nat} {α γ : Type*}
@@ -100,8 +102,10 @@ theorem relativeSimpleWith_of_source
   apply hsimple U V (sourceRefines_of_starredBelow hU)
     (sourceRefines_of_starredBelow hV) hInterior hPoints
   intro s hs
-  simpa only [ForwardQSimpleLetterSmooth.rootLabel,
-    CutPreservation.underlyingSymbol] using hWord s hs
+  have h := hWord s hs
+  cases hUSymbol : U.word.word s <;> cases hVSymbol : V.word.word s <;>
+    simpa only [ForwardQSimpleLetterSmooth.rootLabel,
+      CutPreservation.underlyingSymbol, hUSymbol, hVSymbol] using h
 
 /-- With two letters, the relative semantic induction predicate is
 exactly Track E's source-facing canonical simplicity predicate. -/
@@ -121,8 +125,10 @@ theorem relativeSimpleWith_iff_source
       ((starredBelow_iff_sourceRefines hα V f).2 hV)
       hInterior hPoints
     intro s hs
-    simpa only [ForwardQSimpleLetterSmooth.rootLabel,
-      CutPreservation.underlyingSymbol] using hWord s hs
+    have h := hWord s hs
+    cases hUSymbol : U.word.word s <;> cases hVSymbol : V.word.word s <;>
+      simpa only [ForwardQSimpleLetterSmooth.rootLabel,
+        CutPreservation.underlyingSymbol, hUSymbol, hVSymbol] using h
   · exact relativeSimpleWith_of_source f B₂ color
 
 theorem relativeSimple_iff_source

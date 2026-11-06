@@ -167,8 +167,9 @@ theorem observe_eq_starredObserve
   apply Prod.ext
   · rfl
   · funext s
-    simp only [ForwardQSimpleLetterSmooth.rootLabel,
-      CutPreservation.underlyingSymbol]
+    cases h : O.word.word s <;>
+      simp only [ForwardQSimpleLetterSmooth.rootLabel,
+        CutPreservation.underlyingSymbol, h]
 
 /-- The proved genuine Q preimages transfer monochromaticity of its
 starred span image to the WHOLE actual fixed-signature target fibre. -/
