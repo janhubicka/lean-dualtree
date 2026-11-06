@@ -2482,6 +2482,14 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InterleavedSpan.span_element_eq_parameterElement
 #print axioms DualTree.InterleavedRamsey.mixedWord_good_of_uniform_flat
 #print axioms DualTree.InterleavedRamsey.exists_good_interleaved_height_one
+#print axioms DualTree.InterleavedExactSpan.parameterElement_mem_span
+#print axioms DualTree.InterleavedExactSpan.mixedWord_span_eq_parameter_range
+#print axioms DualTree.InterleavedExactSpan.mixedWord_span_nonempty
+#print axioms DualTree.InterleavedColorFactor.good_iff_uniform_flat
+#print axioms DualTree.InterleavedColorFactor.good_iff_factors_through_markerTuple
+#print axioms DualTree.InterleavedColorFactor.markerTuple_factor_unique
+#print axioms DualTree.InterleavedColorFactor.good_iff_unique_markerTuple_factor
+#print axioms DualTree.InterleavedHeightOneComplete.exists_good_nonempty_unique_factor_height_one
 
 /-! Track E: arbitrary semi-complete canonical selector and smooth transport. -/
 #print axioms DualTree.ForwardSemiCompleteAddresses.support_nodup

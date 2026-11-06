@@ -2,6 +2,9 @@
 
 Date: 6 November 2026. Task: [#518](https://github.com/janhubicka/lean-dualtree/issues/518).
 Base: `910efe61e94a284be065f4a782bec878c5d1170f` (main after #512 and #513).
+PR: [#526](https://github.com/janhubicka/lean-dualtree/pull/526).
+Integration includes main `4306242fc876b0ddc03143caea8a3abc433568d9`,
+retaining the completed Track-A work and all its axiom-check entries.
 
 ## Result and scope
 
@@ -120,6 +123,18 @@ and induction inputs in Tracks A--D and F.
 
 ## Validation
 
-Validation is in progress. The final report must record compilation,
-the complete source and transitive-axiom checks, finite regressions,
-and the exact reviewed PR head; source text alone is not a Lean check.
+All six new modules compiled in the full Lean build at
+`6b3b8d2b7e73e568a6dc3a52ed46cb564e2c2ab9`.
+[The complete verification run](https://github.com/janhubicka/lean-dualtree/actions/runs/42135924247)
+passed the full build, all finite regressions, source/import audits,
+TeX-ledger checks, and all 2,257 registered transitive-axiom reports,
+using only standard Lean axioms. There are 68 new Track-E endpoints.
+An independent mathematical review checked the generic geometry,
+the all-refinement simplicity domain, the source comparison and the
+zero-interior scope.
+
+The final integration retains eight subsequently merged Track-A
+endpoints, bringing the complete register to 2,265. No Track-E proof
+was changed after the successful verification above. The PR's checks
+record the final integration build separately; declaration counts
+are a coverage register, not a percentage of the Ramsey theorem.
