@@ -2636,3 +2636,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafInterleavedGeometry.mixedWord
 #print axioms DualTree.UpLeafInterleavedGeometry.mixedWord_upLeaves_card
 #print axioms DualTree.UpLeafInterleavedGeometry.mixedWord_span_nonempty
+
+-- Track B: true parameter elements of interleaved D0/D1/D2 spans.
+#print axioms DualTree.UpLeafInterleavedParameters.NonplainIndex
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_plain
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_nonplain_root_letter
+#print axioms DualTree.UpLeafInterleavedParameters.rootPos_eq_markerPos_of_up
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_mem_span
