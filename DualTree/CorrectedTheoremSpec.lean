@@ -12,7 +12,8 @@ refinement is equivalent only under `SpanAudit.HasTwoLetters`.
 Colours act on semantic observations, not arbitrary list presentations of the
 same support.  `TreeRamseyAt`, `StarredRamseyAt`, and the eventual-bound
 predicates below are SPECIFICATIONS, not proofs of the paper's theorems.
-The starred selector remains an explicit input from Track E.
+The starred selector is an explicit parameter of this reusable interface.
+`CanonicalTheoremSpec` instantiates it with Track E's intrinsic selector.
 -/
 
 namespace DualTree.CorrectedTheoremSpec
@@ -244,8 +245,8 @@ def PTGRBound (b ell l m r N : Nat) {A : Type*}
     (fun n => StarredRamseyAt b n l m (Fin ell) (Fin r) A (point n)) N
 
 /-- Qualitative partial-tree target at the given parameters.  `l = 0`
-is allowed; its singleton-root selector convention belongs to Track E.
-The selector argument must be instantiated with that audited convention. -/
+is allowed. `CanonicalTheoremSpec` supplies the audited selector, including
+its singleton-root convention at zero, as a concrete specialization. -/
 def CorrectedTheorem25 (b ell l m r : Nat) {A : Type*}
     (point : ∀ n, Starred b n l (Fin ell) → A → Node b) : Prop :=
   0 < b → 0 < ell → 0 < m → 0 < r →

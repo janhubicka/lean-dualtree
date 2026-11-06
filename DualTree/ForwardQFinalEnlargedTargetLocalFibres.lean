@@ -1,3 +1,4 @@
+import DualTree.ForwardQSourceRefinement
 import DualTree.ForwardQFinalEnlargedWholeDomainEvaluation
 import DualTree.ForwardQFinalFullSignatureRootTransport
 
@@ -9,8 +10,9 @@ over the original alphabet. The genuine Corollary-22 local word may
 instead contain FIXED auxiliary symbols in α ⊕ Fin (m+1). These are
 decoded through R_i into genuine retained OLD final variable roots.
 
-Under the actual two-letter evaluated-span refinement O.word.span ⊆
-span(f'_enlarged), we prove the relevant *symbolic* rigidity:
+Under explicit syntactic refinement of O by the enlarged final word,
+we prove the relevant symbolic rigidity for every alphabet. The original
+evaluated-span forms follow when the alphabet has two distinct letters:
 
 * the final word's symbol at P_i(z) is the genuine decoded local
   symbol, with NO incorrect α-only decoding;
@@ -93,8 +95,32 @@ theorem final_word_constant_on_local_variable_fibre
 
 /-- A target refining the genuinely enlarged final word cannot
 vary its *actual dependent variable-word symbol* along one local
-component-variable fibre. This requires the two-letter hypothesis;
-mere coincidence of one evaluation is not sufficient. -/
+component-variable fibre. The explicit syntactic refinement suffices
+for every alphabet; coincidence of one evaluation would not. -/
+theorem output_constant_on_local_variable_fibre_of_syntactic_refinement
+    {b n l k m q : Nat} {α : Type*}
+    (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
+    (fallback : α)
+    (O : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)))
+    (hRef : ForwardQSourceRefinement.SyntacticallyRefines O.word
+      (enlargedInterpolatedFinalWord g f fallback))
+    (i : Index g.core)
+    (v : (f.vector.components i).Vars)
+    (z : BoundedNode b (k-(m+1)))
+    (hz : (f.vector.components i).word z = Sum.inr v) :
+    O.word.word
+      (ForwardQActualCoordinateWord.projectedBounded
+        g.core g.T_bounded i z) =
+    O.word.word
+      (ForwardQActualCoordinateWord.projectedBounded
+        g.core g.T_bounded i v.1) := by
+  exact hRef.preserves_symbol_eq
+    (final_word_constant_on_local_variable_fibre g f fallback i v z hz)
+
+/-- Evaluated-span form. The two-letter assumption is used only to
+recover the explicit syntactic refinement required by the general theorem. -/
 theorem output_constant_on_local_variable_fibre
     {b n l k m q : Nat} {α : Type*}
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
@@ -115,31 +141,42 @@ theorem output_constant_on_local_variable_fibre
     O.word.word
       (ForwardQActualCoordinateWord.projectedBounded
         g.core g.T_bounded i v.1) := by
-  obtain ⟨ρ, hword⟩ :=
-    (VariableWord.span_subset_iff_substitution hα
-      (enlargedInterpolatedFinalWord g f fallback) O.word).1 hspan
-  have hf := final_word_constant_on_local_variable_fibre
-    g f fallback i v z hz
-  calc
-    O.word.word
-        (ForwardQActualCoordinateWord.projectedBounded
-          g.core g.T_bounded i z) =
-      SpanAudit.substitute
-        (enlargedInterpolatedFinalWord g f fallback).word ρ
-        (ForwardQActualCoordinateWord.projectedBounded
-          g.core g.T_bounded i z) := congrFun hword _
-    _ = SpanAudit.substitute
-        (enlargedInterpolatedFinalWord g f fallback).word ρ
-        (ForwardQActualCoordinateWord.projectedBounded
-          g.core g.T_bounded i v.1) := by
-            simp [SpanAudit.substitute, hf]
-    _ = O.word.word
-        (ForwardQActualCoordinateWord.projectedBounded
-          g.core g.T_bounded i v.1) := (congrFun hword _).symm
+  exact output_constant_on_local_variable_fibre_of_syntactic_refinement
+    g f fallback O
+    ((ForwardQSourceRefinement.syntacticallyRefines_iff_span_subset
+        hα O.word (enlargedInterpolatedFinalWord g f fallback)).2 hspan) i v z hz
 
 /-- A fixed original alphabet constant in a genuine enlarged
 local Ramsey word remains the SAME constant in the actual
-target O, under the required evaluated-span refinement. -/
+target O, under the explicit syntactic refinement. -/
+theorem output_preserves_original_local_constant_of_syntactic_refinement
+    {b n l k m q : Nat} {α : Type*}
+    (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
+    (fallback : α)
+    (O : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)))
+    (hRef : ForwardQSourceRefinement.SyntacticallyRefines O.word
+      (enlargedInterpolatedFinalWord g f fallback))
+    (i : Index g.core)
+    (z : BoundedNode b (k-(m+1)))
+    (a : α)
+    (hz : (f.vector.components i).word z =
+      Sum.inl (Sum.inl a)) :
+    O.word.word
+      (ForwardQActualCoordinateWord.projectedBounded
+        g.core g.T_bounded i z) = Sum.inl a := by
+  have hf :
+      (enlargedInterpolatedFinalWord g f fallback).word
+        (ForwardQActualCoordinateWord.projectedBounded
+          g.core g.T_bounded i z) = Sum.inl a := by
+    rw [final_word_at_projected]
+    simp [enlargedLocalSymbol, hz]
+    rfl
+  exact hRef.preserves_constant hf
+
+/-- Evaluated-span form. The two-letter assumption is used only to
+recover the explicit syntactic refinement required by the general theorem. -/
 theorem output_preserves_original_local_constant
     {b n l k m q : Nat} {α : Type*}
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
@@ -158,16 +195,10 @@ theorem output_preserves_original_local_constant
     O.word.word
       (ForwardQActualCoordinateWord.projectedBounded
         g.core g.T_bounded i z) = Sum.inl a := by
-  have hf :
-      (enlargedInterpolatedFinalWord g f fallback).word
-        (ForwardQActualCoordinateWord.projectedBounded
-          g.core g.T_bounded i z) = Sum.inl a := by
-    rw [final_word_at_projected]
-    simp [enlargedLocalSymbol, hz]
-    rfl
-  exact SpanAudit.constant_preserved_of_span_subset hα
-    (enlargedInterpolatedFinalWord g f fallback).word
-    O.word.word hspan hf
+  exact output_preserves_original_local_constant_of_syntactic_refinement
+    g f fallback O
+    ((ForwardQSourceRefinement.syntacticallyRefines_iff_span_subset
+        hα O.word (enlargedInterpolatedFinalWord g f fallback)).2 hspan) i z a hz
 
 /-- If a genuine enlarged local Ramsey word fixes an auxiliary
 constant j, the target O's REAL dependent variable-word symbol
@@ -176,9 +207,9 @@ identification of the old source and target variables.
 
 In the nontrivial case R_i(j) = old variable v, the enlarged
 final word emits the old retained root of v. Its own atRoot
-law and the target's evaluated-span inclusion force the target
+law and the target's syntactic refinement force the target
 to emit the corresponding old variable, not a constant. -/
-theorem output_preserves_aux_local_constant
+theorem output_preserves_aux_local_constant_of_syntactic_refinement
     {b n l k m q : Nat} {α : Type*}
     (hb : 0 < b)
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
@@ -189,9 +220,8 @@ theorem output_preserves_aux_local_constant
     (cutO : Node b)
     (H : ForwardQFinalFullSignature.SameCompleteForwardSignature
       hb g O cutO)
-    (hα : SpanAudit.HasTwoLetters α)
-    (hspan : O.word.span ⊆
-      (enlargedInterpolatedFinalWord g f fallback).span)
+    (hRef : ForwardQSourceRefinement.SyntacticallyRefines O.word
+      (enlargedInterpolatedFinalWord g f fallback))
     (i : Index g.core)
     (z : BoundedNode b (k-(m+1)))
     (j : Fin (m+1))
@@ -225,9 +255,7 @@ theorem output_preserves_aux_local_constant
             decodeAuxIntoFinal g f fallback i j = Sum.inl a := by
           simp [decodeAuxIntoFinal, hd]
         exact hfinal.trans hAux
-      have ho := SpanAudit.constant_preserved_of_span_subset hα
-        (enlargedInterpolatedFinalWord g f fallback).word
-        O.word.word hspan hf
+      have ho := hRef.preserves_constant hf
       simpa [hd] using ho
   | inr v =>
       let rv := ForwardQFinalReverseCoverageCriterion.oldSourceFinalRoot
@@ -247,9 +275,7 @@ theorem output_preserves_aux_local_constant
       have ho : O.word.word
           (ForwardQActualCoordinateWord.projectedBounded
             g.core g.T_bounded i z) = O.word.word rv.1 :=
-        SpanAudit.fibre_uniform_of_span_subset hα
-          (enlargedInterpolatedFinalWord g f fallback).word
-          O.word.word hspan hf hr
+        hRef.preserves_symbol_eq (hf.trans hr.symm)
       have hrv : rv.1 = (e v).1 := by
         apply Subtype.ext
         calc
@@ -264,5 +290,38 @@ theorem output_preserves_aux_local_constant
       -- The preceding case split has already rewritten R_i(j)
       -- to Sum.inr v in the GOAL; do not try to rewrite it twice.
       simpa only [Sum.map_inr] using ho.trans hOroot
+
+/-- Evaluated-span form. The two-letter assumption is used only to
+recover the explicit syntactic refinement required by the general theorem. -/
+theorem output_preserves_aux_local_constant
+    {b n l k m q : Nat} {α : Type*}
+    (hb : 0 < b)
+    (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
+    (fallback : α)
+    (O : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)))
+    (cutO : Node b)
+    (H : ForwardQFinalFullSignature.SameCompleteForwardSignature
+      hb g O cutO)
+    (hα : SpanAudit.HasTwoLetters α)
+    (hspan : O.word.span ⊆
+      (enlargedInterpolatedFinalWord g f fallback).span)
+    (i : Index g.core)
+    (z : BoundedNode b (k-(m+1)))
+    (j : Fin (m+1))
+    (hz : (f.vector.components i).word z =
+      Sum.inl (Sum.inr j)) :
+    O.word.word
+      (ForwardQActualCoordinateWord.projectedBounded
+        g.core g.T_bounded i z) =
+      Sum.map id (sourceOutputVarsEquiv hb g O cutO H)
+        (ForwardQVisibleAncestorDecoder.decodeAux
+          g.core fallback i j) := by
+  exact output_preserves_aux_local_constant_of_syntactic_refinement
+    hb g f fallback O cutO H
+    ((ForwardQSourceRefinement.syntacticallyRefines_iff_span_subset
+        hα O.word (enlargedInterpolatedFinalWord g f fallback)).2 hspan) i z j hz
+
 
 end DualTree.ForwardQFinalEnlargedTargetLocalFibres

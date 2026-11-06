@@ -9,6 +9,12 @@ That integration is included, retaining the new interleaved height-one
 Track A results and all twelve of their audit endpoints. These include
 exact nonempty spans and unique factorization through the full observed
 D₂ marker tuple; they do not yet provide D₁ or higher-height existence.
+The continuation also integrates Track E from main
+`cce5b81bc17ed4b9140d06eebc705a45d9bc41ae` and consumes the verified
+Track D source at `6237c4a1ce3b26e483b7399770ae3d42d90bf4bd` from #527.
+Track E supplies the intrinsic selector and total smooth Q extension;
+Track D supplies the actual complete refinement and set-signature Q
+preimages. The new F results compose those proved inputs.
 This continues the A–G split in the **T A** chat. Tracks A–E supply
 mathematical construction and transport inputs; this track owns their
 statement-level integration and the final induction. It does not close
@@ -44,6 +50,11 @@ historical validation markers.
 5. **Quantitative objects require existence.** `leastBound` requires a
    proof of an eventual-bound witness. No default value, new axiom, or
    opaque Ramsey-number definition hides an unproved existence theorem.
+6. **The canonical selector is fixed.** `CanonicalTheoremSpec` uses the
+   intrinsic boundary map on arbitrary semi-complete supports, including
+   the singleton boundary at zero interior. The original selector-parametric
+   interface remains available for reuse; the concrete target has no free
+   selector choice.
 
 The numerical target predicates use the canonical alphabet `Fin ell` and
 colour set `Fin r`. Their transport to arbitrary finite alphabets and colour
@@ -57,10 +68,10 @@ polymorphic in both types.
 | --- | --- | --- |
 | Theorem 3, p. 3 | Unary evaluated spans collapse. The checked obstruction holds at every sufficiently large ambient height. Raw support-list colours would create an additional representation error. | `CorrectedTheorem3`: all positive branching, alphabet, source/target dimensions and colour counts; positive eventual threshold; syntactic refinements; semantic colours. The equivalence with the span conclusion is proved under `HasTwoLetters`. The Ramsey existence claim remains a target proposition. |
 | Theorem 13 / Definition 12, p. 11 | Mixed-product construction still needs genuine D₁ leaves, higher intrinsic heights, and relative use inside prescribed source words. Corrected ordered geometry must be used consistently. | Actual `MixedProduct.VariableWord` and `Good`, with an explicit finite coordinate-kind map and complete-skew support. Main now includes arbitrary D₀/D₂ interleavings at height one; these are not promoted to the full theorem. Existence beyond that scope is not supplied by this track. |
-| Corollary 22, p. 25 | The height-one marked-letter colouring is smooth and has a c-good word, but is not monochromatic. The displayed threshold omits a resource needed to remove marked-letter dependence. The `d₂ = 0` call to positive-dimensional CT also needs a separate convention or case. | Separate the algebraic colour argument from Ramsey existence. `Corollary22TwoRootRepair` proves the two-root erasure mechanism on actual mixed spans. A revised `max{2, CT(...)}` intermediate dimension is still a proposed numerical wrapper until the CT/refinement/existence steps are assembled. |
-| Lemma 27, pp. 28–29 | Enlarged alphabet, cone domains, decoded variables, Q ordering, fixed-signature coverage, and the final refined word all need the recorded repairs. Evaluated-word coverage alone is insufficient for a colour of starred objects. | One-signature canonization must yield an actual syntactic refinement, retain the prescribed initial roots, and colour the complete semantic signature fibre. The local step is an explicit input to `Lemma28.LocalFusionStep`; no unproved step is installed as an axiom. |
-| Lemma 28, pp. 29–30 | The iteration suppresses transport of model signatures into the changing current word. Plain refinement preserves a fixed ambient fibre, but need not preserve the interpretation of a model signature. | `finite_signature_fusion` proves the iteration from one-signature canonization plus preservation of earlier model interpretations. `finite_signature_canonization` additionally requires final signature coverage. The number of tasks must be computed in the finite model tree independently of the ambient height. |
-| Theorem 25, pp. 27, 30–31 | The pullback must be simple. Its induction is used inside a prescribed source word although the printed theorem is global. The displayed comparison of PTGR with TGR is false; PTGR also suppresses the alphabet parameter. | `CorrectedTheorem25` and `PTGRBound` retain alphabet size and an explicit selector. The transfer module requires relative Ramsey input and refinement-local coverage. No numerical TGR/PTGR comparison is imported. The complete node count is a finite power sum, valid also for branching one. |
+| Corollary 22, p. 25 | The height-one marked-letter colouring is smooth and has a c-good word, but is not monochromatic. The displayed threshold omits a resource needed to remove marked-letter dependence. The `d₂ = 0` call to positive-dimensional CT also needs a separate convention or case. | `Corollary22TwoRootRepair` proves two-root erasure on actual mixed spans. `Corollary22CanonicalQ` now applies it to the total smooth extension of an actual canonical-simple Q colour. Only selected canonical boundary points remain; when the selected set is empty, the starred Q image is monochromatic without a CT selection. A revised `max{2, CT(...)}` bound remains unproved until Ramsey existence and the nonempty residual-point case are assembled. |
+| Lemma 27, pp. 28–29 | Enlarged alphabet, cone domains, decoded variables, Q ordering, fixed-signature coverage, and the final refined word need the recorded repairs. Evaluated-word coverage alone is insufficient for a colour of starred objects. | `Lemma27CanonicalColor` proves the empty-selected-boundary case from a supplied full-span c-good local word of dimension at least two. It constructs the actual complete syntactic refinement, retains every initial root and rooted symbol, and proves `Lemma28.FibreMonochromatic` for the entire fixed set-signature fibre. Q coverage is proved by Track D, not assumed. Local mixed Ramsey existence and the general boundary partition remain open. |
+| Lemma 28, pp. 29–30 | The iteration suppresses transport of model signatures into the changing current word. Plain refinement preserves a fixed ambient fibre, but need not preserve the interpretation of a model signature. | `finite_signature_fusion` and `finite_signature_canonization` prove the conditional iteration. `Lemma27CanonicalColor.canonicalSignature` now supplies a genuine signature function, with a uniquely determined forward-maximal interior cut, and identifies its eligible fibres exactly with Track D's target class. Increasing-cut model transport, final coverage, and an ambient-independent model task count remain open. |
+| Theorem 25, pp. 27, 30–31 | The pullback must be simple. Its induction is used inside a prescribed source word although the printed theorem is global. The displayed comparison of PTGR with TGR is false; PTGR also suppresses the alphabet parameter. | `CanonicalTheoremSpec.CorrectedTheorem25` fixes the audited intrinsic selector and retains alphabet size and all nonnegative interior counts. The transfer still requires relative Ramsey input and induced-colour simplicity. No numerical TGR/PTGR comparison is imported. The complete node count is a finite power sum, valid also for branching one. |
 | Theorem 29, p. 32 | The product extension has no independent proof in the paper and also inherits the unary span-refinement problem. Scalar homogeneity does not automatically supply simultaneous product homogeneity. | `ProductRamseyAt` uses genuine vector-complete supports, including cross-coordinate order and level separation, semantic colours, and componentwise syntactic refinements. Product existence, source comparison, and quantitative bounds remain unproved. |
 
 The positive-alphabet hypotheses above are deliberate. The Lemma-27 source
@@ -150,6 +161,60 @@ two forces two distinct variable roots. Thus
 supplied c-good word, global smoothness, and equality of the Γ₂ points.
 It still does not provide the mixed Ramsey word or the CT refinement.
 
+### CanonicalTheoremSpec and Corollary22CanonicalQ
+
+The actual canonical boundary map now instantiates the theorem target.
+Global semantic simplicity implies Track E's source-relative simplicity
+over every alphabet. Source-relative evaluated-span simplicity restricts
+to syntactic refinements without an alphabet hypothesis. The reverse
+relative bridge is proved only with `HasTwoLetters`; no unary equivalence
+of those different refinement domains is asserted.
+
+Track E chooses a total globally smooth extension of the Q pullback before
+the local mixed word is supplied. On a c-good word of intrinsic dimension
+at least two, the two-root argument removes all marked-letter dependence.
+Injectivity of the genuine cone projection identifies equality of local
+Gamma2 points with equality of the selected canonical boundary points of
+the Q outputs. Thus the selected boundary points are the only residual
+colour data.
+
+When `B2` is empty, the actual starred Q image is monochromatic. This does
+not require the D2 coordinate type to be empty: every D2 coordinate then
+belongs to Gamma1. Goodness is required on the whole span over the enlarged
+alphabet, for the same total colour selected before the word. Goodness
+only on the starred subset or only over the original alphabet is insufficient.
+
+### Lemma27CanonicalColor
+
+The positive-interior signature is now a function, not a relation with a
+free cut parameter. A finite-order maximum supplies the last interior
+vertex, and antisymmetry proves its uniqueness. The signature retains the
+finite signature-node set and the entire optional rooted partial word,
+including its strict domain. It is exactly Track D's complete set signature.
+
+The main local theorem `exists_total_emptyBoundary_fibre_canonization`
+starts from a globally canonical-simple semantic colour with empty `B2`.
+It chooses one total smooth enlarged-Q colour. Every c-good local word for
+that colour with intrinsic dimension `q ≥ 2` then gives an actual
+`(m+q)`-complete final word with:
+
+- a uniform syntactic refinement of the supplied ambient word;
+- retention of every ambient variable root through the inclusive forward cut;
+- preservation of every initial constant and rooted variable symbol;
+- a nonempty evaluated span;
+- monochromaticity of the entire eligible fibre of the source's canonical signature.
+
+The last conclusion uses the proved exact equivalence between that fibre
+and Track D's source-relative set-signature target class, followed by its
+actual Q preimages. No target-coverage or target-monochromaticity hypothesis
+is supplied by the caller. The theorem uses no two-letter assumption.
+
+This is the empty-`B2` local step at positive interior count, **not** the
+`l = 0` induction base. Nonemptiness of the final evaluated span also does
+not assert that this particular signature fibre is inhabited. General
+fixed-target existence remains separate. The supplied c-good word is still
+the substantial mixed Ramsey input; its existence has not been proved here.
+
 ### Theorem25
 
 Signature canonization is used to define a colour on realized signatures,
@@ -170,12 +235,17 @@ hypothesis is automatically valid relatively.
 
 ## Remaining integration work
 
-1. Tracks A–C: supply the full mixed Ramsey existence and higher-height
-   complete-skew refinements needed by the local canonization step.
-2. Track D: supply corrected Q/refinement construction and exact semantic
-   fixed-signature coverage for the required local witnesses.
-3. Track E: supply canonical selector transport, the required smoothness
-   and simplicity bridges, and preservation of the residual point data.
+1. Tracks A–C: extend the proved nonvacuous no-D1 height-one construction
+   to D1, higher intrinsic heights, eventual ambient-height bounds, and
+   the relative refinements required by local canonization. The new local
+   theorem specifically needs full-span c-goodness over the enlarged alphabet.
+2. Use the completed Track D Q/refinement coverage and Track E canonical
+   smooth extension throughout the local construction. Establish residual
+   point homogenization for nonempty `B2`, with the required refinement
+   and quantitative control; general fixed-target inhabitation remains separate.
+3. Prove simplicity of the actual lower-interior colour and the relative
+   Ramsey input needed by Theorem 25. The initial canonical Q smoothness
+   theorem does not by itself prove this later induction hypothesis.
 4. Track F: instantiate the finite model signature enumeration, its
    increasing-cut transport laws, and final coverage; derive the relative
    induction interface from the canonical model embedding; discharge the
@@ -185,15 +255,17 @@ hypothesis is automatically valid relatively.
    statements actually used, and the independent product theorem.
 
 The full corrected Lemma 28, Theorem 25, and Theorem 3 therefore remain
-open. This change proves reusable parts of their assembly and the local
-two-root colour argument, with the mathematical inputs explicitly exposed.
+open. The empty-selected-boundary local colour step now has an actual
+complete refinement and the full fixed-signature conclusion; the general
+local Ramsey and model-transport inputs remain explicitly exposed.
 
 ## Validation
 
 New source modules are registered in the full `DualTree` import umbrella.
 Their public proof endpoints are registered in `scripts/CheckDualTree.lean`.
-This change adds 32 endpoints; after integrating #522–525 and #529, the
-registered total is 2,229. This count is not a percentage of the source theorem.
+Track F now adds 52 proof endpoints, including 20 in this continuation.
+With the integrated Track D and E results, the registered total is 2,421.
+This count is not a percentage of the source theorem.
 Lean compilation, the existing source/axiom gates, and finite Q regressions
 are required before the change is reported as verified. See the pull
 request's checks for the tested commit; this note makes no claim about
