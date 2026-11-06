@@ -159,9 +159,8 @@ private theorem signatureTree_eq_boundaryMap
         intro t _
         exact (boundaryValue_eq cut t.1 (hout t.1 t.2)).symm
       _ = _ := List.attach_map_val
-  change (SkewTree.interior O.tree ++
-    (StarredSignature.exceptionalLeaves O cut).attach.map
-      (fun t => firstBoundary cut t.1 (hout t.1 t.2))).eraseDups = _
+  unfold ForwardStarredSignature.signatureTree
+  dsimp only
   rw [hmap]
 
 private noncomputable def supportedTargetFrame
@@ -354,11 +353,13 @@ theorem exists_literal_reenumeration
     cutMaximal := hmax'
     signatureEq := ?_
   }
+  unfold completeSignature
   apply Prod.ext
-  · change ForwardStarredSignature.signatureTree O' g.core.cut _ =
-      ForwardStarredSignature.signatureTree g.core.source g.core.cut _
+  · dsimp only
+    unfold ForwardStarredSignature.signatureTree_at_maxInterior
     rw [signatureTree_eq_boundaryMap, signatureTree_eq_boundaryMap]
     rw [hInt, hEx, hBoundary]
-  · exact H.strictPartialWord_common_eq
+  · dsimp only
+    simpa only [O', reorderStarredWord_word] using H.strictPartialWord_common_eq
 
 end DualTree.ForwardQFinalSetSignatureReenumeration

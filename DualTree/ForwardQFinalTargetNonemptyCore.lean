@@ -50,7 +50,6 @@ private noncomputable def pointWord
       · have heq : s = v.1 := congrArg Subtype.val (Sum.inr.inj h)
         rw [heq]
         exact isPrefix_refl v.1.1
-      · cases h
   }
 
 private theorem pointWord_constant
@@ -76,9 +75,9 @@ private theorem pointWord_variable
     exact (congrArg Subtype.val heq).symm
   · simp [pointWord, hs] at h
 
-private def root3 : BoundedNode 2 3 := ⟨[], by decide⟩
+private def root3 : BoundedNode 2 3 := ⟨[], by simp [InHomTree]⟩
 
-private def root2 : BoundedNode 2 2 := ⟨[], by decide⟩
+private def root2 : BoundedNode 2 2 := ⟨[], by simp [InHomTree]⟩
 
 private def smallTree : List (Node 2) := [[], [0], [1]]
 
@@ -86,12 +85,12 @@ private def fullTree : List (Node 2) :=
   [[], [0], [1], [0, 0], [0, 1], [1, 0], [1, 1]]
 
 private def ambientRoots : List (BoundedNode 2 3) :=
-  [root3, ⟨[0], by decide⟩, ⟨[1], by decide⟩,
-    ⟨[0, 0], by decide⟩, ⟨[0, 1], by decide⟩,
-    ⟨[1, 0], by decide⟩, ⟨[1, 1], by decide⟩]
+  [root3, ⟨[0], by simp [InHomTree]⟩, ⟨[1], by simp [InHomTree]⟩,
+    ⟨[0, 0], by simp [InHomTree]⟩, ⟨[0, 1], by simp [InHomTree]⟩,
+    ⟨[1, 0], by simp [InHomTree]⟩, ⟨[1, 1], by simp [InHomTree]⟩]
 
 private def localRoots : List (BoundedNode 2 2) :=
-  [root2, ⟨[0], by decide⟩, ⟨[1], by decide⟩]
+  [root2, ⟨[0], by simp [InHomTree]⟩, ⟨[1], by simp [InHomTree]⟩]
 
 /-- The binary source has an actual one-variable starred tree. Its
 variable is not repeated at the nonroot ambient positions. -/
@@ -101,7 +100,7 @@ noncomputable def binarySource :
   tree_bounded := by
     intro t ht
     simp [smallTree] at ht
-    rcases ht with rfl | rfl | rfl <;> decide
+    rcases ht with rfl | rfl | rfl <;> simp [InHomTree]
   semi_complete := by decide
   word := pointWord [root3] (by simp) false
   interior_card := by decide
@@ -244,17 +243,11 @@ private theorem child_frontier (a : Fin 2) :
   · fin_cases a <;> simp [binaryCore, fullTree]
   · simp [binaryCore, ForwardAux]
   · intro r _ hr
-    have hr0 : r = [] := by
-      rcases hr.1 with ⟨tail, heq⟩
-      cases r with
-      | nil => rfl
-      | cons x xs =>
-          cases tail with
-          | nil => exact False.elim (hr.2 (by simpa using heq.symm))
-          | cons y ys =>
-              have hlen := congrArg List.length heq
-              simp only [List.length_cons, List.length_append] at hlen
-              omega
+    have hlen : r.length = 0 := by
+      have hlt := MeetClosedFromBranching.length_lt_of_strictPrefix hr
+      simp only [List.length_cons, List.length_nil] at hlt
+      omega
+    have hr0 : r = [] := List.length_eq_zero.mp hlen
     subst r
     change ForwardAux ([] : Node 2) []
     decide
@@ -280,7 +273,8 @@ private theorem child_mem_final (a : Fin 2) :
     constructor
     · apply (ForwardQFinalSelectedPredecessors.taggedLocalRoots_mk_iff
         binaryCore binaryLocalWord i root2).2
-      simp [binaryLocalWord, localComponent, pointWord, localRoots]
+      change root2 ∈ localRoots
+      simp [localRoots]
     · change SkewTree.heightAt smallTree [] +
         SkewTree.heightAt fullTree
           (ForwardOrderedProjections.frontierAt binaryCore.T binaryCore.cut i).1 < 2
@@ -306,58 +300,114 @@ theorem binary_source_tree_in_final :
   · exact child_mem_final 0
   · exact child_mem_final 1
 
+private def localVar
+    (i : Index binaryFrame.core)
+    (z : BoundedNode 2 (3 - (0+1))) (hz : z ∈ localRoots) :
+    (binaryLocalWord.vector.components i).Vars :=
+  ⟨z, by change z ∈ localRoots; exact hz⟩
+
+private theorem local_word_at_support
+    (i : Index binaryFrame.core)
+    (z : BoundedNode 2 (3 - (0+1))) (hz : z ∈ localRoots) :
+    (binaryLocalWord.vector.components i).word z =
+      Sum.inr (localVar i z hz) :=
+  (binaryLocalWord.vector.components i).toVariableWord.atRoot (localVar i z hz)
+
+private theorem local_word_outside
+    (i : Index binaryFrame.core)
+    (z : BoundedNode 2 (3 - (0+1))) (hz : z ∉ localRoots) :
+    (binaryLocalWord.vector.components i).word z = Sum.inl (Sum.inl false) := by
+  classical
+  change (pointWord localRoots (by decide) (Sum.inl false : Sum Bool (Fin 1))).word z = _
+  simp only [pointWord, dif_neg hz]
+
+private theorem local_symbol_eq
+    (i : Index binaryFrame.core)
+    (z : BoundedNode 2 (3 - (0+1))) :
+    enlargedLocalSymbol binaryFrame binaryLocalWord false i z =
+      if hsel : (⟨i, z⟩ : LocalAddress binaryFrame.core) ∈
+          selectedLocalRoots binaryFrame.core binaryLocalWord 2 then
+        Sum.inr (selectedBoundedRoot binaryFrame binaryLocalWord ⟨⟨i, z⟩, hsel⟩)
+      else Sum.inl false := by
+  classical
+  by_cases hz : z ∈ localRoots
+  · by_cases hsel : (⟨i, z⟩ : LocalAddress binaryFrame.core) ∈
+        selectedLocalRoots binaryFrame.core binaryLocalWord 2
+    · simp only [enlargedLocalSymbol, local_word_at_support i z hz, localVar, dif_pos hsel]
+    · simp only [enlargedLocalSymbol, local_word_at_support i z hz, localVar, dif_neg hsel]
+  · have hnot : (⟨i, z⟩ : LocalAddress binaryFrame.core) ∉
+        selectedLocalRoots binaryFrame.core binaryLocalWord 2 := by
+      intro hsel
+      have htag := ((selectedLocalRoots_mem_iff
+        binaryFrame.core binaryLocalWord 2 ⟨i, z⟩).1 hsel).1
+      have hmem := (ForwardQFinalSelectedPredecessors.taggedLocalRoots_mk_iff
+        binaryFrame.core binaryLocalWord i z).1 htag
+      change z ∈ localRoots at hmem
+      exact hz hmem
+    simp only [enlargedLocalSymbol, local_word_outside i z hz, dif_neg hnot]
+
 private theorem global_constant
     (u : binaryFrame.ambient.Vars) (a : Bool)
     (h : enlargedGlobalRootSymbol binaryFrame binaryLocalWord false u = Sum.inl a) :
     a = false := by
   classical
-  cases hs : safeAddress binaryCore u.1.1 with
+  cases hs : safeAddress binaryFrame.core u.1.1 with
   | none =>
       by_cases hu : u.1 ∈ boundedFinalRoots binaryFrame binaryLocalWord
-      · simp [enlargedGlobalRootSymbol, hs, hu] at h
-      · simpa [enlargedGlobalRootSymbol, hs, hu] using h.symm
+      · have hbad : (Sum.inr (⟨u.1, hu⟩ : FinalRoot binaryFrame binaryLocalWord) :
+            Sum Bool (FinalRoot binaryFrame binaryLocalWord)) = Sum.inl a := by
+          simpa only [enlargedGlobalRootSymbol, hs, dif_pos hu] using h
+        cases hbad
+      · have heq : (Sum.inl false : Sum Bool (FinalRoot binaryFrame binaryLocalWord)) =
+            Sum.inl a := by
+          simpa only [enlargedGlobalRootSymbol, hs, dif_neg hu] using h
+        exact (Sum.inl.inj heq).symm
   | some z =>
       rcases z with ⟨i, z⟩
-      by_cases hz : z ∈ localRoots
-      · by_cases hsel : (⟨i, z⟩ : LocalAddress binaryCore) ∈
-            selectedLocalRoots binaryCore binaryLocalWord 2
-        · simp [enlargedGlobalRootSymbol, hs, enlargedLocalSymbol,
-            binaryLocalWord, localComponent, pointWord, hz, hsel] at h
-        · simpa [enlargedGlobalRootSymbol, hs, enlargedLocalSymbol,
-            binaryLocalWord, localComponent, pointWord, hz, hsel] using h.symm
-      · simpa [enlargedGlobalRootSymbol, hs, enlargedLocalSymbol,
-          binaryLocalWord, localComponent, pointWord, hz] using h.symm
+      by_cases hsel : (⟨i, z⟩ : LocalAddress binaryFrame.core) ∈
+          selectedLocalRoots binaryFrame.core binaryLocalWord 2
+      · have hbad : (Sum.inr (selectedBoundedRoot binaryFrame binaryLocalWord
+            ⟨⟨i, z⟩, hsel⟩) : Sum Bool (FinalRoot binaryFrame binaryLocalWord)) =
+            Sum.inl a := by
+          simpa only [enlargedGlobalRootSymbol, hs, local_symbol_eq, dif_pos hsel] using h
+        cases hbad
+      · have heq : (Sum.inl false : Sum Bool (FinalRoot binaryFrame binaryLocalWord)) =
+            Sum.inl a := by
+          simpa only [enlargedGlobalRootSymbol, hs, local_symbol_eq, dif_neg hsel] using h
+        exact (Sum.inl.inj heq).symm
 
 private theorem global_variable
     (u : binaryFrame.ambient.Vars) (v : FinalRoot binaryFrame binaryLocalWord)
     (h : enlargedGlobalRootSymbol binaryFrame binaryLocalWord false u = Sum.inr v) :
     v.1 = u.1 := by
   classical
-  cases hs : safeAddress binaryCore u.1.1 with
+  cases hs : safeAddress binaryFrame.core u.1.1 with
   | none =>
       by_cases hu : u.1 ∈ boundedFinalRoots binaryFrame binaryLocalWord
-      · have heq : (⟨u.1, hu⟩ : FinalRoot binaryFrame binaryLocalWord) = v := by
-          apply Sum.inr.inj
-          simpa [enlargedGlobalRootSymbol, hs, hu] using h
-        exact (congrArg Subtype.val heq).symm
-      · simp [enlargedGlobalRootSymbol, hs, hu] at h
+      · have heq : (Sum.inr (⟨u.1, hu⟩ : FinalRoot binaryFrame binaryLocalWord) :
+            Sum Bool (FinalRoot binaryFrame binaryLocalWord)) = Sum.inr v := by
+          simpa only [enlargedGlobalRootSymbol, hs, dif_pos hu] using h
+        exact (congrArg Subtype.val (Sum.inr.inj heq)).symm
+      · have hbad : (Sum.inl false : Sum Bool (FinalRoot binaryFrame binaryLocalWord)) =
+            Sum.inr v := by
+          simpa only [enlargedGlobalRootSymbol, hs, dif_neg hu] using h
+        cases hbad
   | some z =>
       rcases z with ⟨i, z⟩
-      by_cases hz : z ∈ localRoots
-      · by_cases hsel : (⟨i, z⟩ : LocalAddress binaryCore) ∈
-            selectedLocalRoots binaryCore binaryLocalWord 2
-        · have heq : selectedBoundedRoot binaryFrame binaryLocalWord
-              ⟨⟨i, z⟩, hsel⟩ = v := by
-            apply Sum.inr.inj
-            simpa [enlargedGlobalRootSymbol, hs, enlargedLocalSymbol,
-              binaryLocalWord, localComponent, pointWord, hz, hsel] using h
-          apply Subtype.ext
-          rw [← heq, selectedBoundedRoot_node]
-          exact safeAddress_spec binaryCore u.1.1 ⟨i, z⟩ hs
-        · simp [enlargedGlobalRootSymbol, hs, enlargedLocalSymbol,
-            binaryLocalWord, localComponent, pointWord, hz, hsel] at h
-      · simp [enlargedGlobalRootSymbol, hs, enlargedLocalSymbol,
-          binaryLocalWord, localComponent, pointWord, hz] at h
+      by_cases hsel : (⟨i, z⟩ : LocalAddress binaryFrame.core) ∈
+          selectedLocalRoots binaryFrame.core binaryLocalWord 2
+      · have hsum : (Sum.inr (selectedBoundedRoot binaryFrame binaryLocalWord
+            ⟨⟨i, z⟩, hsel⟩) : Sum Bool (FinalRoot binaryFrame binaryLocalWord)) =
+            Sum.inr v := by
+          simpa only [enlargedGlobalRootSymbol, hs, local_symbol_eq, dif_pos hsel] using h
+        have heq := Sum.inr.inj hsum
+        apply Subtype.ext
+        rw [← heq, selectedBoundedRoot_node]
+        exact safeAddress_spec binaryFrame.core u.1.1 ⟨i, z⟩ hs
+      · have hbad : (Sum.inl false : Sum Bool (FinalRoot binaryFrame binaryLocalWord)) =
+            Sum.inr v := by
+          simpa only [enlargedGlobalRootSymbol, hs, local_symbol_eq, dif_neg hsel] using h
+        cases hbad
 
 private theorem final_constant (s : BoundedNode 2 3) (a : Bool)
     (h : binaryFinalWord.word s = Sum.inl a) : a = false := by
@@ -366,21 +416,23 @@ private theorem final_constant (s : BoundedNode 2 3) (a : Bool)
   cases hw : binaryFrame.ambient.word s with
   | inl c =>
       have hc : c = false := pointWord_constant ambientRoots (by decide) false c s hw
-      have ha : c = a := by simpa [SpanAudit.substitute, hw] using h
+      have ha : c = a := by simpa only [SpanAudit.substitute, hw, Sum.inl.injEq] using h
       exact ha.symm.trans hc
   | inr u =>
-      exact global_constant u a (by simpa [SpanAudit.substitute, hw] using h)
+      simp only [SpanAudit.substitute, hw] at h
+      exact global_constant u a h
 
 private theorem final_variable (s : BoundedNode 2 3) (v : binaryFinalWord.Vars)
     (h : binaryFinalWord.word s = Sum.inr v) : v.1 = s := by
+  change FinalRoot binaryFrame binaryLocalWord at v
   change SpanAudit.substitute binaryFrame.ambient.word
     (enlargedGlobalRootSymbol binaryFrame binaryLocalWord false) s = Sum.inr v at h
   cases hw : binaryFrame.ambient.word s with
-  | inl c => simp [SpanAudit.substitute, hw] at h
+  | inl c => simp only [SpanAudit.substitute, hw, Sum.inl_ne_inr] at h
   | inr u =>
       have hu : u.1 = s := pointWord_variable ambientRoots (by decide) false s u hw
-      have hv : v.1 = u.1 := global_variable u v
-        (by simpa [SpanAudit.substitute, hw] using h)
+      simp only [SpanAudit.substitute, hw] at h
+      have hv : v.1 = u.1 := global_variable u v h
       exact hv.trans hu
 
 /-- An explicit uniform substitution keeps the root variable and

@@ -185,22 +185,4 @@ theorem reorderStarredWord_interior_mem_iff
       s ∈ SkewTree.interior O.tree :=
   interior_mem_iff_of_perm hperm s
 
-/-- Re-enumeration preserves the full finite tree and rooted-word
-observation, without any alphabet-cardinality assumption. -/
-theorem reorderStarredWord_observe
-    {b n l : Nat} {α : Type*}
-    (O : StarredSignature.StarredWord b n l α
-      (SkewTree.forwardAuxB (b := b)))
-    (T : List (Node b)) (hperm : T.Perm O.tree) :
-    ForwardQFinalTargetObservation.observe (reorderStarredWord O T hperm) =
-      ForwardQFinalTargetObservation.observe O := by
-  classical
-  unfold ForwardQFinalTargetObservation.observe
-  apply Prod.ext
-  · ext t
-    simp only [List.mem_toFinset, reorderStarredWord_tree]
-    exact hperm.mem_iff
-  · funext s
-    rfl
-
 end DualTree.ForwardQFinalStarredReenumeration
