@@ -253,16 +253,21 @@ private theorem output_strictPartialWord_eq
   · have hlabel :
         CutPreservation.underlyingSymbol (fibreQStarredWord hb g fallback w).word s =
           CutPreservation.underlyingSymbol g.core.source.word s := by
-      change
-        (match ForwardQAmbientFibreSymbol.fibreQSymbol g fallback w.1 s with
-          | Sum.inl a => Sum.inl a
-          | Sum.inr v => Sum.inr v.1) =
-        (match g.core.source.word.word s with
-          | Sum.inl a => Sum.inl a
-          | Sum.inr v => Sum.inr v.1)
-      rw [output_symbol_eq_source_before_cut g fallback w.1 s hs]
-    simp only [strictPartialWord, if_pos hs, hlabel]
-  · simp only [strictPartialWord, if_neg hs]
+      cases hsource : g.core.source.word.word s with
+      | inl a =>
+          have hQ : (fibreQStarredWord hb g fallback w).word.word s =
+              Sum.inl a :=
+            (fibreQStarredWord_symbol hb g fallback w s).trans
+              ((output_symbol_eq_source_before_cut g fallback w.1 s hs).trans hsource)
+          simp only [CutPreservation.underlyingSymbol, hQ, hsource]
+      | inr v =>
+          have hQ : (fibreQStarredWord hb g fallback w).word.word s =
+              Sum.inr v :=
+            (fibreQStarredWord_symbol hb g fallback w s).trans
+              ((output_symbol_eq_source_before_cut g fallback w.1 s hs).trans hsource)
+          simp only [CutPreservation.underlyingSymbol, hQ, hsource]
+    simp only [strictPartialWord, ite_eq_left hs, hlabel]
+  · simp only [strictPartialWord, ite_eq_right hs]
 
 /-- Every genuine enlarged starred Q output has exactly the complete
 finite-set forward signature of its source, including the rooted strict

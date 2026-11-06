@@ -73,11 +73,12 @@ private theorem inducedRootSubstitution_old
     (v : g.core.source.word.Vars) :
     inducedRootSubstitution g f σ (oldSourceFinalRoot g f v) =
       Sum.inr v := by
-  change inducedRootSubstitution g f σ
-    (earlyFinalRoot g f (ambientAtSourceRoot g v)
-      (source_root_before_cut g v)) = Sum.inr v
-  rw [inducedRootSubstitution_early]
-  exact source_substitution_fixes_old_root g v
+  have hbefore :
+      ForwardAux (ambientAtSourceRoot g v).1.1 g.core.cut := by
+    simpa only [ambientAtSourceRoot] using source_root_before_cut g v
+  exact (inducedRootSubstitution_early g f σ
+    (ambientAtSourceRoot g v) hbefore).trans
+      (source_substitution_fixes_old_root g v)
 
 private theorem inducedRootSubstitution_selected
     {b n l k m q : Nat} {α : Type*}
@@ -90,7 +91,7 @@ private theorem inducedRootSubstitution_selected
   have hafter :
       ¬ ForwardAux (selectedBoundedRoot g f u).1.1 g.core.cut := by
     rw [selectedBoundedRoot_node]
-    exact projected_outside_cut g.core u.1
+    exact ForwardQFinalSupportCut.projected_outside_cut g.core u.1
   simp [inducedRootSubstitution, hafter]
 
 private theorem inducedRootSubstitution_decodeAux
