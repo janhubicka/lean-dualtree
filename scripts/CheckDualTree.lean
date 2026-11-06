@@ -2489,3 +2489,4 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InterleavedColorFactor.good_iff_factors_through_markerTuple
 #print axioms DualTree.InterleavedColorFactor.markerTuple_factor_unique
 #print axioms DualTree.InterleavedColorFactor.good_iff_unique_markerTuple_factor
+#print axioms DualTree.InterleavedHeightOneComplete.exists_good_nonempty_unique_factor_height_one
