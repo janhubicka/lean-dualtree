@@ -25,7 +25,8 @@ import DualTree.ForwardQNormalizationObstruction
 import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
-import DualTree.ForwardSemiCompleteZeroRoot
+import DualTree.ForwardSemiCompleteModelIso
+import DualTree.ForwardSemiCompleteSimplicity
 import DualTree.ForwardQFinalAlphabetLiftObstruction
 import DualTree.MixedGoodSmoothRecordTotalColor
 import DualTree.ForwardQFinalTargetLeafComponentwise
