@@ -1,3 +1,4 @@
+import DualTree.HigherRamseyFlat
 import DualTree.UpLeafAudit
 import DualTree.UpLeafCanonical
 import DualTree.UpLeafExamples
