@@ -55,8 +55,9 @@ SyntacticallyRefines target source :=
     target.word = SpanAudit.substitute source.word ρ
 ```
 
-It preserves constants, equality of source symbols, entire variable
-fibres, and actual support roots for every alphabet. The substitution is
+It preserves constants, equality of source symbols, and entire variable
+fibres for every alphabet. Every surviving target root is an actual source
+root. The substitution is
 uniquely determined by reading the target symbol at each source root.
 Thus the source fibre frame can be built canonically from the actual
 ambient word, full-node support correspondence, and source refinement.

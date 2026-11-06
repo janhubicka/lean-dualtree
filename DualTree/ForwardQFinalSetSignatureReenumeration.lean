@@ -96,9 +96,15 @@ private theorem tree_partition
       (SkewTree.interior O.tree ++
         O.tree.filter (fun t => !decide (t ∈ SkewTree.interior O.tree))).Perm
         O.tree := by
-    rw [interior_eq_filter_membership]
-    exact List.filter_append_perm
+    have hpartition := List.filter_append_perm
       (fun t => decide (t ∈ SkewTree.interior O.tree)) O.tree
+    exact Eq.mpr
+      (congrArg
+        (fun L : List (Node b) =>
+          (L ++ O.tree.filter
+            (fun t => !decide (t ∈ SkewTree.interior O.tree))).Perm O.tree)
+        (interior_eq_filter_membership O.tree))
+      hpartition
   exact ((List.Perm.refl _).append hrest).trans hfirst
 
 private noncomputable def exceptionalTest
