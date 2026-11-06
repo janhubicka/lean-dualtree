@@ -2478,3 +2478,5 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InterleavedParameters.markerTuple
 #print axioms DualTree.InterleavedParameters.markerTuple_parameterElement
 #print axioms DualTree.InterleavedParameters.bulletPoint_fixed_on_span
+#print axioms DualTree.InterleavedSpan.element_eq_of_fields
+#print axioms DualTree.InterleavedSpan.span_element_eq_parameterElement
