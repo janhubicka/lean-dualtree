@@ -134,8 +134,11 @@ theorem zero_branch_up_span_empty
     (i : UpIndex kind) :
     f.span = ∅ := by
   apply span_empty_of_upLeaves_empty f i
-  apply List.length_eq_zero.mp
-  simpa using f.upLeaves_card i
+  have hcard : (f.upLeaves i).length = 0 := by
+    simpa using f.upLeaves_card i
+  cases hlist : f.upLeaves i with
+  | nil => rfl
+  | cons x xs => simp [hlist] at hcard
 
 /-- The degenerate case is actually inhabited; its empty span is not a
 consequence of contradictory mixed-word assumptions. -/
@@ -197,7 +200,14 @@ theorem fixedRootBinaryPoint_mem_span (j : Fin 2) :
     exact FixedRootMarkerWord.valueWord_mem_span binaryLevelOneRoot false false
   · intro i
     change (⟨[j], rfl⟩ : LeafNode 2 1) ∈ [⟨[0], rfl⟩, ⟨[1], rfl⟩]
-    fin_cases j <;> simp
+    by_cases hj : j = 0
+    · subst j
+      simp
+    · have hn : j.val ≠ 0 := fun h => hj (Fin.ext h)
+      have hlt := j.isLt
+      have hj1 : j = 1 := Fin.ext (by omega)
+      subst j
+      simp
   · intro i
     cases i.2
 

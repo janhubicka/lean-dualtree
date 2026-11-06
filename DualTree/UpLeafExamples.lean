@@ -60,7 +60,9 @@ theorem threeWord_directions_distinct {b : Nat} {α : Type*}
     parameterElement hb threeKind (roots hb) fallback a (fun _ => i) ≠
       parameterElement hb threeKind (roots hb) fallback a (fun _ => j) := by
   intro h
-  have hpair := parameterElement_injective hb threeKind (roots hb) fallback h
+  have hpair : (a, (fun _ : UpIndex threeKind => i)) =
+      (a, (fun _ : UpIndex threeKind => j)) :=
+    parameterElement_injective hb threeKind (roots hb) fallback h
   have hdir := congrArg Prod.snd hpair
   exact hij (congrFun hdir upIndex)
 

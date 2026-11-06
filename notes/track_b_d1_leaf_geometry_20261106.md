@@ -1,8 +1,10 @@
 # Track B: genuine height-one D1 leaves and mixed spans
 
 Continuation of the `T A` split, issue [#515](https://github.com/janhubicka/lean-dualtree/issues/515).
-Integration baseline: `910efe61e94a284be065f4a782bec878c5d1170f`, including
-the merged Track A dependencies #512 and #513. This work adds `UpLeaf*`
+Starting baseline: `910efe61e94a284be065f4a782bec878c5d1170f`, including
+the merged Track A dependencies #512 and #513. The validation branch is
+integrated with `4306242fc876b0ddc03143caea8a3abc433568d9`, including
+Track A's nonempty, interleaved no-D1 height-one result (#529). This work adds `UpLeaf*`
 modules and the associated regression/axiom registrations. It does not change
 the Track A constructions or the Q definitions.
 

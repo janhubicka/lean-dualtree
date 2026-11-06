@@ -173,7 +173,9 @@ theorem span_element_eq_parameterElement
   have hw : ∀ i : Fin d, ∃ a : α,
       FixedRootMarkerWord.valueWord (roots i) fallback a = x.words i := by
     intro i
-    exact (FixedRootMarkerWord.span_eq_range (roots i) fallback ▸ hx.1 i)
+    have hmem : x.words i ∈ (FixedRootMarkerWord.kWord (roots i) fallback).span := hx.1 i
+    rw [FixedRootMarkerWord.span_eq_range] at hmem
+    exact hmem
   choose a ha using hw
   have hu : ∀ i : UpIndex kind, ∃ j : Fin b,
       ambientLeaf hb (roots i.1) j = x.upPoint i := by

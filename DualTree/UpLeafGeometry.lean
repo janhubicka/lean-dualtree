@@ -233,16 +233,20 @@ theorem star_skew {b n : Nat} (hb : 0 < b)
     intro s hs
     apply List.all_eq_true.mpr
     intro t ht
-    rcases (mem_star_iff r leaf s).mp hs with rfl | ⟨i, rfl⟩ <;>
-      rcases (mem_star_iff r leaf t).mp ht with rfl | ⟨j, rfl⟩ <;>
+    have hs' := (mem_star_iff r leaf s).mp hs
+    have ht' := (mem_star_iff r leaf t).mp ht
+    rcases hs' with rfl | ⟨i, rfl⟩ <;>
+      rcases ht' with rfl | ⟨j, rfl⟩ <;>
       simp [hzero, hone, hlen]
   have hIII : SkewTree.condIIIB (star r leaf) = true := by
     apply List.all_eq_true.mpr
     intro s hs
     apply List.all_eq_true.mpr
     intro t ht
-    rcases (mem_star_iff r leaf s).mp hs with rfl | ⟨i, rfl⟩ <;>
-      rcases (mem_star_iff r leaf t).mp ht with rfl | ⟨j, rfl⟩ <;>
+    have hs' := (mem_star_iff r leaf s).mp hs
+    have ht' := (mem_star_iff r leaf t).mp ht
+    rcases hs' with rfl | ⟨i, rfl⟩ <;>
+      rcases ht' with rfl | ⟨j, rfl⟩ <;>
       simp [hzero, hone, hlen, hr]
   have hfull : SkewTree.fullBeforeB aux (star r leaf) r = true := by
     apply List.all_eq_true.mpr
@@ -287,7 +291,7 @@ and filling the remaining positions with zeroes. -/
 def ambientLeaf {b n : Nat} (hb : 0 < b)
     (r : BoundedNode b n) (i : Fin b) : MixedProduct.LeafNode b n :=
   ⟨r.1 ++ [i] ++ List.replicate (n - (r.1.length + 1)) ⟨0, hb⟩, by
-    have hr := r.2
+    have hr : r.1.length < n := r.2
     simp only [List.length_append, List.length_singleton, List.length_replicate]
     omega⟩
 
@@ -342,7 +346,7 @@ theorem extended_support_skew_paper {b n : Nat} (hb : 0 < b)
   have haux : ∀ i : Fin b,
       SkewTree.paperAuxB (ambientLeaf hb r i).1 r.1 = false := by
     intro i
-    have hr := r.2
+    have hr : r.1.length < n := r.2
     have hlen := (ambientLeaf hb r i).2
     simp only [SkewTree.paperAuxB, PaperAux, hlen]
     have hnlt : ¬ n < r.1.length := by omega
@@ -352,7 +356,7 @@ theorem extended_support_skew_paper {b n : Nat} (hb : 0 < b)
     (fun i => (ambientLeaf hb r i).1) r.2
     (fun i => (ambientLeaf hb r i).2)
     (direction_prefix_ambientLeaf hb r) haux
-  simpa [star, ambientLeaves, List.map_ofFn] using h
+  simpa [star, ambientLeaves, List.map_ofFn, Function.comp_def] using h
 
 theorem extended_support_skew_forward {b n : Nat} (hb : 0 < b)
     (r : BoundedNode b n) :
@@ -361,7 +365,7 @@ theorem extended_support_skew_forward {b n : Nat} (hb : 0 < b)
   have haux : ∀ i : Fin b,
       SkewTree.forwardAuxB (ambientLeaf hb r i).1 r.1 = false := by
     intro i
-    have hr := r.2
+    have hr : r.1.length < n := r.2
     have hlen := (ambientLeaf hb r i).2
     simp only [SkewTree.forwardAuxB, ForwardAux, hlen]
     have hnlt : ¬ n < r.1.length := by omega
@@ -371,6 +375,6 @@ theorem extended_support_skew_forward {b n : Nat} (hb : 0 < b)
     (fun i => (ambientLeaf hb r i).1) r.2
     (fun i => (ambientLeaf hb r i).2)
     (direction_prefix_ambientLeaf hb r) haux
-  simpa [star, ambientLeaves, List.map_ofFn] using h
+  simpa [star, ambientLeaves, List.map_ofFn, Function.comp_def] using h
 
 end DualTree.UpLeafGeometry
