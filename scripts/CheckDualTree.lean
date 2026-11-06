@@ -2478,3 +2478,37 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InterleavedParameters.markerTuple
 #print axioms DualTree.InterleavedParameters.markerTuple_parameterElement
 #print axioms DualTree.InterleavedParameters.bulletPoint_fixed_on_span
+
+-- Track F: corrected targets, finite fusion, induction transfer, and two-root repair.
+#print axioms DualTree.CorrectedTheoremSpec.starredBelow_span
+#print axioms DualTree.CorrectedTheoremSpec.starredBelow_iff_span
+#print axioms DualTree.CorrectedTheoremSpec.starredBelow_of_syntacticRefines
+#print axioms DualTree.CorrectedTheoremSpec.wordMonochromatic_iff_span
+#print axioms DualTree.CorrectedTheoremSpec.starredMonochromatic_of_syntacticRefines
+#print axioms DualTree.CorrectedTheoremSpec.eventualBound_mono
+#print axioms DualTree.CorrectedTheoremSpec.leastBound_spec
+#print axioms DualTree.CorrectedTheoremSpec.leastBound_le
+#print axioms DualTree.CorrectedTheoremSpec.completeNodeCount_one
+#print axioms DualTree.Lemma28.fibreMonochromatic_of_syntacticRefines
+#print axioms DualTree.Lemma28.finite_signature_fusion
+#print axioms DualTree.Lemma28.signatureCanonical_of_processed
+#print axioms DualTree.Lemma28.finite_signature_canonization
+#print axioms DualTree.Lemma28.remainingHeight_final
+#print axioms DualTree.Lemma28.remainingHeight_step
+#print axioms DualTree.Theorem25.signatureColor_exact
+#print axioms DualTree.Theorem25.signatureColor_fallback_independent
+#print axioms DualTree.Theorem25.monochromatic_of_covered_signature_pullback
+#print axioms DualTree.Theorem25.simpleWithin_of_simple
+#print axioms DualTree.Theorem25.simpleWithin_of_syntacticRefines
+#print axioms DualTree.Theorem25.step_of_relative_ramsey
+#print axioms DualTree.Corollary22TwoRootRepair.complete_support_has_two_roots
+#print axioms DualTree.Corollary22TwoRootRepair.hasTwoGamma1Roots_of_two_le_dimension
+#print axioms DualTree.Corollary22TwoRootRepair.moveGamma1Markers_smooth
+#print axioms DualTree.Corollary22TwoRootRepair.moveGamma1Markers_mem_span
+#print axioms DualTree.Corollary22TwoRootRepair.reassignMarkedLetter_at_other_root
+#print axioms DualTree.Corollary22TwoRootRepair.normalizeGamma1Letters_mem_span
+#print axioms DualTree.Corollary22TwoRootRepair.color_eq_normalizeGamma1Letters
+#print axioms DualTree.Corollary22TwoRootRepair.good_smooth_color_eq_of_bullet_points
+#print axioms DualTree.Corollary22TwoRootRepair.good_smooth_color_eq_of_gamma2_points
+#print axioms DualTree.Corollary22TwoRootRepair.good_smooth_monochromatic_all_gamma1
+#print axioms DualTree.Corollary22TwoRootRepair.good_smooth_color_eq_of_two_le_dimension

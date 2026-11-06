@@ -27,6 +27,8 @@ import DualTree.ForwardQFinalAlphabetLiftObstruction
 import DualTree.MixedGoodSmoothRecordTotalColor
 import DualTree.ForwardQFinalTargetLeafComponentwise
 import DualTree.ForwardQFinalSameFrontierLength
+import DualTree.Theorem25
+import DualTree.Corollary22TwoRootRepair
 
 
 /-!
