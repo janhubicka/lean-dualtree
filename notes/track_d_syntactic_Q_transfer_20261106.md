@@ -3,9 +3,10 @@
 **Date:** 6 November 2026. **Starting main:**
 `910efe61e94a284be065f4a782bec878c5d1170f`, through merged PR #513.
 **Assignment:** issue #517, `track-d/q-span-refinement`.
-**Integrated main:** `cce5b81bc17ed4b9140d06eebc705a45d9bc41ae`,
+**Integrated main:** `b985bfee976cb682142986579de0f4680d7e6400`,
 including Track A PRs #522, #523, #524, #525, and #529, and the
-completed Track E selector work in PR #526.
+completed Track E selector work in PR #526 and Track B D1 geometry
+in PR #530.
 
 ## Exact scope and the corrected inclusion
 
