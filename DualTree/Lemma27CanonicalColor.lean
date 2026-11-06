@@ -162,7 +162,13 @@ theorem sourceRelativeSetTarget_iff_starredBelow_signature
 observation retain definitionally the same finite set and rooted word. -/
 theorem observe_eq_starredObserve
     {b n l : Nat} {α : Type*} (O : Starred b n l α) :
-    ForwardQFinalTargetObservation.observe O = starredObserve O := rfl
+    ForwardQFinalTargetObservation.observe O = starredObserve O := by
+  unfold ForwardQFinalTargetObservation.observe starredObserve
+  apply Prod.ext
+  · rfl
+  · funext s
+    simp only [ForwardQSimpleLetterSmooth.rootLabel,
+      CutPreservation.underlyingSymbol]
 
 /-- The proved genuine Q preimages transfer monochromaticity of its
 starred span image to the WHOLE actual fixed-signature target fibre. -/
@@ -194,8 +200,7 @@ theorem fibreMonochromatic_of_Q_monochromatic
     sourceRelativeSetTarget_has_Q_preimage hb c f fallback U hTargetU
   obtain ⟨y, hy, hQy⟩ :=
     sourceRelativeSetTarget_has_Q_preimage hb c f fallback V hTargetV
-  change starredObserve (fibreQStarredWord hb c fallback x) = starredObserve U at hQx
-  change starredObserve (fibreQStarredWord hb c fallback y) = starredObserve V at hQy
+  simp only [observe_eq_starredObserve] at hQx hQy
   exact (congrArg color hQx).symm.trans
     ((hmono x y hx hy).trans (congrArg color hQy))
 
