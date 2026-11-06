@@ -63,6 +63,10 @@ theorem parameterElement_mem_span
           (project_root w r hroot j)
           (fun t v hv => project_after_root w r hfirst j t v hv)]
         refine ⟨σ j 0, ?_⟩
+        change ShiftedRayWord.embed hb i fallback
+            (SpanAudit.eval (project w j) (fun _ : Fin 1 => σ j 0)) =
+          ShiftedRayWord.embed hb i fallback
+            (SpanAudit.eval (project w j) (σ j))
         rw [hσ]
       simpa [InterleavedMixedWord.mixedWord,
         InterleavedMixedWord.vectorWord,
