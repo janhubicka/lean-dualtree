@@ -45,7 +45,7 @@ private theorem interior_eq_filter_membership
   change S.filter (fun t => !(SkewTree.immediateSuccs S t).isEmpty) = _
   apply List.filter_congr
   intro t ht
-  simp [SkewTree.interior, ht]
+  cases hs : SkewTree.immediateSuccs S t <;> simp [SkewTree.interior, ht, hs]
 
 private theorem interior_eq_filter_of_perm
     {b : Nat} {S T : List (Node b)} (h : S.Perm T) :

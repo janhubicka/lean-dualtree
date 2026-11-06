@@ -26,6 +26,10 @@ theorem reorderStarredWord_observe
     simp only [List.mem_toFinset, reorderStarredWord_tree]
     exact hperm.mem_iff
   · funext s
-    simp only [ForwardQSimpleLetterSmooth.rootLabel, reorderStarredWord_word]
+    cases hw : O.word.word s with
+    | inl a =>
+        simp only [ForwardQSimpleLetterSmooth.rootLabel, reorderStarredWord_word, hw]
+    | inr v =>
+        simp only [ForwardQSimpleLetterSmooth.rootLabel, reorderStarredWord_word, hw]
 
 end DualTree.ForwardQFinalStarredReenumeration

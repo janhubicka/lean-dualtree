@@ -247,7 +247,7 @@ private theorem child_frontier (a : Fin 2) :
       have hlt := MeetClosedFromBranching.length_lt_of_strictPrefix hr
       simp only [List.length_cons, List.length_nil] at hlt
       omega
-    have hr0 : r = [] := List.length_eq_zero.mp hlen
+    have hr0 : r = [] := List.eq_nil_of_length_eq_zero hlen
     subst r
     change ForwardAux ([] : Node 2) []
     decide
@@ -302,28 +302,28 @@ theorem binary_source_tree_in_final :
 
 private def localVar
     (i : Index binaryFrame.core)
-    (z : BoundedNode 2 (3 - (0+1))) (hz : z ∈ localRoots) :
+    (z : BoundedNode 2 2) (hz : z ∈ localRoots) :
     (binaryLocalWord.vector.components i).Vars :=
   ⟨z, by change z ∈ localRoots; exact hz⟩
 
 private theorem local_word_at_support
     (i : Index binaryFrame.core)
-    (z : BoundedNode 2 (3 - (0+1))) (hz : z ∈ localRoots) :
+    (z : BoundedNode 2 2) (hz : z ∈ localRoots) :
     (binaryLocalWord.vector.components i).word z =
       Sum.inr (localVar i z hz) :=
   (binaryLocalWord.vector.components i).toVariableWord.atRoot (localVar i z hz)
 
 private theorem local_word_outside
     (i : Index binaryFrame.core)
-    (z : BoundedNode 2 (3 - (0+1))) (hz : z ∉ localRoots) :
+    (z : BoundedNode 2 2) (hz : z ∉ localRoots) :
     (binaryLocalWord.vector.components i).word z = Sum.inl (Sum.inl false) := by
   classical
   change (pointWord localRoots (by decide) (Sum.inl false : Sum Bool (Fin 1))).word z = _
-  simp only [pointWord, dif_neg hz]
+  simp only [pointWord, dite_eq_right hz]
 
 private theorem local_symbol_eq
     (i : Index binaryFrame.core)
-    (z : BoundedNode 2 (3 - (0+1))) :
+    (z : BoundedNode 2 2) :
     enlargedLocalSymbol binaryFrame binaryLocalWord false i z =
       if hsel : (⟨i, z⟩ : LocalAddress binaryFrame.core) ∈
           selectedLocalRoots binaryFrame.core binaryLocalWord 2 then
@@ -333,8 +333,8 @@ private theorem local_symbol_eq
   by_cases hz : z ∈ localRoots
   · by_cases hsel : (⟨i, z⟩ : LocalAddress binaryFrame.core) ∈
         selectedLocalRoots binaryFrame.core binaryLocalWord 2
-    · simp only [enlargedLocalSymbol, local_word_at_support i z hz, localVar, dif_pos hsel]
-    · simp only [enlargedLocalSymbol, local_word_at_support i z hz, localVar, dif_neg hsel]
+    · simp only [enlargedLocalSymbol, local_word_at_support i z hz, localVar, dite_eq_left hsel]
+    · simp only [enlargedLocalSymbol, local_word_at_support i z hz, localVar, dite_eq_right hsel]
   · have hnot : (⟨i, z⟩ : LocalAddress binaryFrame.core) ∉
         selectedLocalRoots binaryFrame.core binaryLocalWord 2 := by
       intro hsel
@@ -344,7 +344,7 @@ private theorem local_symbol_eq
         binaryFrame.core binaryLocalWord i z).1 htag
       change z ∈ localRoots at hmem
       exact hz hmem
-    simp only [enlargedLocalSymbol, local_word_outside i z hz, dif_neg hnot]
+    simp only [enlargedLocalSymbol, local_word_outside i z hz, dite_eq_right hnot]
 
 private theorem global_constant
     (u : binaryFrame.ambient.Vars) (a : Bool)

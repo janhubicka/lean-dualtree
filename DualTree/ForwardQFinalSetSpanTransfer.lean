@@ -76,7 +76,9 @@ private theorem observe_eq_of_word_eq_tree_perm
     intro t
     simpa only [List.mem_toFinset] using (hperm.mem_iff : t ∈ O'.tree ↔ t ∈ O.tree)
   · funext s
-    simp only [ForwardQSimpleLetterSmooth.rootLabel, hword]
+    cases hs : O.word.word s with
+    | inl a => simp only [ForwardQSimpleLetterSmooth.rootLabel, hword, hs]
+    | inr v => simp only [ForwardQSimpleLetterSmooth.rootLabel, hword, hs]
 
 /-- Every target with the actual complete set signature has a genuine
 enlarged starred Q preimage in the supplied local mixed span. The support
