@@ -1,3 +1,4 @@
+import DualTree.UpLeafInterleavedGeometry
 import DualTree.UpLeafAudit
 import DualTree.UpLeafCanonical
 import DualTree.UpLeafExamples
