@@ -1,3 +1,5 @@
+import DualTree.ForwardQFinalTargetHeightBoundary
+import DualTree.ForwardQSourceRefinementAudit
 import DualTree.Insensitivity
 import DualTree.Remark1Audit
 import DualTree.StarInsensitivity
@@ -7,7 +9,6 @@ import DualTree.PlainBulletRayExactSpan
 import DualTree.PlainBlockBulletBlockColorFactor
 import DualTree.InterleavedHeightOneComplete
 import DualTree.PlainBulletBlockExactSpan
-import DualTree.UnaryMainAudit
 import DualTree.Corollary22Audit
 import DualTree.GluingAudit
 import DualTree.SupportTrace
@@ -28,13 +29,9 @@ import DualTree.MixedGoodSmoothRecordTotalColor
 import DualTree.ForwardQFinalTargetLeafComponentwise
 import DualTree.ForwardQFinalSameFrontierLength
 
-
 /-!
 Public umbrella import for the dual-tree verification library.
-The imports below are a minimal transitive covering of all source
-modules in this library. Independent research modules and audited
-counterexample fixtures remain available via their individual imports.
-Run scripts/audit-lean-library.py --verify-root-minimal to check that
-this file exports exactly the intended graph without duplicate imports.
+This list is a minimal transitive covering of all source modules;
+audit/counterexample modules remain exported. Run the static
+source graph audit to check the import closure and redundancy.
 -/
-

@@ -6,8 +6,8 @@ import DualTree.ForwardQFinalOutputProjectedEncoder
 # Genuine enlarged mixed-span Q word matches the target at P_i(z)
 
 Let f be the actual Corollary-22 local variable word with its
-ENLARGED alphabet α ⊕ Fin(m+1). Under the same-complete-signature,
-two-letter and target span-inclusion premises, the coherent target
+ENLARGED alphabet α ⊕ Fin(m+1). Under the same complete signature
+and explicit target syntactic refinement, the coherent target
 input chooses the genuine local D₂ support points and one enlarged
 letter per actual component-variable fibre.
 
@@ -24,7 +24,8 @@ projected ambient f-root P_i(z). The proof has three genuine cases:
 
 This is exact dependent WORD-SYMBOL equality, not merely one
 evaluated-word equality. The initial/unsafe fibres and final D₂
-starred certificate remain separate requirements.
+starred certificate remain separate requirements. The original two-letter
+evaluated-span theorem is retained as a corollary.
 -/
 
 namespace DualTree.ForwardQFinalEnlargedTargetProjectedWord
@@ -43,7 +44,7 @@ canonical old/target-root equivalence.
 
 Fixed auxiliary constants are decoded faithfully, rather than
 silently replaced by arbitrary original-alphabet letters. -/
-theorem coherent_target_Q_matches_at_projected
+theorem coherent_target_Q_matches_at_projected_of_syntactic_refinement
     {b n l k m q : Nat} {α : Type*}
     (hb : 0 < b)
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
@@ -54,10 +55,9 @@ theorem coherent_target_Q_matches_at_projected
     (cutO : Node b)
     (H : ForwardQFinalFullSignature.SameCompleteForwardSignature
       hb g O cutO)
-    (hα : SpanAudit.HasTwoLetters α)
-    (hspan : O.word.span ⊆
+    (hRef : ForwardQSourceRefinement.SyntacticallyRefines O.word
       (ForwardQFinalGlobalEnlargedWord.enlargedInterpolatedFinalWord
-        g f fallback).span)
+        g f fallback))
     (hSupport : ∀ t : Node b, t ∈ O.tree →
       t ∈ ForwardQFinalHeightBudget.finalBudgetSupport
         g.core f (m+q))
@@ -99,8 +99,8 @@ theorem coherent_target_Q_matches_at_projected
             simpa using hQ
           have hO :
               O.word.word p = Sum.inl a0 :=
-            output_preserves_original_local_constant
-              g f fallback O hα hspan i z a0 hz
+            output_preserves_original_local_constant_of_syntactic_refinement
+              g f fallback O hRef i z a0 hz
           change Sum.map id e
             (ForwardQAmbientFibreSymbol.fibreQSymbol
               g fallback w p) = O.word.word p
@@ -117,8 +117,8 @@ theorem coherent_target_Q_matches_at_projected
             rw [hw] at hQ
             simpa using hQ
           have hO :=
-            output_preserves_aux_local_constant
-              hb g f fallback O cutO H hα hspan i z j hz
+            output_preserves_aux_local_constant_of_syntactic_refinement
+              hb g f fallback O cutO H hRef i z j hz
           change Sum.map id e
             (ForwardQAmbientFibreSymbol.fibreQSymbol
               g fallback w p) = O.word.word p
@@ -135,8 +135,8 @@ theorem coherent_target_Q_matches_at_projected
         decoded_encoded_projected_output_symbol
           hb g O cutO H fallback i v.1
       have hO :=
-        output_constant_on_local_variable_fibre
-          g f fallback O hα hspan i v z hz
+        output_constant_on_local_variable_fibre_of_syntactic_refinement
+          g f fallback O hRef i v z hz
       calc
         Sum.map id e
             (ForwardQAmbientFibreSymbol.fibreQSymbol
@@ -153,5 +153,43 @@ theorem coherent_target_Q_matches_at_projected
               (ForwardQActualCoordinateWord.projectedBounded
                 g.core g.T_bounded i v.1) := hroot
         _ = O.word.word p := hO.symm
+
+/-- Evaluated-span form. The two-letter assumption is used only to
+recover the explicit syntactic refinement required by the general theorem. -/
+theorem coherent_target_Q_matches_at_projected
+    {b n l k m q : Nat} {α : Type*}
+    (hb : 0 < b)
+    (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
+    (fallback : α)
+    (O : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)))
+    (cutO : Node b)
+    (H : ForwardQFinalFullSignature.SameCompleteForwardSignature
+      hb g O cutO)
+    (hα : SpanAudit.HasTwoLetters α)
+    (hspan : O.word.span ⊆
+      (ForwardQFinalGlobalEnlargedWord.enlargedInterpolatedFinalWord
+        g f fallback).span)
+    (hSupport : ∀ t : Node b, t ∈ O.tree →
+      t ∈ ForwardQFinalHeightBudget.finalBudgetSupport
+        g.core f (m+q))
+    (i : Index g.core)
+    (z : BoundedNode b (k-(m+1))) :
+    Sum.map id (sourceOutputVarsEquiv hb g O cutO H)
+      (ForwardQAmbientFibreSymbol.fibreQSymbol
+        g fallback
+        (coherentTargetInput hb g f fallback O cutO H hSupport)
+        (ForwardQActualCoordinateWord.projectedBounded
+          g.core g.T_bounded i z)) =
+      O.word.word
+        (ForwardQActualCoordinateWord.projectedBounded
+          g.core g.T_bounded i z) := by
+  exact coherent_target_Q_matches_at_projected_of_syntactic_refinement
+    hb g f fallback O cutO H
+    ((ForwardQSourceRefinement.syntacticallyRefines_iff_span_subset
+        hα O.word (ForwardQFinalGlobalEnlargedWord.enlargedInterpolatedFinalWord
+        g f fallback)).2 hspan) hSupport i z
+
 
 end DualTree.ForwardQFinalEnlargedTargetProjectedWord

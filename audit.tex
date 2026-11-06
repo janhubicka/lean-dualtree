@@ -67,6 +67,62 @@ The product theorem is stated without a separate proof. \\
 \end{tabular}
 \end{center}
 
+\section{Track D: symbolic source-relative Q transfer (6 November 2026)}
+\fix
+The corrected forward construction now has an explicit symbolic source
+contract: a target word is obtained by one uniform substitution of the
+actual source variables.  The substitution is uniquely determined by the
+target symbols at the source roots.  For alphabets with two distinct
+letters this is equivalent to evaluated-span inclusion; for singleton
+alphabets it is a stronger condition and is imposed explicitly.
+
+The generalized enlarged-alphabet target construction preserves fixed
+auxiliary constants and reconstructs the entire target word without a
+two-letter assumption.  Its target class retains the same complete
+corrected signature and containment of the \emph{whole} target tree,
+including terminal leaves, in the final support.  Target skewness supplies
+the corrected $D_2$ order.  The final interpolation is packaged as an
+actual $(m+q)$-complete variable word for $b,q>0$, with a nonempty evaluated
+span and a syntactic refinement into the original ambient word.
+It retains every ambient support root at or before the forward cut,
+including roots outside the old starred source support, and preserves
+every constant and rooted variable symbol on that inclusive initial
+segment.  These properties are explicit in the assembly theorem.
+
+The resulting inclusion concerns fixed-signature starred targets:
+\[
+ \operatorname{observe}([\mathcal S,f']_{\mathrm{syn}})
+ \subseteq
+ \{\operatorname{observe}(Q(w)):w\in[f]_{\mathrm{mixed}}
+          \cap W_*^{\mathrm{fwd}}\}.
+\]
+It does not assert unrestricted reverse coverage of the constant evaluated
+span of $f'$.  The existing retained-root obstructions remain valid.
+The original two-letter span-based interfaces are retained as corollaries.
+The accompanying unary regression uses two actual complete-support words
+with equal evaluated spans but no such syntactic refinement.
+
+At local height $q=1$, the corresponding starred target class is empty:
+the retained cut has final rank $m$, and the final support has height
+$m+1$, so it has no strict descendant there.  The common complete
+signature would require the cut to remain interior in a target.
+The boundary module proves that an actual target at positive local
+height therefore requires $q>1$.  This necessary bound is not an
+existence theorem at larger heights.  This is the expected excluded
+boundary of the intended application: the recorded paper assumption
+$m'<M-1$ and the local dimension $q=M-m'$ already give $q\ge2$.
+It is not a new counterexample to Lemma~27.
+
+The source and target interfaces are implemented in the
+\texttt{ForwardQSourceRefinement} and
+\texttt{ForwardQFinalSyntacticSpanTransfer} modules; the complete-support
+packaging is in \texttt{ForwardQFinalEnlargedCompleteWord}, and initial
+root and symbol retention is in
+\texttt{ForwardQFinalInitialRootRetention}.
+This constructs a corrected Q transfer from a supplied local mixed word.
+The required Ramsey witness, published selector, printed-order comparison,
+quantitative estimates and final induction remain open.
+
 \section{Detailed issues}
 
 \subsection{The auxiliary node order}
