@@ -119,8 +119,8 @@ the retained cut has final rank $m$, and the final support has height
 $m+1$, so it has no strict descendant there.  The common complete
 signature would require the cut to remain interior in a target.
 The boundary module proves that an actual target at positive local
-height therefore requires $q>1$.  This necessary bound is not an
-existence theorem at larger heights.  This is the expected excluded
+height therefore requires $q>1$.  The general induced-Q construction
+now proves that this bound is sufficient as well.  This is the expected excluded
 boundary of the intended application: the recorded paper assumption
 $m'<M-1$ and the local dimension $q=M-m'$ already give $q\ge2$.
 It is not a new counterexample to Lemma~27.
@@ -137,6 +137,28 @@ starred Q preimage in the mixed span.  This establishes nonemptiness of
 one genuine target class; it does not prove target existence for all
 admissible parameters or exercise fixed auxiliary constants.
 
+The general theorem in \texttt{ForwardQFinalTargetExistence} now supplies
+an actual eligible starred target for every admissible source and every
+supplied enlarged local mixed word when $q\ge2$.  Choose any assignment
+of original alphabet letters to the final roots, take the genuine induced
+enlarged starred input, and apply fibrewise Q.  Its complete finite-set
+signature equals that of the source: the old interior is unchanged,
+exceptional leaves have exactly the old first-boundary nodes, and the full
+strict rooted partial word is preserved.  A symbolic substitution sends
+early final roots through the original source substitution and late roots
+to their assigned letters.  Fixed auxiliary constants retain their actual
+visible-ancestor decoding.  Every Q vertex lies in the final support:
+the old base is retained, and marked local rank-zero roots survive both
+possible frontier ranks $m$ and $m+1$ under the budget $m+q$.
+
+Thus, among positive local heights, the prescribed starred target class
+is nonempty if and only if $q\ge2$.  The stronger source-facing assembly
+constructs the complete final word, retains all initial roots and symbols,
+proves its evaluated span nonempty, exhibits an eligible starred target,
+and covers every eligible target by a genuine Q preimage in the supplied
+local mixed span.  It requires no extra matching, order, target-existence,
+or alphabet-cardinality premise.  The earlier APIs are unchanged.
+
 The source and target interfaces are implemented in the
 \texttt{ForwardQSourceRefinement} and
 \texttt{ForwardQFinalSetSpanTransfer} modules; the original literal
@@ -146,8 +168,10 @@ packaging is in \texttt{ForwardQFinalEnlargedCompleteWord}, and initial
 root and symbol retention is in
 \texttt{ForwardQFinalInitialRootRetention}.
 This constructs a corrected Q transfer from a supplied local mixed word.
-The required Ramsey witness, published selector, printed-order comparison,
-quantitative estimates and final induction remain open.
+The merged Track E work supplies the corrected forward canonical selector
+and its source-independent simple-to-smooth transport.  The required local
+Ramsey witness, printed-order comparison, quantitative estimates, residual
+record colour control and final induction remain separate obligations.
 
 \section{Detailed issues}
 

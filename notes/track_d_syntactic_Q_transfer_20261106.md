@@ -3,8 +3,9 @@
 **Date:** 6 November 2026. **Starting main:**
 `910efe61e94a284be065f4a782bec878c5d1170f`, through merged PR #513.
 **Assignment:** issue #517, `track-d/q-span-refinement`.
-**Integrated main:** `4306242fc876b0ddc03143caea8a3abc433568d9`,
-including Track A PRs #522, #523, #524, #525, and #529.
+**Integrated main:** `cce5b81bc17ed4b9140d06eebc705a45d9bc41ae`,
+including Track A PRs #522, #523, #524, #525, and #529, and the
+completed Track E selector work in PR #526.
 
 ## Exact scope and the corrected inclusion
 
@@ -157,14 +158,14 @@ source-relative target. The companion
 `exists_complete_set_Q_transfer_of_source_refinement` constructs the fibre
 frame from the explicit original source refinement and ambient support.
 
-## Exact remaining obligations
+## General target existence and the exact positive-height threshold
 
 This is a corrected **Q transfer theorem conditional on the supplied
 local mixed word**. It neither constructs a local Ramsey witness nor
 assumes a passed-in `Good` condition as a substitute for that existence
-problem. It does not assert that the eligible starred target class is
-nonempty for every parameter choice; its universal coverage assertion
-applies to any supplied eligible target.
+problem. The new `ForwardQFinalTargetExistence` module proves that the
+eligible starred target class is nonempty for **every** admissible source
+and supplied local mixed word when `q≥2`.
 
 The boundary module `ForwardQFinalTargetHeightBoundary` proves that both
 the actual set-signature and the stronger literal target classes are
@@ -173,10 +174,10 @@ has final intrinsic rank m, whereas every final-support rank is less
 than m+1. It has no strict descendant in that support. A same-complete-
 signature starred target would have the same cut as an interior vertex,
 which is impossible. Thus an actual target at positive local height
-requires q>1. This is only a necessary bound: general target existence
-at q=2 or at another sufficient height remains to be proved. Nonemptiness of the
-constant evaluated span is kept separate from this target-existence
-obligation. This is the expected excluded boundary of the intended
+requires q>1. Combined with the general existence construction, the bound
+is exact: at positive local height the target class is nonempty **if and
+only if `2≤q`**. Nonemptiness of the constant evaluated span remains a
+separate conclusion. This is the expected excluded boundary of the intended
 Lemma 27 application: the existing audit records the paper assumption
 `m′ < M−1`, and the architecture notes identify `q = M−m′`. Thus the
 intended parameters already require q≥2. This result does not expose a
@@ -202,25 +203,60 @@ nonemptiness, distinct from the general nonempty evaluated-span result.
 It is one concrete instance; its identity local components contain no
 fixed auxiliary constants, and its root cut has an empty strict prefix.
 
-A concrete candidate for positive target existence at q≥2 is obtained
-by assigning the fallback original letter to every final root, taking
-the induced enlarged starred input, and applying the fibrewise Q map.
-The existing two-frontier rank bounds and selected-root lemmas support
-the required whole-tree containment. The remaining proof must establish
-the symbolic refinement and equality of the complete finite-set
-signatures of this candidate for every admissible source and local word.
-The new re-enumeration bridge already resolves the list-representation
-restriction; it does not prove these independent existence obligations.
-A permutation of an observed tree alone still does not establish
-equality of its complete signature.
+The general witness is obtained by assigning the fallback original letter
+to every final root, taking the actual induced enlarged starred input,
+and applying fibrewise Q. In fact, every assignment of original alphabet
+letters to the final roots gives an eligible target when `q≥2`.
+
+The proof has three independent parts:
+
+1. `ForwardQFinalInducedSignature` proves that **every** genuine enlarged
+   starred Q output has the complete finite-set signature of its source.
+   Its interior is exactly the source interior. Every exceptional source
+   boundary has a corresponding output terminal extending that boundary,
+   and every exceptional output terminal arises this way. Boundary
+   uniqueness gives the same first-boundary node set. The fibrewise
+   symbol law gives equality of the full strict rooted partial word,
+   including its domain.
+2. `ForwardQFinalInducedRefinement` supplies a uniform symbolic
+   substitution from the final word to the actual induced Q word. Early
+   final roots use the original source substitution; late roots use the
+   chosen original alphabet letter. This distinction preserves the old
+   variables and handles additional retained ambient roots correctly.
+   Fixed auxiliary constants use their actual visible-ancestor decoder;
+   no auxiliary letter is silently replaced by a fallback.
+3. `ForwardQFinalInducedSupport` proves whole-tree support containment.
+   The Q base lies in the retained initial support. Every marked Q leaf
+   projects the intrinsic-rank-zero root of its local component. The
+   ambient frontier has rank `m` or `m+1`, and `q≥2` places either projected
+   root below the final height budget `m+q`.
+
+`sourceRelativeSetTarget_nonempty_iff_two_le` combines this construction
+with the height-one obstruction. The stronger source-facing assembly is
+
+```lean
+ForwardQFinalTargetExistence.
+  exists_complete_nonempty_set_Q_transfer_of_source_refinement
+```
+
+It derives the genuine fibre frame from the actual ambient support and
+source substitution, constructs the complete final word, retains every
+initial root and symbol, proves its evaluated span nonempty, exhibits an
+eligible starred target, and covers every eligible target by a genuine
+starred Q preimage in the supplied local mixed span. All earlier APIs keep
+their theorem types.
+
+## Exact remaining obligations
 
 The printed reverse-lex starred domain has not been identified with the
 corrected forward domain. The known naive-reindexing counterexample is
 preserved in `ForwardQStarredOrderReindexObstruction`; the corrected
-forward order is explicit in the transfer's types. The published
-Definition 24 selector, the quantitative
-Corollary 22 repair, relative colour control preserving the residual
-Γ₁ record, and the Lemma 28/Theorem 25 induction remain separate work.
+forward order is explicit in the transfer's types. The merged Track E
+work supplies the corrected forward canonical selector and its
+source-independent simple-to-smooth transport. The quantitative
+Corollary 22 repair, construction of the required local Ramsey witness,
+relative colour control preserving the residual Γ₁ record, and the
+Lemma 28/Theorem 25 induction remain separate work.
 In particular, allowing a singleton original alphabet in this symbolic
 transfer does not validate the printed unary Ramsey theorem.
 
