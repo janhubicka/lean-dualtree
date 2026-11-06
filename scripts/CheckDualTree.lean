@@ -2560,3 +2560,18 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSemiCompleteSimplicity.simple_exists_total_smooth_Q_pullback
 #print axioms DualTree.ForwardSemiCompleteModelIso.starredRootAll_eq_of_tree_eq
 #print axioms DualTree.ForwardSemiCompleteModelIso.canonicalWalkAll_eq_of_tree_eq
+
+/-! Track E follow-up: source semantic and syntactic simplicity interface. -/
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.SemanticObservation
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.observe
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.rootLabel_eq_underlyingSymbol
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.SyntacticBelow
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.refines_of_syntacticBelow
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.syntacticBelow_of_refines
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.syntacticBelow_iff_refines
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.SemanticSyntacticSimpleWithin
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.SemanticSyntacticSimple
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.simpleWithin_to_semanticSyntactic
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.semanticSyntactic_to_simpleWithin
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.simpleWithin_iff_semanticSyntactic
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.simple_iff_semanticSyntactic
