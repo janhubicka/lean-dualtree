@@ -148,7 +148,8 @@ theorem exists_complete_nonempty_set_source_relative_Q_transfer
             hb g fallback w) = observe O := by
   have hq : 0 < q := by omega
   refine ⟨enlargedInterpolatedFinalKWord g f fallback hb hq,
-    enlargedFinal_syntacticallyRefines_ambient g f fallback,
+    ForwardQFinalSyntacticSpanTransfer.enlargedFinal_syntacticallyRefines_ambient
+      g f fallback,
     enlargedFinal_retains_initial_roots g f fallback,
     enlargedFinal_preserves_initial_symbols g f fallback,
     enlargedInterpolatedFinalKWord_span_nonempty g f fallback hb hq,
