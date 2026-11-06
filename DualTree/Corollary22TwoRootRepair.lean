@@ -104,8 +104,8 @@ theorem moveGamma1Markers_smooth
   refine ⟨fun _ _ => rfl, fun _ => rfl, ?_⟩
   intro i
   cases hg : gamma1 i with
-  | true => simp [SmoothRelated, hg, moveGamma1Markers]
-  | false => simp [SmoothRelated, hg, moveGamma1Markers]
+  | true => simp [hg, moveGamma1Markers]
+  | false => simp [hg, moveGamma1Markers]
 
 /-- The moved markers stay in the actual support of their own components. -/
 theorem moveGamma1Markers_mem_span
@@ -280,9 +280,13 @@ theorem good_smooth_color_eq_of_bullet_points
     have hright := normalizeGamma2Letters_at_bullet
       f y hy (fun j => !(gamma1 j)) fallback i
     have hleft' : X.words i.1 (X.bulletPoint i) = fallback := by
-      simpa [X, normalizeGamma1Letters, hg] using hleft
+      change (normalizeGamma2Letters f x hx
+        (fun j => !(gamma1 j)) fallback).words i.1 (x.bulletPoint i) = fallback
+      simpa [hg] using hleft
     have hright' : Y.words i.1 (Y.bulletPoint i) = fallback := by
-      simpa [Y, normalizeGamma1Letters, hg] using hright
+      change (normalizeGamma2Letters f y hy
+        (fun j => !(gamma1 j)) fallback).words i.1 (y.bulletPoint i) = fallback
+      simpa [hg] using hright
     exact hleft'.trans hright'.symm
   calc
     c x = c X := color_eq_normalizeGamma1Letters

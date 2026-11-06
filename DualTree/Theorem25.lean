@@ -29,10 +29,10 @@ open CorrectedTheoremSpec
 /-- A total colour on signatures.  The fallback is used only for signatures
 not realized by any starred refinement of `f`. -/
 noncomputable def signatureColor
-    {b n l k : Nat} {α γ Σ : Type*}
-    (signature : Starred b n l α → Σ)
+    {b n l k : Nat} {α γ Sig : Type*}
+    (signature : Starred b n l α → Sig)
     (color : StarredObservation b n α → γ)
-    (f : Word b n k α) (fallback : γ) (s : Σ) : γ := by
+    (f : Word b n k α) (fallback : γ) (s : Sig) : γ := by
   classical
   exact if h : ∃ O : Starred b n l α,
       StarredBelow O f ∧ signature O = s then
@@ -42,8 +42,8 @@ noncomputable def signatureColor
 /-- Signature canonization makes the chosen colour exact on every realized
 signature, independently of the representative selected by choice. -/
 theorem signatureColor_exact
-    {b n l k : Nat} {α γ Σ : Type*}
-    (signature : Starred b n l α → Σ)
+    {b n l k : Nat} {α γ Sig : Type*}
+    (signature : Starred b n l α → Sig)
     (color : StarredObservation b n α → γ)
     (f : Word b n k α) (fallback : γ)
     (hcanonical : Lemma28.SignatureCanonical signature
@@ -60,8 +60,8 @@ theorem signatureColor_exact
 
 /-- Changing the fallback never changes the colour of a realized signature. -/
 theorem signatureColor_fallback_independent
-    {b n l k : Nat} {α γ Σ : Type*}
-    (signature : Starred b n l α → Σ)
+    {b n l k : Nat} {α γ Sig : Type*}
+    (signature : Starred b n l α → Sig)
     (color : StarredObservation b n α → γ)
     (f : Word b n k α) (a a' : γ)
     (hcanonical : Lemma28.SignatureCanonical signature
@@ -74,11 +74,11 @@ theorem signatureColor_fallback_independent
 
 /-- The actual total colour supplied to the lower-interior Ramsey input. -/
 noncomputable def signaturePullback
-    {b n l k : Nat} {α γ Σ : Type*}
-    (signature : Starred b n l α → Σ)
+    {b n l k : Nat} {α γ Sig : Type*}
+    (signature : Starred b n l α → Sig)
     (color : StarredObservation b n α → γ)
     (f : Word b n k α) (fallback : γ)
-    (Q : StarredObservation b n α → Σ) :
+    (Q : StarredObservation b n α → Sig) :
     StarredObservation b n α → γ :=
   fun U => signatureColor signature color f fallback (Q U)
 
@@ -86,11 +86,11 @@ noncomputable def signaturePullback
 of the original colour on upper objects, provided EVERY eligible upper
 signature has a lower preimage in the SAME final refinement. -/
 theorem monochromatic_of_covered_signature_pullback
-    {b n l k m : Nat} {α γ Σ : Type*}
-    (signature : Starred b n (l + 1) α → Σ)
+    {b n l k m : Nat} {α γ Sig : Type*}
+    (signature : Starred b n (l + 1) α → Sig)
     (color : StarredObservation b n α → γ)
     (f : Word b n k α) (g : Word b n m α)
-    (fallback : γ) (Q : StarredObservation b n α → Σ)
+    (fallback : γ) (Q : StarredObservation b n α → Sig)
     (hgf : KVariableWord.SyntacticRefines g f)
     (hcanonical : Lemma28.SignatureCanonical signature
       (fun O => color (starredObserve O)) f)
@@ -196,11 +196,11 @@ The conclusion is proved from these inputs by the real signature-colour
 factorization and substitution composition, rather than assuming the desired
 upper-interior monochromaticity. -/
 theorem step_of_relative_ramsey
-    {b n l k k' m : Nat} {α γ Σ A : Type*}
-    (signature : Starred b n (l + 1) α → Σ)
+    {b n l k k' m : Nat} {α γ Sig A : Type*}
+    (signature : Starred b n (l + 1) α → Sig)
     (color : StarredObservation b n α → γ)
     (f₁ : Word b n k α) (f₂ : Word b n k' α)
-    (fallback : γ) (Q : StarredObservation b n α → Σ)
+    (fallback : γ) (Q : StarredObservation b n α → Sig)
     (point : Starred b n l α → A → Node b)
     (hf₂f₁ : KVariableWord.SyntacticRefines f₂ f₁)
     (hcanonical : Lemma28.SignatureCanonical signature

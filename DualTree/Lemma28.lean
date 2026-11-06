@@ -30,10 +30,10 @@ open CorrectedTheoremSpec
 /-- Pairwise monochromaticity of one actual signature fibre below a word.
 An empty fibre requires no arbitrary choice of a colour. -/
 def FibreMonochromatic
-    {b n l k : Nat} {α γ Σ : Type*}
-    (signature : Starred b n l α → Σ)
+    {b n l k : Nat} {α γ Sig : Type*}
+    (signature : Starred b n l α → Sig)
     (color : Starred b n l α → γ)
-    (f : Word b n k α) (s : Σ) : Prop :=
+    (f : Word b n k α) (s : Sig) : Prop :=
   ∀ u v : Starred b n l α,
     StarredBelow u f → StarredBelow v f →
     signature u = s → signature v = s → color u = color v
@@ -41,8 +41,8 @@ def FibreMonochromatic
 /-- The desired conclusion of the signature-canonization step, expressed
 without choosing representatives of signature classes. -/
 def SignatureCanonical
-    {b n l k : Nat} {α γ Σ : Type*}
-    (signature : Starred b n l α → Σ)
+    {b n l k : Nat} {α γ Sig : Type*}
+    (signature : Starred b n l α → Sig)
     (color : Starred b n l α → γ)
     (f : Word b n k α) : Prop :=
   ∀ u v : Starred b n l α,
@@ -53,10 +53,10 @@ def SignatureCanonical
 syntactic refinement.  This does not assert stability of a transported
 MODEL signature, whose interpretation can depend on the current word. -/
 theorem fibreMonochromatic_of_syntacticRefines
-    {b n l k k' : Nat} {α γ Σ : Type*}
-    {signature : Starred b n l α → Σ}
+    {b n l k k' : Nat} {α γ Sig : Type*}
+    {signature : Starred b n l α → Sig}
     {color : Starred b n l α → γ}
-    {f : Word b n k α} {g : Word b n k' α} {s : Σ}
+    {f : Word b n k α} {g : Word b n k' α} {s : Sig}
     (hgf : KVariableWord.SyntacticRefines g f)
     (hmono : FibreMonochromatic signature color f s) :
     FibreMonochromatic signature color g s := by
@@ -68,10 +68,10 @@ theorem fibreMonochromatic_of_syntacticRefines
 /-- The first `p` model tasks have monochromatic fibres at their CURRENT
 interpretations in `f`. -/
 def Processed
-    {b n l k : Nat} {α γ Σ : Type*}
-    (signature : Starred b n l α → Σ)
+    {b n l k : Nat} {α γ Sig : Type*}
+    (signature : Starred b n l α → Sig)
     (color : Starred b n l α → γ)
-    (transport : ∀ {q : Nat}, Word b n q α → Nat → Σ)
+    (transport : ∀ {q : Nat}, Word b n q α → Nat → Sig)
     (p : Nat) (f : Word b n k α) : Prop :=
   ∀ i : Nat, i < p →
     FibreMonochromatic signature color f (transport f i)
@@ -80,10 +80,10 @@ def Processed
 signature, while keeping the interpretations of EARLIER model tasks fixed.
 No monochromaticity of the earlier fibres is assumed by this input. -/
 def LocalFusionStep
-    {b n l : Nat} {α γ Σ : Type*}
-    (signature : Starred b n l α → Σ)
+    {b n l : Nat} {α γ Sig : Type*}
+    (signature : Starred b n l α → Sig)
     (color : Starred b n l α → γ)
-    (transport : ∀ {q : Nat}, Word b n q α → Nat → Σ)
+    (transport : ∀ {q : Nat}, Word b n q α → Nat → Sig)
     (height : Nat → Nat) (p : Nat) : Prop :=
   ∀ f : Word b n (height p) α,
     ∃ g : Word b n (height (p + 1)) α,
@@ -95,10 +95,10 @@ def LocalFusionStep
 the actual substitutions and propagates previously processed fibres using
 the explicit transport-stability input at every stage. -/
 theorem finite_signature_fusion
-    {b n l : Nat} {α γ Σ : Type*}
-    (signature : Starred b n l α → Σ)
+    {b n l : Nat} {α γ Sig : Type*}
+    (signature : Starred b n l α → Sig)
     (color : Starred b n l α → γ)
-    (transport : ∀ {q : Nat}, Word b n q α → Nat → Σ)
+    (transport : ∀ {q : Nat}, Word b n q α → Nat → Sig)
     (height : Nat → Nat) (P : Nat)
     (f₀ : Word b n (height 0) α)
     (hstep : ∀ p : Nat, p < P →
@@ -136,9 +136,9 @@ theorem finite_signature_fusion
 /-- Every eligible final signature is represented among the finitely many
 model tasks.  Surjectivity onto unrelated ambient signatures is not required. -/
 def CoversSignatures
-    {b n l k : Nat} {α Σ : Type*}
-    (signature : Starred b n l α → Σ)
-    (transport : ∀ {q : Nat}, Word b n q α → Nat → Σ)
+    {b n l k : Nat} {α Sig : Type*}
+    (signature : Starred b n l α → Sig)
+    (transport : ∀ {q : Nat}, Word b n q α → Nat → Sig)
     (P : Nat) (f : Word b n k α) : Prop :=
   ∀ O : Starred b n l α, StarredBelow O f →
     ∃ i : Nat, i < P ∧ signature O = transport f i
@@ -146,10 +146,10 @@ def CoversSignatures
 /-- Coverage converts the finite list of stabilized fibres into the
 signature-canonical conclusion for ALL starred refinements of the final word. -/
 theorem signatureCanonical_of_processed
-    {b n l k P : Nat} {α γ Σ : Type*}
-    {signature : Starred b n l α → Σ}
+    {b n l k P : Nat} {α γ Sig : Type*}
+    {signature : Starred b n l α → Sig}
     {color : Starred b n l α → γ}
-    {transport : ∀ {q : Nat}, Word b n q α → Nat → Σ}
+    {transport : ∀ {q : Nat}, Word b n q α → Nat → Sig}
     {f : Word b n k α}
     (hprocessed : Processed signature color transport P f)
     (hcover : CoversSignatures signature transport P f) :
@@ -162,10 +162,10 @@ theorem signatureCanonical_of_processed
 an independent hypothesis, restricted to final refinements of the actual
 starting word.  It is not manufactured by the finite induction. -/
 theorem finite_signature_canonization
-    {b n l : Nat} {α γ Σ : Type*}
-    (signature : Starred b n l α → Σ)
+    {b n l : Nat} {α γ Sig : Type*}
+    (signature : Starred b n l α → Sig)
     (color : Starred b n l α → γ)
-    (transport : ∀ {q : Nat}, Word b n q α → Nat → Σ)
+    (transport : ∀ {q : Nat}, Word b n q α → Nat → Sig)
     (height : Nat → Nat) (P : Nat)
     (f₀ : Word b n (height 0) α)
     (hstep : ∀ p : Nat, p < P →

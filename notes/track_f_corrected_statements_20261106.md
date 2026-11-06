@@ -3,6 +3,10 @@
 Scope: [issue #519](https://github.com/janhubicka/lean-dualtree/issues/519),
 branch `track-f/theorem-induction`. Starting commit:
 `910efe61e94a284be065f4a782bec878c5d1170f` (merged #513).
+During the pass, main advanced to
+`ace57b05e761869976ce8d50094a18b766f4fd77` (merged #522–523).
+That integration is included, retaining the new interleaved height-one
+Track A results and all four of their audit endpoints.
 This continues the A–G split in the **T A** chat. Tracks A–E supply
 mathematical construction and transport inputs; this track owns their
 statement-level integration and the final induction. It does not close
@@ -50,7 +54,7 @@ polymorphic in both types.
 | Source | Issue in the printed statement or proof | Target and current boundary |
 | --- | --- | --- |
 | Theorem 3, p. 3 | Unary evaluated spans collapse. The checked obstruction holds at every sufficiently large ambient height. Raw support-list colours would create an additional representation error. | `CorrectedTheorem3`: all positive branching, alphabet, source/target dimensions and colour counts; positive eventual threshold; syntactic refinements; semantic colours. The equivalence with the span conclusion is proved under `HasTwoLetters`. The Ramsey existence claim remains a target proposition. |
-| Theorem 13 / Definition 12, p. 11 | Mixed-product construction still needs arbitrary coordinate kinds, genuine D₁ leaves, higher intrinsic heights, and relative use inside prescribed source words. Corrected ordered geometry must be used consistently. | Actual `MixedProduct.VariableWord` and `Good`, with an explicit finite coordinate-kind map and complete-skew support. Existence is not supplied by this track. The p/q height-one results are not silently promoted to the full theorem. |
+| Theorem 13 / Definition 12, p. 11 | Mixed-product construction still needs genuine D₁ leaves, higher intrinsic heights, and relative use inside prescribed source words. Corrected ordered geometry must be used consistently. | Actual `MixedProduct.VariableWord` and `Good`, with an explicit finite coordinate-kind map and complete-skew support. Main now includes arbitrary D₀/D₂ interleavings at height one; these are not promoted to the full theorem. Existence beyond that scope is not supplied by this track. |
 | Corollary 22, p. 25 | The height-one marked-letter colouring is smooth and has a c-good word, but is not monochromatic. The displayed threshold omits a resource needed to remove marked-letter dependence. The `d₂ = 0` call to positive-dimensional CT also needs a separate convention or case. | Separate the algebraic colour argument from Ramsey existence. `Corollary22TwoRootRepair` proves the two-root erasure mechanism on actual mixed spans. A revised `max{2, CT(...)}` intermediate dimension is still a proposed numerical wrapper until the CT/refinement/existence steps are assembled. |
 | Lemma 27, pp. 28–29 | Enlarged alphabet, cone domains, decoded variables, Q ordering, fixed-signature coverage, and the final refined word all need the recorded repairs. Evaluated-word coverage alone is insufficient for a colour of starred objects. | One-signature canonization must yield an actual syntactic refinement, retain the prescribed initial roots, and colour the complete semantic signature fibre. The local step is an explicit input to `Lemma28.LocalFusionStep`; no unproved step is installed as an axiom. |
 | Lemma 28, pp. 29–30 | The iteration suppresses transport of model signatures into the changing current word. Plain refinement preserves a fixed ambient fibre, but need not preserve the interpretation of a model signature. | `finite_signature_fusion` proves the iteration from one-signature canonization plus preservation of earlier model interpretations. `finite_signature_canonization` additionally requires final signature coverage. The number of tasks must be computed in the finite model tree independently of the ambient height. |
@@ -186,6 +190,8 @@ two-root colour argument, with the mathematical inputs explicitly exposed.
 
 New source modules are registered in the full `DualTree` import umbrella.
 Their public proof endpoints are registered in `scripts/CheckDualTree.lean`.
+This change adds 32 endpoints; after integrating #522–523, the registered
+total is 2,221. This count is not a percentage of the source theorem.
 Lean compilation, the existing source/axiom gates, and finite Q regressions
 are required before the change is reported as verified. See the pull
 request's checks for the tested commit; this note makes no claim about
