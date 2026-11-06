@@ -320,6 +320,7 @@ private theorem local_word_outside
   classical
   change (pointWord localRoots (by decide) (Sum.inl false : Sum Bool (Fin 1))).word z = _
   simp only [pointWord, dite_eq_right hz]
+  rfl
 
 private theorem local_symbol_eq
     (i : Index binaryFrame.core)

@@ -76,9 +76,24 @@ private theorem observe_eq_of_word_eq_tree_perm
     intro t
     simpa only [List.mem_toFinset] using (hperm.mem_iff : t ∈ O'.tree ↔ t ∈ O.tree)
   · funext s
-    cases hs : O.word.word s with
-    | inl a => simp only [ForwardQSimpleLetterSmooth.rootLabel, hword, hs]
-    | inr v => simp only [ForwardQSimpleLetterSmooth.rootLabel, hword, hs]
+    have hlabel (P : StarredSignature.StarredWord b n l α
+        (SkewTree.forwardAuxB (b := b))) :
+        ForwardQSimpleLetterSmooth.rootLabel P s =
+          CutPreservation.underlyingSymbol P.word s := by
+      cases h : P.word.word s with
+      | inl a =>
+          simp only [ForwardQSimpleLetterSmooth.rootLabel,
+            CutPreservation.underlyingSymbol, h]
+      | inr v =>
+          simp only [ForwardQSimpleLetterSmooth.rootLabel,
+            CutPreservation.underlyingSymbol, h]
+    calc
+      ForwardQSimpleLetterSmooth.rootLabel O' s =
+          CutPreservation.underlyingSymbol O'.word s := hlabel O'
+      _ = CutPreservation.underlyingSymbol O.word s :=
+        congrArg (fun W : VariableWord b n α =>
+          CutPreservation.underlyingSymbol W s) hword
+      _ = ForwardQSimpleLetterSmooth.rootLabel O s := (hlabel O).symm
 
 /-- Every target with the actual complete set signature has a genuine
 enlarged starred Q preimage in the supplied local mixed span. The support
