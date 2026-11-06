@@ -15,6 +15,10 @@ Track D source at `6237c4a1ce3b26e483b7399770ae3d42d90bf4bd` from #527.
 Track E supplies the intrinsic selector and total smooth Q extension;
 Track D supplies the actual complete refinement and set-signature Q
 preimages. The new F results compose those proved inputs.
+Main then advanced to `b985bfee976cb682142986579de0f4680d7e6400`
+through Track B #530. Its genuine D1 leaf geometry and nonempty height-one
+mixed spans are retained, with all 66 checks and its finite regression.
+This geometry does not yet supply the higher-dimensional c-good word.
 This continues the A–G split in the **T A** chat. Tracks A–E supply
 mathematical construction and transport inputs; this track owns their
 statement-level integration and the final induction. It does not close
@@ -67,7 +71,7 @@ polymorphic in both types.
 | Source | Issue in the printed statement or proof | Target and current boundary |
 | --- | --- | --- |
 | Theorem 3, p. 3 | Unary evaluated spans collapse. The checked obstruction holds at every sufficiently large ambient height. Raw support-list colours would create an additional representation error. | `CorrectedTheorem3`: all positive branching, alphabet, source/target dimensions and colour counts; positive eventual threshold; syntactic refinements; semantic colours. The equivalence with the span conclusion is proved under `HasTwoLetters`. The Ramsey existence claim remains a target proposition. |
-| Theorem 13 / Definition 12, p. 11 | Mixed-product construction still needs genuine D₁ leaves, higher intrinsic heights, and relative use inside prescribed source words. Corrected ordered geometry must be used consistently. | Actual `MixedProduct.VariableWord` and `Good`, with an explicit finite coordinate-kind map and complete-skew support. Main now includes arbitrary D₀/D₂ interleavings at height one; these are not promoted to the full theorem. Existence beyond that scope is not supplied by this track. |
+| Theorem 13 / Definition 12, p. 11 | Mixed-product construction needs genuine D₁ leaves, higher intrinsic heights, and relative use inside prescribed source words. Corrected ordered geometry must be used consistently. | Actual `MixedProduct.VariableWord` and `Good`, with an explicit finite coordinate-kind map and complete-skew support. Main includes c-good arbitrary D₀/D₂ interleavings at height one, and genuine D₁ height-one leaf geometry with nonempty mixed spans for arbitrary coordinate patterns. Colour-dependent c-good existence with D₁ and higher intrinsic dimensions remains open. |
 | Corollary 22, p. 25 | The height-one marked-letter colouring is smooth and has a c-good word, but is not monochromatic. The displayed threshold omits a resource needed to remove marked-letter dependence. The `d₂ = 0` call to positive-dimensional CT also needs a separate convention or case. | `Corollary22TwoRootRepair` proves two-root erasure on actual mixed spans. `Corollary22CanonicalQ` now applies it to the total smooth extension of an actual canonical-simple Q colour. Only selected canonical boundary points remain; when the selected set is empty, the starred Q image is monochromatic without a CT selection. A revised `max{2, CT(...)}` bound remains unproved until Ramsey existence and the nonempty residual-point case are assembled. |
 | Lemma 27, pp. 28–29 | Enlarged alphabet, cone domains, decoded variables, Q ordering, fixed-signature coverage, and the final refined word need the recorded repairs. Evaluated-word coverage alone is insufficient for a colour of starred objects. | `Lemma27CanonicalColor` proves the empty-selected-boundary case from a supplied full-span c-good local word of dimension at least two. It constructs the actual complete syntactic refinement, retains every initial root and rooted symbol, and proves `Lemma28.FibreMonochromatic` for the entire fixed set-signature fibre. Q coverage is proved by Track D, not assumed. Local mixed Ramsey existence and the general boundary partition remain open. |
 | Lemma 28, pp. 29–30 | The iteration suppresses transport of model signatures into the changing current word. Plain refinement preserves a fixed ambient fibre, but need not preserve the interpretation of a model signature. | `finite_signature_fusion` and `finite_signature_canonization` prove the conditional iteration. `Lemma27CanonicalColor.canonicalSignature` now supplies a genuine signature function, with a uniquely determined forward-maximal interior cut, and identifies its eligible fibres exactly with Track D's target class. Increasing-cut model transport, final coverage, and an ambient-independent model task count remain open. |
@@ -235,9 +239,10 @@ hypothesis is automatically valid relatively.
 
 ## Remaining integration work
 
-1. Tracks A–C: extend the proved nonvacuous no-D1 height-one construction
-   to D1, higher intrinsic heights, eventual ambient-height bounds, and
-   the relative refinements required by local canonization. The new local
+1. Tracks A–C: height-one D1 geometry and nonempty mixed spans are now
+   proved. Supply colour-dependent c-good existence with D1 and arbitrary
+   interleavings, higher intrinsic dimensions including their leaf geometry,
+   eventual ambient-height bounds, and relative refinements. The new local
    theorem specifically needs full-span c-goodness over the enlarged alphabet.
 2. Use the completed Track D Q/refinement coverage and Track E canonical
    smooth extension throughout the local construction. Establish residual
@@ -264,7 +269,7 @@ local Ramsey and model-transport inputs remain explicitly exposed.
 New source modules are registered in the full `DualTree` import umbrella.
 Their public proof endpoints are registered in `scripts/CheckDualTree.lean`.
 Track F now adds 52 proof endpoints, including 20 in this continuation.
-With the integrated Track D and E results, the registered total is 2,421.
+With the integrated Track B, D, and E results, the registered total is 2,487.
 This count is not a percentage of the source theorem.
 Lean compilation, the existing source/axiom gates, and finite Q regressions
 are required before the change is reported as verified. See the pull

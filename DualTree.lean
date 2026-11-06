@@ -2,6 +2,9 @@ import DualTree.Lemma27CanonicalColor
 import DualTree.ForwardQFinalTargetNonemptyAudit
 import DualTree.ForwardQFinalStarredReenumerationObservation
 import DualTree.ForwardQSourceRefinementAudit
+import DualTree.UpLeafAudit
+import DualTree.UpLeafCanonical
+import DualTree.UpLeafExamples
 import DualTree.Insensitivity
 import DualTree.Remark1Audit
 import DualTree.StarInsensitivity
