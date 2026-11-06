@@ -205,7 +205,7 @@ theorem cut_heapIndex_succ_eq_l
       has_address U t.1 (List.mem_filter.mp t.2).1
     let u : Address U := ⟨a, hadm⟩
     have hint : (realize U u).1 ∈ SkewTree.interior U.tree := by
-      change CanonicalSupportWalk.walk U.tree (starredRootAll U) a ∈ _
+      change canonicalWalkAll U a ∈ _
       rw [hwalk]
       exact t.2
     have hle := (address_interior_iff_heap_le_cut hb U c u).1 hint

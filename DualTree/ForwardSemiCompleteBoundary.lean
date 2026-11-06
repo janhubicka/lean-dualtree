@@ -153,7 +153,7 @@ theorem boundaryRealize_surjective
   obtain ⟨a, hadm, hwalk, _⟩ := has_address U t.1 t.2.1
   let u : Address U := ⟨a, hadm⟩
   have hLeaf : (realize U u).1 ∉ SkewTree.interior U.tree := by
-    change CanonicalSupportWalk.walk U.tree (starredRootAll U) a ∉ _
+    change canonicalWalkAll U a ∉ _
     rw [hwalk]
     exact t.2.2
   refine ⟨⟨a, leaf_address_boundary hb U u hLeaf⟩, ?_⟩

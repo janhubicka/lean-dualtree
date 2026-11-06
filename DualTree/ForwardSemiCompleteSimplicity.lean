@@ -281,8 +281,9 @@ theorem gamma2_iff_boundaryB2
     (markerB2OfModelA hb c (modelB2 hb c B2))
     ((modelAToD2 hb c) ((boundaryEquivModelA hb c) a)) = false ↔
       a ∈ B2
-  rw [← ForwardQPaperSelectorReduction.modelA_B2_gamma2_iff]
-  exact boundary_mem_modelB2_iff hb c B2 a
+  exact (ForwardQPaperSelectorReduction.modelA_B2_gamma2_iff
+    hb c (modelB2 hb c B2) ((boundaryEquivModelA hb c) a)).symm.trans
+    (boundary_mem_modelB2_iff hb c B2 a)
 
 /-- On every actual corrected Q output the source-independent
 selector is its true projected D2 terminal. The identification
