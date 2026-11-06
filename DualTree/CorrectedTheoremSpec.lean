@@ -211,14 +211,19 @@ theorem eventualBound_mono {P : Nat → Prop} {N M : Nat}
 
 /-- A least bound is introduced ONLY after an existence proof is supplied. -/
 noncomputable def leastBound (P : Nat → Prop)
-    (h : ∃ N, EventualBound P N) : Nat := Nat.find h
+    (h : ∃ N, EventualBound P N) : Nat := by
+  classical
+  exact Nat.find h
 
 theorem leastBound_spec (P : Nat → Prop) (h : ∃ N, EventualBound P N) :
-    EventualBound P (leastBound P h) := Nat.find_spec h
+    EventualBound P (leastBound P h) := by
+  classical
+  exact Nat.find_spec h
 
 theorem leastBound_le (P : Nat → Prop) (h : ∃ N, EventualBound P N)
-    {N : Nat} (hN : EventualBound P N) : leastBound P h ≤ N :=
-  Nat.find_min' h hN
+    {N : Nat} (hN : EventualBound P N) : leastBound P h ≤ N := by
+  classical
+  exact Nat.find_min' h hN
 
 /-- Alphabet size is explicit, including in the partial-tree target below. -/
 def TGRBound (b ell k m r N : Nat) : Prop :=

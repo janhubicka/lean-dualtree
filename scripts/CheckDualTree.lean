@@ -2512,3 +2512,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Corollary22TwoRootRepair.good_smooth_color_eq_of_gamma2_points
 #print axioms DualTree.Corollary22TwoRootRepair.good_smooth_monochromatic_all_gamma1
 #print axioms DualTree.Corollary22TwoRootRepair.good_smooth_color_eq_of_two_le_dimension
+#print axioms DualTree.InterleavedSpan.element_eq_of_fields
+#print axioms DualTree.InterleavedSpan.span_element_eq_parameterElement
+#print axioms DualTree.InterleavedRamsey.mixedWord_good_of_uniform_flat
+#print axioms DualTree.InterleavedRamsey.exists_good_interleaved_height_one
