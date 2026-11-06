@@ -2482,3 +2482,6 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InterleavedSpan.span_element_eq_parameterElement
 #print axioms DualTree.InterleavedRamsey.mixedWord_good_of_uniform_flat
 #print axioms DualTree.InterleavedRamsey.exists_good_interleaved_height_one
+#print axioms DualTree.InterleavedExactSpan.parameterElement_mem_span
+#print axioms DualTree.InterleavedExactSpan.mixedWord_span_eq_parameter_range
+#print axioms DualTree.InterleavedExactSpan.mixedWord_span_nonempty
