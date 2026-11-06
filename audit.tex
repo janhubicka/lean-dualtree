@@ -102,6 +102,18 @@ The original two-letter span-based interfaces are retained as corollaries.
 The accompanying unary regression uses two actual complete-support words
 with equal evaluated spans but no such syntactic refinement.
 
+The source-facing target predicate now uses the signature's actual finite
+node set, retaining equality of the full optional rooted partial word.
+Equal partial-word domains recover the common cut; equal signature node
+sets determine the old interior nodes and exceptional first boundaries.
+The genuine first-boundary injections give a bijection of exceptional
+leaves.  Re-enumerating the target with source-ordered interior and matched
+boundary blocks gives a literal-signature representative with exactly
+the same nodes and the same variable word.  This discharges the former
+signature-list restriction without changing the existing literal APIs.
+The complete assembly in \texttt{ForwardQFinalSetSpanTransfer} covers all
+such set-signature targets.
+
 At local height $q=1$, the corresponding starred target class is empty:
 the retained cut has final rank $m$, and the final support has height
 $m+1$, so it has no strict descendant there.  The common complete
@@ -127,7 +139,9 @@ admissible parameters or exercise fixed auxiliary constants.
 
 The source and target interfaces are implemented in the
 \texttt{ForwardQSourceRefinement} and
-\texttt{ForwardQFinalSyntacticSpanTransfer} modules; the complete-support
+\texttt{ForwardQFinalSetSpanTransfer} modules; the original literal
+interface remains in \texttt{ForwardQFinalSyntacticSpanTransfer}.
+The complete-support
 packaging is in \texttt{ForwardQFinalEnlargedCompleteWord}, and initial
 root and symbol retention is in
 \texttt{ForwardQFinalInitialRootRetention}.

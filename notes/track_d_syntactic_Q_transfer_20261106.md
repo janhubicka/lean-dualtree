@@ -28,10 +28,12 @@ ambient interpolation. The independent ambient refinement has direction
 constant evaluated span of `f′` is claimed. The retained-root obstructions
 to that different assertion remain valid.
 
-`SourceRelativeTarget` specifies the bracketed class exactly:
+`SourceRelativeSetTarget` specifies the bracketed class exactly:
 
 1. The target has the same **complete corrected forward signature** as
-   the source, with its target cut explicitly quantified.
+   the source, with its target cut explicitly quantified. The signature
+   tree is its finite node set; the rooted partial word includes its
+   full strict initial domain.
 2. Its word is a uniform syntactic substitution of the final word.
 3. Every vertex of its tree, including its terminal leaves, belongs to
    the final word's actual support.
@@ -39,6 +41,9 @@ to that different assertion remain valid.
 The third condition does not follow from word substitution: the word's
 variables describe interior roots, and do not alone control terminal
 tree vertices. It remains explicit throughout the theorem.
+The earlier `SourceRelativeTarget` interface, which additionally fixes a
+literal signature-tree list enumeration, remains available as a stronger
+special case with its existing theorem types.
 
 ## Why syntactic refinement matters
 
@@ -81,11 +86,39 @@ enlarged letter on its entire fibre. Composing the target substitution
 with the actual final-to-ambient substitution extends the identity to
 every original ambient fibre and hence every bounded position.
 
+No occurrence-Hall or retained-root matching premise is needed by this
+construction. The actual source fibres and complete signature determine
+the old-root correspondence, while selected local variable tags have
+their genuine injective projections. The earlier conditional Hall
+lemmas and unrestricted reverse-coverage obstructions are retained.
+
 The target's tree reconstruction and automatic D₂-order proof are
 unchanged. They promote this actual mixed-span input to the corrected
 starred subtype. The resulting Q word has the target's complete
 tree-and-rooted-word observation; tree enumerations are compared by
 permutation, never by an unjustified literal list equality.
+
+The finite-set signature is connected to the existing literal interface
+by an actual re-enumeration proof. Equal full partial-word domains first
+force the same cut. At that cut, signature nodes at or before the cut
+are precisely the original interior nodes, and the remaining signature
+nodes are precisely the exceptional first boundaries. Thus equality of
+signature node sets gives equal interior membership and a bijection of
+exceptional leaves preserving their first-boundary nodes. Injectivity of
+the genuine boundary maps is supplied by the existing source-frame
+geometry. The target's containment in the ambient support, needed to
+construct its frame, follows from its final-support containment.
+
+Enumerate the target as the source's interior list, then its exceptional
+leaves in the matched source order, then its leaves below the cut. This
+is a permutation of the original target tree. Its interior and mapped
+exceptional-boundary lists agree literally with the corresponding source
+lists, so the signature's final duplicate removal gives the same list.
+The target's entire variable word is unchanged definitionally, and its
+complete observation is unchanged. The old literal Q transfer therefore
+applies without imposing a choice of enumeration on the external target.
+`ForwardQFinalSetSignature`, `ForwardQFinalStarredReenumeration`, and
+`ForwardQFinalSetSignatureReenumeration` contain these bridges.
 
 The final interpolation is now also packaged as an actual
 `KVariableWord b n (m+q) α forwardAuxB`. Its bounded support enumeration
@@ -110,8 +143,8 @@ the paper's Definition 26 in the corrected forward order.
 The assembly theorem is
 
 ```lean
-ForwardQFinalSyntacticSpanTransfer.
-  exists_complete_source_relative_Q_transfer
+ForwardQFinalSetSpanTransfer.
+  exists_complete_set_source_relative_Q_transfer
 ```
 
 Its inputs are the corrected source fibre frame, a genuine enlarged
@@ -120,7 +153,7 @@ local mixed variable word, a fallback original letter, `0 < b`, and
 refinement, retention of all initial roots, preservation of the entire
 initial word, a nonempty evaluated span, and Q preimages for every
 source-relative target. The companion
-`exists_complete_Q_transfer_of_source_refinement` constructs the fibre
+`exists_complete_set_Q_transfer_of_source_refinement` constructs the fibre
 frame from the explicit original source refinement and ambient support.
 
 ## Exact remaining obligations
@@ -132,8 +165,9 @@ problem. It does not assert that the eligible starred target class is
 nonempty for every parameter choice; its universal coverage assertion
 applies to any supplied eligible target.
 
-The boundary module `ForwardQFinalTargetHeightBoundary` proves that the
-eligible target class is **empty at local height q=1**. The retained cut
+The boundary module `ForwardQFinalTargetHeightBoundary` proves that both
+the actual set-signature and the stronger literal target classes are
+**empty at local height q=1**. The retained cut
 has final intrinsic rank m, whereas every final-support rank is less
 than m+1. It has no strict descendant in that support. A same-complete-
 signature starred target would have the same cut as an interior vertex,
@@ -159,8 +193,9 @@ roots. All three source tree vertices survive in the final support.
 Reading the source symbol at each final root gives an explicit uniform
 substitution from the actual final interpolation to the source word.
 Taking the source itself as target makes complete-signature equality
-reflexive, including its literal tree-list order. The main transfer then
-produces a genuine starred enlarged input in the local mixed span with
+reflexive, including its literal tree-list order. Both the literal and
+the actual set-signature transfer produce a genuine starred enlarged
+input in the local mixed span with
 the same tree-and-word observation. Thus this is positive starred-target
 nonemptiness, distinct from the general nonempty evaluated-span result.
 It is one concrete instance; its identity local components contain no
@@ -171,19 +206,18 @@ by assigning the fallback original letter to every final root, taking
 the induced enlarged starred input, and applying the fibrewise Q map.
 The existing two-frontier rank bounds and selected-root lemmas support
 the required whole-tree containment. The remaining proof must establish
-the symbolic refinement and the complete signature of this candidate.
-In particular, the formal complete signature contains a literal tree
-list, whereas Q enumerates a finite set. One must reenumerate the target
-in the source signature's order and prove that the tree, word, and
-boundary fields are transported correctly, or justify an equivalent
-representation-independent signature interface. A permutation of the
-observed tree alone does not discharge this literal-signature obligation.
-The paper's signature tree is a set; this is a representation issue to
-resolve, not an established mathematical counterexample.
+the symbolic refinement and equality of the complete finite-set
+signatures of this candidate for every admissible source and local word.
+The new re-enumeration bridge already resolves the list-representation
+restriction; it does not prove these independent existence obligations.
+A permutation of an observed tree alone still does not establish
+equality of its complete signature.
 
 The printed reverse-lex starred domain has not been identified with the
 corrected forward domain. The known naive-reindexing counterexample is
-preserved. The published Definition 24 selector, the quantitative
+preserved in `ForwardQStarredOrderReindexObstruction`; the corrected
+forward order is explicit in the transfer's types. The published
+Definition 24 selector, the quantitative
 Corollary 22 repair, relative colour control preserving the residual
 Γ₁ record, and the Lemma 28/Theorem 25 induction remain separate work.
 In particular, allowing a singleton original alphabet in this symbolic
@@ -197,3 +231,7 @@ its unchanged evaluated-span corollaries, and the unary regression.
 Required validation is the full Lean workflow, finite skew/Q
 regressions, source-integrity and minimal-import audit, TeX encoding
 check, and the allowed-axiom gate at the same PR commit.
+
+The paper-level signature and relative-refinement contracts and the
+strict height restriction are in
+[Todorcevic–Tyros, Definition 26 and Lemma 27](https://arxiv.org/pdf/2207.14599v1).

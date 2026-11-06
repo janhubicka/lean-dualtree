@@ -1,4 +1,4 @@
-import DualTree.ForwardQFinalSyntacticSpanTransfer
+import DualTree.ForwardQFinalSetSpanTransfer
 
 /-!
 # A necessary height allowance for fixed-signature targets
@@ -25,6 +25,7 @@ open ForwardQFinalHeightBudget
 open ForwardQFinalGlobalEnlargedWord
 open ForwardQFinalEnlargedCompleteWord
 open ForwardQFinalSyntacticSpanTransfer
+open ForwardQFinalSetSpanTransfer
 
 /-- At local height one, the retained cut has maximal final intrinsic
 rank and cannot have a strict descendant in the exact final support.
@@ -114,5 +115,60 @@ theorem sourceRelativeTarget_requires_two_local_levels
   have hqOne : q = 1 := by omega
   subst q
   exact no_sourceRelativeTarget_at_local_height_one hb g f fallback O hO
+
+/-- The same height-one obstruction holds for the actual finite-set
+signature class; literal agreement of signature enumerations is unnecessary. -/
+theorem no_sourceRelativeSetTarget_at_local_height_one
+    {b n l k m : Nat} {α : Type*}
+    (hb : 0 < b)
+    (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
+    (f : LocalMixedWord g.core 1 (Sum α (Fin (m+1))))
+    (fallback : α)
+    (O : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b))) :
+    ¬ SourceRelativeSetTarget hb g
+      (enlargedInterpolatedFinalWord g f fallback) O := by
+  rintro ⟨cutO, H, _hRef, hTree⟩
+  apply (Lemma27QTerminal.not_interior_of_no_strict_descendant
+    O.tree g.core.cut ?_) H.cutInterior_common
+  intro t ht
+  have hFinal : t ∈ finalBudgetSupport g.core f (m+1) :=
+    (enlargedInterpolatedFinalWord_supportNodes_iff
+      g f fallback t).1 (hTree t ht)
+  exact cut_has_no_strict_descendant_at_local_height_one g.core f t hFinal
+
+/-- The genuine set-signature starred target class is empty at local
+height one, independently of tree enumeration or alphabet cardinality. -/
+theorem no_sourceRelativeSetTarget_exists_at_local_height_one
+    {b n l k m : Nat} {α : Type*}
+    (hb : 0 < b)
+    (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
+    (f : LocalMixedWord g.core 1 (Sum α (Fin (m+1))))
+    (fallback : α) :
+    ¬ ∃ O : StarredSignature.StarredWord b n l α
+        (SkewTree.forwardAuxB (b := b)),
+      SourceRelativeSetTarget hb g
+        (enlargedInterpolatedFinalWord g f fallback) O := by
+  rintro ⟨O, hO⟩
+  exact no_sourceRelativeSetTarget_at_local_height_one hb g f fallback O hO
+
+/-- Any actual set-signature target at positive local height requires
+at least two local levels. This is a necessary parameter restriction. -/
+theorem sourceRelativeSetTarget_requires_two_local_levels
+    {b n l k m q : Nat} {α : Type*}
+    (hb : 0 < b)
+    (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
+    (fallback : α)
+    (hq : 0 < q)
+    (O : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)))
+    (hO : SourceRelativeSetTarget hb g
+      (enlargedInterpolatedFinalWord g f fallback) O) :
+    1 < q := by
+  by_contra hnot
+  have hqOne : q = 1 := by omega
+  subst q
+  exact no_sourceRelativeSetTarget_at_local_height_one hb g f fallback O hO
 
 end DualTree.ForwardQFinalTargetHeightBoundary
