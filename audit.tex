@@ -113,6 +113,18 @@ boundary of the intended application: the recorded paper assumption
 $m'<M-1$ and the local dimension $q=M-m'$ already give $q\ge2$.
 It is not a new counterexample to Lemma~27.
 
+The positive audit \texttt{ForwardQFinalTargetNonemptyAudit} supplies an
+actual binary, two-letter example at $q=2$: the ambient support is the
+full binary tree of height three, the source tree is the root and its
+two children, and the local components are full height-two point-variable
+words.  The source word has its variable only at the root and the fixed
+letter \texttt{false} elsewhere.  The source itself refines the actual
+final word, its entire tree is retained, and its complete signature
+agrees literally.  The transfer theorem therefore yields an actual
+starred Q preimage in the mixed span.  This establishes nonemptiness of
+one genuine target class; it does not prove target existence for all
+admissible parameters or exercise fixed auxiliary constants.
+
 The source and target interfaces are implemented in the
 \texttt{ForwardQSourceRefinement} and
 \texttt{ForwardQFinalSyntacticSpanTransfer} modules; the complete-support

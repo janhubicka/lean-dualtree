@@ -3,6 +3,8 @@
 **Date:** 6 November 2026. **Starting main:**
 `910efe61e94a284be065f4a782bec878c5d1170f`, through merged PR #513.
 **Assignment:** issue #517, `track-d/q-span-refinement`.
+**Integrated main:** `4306242fc876b0ddc03143caea8a3abc433568d9`,
+including Track A PRs #522, #523, #524, #525, and #529.
 
 ## Exact scope and the corrected inclusion
 
@@ -136,14 +138,33 @@ has final intrinsic rank m, whereas every final-support rank is less
 than m+1. It has no strict descendant in that support. A same-complete-
 signature starred target would have the same cut as an interior vertex,
 which is impossible. Thus an actual target at positive local height
-requires q>1. This is only a necessary bound: existence at q=2 or at
-another sufficient height remains to be proved. Nonemptiness of the
+requires q>1. This is only a necessary bound: general target existence
+at q=2 or at another sufficient height remains to be proved. Nonemptiness of the
 constant evaluated span is kept separate from this target-existence
 obligation. This is the expected excluded boundary of the intended
 Lemma 27 application: the existing audit records the paper assumption
 `m′ < M−1`, and the architecture notes identify `q = M−m′`. Thus the
 intended parameters already require q≥2. This result does not expose a
 new error in the paper or change the final height `M = m+q`.
+
+The positive regression `ForwardQFinalTargetNonemptyAudit` constructs an
+actual starred target at the first permitted local height. Its parameters
+are `b=2`, `n=k=3`, `l=1`, `m=0`, `q=2`, alphabet `Bool`, and fallback
+`false`. The complete ambient support contains all seven binary nodes of
+lengths zero, one, and two. The source tree consists of the root and its
+two children, while the source word has its sole variable only at the
+root and `false` at every other position. Each actual frontier coordinate
+has a genuine height-two local word whose variables occur at their own
+roots. All three source tree vertices survive in the final support.
+Reading the source symbol at each final root gives an explicit uniform
+substitution from the actual final interpolation to the source word.
+Taking the source itself as target makes complete-signature equality
+reflexive, including its literal tree-list order. The main transfer then
+produces a genuine starred enlarged input in the local mixed span with
+the same tree-and-word observation. Thus this is positive starred-target
+nonemptiness, distinct from the general nonempty evaluated-span result.
+It is one concrete instance; its identity local components contain no
+fixed auxiliary constants, and its root cut has an empty strict prefix.
 
 A concrete candidate for positive target existence at q≥2 is obtained
 by assigning the fallback original letter to every final root, taking
