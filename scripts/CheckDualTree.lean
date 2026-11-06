@@ -2628,3 +2628,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafMixedWord.mixedWord_span_eq_parameter_range
 #print axioms DualTree.UpLeafMixedWord.mixedWord_span_nonempty
 #print axioms DualTree.UpLeafMixedWord.exists_mixedWord_nonempty
+
+-- Track C recovered stage 1: independent root and all-cone HJ bounds.
+#print axioms DualTree.HigherRamseyFlat.exists_uniform_root_and_cones
+#print axioms DualTree.HigherRamseyFlat.exists_monochromatic_root_and_cone_spans
