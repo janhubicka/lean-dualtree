@@ -2471,3 +2471,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InterleavedMixedWord.component_supportNodes
 #print axioms DualTree.InterleavedMixedWord.vectorWord
 #print axioms DualTree.InterleavedMixedWord.mixedWord
+#print axioms DualTree.InterleavedParameters.parameterElement
+#print axioms DualTree.InterleavedParameters.parameterElement_plain
+#print axioms DualTree.InterleavedParameters.parameterElement_bulletPoint
+#print axioms DualTree.InterleavedParameters.parameterElement_bullet_letter
+#print axioms DualTree.InterleavedParameters.markerTuple
+#print axioms DualTree.InterleavedParameters.markerTuple_parameterElement
+#print axioms DualTree.InterleavedParameters.bulletPoint_fixed_on_span

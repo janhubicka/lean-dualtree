@@ -5,7 +5,7 @@ import DualTree.Theorem3Audit
 import DualTree.AllBulletMixedRamsey
 import DualTree.PlainBulletRayExactSpan
 import DualTree.PlainBlockBulletBlockColorFactor
-import DualTree.InterleavedMixedWord
+import DualTree.InterleavedParameters
 import DualTree.PlainBulletBlockExactSpan
 import DualTree.UnaryMainAudit
 import DualTree.Corollary22Audit
