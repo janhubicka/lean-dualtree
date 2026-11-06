@@ -142,24 +142,24 @@ are a coverage register, not a percentage of the Ramsey theorem.
 
 ## Post-merge verification and semantic-observation handoff
 
-Track E's PR #526 was merged at \`cce5b81bc17ed4b9140d06eebc705a45d9bc41ae\`.
+Track E's PR #526 was merged at `cce5b81bc17ed4b9140d06eebc705a45d9bc41ae`.
 The integrated full Lean run
 [42136766830, attempt 2](https://github.com/janhubicka/lean-dualtree/actions/runs/42136766830/attempts/2)
 passed 2,265 standard-axiom reports, with no unreachable source modules
 and no untrusted declarations.
 
-The follow-up \`ForwardSemiCompleteSemanticBridge\` connects the preceding
+The follow-up `ForwardSemiCompleteSemanticBridge` connects the preceding
 Definition-24 simplicity to semantic observations and the syntactic
 refinement relation used by Track F. It records the exact loss of the
 reverse implication on unary alphabets: source-span simplicity implies
 syntactic simplicity unconditionally, while a syntactic simplicity
 hypothesis implies the span-based version only under
-\`SpanAudit.HasTwoLetters\`. Thus the bridge does not silently repair the
+`SpanAudit.HasTwoLetters`. Thus the bridge does not silently repair the
 unary obstruction or prove that arbitrary corrected Q outputs satisfy
 the source's syntactic-refinement condition.
 
 Track F may instantiate its explicit boundary selector by
-\`ForwardSemiCompleteSimplicity.canonicalPoint\`, its semantic
-observation by the definitionally equal \`observe\`, and its local
+`ForwardSemiCompleteSimplicity.canonicalPoint`, its semantic
+observation by the definitionally equal `observe`, and its local
 simplicity predicate by the bridge. Relative induction and
 target-refinement coverage remain independent obligations.
