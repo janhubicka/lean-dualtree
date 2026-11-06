@@ -90,7 +90,7 @@ combinatorial observation.
 The previously verified exact node-set, full word and local-span
 results are used without strengthening the hypothesis to an
 unrestricted independent final-root span reverse inclusion. -/
-theorem exists_typed_enlarged_target_observation_preimage_of_order
+theorem exists_typed_enlarged_target_observation_preimage_of_syntactic_refinement_of_order
     {b n l k m q : Nat} {α : Type*}
     (hb : 0 < b)
     (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
@@ -101,10 +101,9 @@ theorem exists_typed_enlarged_target_observation_preimage_of_order
     (cutO : Node b)
     (H : ForwardQFinalFullSignature.SameCompleteForwardSignature
       hb g O cutO)
-    (hα : SpanAudit.HasTwoLetters α)
-    (hspan : O.word.span ⊆
+    (hRef : ForwardQSourceRefinement.SyntacticallyRefines O.word
       (ForwardQFinalGlobalEnlargedWord.enlargedInterpolatedFinalWord
-        g f fallback).span)
+        g f fallback))
     (hSupport : ∀ t : Node b, t ∈ O.tree →
       t ∈ ForwardQFinalHeightBudget.finalBudgetSupport
         g.core f (m+q))
@@ -139,8 +138,8 @@ theorem exists_typed_enlarged_target_observation_preimage_of_order
             hb g O cutO H)
           (ForwardQAmbientFibreSymbol.fibreQSymbol
             g fallback raw s) = O.word.word s :=
-    coherent_target_Q_matches_full_word
-      hb g f fallback O cutO H hα hspan hSupport
+    coherent_target_Q_matches_full_word_of_syntactic_refinement
+      hb g f fallback O cutO H hRef hSupport
   have hset :
       (ForwardQAmbientFibreLegalWord.fibreQStarredWord
         hb g fallback w).tree.toFinset = O.tree.toFinset := by
@@ -179,5 +178,38 @@ theorem exists_typed_enlarged_target_observation_preimage_of_order
   refine ⟨w,hwspan,?_⟩
   exact observe_Q_eq_target_of_tree_perm_and_word_reindexed
     hb g fallback O cutO H w hperm hwordQ
+
+/-- Evaluated-span form. The two-letter assumption is used only to
+recover the explicit syntactic refinement required by the general theorem. -/
+theorem exists_typed_enlarged_target_observation_preimage_of_order
+    {b n l k m q : Nat} {α : Type*}
+    (hb : 0 < b)
+    (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
+    (fallback : α)
+    (O : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)))
+    (cutO : Node b)
+    (H : ForwardQFinalFullSignature.SameCompleteForwardSignature
+      hb g O cutO)
+    (hα : SpanAudit.HasTwoLetters α)
+    (hspan : O.word.span ⊆
+      (ForwardQFinalGlobalEnlargedWord.enlargedInterpolatedFinalWord
+        g f fallback).span)
+    (hSupport : ∀ t : Node b, t ∈ O.tree →
+      t ∈ ForwardQFinalHeightBudget.finalBudgetSupport
+        g.core f (m+q))
+    (hOrder : TargetD2Ordered hb g f fallback O cutO H hSupport) :
+    ∃ w : ForwardQEnlargedConstantWords.EnlargedStarredInput
+        g.core fallback,
+      w.1 ∈ f.span ∧
+      observe (ForwardQAmbientFibreLegalWord.fibreQStarredWord
+        hb g fallback w) = observe O := by
+  exact exists_typed_enlarged_target_observation_preimage_of_syntactic_refinement_of_order
+    hb g f fallback O cutO H
+    ((ForwardQSourceRefinement.syntacticallyRefines_iff_span_subset
+        hα O.word (ForwardQFinalGlobalEnlargedWord.enlargedInterpolatedFinalWord
+        g f fallback)).2 hspan) hSupport hOrder
+
 
 end DualTree.ForwardQFinalEnlargedConditionalStarred
