@@ -3,10 +3,12 @@
 Scope: [issue #519](https://github.com/janhubicka/lean-dualtree/issues/519),
 branch `track-f/theorem-induction`. Starting commit:
 `910efe61e94a284be065f4a782bec878c5d1170f` (merged #513).
-During the pass, main advanced to
-`ace57b05e761869976ce8d50094a18b766f4fd77` (merged #522–523).
+During the pass, main advanced through #522–525 and #529 to
+`4306242fc876b0ddc03143caea8a3abc433568d9`.
 That integration is included, retaining the new interleaved height-one
-Track A results and all four of their audit endpoints.
+Track A results and all twelve of their audit endpoints. These include
+exact nonempty spans and unique factorization through the full observed
+D₂ marker tuple; they do not yet provide D₁ or higher-height existence.
 This continues the A–G split in the **T A** chat. Tracks A–E supply
 mathematical construction and transport inputs; this track owns their
 statement-level integration and the final induction. It does not close
@@ -190,8 +192,8 @@ two-root colour argument, with the mathematical inputs explicitly exposed.
 
 New source modules are registered in the full `DualTree` import umbrella.
 Their public proof endpoints are registered in `scripts/CheckDualTree.lean`.
-This change adds 32 endpoints; after integrating #522–523, the registered
-total is 2,221. This count is not a percentage of the source theorem.
+This change adds 32 endpoints; after integrating #522–525 and #529, the
+registered total is 2,229. This count is not a percentage of the source theorem.
 Lean compilation, the existing source/axiom gates, and finite Q regressions
 are required before the change is reported as verified. See the pull
 request's checks for the tested commit; this note makes no claim about
