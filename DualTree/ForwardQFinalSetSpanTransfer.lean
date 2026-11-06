@@ -70,12 +70,14 @@ private theorem observe_eq_of_word_eq_tree_perm
     (hword : O'.word = O.word) (hperm : O'.tree.Perm O.tree) :
     observe O' = observe O := by
   classical
-  change (O'.tree.toFinset, CutPreservation.underlyingSymbol O'.word) =
-    (O.tree.toFinset, CutPreservation.underlyingSymbol O.word)
-  rw [hword]
-  exact congrArg
-    (fun T : Finset (Node b) => (T, CutPreservation.underlyingSymbol O.word))
-    (List.toFinset_eq_of_perm O'.tree O.tree hperm)
+  unfold observe
+  apply Prod.ext
+  · apply Finset.ext
+    intro t
+    simpa only [List.mem_toFinset] using (hperm.mem_iff : t ∈ O'.tree ↔ t ∈ O.tree)
+  · funext s
+    simpa only [ForwardQSimpleLetterSmooth.rootLabel, CutPreservation.underlyingSymbol] using
+      congrArg (fun w : VariableWord b n α => CutPreservation.underlyingSymbol w s) hword
 
 /-- Every target with the actual complete set signature has a genuine
 enlarged starred Q preimage in the supplied local mixed span. The support

@@ -195,10 +195,12 @@ theorem reorderStarredWord_observe
     ForwardQFinalTargetObservation.observe (reorderStarredWord O T hperm) =
       ForwardQFinalTargetObservation.observe O := by
   classical
-  change (T.toFinset, ForwardQSimpleLetterSmooth.rootLabel O) =
-    (O.tree.toFinset, ForwardQSimpleLetterSmooth.rootLabel O)
-  exact congrArg
-    (fun S : Finset (Node b) => (S, ForwardQSimpleLetterSmooth.rootLabel O))
-    (List.toFinset_eq_of_perm T O.tree hperm)
+  unfold ForwardQFinalTargetObservation.observe
+  apply Prod.ext
+  · ext t
+    simp only [List.mem_toFinset, reorderStarredWord_tree]
+    exact hperm.mem_iff
+  · funext s
+    rfl
 
 end DualTree.ForwardQFinalStarredReenumeration
