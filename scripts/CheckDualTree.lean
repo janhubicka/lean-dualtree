@@ -2485,3 +2485,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InterleavedExactSpan.parameterElement_mem_span
 #print axioms DualTree.InterleavedExactSpan.mixedWord_span_eq_parameter_range
 #print axioms DualTree.InterleavedExactSpan.mixedWord_span_nonempty
+#print axioms DualTree.InterleavedColorFactor.good_iff_uniform_flat
+#print axioms DualTree.InterleavedColorFactor.good_iff_factors_through_markerTuple
+#print axioms DualTree.InterleavedColorFactor.markerTuple_factor_unique
+#print axioms DualTree.InterleavedColorFactor.good_iff_unique_markerTuple_factor
