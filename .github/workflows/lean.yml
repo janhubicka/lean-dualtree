@@ -61,6 +61,9 @@ jobs:
       - name: Build full dual-tree audit umbrella
         run: lake build DualTree
 
+      - name: Regress genuine height-one up-leaf geometry
+        run: python3 scripts/check-up-leaf-geometry.py
+
       - name: Regress finite skew meet closure
         run: python3 scripts/check-skew-meet.py
 
@@ -95,7 +98,7 @@ jobs:
             cat proof-audit/dualtree-axioms.log
             exit 1
           }
-          python3 scripts/check-axiom-log.py proof-audit/dualtree-axioms.log 2185 || {
+          python3 scripts/check-axiom-log.py proof-audit/dualtree-axioms.log 2251 || {
             cat proof-audit/dualtree-axioms.log
             exit 1
           }

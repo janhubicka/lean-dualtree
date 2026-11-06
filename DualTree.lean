@@ -38,3 +38,6 @@ Run scripts/audit-lean-library.py --verify-root-minimal to check that
 this file exports exactly the intended graph without duplicate imports.
 -/
 
+import DualTree.UpLeafAudit
+import DualTree.UpLeafCanonical
+import DualTree.UpLeafExamples
