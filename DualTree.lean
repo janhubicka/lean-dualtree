@@ -1,3 +1,6 @@
+import DualTree.UpLeafAudit
+import DualTree.UpLeafCanonical
+import DualTree.UpLeafExamples
 import DualTree.Insensitivity
 import DualTree.Remark1Audit
 import DualTree.StarInsensitivity
