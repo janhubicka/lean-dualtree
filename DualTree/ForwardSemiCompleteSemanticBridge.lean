@@ -231,15 +231,12 @@ theorem Q_syntacticBelow_ambient
     (w : ForwardQEnlargedConstantWords.EnlargedStarredInput
       c.core fallback) :
     SyntacticBelow c.ambient (fibreQStarredWord hb c fallback w) := by
-  have hT :=
-    (ForwardQAmbientFibreSpan.fibreQStarredWord_refines_ambient
-      hb c fallback w).1
-  refine ⟨?_, ?_⟩
-  · intro t ht
-    have htT : t ∈ c.core.T := hT t ht
-    apply List.mem_map.mpr
-    exact ⟨⟨t, c.T_bounded t htT⟩,
-      (c.ambient_support_T ⟨t, c.T_bounded t htT⟩).2 htT, rfl⟩
+  have href : Refines c.ambient
+      (fibreQStarredWord hb c fallback w) :=
+    (refines_iff_frame c _).2
+      (ForwardQAmbientFibreSpan.fibreQStarredWord_refines_ambient
+        hb c fallback w)
+  refine ⟨href.1, ?_⟩
   · refine ⟨ForwardQAmbientFibreSymbol.fibreSubstitution c fallback w.1, ?_⟩
     funext s
     calc
