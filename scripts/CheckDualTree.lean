@@ -2631,3 +2631,7 @@ Transitive axiom audit for the first source-facing validation facts.
 
 -- Track B: flat parameter-Hales--Jewett uniform over genuine D1 trace data.
 #print axioms DualTree.UpLeafTraceHJ.exists_uniform_plain_given_up_and_bullet
+
+-- Track C: two-stage root/cone Hales--Jewett.
+#print axioms DualTree.HigherRamseyFlat.exists_uniform_root_and_cones
+#print axioms DualTree.HigherRamseyFlat.exists_monochromatic_root_and_cone_spans
