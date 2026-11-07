@@ -2629,7 +2629,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafMixedWord.mixedWord_span_nonempty
 #print axioms DualTree.UpLeafMixedWord.exists_mixedWord_nonempty
 
--- Track C: complete intrinsic-height-two star and vector geometry.
+-- Track B: flat parameter-Hales--Jewett uniform over genuine D1 trace data.
+#print axioms DualTree.UpLeafTraceHJ.exists_uniform_plain_given_up_and_bullet
+
+-- Track C: genuine height-two support and vector ordering.
 #print axioms DualTree.HigherSkewGeometry.star_complete_two_of_skew
 #print axioms DualTree.HigherSkewGeometry.star_root_or_leaf_level
 #print axioms DualTree.HigherSkewGeometry.identical_vector_complete
