@@ -45,7 +45,14 @@ theorem rootLabel_eq_underlyingSymbol
       (SkewTree.forwardAuxB (b := b)))
     (s : BoundedNode b n) :
     ForwardQSimpleLetterSmooth.rootLabel U s =
-      CutPreservation.underlyingSymbol U.word s := rfl
+      CutPreservation.underlyingSymbol U.word s := by
+  cases h : U.word.word s with
+  | inl a =>
+      simp [ForwardQSimpleLetterSmooth.rootLabel,
+        CutPreservation.underlyingSymbol, h]
+  | inr v =>
+      simp [ForwardQSimpleLetterSmooth.rootLabel,
+        CutPreservation.underlyingSymbol, h]
 
 /-- The explicit syntactic starred-refinement condition from a variable
 word: support containment and one uniform substitution on the whole word. -/
@@ -131,10 +138,18 @@ theorem simpleWithin_to_semanticSyntactic
     (h : SimpleWithin f B2 (fun U => color (observe U))) :
     SemanticSyntacticSimpleWithin f B2 color := by
   intro U V hU hV hInt hPoints hWord
-  exact h U V
+  apply h U V
     (refines_of_syntacticBelow f U hU)
     (refines_of_syntacticBelow f V hV)
-    hInt hPoints hWord
+    hInt hPoints
+  intro s hs
+  calc
+    ForwardQSimpleLetterSmooth.rootLabel U s =
+      CutPreservation.underlyingSymbol U.word s :=
+        rootLabel_eq_underlyingSymbol U s
+    _ = CutPreservation.underlyingSymbol V.word s := hWord s hs
+    _ = ForwardQSimpleLetterSmooth.rootLabel V s :=
+      (rootLabel_eq_underlyingSymbol V s).symm
 
 /-- On a two-letter alphabet, syntactic simplicity is enough to recover
 the span-based hypothesis used by Track E's total smooth Q transfer. -/
@@ -147,10 +162,18 @@ theorem semanticSyntactic_to_simpleWithin
     (h : SemanticSyntacticSimpleWithin f B2 color) :
     SimpleWithin f B2 (fun U => color (observe U)) := by
   intro U V hU hV hInt hPoints hWord
-  exact h U V
+  apply h U V
     (syntacticBelow_of_refines hα f U hU)
     (syntacticBelow_of_refines hα f V hV)
-    hInt hPoints hWord
+    hInt hPoints
+  intro s hs
+  calc
+    CutPreservation.underlyingSymbol U.word s =
+      ForwardQSimpleLetterSmooth.rootLabel U s :=
+        (rootLabel_eq_underlyingSymbol U s).symm
+    _ = ForwardQSimpleLetterSmooth.rootLabel V s := hWord s hs
+    _ = CutPreservation.underlyingSymbol V.word s :=
+      rootLabel_eq_underlyingSymbol V s
 
 theorem simpleWithin_iff_semanticSyntactic
     {b n l : Nat} {α γ : Type*}
@@ -171,8 +194,8 @@ theorem simple_iff_semanticSyntactic
     (hα : SpanAudit.HasTwoLetters α)
     (f : VariableWord b n α)
     (color : SemanticObservation b n α → γ) :
-    Simple f (fun U => color (observe U)) ↔
-      SemanticSyntacticSimple f color := by
+    Simple (l := l) f (fun U => color (observe U)) ↔
+      SemanticSyntacticSimple (l := l) f color := by
   constructor
   · rintro ⟨B2, hB2⟩
     exact ⟨B2, (simpleWithin_iff_semanticSyntactic hα f B2 color).1 hB2⟩
