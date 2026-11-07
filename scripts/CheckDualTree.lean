@@ -2629,6 +2629,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafMixedWord.mixedWord_span_nonempty
 #print axioms DualTree.UpLeafMixedWord.exists_mixedWord_nonempty
 
+-- Track B: flat parameter-Hales--Jewett uniform over genuine D1 trace data.
+#print axioms DualTree.UpLeafTraceHJ.exists_uniform_plain_given_up_and_bullet
+
 /-! Track E follow-up: source semantic and syntactic simplicity interface. -/
 #print axioms DualTree.ForwardSemiCompleteSemanticBridge.SemanticObservation
 #print axioms DualTree.ForwardSemiCompleteSemanticBridge.observe
