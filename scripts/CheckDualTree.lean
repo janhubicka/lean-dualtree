@@ -2638,3 +2638,14 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.HigherSkewGeometry.ambientStar_complete_paper
 #print axioms DualTree.HigherSkewGeometry.ambientStar_vector_complete_forward
 #print axioms DualTree.HigherSkewGeometry.ambientStar_vector_complete_paper
+
+-- Track C: legal height-two word and nonvacuous independent spans.
+#print axioms DualTree.HigherSkewWord.support_nodup
+#print axioms DualTree.HigherSkewWord.support_nodes
+#print axioms DualTree.HigherSkewWord.symbol_at_root
+#print axioms DualTree.HigherSkewWord.symbol_below
+#print axioms DualTree.HigherSkewWord.starWord_supportNodes
+#print axioms DualTree.HigherSkewWord.starWord_eval_root
+#print axioms DualTree.HigherSkewWord.starWord_eval_injective
+#print axioms DualTree.HigherSkewWord.starWord_span_nonempty
+#print axioms DualTree.HigherSkewWord.vectorWordForward_span_nonempty
