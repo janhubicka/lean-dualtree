@@ -2631,3 +2631,23 @@ Transitive axiom audit for the first source-facing validation facts.
 
 -- Track B: flat parameter-Hales--Jewett uniform over genuine D1 trace data.
 #print axioms DualTree.UpLeafTraceHJ.exists_uniform_plain_given_up_and_bullet
+
+/-! Track E follow-up: source semantic and syntactic simplicity interface. -/
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.SemanticObservation
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.observe
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.rootLabel_eq_underlyingSymbol
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.SyntacticBelow
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.refines_of_syntacticBelow
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.syntacticBelow_of_refines
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.syntacticBelow_iff_refines
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.SemanticSyntacticSimpleWithin
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.SemanticSyntacticSimple
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.simpleWithin_to_semanticSyntactic
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.semanticSyntactic_to_simpleWithin
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.simpleWithin_iff_semanticSyntactic
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.simple_iff_semanticSyntactic
+
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.Q_syntacticBelow_ambient
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.semanticSyntacticSimpleWithin_Q_pullback_smooth
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.exists_total_semanticSyntacticSimpleWithin_Q_pullback
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.semanticSyntacticSimple_exists_total_smooth_Q_pullback
