@@ -1,7 +1,8 @@
-import DualTree.Lemma27CanonicalColor
+import DualTree.Lemma27BoundaryFactor
 import DualTree.ForwardQFinalTargetNonemptyAudit
 import DualTree.ForwardQFinalStarredReenumerationObservation
 import DualTree.ForwardQSourceRefinementAudit
+import DualTree.UpLeafTraceHJ
 import DualTree.UpLeafAudit
 import DualTree.UpLeafCanonical
 import DualTree.UpLeafExamples
@@ -28,7 +29,6 @@ import DualTree.ForwardQNormalizationObstruction
 import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
-import DualTree.ForwardSemiCompleteModelIso
 import DualTree.ForwardQFinalAlphabetLiftObstruction
 import DualTree.MixedGoodSmoothRecordTotalColor
 import DualTree.ForwardQFinalTargetLeafComponentwise
