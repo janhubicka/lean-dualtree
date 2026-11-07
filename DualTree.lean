@@ -1,4 +1,4 @@
-import DualTree.UpLeafInterleavedGeometry
+import DualTree.UpLeafInterleavedParameters
 import DualTree.UpLeafTraceHJ
 import DualTree.UpLeafAudit
 import DualTree.UpLeafCanonical
