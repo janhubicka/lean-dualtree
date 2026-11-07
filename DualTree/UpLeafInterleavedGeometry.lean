@@ -106,7 +106,7 @@ noncomputable def mixedWord
     (hroot : w r = Sum.inr 0)
     (hfirst : ∀ j : Fin N, ∀ v : Fin 1,
       w j = Sum.inr v → r ≤ j) :
-    VariableWord b (ambient d N) d 1 β
+    MixedProduct.VariableWord b (ambient d N) d 1 β
       (SkewTree.forwardAuxB (b := b)) kind :=
   UpLeafMixedWord.attach hb kind
     (vectorWord hb kind w fallback r hroot hfirst)
