@@ -163,3 +163,24 @@ Track F may instantiate its explicit boundary selector by
 observation by the definitionally equal `observe`, and its local
 simplicity predicate by the bridge. Relative induction and
 target-refinement coverage remain independent obligations.
+
+## Unary-safe semantic Q handoff (Track E continuation)
+
+The semantic/syntactic bridge now proves *more than* the two-letter
+equivalence for actual Q images. In a genuine frame, the starred Q word
+is an explicit uniform substitution of the ambient word, and the whole
+Q support lies in the ambient support, so the semantic syntactic
+simplicity predicate can be applied directly to **both** Q outputs.
+The canonical model boundary is identified with the real D₂ projected
+points, and equality of the retained words outside all Gamma₂ cones is
+used exactly as in the source-facing smoothness proof.
+
+The result `semanticSyntacticSimpleWithin_Q_pullback_smooth`
+is unconditional on the source alphabet size (apart from the supplied
+fallback element) and has a total smooth extension
+`exists_total_semanticSyntacticSimpleWithin_Q_pullback`.
+The existential-partition version is
+`semanticSyntacticSimple_exists_total_smooth_Q_pullback`.
+This avoids a false unary span-to-substitution equivalence and directly
+feeds the semantic syntactic convention of Track F. The independent local
+Ramsey witness, target-signature coverage and full induction remain open.

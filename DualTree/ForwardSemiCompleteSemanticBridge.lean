@@ -22,6 +22,10 @@ Theorem 25 induction.
 namespace DualTree.ForwardSemiCompleteSemanticBridge
 
 open ForwardSemiCompleteSimplicity
+open ForwardQAmbientFibreFrame
+open ForwardQAmbientFibreLegalWord
+open ForwardSourceQTree
+open ForwardQAllExteriorFibres
 
 /-- The semantic observation ignores support-list presentation and variable
 membership proofs; it agrees definitionally with the corrected source
@@ -201,5 +205,205 @@ theorem simple_iff_semanticSyntactic
     exact ⟨B2, (simpleWithin_iff_semanticSyntactic hα f B2 color).1 hB2⟩
   · rintro ⟨B2, hB2⟩
     exact ⟨B2, (simpleWithin_iff_semanticSyntactic hα f B2 color).2 hB2⟩
+
+
+/-!
+## Actual Q images: unary-safe semantic simple-to-smooth transfer
+
+The abstract syntax/span equivalence above needs two different letters
+only in its reverse direction. Actual Q outputs do not need this
+assumption: their entire word is an EXPLICIT substitution of the ambient
+word, and their support is contained in the ambient support.
+
+The following direct proof uses only syntactic simplicity on these
+actual outputs, the canonical boundary-to-D2 theorem, equality of
+interiors and the cone-exterior rooted-symbol comparison. It works
+for every original alphabet with a supplied fallback element.
+-/
+
+/-- Every genuine corrected starred Q output is a syntactic refinement
+of the ambient word, with no alphabet-size hypothesis. -/
+theorem Q_syntacticBelow_ambient
+    {b n l k m : Nat} {α : Type*}
+    (hb : 0 < b)
+    (c : FibreFrame b n l k m α)
+    (fallback : α)
+    (w : ForwardQEnlargedConstantWords.EnlargedStarredInput
+      c.core fallback) :
+    SyntacticBelow c.ambient (fibreQStarredWord hb c fallback w) := by
+  have hT :=
+    (ForwardQAmbientFibreSpan.fibreQStarredWord_refines_ambient
+      hb c fallback w).1
+  refine ⟨?_, ?_⟩
+  · intro t ht
+    have htT : t ∈ c.core.T := hT t ht
+    apply List.mem_map.mpr
+    exact ⟨⟨t, c.T_bounded t htT⟩,
+      (c.ambient_support_T ⟨t, c.T_bounded t htT⟩).2 htT, rfl⟩
+  · refine ⟨ForwardQAmbientFibreSymbol.fibreSubstitution c fallback w.1, ?_⟩
+    funext s
+    calc
+      (fibreQStarredWord hb c fallback w).word.word s =
+        ForwardQAmbientFibreSymbol.fibreQSymbol c fallback w.1 s :=
+          fibreQStarredWord_symbol hb c fallback w s
+      _ = SpanAudit.substitute c.ambient.word
+            (ForwardQAmbientFibreSymbol.fibreSubstitution
+              c fallback w.1) s :=
+          congrFun (ForwardQAmbientFibreSpan.fibreQSymbol_eq_substitute
+            c fallback w.1) s
+
+/-- A semantic syntactically-simple colour is smooth on the actual
+corrected Q starred space for *every* alphabet, including singleton
+alphabets. No two-letter or synthetic selector hypothesis is used. -/
+theorem semanticSyntacticSimpleWithin_Q_pullback_smooth
+    {b n l k m : Nat} {α γ : Type*}
+    (hb : 0 < b)
+    (c : FibreFrame b n l k m α)
+    (fallback : α)
+    (B2 : Set (Boundary b l))
+    (color : SemanticObservation b n α → γ)
+    (hsimple : SemanticSyntacticSimpleWithin c.ambient B2 color)
+    (x y : ForwardQEnlargedConstantWords.EnlargedStarredInput
+      c.core fallback)
+    (hxy : MixedProduct.SmoothRelated
+      (gamma1OfBoundaryB2 hb c.core B2) x.1 y.1) :
+    color (observe (fibreQStarredWord hb c fallback x)) =
+      color (observe (fibreQStarredWord hb c fallback y)) := by
+  apply hsimple
+    (fibreQStarredWord hb c fallback x)
+    (fibreQStarredWord hb c fallback y)
+    (Q_syntacticBelow_ambient hb c fallback x)
+    (Q_syntacticBelow_ambient hb c fallback y)
+  · intro t
+    exact ForwardQSimpleLetterSmooth.Q_interiors_eq
+      hb c fallback x y t
+  · intro a ha
+    rw [canonicalPoint_actual_Q hb c fallback x a,
+      canonicalPoint_actual_Q hb c fallback y a]
+    have hg :
+        gamma1OfBoundaryB2 hb c.core B2
+            ((boundaryToD2 hb c.core) a) = false :=
+      (gamma2_iff_boundaryB2 hb c.core B2 a).2 ha
+    exact congrArg Subtype.val
+      (ForwardQAmbientFibreSmoothObservable.gamma2_Q_markedProjection_eq_of_smooth
+        c fallback x y
+        (gamma1OfBoundaryB2 hb c.core B2) hxy
+        ((boundaryToD2 hb c.core) a) hg)
+  · intro s hout
+    have houtside :
+        ∀ j : MixedProduct.BulletIndex (kind c.core),
+          gamma1OfBoundaryB2 hb c.core B2 j = false →
+          ¬ IsPrefix
+            (markedProjection c.core
+              (ForwardQEnlargedConstantWords.eraseAux
+                c.core fallback x.1) j).1 s.1 := by
+      intro j hj
+      have ha :
+          ((boundaryToD2 hb c.core).symm j) ∈ B2 := by
+        apply (gamma2_iff_boundaryB2 hb c.core B2
+          ((boundaryToD2 hb c.core).symm j)).1
+        simpa only [Equiv.apply_symm_apply] using hj
+      have hnode := hout ((boundaryToD2 hb c.core).symm j) ha
+      rw [canonicalPoint_actual_Q hb c fallback x
+        ((boundaryToD2 hb c.core).symm j),
+        Equiv.apply_symm_apply] at hnode
+      exact hnode
+    have hword :=
+      starred_Q_word_eq_outside_gamma2_cones
+        hb c fallback x y
+        (gamma1OfBoundaryB2 hb c.core B2)
+        hxy s houtside
+    change ForwardQAmbientFibreSymbol.fibreQSymbol
+        c fallback x.1 s =
+      ForwardQAmbientFibreSymbol.fibreQSymbol
+        c fallback y.1 s at hword
+    calc
+      CutPreservation.underlyingSymbol
+          (fibreQStarredWord hb c fallback x).word s =
+        ForwardQSimpleLetterSmooth.rootLabel
+          (fibreQStarredWord hb c fallback x) s :=
+            (rootLabel_eq_underlyingSymbol
+              (fibreQStarredWord hb c fallback x) s).symm
+      _ = ForwardQSimpleLetterSmooth.rootLabel
+          (fibreQStarredWord hb c fallback y) s := by
+            rw [ForwardQSimpleLetterSmooth.rootLabel_fibreQ
+                  hb c fallback x s,
+                ForwardQSimpleLetterSmooth.rootLabel_fibreQ
+                  hb c fallback y s]
+            exact congrArg
+              (fun q : Sum α c.core.source.word.Vars =>
+                match q with
+                | Sum.inl a => Sum.inl a
+                | Sum.inr v => Sum.inr v.1) hword
+      _ = CutPreservation.underlyingSymbol
+          (fibreQStarredWord hb c fallback y).word s :=
+            rootLabel_eq_underlyingSymbol
+              (fibreQStarredWord hb c fallback y) s
+
+/-- Any syntactically simple semantic colour has a total smooth
+extension of its genuine Q pullback, without two-letter assumptions.
+Outside the starred domain the extension uses the supplied fallback
+colour only to choose a representative of unrealized smooth classes. -/
+theorem exists_total_semanticSyntacticSimpleWithin_Q_pullback
+    {b n l k m : Nat} {α γ : Type*}
+    (hb : 0 < b)
+    (c : FibreFrame b n l k m α)
+    (fallback : α) (fallbackColor : γ)
+    (B2 : Set (Boundary b l))
+    (color : SemanticObservation b n α → γ)
+    (hsimple : SemanticSyntacticSimpleWithin c.ambient B2 color) :
+    ∃ total : ForwardQEnlargedConstantWords.EnlargedInput c.core → γ,
+      (∀ w : ForwardQEnlargedConstantWords.EnlargedStarredInput
+        c.core fallback,
+        total w.1 = color (observe (fibreQStarredWord hb c fallback w))) ∧
+      (∀ x y : ForwardQEnlargedConstantWords.EnlargedInput c.core,
+        MixedProduct.SmoothRelated
+          (gamma1OfBoundaryB2 hb c.core B2) x y → total x = total y) := by
+  let D : Set (ForwardQEnlargedConstantWords.EnlargedInput c.core) :=
+    {w | ForwardQActualStarredSpace.IsStarred c.core
+      (ForwardQEnlargedConstantWords.eraseAux c.core fallback w)}
+  let pulled :
+      {w : ForwardQEnlargedConstantWords.EnlargedInput c.core //
+        w ∈ D} → γ :=
+    fun w => color (observe
+      (fibreQStarredWord hb c fallback ⟨w.1, w.2⟩))
+  have hcompatible :
+      ∀ (x y : ForwardQEnlargedConstantWords.EnlargedInput c.core)
+        (hx : x ∈ D) (hy : y ∈ D),
+        MixedProduct.SmoothRelated
+          (gamma1OfBoundaryB2 hb c.core B2) x y →
+          pulled ⟨x, hx⟩ = pulled ⟨y, hy⟩ := by
+    intro x y hx hy hxy
+    exact semanticSyntacticSimpleWithin_Q_pullback_smooth
+      hb c fallback B2 color hsimple ⟨x, hx⟩ ⟨y, hy⟩ hxy
+  obtain ⟨total, hagree, hsmooth⟩ :=
+    MixedProduct.exists_smooth_extension
+      (gamma1OfBoundaryB2 hb c.core B2)
+      D pulled fallbackColor hcompatible
+  refine ⟨total, ?_, hsmooth⟩
+  intro x
+  exact hagree x.1 x.2
+
+/-- Quantifying the Definition-24 partition gives the existential
+total smooth pullback required for a mixed-product Ramsey input.
+This result does not assert existence of a Ramsey word. -/
+theorem semanticSyntacticSimple_exists_total_smooth_Q_pullback
+    {b n l k m : Nat} {α γ : Type*}
+    (hb : 0 < b)
+    (c : FibreFrame b n l k m α)
+    (fallback : α) (fallbackColor : γ)
+    (color : SemanticObservation b n α → γ)
+    (hsimple : SemanticSyntacticSimple c.ambient color) :
+    ∃ gamma1 : MixedProduct.BulletIndex (kind c.core) → Bool,
+      ∃ total : ForwardQEnlargedConstantWords.EnlargedInput c.core → γ,
+        (∀ w : ForwardQEnlargedConstantWords.EnlargedStarredInput
+          c.core fallback,
+          total w.1 = color (observe (fibreQStarredWord hb c fallback w))) ∧
+        (∀ x y : ForwardQEnlargedConstantWords.EnlargedInput c.core,
+          MixedProduct.SmoothRelated gamma1 x y → total x = total y) := by
+  obtain ⟨B2, hB2⟩ := hsimple
+  exact ⟨gamma1OfBoundaryB2 hb c.core B2,
+    exists_total_semanticSyntacticSimpleWithin_Q_pullback
+      hb c fallback fallbackColor B2 color hB2⟩
 
 end DualTree.ForwardSemiCompleteSemanticBridge
