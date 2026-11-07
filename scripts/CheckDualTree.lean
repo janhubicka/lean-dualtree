@@ -2629,7 +2629,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafMixedWord.mixedWord_span_nonempty
 #print axioms DualTree.UpLeafMixedWord.exists_mixedWord_nonempty
 
--- Track B: interleaved HJ D0 words and genuine D1 ambient leaves.
+-- Track B: flat parameter-Hales--Jewett uniform over genuine D1 trace data.
+#print axioms DualTree.UpLeafTraceHJ.exists_uniform_plain_given_up_and_bullet
+
+-- Track B: genuine interleaved D1 leaves and mixed words.
 #print axioms DualTree.UpLeafInterleavedGeometry.markerPos_eq_supportRoot_of_not_plain
 #print axioms DualTree.UpLeafInterleavedGeometry.component_supportNodes
 #print axioms DualTree.UpLeafInterleavedGeometry.vectorWord
@@ -2637,7 +2640,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafInterleavedGeometry.mixedWord_upLeaves_card
 #print axioms DualTree.UpLeafInterleavedGeometry.mixedWord_span_nonempty
 
--- Track B: true parameter elements of interleaved D0/D1/D2 spans.
+-- Track B: independently parametrized real interleaved D1 span points.
 #print axioms DualTree.UpLeafInterleavedParameters.NonplainIndex
 #print axioms DualTree.UpLeafInterleavedParameters.parameterElement
 #print axioms DualTree.UpLeafInterleavedParameters.parameterElement_plain
