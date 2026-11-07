@@ -2628,3 +2628,13 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafMixedWord.mixedWord_span_eq_parameter_range
 #print axioms DualTree.UpLeafMixedWord.mixedWord_span_nonempty
 #print axioms DualTree.UpLeafMixedWord.exists_mixedWord_nonempty
+
+-- Track C: complete intrinsic-height-two star and vector geometry.
+#print axioms DualTree.HigherSkewGeometry.star_complete_two_of_skew
+#print axioms DualTree.HigherSkewGeometry.star_root_or_leaf_level
+#print axioms DualTree.HigherSkewGeometry.identical_vector_complete
+#print axioms DualTree.HigherSkewGeometry.star_vector_complete_two_of_skew
+#print axioms DualTree.HigherSkewGeometry.ambientStar_complete_forward
+#print axioms DualTree.HigherSkewGeometry.ambientStar_complete_paper
+#print axioms DualTree.HigherSkewGeometry.ambientStar_vector_complete_forward
+#print axioms DualTree.HigherSkewGeometry.ambientStar_vector_complete_paper
