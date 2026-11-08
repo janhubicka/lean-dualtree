@@ -2818,3 +2818,5 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.HigherTreeCells.rootBandCell_injective
 #print axioms DualTree.HigherTreeCells.rootBandCell_ne_coneBandCell
 #print axioms DualTree.HigherTreeCells.coneBandCell_equal_implies_same_level
+
+#print axioms DualTree.HigherTreeCells.coneBandCell_pair_injective

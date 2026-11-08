@@ -81,4 +81,28 @@ theorem coneBandCell_equal_implies_same_level {b N M : Nat}
   apply Fin.ext
   omega
 
+/-- A complete cone-band coordinate (address, depth) is recovered uniquely
+from its physical bounded tree node. No two independent addresses collapse. -/
+theorem coneBandCell_pair_injective {b N M : Nat}
+    (hb : 0 < b) :
+    Function.Injective (fun p : Address b N × Fin M =>
+      coneBandCell hb p.1 p.2) := by
+  intro p q hpq
+  rcases p with ⟨a, j⟩
+  rcases q with ⟨a', k⟩
+  have hj : j = k :=
+    coneBandCell_equal_implies_same_level hb a a' j k hpq
+  subst k
+  have hlist :
+      addressNode a ++ List.replicate j.val (⟨0, hb⟩ : Fin b) =
+      addressNode a' ++ List.replicate j.val (⟨0, hb⟩ : Fin b) :=
+    congrArg (fun s : BoundedNode b (N + M) => s.1) hpq
+  have haddr : addressNode a = addressNode a' :=
+    List.append_left_injective
+      (List.replicate j.val (⟨0, hb⟩ : Fin b)) hlist
+  have ha : a = a' :=
+    List.ofFn_injective (by simpa [addressNode] using haddr)
+  subst a'
+  rfl
+
 end DualTree.HigherTreeCells
