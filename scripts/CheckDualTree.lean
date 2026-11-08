@@ -2930,3 +2930,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma28EligibleFusion.finite_signature_fusion_of_eligible_stability
 #print axioms DualTree.Lemma28EligibleFusion.finite_signature_canonization_of_eligible_stability
 #print axioms DualTree.Lemma28EligibleFusion.eligible_step_of_exact_transport
+
+-- Track F: exact zero-one starred/ground Ramsey and eventual-bound equivalence.
+#print axioms DualTree.ZeroInteriorGroundEquivalence.groundColour_simpleWith_empty
+#print axioms DualTree.ZeroInteriorGroundEquivalence.groundOneAt_of_canonicalRamseyAt
+#print axioms DualTree.ZeroInteriorGroundEquivalence.canonicalRamseyAt_zero_one_iff_ground
+#print axioms DualTree.ZeroInteriorGroundEquivalence.canonicalBound_zero_one_iff_ground
