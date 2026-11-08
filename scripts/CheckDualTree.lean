@@ -2776,3 +2776,33 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalTargetExistence.sourceRelativeSetTarget_nonempty_iff_two_le
 #print axioms DualTree.ForwardQFinalTargetExistence.exists_complete_nonempty_set_source_relative_Q_transfer
 #print axioms DualTree.ForwardQFinalTargetExistence.exists_complete_nonempty_set_Q_transfer_of_source_refinement
+
+-- Track C: HigherRamseyFlat kernel-checked prerequisites.
+#print axioms DualTree.HigherRamseyFlat.exists_uniform_root_and_cones
+#print axioms DualTree.HigherRamseyFlat.exists_monochromatic_root_and_cone_spans
+
+-- Track C: HigherConeAddresses kernel-checked prerequisites.
+#print axioms DualTree.HigherConeAddresses.addressNode_length
+#print axioms DualTree.HigherConeAddresses.branchAddress_at_root
+#print axioms DualTree.HigherConeAddresses.branchAddress_elsewhere
+#print axioms DualTree.HigherConeAddresses.branchAddress_injective
+#print axioms DualTree.HigherConeAddresses.branchAddresses_nodup
+#print axioms DualTree.HigherConeAddresses.exists_uniform_root_and_address_cones
+
+-- Track C: HigherConeFreeze kernel-checked prerequisites.
+#print axioms DualTree.HigherConeFreeze.freezeAssignment_selected
+#print axioms DualTree.HigherConeFreeze.selectedConeSymbol_occurs
+#print axioms DualTree.HigherConeFreeze.selectedConeSymbol_eval
+#print axioms DualTree.HigherConeFreeze.frozenConeValue_fixed
+#print axioms DualTree.HigherConeFreeze.frozenConeValue_variable
+#print axioms DualTree.HigherConeFreeze.selectedConeSymbol_span_nonempty
+
+-- Track C: HigherSkewGeometry kernel-checked prerequisites.
+#print axioms DualTree.HigherSkewGeometry.star_complete_two_of_skew
+#print axioms DualTree.HigherSkewGeometry.star_root_or_leaf_level
+#print axioms DualTree.HigherSkewGeometry.identical_vector_complete
+#print axioms DualTree.HigherSkewGeometry.star_vector_complete_two_of_skew
+#print axioms DualTree.HigherSkewGeometry.ambientStar_complete_forward
+#print axioms DualTree.HigherSkewGeometry.ambientStar_complete_paper
+#print axioms DualTree.HigherSkewGeometry.ambientStar_vector_complete_forward
+#print axioms DualTree.HigherSkewGeometry.ambientStar_vector_complete_paper
