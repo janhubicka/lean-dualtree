@@ -236,18 +236,13 @@ theorem Q_syntacticBelow_ambient
     (refines_iff_frame c _).2
       (ForwardQAmbientFibreSpan.fibreQStarredWord_refines_ambient
         hb c fallback w)
-  refine ⟨href.1, ?_⟩
-  · refine ⟨ForwardQAmbientFibreSpan.fibreSubstitution c fallback w.1, ?_⟩
-    funext s
-    calc
-      (fibreQStarredWord hb c fallback w).word.word s =
-        ForwardQAmbientFibreSymbol.fibreQSymbol c fallback w.1 s :=
-          fibreQStarredWord_symbol hb c fallback w s
-      _ = SpanAudit.substitute c.ambient.word
-            (ForwardQAmbientFibreSpan.fibreSubstitution
-              c fallback w.1) s :=
-          congrFun (ForwardQAmbientFibreSpan.fibreQSymbol_eq_substitute
-            c fallback w.1) s
+  refine ⟨href.1, ForwardQAmbientFibreSpan.fibreSubstitution
+    c fallback w.1, ?_⟩
+  change ForwardQAmbientFibreSymbol.fibreQSymbol c fallback w.1 =
+    SpanAudit.substitute c.ambient.word
+      (ForwardQAmbientFibreSpan.fibreSubstitution c fallback w.1)
+  exact ForwardQAmbientFibreSpan.fibreQSymbol_eq_substitute
+    c fallback w.1
 
 /-- A semantic syntactically-simple colour is smooth on the actual
 corrected Q starred space for *every* alphabet, including singleton
