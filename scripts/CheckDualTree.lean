@@ -2797,3 +2797,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.inducedQ_tree_has_unsupported_node_iff_q_one
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.height_one_mixed_span_has_unsupported_Q
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.height_one_has_unsupported_projected_marker
+
+-- Track B: Lemma-14 UpCanonical supplies D0 invariance; exact two D1 obligations.
+#print axioms DualTree.UpLeafInterleavedGoodBridge.plainInvariant_of_upCanonical
+#print axioms DualTree.UpLeafInterleavedGoodBridge.good_of_upCanonical_and_two_up_invariances
+#print axioms DualTree.UpLeafInterleavedGoodBridge.good_iff_two_up_invariances_of_upCanonical
+#print axioms DualTree.UpLeafInterleavedGoodBridge.upCanonical_iff_plainInvariant_of_noBullet
