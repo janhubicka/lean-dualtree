@@ -14,7 +14,7 @@ import DualTree.Theorem3Audit
 import DualTree.AllBulletMixedRamsey
 import DualTree.PlainBulletRayExactSpan
 import DualTree.PlainBlockBulletBlockColorFactor
-import DualTree.InterleavedHeightOneComplete
+import DualTree.InterleavedHeightOneSharpness
 import DualTree.PlainBulletBlockExactSpan
 import DualTree.Corollary22Audit
 import DualTree.GluingAudit
