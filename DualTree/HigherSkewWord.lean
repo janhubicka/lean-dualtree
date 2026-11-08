@@ -150,8 +150,8 @@ theorem starWord_eval_root {b n : Nat} {β : Type*}
     (σ : (starWord hb r fallback).Vars → β)
     (v : (starWord hb r fallback).Vars) :
     (starWord hb r fallback).eval σ v.1 = σ v := by
-  change SpanAudit.evalSymbol σ (symbol hb r fallback v.1) = σ v
-  rw [symbol_at_root]
+  change SpanAudit.evalSymbol σ ((starWord hb r fallback).word v.1) = σ v
+  rw [(starWord hb r fallback).atRoot v]
   rfl
 
 /-- Independent substitutions at the b+1 genuine support roots cannot
@@ -162,10 +162,13 @@ theorem starWord_eval_injective {b n : Nat} {β : Type*}
       (starWord hb r fallback).eval σ) := by
   intro σ τ h
   funext v
-  have hv := congrFun h v.1
-  rw [starWord_eval_root hb r fallback σ v,
-    starWord_eval_root hb r fallback τ v] at hv
-  exact hv
+  have hv : (starWord hb r fallback).eval σ v.1 =
+      (starWord hb r fallback).eval τ v.1 := congrFun h v.1
+  calc
+    σ v = (starWord hb r fallback).eval σ v.1 :=
+      (starWord_eval_root hb r fallback σ v).symm
+    _ = (starWord hb r fallback).eval τ v.1 := hv
+    _ = τ v := starWord_eval_root hb r fallback τ v
 
 theorem starWord_span_nonempty {b n : Nat} {β : Type*}
     (hb : 0 < b) (r : BoundedNode b n) (fallback : β) :
