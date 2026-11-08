@@ -1,6 +1,7 @@
+import DualTree.ZeroInteriorGroundEquivalence
+import DualTree.Lemma28EligibleFusion
 import DualTree.TheoremAlphabetTransport
 import DualTree.ForwardCompleteBoundaryTransport
-import DualTree.ZeroInteriorRamsey
 import DualTree.Lemma27ResidualRefinement
 import DualTree.Lemma27BoundaryFactor
 import DualTree.ForwardQFinalTargetNonemptyAudit

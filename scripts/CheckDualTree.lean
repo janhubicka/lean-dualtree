@@ -2915,3 +2915,24 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ZeroInteriorRamsey.exists_positive_ramseyAt_zero_one
 #print axioms DualTree.ZeroInteriorRamsey.exists_eventual_ramseyAt_zero_one
 #print axioms DualTree.ZeroInteriorRamsey.exists_bound_zero_one
+
+-- Track F: exact relative zero-interior / ground-word Ramsey reduction.
+#print axioms DualTree.ZeroInteriorRelative.groundOfObservation_starredObserve
+#print axioms DualTree.ZeroInteriorRelative.groundOfObservation_pointObservation
+#print axioms DualTree.ZeroInteriorRelative.groundColour_simpleWithin
+#print axioms DualTree.ZeroInteriorRelative.color_eq_pointObservation_of_relative_empty_boundary
+#print axioms DualTree.ZeroInteriorRelative.relative_zero_starred_of_ground
+#print axioms DualTree.ZeroInteriorRelative.relative_ground_of_zero_starred
+#print axioms DualTree.ZeroInteriorRelative.relative_zero_starred_iff_ground
+
+-- Track F: Lemma 28 finite fusion under eligible-fibre stability.
+#print axioms DualTree.Lemma28EligibleFusion.fibreMonochromatic_of_eligible_transport
+#print axioms DualTree.Lemma28EligibleFusion.finite_signature_fusion_of_eligible_stability
+#print axioms DualTree.Lemma28EligibleFusion.finite_signature_canonization_of_eligible_stability
+#print axioms DualTree.Lemma28EligibleFusion.eligible_step_of_exact_transport
+
+-- Track F: exact zero-one starred/ground Ramsey and eventual-bound equivalence.
+#print axioms DualTree.ZeroInteriorGroundEquivalence.groundColour_simpleWith_empty
+#print axioms DualTree.ZeroInteriorGroundEquivalence.groundOneAt_of_canonicalRamseyAt
+#print axioms DualTree.ZeroInteriorGroundEquivalence.canonicalRamseyAt_zero_one_iff_ground
+#print axioms DualTree.ZeroInteriorGroundEquivalence.canonicalBound_zero_one_iff_ground
