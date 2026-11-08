@@ -67,6 +67,112 @@ The product theorem is stated without a separate proof. \\
 \end{tabular}
 \end{center}
 
+\section{Track D: symbolic source-relative Q transfer (6 November 2026)}
+\fix
+The corrected forward construction now has an explicit symbolic source
+contract: a target word is obtained by one uniform substitution of the
+actual source variables.  The substitution is uniquely determined by the
+target symbols at the source roots.  For alphabets with two distinct
+letters this is equivalent to evaluated-span inclusion; for singleton
+alphabets it is a stronger condition and is imposed explicitly.
+
+The generalized enlarged-alphabet target construction preserves fixed
+auxiliary constants and reconstructs the entire target word without a
+two-letter assumption.  Its target class retains the same complete
+corrected signature and containment of the \emph{whole} target tree,
+including terminal leaves, in the final support.  Target skewness supplies
+the corrected $D_2$ order.  The final interpolation is packaged as an
+actual $(m+q)$-complete variable word for $b,q>0$, with a nonempty evaluated
+span and a syntactic refinement into the original ambient word.
+It retains every ambient support root at or before the forward cut,
+including roots outside the old starred source support, and preserves
+every constant and rooted variable symbol on that inclusive initial
+segment.  These properties are explicit in the assembly theorem.
+
+The resulting inclusion concerns fixed-signature starred targets:
+\[
+ \operatorname{observe}([\mathcal S,f']_{\mathrm{syn}})
+ \subseteq
+ \{\operatorname{observe}(Q(w)):w\in[f]_{\mathrm{mixed}}
+          \cap W_*^{\mathrm{fwd}}\}.
+\]
+It does not assert unrestricted reverse coverage of the constant evaluated
+span of $f'$.  The existing retained-root obstructions remain valid.
+The original two-letter span-based interfaces are retained as corollaries.
+The accompanying unary regression uses two actual complete-support words
+with equal evaluated spans but no such syntactic refinement.
+
+The source-facing target predicate now uses the signature's actual finite
+node set, retaining equality of the full optional rooted partial word.
+Equal partial-word domains recover the common cut; equal signature node
+sets determine the old interior nodes and exceptional first boundaries.
+The genuine first-boundary injections give a bijection of exceptional
+leaves.  Re-enumerating the target with source-ordered interior and matched
+boundary blocks gives a literal-signature representative with exactly
+the same nodes and the same variable word.  This discharges the former
+signature-list restriction without changing the existing literal APIs.
+The complete assembly in \texttt{ForwardQFinalSetSpanTransfer} covers all
+such set-signature targets.
+
+At local height $q=1$, the corresponding starred target class is empty:
+the retained cut has final rank $m$, and the final support has height
+$m+1$, so it has no strict descendant there.  The common complete
+signature would require the cut to remain interior in a target.
+The boundary module proves that an actual target at positive local
+height therefore requires $q>1$.  The general induced-Q construction
+now proves that this bound is sufficient as well.  This is the expected excluded
+boundary of the intended application: the recorded paper assumption
+$m'<M-1$ and the local dimension $q=M-m'$ already give $q\ge2$.
+It is not a new counterexample to Lemma~27.
+
+The positive audit \texttt{ForwardQFinalTargetNonemptyAudit} supplies an
+actual binary, two-letter example at $q=2$: the ambient support is the
+full binary tree of height three, the source tree is the root and its
+two children, and the local components are full height-two point-variable
+words.  The source word has its variable only at the root and the fixed
+letter \texttt{false} elsewhere.  The source itself refines the actual
+final word, its entire tree is retained, and its complete signature
+agrees literally.  The transfer theorem therefore yields an actual
+starred Q preimage in the mixed span.  This establishes nonemptiness of
+one genuine target class; it does not prove target existence for all
+admissible parameters or exercise fixed auxiliary constants.
+
+The general theorem in \texttt{ForwardQFinalTargetExistence} now supplies
+an actual eligible starred target for every admissible source and every
+supplied enlarged local mixed word when $q\ge2$.  Choose any assignment
+of original alphabet letters to the final roots, take the genuine induced
+enlarged starred input, and apply fibrewise Q.  Its complete finite-set
+signature equals that of the source: the old interior is unchanged,
+exceptional leaves have exactly the old first-boundary nodes, and the full
+strict rooted partial word is preserved.  A symbolic substitution sends
+early final roots through the original source substitution and late roots
+to their assigned letters.  Fixed auxiliary constants retain their actual
+visible-ancestor decoding.  Every Q vertex lies in the final support:
+the old base is retained, and marked local rank-zero roots survive both
+possible frontier ranks $m$ and $m+1$ under the budget $m+q$.
+
+Thus, among positive local heights, the prescribed starred target class
+is nonempty if and only if $q\ge2$.  The stronger source-facing assembly
+constructs the complete final word, retains all initial roots and symbols,
+proves its evaluated span nonempty, exhibits an eligible starred target,
+and covers every eligible target by a genuine Q preimage in the supplied
+local mixed span.  It requires no extra matching, order, target-existence,
+or alphabet-cardinality premise.  The earlier APIs are unchanged.
+
+The source and target interfaces are implemented in the
+\texttt{ForwardQSourceRefinement} and
+\texttt{ForwardQFinalSetSpanTransfer} modules; the original literal
+interface remains in \texttt{ForwardQFinalSyntacticSpanTransfer}.
+The complete-support
+packaging is in \texttt{ForwardQFinalEnlargedCompleteWord}, and initial
+root and symbol retention is in
+\texttt{ForwardQFinalInitialRootRetention}.
+This constructs a corrected Q transfer from a supplied local mixed word.
+The merged Track E work supplies the corrected forward canonical selector
+and its source-independent simple-to-smooth transport.  The required local
+Ramsey witness, printed-order comparison, quantitative estimates, residual
+record colour control and final induction remain separate obligations.
+
 \section{Detailed issues}
 
 \subsection{The auxiliary node order}

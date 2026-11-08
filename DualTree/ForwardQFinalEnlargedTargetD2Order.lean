@@ -213,6 +213,37 @@ same representation-independent observation as O.
 This theorem does not identify the corrected forward-starred
 domain with the printed reverse-lex W_* or establish the
 parameterized Corollary-22 induction. -/
+theorem exists_typed_enlarged_target_observation_preimage_of_syntactic_refinement
+    {b n l k m q : Nat} {α : Type*}
+    (hb : 0 < b)
+    (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
+    (f : LocalMixedWord g.core q (Sum α (Fin (m+1))))
+    (fallback : α)
+    (O : StarredSignature.StarredWord b n l α
+      (SkewTree.forwardAuxB (b := b)))
+    (cutO : Node b)
+    (H : ForwardQFinalFullSignature.SameCompleteForwardSignature
+      hb g O cutO)
+    (hRef : ForwardQSourceRefinement.SyntacticallyRefines O.word
+      (ForwardQFinalGlobalEnlargedWord.enlargedInterpolatedFinalWord
+        g f fallback))
+    (hSupport : ∀ t : Node b, t ∈ O.tree →
+      t ∈ ForwardQFinalHeightBudget.finalBudgetSupport
+        g.core f (m+q)) :
+    ∃ w : ForwardQEnlargedConstantWords.EnlargedStarredInput
+        g.core fallback,
+      w.1 ∈ f.span ∧
+      ForwardQFinalTargetObservation.observe
+        (ForwardQAmbientFibreLegalWord.fibreQStarredWord
+          hb g fallback w) =
+      ForwardQFinalTargetObservation.observe O := by
+  exact exists_typed_enlarged_target_observation_preimage_of_syntactic_refinement_of_order
+    hb g f fallback O cutO H hRef hSupport
+    (targetD2Ordered_of_target_skew
+      hb g f fallback O cutO H hSupport)
+
+/-- Evaluated-span form. The two-letter assumption is used only to
+recover the explicit syntactic refinement required by the general theorem. -/
 theorem exists_typed_enlarged_target_observation_preimage
     {b n l k m q : Nat} {α : Type*}
     (hb : 0 < b)
@@ -238,9 +269,11 @@ theorem exists_typed_enlarged_target_observation_preimage
         (ForwardQAmbientFibreLegalWord.fibreQStarredWord
           hb g fallback w) =
       ForwardQFinalTargetObservation.observe O := by
-  exact exists_typed_enlarged_target_observation_preimage_of_order
-    hb g f fallback O cutO H hα hspan hSupport
-    (targetD2Ordered_of_target_skew
-      hb g f fallback O cutO H hSupport)
+  exact exists_typed_enlarged_target_observation_preimage_of_syntactic_refinement
+    hb g f fallback O cutO H
+    ((ForwardQSourceRefinement.syntacticallyRefines_iff_span_subset
+        hα O.word (ForwardQFinalGlobalEnlargedWord.enlargedInterpolatedFinalWord
+        g f fallback)).2 hspan) hSupport
+
 
 end DualTree.ForwardQFinalEnlargedTargetD2Order
