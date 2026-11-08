@@ -2659,3 +2659,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafInterleavedCanonical.upCanonical_of_uniform_plain
 #print axioms DualTree.UpLeafInterleavedCanonical.exists_uniform_plain_given_nonplain
 #print axioms DualTree.UpLeafInterleavedCanonical.exists_upCanonical_interleaved_height_one
+
+-- Track B: exact Definition-11 criterion and adversarial UpCanonical/Good separation.
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.bulletAsNonplain
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.parameterElement_bullet_letter
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.good_iff_parameter_bullet_constancy
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.upPoint_color_upCanonical
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.upPoint_color_not_good

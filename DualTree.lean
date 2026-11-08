@@ -1,4 +1,4 @@
-import DualTree.UpLeafInterleavedCanonical
+import DualTree.UpLeafInterleavedGoodCriterion
 import DualTree.UpLeafTraceHJ
 import DualTree.UpLeafAudit
 import DualTree.UpLeafCanonical
