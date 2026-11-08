@@ -149,4 +149,49 @@ theorem height_one_mixed_span_has_unsupported_Q
   exact (inducedQ_tree_has_unsupported_node_iff_q_one
     hb g f fallback σ (by decide : 0 < 1)).2 rfl
 
+
+/-- At the excluded height q=1, some TRUE D2 projected marker lies
+outside the final support. The old signature base is always retained;
+the obstruction cannot be blamed on disappearing old vertices or
+relabeling the full rooted word. -/
+theorem height_one_has_unsupported_projected_marker
+    {b n l k m : Nat} {α : Type*}
+    (hb : 0 < b)
+    (g : ForwardQAmbientFibreFrame.FibreFrame b n l k m α)
+    (f : LocalMixedWord g.core 1 (Sum α (Fin (m+1))))
+    (fallback : α)
+    (σ : FinalRoot g f → α) :
+    ∃ i : MixedProduct.BulletIndex (kind g.core),
+      (markedProjection g.core
+        (ForwardQEnlargedConstantWords.eraseAux g.core fallback
+          (enlargedInducedInput g f fallback σ)) i).1
+        ∉ (enlargedInterpolatedFinalWord g f fallback).supportNodes := by
+  classical
+  obtain ⟨t, htQ, htNot⟩ :=
+    (inducedQ_tree_has_unsupported_node_iff_q_one
+      hb g f fallback σ (by decide : 0 < 1)).2 rfl
+  let x := ForwardQEnlargedConstantWords.eraseAux g.core fallback
+    (enlargedInducedInput g f fallback σ)
+  have htNodes : t ∈ nodes g.core x := by
+    rw [fibreQStarredWord_tree] at htQ
+    exact Finset.mem_toList.mp htQ
+  change t ∈ ((oldBase g.core).toFinset ∪
+    (Finset.univ : Finset (MixedProduct.BulletIndex (kind g.core))).image
+      (fun i => (markedProjection g.core x i).1)) at htNodes
+  rcases Finset.mem_union.mp htNodes with hBase | hMarked
+  · have hRet : t ∈ ForwardQFinalSupportCut.retained g.core :=
+      ForwardQFinalSupportCut.oldBase_mem_retained g.core t
+        (List.mem_toFinset.mp hBase)
+    have hFinal : t ∈
+        (enlargedInterpolatedFinalWord g f fallback).supportNodes := by
+      apply (ForwardQFinalEnlargedCompleteWord.enlargedInterpolatedFinalWord_supportNodes_iff
+        g f fallback t).2
+      exact Finset.mem_union.mpr (Or.inl hRet)
+    exact False.elim (htNot hFinal)
+  · obtain ⟨i, _hi, hPoint⟩ := Finset.mem_image.mp hMarked
+    refine ⟨i, ?_⟩
+    intro hFinal
+    rw [hPoint] at hFinal
+    exact htNot hFinal
+
 end DualTree.ForwardQFinalInducedSupportThreshold
