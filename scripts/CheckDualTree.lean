@@ -2790,3 +2790,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafInterleavedGoodDecomposition.UpDirectionInvariant
 #print axioms DualTree.UpLeafInterleavedGoodDecomposition.UpLetterInvariant
 #print axioms DualTree.UpLeafInterleavedGoodDecomposition.good_iff_three_invariances
+
+-- Track B: Lemma-14 UpCanonical supplies D0 invariance; exact two D1 obligations.
+#print axioms DualTree.UpLeafInterleavedGoodBridge.plainInvariant_of_upCanonical
+#print axioms DualTree.UpLeafInterleavedGoodBridge.good_of_upCanonical_and_two_up_invariances
+#print axioms DualTree.UpLeafInterleavedGoodBridge.good_iff_two_up_invariances_of_upCanonical
+#print axioms DualTree.UpLeafInterleavedGoodBridge.upCanonical_iff_plainInvariant_of_noBullet
