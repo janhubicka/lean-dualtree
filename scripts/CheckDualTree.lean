@@ -2632,7 +2632,35 @@ Transitive axiom audit for the first source-facing validation facts.
 -- Track B: flat parameter-Hales--Jewett uniform over genuine D1 trace data.
 #print axioms DualTree.UpLeafTraceHJ.exists_uniform_plain_given_up_and_bullet
 
--- Track C: genuine height-two support and vector ordering.
+-- Track B: genuine interleaved D1 leaves and mixed words.
+#print axioms DualTree.UpLeafInterleavedGeometry.markerPos_eq_supportRoot_of_not_plain
+#print axioms DualTree.UpLeafInterleavedGeometry.component_supportNodes
+#print axioms DualTree.UpLeafInterleavedGeometry.vectorWord
+#print axioms DualTree.UpLeafInterleavedGeometry.mixedWord
+#print axioms DualTree.UpLeafInterleavedGeometry.mixedWord_upLeaves_card
+#print axioms DualTree.UpLeafInterleavedGeometry.mixedWord_span_nonempty
+
+-- Track B: independently parametrized real interleaved D1 span points.
+#print axioms DualTree.UpLeafInterleavedParameters.NonplainIndex
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_plain
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_nonplain_root_letter
+#print axioms DualTree.UpLeafInterleavedParameters.rootPos_eq_markerPos_of_up
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_mem_span
+
+-- Track B: converse and exact true interleaved D1 span.
+#print axioms DualTree.UpLeafInterleavedSpan.span_element_eq_parameterElement
+#print axioms DualTree.UpLeafInterleavedSpan.mixedWord_span_eq_parameter_range
+
+-- Track B: genuine nonvacuous interleaved D0/D1 Lemma-14 canonicalization.
+#print axioms DualTree.UpLeafInterleavedCanonical.upAsNonplain
+#print axioms DualTree.UpLeafInterleavedCanonical.nonplain_is_up_of_noBullet
+#print axioms DualTree.UpLeafInterleavedCanonical.parameterElement_sameUpTrace_iff
+#print axioms DualTree.UpLeafInterleavedCanonical.upCanonical_of_uniform_plain
+#print axioms DualTree.UpLeafInterleavedCanonical.exists_uniform_plain_given_nonplain
+#print axioms DualTree.UpLeafInterleavedCanonical.exists_upCanonical_interleaved_height_one
+
+-- Track C height-two geometry.
 #print axioms DualTree.HigherSkewGeometry.star_complete_two_of_skew
 #print axioms DualTree.HigherSkewGeometry.star_root_or_leaf_level
 #print axioms DualTree.HigherSkewGeometry.identical_vector_complete
