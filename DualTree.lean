@@ -1,4 +1,4 @@
-import DualTree.HigherConeAddresses
+import DualTree.HigherConeFreeze
 import DualTree.UpLeafInterleavedCanonical
 import DualTree.UpLeafTraceHJ
 import DualTree.UpLeafAudit
