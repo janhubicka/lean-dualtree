@@ -2659,3 +2659,13 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafInterleavedCanonical.upCanonical_of_uniform_plain
 #print axioms DualTree.UpLeafInterleavedCanonical.exists_uniform_plain_given_nonplain
 #print axioms DualTree.UpLeafInterleavedCanonical.exists_upCanonical_interleaved_height_one
+
+-- Track C height-two geometry.
+#print axioms DualTree.HigherSkewGeometry.star_complete_two_of_skew
+#print axioms DualTree.HigherSkewGeometry.star_root_or_leaf_level
+#print axioms DualTree.HigherSkewGeometry.identical_vector_complete
+#print axioms DualTree.HigherSkewGeometry.star_vector_complete_two_of_skew
+#print axioms DualTree.HigherSkewGeometry.ambientStar_complete_forward
+#print axioms DualTree.HigherSkewGeometry.ambientStar_complete_paper
+#print axioms DualTree.HigherSkewGeometry.ambientStar_vector_complete_forward
+#print axioms DualTree.HigherSkewGeometry.ambientStar_vector_complete_paper
