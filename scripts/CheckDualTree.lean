@@ -2915,3 +2915,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ZeroInteriorRamsey.exists_positive_ramseyAt_zero_one
 #print axioms DualTree.ZeroInteriorRamsey.exists_eventual_ramseyAt_zero_one
 #print axioms DualTree.ZeroInteriorRamsey.exists_bound_zero_one
+
+-- Track F: exact relative zero-interior / ground-word Ramsey reduction.
+#print axioms DualTree.ZeroInteriorRelative.groundOfObservation_starredObserve
+#print axioms DualTree.ZeroInteriorRelative.groundOfObservation_pointObservation
+#print axioms DualTree.ZeroInteriorRelative.groundColour_simpleWithin
+#print axioms DualTree.ZeroInteriorRelative.color_eq_pointObservation_of_relative_empty_boundary
+#print axioms DualTree.ZeroInteriorRelative.relative_zero_starred_of_ground
+#print axioms DualTree.ZeroInteriorRelative.relative_ground_of_zero_starred
+#print axioms DualTree.ZeroInteriorRelative.relative_zero_starred_iff_ground
