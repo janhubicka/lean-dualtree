@@ -162,4 +162,67 @@ theorem exists_good_but_not_monochromatic
   exact two_marker_values_in_true_span
     hb kind hnoUp w fallback a₀ a₁ hne r hroot hfirst i
 
+/-- All total tuples of D₂ letters occur on the genuine mixed span.
+This stronger, pointwise form of nonvacuity is the precise hypothesis
+needed to transfer *global* monochromaticity to the residual factor. -/
+theorem every_marker_tuple_realized
+    {b N d : Nat} {β : Type*}
+    (hb : 0 < b)
+    (kind : Fin d → CoordKind)
+    (hnoUp : NoUp kind)
+    (w : Fin N → Sum (PlainIndex kind → β) (Fin 1))
+    (fallback : β)
+    (r : Fin N)
+    (hroot : w r = Sum.inr 0)
+    (hfirst : ∀ j : Fin N, ∀ v : Fin 1,
+      w j = Sum.inr v → r ≤ j) :
+    ∀ a : BulletIndex kind → β,
+      ∃ x : Element b (ambient d N) d β kind,
+        x ∈ (InterleavedMixedWord.mixedWord hb kind hnoUp
+          w fallback r hroot hfirst).span ∧
+        markerTuple x = a := by
+  intro a
+  let σ : PlainIndex kind → Fin 1 → β := fun _ _ => fallback
+  let u : PlainIndex kind → Fin N → β :=
+    fun j => SpanAudit.eval (project w j) (σ j)
+  refine ⟨parameterElement hb kind hnoUp fallback u a, ?_, ?_⟩
+  · exact parameterElement_mem_span
+      hb kind hnoUp w fallback r hroot hfirst σ a
+  · exact markerTuple_parameterElement hb kind hnoUp fallback u a
+
+/-- A factor through D₂ marker letters is monochromatic on the ENTIRE
+span iff its total residual factor is itself constant. This equivalence
+needs full realization of all marker tuples; Good alone is insufficient.
+The abstract formulation is also usable in later residual-colour steps. -/
+theorem monochromatic_iff_constant_total_factor
+    {b n d k : Nat} {β γ : Type*}
+    {aux : Node b → Node b → Bool}
+    {kind : Fin d → CoordKind}
+    (f : MixedProduct.VariableWord b n d k β aux kind)
+    (color : Element b n d β kind → γ)
+    (F : (BulletIndex kind → β) → γ)
+    (hfactor : ∀ x : Element b n d β kind,
+      x ∈ f.span → color x = F (markerTuple x))
+    (hfull : ∀ a : BulletIndex kind → β,
+      ∃ x : Element b n d β kind,
+        x ∈ f.span ∧ markerTuple x = a) :
+    (∀ x y : Element b n d β kind,
+      x ∈ f.span → y ∈ f.span → color x = color y) ↔
+    (∀ a a' : BulletIndex kind → β, F a = F a') := by
+  constructor
+  · intro hmono a a'
+    obtain ⟨x, hx, hxa⟩ := hfull a
+    obtain ⟨y, hy, hya⟩ := hfull a'
+    calc
+      F a = color x := by
+        simpa only [hxa] using (hfactor x hx).symm
+      _ = color y := hmono x y hx hy
+      _ = F a' := by
+        simpa only [hya] using hfactor y hy
+  · intro hconst x y hx hy
+    calc
+      color x = F (markerTuple x) := hfactor x hx
+      _ = F (markerTuple y) := hconst _ _
+      _ = color y := (hfactor y hy).symm
+
 end DualTree.InterleavedHeightOneSharpness
