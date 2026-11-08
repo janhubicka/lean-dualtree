@@ -232,8 +232,8 @@ def TGRBound (b ell k m r N : Nat) : Prop :=
 
 /-- The canonical-alphabet formulation of the qualitative corrected
 Theorem-3 target, including unary alphabets through syntactic refinement.
-Alphabet-renaming transport is a separate source-comparison obligation.
-No proof is asserted here. -/
+`TheoremAlphabetTransport` proves the finite-alphabet renaming bridge.
+Ramsey existence is not asserted here. -/
 def CorrectedTheorem3 : Prop :=
   ∀ b ell k m r : Nat,
     0 < b → 0 < ell → 0 < k → 0 < m → 0 < r →

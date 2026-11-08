@@ -2859,3 +2859,59 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafInterleavedCanonical.upCanonical_of_uniform_plain
 #print axioms DualTree.UpLeafInterleavedCanonical.exists_uniform_plain_given_nonplain
 #print axioms DualTree.UpLeafInterleavedCanonical.exists_upCanonical_interleaved_height_one
+
+-- Track F: TheoremAlphabetTransport.
+#print axioms DualTree.TheoremAlphabetTransport.wordObserve_rename
+#print axioms DualTree.TheoremAlphabetTransport.starredObserve_rename
+#print axioms DualTree.TheoremAlphabetTransport.syntacticRefines_rename_iff
+#print axioms DualTree.TheoremAlphabetTransport.starredBelow_rename_iff
+#print axioms DualTree.TheoremAlphabetTransport.canonicalPoint_rename
+#print axioms DualTree.TheoremAlphabetTransport.simpleWith_pullback
+#print axioms DualTree.TheoremAlphabetTransport.treeRamseyAt_equiv
+#print axioms DualTree.TheoremAlphabetTransport.canonicalRamseyAt_equiv
+#print axioms DualTree.TheoremAlphabetTransport.treeBound_equiv
+#print axioms DualTree.TheoremAlphabetTransport.canonicalBound_equiv
+#print axioms DualTree.TheoremAlphabetTransport.tgrBound_iff_finite
+#print axioms DualTree.TheoremAlphabetTransport.canonicalBound_iff_finite
+#print axioms DualTree.TheoremAlphabetTransport.correctedTheorem3_finite
+#print axioms DualTree.TheoremAlphabetTransport.correctedTheorem25_finite
+
+-- Track F: ForwardCompleteInitialTransport.
+#print axioms DualTree.ForwardCompleteInitialTransport.canonicalEmbedding_transport
+#print axioms DualTree.ForwardCompleteInitialTransport.inverseAddress_eq_of_retained_cut
+#print axioms DualTree.ForwardCompleteInitialTransport.variableAddress_eq_of_syntacticRefines
+
+-- Track F: ForwardCompleteBoundaryTransport.
+#print axioms DualTree.ForwardCompleteBoundaryTransport.successor_prefix_of_retained_parent
+#print axioms DualTree.ForwardCompleteBoundaryTransport.firstBoundary_eq_of_prefix
+#print axioms DualTree.ForwardCompleteBoundaryTransport.firstBoundary_transport_of_retained_parent
+#print axioms DualTree.ForwardCompleteBoundaryTransport.terminal_parent_counterexample
+
+-- Track F: AmbientHeightPadding.
+#print axioms DualTree.AmbientHeightPadding.includeNode_injective
+#print axioms DualTree.AmbientHeightPadding.padVariableWord_supportNodes
+#print axioms DualTree.AmbientHeightPadding.padVariableWord_eval
+#print axioms DualTree.AmbientHeightPadding.padVariableWord_span
+#print axioms DualTree.AmbientHeightPadding.padCompleteWord_span
+#print axioms DualTree.AmbientHeightPadding.ground_word_ramsey_mono
+
+-- Track F: ZeroInteriorRamsey.
+#print axioms DualTree.ZeroInteriorRamsey.pointedStarred_observe
+#print axioms DualTree.ZeroInteriorRamsey.interior_nil
+#print axioms DualTree.ZeroInteriorRamsey.no_variable
+#print axioms DualTree.ZeroInteriorRamsey.word_eq_constant
+#print axioms DualTree.ZeroInteriorRamsey.underlyingSymbol_eq_constant
+#print axioms DualTree.ZeroInteriorRamsey.constantWord_mem_span
+#print axioms DualTree.ZeroInteriorRamsey.starredObserve_eq_pointObservation
+#print axioms DualTree.ZeroInteriorRamsey.pointedStarred_below_iff
+#print axioms DualTree.ZeroInteriorRamsey.color_eq_pointObservation_of_empty_boundary
+#print axioms DualTree.ZeroInteriorRamsey.exists_support_root
+#print axioms DualTree.ZeroInteriorRamsey.exists_starredBelow_zero
+#print axioms DualTree.ZeroInteriorRamsey.singletonRefinement_support
+#print axioms DualTree.ZeroInteriorRamsey.singletonRefinement_syntacticRefines
+#print axioms DualTree.ZeroInteriorRamsey.monochromatic_singleton_of_nonempty_boundary
+#print axioms DualTree.ZeroInteriorRamsey.exists_monochromatic_singleton_refinement_of_nonempty_boundary
+#print axioms DualTree.ZeroInteriorRamsey.positive_ramseyAt_zero_one_of_ground_word_ramsey
+#print axioms DualTree.ZeroInteriorRamsey.exists_positive_ramseyAt_zero_one
+#print axioms DualTree.ZeroInteriorRamsey.exists_eventual_ramseyAt_zero_one
+#print axioms DualTree.ZeroInteriorRamsey.exists_bound_zero_one

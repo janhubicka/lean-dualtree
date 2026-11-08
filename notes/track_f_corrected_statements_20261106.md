@@ -1,4 +1,4 @@
-# Track F: corrected statements and conditional induction
+# Track F: corrected statements, base cases, and induction
 
 Scope: [issue #519](https://github.com/janhubicka/lean-dualtree/issues/519),
 branch `track-f/theorem-induction`. Starting commit:
@@ -41,10 +41,17 @@ additional checks for genuine interleaved height-one Lemma-14
 canonicalization. That result retains D1 trace data and is not identified
 with Definition-11 c-goodness.
 The previous F head `503f0c2` has now passed both full Lean and source-audit
-CI. The current continuation constructs smaller D0/D2 mixed words on a
+CI. The first 8 November continuation constructs smaller D0/D2 mixed words on a
 supplied compatible vector of supports, proves that c-goodness is inherited,
 and assembles an inhabited monochromatic signature fibre from an explicitly
 stated ordered residual-point selection hypothesis.
+The next continuation proves an actual positive eventual Ramsey bound for
+`l = 0, m = 1`, with an inhabited eligible starred domain. It also proves
+canonical-address stability through a retained initial cut, first-boundary
+transport for an outgoing edge with sufficient new height, and exact
+alphabet/colour renaming of the corrected final theorem bounds. None of
+these statements supplies the arbitrary-target-height induction base or
+the whole model-signature transport required for final fusion.
 This continues the A–G split in the **T A** chat. Tracks A–E supply
 mathematical construction and transport inputs; this track owns their
 statement-level integration and the final induction. It does not close
@@ -87,8 +94,10 @@ historical validation markers.
    selector choice.
 
 The numerical target predicates use the canonical alphabet `Fin ell` and
-colour set `Fin r`. Their transport to arbitrary finite alphabets and colour
-sets of the stated sizes remains an explicit source-comparison obligation.
+colour set `Fin r`. `TheoremAlphabetTransport` now proves their exact
+transport to arbitrary finite alphabets and colour sets of those cardinalities,
+with the same ambient threshold and canonical selector. This closes that
+source-comparison obligation, including singleton alphabets.
 The conditional fusion and colour-transfer results themselves are already
 polymorphic in both types.
 
@@ -100,8 +109,8 @@ polymorphic in both types.
 | Theorem 13 / Definition 12, p. 11 | Mixed-product construction needs genuine D₁ leaves, higher intrinsic heights, and relative use inside prescribed source words. Corrected ordered geometry must be used consistently. | Actual `MixedProduct.VariableWord` and `Good`, with an explicit finite coordinate-kind map and complete-skew support. Main includes c-good arbitrary D₀/D₂ interleavings at height one, and genuine D₁ height-one leaf geometry with nonempty mixed spans for arbitrary coordinate patterns. Colour-dependent c-good existence with D₁ and higher intrinsic dimensions remains open. |
 | Corollary 22, p. 25 | The height-one marked-letter colouring is smooth and has a c-good word, but is not monochromatic. The displayed threshold omits a resource needed to remove marked-letter dependence. The `d₂ = 0` call to positive-dimensional CT also needs a separate convention or case. | `Corollary22TwoRootRepair` proves two-root erasure on actual mixed spans. `Corollary22CanonicalQ` now applies it to the total smooth extension of an actual canonical-simple Q colour. Only selected canonical boundary points remain; when the selected set is empty, the starred Q image is monochromatic without a CT selection. A revised `max{2, CT(...)}` bound remains unproved until Ramsey existence and the nonempty residual-point case are assembled. |
 | Lemma 27, pp. 28–29 | Enlarged alphabet, cone domains, decoded variables, Q ordering, fixed-signature coverage, and the final refined word need the recorded repairs. Evaluated-word coverage alone is insufficient for a colour of starred objects. | The canonical-colour modules prove selected-boundary factorization on the whole inhabited signature fibre. `Lemma27ResidualRefinement` now constructs the actual smaller good mixed word and an inhabited monochromatic fibre from a supplied full compatible vector of support subsets whose ordered D2 tuples have homogeneous residual colour. It preserves initial roots and rooted symbols. The original c-good word and homogeneous support selection remain Ramsey existence inputs; Q coverage, target inhabitation, thinning and final colour transfer are proved. |
-| Lemma 28, pp. 29–30 | The iteration suppresses transport of model signatures into the changing current word. Plain refinement preserves a fixed ambient fibre, but need not preserve the interpretation of a model signature. | `finite_signature_fusion` and `finite_signature_canonization` prove the conditional iteration. `Lemma27CanonicalColor.canonicalSignature` now supplies a genuine signature function, with a uniquely determined forward-maximal interior cut, and identifies its eligible fibres exactly with Track D's target class. Increasing-cut model transport, final coverage, and an ambient-independent model task count remain open. |
-| Theorem 25, pp. 27, 30–31 | The pullback must be simple. Its induction is used inside a prescribed source word although the printed theorem is global. The displayed comparison of PTGR with TGR is false; PTGR also suppresses the alphabet parameter. | `CanonicalTheoremSpec.CorrectedTheorem25` fixes the audited intrinsic selector and retains alphabet size and all nonnegative interior counts. The transfer still requires relative Ramsey input and induced-colour simplicity. No numerical TGR/PTGR comparison is imported. The complete node count is a finite power sum, valid also for branching one. |
+| Lemma 28, pp. 29–30 | The iteration suppresses transport of model signatures into the changing current word. Plain refinement preserves a fixed ambient fibre, but need not preserve the interpretation of a model signature. | The conditional finite fusion is proved. The functional canonical signature identifies exactly Track D's eligible fibre. Initial-cut retention now preserves actual canonical addresses; an explicit new-height budget also preserves first-boundary markers of outgoing edges. Whole model-signature transport, final coverage, and an ambient-independent model task count remain open. |
+| Theorem 25, pp. 27, 30–31 | The pullback must be simple. Its induction is used inside a prescribed source word although the printed theorem is global. The displayed comparison of PTGR with TGR is false; PTGR also suppresses the alphabet parameter. | The canonical selector and alphabet parameter are explicit. `ZeroInteriorRamsey.exists_bound_zero_one` proves a positive eventual bound for `l = 0, m = 1`, including unary alphabets and branching one. The arbitrary-m zero-interior base, relative Ramsey input, and induced-colour simplicity remain open. Alphabet/colour equivalences preserve the exact threshold; no numerical TGR/PTGR comparison is imported. |
 | Theorem 29, p. 32 | The product extension has no independent proof in the paper and also inherits the unary span-refinement problem. Scalar homogeneity does not automatically supply simultaneous product homogeneity. | `ProductRamseyAt` uses genuine vector-complete supports, including cross-coordinate order and level separation, semantic colours, and componentwise syntactic refinements. Product existence, source comparison, and quantitative bounds remain unproved. |
 
 The positive-alphabet hypotheses above are deliberate. The Lemma-27 source
@@ -361,6 +370,99 @@ for residual-colour exactness and the smaller `q >= 2` resource for target
 existence are kept explicit; no unproved relation between the dimensions
 is needed. Selecting the homogeneous vector of support subsets remains open.
 
+### ForwardCompleteInitialTransport and ForwardCompleteBoundaryTransport
+
+Suppose a forward-complete support `U` is a subset of a forward-complete
+support `T`, and every `T` vertex through an inclusive ambient cut remains
+in `U`. Every original canonical address ending in that region has the
+same underlying address and the same ambient image in `U`. The proof
+derives its new height admissibility from actual walk rank. The two complete
+heights may differ; nonsingleton support hypotheses remain explicit.
+
+The word-facing theorem obtains support inclusion from genuine syntactic
+refinement. Together with `CutPreservation`, this supplies stable canonical
+coordinates and rooted symbols in the retained initial region, for every
+alphabet. It does not assert equality of canonical images beyond the cut.
+
+For an outgoing edge at a retained parent `s`, the refined directional
+successor extends the original successor when
+`SkewTree.heightAt T s + 1 < q`, where `q` is the new complete height.
+Initial address stability proves equality of the old and new parent ranks,
+so this is an actual nonterminality budget. Extension preserves the first
+ambient boundary at a separate specified boundary cut. The new outside-cut
+proof is derived. This is suitable for retaining an earlier signature's
+frontier data while the current retention cut increases.
+
+The budget cannot be discarded. A kernel-checked unary regression takes
+`T = [[], [0], [0,0]]`, `U = [[], [0]]`, and retained parent/cut `[0]`.
+Both supports are nonsingleton and complete, support inclusion and initial
+retention hold, but the refined parent is terminal. Its totalized successor
+stays at `[0]`; the original successor is `[0,0]`, so the claimed prefix
+relation fails without the height budget. This is a necessary-premise
+regression for the local transport interface.
+
+Neither module yet encodes a whole model signature or proves final task
+coverage. Markers may lie outside the support; their coding must use this
+boundary normalization instead of assuming literal image stability.
+
+### AmbientHeightPadding and ZeroInteriorRamsey
+
+At zero interior count the word has no variable symbols. Its semantic
+observation is exactly an ordinary constant word with one marked vertex.
+`pointedStarred_below_iff` proves that this object lies below a complete
+word precisely when the constant word belongs to its span and the marked
+point is a support root. Its converse constructs a uniform constant
+substitution, so it is valid even for a unary alphabet.
+
+There are two simplicity cases. With empty selected boundary, simplicity
+makes the marked point irrelevant while retaining the whole constant word.
+The actual scalar tree Hales--Jewett theorem therefore supplies a complete
+one-root word with the desired colour constancy. With nonempty selected
+boundary, every eligible point below a singleton-support word is that root,
+and every varying occurrence lies in its cone. Relative simplicity then
+makes a constructed singleton-support refinement monochromatic inside the
+prescribed ambient word. This relative nonempty-boundary conclusion has
+no Ramsey-existence premise.
+
+`AmbientHeightPadding` leaves every old node and symbol unchanged and sets
+new ambient positions to a fallback letter. The actual support-node list
+is unchanged, preserving completeness for every intrinsic height and every
+auxiliary order. Exact evaluation and span-image equalities transport an
+ordinary ground-word Ramsey theorem to every larger ambient height.
+
+Combining that padding with the zero-interior argument proves
+`exists_eventual_ramseyAt_zero_one`: for positive branching and any finite
+nonempty alphabet and colour set, there is a positive threshold such that
+the corrected canonical Ramsey conclusion with `l = 0, m = 1` holds at
+every later ambient height. `exists_bound_zero_one` inhabits the actual
+`CanonicalTheoremSpec.Bound b ell 0 1 r N` specification for positive
+`b`, `ell`, and `r`. The threshold is chosen before the colour.
+`exists_starredBelow_zero` separately proves that the eligible starred
+domain of every complete word with a fallback letter is nonempty.
+
+This is an actual special-case Ramsey existence theorem. The arbitrary-m
+zero-interior base remains open. In particular, relative empty-boundary
+simplicity still leaves a ground-word Ramsey problem inside a prescribed
+word; global Hales--Jewett cannot be applied there without constructing
+the appropriate support and substitution bridge.
+
+### TheoremAlphabetTransport
+
+Renaming alphabet constants retains all support roots, the whole starred
+tree, interior membership, and the actual canonical boundary selector,
+including at zero interior count. Both complete-word syntactic refinement
+and starred eligibility transport in both directions without a two-letter
+assumption. Canonical simplicity pulls back with the same selected boundary
+set and allows arbitrary postcomposition of the colour.
+
+Alphabet and colour equivalences consequently preserve the corrected
+complete-word and canonical-starred Ramsey propositions and their eventual
+thresholds exactly. The `Fin` formulations are equivalent to arbitrary
+finite alphabets and colour sets of the same cardinalities, including
+singleton alphabets. The qualitative theorem wrappers still take the full
+corrected Ramsey theorem as input; renaming supplies no new existence
+argument for the remaining parameter cases.
+
 ### Theorem25
 
 Signature canonization is used to define a colour on realized signatures,
@@ -397,10 +499,13 @@ hypothesis is automatically valid relatively.
 3. Prove simplicity of the actual lower-interior colour and the relative
    Ramsey input needed by Theorem 25. The initial canonical Q smoothness
    theorem does not by itself prove this later induction hypothesis.
-4. Track F: instantiate the finite model signature enumeration, its
-   increasing-cut transport laws, and final coverage; derive the relative
-   induction interface from the canonical model embedding; discharge the
-   `l = 0` base case and assemble the actual induction over `l`.
+4. Track F: instantiate the finite model signature enumeration and final
+   coverage, extending the proved early-address and outgoing-boundary
+   stability to entire transported signatures. Derive the relative
+   induction interface from the canonical model embedding. The positive
+   eventual `l = 0, m = 1` case is proved; discharge arbitrary target `m`
+   and the necessary relative empty-boundary input, then assemble the
+   actual induction over `l`.
 5. Prove the corrected qualitative main theorem and its conversion to the
    non-unary span version; then prove the numerical wrappers, comparison
    statements actually used, and the independent product theorem.
@@ -418,8 +523,8 @@ and model transport remain explicitly exposed.
 
 New source modules are registered in the full `DualTree` import umbrella.
 Their public proof endpoints are registered in `scripts/CheckDualTree.lean`.
-Track F now adds 78 proof endpoints, including 11 in this continuation.
-With the integrated Track B, D, and E results, the registered total is 2,545.
+Track F now adds 124 proof endpoints, including 46 in this continuation.
+With the integrated Track B, D, and E results, the registered total is 2,591.
 This count is not a percentage of the source theorem.
 Lean compilation, the existing source/axiom gates, and finite Q regressions
 are required before the change is reported as verified. See the pull
