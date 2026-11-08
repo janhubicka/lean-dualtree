@@ -2659,3 +2659,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafInterleavedCanonical.upCanonical_of_uniform_plain
 #print axioms DualTree.UpLeafInterleavedCanonical.exists_uniform_plain_given_nonplain
 #print axioms DualTree.UpLeafInterleavedCanonical.exists_upCanonical_interleaved_height_one
+
+-- Track C: flat root/cone Ramsey input.
+#print axioms DualTree.HigherRamseyFlat.exists_uniform_root_and_cones
+#print axioms DualTree.HigherRamseyFlat.exists_monochromatic_root_and_cone_spans
