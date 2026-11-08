@@ -1,3 +1,4 @@
+import DualTree.Lemma28EligibleFusion
 import DualTree.TheoremAlphabetTransport
 import DualTree.ForwardCompleteBoundaryTransport
 import DualTree.ZeroInteriorRelative
