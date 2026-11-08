@@ -2679,3 +2679,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSemiCompleteSemanticBridge.semanticSyntacticSimpleWithin_Q_pullback_smooth
 #print axioms DualTree.ForwardSemiCompleteSemanticBridge.exists_total_semanticSyntacticSimpleWithin_Q_pullback
 #print axioms DualTree.ForwardSemiCompleteSemanticBridge.semanticSyntacticSimple_exists_total_smooth_Q_pullback
+
+-- Track E: exact (rather than span-derived) interface to corrected F signatures.
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.observe_eq_correctedStarredObserve
+#print axioms DualTree.ForwardSemiCompleteSemanticBridge.syntacticBelow_iff_correctedStarredBelow

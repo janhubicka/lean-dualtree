@@ -1,4 +1,5 @@
 import DualTree.ForwardSemiCompleteSimplicity
+import DualTree.CorrectedTheoremSpec
 
 /-!
 # Semantic-colour and syntactic-refinement bridge for Definition 24
@@ -41,6 +42,13 @@ noncomputable def observe
   classical
   exact (U.tree.toFinset, CutPreservation.underlyingSymbol U.word)
 
+/-- The new semantic observation is definitionally the corrected theorem's
+starred observation: there is no extra encoding or re-enumeration. -/
+theorem observe_eq_correctedStarredObserve
+    {b n l : Nat} {α : Type*}
+    (U : CorrectedTheoremSpec.Starred b n l α) :
+    observe U = CorrectedTheoremSpec.starredObserve U := rfl
+
 /-- Track E's root label is the underlying symbol used in the source-facing
 semantic observation. No injectivity assumption on a decoder is needed. -/
 theorem rootLabel_eq_underlyingSymbol
@@ -68,6 +76,17 @@ def SyntacticBelow
   (∀ t : Node b, t ∈ U.tree → t ∈ f.supportNodes) ∧
     ∃ ρ : f.Vars → Sum α U.word.Vars,
       U.word.word = SpanAudit.substitute f.word ρ
+
+/-- Exact syntactic interface to the corrected target theorem. The ambient
+word is a K-variable word, but syntactic refinement and its support clause
+are definitionally identical after forgetting its complete-skew proof.
+No non-unary alphabet hypothesis or span-converse is used. -/
+theorem syntacticBelow_iff_correctedStarredBelow
+    {b n l k : Nat} {α : Type*}
+    (f : CorrectedTheoremSpec.Word b n k α)
+    (U : CorrectedTheoremSpec.Starred b n l α) :
+    SyntacticBelow f.toVariableWord U ↔
+      CorrectedTheoremSpec.StarredBelow U f := Iff.rfl
 
 /-- Syntactic refinement always implies Track E's span-based refinement. -/
 theorem refines_of_syntacticBelow
