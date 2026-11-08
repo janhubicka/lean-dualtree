@@ -2924,3 +2924,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ZeroInteriorRelative.relative_zero_starred_of_ground
 #print axioms DualTree.ZeroInteriorRelative.relative_ground_of_zero_starred
 #print axioms DualTree.ZeroInteriorRelative.relative_zero_starred_iff_ground
+
+-- Track F: Lemma 28 finite fusion under eligible-fibre stability.
+#print axioms DualTree.Lemma28EligibleFusion.fibreMonochromatic_of_eligible_transport
+#print axioms DualTree.Lemma28EligibleFusion.finite_signature_fusion_of_eligible_stability
+#print axioms DualTree.Lemma28EligibleFusion.finite_signature_canonization_of_eligible_stability
+#print axioms DualTree.Lemma28EligibleFusion.eligible_step_of_exact_transport
