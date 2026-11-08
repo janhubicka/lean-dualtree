@@ -2671,3 +2671,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.HigherConeAddresses.branchAddress_injective
 #print axioms DualTree.HigherConeAddresses.branchAddresses_nodup
 #print axioms DualTree.HigherConeAddresses.exists_uniform_root_and_address_cones
+
+-- Track C: true cone-variable evaluation and preservation of constants.
+#print axioms DualTree.HigherConeFreeze.freezeAssignment_selected
+#print axioms DualTree.HigherConeFreeze.selectedConeSymbol_occurs
+#print axioms DualTree.HigherConeFreeze.selectedConeSymbol_eval
+#print axioms DualTree.HigherConeFreeze.frozenConeValue_fixed
+#print axioms DualTree.HigherConeFreeze.frozenConeValue_variable
+#print axioms DualTree.HigherConeFreeze.selectedConeSymbol_span_nonempty
