@@ -145,6 +145,16 @@ def report() -> tuple[dict[str, object], list[str]]:
         failures.append("required source interfaces not recognized by scanner: " + ", ".join(parsed_required))
     if duplicates:
         failures.append("duplicate registered endpoints: " + ", ".join(duplicates))
+    if not_registered:
+        failures.append(
+            f"{len(not_registered)} unregistered lexically public theorem/lemma declarations; "
+            "add #print axioms checks or explicitly review scanner scope: "
+            + ", ".join(str(d["name"]) for d in not_registered[:5])
+        )
+    if warnings:
+        failures.append(
+            f"{len(warnings)} lexical scope/syntax warnings; scanner output requires human review"
+        )
     return result, failures
 
 
