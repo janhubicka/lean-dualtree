@@ -2780,3 +2780,4 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.inducedQ_tree_subset_final_iff_two_le
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.inducedQ_tree_has_unsupported_node_iff_q_one
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.height_one_mixed_span_has_unsupported_Q
+#print axioms DualTree.ForwardQFinalInducedSupportThreshold.height_one_has_unsupported_projected_marker
