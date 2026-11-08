@@ -2651,3 +2651,11 @@ Transitive axiom audit for the first source-facing validation facts.
 -- Track B: converse and exact true interleaved D1 span.
 #print axioms DualTree.UpLeafInterleavedSpan.span_element_eq_parameterElement
 #print axioms DualTree.UpLeafInterleavedSpan.mixedWord_span_eq_parameter_range
+
+-- Track B: genuine nonvacuous interleaved D0/D1 Lemma-14 canonicalization.
+#print axioms DualTree.UpLeafInterleavedCanonical.upAsNonplain
+#print axioms DualTree.UpLeafInterleavedCanonical.nonplain_is_up_of_noBullet
+#print axioms DualTree.UpLeafInterleavedCanonical.parameterElement_sameUpTrace_iff
+#print axioms DualTree.UpLeafInterleavedCanonical.upCanonical_of_uniform_plain
+#print axioms DualTree.UpLeafInterleavedCanonical.exists_uniform_plain_given_nonplain
+#print axioms DualTree.UpLeafInterleavedCanonical.exists_upCanonical_interleaved_height_one
