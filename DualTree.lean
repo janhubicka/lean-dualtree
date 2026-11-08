@@ -1,4 +1,8 @@
-import DualTree.ForwardQFinalTargetExistence
+import DualTree.TheoremAlphabetTransport
+import DualTree.ForwardCompleteBoundaryTransport
+import DualTree.ZeroInteriorRamsey
+import DualTree.Lemma27ResidualRefinement
+import DualTree.Lemma27BoundaryFactor
 import DualTree.ForwardQFinalTargetNonemptyAudit
 import DualTree.ForwardQFinalStarredReenumerationObservation
 import DualTree.ForwardQSourceRefinementAudit
@@ -30,8 +34,6 @@ import DualTree.ForwardQNormalizationObstruction
 import DualTree.ForwardQBulletRootVisibility
 import DualTree.ForwardQHallEvaluations
 import DualTree.ForwardModelBoundaryEnumeration
-import DualTree.ForwardSemiCompleteModelIso
-import DualTree.ForwardSemiCompleteSimplicity
 import DualTree.ForwardQFinalAlphabetLiftObstruction
 import DualTree.MixedGoodSmoothRecordTotalColor
 import DualTree.ForwardQFinalTargetLeafComponentwise

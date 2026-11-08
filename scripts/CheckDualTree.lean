@@ -2478,6 +2478,40 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InterleavedParameters.markerTuple
 #print axioms DualTree.InterleavedParameters.markerTuple_parameterElement
 #print axioms DualTree.InterleavedParameters.bulletPoint_fixed_on_span
+
+-- Track F: corrected targets, finite fusion, induction transfer, and two-root repair.
+#print axioms DualTree.CorrectedTheoremSpec.starredBelow_span
+#print axioms DualTree.CorrectedTheoremSpec.starredBelow_iff_span
+#print axioms DualTree.CorrectedTheoremSpec.starredBelow_of_syntacticRefines
+#print axioms DualTree.CorrectedTheoremSpec.wordMonochromatic_iff_span
+#print axioms DualTree.CorrectedTheoremSpec.starredMonochromatic_of_syntacticRefines
+#print axioms DualTree.CorrectedTheoremSpec.eventualBound_mono
+#print axioms DualTree.CorrectedTheoremSpec.leastBound_spec
+#print axioms DualTree.CorrectedTheoremSpec.leastBound_le
+#print axioms DualTree.CorrectedTheoremSpec.completeNodeCount_one
+#print axioms DualTree.Lemma28.fibreMonochromatic_of_syntacticRefines
+#print axioms DualTree.Lemma28.finite_signature_fusion
+#print axioms DualTree.Lemma28.signatureCanonical_of_processed
+#print axioms DualTree.Lemma28.finite_signature_canonization
+#print axioms DualTree.Lemma28.remainingHeight_final
+#print axioms DualTree.Lemma28.remainingHeight_step
+#print axioms DualTree.Theorem25.signatureColor_exact
+#print axioms DualTree.Theorem25.signatureColor_fallback_independent
+#print axioms DualTree.Theorem25.monochromatic_of_covered_signature_pullback
+#print axioms DualTree.Theorem25.simpleWithin_of_simple
+#print axioms DualTree.Theorem25.simpleWithin_of_syntacticRefines
+#print axioms DualTree.Theorem25.step_of_relative_ramsey
+#print axioms DualTree.Corollary22TwoRootRepair.complete_support_has_two_roots
+#print axioms DualTree.Corollary22TwoRootRepair.hasTwoGamma1Roots_of_two_le_dimension
+#print axioms DualTree.Corollary22TwoRootRepair.moveGamma1Markers_smooth
+#print axioms DualTree.Corollary22TwoRootRepair.moveGamma1Markers_mem_span
+#print axioms DualTree.Corollary22TwoRootRepair.reassignMarkedLetter_at_other_root
+#print axioms DualTree.Corollary22TwoRootRepair.normalizeGamma1Letters_mem_span
+#print axioms DualTree.Corollary22TwoRootRepair.color_eq_normalizeGamma1Letters
+#print axioms DualTree.Corollary22TwoRootRepair.good_smooth_color_eq_of_bullet_points
+#print axioms DualTree.Corollary22TwoRootRepair.good_smooth_color_eq_of_gamma2_points
+#print axioms DualTree.Corollary22TwoRootRepair.good_smooth_monochromatic_all_gamma1
+#print axioms DualTree.Corollary22TwoRootRepair.good_smooth_color_eq_of_two_le_dimension
 #print axioms DualTree.InterleavedSpan.element_eq_of_fields
 #print axioms DualTree.InterleavedSpan.span_element_eq_parameterElement
 #print axioms DualTree.InterleavedRamsey.mixedWord_good_of_uniform_flat
@@ -2560,107 +2594,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardSemiCompleteSimplicity.simple_exists_total_smooth_Q_pullback
 #print axioms DualTree.ForwardSemiCompleteModelIso.starredRootAll_eq_of_tree_eq
 #print axioms DualTree.ForwardSemiCompleteModelIso.canonicalWalkAll_eq_of_tree_eq
-
--- Track B: genuine D1 leaf geometry / nonempty spans (PR #530).
-#print axioms DualTree.UpLeafAudit.binaryLeaves_nodup
-#print axioms DualTree.UpLeafAudit.binaryLeaves_card
-#print axioms DualTree.UpLeafAudit.binaryExtendedSupport_paper_skew
-#print axioms DualTree.UpLeafAudit.binaryExtendedSupport_forward_skew
-#print axioms DualTree.UpLeafAudit.uncoveredLeaves_nodup
-#print axioms DualTree.UpLeafAudit.uncoveredLeaves_card
-#print axioms DualTree.UpLeafAudit.uncoveredExtendedSupport_rooted
-#print axioms DualTree.UpLeafAudit.uncoveredExtendedSupport_length_clauses
-#print axioms DualTree.UpLeafAudit.uncoveredExtendedSupport_not_paper_skew
-#print axioms DualTree.UpLeafAudit.uncoveredExtendedSupport_not_forward_skew
-#print axioms DualTree.UpLeafAudit.outsideConeExtendedSupport_not_rooted
-#print axioms DualTree.UpLeafAudit.outsideConeExtendedSupport_not_paper_skew
-#print axioms DualTree.UpLeafAudit.outsideConeExtendedSupport_not_forward_skew
-#print axioms DualTree.UpLeafAudit.unaryExtendedSupport_paper_skew
-#print axioms DualTree.UpLeafAudit.unaryExtendedSupport_forward_skew
-#print axioms DualTree.UpLeafAudit.unary_equal_height_not_skew
-#print axioms DualTree.UpLeafAudit.span_empty_of_upLeaves_empty
-#print axioms DualTree.UpLeafAudit.zero_branch_up_span_empty
-#print axioms DualTree.UpLeafAudit.zeroBranchMixedWord_span_empty
-#print axioms DualTree.UpLeafAudit.fixedRootBinaryPoint_mem_span
-#print axioms DualTree.UpLeafAudit.leafColor_fixedRootBinaryPoint
-#print axioms DualTree.UpLeafAudit.fixedRootBinaryWord_not_good
-#print axioms DualTree.UpLeafCanonical.sameUpTrace_iff_eq_of_allUp_attach_mem_span
-#print axioms DualTree.UpLeafCanonical.upCanonical_attach_allUp
-#print axioms DualTree.UpLeafCanonical.parameterElement_sameUpTrace_iff
-#print axioms DualTree.UpLeafCanonical.upCanonical_iff_parameter_constancy
-#print axioms DualTree.UpLeafCanonical.sameUpTrace_iff_eq_of_allUp_mem_span
-#print axioms DualTree.UpLeafCanonical.upCanonical_allUp
-#print axioms DualTree.UpLeafCanonical.good_iff_parameter_bullet_constancy
-#print axioms DualTree.UpLeafExamples.roots_length
-#print axioms DualTree.UpLeafExamples.roots_ordered
-#print axioms DualTree.UpLeafExamples.threeWord_span_nonempty
-#print axioms DualTree.UpLeafExamples.threeWord_upLeaves_card
-#print axioms DualTree.UpLeafExamples.threeWord_direction_mem_span
-#print axioms DualTree.UpLeafExamples.threeWord_directions_distinct
-#print axioms DualTree.UpLeafGeometry.mem_star_iff
-#print axioms DualTree.UpLeafGeometry.direction_eq_of_prefix
-#print axioms DualTree.UpLeafGeometry.leaf_injective
-#print axioms DualTree.UpLeafGeometry.root_prefix_leaf
-#print axioms DualTree.UpLeafGeometry.star_nodup
-#print axioms DualTree.UpLeafGeometry.star_height_root
-#print axioms DualTree.UpLeafGeometry.star_height_leaf
-#print axioms DualTree.UpLeafGeometry.star_immediate_root_leaf
-#print axioms DualTree.UpLeafGeometry.star_root_successors
-#print axioms DualTree.UpLeafGeometry.star_leaf_successors
-#print axioms DualTree.UpLeafGeometry.star_branchWitnesses
-#print axioms DualTree.UpLeafGeometry.star_skew
-#print axioms DualTree.UpLeafGeometry.direction_prefix_ambientLeaf
-#print axioms DualTree.UpLeafGeometry.prefix_ambientLeaf
-#print axioms DualTree.UpLeafGeometry.ambientLeaf_val_injective
-#print axioms DualTree.UpLeafGeometry.ambientLeaf_injective
-#print axioms DualTree.UpLeafGeometry.ambientLeaves_nodup
-#print axioms DualTree.UpLeafGeometry.ambientLeaves_length
-#print axioms DualTree.UpLeafGeometry.mem_ambientLeaves_iff
-#print axioms DualTree.UpLeafGeometry.ambientLeaf_mem
-#print axioms DualTree.UpLeafGeometry.extended_support_skew_paper
-#print axioms DualTree.UpLeafGeometry.extended_support_skew_forward
-#print axioms DualTree.UpLeafMixedWord.root_mem_support_of_singleton
-#print axioms DualTree.UpLeafMixedWord.attach_span_nonempty
-#print axioms DualTree.UpLeafMixedWord.parameterElement_root_letter
-#print axioms DualTree.UpLeafMixedWord.parameterElement_injective
-#print axioms DualTree.UpLeafMixedWord.parameterElement_mem_span
-#print axioms DualTree.UpLeafMixedWord.span_element_eq_parameterElement
-#print axioms DualTree.UpLeafMixedWord.mixedWord_span_eq_parameter_range
-#print axioms DualTree.UpLeafMixedWord.mixedWord_span_nonempty
-#print axioms DualTree.UpLeafMixedWord.exists_mixedWord_nonempty
-
--- Track B: flat parameter-Hales--Jewett uniform over genuine D1 trace data.
-#print axioms DualTree.UpLeafTraceHJ.exists_uniform_plain_given_up_and_bullet
-
--- Track B: genuine interleaved D1 leaves and mixed words.
-#print axioms DualTree.UpLeafInterleavedGeometry.markerPos_eq_supportRoot_of_not_plain
-#print axioms DualTree.UpLeafInterleavedGeometry.component_supportNodes
-#print axioms DualTree.UpLeafInterleavedGeometry.vectorWord
-#print axioms DualTree.UpLeafInterleavedGeometry.mixedWord
-#print axioms DualTree.UpLeafInterleavedGeometry.mixedWord_upLeaves_card
-#print axioms DualTree.UpLeafInterleavedGeometry.mixedWord_span_nonempty
-
--- Track B: independently parametrized real interleaved D1 span points.
-#print axioms DualTree.UpLeafInterleavedParameters.NonplainIndex
-#print axioms DualTree.UpLeafInterleavedParameters.parameterElement
-#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_plain
-#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_nonplain_root_letter
-#print axioms DualTree.UpLeafInterleavedParameters.rootPos_eq_markerPos_of_up
-#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_mem_span
-
--- Track B: converse and exact true interleaved D1 span.
-#print axioms DualTree.UpLeafInterleavedSpan.span_element_eq_parameterElement
-#print axioms DualTree.UpLeafInterleavedSpan.mixedWord_span_eq_parameter_range
-
--- Track B: genuine nonvacuous interleaved D0/D1 Lemma-14 canonicalization.
-#print axioms DualTree.UpLeafInterleavedCanonical.upAsNonplain
-#print axioms DualTree.UpLeafInterleavedCanonical.nonplain_is_up_of_noBullet
-#print axioms DualTree.UpLeafInterleavedCanonical.parameterElement_sameUpTrace_iff
-#print axioms DualTree.UpLeafInterleavedCanonical.upCanonical_of_uniform_plain
-#print axioms DualTree.UpLeafInterleavedCanonical.exists_uniform_plain_given_nonplain
-#print axioms DualTree.UpLeafInterleavedCanonical.exists_upCanonical_interleaved_height_one
-
--- Track D: rebased source-relative Q, genuine starred target and span/refinement bridge.
+-- Track D: symbolic source-relative Q transfer and boundary regressions.
 #print axioms DualTree.ForwardQSourceRefinement.SyntacticallyRefines
 #print axioms DualTree.ForwardQSourceRefinement.rootSubstitution
 #print axioms DualTree.ForwardQSourceRefinement.SyntacticallyRefines.span_subset
@@ -2765,6 +2699,101 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalTargetNonemptyAudit.binary_q2_sourceRelativeSetTarget
 #print axioms DualTree.ForwardQFinalTargetNonemptyAudit.binary_q2_set_target_class_nonempty
 #print axioms DualTree.ForwardQFinalTargetNonemptyAudit.binary_q2_has_actual_set_Q_preimage
+
+-- Track F: canonical selector, actual Q colour erasure, and fixed-signature canonization.
+#print axioms DualTree.CanonicalTheoremSpec.sourceSimpleWithin_of_simpleWith
+#print axioms DualTree.CanonicalTheoremSpec.sourceSimple_of_simple
+#print axioms DualTree.CanonicalTheoremSpec.sourceRefines_of_starredBelow
+#print axioms DualTree.CanonicalTheoremSpec.starredBelow_iff_sourceRefines
+#print axioms DualTree.CanonicalTheoremSpec.relativeSimpleWith_of_source
+#print axioms DualTree.CanonicalTheoremSpec.relativeSimpleWith_iff_source
+#print axioms DualTree.CanonicalTheoremSpec.relativeSimple_iff_source
+#print axioms DualTree.Corollary22CanonicalQ.canonicalPoint_Q_eq_iff_local_point_eq
+#print axioms DualTree.Corollary22CanonicalQ.canonicalBoundary_eq_iff_gamma2_points
+#print axioms DualTree.Corollary22CanonicalQ.exists_total_simple_Q_point_canonization
+#print axioms DualTree.Corollary22CanonicalQ.exists_total_emptyBoundary_Q_monochromatic
+#print axioms DualTree.Lemma27CanonicalColor.lastInterior_mem
+#print axioms DualTree.Lemma27CanonicalColor.lastInterior_maximal
+#print axioms DualTree.Lemma27CanonicalColor.lastInterior_eq_of_maximal
+#print axioms DualTree.Lemma27CanonicalColor.canonicalSignature_eq_at_cut
+#print axioms DualTree.Lemma27CanonicalColor.sameCompleteSetSignature_iff
+#print axioms DualTree.Lemma27CanonicalColor.sourceRelativeSetTarget_iff_starredBelow_signature
+#print axioms DualTree.Lemma27CanonicalColor.observe_eq_starredObserve
+#print axioms DualTree.Lemma27CanonicalColor.fibreMonochromatic_of_Q_monochromatic
+#print axioms DualTree.Lemma27CanonicalColor.exists_total_emptyBoundary_fibre_canonization
+
+-- Track B: genuine D1 leaf geometry / nonempty spans (PR #530).
+#print axioms DualTree.UpLeafAudit.binaryLeaves_nodup
+#print axioms DualTree.UpLeafAudit.binaryLeaves_card
+#print axioms DualTree.UpLeafAudit.binaryExtendedSupport_paper_skew
+#print axioms DualTree.UpLeafAudit.binaryExtendedSupport_forward_skew
+#print axioms DualTree.UpLeafAudit.uncoveredLeaves_nodup
+#print axioms DualTree.UpLeafAudit.uncoveredLeaves_card
+#print axioms DualTree.UpLeafAudit.uncoveredExtendedSupport_rooted
+#print axioms DualTree.UpLeafAudit.uncoveredExtendedSupport_length_clauses
+#print axioms DualTree.UpLeafAudit.uncoveredExtendedSupport_not_paper_skew
+#print axioms DualTree.UpLeafAudit.uncoveredExtendedSupport_not_forward_skew
+#print axioms DualTree.UpLeafAudit.outsideConeExtendedSupport_not_rooted
+#print axioms DualTree.UpLeafAudit.outsideConeExtendedSupport_not_paper_skew
+#print axioms DualTree.UpLeafAudit.outsideConeExtendedSupport_not_forward_skew
+#print axioms DualTree.UpLeafAudit.unaryExtendedSupport_paper_skew
+#print axioms DualTree.UpLeafAudit.unaryExtendedSupport_forward_skew
+#print axioms DualTree.UpLeafAudit.unary_equal_height_not_skew
+#print axioms DualTree.UpLeafAudit.span_empty_of_upLeaves_empty
+#print axioms DualTree.UpLeafAudit.zero_branch_up_span_empty
+#print axioms DualTree.UpLeafAudit.zeroBranchMixedWord_span_empty
+#print axioms DualTree.UpLeafAudit.fixedRootBinaryPoint_mem_span
+#print axioms DualTree.UpLeafAudit.leafColor_fixedRootBinaryPoint
+#print axioms DualTree.UpLeafAudit.fixedRootBinaryWord_not_good
+#print axioms DualTree.UpLeafCanonical.sameUpTrace_iff_eq_of_allUp_attach_mem_span
+#print axioms DualTree.UpLeafCanonical.upCanonical_attach_allUp
+#print axioms DualTree.UpLeafCanonical.parameterElement_sameUpTrace_iff
+#print axioms DualTree.UpLeafCanonical.upCanonical_iff_parameter_constancy
+#print axioms DualTree.UpLeafCanonical.sameUpTrace_iff_eq_of_allUp_mem_span
+#print axioms DualTree.UpLeafCanonical.upCanonical_allUp
+#print axioms DualTree.UpLeafCanonical.good_iff_parameter_bullet_constancy
+#print axioms DualTree.UpLeafExamples.roots_length
+#print axioms DualTree.UpLeafExamples.roots_ordered
+#print axioms DualTree.UpLeafExamples.threeWord_span_nonempty
+#print axioms DualTree.UpLeafExamples.threeWord_upLeaves_card
+#print axioms DualTree.UpLeafExamples.threeWord_direction_mem_span
+#print axioms DualTree.UpLeafExamples.threeWord_directions_distinct
+#print axioms DualTree.UpLeafGeometry.mem_star_iff
+#print axioms DualTree.UpLeafGeometry.direction_eq_of_prefix
+#print axioms DualTree.UpLeafGeometry.leaf_injective
+#print axioms DualTree.UpLeafGeometry.root_prefix_leaf
+#print axioms DualTree.UpLeafGeometry.star_nodup
+#print axioms DualTree.UpLeafGeometry.star_height_root
+#print axioms DualTree.UpLeafGeometry.star_height_leaf
+#print axioms DualTree.UpLeafGeometry.star_immediate_root_leaf
+#print axioms DualTree.UpLeafGeometry.star_root_successors
+#print axioms DualTree.UpLeafGeometry.star_leaf_successors
+#print axioms DualTree.UpLeafGeometry.star_branchWitnesses
+#print axioms DualTree.UpLeafGeometry.star_skew
+#print axioms DualTree.UpLeafGeometry.direction_prefix_ambientLeaf
+#print axioms DualTree.UpLeafGeometry.prefix_ambientLeaf
+#print axioms DualTree.UpLeafGeometry.ambientLeaf_val_injective
+#print axioms DualTree.UpLeafGeometry.ambientLeaf_injective
+#print axioms DualTree.UpLeafGeometry.ambientLeaves_nodup
+#print axioms DualTree.UpLeafGeometry.ambientLeaves_length
+#print axioms DualTree.UpLeafGeometry.mem_ambientLeaves_iff
+#print axioms DualTree.UpLeafGeometry.ambientLeaf_mem
+#print axioms DualTree.UpLeafGeometry.extended_support_skew_paper
+#print axioms DualTree.UpLeafGeometry.extended_support_skew_forward
+#print axioms DualTree.UpLeafMixedWord.root_mem_support_of_singleton
+#print axioms DualTree.UpLeafMixedWord.attach_span_nonempty
+#print axioms DualTree.UpLeafMixedWord.parameterElement_root_letter
+#print axioms DualTree.UpLeafMixedWord.parameterElement_injective
+#print axioms DualTree.UpLeafMixedWord.parameterElement_mem_span
+#print axioms DualTree.UpLeafMixedWord.span_element_eq_parameterElement
+#print axioms DualTree.UpLeafMixedWord.mixedWord_span_eq_parameter_range
+#print axioms DualTree.UpLeafMixedWord.mixedWord_span_nonempty
+#print axioms DualTree.UpLeafMixedWord.exists_mixedWord_nonempty
+
+-- Track B: flat parameter-Hales--Jewett uniform over genuine D1 trace data.
+#print axioms DualTree.UpLeafTraceHJ.exists_uniform_plain_given_up_and_bullet
+
+-- Track D: general eligible-target existence and the exact positive-height threshold.
 #print axioms DualTree.ForwardQFinalInducedSignature.fibreQStarredWord_sameCompleteSetForwardSignature
 #print axioms DualTree.ForwardQFinalInducedRefinement.inducedQ_syntacticallyRefines_final
 #print axioms DualTree.ForwardQFinalInducedSupport.localRoot_mem_selectedProjectedRoots_of_two_le_q
@@ -2776,3 +2805,113 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalTargetExistence.sourceRelativeSetTarget_nonempty_iff_two_le
 #print axioms DualTree.ForwardQFinalTargetExistence.exists_complete_nonempty_set_source_relative_Q_transfer
 #print axioms DualTree.ForwardQFinalTargetExistence.exists_complete_nonempty_set_Q_transfer_of_source_refinement
+
+-- Track F: intrinsic selectors, inhabited fibres, and general boundary colour factors.
+#print axioms DualTree.CanonicalPointReenumeration.starredRootAll_eq_of_mem_iff
+#print axioms DualTree.CanonicalPointReenumeration.canonicalWalkAll_model_eq_of_mem_iff
+#print axioms DualTree.CanonicalPointReenumeration.canonicalPoint_eq_of_mem_iff
+#print axioms DualTree.CanonicalPointReenumeration.canonicalPoint_eq_of_tree_toFinset_eq
+#print axioms DualTree.Lemma27CanonicalWitness.canonicalSignature_fibre_nonempty
+#print axioms DualTree.Lemma27CanonicalWitness.canonicalSignature_fibre_nonempty_iff_two_le
+#print axioms DualTree.Lemma27CanonicalWitness.exists_total_emptyBoundary_nonempty_fibre_canonization
+#print axioms DualTree.Lemma27CanonicalPointColor.fibrePointCanonical_of_syntacticRefines
+#print axioms DualTree.Lemma27CanonicalPointColor.fibrePointCanonical_empty_iff
+#print axioms DualTree.Lemma27CanonicalPointColor.canonicalPoint_eq_of_starredObserve_eq
+#print axioms DualTree.Lemma27CanonicalPointColor.fibrePointCanonical_of_Q_point_canonical
+#print axioms DualTree.Lemma27CanonicalPointColor.exists_total_nonempty_fibre_point_canonization
+#print axioms DualTree.Lemma27BoundaryFactor.residualColor_exact
+#print axioms DualTree.Lemma27BoundaryFactor.fibrePointCanonical_iff_exists_residualColor
+#print axioms DualTree.Lemma27BoundaryFactor.fibreMonochromatic_of_residualColor_homogeneous
+
+-- Track B: genuine interleaved D1 geometry and exact spans (PRs 533, 535, 537).
+#print axioms DualTree.UpLeafInterleavedGeometry.markerPos_eq_supportRoot_of_not_plain
+#print axioms DualTree.UpLeafInterleavedGeometry.component_supportNodes
+#print axioms DualTree.UpLeafInterleavedGeometry.vectorWord
+#print axioms DualTree.UpLeafInterleavedGeometry.mixedWord
+#print axioms DualTree.UpLeafInterleavedGeometry.mixedWord_upLeaves_card
+#print axioms DualTree.UpLeafInterleavedGeometry.mixedWord_span_nonempty
+#print axioms DualTree.UpLeafInterleavedParameters.NonplainIndex
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_plain
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_nonplain_root_letter
+#print axioms DualTree.UpLeafInterleavedParameters.rootPos_eq_markerPos_of_up
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_mem_span
+#print axioms DualTree.UpLeafInterleavedSpan.span_element_eq_parameterElement
+#print axioms DualTree.UpLeafInterleavedSpan.mixedWord_span_eq_parameter_range
+
+-- Track F: genuine support thinning and ordered residual-point canonization.
+#print axioms DualTree.MixedSupportThinning.thin_support
+#print axioms DualTree.MixedSupportThinning.thin_syntactic_components
+#print axioms DualTree.MixedSupportThinning.thin_refines
+#print axioms DualTree.MixedSupportThinning.thin_good
+#print axioms DualTree.MixedSupportThinning.exists_good_thinning
+#print axioms DualTree.Corollary22ResidualPoints.residualColor_exact_on_span
+#print axioms DualTree.Corollary22ResidualPoints.exists_total_point_factor
+#print axioms DualTree.Corollary22ResidualPoints.monochromatic_of_residualColor_homogeneous
+#print axioms DualTree.Lemma27ResidualRefinement.starred_points_ordered_supported
+#print axioms DualTree.Lemma27ResidualRefinement.Q_monochromatic_of_ordered_residual_homogeneous
+#print axioms DualTree.Lemma27ResidualRefinement.exists_total_fibre_canonization_of_ordered_support_selection
+
+-- Track B: genuine interleaved height-one Lemma-14 canonicalization (PR539).
+#print axioms DualTree.UpLeafInterleavedCanonical.upAsNonplain
+#print axioms DualTree.UpLeafInterleavedCanonical.nonplain_is_up_of_noBullet
+#print axioms DualTree.UpLeafInterleavedCanonical.parameterElement_sameUpTrace_iff
+#print axioms DualTree.UpLeafInterleavedCanonical.upCanonical_of_uniform_plain
+#print axioms DualTree.UpLeafInterleavedCanonical.exists_uniform_plain_given_nonplain
+#print axioms DualTree.UpLeafInterleavedCanonical.exists_upCanonical_interleaved_height_one
+
+-- Track F: TheoremAlphabetTransport.
+#print axioms DualTree.TheoremAlphabetTransport.wordObserve_rename
+#print axioms DualTree.TheoremAlphabetTransport.starredObserve_rename
+#print axioms DualTree.TheoremAlphabetTransport.syntacticRefines_rename_iff
+#print axioms DualTree.TheoremAlphabetTransport.starredBelow_rename_iff
+#print axioms DualTree.TheoremAlphabetTransport.canonicalPoint_rename
+#print axioms DualTree.TheoremAlphabetTransport.simpleWith_pullback
+#print axioms DualTree.TheoremAlphabetTransport.treeRamseyAt_equiv
+#print axioms DualTree.TheoremAlphabetTransport.canonicalRamseyAt_equiv
+#print axioms DualTree.TheoremAlphabetTransport.treeBound_equiv
+#print axioms DualTree.TheoremAlphabetTransport.canonicalBound_equiv
+#print axioms DualTree.TheoremAlphabetTransport.tgrBound_iff_finite
+#print axioms DualTree.TheoremAlphabetTransport.canonicalBound_iff_finite
+#print axioms DualTree.TheoremAlphabetTransport.correctedTheorem3_finite
+#print axioms DualTree.TheoremAlphabetTransport.correctedTheorem25_finite
+
+-- Track F: ForwardCompleteInitialTransport.
+#print axioms DualTree.ForwardCompleteInitialTransport.canonicalEmbedding_transport
+#print axioms DualTree.ForwardCompleteInitialTransport.inverseAddress_eq_of_retained_cut
+#print axioms DualTree.ForwardCompleteInitialTransport.variableAddress_eq_of_syntacticRefines
+
+-- Track F: ForwardCompleteBoundaryTransport.
+#print axioms DualTree.ForwardCompleteBoundaryTransport.successor_prefix_of_retained_parent
+#print axioms DualTree.ForwardCompleteBoundaryTransport.firstBoundary_eq_of_prefix
+#print axioms DualTree.ForwardCompleteBoundaryTransport.firstBoundary_transport_of_retained_parent
+#print axioms DualTree.ForwardCompleteBoundaryTransport.terminal_parent_counterexample
+
+-- Track F: AmbientHeightPadding.
+#print axioms DualTree.AmbientHeightPadding.includeNode_injective
+#print axioms DualTree.AmbientHeightPadding.padVariableWord_supportNodes
+#print axioms DualTree.AmbientHeightPadding.padVariableWord_eval
+#print axioms DualTree.AmbientHeightPadding.padVariableWord_span
+#print axioms DualTree.AmbientHeightPadding.padCompleteWord_span
+#print axioms DualTree.AmbientHeightPadding.ground_word_ramsey_mono
+
+-- Track F: ZeroInteriorRamsey.
+#print axioms DualTree.ZeroInteriorRamsey.pointedStarred_observe
+#print axioms DualTree.ZeroInteriorRamsey.interior_nil
+#print axioms DualTree.ZeroInteriorRamsey.no_variable
+#print axioms DualTree.ZeroInteriorRamsey.word_eq_constant
+#print axioms DualTree.ZeroInteriorRamsey.underlyingSymbol_eq_constant
+#print axioms DualTree.ZeroInteriorRamsey.constantWord_mem_span
+#print axioms DualTree.ZeroInteriorRamsey.starredObserve_eq_pointObservation
+#print axioms DualTree.ZeroInteriorRamsey.pointedStarred_below_iff
+#print axioms DualTree.ZeroInteriorRamsey.color_eq_pointObservation_of_empty_boundary
+#print axioms DualTree.ZeroInteriorRamsey.exists_support_root
+#print axioms DualTree.ZeroInteriorRamsey.exists_starredBelow_zero
+#print axioms DualTree.ZeroInteriorRamsey.singletonRefinement_support
+#print axioms DualTree.ZeroInteriorRamsey.singletonRefinement_syntacticRefines
+#print axioms DualTree.ZeroInteriorRamsey.monochromatic_singleton_of_nonempty_boundary
+#print axioms DualTree.ZeroInteriorRamsey.exists_monochromatic_singleton_refinement_of_nonempty_boundary
+#print axioms DualTree.ZeroInteriorRamsey.positive_ramseyAt_zero_one_of_ground_word_ramsey
+#print axioms DualTree.ZeroInteriorRamsey.exists_positive_ramseyAt_zero_one
+#print axioms DualTree.ZeroInteriorRamsey.exists_eventual_ramseyAt_zero_one
+#print axioms DualTree.ZeroInteriorRamsey.exists_bound_zero_one
