@@ -25,10 +25,16 @@ signatures before declaring the stronger trust invariant established.
 A green CI proves the build and scanner pass, not the unproved Lemma
 27–28, Theorem 25, Theorem 3 or Theorem 29 interfaces. In particular
 `UpCanonical` is not Definition-11 `Good`, and corrected forward-Q
-Hilbert/Hall conditions still require all occurrence/nondegeneracy
+global Hall conditions still require all occurrence/nondegeneracy
 hypotheses. Preserve the known counterexamples as regression fixtures.
 
 The source-scope rule introduced here is intentional: future branches
 adding a public theorem must either register its axiom check or document
 why this conservative lexical count is not applicable. Do not weaken the
 gate solely to keep an unrelated Track A–F PR green.
+
+The disposable-repository CI regressions also intentionally duplicate a
+registered endpoint, introduce an unmatched lexical scope terminator,
+and rename a mandatory source theorem while leaving its registry entry
+intact. Each case must fail. This verifies the new scope and source
+contract failure paths rather than only testing missing registrations.
