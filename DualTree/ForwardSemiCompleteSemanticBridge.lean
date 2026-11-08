@@ -237,14 +237,14 @@ theorem Q_syntacticBelow_ambient
       (ForwardQAmbientFibreSpan.fibreQStarredWord_refines_ambient
         hb c fallback w)
   refine ⟨href.1, ?_⟩
-  · refine ⟨ForwardQAmbientFibreSymbol.fibreSubstitution c fallback w.1, ?_⟩
+  · refine ⟨ForwardQAmbientFibreSpan.fibreSubstitution c fallback w.1, ?_⟩
     funext s
     calc
       (fibreQStarredWord hb c fallback w).word.word s =
         ForwardQAmbientFibreSymbol.fibreQSymbol c fallback w.1 s :=
           fibreQStarredWord_symbol hb c fallback w s
       _ = SpanAudit.substitute c.ambient.word
-            (ForwardQAmbientFibreSymbol.fibreSubstitution
+            (ForwardQAmbientFibreSpan.fibreSubstitution
               c fallback w.1) s :=
           congrFun (ForwardQAmbientFibreSpan.fibreQSymbol_eq_substitute
             c fallback w.1) s
@@ -390,7 +390,7 @@ theorem semanticSyntacticSimple_exists_total_smooth_Q_pullback
     (c : FibreFrame b n l k m α)
     (fallback : α) (fallbackColor : γ)
     (color : SemanticObservation b n α → γ)
-    (hsimple : SemanticSyntacticSimple c.ambient color) :
+    (hsimple : SemanticSyntacticSimple (l := l) c.ambient color) :
     ∃ gamma1 : MixedProduct.BulletIndex (kind c.core) → Bool,
       ∃ total : ForwardQEnlargedConstantWords.EnlargedInput c.core → γ,
         (∀ w : ForwardQEnlargedConstantWords.EnlargedStarredInput
