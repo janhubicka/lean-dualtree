@@ -27,7 +27,7 @@ noncomputable def encodeMatrix
     (hb : 0 < b) (fallback : β)
     (root : Fin N → Fin d → β)
     (cone : Fin M → Fin d → Address b N → β) :
-    Fin d → TreeWord b (N + M) β := by
+    Fin d → BoundedNode b (N + M) → β := by
   classical
   exact fun coord t =>
     if hroot : ∃ j : Fin N,
@@ -86,7 +86,7 @@ theorem exists_monochromatic_encoded_root_and_cones
     (β γ : Type*) [Finite β] [Finite γ]
     (d : Nat) (fallback : β) :
     ∃ N M : Nat,
-      ∀ C : (Fin d → TreeWord b (N + M) β) → γ,
+      ∀ C : (Fin d → BoundedNode b (N + M) → β) → γ,
         ∃ root : Fin N → Sum (Fin d → β) (Fin 1),
           ∃ r : Fin N,
             root r = Sum.inr 0 ∧
