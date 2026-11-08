@@ -2780,3 +2780,5 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.InterleavedHeightOneSharpness.observed_marker_color_good
 #print axioms DualTree.InterleavedHeightOneSharpness.two_marker_values_in_true_span
 #print axioms DualTree.InterleavedHeightOneSharpness.exists_good_but_not_monochromatic
+#print axioms DualTree.InterleavedHeightOneSharpness.every_marker_tuple_realized
+#print axioms DualTree.InterleavedHeightOneSharpness.monochromatic_iff_constant_total_factor
