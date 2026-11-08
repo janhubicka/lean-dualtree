@@ -1,4 +1,4 @@
-import DualTree.HigherTreeEncoding
+import DualTree.HigherPhysicalSupport
 import DualTree.HigherSkewGeometry
 import DualTree.ForwardQFinalTargetExistence
 import DualTree.ForwardQFinalTargetNonemptyAudit
