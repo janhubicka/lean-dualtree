@@ -2813,3 +2813,16 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UnaryMainAudit.rootColor_leftWord
 #print axioms DualTree.Lemma27Repair.filter_length_le
 #print axioms DualTree.Lemma27Repair.visibleAncestors_length_le_aux
+
+-- Track B: eleven newly registered endpoints integrated from main #547.
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.bulletAsNonplain
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.parameterElement_bullet_letter
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.good_iff_parameter_bullet_constancy
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.upPoint_color_upCanonical
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.upPoint_color_not_good
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.SameBulletLetters
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.parameterColor
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.PlainInvariant
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.UpDirectionInvariant
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.UpLetterInvariant
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.good_iff_three_invariances

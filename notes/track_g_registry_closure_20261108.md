@@ -38,3 +38,9 @@ registered endpoint, introduce an unmatched lexical scope terminator,
 and rename a mandatory source theorem while leaving its registry entry
 intact. Each case must fail. This verifies the new scope and source
 contract failure paths rather than only testing missing registrations.
+
+**Main integration (8 November 2026):** merged Track B PR #547 added eleven
+additional registered endpoints (including definitions) and new mixed-Good
+source modules. The current exact-head transitive axiom expectation is **2,511**
+entries (2,500 previous Track G checks + 11 newly merged upstream checks).
+The strict zero-gap and zero-warning source-audit conditions are unchanged.
