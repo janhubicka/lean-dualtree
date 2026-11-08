@@ -36,6 +36,10 @@ the final variable roots, at any positive local height q:
    genuine local mixed span **and** its Q tree has an unsupported vertex.
    This is a nonvacuous failure: the local mixed span and the final
    evaluated-word span are not being declared empty.
+5. The unsupported node can be chosen to be a genuine **D2 projected
+   marker**. The old Q signature base always lies in the retained part
+   of the final support, so losing an initial source node is not the
+   explanation for the height-one obstruction.
 
 The first three statements are uniform across source frames,
 auxiliary constants, alphabets with a fallback (including unary),
@@ -48,7 +52,7 @@ Proof dependencies are the verified
 `ForwardQFinalInducedRefinement`,
 `ForwardQFinalInducedSupport`, and
 `ForwardQFinalTargetHeightBoundary` modules. No conditional Ramsey
-witness is disguised as existence. Four declarations have separate
+witness is disguised as existence. Five declarations have separate
 transitive-axiom registration.
 
 ## Why this matters for Lemma 27
