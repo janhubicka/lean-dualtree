@@ -21,6 +21,8 @@ theorem branchAddress_take_zero {b N : Nat}
     (addressNode (branchAddress hb r dir)).take r.val =
       List.replicate r.val (⟨0, hb⟩ : Fin b) := by
   have hle : r.val ≤ N := Nat.le_of_lt r.isLt
+  change (List.ofFn (branchAddress hb r dir)).take r.val =
+    List.replicate r.val (⟨0, hb⟩ : Fin b)
   rw [← Fin.ofFn_take_eq_take_ofFn hle (branchAddress hb r dir)]
   have hconst :
       Fin.take r.val hle (branchAddress hb r dir) =
