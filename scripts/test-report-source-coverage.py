@@ -11,7 +11,7 @@ import tempfile
 HERE = Path(__file__).resolve().parent
 
 
-def run_case(remove_required: bool = False) -> tuple[int, dict]:
+def run_case(remove_required: bool = False, register_extra: bool = True) -> tuple[int, dict]:
     with tempfile.TemporaryDirectory(prefix="dualtree-coverage-") as tmp:
         root = Path(tmp)
         (root / "DualTree").mkdir()
@@ -51,6 +51,8 @@ end DualTree.Corollary22Audit
             "DualTree.ForwardQGlobalHallSpan.exists_full_global_span_iff_hall",
             "DualTree.Corollary22Audit.no_monochromatic_complete_candidate",
         )
+        if register_extra:
+            endpoints += ("DualTree.InterleavedRamsey.extra",)
         if remove_required:
             endpoints = endpoints[1:]
         (root / "scripts" / "CheckDualTree.lean").write_text(
@@ -67,12 +69,16 @@ code, data = run_case()
 assert code == 0
 assert data["counts"]["lexically_identified_public_theorems"] == 6
 assert data["counts"]["identified_private_theorems_excluded"] == 1
+assert data["counts"]["identified_public_theorems_unregistered"] == 0
+assert not data["unregistered_public_candidates"]
+assert not data["parse_warnings"]
+code, data = run_case(register_extra=False)
+assert code != 0
 assert data["counts"]["identified_public_theorems_unregistered"] == 1
 assert data["unregistered_public_candidates"][0]["name"] == "DualTree.InterleavedRamsey.extra"
-assert not data["parse_warnings"]
 code, data = run_case(remove_required=True)
 assert code != 0
 assert data["required_not_registered"] == [
     "DualTree.InterleavedRamsey.exists_good_interleaved_height_one"
 ]
-print("PASS: coverage distinguishes checked, unchecked, private and required declarations")
+print("PASS: coverage gates checked, unchecked, private and required declarations")
