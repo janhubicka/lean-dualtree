@@ -14,6 +14,9 @@ namespace DualTree.HigherTreeCells
 
 open HigherConeAddresses
 
+/-- A node of the finite height-`n` `b`-branching tree. -/
+abbrev BoundedNode (b n : Nat) := {s : Node b // s.length < n}
+
 /-- The length-j all-zero node in the root band of b^(<N+M). -/
 def rootBandCell {b N M : Nat} (hb : 0 < b) (j : Fin N) :
     BoundedNode b (N + M) :=
