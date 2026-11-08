@@ -1,4 +1,4 @@
-import DualTree.HigherSkewGeometry
+import DualTree.HigherSkewWord
 import DualTree.UpLeafInterleavedCanonical
 import DualTree.UpLeafTraceHJ
 import DualTree.UpLeafAudit
