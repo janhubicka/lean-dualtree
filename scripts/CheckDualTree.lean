@@ -2822,3 +2822,32 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27BoundaryFactor.residualColor_exact
 #print axioms DualTree.Lemma27BoundaryFactor.fibrePointCanonical_iff_exists_residualColor
 #print axioms DualTree.Lemma27BoundaryFactor.fibreMonochromatic_of_residualColor_homogeneous
+
+-- Track B: genuine interleaved D1 geometry and exact spans (PRs 533, 535, 537).
+#print axioms DualTree.UpLeafInterleavedGeometry.markerPos_eq_supportRoot_of_not_plain
+#print axioms DualTree.UpLeafInterleavedGeometry.component_supportNodes
+#print axioms DualTree.UpLeafInterleavedGeometry.vectorWord
+#print axioms DualTree.UpLeafInterleavedGeometry.mixedWord
+#print axioms DualTree.UpLeafInterleavedGeometry.mixedWord_upLeaves_card
+#print axioms DualTree.UpLeafInterleavedGeometry.mixedWord_span_nonempty
+#print axioms DualTree.UpLeafInterleavedParameters.NonplainIndex
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_plain
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_nonplain_root_letter
+#print axioms DualTree.UpLeafInterleavedParameters.rootPos_eq_markerPos_of_up
+#print axioms DualTree.UpLeafInterleavedParameters.parameterElement_mem_span
+#print axioms DualTree.UpLeafInterleavedSpan.span_element_eq_parameterElement
+#print axioms DualTree.UpLeafInterleavedSpan.mixedWord_span_eq_parameter_range
+
+-- Track F: genuine support thinning and ordered residual-point canonization.
+#print axioms DualTree.MixedSupportThinning.thin_support
+#print axioms DualTree.MixedSupportThinning.thin_syntactic_components
+#print axioms DualTree.MixedSupportThinning.thin_refines
+#print axioms DualTree.MixedSupportThinning.thin_good
+#print axioms DualTree.MixedSupportThinning.exists_good_thinning
+#print axioms DualTree.Corollary22ResidualPoints.residualColor_exact_on_span
+#print axioms DualTree.Corollary22ResidualPoints.exists_total_point_factor
+#print axioms DualTree.Corollary22ResidualPoints.monochromatic_of_residualColor_homogeneous
+#print axioms DualTree.Lemma27ResidualRefinement.starred_points_ordered_supported
+#print axioms DualTree.Lemma27ResidualRefinement.Q_monochromatic_of_ordered_residual_homogeneous
+#print axioms DualTree.Lemma27ResidualRefinement.exists_total_fibre_canonization_of_ordered_support_selection

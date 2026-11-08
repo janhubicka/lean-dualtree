@@ -30,6 +30,15 @@ two, and proves that threshold necessary among positive local heights.
 The new Track F results transport canonical points through arbitrary
 support re-enumerations and extend colour factorization to the entire
 inhabited prescribed fibre for every selected boundary set.
+The 8 November continuation integrates main
+`c8daa217d700b3915eef36b0b7333e5d4f4dbd0c`, including Track B #533,
+#535, and #537. Their genuine interleaved D1 geometry and exact independent
+parameter-span representation are preserved with all fourteen added checks.
+The previous F head `503f0c2` has now passed both full Lean and source-audit
+CI. The current continuation constructs smaller D0/D2 mixed words on a
+supplied compatible vector of supports, proves that c-goodness is inherited,
+and assembles an inhabited monochromatic signature fibre from an explicitly
+stated ordered residual-point selection hypothesis.
 This continues the A–G split in the **T A** chat. Tracks A–E supply
 mathematical construction and transport inputs; this track owns their
 statement-level integration and the final induction. It does not close
@@ -84,7 +93,7 @@ polymorphic in both types.
 | Theorem 3, p. 3 | Unary evaluated spans collapse. The checked obstruction holds at every sufficiently large ambient height. Raw support-list colours would create an additional representation error. | `CorrectedTheorem3`: all positive branching, alphabet, source/target dimensions and colour counts; positive eventual threshold; syntactic refinements; semantic colours. The equivalence with the span conclusion is proved under `HasTwoLetters`. The Ramsey existence claim remains a target proposition. |
 | Theorem 13 / Definition 12, p. 11 | Mixed-product construction needs genuine D₁ leaves, higher intrinsic heights, and relative use inside prescribed source words. Corrected ordered geometry must be used consistently. | Actual `MixedProduct.VariableWord` and `Good`, with an explicit finite coordinate-kind map and complete-skew support. Main includes c-good arbitrary D₀/D₂ interleavings at height one, and genuine D₁ height-one leaf geometry with nonempty mixed spans for arbitrary coordinate patterns. Colour-dependent c-good existence with D₁ and higher intrinsic dimensions remains open. |
 | Corollary 22, p. 25 | The height-one marked-letter colouring is smooth and has a c-good word, but is not monochromatic. The displayed threshold omits a resource needed to remove marked-letter dependence. The `d₂ = 0` call to positive-dimensional CT also needs a separate convention or case. | `Corollary22TwoRootRepair` proves two-root erasure on actual mixed spans. `Corollary22CanonicalQ` now applies it to the total smooth extension of an actual canonical-simple Q colour. Only selected canonical boundary points remain; when the selected set is empty, the starred Q image is monochromatic without a CT selection. A revised `max{2, CT(...)}` bound remains unproved until Ramsey existence and the nonempty residual-point case are assembled. |
-| Lemma 27, pp. 28–29 | Enlarged alphabet, cone domains, decoded variables, Q ordering, fixed-signature coverage, and the final refined word need the recorded repairs. Evaluated-word coverage alone is insufficient for a colour of starred objects. | `Lemma27CanonicalPointColor` constructs an actual complete syntactic refinement, preserves initial roots and symbols, and proves selected-boundary colour factorization on the entire inhabited fixed-signature fibre, from a supplied full-span c-good local word of dimension at least two. `Lemma27CanonicalWitness` supplies an actual fibre member and monochromaticity when the selected boundary is empty. Q coverage, target existence, and point transport are proved. Mixed Ramsey existence and nonempty-boundary residual-colour homogenization remain open. |
+| Lemma 27, pp. 28–29 | Enlarged alphabet, cone domains, decoded variables, Q ordering, fixed-signature coverage, and the final refined word need the recorded repairs. Evaluated-word coverage alone is insufficient for a colour of starred objects. | The canonical-colour modules prove selected-boundary factorization on the whole inhabited signature fibre. `Lemma27ResidualRefinement` now constructs the actual smaller good mixed word and an inhabited monochromatic fibre from a supplied full compatible vector of support subsets whose ordered D2 tuples have homogeneous residual colour. It preserves initial roots and rooted symbols. The original c-good word and homogeneous support selection remain Ramsey existence inputs; Q coverage, target inhabitation, thinning and final colour transfer are proved. |
 | Lemma 28, pp. 29–30 | The iteration suppresses transport of model signatures into the changing current word. Plain refinement preserves a fixed ambient fibre, but need not preserve the interpretation of a model signature. | `finite_signature_fusion` and `finite_signature_canonization` prove the conditional iteration. `Lemma27CanonicalColor.canonicalSignature` now supplies a genuine signature function, with a uniquely determined forward-maximal interior cut, and identifies its eligible fibres exactly with Track D's target class. Increasing-cut model transport, final coverage, and an ambient-independent model task count remain open. |
 | Theorem 25, pp. 27, 30–31 | The pullback must be simple. Its induction is used inside a prescribed source word although the printed theorem is global. The displayed comparison of PTGR with TGR is false; PTGR also suppresses the alphabet parameter. | `CanonicalTheoremSpec.CorrectedTheorem25` fixes the audited intrinsic selector and retains alphabet size and all nonnegative interior counts. The transfer still requires relative Ramsey input and induced-colour simplicity. No numerical TGR/PTGR comparison is imported. The complete node count is a finite power sum, valid also for branching one. |
 | Theorem 29, p. 32 | The product extension has no independent proof in the paper and also inherits the unary span-refinement problem. Scalar homogeneity does not automatically supply simultaneous product homogeneity. | `ProductRamseyAt` uses genuine vector-complete supports, including cross-coordinate order and level separation, semantic colours, and componentwise syntactic refinements. Product existence, source comparison, and quantitative bounds remain unproved. |
@@ -295,6 +304,57 @@ that Ramsey refinement or provide a CT bound. The residual colour is
 selected after the final word; only the original total Q extension must
 be chosen before the c-good word.
 
+### MixedSupportThinning and Corollary22ResidualPoints
+
+`MixedSupportThinning.thin` takes an actual mixed word with no D1
+coordinates and a supplied family of duplicate-free subsets of its
+component supports. The family must satisfy the **whole** vector-complete
+condition, including cross-coordinate ordering and level separation.
+Component completeness alone is insufficient.
+
+The construction retains exactly the selected roots and replaces every
+occurrence of a discarded variable by the same fallback letter. It yields
+coordinatewise syntactic refinement, inclusion of the full mixed span, and
+inheritance of c-goodness for the same colouring. Fixed alphabet letters,
+including auxiliary labels in the Q alphabet, remain fixed. The construction
+works for arbitrary auxiliary order and any alphabet with a fallback;
+no two-letter hypothesis is used. It does not select the support family.
+
+`Corollary22ResidualPoints.residualColor` is a total colour on the local
+Gamma2 bounded-node tuples, chosen after the original mixed word. Full-span
+c-goodness, global smoothness, and original intrinsic height `H >= 2`
+make it exact at every element of that word's span. Its argument contains
+no marked letters or Gamma1 points. A fallback is used only on tuples not
+realized in the original full mixed span. This algebraic factorization also
+allows D1 coordinates; only the support-thinning construction excludes them.
+
+### Lemma27ResidualRefinement
+
+The geometric selection interface uses **full D2 tuples** whose points lie
+in the selected support lists and whose lengths are nondecreasing in the
+actual sorted frontier-coordinate order. This is precisely the corrected
+starred Q condition. Only the Gamma2 restriction of such a tuple is passed
+to the residual colour. Homogeneity on unordered Cartesian tuples is not
+required, and order is not inferred from arbitrary mixed-span membership.
+
+`exists_total_fibre_canonization_of_ordered_support_selection` first chooses
+the total smooth Q colour. A supplied c-good mixed word of height `H >= 2`
+then determines its residual colour. For every supplied complete vector
+of support subsets of height `q >= 2` with ordered residual homogeneity,
+the theorem constructs the genuine smaller good mixed word and the actual
+`(m+q)`-complete final word. The final word syntactically refines the original
+ambient word, retains all initial roots and symbols, has a nonempty evaluated
+span, and has an actual member of the prescribed monochromatic signature
+fibre. Target coverage and colour constancy are conclusions, not hypotheses.
+
+The final word is assembled directly from the smaller mixed word. No
+refinement relation between final words obtained from different local
+mixed words is silently assumed. Consequently Track D supplies the actual
+inhabited target for this same final word. The original `H >= 2` resource
+for residual-colour exactness and the smaller `q >= 2` resource for target
+existence are kept explicit; no unproved relation between the dimensions
+is needed. Selecting the homogeneous vector of support subsets remains open.
+
 ### Theorem25
 
 Signature canonization is used to define a colour on realized signatures,
@@ -320,13 +380,14 @@ hypothesis is automatically valid relatively.
    interleavings, higher intrinsic dimensions including their leaf geometry,
    eventual ambient-height bounds, and relative refinements. The new local
    theorem specifically needs full-span c-goodness over the enlarged alphabet.
-2. The Track D Q/refinement coverage, nonempty prescribed target, Track E
-   canonical smooth extension, and enumeration-invariant point transport
-   are now composed into the full-fibre colour factorization. Establish
-   residual point-colour homogenization for nonempty `B2`, with the
-   required refinement and quantitative control. An eventual CT use must
-   preserve the complete-word and initial-root contracts; the abstract
-   residual-colour transfer alone does not construct that refinement.
+2. Supply a geometric Ramsey theorem selecting a full compatible vector
+   of smaller support subsets whose ordered full-D2 tuples are homogeneous
+   for the local residual Gamma2 colour. The new thinning and assembly
+   modules discharge the subsequent word construction, inherited goodness,
+   initial-root/symbol contracts and inhabited monochromatic fibre.
+   Independently selecting only the marked components is insufficient
+   without extending them to the required whole vector geometry. The
+   needed selection theorem and its quantitative bound remain open.
 3. Prove simplicity of the actual lower-interior colour and the relative
    Ramsey input needed by Theorem 25. The initial canonical Q smoothness
    theorem does not by itself prove this later induction hypothesis.
@@ -342,15 +403,17 @@ The full corrected Lemma 28, Theorem 25, and Theorem 3 therefore remain
 open. The local colour step now has an actual complete refinement, an
 inhabited prescribed-signature fibre, and selected-boundary colour
 factorization on every member of that fibre. Empty selected boundary
-gives monochromaticity. General residual-point homogenization, mixed
-Ramsey existence, and model transport remain explicitly exposed.
+gives monochromaticity. For arbitrary selected boundary the new assembly
+reduces local monochromatic canonization to the explicit ordered-support
+selection input. General residual-point selection, mixed Ramsey existence,
+and model transport remain explicitly exposed.
 
 ## Validation
 
 New source modules are registered in the full `DualTree` import umbrella.
 Their public proof endpoints are registered in `scripts/CheckDualTree.lean`.
-Track F now adds 67 proof endpoints, including 15 in this continuation.
-With the integrated Track B, D, and E results, the registered total is 2,514.
+Track F now adds 78 proof endpoints, including 11 in this continuation.
+With the integrated Track B, D, and E results, the registered total is 2,539.
 This count is not a percentage of the source theorem.
 Lean compilation, the existing source/axiom gates, and finite Q regressions
 are required before the change is reported as verified. See the pull
