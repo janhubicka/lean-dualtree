@@ -1,5 +1,4 @@
 import DualTree.HigherPhysicalComplete
-import DualTree.HigherSkewGeometry
 import DualTree.ForwardQFinalTargetExistence
 import DualTree.ForwardQFinalTargetNonemptyAudit
 import DualTree.ForwardQFinalStarredReenumerationObservation
