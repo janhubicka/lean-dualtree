@@ -55,7 +55,7 @@ theorem encodeMatrix_root
   · have hj : Classical.choose hroot = j :=
       rootBandCell_injective hb (Classical.choose_spec hroot)
     simpa only [hj]
-  · exact (hroot ⟨j, rfl⟩).elim
+  all_goals exact (hroot ⟨j, rfl⟩).elim
 
 /-- At every depth-N address and cone-band index, the encoded tree word
 recovers that original (non-frozen) matrix entry exactly. -/
