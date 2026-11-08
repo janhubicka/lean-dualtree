@@ -2806,3 +2806,8 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.HigherSkewGeometry.ambientStar_complete_paper
 #print axioms DualTree.HigherSkewGeometry.ambientStar_vector_complete_forward
 #print axioms DualTree.HigherSkewGeometry.ambientStar_vector_complete_paper
+
+-- Track C: exact selected/frozen cone evaluations and rectangular coloring.
+#print axioms DualTree.HigherConeRectangular.coneEvaluation_selected
+#print axioms DualTree.HigherConeRectangular.coneEvaluation_unselected
+#print axioms DualTree.HigherConeRectangular.exists_monochromatic_root_and_selected_cones
