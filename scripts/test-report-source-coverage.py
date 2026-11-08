@@ -50,7 +50,7 @@ theorem no_monochromatic_complete_candidate : True := trivial
 end DualTree.Corollary22Audit
 """
         if malformed_scope:
-            source += "end Orphan\\n"
+            source += "end Orphan\n"
         if remove_required_source:
             source = source.replace(
                 "theorem exists_good_interleaved_height_one",
