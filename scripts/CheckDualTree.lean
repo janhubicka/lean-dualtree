@@ -2777,8 +2777,44 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalTargetExistence.exists_complete_nonempty_set_source_relative_Q_transfer
 #print axioms DualTree.ForwardQFinalTargetExistence.exists_complete_nonempty_set_Q_transfer_of_source_refinement
 
--- Track B: exact genuine mixed Good criterion, strict UpCanonical separation,
--- and its three independent D0/D1 parameter invariance obligations.
+/-! Track G: all 33 previously unregistered lexically public theorems, as
+    exposed by the source-coverage artifact for PR #545. These checks add no
+    mathematical claims and must still be audited for semantic fidelity. -/
+#print axioms DualTree.prefix_length_le
+#print axioms DualTree.Corollary22Audit.node_eq_root
+#print axioms DualTree.Corollary22Audit.root_mem_support_of_nonempty
+#print axioms DualTree.Corollary22Audit.falseWord_mem_span
+#print axioms DualTree.Corollary22Audit.trueWord_mem_span
+#print axioms DualTree.Corollary22Audit.falsePoint_mem_starred
+#print axioms DualTree.Corollary22Audit.truePoint_mem_starred
+#print axioms DualTree.Corollary22Audit.starred_span_not_monochromatic_of_nonempty
+#print axioms DualTree.Corollary22Audit.support_nonempty_of_complete_one
+#print axioms DualTree.Lemma27Audit.frontier_in_tree
+#print axioms DualTree.Lemma27Audit.tail_in_printed_domain
+#print axioms DualTree.LocalMixedElementFromMarkers.assemble_marker_point
+#print axioms DualTree.paperAux_of_length_lt
+#print axioms DualTree.forwardAux_of_length_lt
+#print axioms DualTree.paperAux_of_eq_length
+#print axioms DualTree.forwardAux_of_eq_length
+#print axioms DualTree.OrderAudit.source_reverse_comparison
+#print axioms DualTree.OrderAudit.target_reverse_comparison_fails
+#print axioms DualTree.OrderAudit.forward_order_repairs_counterexample
+#print axioms DualTree.SpanAudit.singleton_span_eq
+#print axioms DualTree.StarInsensitivity.starRelated_singleton_eq
+#print axioms DualTree.StarInsensitivity.starRelated_normalize
+#print axioms DualTree.StarInsensitivity.normalize_twice_of_mem_union
+#print axioms DualTree.StarInsensitivity.normalize_twice_eq
+#print axioms DualTree.Theorem3Audit.root_ne_left
+#print axioms DualTree.Theorem3Audit.both_refine_every_candidate
+#print axioms DualTree.Theorem3Audit.rootColor_rootWord
+#print axioms DualTree.Theorem3Audit.rootColor_leftWord
+#print axioms DualTree.UnaryMainAudit.root2_ne_left2
+#print axioms DualTree.UnaryMainAudit.rootColor_rootWord
+#print axioms DualTree.UnaryMainAudit.rootColor_leftWord
+#print axioms DualTree.Lemma27Repair.filter_length_le
+#print axioms DualTree.Lemma27Repair.visibleAncestors_length_le_aux
+
+-- Track B: eleven newly registered endpoints integrated from main #547.
 #print axioms DualTree.UpLeafInterleavedGoodCriterion.bulletAsNonplain
 #print axioms DualTree.UpLeafInterleavedGoodCriterion.parameterElement_bullet_letter
 #print axioms DualTree.UpLeafInterleavedGoodCriterion.good_iff_parameter_bullet_constancy
@@ -2791,15 +2827,15 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafInterleavedGoodDecomposition.UpLetterInvariant
 #print axioms DualTree.UpLeafInterleavedGoodDecomposition.good_iff_three_invariances
 
--- Track D: exact induced starred-Q eligibility and genuine height-one obstructions.
+-- Track B: upstream #551, D0 invariance and two residual D1 obligations.
+#print axioms DualTree.UpLeafInterleavedGoodBridge.plainInvariant_of_upCanonical
+#print axioms DualTree.UpLeafInterleavedGoodBridge.good_of_upCanonical_and_two_up_invariances
+#print axioms DualTree.UpLeafInterleavedGoodBridge.good_iff_two_up_invariances_of_upCanonical
+#print axioms DualTree.UpLeafInterleavedGoodBridge.upCanonical_iff_plainInvariant_of_noBullet
+
+-- Track D: independent exact induced-Q support boundary (PR #550).
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.inducedQ_sourceRelativeSetTarget_iff_two_le
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.inducedQ_tree_subset_final_iff_two_le
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.inducedQ_tree_has_unsupported_node_iff_q_one
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.height_one_mixed_span_has_unsupported_Q
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.height_one_has_unsupported_projected_marker
-
--- Track B: Lemma-14 UpCanonical supplies D0 invariance; exact two D1 obligations.
-#print axioms DualTree.UpLeafInterleavedGoodBridge.plainInvariant_of_upCanonical
-#print axioms DualTree.UpLeafInterleavedGoodBridge.good_of_upCanonical_and_two_up_invariances
-#print axioms DualTree.UpLeafInterleavedGoodBridge.good_iff_two_up_invariances_of_upCanonical
-#print axioms DualTree.UpLeafInterleavedGoodBridge.upCanonical_iff_plainInvariant_of_noBullet
