@@ -2666,3 +2666,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafInterleavedGoodCriterion.good_iff_parameter_bullet_constancy
 #print axioms DualTree.UpLeafInterleavedGoodCriterion.upPoint_color_upCanonical
 #print axioms DualTree.UpLeafInterleavedGoodCriterion.upPoint_color_not_good
+
+-- Track B: three genuine independent invariance obligations for Good.
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.SameBulletLetters
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.parameterColor
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.PlainInvariant
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.UpDirectionInvariant
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.UpLetterInvariant
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.good_iff_three_invariances
