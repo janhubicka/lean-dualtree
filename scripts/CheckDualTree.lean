@@ -2642,7 +2642,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.HigherSkewGeometry.ambientStar_vector_complete_forward
 #print axioms DualTree.HigherSkewGeometry.ambientStar_vector_complete_paper
 
--- Track C: genuine legal k=2 variable words and independent spans.
+-- Track C legal variable words and exact nonempty spans.
 #print axioms DualTree.HigherSkewWord.support_nodup
 #print axioms DualTree.HigherSkewWord.support_nodes
 #print axioms DualTree.HigherSkewWord.symbol_at_root

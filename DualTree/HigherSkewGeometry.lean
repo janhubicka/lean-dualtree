@@ -42,8 +42,9 @@ theorem star_complete_two_of_skew
         decide (deg = b)) = true := by
     apply List.all_eq_true.mpr
     intro s hs
-    rcases (mem_star_iff r leaf s).mp hs with rfl | ⟨i, rfl⟩
-    · have hsucc := star_root_successors r leaf hr hlen hbranch
+    rcases (mem_star_iff r leaf s).mp hs with hroot | ⟨i, rfl⟩
+    · rw [hroot]
+      have hsucc := star_root_successors r leaf hr hlen hbranch
       simp [hsucc, Nat.ne_of_gt hb]
     · have hsucc := star_leaf_successors r leaf hr hlen i
       have hheight := star_height_leaf r leaf hr hlen hbranch i
@@ -61,8 +62,9 @@ theorem star_root_or_leaf_level
     (s : Node b) (hs : s ∈ star r leaf) :
     (SkewTree.heightAt (star r leaf) s = 0 ∧ s.length = r.length) ∨
       (SkewTree.heightAt (star r leaf) s = 1 ∧ s.length = n) := by
-  rcases (mem_star_iff r leaf s).mp hs with rfl | ⟨i, rfl⟩
-  · exact Or.inl ⟨star_height_root r leaf hr hlen, rfl⟩
+  rcases (mem_star_iff r leaf s).mp hs with hroot | ⟨i, rfl⟩
+  · rw [hroot]
+    exact Or.inl ⟨star_height_root r leaf hr hlen, rfl⟩
   · exact Or.inr ⟨star_height_leaf r leaf hr hlen hbranch i, hlen i⟩
 
 /-- Any support with length determined by intrinsic level, and strictly
@@ -177,8 +179,8 @@ theorem ambientStar_complete_forward
     {b n : Nat} (hb : 0 < b) (r : BoundedNode b n) :
     SkewTree.completeB SkewTree.forwardAuxB 2 (ambientStar hb r) = true := by
   have hskew : SkewTree.skewB SkewTree.forwardAuxB (ambientStar hb r) = true := by
-    simpa [ambientStar, star, ambientLeaves, List.map_ofFn,
-      Function.comp_def] using extended_support_skew_forward hb r
+    simpa [ambientStar, UpLeafGeometry.star, UpLeafGeometry.ambientLeaves,
+      List.map_ofFn, Function.comp_def] using extended_support_skew_forward hb r
   exact star_complete_two_of_skew hb SkewTree.forwardAuxB r.1
     (fun i => (ambientLeaf hb r i).1) r.2
     (fun i => (ambientLeaf hb r i).2)
@@ -188,8 +190,8 @@ theorem ambientStar_complete_paper
     {b n : Nat} (hb : 0 < b) (r : BoundedNode b n) :
     SkewTree.completeB SkewTree.paperAuxB 2 (ambientStar hb r) = true := by
   have hskew : SkewTree.skewB SkewTree.paperAuxB (ambientStar hb r) = true := by
-    simpa [ambientStar, star, ambientLeaves, List.map_ofFn,
-      Function.comp_def] using extended_support_skew_paper hb r
+    simpa [ambientStar, UpLeafGeometry.star, UpLeafGeometry.ambientLeaves,
+      List.map_ofFn, Function.comp_def] using extended_support_skew_paper hb r
   exact star_complete_two_of_skew hb SkewTree.paperAuxB r.1
     (fun i => (ambientLeaf hb r i).1) r.2
     (fun i => (ambientLeaf hb r i).2)
@@ -200,8 +202,8 @@ theorem ambientStar_vector_complete_forward
     VectorSkew.vectorCompleteB SkewTree.forwardAuxB 2
       (fun _ : Fin d => ambientStar hb r) = true := by
   have hskew : SkewTree.skewB SkewTree.forwardAuxB (ambientStar hb r) = true := by
-    simpa [ambientStar, star, ambientLeaves, List.map_ofFn,
-      Function.comp_def] using extended_support_skew_forward hb r
+    simpa [ambientStar, UpLeafGeometry.star, UpLeafGeometry.ambientLeaves,
+      List.map_ofFn, Function.comp_def] using extended_support_skew_forward hb r
   exact star_vector_complete_two_of_skew hb SkewTree.forwardAuxB r.1
     (fun i => (ambientLeaf hb r i).1) r.2
     (fun i => (ambientLeaf hb r i).2)
@@ -212,8 +214,8 @@ theorem ambientStar_vector_complete_paper
     VectorSkew.vectorCompleteB SkewTree.paperAuxB 2
       (fun _ : Fin d => ambientStar hb r) = true := by
   have hskew : SkewTree.skewB SkewTree.paperAuxB (ambientStar hb r) = true := by
-    simpa [ambientStar, star, ambientLeaves, List.map_ofFn,
-      Function.comp_def] using extended_support_skew_paper hb r
+    simpa [ambientStar, UpLeafGeometry.star, UpLeafGeometry.ambientLeaves,
+      List.map_ofFn, Function.comp_def] using extended_support_skew_paper hb r
   exact star_vector_complete_two_of_skew hb SkewTree.paperAuxB r.1
     (fun i => (ambientLeaf hb r i).1) r.2
     (fun i => (ambientLeaf hb r i).2)
