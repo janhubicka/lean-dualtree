@@ -2776,6 +2776,22 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.ForwardQFinalTargetExistence.sourceRelativeSetTarget_nonempty_iff_two_le
 #print axioms DualTree.ForwardQFinalTargetExistence.exists_complete_nonempty_set_source_relative_Q_transfer
 #print axioms DualTree.ForwardQFinalTargetExistence.exists_complete_nonempty_set_Q_transfer_of_source_refinement
+
+-- Track B: exact genuine mixed Good criterion, strict UpCanonical separation,
+-- and its three independent D0/D1 parameter invariance obligations.
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.bulletAsNonplain
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.parameterElement_bullet_letter
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.good_iff_parameter_bullet_constancy
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.upPoint_color_upCanonical
+#print axioms DualTree.UpLeafInterleavedGoodCriterion.upPoint_color_not_good
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.SameBulletLetters
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.parameterColor
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.PlainInvariant
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.UpDirectionInvariant
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.UpLetterInvariant
+#print axioms DualTree.UpLeafInterleavedGoodDecomposition.good_iff_three_invariances
+
+-- Track D: exact induced starred-Q eligibility and genuine height-one obstructions.
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.inducedQ_sourceRelativeSetTarget_iff_two_le
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.inducedQ_tree_subset_final_iff_two_le
 #print axioms DualTree.ForwardQFinalInducedSupportThreshold.inducedQ_tree_has_unsupported_node_iff_q_one
