@@ -3,7 +3,7 @@ import DualTree.Lemma27BoundaryFactor
 import DualTree.ForwardQFinalTargetNonemptyAudit
 import DualTree.ForwardQFinalStarredReenumerationObservation
 import DualTree.ForwardQSourceRefinementAudit
-import DualTree.UpLeafInterleavedSpan
+import DualTree.UpLeafInterleavedCanonical
 import DualTree.UpLeafTraceHJ
 import DualTree.UpLeafAudit
 import DualTree.UpLeafCanonical

@@ -34,6 +34,12 @@ The 8 November continuation integrates main
 `c8daa217d700b3915eef36b0b7333e5d4f4dbd0c`, including Track B #533,
 #535, and #537. Their genuine interleaved D1 geometry and exact independent
 parameter-span representation are preserved with all fourteen added checks.
+During verification, main advanced to
+`4d7879863c8725a92344c4d26ae8b48414f04811` through Track B #539 and the
+historical coordination note #521. This integration preserves the six
+additional checks for genuine interleaved height-one Lemma-14
+canonicalization. That result retains D1 trace data and is not identified
+with Definition-11 c-goodness.
 The previous F head `503f0c2` has now passed both full Lean and source-audit
 CI. The current continuation constructs smaller D0/D2 mixed words on a
 supplied compatible vector of supports, proves that c-goodness is inherited,
@@ -413,7 +419,7 @@ and model transport remain explicitly exposed.
 New source modules are registered in the full `DualTree` import umbrella.
 Their public proof endpoints are registered in `scripts/CheckDualTree.lean`.
 Track F now adds 78 proof endpoints, including 11 in this continuation.
-With the integrated Track B, D, and E results, the registered total is 2,539.
+With the integrated Track B, D, and E results, the registered total is 2,545.
 This count is not a percentage of the source theorem.
 Lean compilation, the existing source/axiom gates, and finite Q regressions
 are required before the change is reported as verified. See the pull

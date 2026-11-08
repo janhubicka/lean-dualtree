@@ -2851,3 +2851,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.Lemma27ResidualRefinement.starred_points_ordered_supported
 #print axioms DualTree.Lemma27ResidualRefinement.Q_monochromatic_of_ordered_residual_homogeneous
 #print axioms DualTree.Lemma27ResidualRefinement.exists_total_fibre_canonization_of_ordered_support_selection
+
+-- Track B: genuine interleaved height-one Lemma-14 canonicalization (PR539).
+#print axioms DualTree.UpLeafInterleavedCanonical.upAsNonplain
+#print axioms DualTree.UpLeafInterleavedCanonical.nonplain_is_up_of_noBullet
+#print axioms DualTree.UpLeafInterleavedCanonical.parameterElement_sameUpTrace_iff
+#print axioms DualTree.UpLeafInterleavedCanonical.upCanonical_of_uniform_plain
+#print axioms DualTree.UpLeafInterleavedCanonical.exists_uniform_plain_given_nonplain
+#print axioms DualTree.UpLeafInterleavedCanonical.exists_upCanonical_interleaved_height_one
