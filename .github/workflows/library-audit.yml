@@ -6,12 +6,18 @@ on:
       - 'DualTree.lean'
       - 'DualTree/**'
       - 'scripts/audit-lean-library.py'
+      - 'scripts/CheckDualTree.lean'
+      - 'scripts/report-source-coverage.py'
+      - 'scripts/test-report-source-coverage.py'
       - '.github/workflows/library-audit.yml'
   pull_request:
     paths:
       - 'DualTree.lean'
       - 'DualTree/**'
       - 'scripts/audit-lean-library.py'
+      - 'scripts/CheckDualTree.lean'
+      - 'scripts/report-source-coverage.py'
+      - 'scripts/test-report-source-coverage.py'
       - '.github/workflows/library-audit.yml'
   workflow_dispatch:
 
@@ -22,3 +28,14 @@ jobs:
       - uses: actions/checkout@v4
       - name: Static import graph, proof-surface, and dead-code diagnostics
         run: python3 scripts/audit-lean-library.py --verify-root-minimal
+      - name: Regression-test lexical theorem registry coverage
+        run: python3 scripts/test-report-source-coverage.py
+      - name: Count checked and unchecked named public theorem candidates
+        run: python3 scripts/report-source-coverage.py --json proof-audit/source-coverage.json
+      - name: Preserve full source coverage report for human review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-theorem-coverage
+          path: proof-audit/source-coverage.json
+          if-no-files-found: warn
