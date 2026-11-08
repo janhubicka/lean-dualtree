@@ -2820,3 +2820,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.HigherTreeCells.coneBandCell_equal_implies_same_level
 
 #print axioms DualTree.HigherTreeCells.coneBandCell_pair_injective
+
+-- Track C: least root/cone variable occurrences.
+#print axioms DualTree.HigherFirstVariable.exists_first_occurrence
+#print axioms DualTree.HigherFirstVariable.exists_monochromatic_first_root_and_cone
