@@ -1,4 +1,4 @@
-import DualTree.HigherBranchPrefix
+import DualTree.HigherPhysicalComplete
 import DualTree.HigherSkewGeometry
 import DualTree.ForwardQFinalTargetExistence
 import DualTree.ForwardQFinalTargetNonemptyAudit
