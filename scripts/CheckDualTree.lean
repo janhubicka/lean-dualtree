@@ -2824,3 +2824,8 @@ Transitive axiom audit for the first source-facing validation facts.
 -- Track C: least root/cone variable occurrences.
 #print axioms DualTree.HigherFirstVariable.exists_first_occurrence
 #print axioms DualTree.HigherFirstVariable.exists_monochromatic_first_root_and_cone
+
+-- Track C: actual finite-tree color pullback and cell recovery.
+#print axioms DualTree.HigherTreeEncoding.encodeMatrix_root
+#print axioms DualTree.HigherTreeEncoding.encodeMatrix_cone
+#print axioms DualTree.HigherTreeEncoding.exists_monochromatic_encoded_root_and_cones
