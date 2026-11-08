@@ -2663,3 +2663,11 @@ Transitive axiom audit for the first source-facing validation facts.
 -- Track C: flat root/cone Ramsey input.
 #print axioms DualTree.HigherRamseyFlat.exists_uniform_root_and_cones
 #print axioms DualTree.HigherRamseyFlat.exists_monochromatic_root_and_cone_spans
+
+-- Track C: actual-address cone Hales–Jewett and branch-index certificates.
+#print axioms DualTree.HigherConeAddresses.addressNode_length
+#print axioms DualTree.HigherConeAddresses.branchAddress_at_root
+#print axioms DualTree.HigherConeAddresses.branchAddress_elsewhere
+#print axioms DualTree.HigherConeAddresses.branchAddress_injective
+#print axioms DualTree.HigherConeAddresses.branchAddresses_nodup
+#print axioms DualTree.HigherConeAddresses.exists_uniform_root_and_address_cones

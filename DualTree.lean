@@ -1,4 +1,4 @@
-import DualTree.HigherRamseyFlat
+import DualTree.HigherConeAddresses
 import DualTree.UpLeafInterleavedCanonical
 import DualTree.UpLeafTraceHJ
 import DualTree.UpLeafAudit
