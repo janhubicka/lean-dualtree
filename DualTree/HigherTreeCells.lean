@@ -52,7 +52,7 @@ theorem coneBandCell_length {b N M : Nat}
 depth, and distinct flat root positions never denote the same tree node. -/
 theorem rootBandCell_injective {b N M : Nat}
     (hb : 0 < b) :
-    Function.Injective (rootBandCell (M := M) hb) := by
+    Function.Injective (rootBandCell (N := N) (M := M) hb) := by
   intro i j hij
   have hlen := congrArg
     (fun s : BoundedNode b (N + M) => s.1.length) hij
