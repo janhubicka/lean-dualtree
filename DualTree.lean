@@ -2,7 +2,7 @@ import DualTree.ForwardQFinalTargetExistence
 import DualTree.ForwardQFinalTargetNonemptyAudit
 import DualTree.ForwardQFinalStarredReenumerationObservation
 import DualTree.ForwardQSourceRefinementAudit
-import DualTree.UpLeafInterleavedGoodDecomposition
+import DualTree.UpLeafInterleavedGoodBridge
 import DualTree.UpLeafTraceHJ
 import DualTree.UpLeafAudit
 import DualTree.UpLeafCanonical

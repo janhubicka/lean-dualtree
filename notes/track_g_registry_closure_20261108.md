@@ -44,3 +44,8 @@ additional registered endpoints (including definitions) and new mixed-Good
 source modules. The current exact-head transitive axiom expectation is **2,511**
 entries (2,500 previous Track G checks + 11 newly merged upstream checks).
 The strict zero-gap and zero-warning source-audit conditions are unchanged.
+
+**Second upstream integration (8 November 2026):** Track B PR #551 supplied
+four additional public theorem endpoints. The merged main + Track G registry
+now contains **2,515** distinct transitive axiom checks; strict coverage
+and zero-warning gates remain unchanged.
