@@ -2647,3 +2647,7 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafInterleavedParameters.parameterElement_nonplain_root_letter
 #print axioms DualTree.UpLeafInterleavedParameters.rootPos_eq_markerPos_of_up
 #print axioms DualTree.UpLeafInterleavedParameters.parameterElement_mem_span
+
+-- Track B: converse and exact true interleaved D1 span.
+#print axioms DualTree.UpLeafInterleavedSpan.span_element_eq_parameterElement
+#print axioms DualTree.UpLeafInterleavedSpan.mixedWord_span_eq_parameter_range
