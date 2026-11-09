@@ -2811,3 +2811,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.HigherConeRectangular.coneEvaluation_selected
 #print axioms DualTree.HigherConeRectangular.coneEvaluation_unselected
 #print axioms DualTree.HigherConeRectangular.exists_monochromatic_root_and_selected_cones
+
+-- Track C: root/cone matrix positions in actual bounded trees.
+#print axioms DualTree.HigherTreeCells.rootBandCell_length
+#print axioms DualTree.HigherTreeCells.coneBandCell_length
+#print axioms DualTree.HigherTreeCells.rootBandCell_injective
+#print axioms DualTree.HigherTreeCells.rootBandCell_ne_coneBandCell
+#print axioms DualTree.HigherTreeCells.coneBandCell_equal_implies_same_level
+
+#print axioms DualTree.HigherTreeCells.coneBandCell_pair_injective
