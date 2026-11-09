@@ -2837,3 +2837,9 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.HigherPhysicalSupport.support_card
 #print axioms DualTree.HigherPhysicalSupport.child_level
 #print axioms DualTree.HigherPhysicalSupport.root_level_lt_child
+
+-- Track C: true directional prefix of chosen physical child addresses.
+#print axioms DualTree.HigherBranchPrefix.branchAddress_take_zero
+#print axioms DualTree.HigherBranchPrefix.branchAddress_zero_prefix
+#print axioms DualTree.HigherBranchPrefix.branchAddress_direction_prefix
+#print axioms DualTree.HigherBranchPrefix.root_branch_prefix_child
