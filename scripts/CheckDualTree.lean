@@ -2829,3 +2829,11 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.HigherTreeEncoding.encodeMatrix_root
 #print axioms DualTree.HigherTreeEncoding.encodeMatrix_cone
 #print axioms DualTree.HigherTreeEncoding.exists_monochromatic_encoded_root_and_cones
+
+-- Track C: actual b+1 nonduplicate selected support roots.
+#print axioms DualTree.HigherPhysicalSupport.root_ne_child
+#print axioms DualTree.HigherPhysicalSupport.child_injective
+#print axioms DualTree.HigherPhysicalSupport.support_nodup
+#print axioms DualTree.HigherPhysicalSupport.support_card
+#print axioms DualTree.HigherPhysicalSupport.child_level
+#print axioms DualTree.HigherPhysicalSupport.root_level_lt_child
