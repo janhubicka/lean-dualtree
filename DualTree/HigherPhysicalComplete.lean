@@ -26,7 +26,7 @@ def supportNodes {b N M : Nat} (hb : 0 < b)
 theorem supportNodes_eq_star {b N M : Nat} (hb : 0 < b)
     (r : Fin N) (s : Fin M) :
     supportNodes hb r s =
-      UpLeafGeometry.star (root hb r).1
+      UpLeafGeometry.star (root (M := M) hb r).1
         (fun i : Fin b => (child hb r s i).1) := by
   simp [supportNodes, support, UpLeafGeometry.star,
     List.map_ofFn, Function.comp_def]
@@ -65,9 +65,9 @@ theorem complete_two_of_aux
     (aux : Node b → Node b → Bool)
     (r : Fin N) (s : Fin M)
     (haux : ∀ dir : Fin b,
-      aux (child hb r s dir).1 (root hb r).1 = false) :
+      aux (child hb r s dir).1 (root (M := M) hb r).1 = false) :
     SkewTree.completeB aux 2 (supportNodes hb r s) = true := by
-  let R : Node b := (root hb r).1
+  let R : Node b := (root (M := M) hb r).1
   let leaf : Fin b → Node b := fun i => (child hb r s i).1
   have hr : R.length < N + s.val :=
     root_length_lt_child_level hb r s
@@ -88,10 +88,10 @@ theorem vector_complete_two_of_aux
     (aux : Node b → Node b → Bool)
     (r : Fin N) (s : Fin M)
     (haux : ∀ dir : Fin b,
-      aux (child hb r s dir).1 (root hb r).1 = false) :
+      aux (child hb r s dir).1 (root (M := M) hb r).1 = false) :
     VectorSkew.vectorCompleteB aux 2
       (fun _ : Fin d => supportNodes hb r s) = true := by
-  let R : Node b := (root hb r).1
+  let R : Node b := (root (M := M) hb r).1
   let leaf : Fin b → Node b := fun i => (child hb r s i).1
   have hr : R.length < N + s.val :=
     root_length_lt_child_level hb r s
