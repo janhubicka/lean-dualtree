@@ -2843,3 +2843,12 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.HigherBranchPrefix.branchAddress_zero_prefix
 #print axioms DualTree.HigherBranchPrefix.branchAddress_direction_prefix
 #print axioms DualTree.HigherBranchPrefix.root_branch_prefix_child
+
+-- Track C: genuine first-variable-root k=2 geometry, all vector order clauses.
+#print axioms DualTree.HigherPhysicalComplete.supportNodes_eq_star
+#print axioms DualTree.HigherPhysicalComplete.complete_two_of_aux
+#print axioms DualTree.HigherPhysicalComplete.vector_complete_two_of_aux
+#print axioms DualTree.HigherPhysicalComplete.complete_two_paper
+#print axioms DualTree.HigherPhysicalComplete.complete_two_forward
+#print axioms DualTree.HigherPhysicalComplete.vector_complete_two_paper
+#print axioms DualTree.HigherPhysicalComplete.vector_complete_two_forward
