@@ -2832,3 +2832,10 @@ Transitive axiom audit for the first source-facing validation facts.
 #print axioms DualTree.UpLeafInterleavedGoodBridge.good_of_upCanonical_and_two_up_invariances
 #print axioms DualTree.UpLeafInterleavedGoodBridge.good_iff_two_up_invariances_of_upCanonical
 #print axioms DualTree.UpLeafInterleavedGoodBridge.upCanonical_iff_plainInvariant_of_noBullet
+
+-- Track D: independent exact induced-Q support boundary (PR #550).
+#print axioms DualTree.ForwardQFinalInducedSupportThreshold.inducedQ_sourceRelativeSetTarget_iff_two_le
+#print axioms DualTree.ForwardQFinalInducedSupportThreshold.inducedQ_tree_subset_final_iff_two_le
+#print axioms DualTree.ForwardQFinalInducedSupportThreshold.inducedQ_tree_has_unsupported_node_iff_q_one
+#print axioms DualTree.ForwardQFinalInducedSupportThreshold.height_one_mixed_span_has_unsupported_Q
+#print axioms DualTree.ForwardQFinalInducedSupportThreshold.height_one_has_unsupported_projected_marker
