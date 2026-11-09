@@ -1,4 +1,4 @@
-import DualTree.HigherTreeCells
+import DualTree.HigherFirstVariable
 import DualTree.HigherSkewGeometry
 import DualTree.ForwardQFinalTargetExistence
 import DualTree.ForwardQFinalTargetNonemptyAudit
